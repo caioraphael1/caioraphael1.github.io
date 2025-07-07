@@ -1,0 +1,99 @@
+.portfolio__outroProjetoCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio__outroProjetoCard-container1,
+.portfolio__outroProjetoCard-container2 {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 3em;
+    gap: 2em;
+}
+
+.portfolio__outroProjetoCard-container1_texto,
+.portfolio__outroProjetoCard-container2_texto {
+    display: flex;
+    flex: 1 1 45%;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 45%;
+}
+
+.portfolio__outroProjetoCard-container1_texto h2,
+.portfolio__outroProjetoCard-container2_texto h2 {
+    font-size: 2em;
+    text-align: center;
+    font-family: var(--standard-font-family);
+    color: var(--light-bg-font-color);
+    padding-bottom: 0.5em;
+}
+
+.portfolio__outroProjetoCard-container1_texto p,
+.portfolio__outroProjetoCard-container2_texto p {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: justify;
+    font-family: var(--standard-font-family);
+    color: var(--light-bg-font-color);
+}
+
+.portfolio__outroProjetoCard-container1_video,
+.portfolio__outroProjetoCard-container2_video {
+    flex: 1 1 45%;
+    max-width: 45%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+.portfolio__outroProjetoCard-container1_video iframe,
+.portfolio__outroProjetoCard-container2_video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1075px) {
+    .portfolio__outroProjetoCard {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .portfolio__outroProjetoCard-container1,
+    .portfolio__outroProjetoCard-container2 {
+        flex-direction: column;
+        margin-bottom: 4em;
+    }
+
+    .portfolio__outroProjetoCard-container1_texto,
+    .portfolio__outroProjetoCard-container2_texto {
+        max-width: 100%;
+    }
+
+    .portfolio__outroProjetoCard-container1_video,
+    .portfolio__outroProjetoCard-container2_video {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .portfolio__outroProjetoCard-container1_texto h2,
+    .portfolio__outroProjetoCard-container2_texto h2 {
+        font-size: 1.5em;
+    }
+
+    .portfolio__outroProjetoCard-container1_texto p,
+    .portfolio__outroProjetoCard-container2_texto p {
+        font-size: 1em;
+    }
+}

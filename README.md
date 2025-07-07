@@ -1,0 +1,22 @@
+# 📋 To do
+
+- [x] internacionalização
+- [x] responsividade (por enquanto só do header/navbar)
+- [x] terminar estilo do MenuNavbar
+- [x] adicionar os botões de trocar o idioma no MenuNavbar
+- [x] padronizar cores/fontes no index.css em variáveis
+- [x] revisar o index.css e App.css pra ver o que dá pra aproveitar e o que vai tirar
+- [x] corrigir animação do menu lateral
+- [x] lembrar de verificar responsividade para telas maiores
+- [ ] verificar console do navegador
+- [x] conferir como usar as variáveis de cores direto nos componentes (ex: BotaoIdioma)
+- [ ] lembrar de verificar aquela bolinha que tem no header
+- [x] pegar a fonte certa para os títulos das seções
+- [x] responsividade da seção sobre
+- [x] animações da seção sobre
+- [x] conferir o bugzinho da cor da navbar (parece que tem alguma estilo se sobrepondo em algum lugar)
+- [x] conferir algumas cores (não era pra estar tão parecido com a cor da navbar)
+- [x] ideia: transformar as animações em componentes? pq querendo ou não tá repetindo bastante algumas, tipo o fade in pra cima
+- [x] conferir a animação do texto do sobre caso adicione mais alguma coisa lá (dar um jeito de aplicar o overflow certinho)
+- [ ] animações para a parte de qualificações?
+- [x] footer: por enquanto tá comentado, mas precisa ver se vai colocar algo assim ou se só adiciona algo na seção de contato

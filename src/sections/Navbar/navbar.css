@@ -1,0 +1,62 @@
+.portfolio__navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5em;
+    padding: 0.5em 6em;
+    background-color: var(--navbar-bg);
+    z-index: 100;
+}
+
+.navbar-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-no-shadow {
+    box-shadow: none;
+}
+
+.portfolio__navbar-content {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio__navbar-content_links {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio__navbar-content_menuLateral {
+    display: none;
+}
+
+@media screen and (max-width: 975px) {
+    .portfolio__navbar {
+        padding: 0.5em 3em;
+    }
+    
+    .portfolio__navbar-content_links {
+        display: none;
+    }
+
+    .portfolio__navbar-content_menuLateral {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .portfolio__navbar {
+        padding: 0.5em 2em;
+    }
+    
+    .portfolio__navbar-content_botaoIdioma {
+        display: none;
+    }
+}

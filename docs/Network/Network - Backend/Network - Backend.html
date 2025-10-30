@@ -1,0 +1,6274 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/favicon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script
+			src="/static/docs_load.js" >
+		</script>
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js" >
+		</script>
+		<script
+			src="https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.min.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/docs.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Graphics Programming
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Vulkan/Vulkan.html" >
+                                Vulkan
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Render Engineering/Render Engineering.html" >
+                                Render Engineering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Graphics and Shaders/Graphics and Shaders.html" >
+                                Graphics and Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GLSL/GLSL.html" >
+                                GLSL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GPU/GPU.html" >
+                                GPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/OpenGL/OpenGL.html" >
+                                OpenGL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - DOD e COP/Design - DOD e COP.html" >
+                                Design - DOD e COP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - ECS/Design - ECS.html" >
+                                Design - ECS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Design Patterns/Design - Design Patterns.html" >
+                                Design - Design Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Architecture Patterns.html" >
+                                Design - Architecture Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Concepts and Terminology.html" >
+                                Design - Concepts and Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
+                                Design - Rules of thumb - Laws - Guidelines and Principles
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Paradigms.html" >
+                                Design - Paradigms
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
+                                Design - Production Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Network
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/docs/Network/Network - Backend/Network - Backend.html" >
+                                Network - Backend
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Low Level e Etc/Network - Low Level e Etc.html" >
+                                Network - Low Level e Etc
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Netcode/Network - Netcode.html" >
+                                Network - Netcode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - HTTP/Network - HTTP.html" >
+                                Network - HTTP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Encryption.html" >
+                                Encryption
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/SSH.html" >
+                                SSH
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Things
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking.html" >
+                                Build Systems - Compilation - Linking
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/CPU/CPU.html" >
+                                CPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Setup/NeoVim - Setup.html" >
+                                NeoVim - Setup
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Uso/NeoVim - Uso.html" >
+                                NeoVim - Uso
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/VSCode - VSCodium.html" >
+                                VSCode - VSCodium
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/Visual Studio/Visual Studio.html" >
+                                Visual Studio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Debuggers.html" >
+                                Debuggers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Dependencies.html" >
+                                Dependencies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Git/Git.html" >
+                                Git
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Handmade Hero/Handmade Hero.html" >
+                                Handmade Hero
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Linux/Linux.html" >
+                                Linux
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Memory/Memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Multithreading/Multithreading.html" >
+                                Multithreading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/RegEx.html" >
+                                RegEx
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Shells/Shells.html" >
+                                Shells
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Terminal/Terminal.html" >
+                                Terminal
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Programming Languages
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Assembly - ASM.html" >
+                                Assembly - ASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C++/C++.html" >
+                                C++
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C.html" >
+                                C
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/CSharp/CSharp.html" >
+                                CSharp
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Go.html" >
+                                Go
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Haxe.html" >
+                                Haxe
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/JAI.html" >
+                                JAI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Java.html" >
+                                Java
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Kotlin.html" >
+                                Kotlin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Lua.html" >
+                                Lua
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Nim/Nim.html" >
+                                Nim
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Odin/Odin.html" >
+                                Odin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Python.html" >
+                                Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Rust/Rust.html" >
+                                Rust
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Swift/Swift.html" >
+                                Swift
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Zig/Zig.html" >
+                                Zig
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        WebDev
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebDev/WebDev.html" >
+                                WebDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML/HTML.html" >
+                                HTML
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTMX.html" >
+                                HTMX
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebAssembly - WASM/WebAssembly - WASM.html" >
+                                WebAssembly - WASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/CSS/CSS.html" >
+                                CSS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript/JavaScript.html" >
+                                JavaScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/TypeScript.html" >
+                                TypeScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Frameworks and Libraries/JavaScript - Frameworks and Libraries.html" >
+                                JavaScript - Frameworks and Libraries
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Runtime Environments.html" >
+                                JavaScript - Runtime Environments
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Hugo/Hugo.html" >
+                                Hugo
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Static Site Generators.html" >
+                                Static Site Generators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML - Tests/HTML - Tests.html" >
+                                HTML - Tests
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Databases
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - MongoDB.html" >
+                                Databases - MongoDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - SQL - Relational/Databases - SQL - Relational.html" >
+                                Databases - SQL - Relational
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Document Oriented.html" >
+                                Databases - Document Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Object Oriented.html" >
+                                Databases - Object Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - ORMs.html" >
+                                Databases - ORMs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Electronics
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Sources and Studies.html" >
+                                Electronics - Sources and Studies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Projects and Tutorials.html" >
+                                Electronics - Projects and Tutorials
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Arduino.html" >
+                                Arduino
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<header
+				id="central-header" >
+				<nav
+					id="dropdown-menu" >
+					<select
+						onchange="if (this.value) window.location.href=this.value" >
+						<option
+							value="/" 
+>
+                            🏡 Home
+						</option>
+						<option
+							value="/docs/_index.html" 
+							selected="">
+                            📖 Docs
+						</option>
+					</select>
+				</nav>
+				<button
+					class="btn" 
+					id="button-color-theme" >
+					<i>
+                        ☀️ / 🌑
+					</i>
+				</button>
+			</header>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Network - Backend
+						</h1>
+						<p>
+							<time
+								datetime="2024-10-19" >
+                                🕒 Created: 2024-10-19
+							</time>
+							<time
+								datetime="2025-10-29" >
+                                | Updated: 2025-10-29
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+        <img src="assets/network_-_backend_servers.excalidraw" width="561" alt="<excalidraw_not_loaded>" >
+
+	</li>
+</ul>
+<h2
+	id="network-architecture" >
+    Network Architecture
+</h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=jmHQa5P7hC8" 
+				class="external-link" 
+				target="_blank" >
+                Types of Multiplayer
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    WebServer instead of a DedicatedServer, for simple things.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Example: pinball game with scoreboard.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Ghost Data instead of Concurrent Multiplayer.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Ghost Data refers to just a REPLAY of a different player, requiring only 1 network transfer at the start of the level, instead of being real-time.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Supposedly widely used in racing games and mobile games.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Example: penguin game.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Tips to make lag less frustrating:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Players can walk through other players.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    In case of lag, there will be no collision problems.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            It doesn’t matter who kills the enemy, everyone gets credit, no need to fight over loot.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;Basically single-player++&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=1faaOrtHJ-A" 
+				class="external-link" 
+				target="_blank" >
+                Interview with Pat Wyatt
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Very good video.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Talks about random network things, with little focus on Netcode.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Overall, it's basically an interview with someone who works on networking and the challenges in each game.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Worth watching from start to finish.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Warcraft (1994):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses Lockstep, since the game is an RTS.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's said that the code was not clean; it’s a mess.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Diablo (1997):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The game was made with a different network architecture in mind, so it was messy initially.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Determinism is required for lockstep.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The game was written in Haste.
+						</p>
+					</li>
+					<li>
+						<p>
+                            P2P Lockstep, Client Authority was implemented.
+						</p>
+					</li>
+					<li>
+						<p>
+                            {16:25}
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    &quot;Does the client immediately see something happening, or wait for server confirmation?&quot;
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Answer: &quot;You kill on your screen and inform the Level Master that the creature died, very loose. Easy to cheat.&quot;
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Very insecure. Client-authority.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            &quot;Don't do a game like this. People will cheat&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Starcraft (1998):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Same as previous games.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Guild Wars (2005):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            {19:42} File serving:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    &quot;Downloads the game while playing.&quot;
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Everything is cached on the drive.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Each file has an ID and version.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;delta compress the difference between the file a person has and a file a person should have&quot;.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    TCP.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            {36:00}
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Everything uses TCP throughout the game.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The host for the game is chosen.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Server separation:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            &quot;Component isolation split it into several servers.&quot;
+										</p>
+									</li>
+									<li>
+										<p>
+                                            &quot;Even if the servers run on the same machine, it's better to have separate servers for organization and crash understanding.&quot;
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Bottlenecks are discussed, so splitting into smaller servers allows horizontal scaling by adding more machines instead of upgrading the same one.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Also provides uptime protection: if one machine fails, others keep the connection active.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Protobuf is praised.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The game rarely needed downtime for updates.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Discusses TCP vs UDP extensively.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            UDP is good for FirstPersonShooters.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            TCP can be problematic with errors, mobile connections, etc.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    &quot;The server is authoritative for important things like position and which items players have, but clients...&quot;
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Tips:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            &quot;Always code assuming 1-minute RTT (ping) to consider failure cases.&quot;
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="authority" >
+    Authority
+</h3>
+<ul>
+	<li>
+		<p>
+            It's a dilemma between synchronizing actions or synchronizing the consequences of actions.
+		</p>
+	</li>
+</ul>
+<h5
+	id="server-authority" >
+    Server-Authority
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;The only 'authority' the client has is regarding its inputs, which are sent to the server, which 'notifies' the other clients.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;You want the client to have as little 'authority' as possible, so the server is the source of truth.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            Inputs are done on the Client and passed to the Server, and ONLY the Server can move Entities and world objects.
+		</p>
+	</li>
+	<li>
+		<p>
+            The Client player is just an amoeba copying the Server's movements and properties, with no agency.
+		</p>
+	</li>
+	<li>
+		<p>
+            The Server has access to all &quot;processes,&quot; while peers only have access to Inputs.
+		</p>
+	</li>
+	<li>
+		<p>
+            Synchronizing everything can be cumbersome and may cause unresponsiveness during lag.
+		</p>
+	</li>
+	<li>
+		<p>
+            Lag compensation is often necessary.
+		</p>
+	</li>
+	<li>
+		<p>
+            Safer against cheating.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://chatgpt.com/share/672cdda8-8bf4-800d-9cb3-3e2cd0c80cdd" 
+						class="external-link" 
+						target="_blank" >
+                        Types of Cheating in this case
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://youtu.be/V4a_J38XdHk?si=HRqNxWAwxbalv_9N&t=1555" 
+				class="external-link" 
+				target="_blank" >
+                Demonstration of this method ~{26:00 -&gt; end}
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="client-authority" >
+    Client-Authority
+</h5>
+<ul>
+	<li>
+		<p>
+            The Client really PLAYS on the Client, while using RPCs to make other Clients' entities execute the same actions.
+		</p>
+	</li>
+</ul>
+<h3
+	id="peer-to-peer-p2p" >
+    Peer-to-Peer (P2P)
+</h3>
+<ul>
+	<li>
+		<p>
+            Clients communicate directly with each other, without a central server making decisions.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Host-migration
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When the host disconnects, another host is chosen from the remaining peers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used in Halo, causing 'black screens' while waiting for the new host, and potential inconsistencies.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Iryq1WA3bzw" 
+				class="external-link" 
+				target="_blank" >
+                Hybrid 'P2P-Dedicated Server' in Destiny 1
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Mainly discusses why P2P was chosen to ensure a 'responsive singleplayer experience' with better connectivity via ping-based matchmaking.
+				</p>
+			</li>
+			<li>
+				<p>
+                    To compensate for P2P Host Migration issues, some crucial game states are saved on the Dedicated Server.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20241108085104.png" width="500" >
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Hosts act as 'physics host,' simulating behavior, while critical mission progression is handled via the cloud.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Different 'host bubbles' can interact in the same activity, each with its own physics simulation, but mission progression remains the same.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Security issues of P2P are not discussed.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Exploit bugs are shown where raid bosses die in 1 hit because the host unplugged the LAN cable.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;We do allow a certain amount of exploit to happen in an individual console. We rely on other metrics to monitor and ban the player, retroactively.&quot;
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    &quot;the host uses 44mb of data when they're running.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="dedicated-server" >
+    Dedicated Server
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>if OS.has_feature('dedicated_server'):</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>if DisplayServer.get_name() == "headless":</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>if "--server" in OS.get_cmdline_user_args():</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>game.exe --server --headless</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/latest/tutorials/export/exporting_for_dedicated_servers.html" 
+				class="external-link" 
+				target="_blank" >
+                Exporting to a dedicated server
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The 'headless' version of the game should be lightweight, as it doesn’t need most scenes or visual elements, running in the terminal.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=jgJuX04cq7k" 
+				class="external-link" 
+				target="_blank" >
+                Server creation, with upload to Amazon EC2
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Amazon EC2 (Elastic Compute Cloud) is a cloud computing service by AWS, allowing users to rent virtual machines to run applications, websites, databases, and other services. With EC2, you can quickly launch and configure virtual servers, adjusting computing capacity to project needs, and pay only for the resources you use.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Client on Windows, Server on Linux, much cheaper.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;Serverless&quot;:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Only works when someone is playing.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="bottlenecks" >
+    Bottlenecks
+</h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Xua4QXd2C_s" 
+				class="external-link" 
+				target="_blank" >
+                Concurrent Users Connected (CCU) vs Requests Per Second (RPS); Considerations for world segmentation by Regions and Players per Region
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Sometimes it’s better to increase the number of available servers; other times, it’s better to improve the existing server hardware.&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    Very good video.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Sharding
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Split players into different servers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Zoning
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Map areas distributed across different servers.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="godot-high-level-multiplayer" >
+    Godot High-level Multiplayer
+</h2>
+<h5
+	id="explanations" >
+    Explanations
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html" 
+				class="external-link" 
+				target="_blank" >
+                High-level Multiplayer
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://godotengine.org/article/multiplayer-in-godot-4-0-scene-replication/" 
+				class="external-link" 
+				target="_blank" >
+                Using MultiplayerSpawner and MultiplayerSynchronizer
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot's high-level multiplayer API only uses UDP, so you must forward the port in UDP and TCP.
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot's high-level multiplayer API uses a modified ENet version.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=e0JLO_5UgQo" 
+				class="external-link" 
+				target="_blank" >
+                Multiplayer with ENetMultiplayerPeer, RTC Calls, and Multiplayer Synchronizer
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    {50:00 -&gt; 1:00:30}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Using Multiplayer Synchronizer with Interpolation to optimize packet sending.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {1:00:30 -&gt; 1:15:20}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Explanation for making a launcher just &quot;server&quot; and a poor explanation of creating a dedicated server.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>game.exe --server --headless</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="limitations-of-godots-enet-implementation" >
+    Limitations of Godot's ENet Implementation
+</h5>
+<ul>
+	<li>
+		<p>
+            Although ENet is an excellent low-level multiplayer networking library, Godot implements 
+			<em>
+                ENetMultiplayerPeer
+			</em>
+            &nbsp;in a simplified way, which may not be the best choice for large-scale games like 
+			<strong>
+                MMOs
+			</strong>
+            &nbsp;due to lack of flexibility in network control, scalability, and customization.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Lack of clustering and load distribution support
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ENetMultiplayerPeer does not have built-in resources for load balancing between servers or for dynamic player partitioning.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Network systems for MMOs usually use a distributed network structure so high-density player areas don’t overload a single server. This is not natively supported in ENet.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Persistence and Global State
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    MMOs generally require maintaining a persistent global state (world information, inventory, player progression, etc.). While ENet provides reliable and ordered communication, it doesn’t handle persistence or state replication.
+				</p>
+			</li>
+			<li>
+				<p>
+                    For MMOs, it is common to use a network structure that interacts with databases and robust caching systems. Custom solutions for this kind of persistence are not native to ENet.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Security and Moderation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ENet offers little native security against common attacks on MMO servers, such as DDoS or packet manipulation. Protocols developed for MMOs typically implement robust authentication, encryption, and attack mitigation mechanisms, often with additional support for cheat detection.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="high-level-api" >
+    High-level API
+</h3>
+<h5
+	id="multiplayerapi" >
+    MultiplayerAPI
+</h5>
+<ul>
+	<li>
+		<p>
+            Abstract implementation. Cannot be instantiated.
+		</p>
+	</li>
+</ul>
+<h5
+	id="scenemultiplayer" >
+    SceneMultiplayer
+</h5>
+<ul>
+	<li>
+		<p>
+            Concrete implementation of MultiplayerAPI, can be instantiated.
+		</p>
+	</li>
+</ul>
+<h5
+	id="multiplayerapiextended" >
+    MultiplayerAPIExtended
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>get_tree().set_multiplayer(MultiplayerExtended.new())</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The pathing is not passed, since I want to override the default multiplayer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    By doing this, 
+                    <code>multiplayer == _game_server == get_tree().get_multiplayer()</code>
+                    &nbsp;for ANY node in the game.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This is valid even for nodes that spawned later.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    This can be done in 
+                    <code>_enter_tree()</code>
+                    , 
+                    <code>_ready()</code>
+                    , or elsewhere, but prefer 
+                    <code>_enter_tree()</code>
+                    , since the earlier the better.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Using MultiplayerAPIExtension causes 
+            <code>multiplayer.get_remote_sender_id()</code>
+            &nbsp;to not work.
+		</p>
+	</li>
+</ul>
+<h3
+	id="synchronization" >
+    Synchronization
+</h3>
+<h5
+	id="authority" >
+    Authority
+</h5>
+<ul>
+	<li>
+		<p>
+            Authority cannot be set in 
+            <code>_ready()</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="multiplayersynchronizer" >
+    MultiplayerSynchronizer
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Serialization
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Also serializes automatically&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Synchronization of spawned objects
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If MpSync misses the first sync rotation in the scene, it will not receive further signals.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Changing visibility to PubliclyVisible outside of 
+                    <code>_ready()</code>
+                    &nbsp;does nothing, you must use 
+                    <code>set_visibility(peer_id)</code>
+                    &nbsp;or a visibility_filter to apply visibility changes.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="multiplayerspawner" >
+    MultiplayerSpawner
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Synchronization of spawned objects
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Spawned objects will copy everything defined between 
+                    <code>.instantiate()</code>
+                    &nbsp;and 
+                    <code>add_child()</code>
+                    . After 
+                    <code>add_child()</code>
+                    , no more copying occurs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If a client logs into the server after something has been spawned by MpSpawner, the new client will also get these spawns, even if they were not present at the time of the spawn on the Server.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Only use 
+                    <code>_death.rpc()</code>
+                    &nbsp;if you are not using MpSpawner, since MpSpawner WANTS to despawn all instances of the instantiated scene.
+				</p>
+			</li>
+			<li>
+				<p>
+                    [2024/11/11] Dynamic spawns do not work well with my CustomMpSync script.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="rpc-remote-procedure-calls" >
+    RPC (Remote Procedure Calls)
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;request / fetch -&gt; receive / retrieve.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            Functions callable on other peers.
+		</p>
+	</li>
+	<li>
+		<p>
+            RPC or MultiplayerSynchronizer for inputs?
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Via MultiplayerSynchronizer:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>input_jump = Input.get_action_strength(&'jump')</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Serialization
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;If I pass a parameter to an RPC call, is it automatically serialized before sending it to the other peers?&quot;
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Serialization and deserialization is automatic.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Cannot send
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Objects.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Includes Nodes and Resources.
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://youtu.be/bLs4w4qVU5E?si=5eGneqUdv12ASdGl&t=266" 
+										class="external-link" 
+										target="_blank" >
+                                        Demonstration of what 'not serialize' looks like
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;Is there a reason for RPC calls to not serialize objects (nodes and resources)? Seems to be a way to serialize the object, so I wonder why it isn't used for RPC calls.&quot;
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Objects in Godot have been designed with the ability to contain their own scripts if needed.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Which unfortunately means that if an RPC could carry an object, it could also carry a custom malicious script that would run 
+                                            <code>_init</code>
+                                            &nbsp;automatically on the other PC and basically turn Godot into a trojan.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Also, if you try to send an object, it will convert it to an object ID, which is meaningless on the other PC.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Callables.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Other peers only receive 
+							<em>
+                                null
+							</em>
+                            &nbsp;in place of the Callable.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Errors
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When calling an RPC on the Server, but the Client does not have the node:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The Server has node authority; i.e., authority was not changed.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Quirks
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Same Node Path:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            For a remote call to be successful, the sending and receiving node need to have the same 
+                            <code>NodePath</code>
+                            , which means they must have the same name.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If an RPC resides in a script attached to 
+                                    <code>/root/Main/Node1</code>
+                                    , then it must reside in precisely the same path and node on both the client script and the server script.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            When using 
+                            <code>add_child()</code>
+                            &nbsp;for nodes expected to use RPCs, set the argument 
+                            <code>force_readable_name</code>
+                            &nbsp;to 
+                            <code>true</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Declaration on Server and Client for dedicated servers:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If a function is annotated with 
+                            <code>@rpc</code>
+                            &nbsp;on the client script (resp. server script), then this function must also be declared on the server script (resp. client script). Both RPCs must have the same signature which is evaluated with a checksum of 
+							<em>
+                                all RPCs
+							</em>
+                            . All RPCs in a script are checked at once, and all RPCs must be declared on both client and server scripts, 
+							<em>
+                                even functions that are currently not in use
+							</em>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Points ok
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Calling the RPC in the case of a Dedicated Server can be done with either 
+                    <code>callable.rpc_id(peer_id)</code>
+                    &nbsp;or 
+                    <code>rpc_id(peer_id, &'callable_name')</code>
+                    . The first option is better and safer as it does not involve strings.
+				</p>
+			</li>
+			<li>
+				<p>
+                    (I think this is false) Function arguments can be different.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Function arguments are not checked for matching between server and client code (example: 
+                            <code>func sendstuff():</code>
+                            &nbsp;and 
+                            <code>func sendstuff(arg1, arg2):</code>
+                            &nbsp;
+							<em>
+                                will pass
+							</em>
+                            &nbsp;signature matching).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Peer id
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;The one calling the function is peer 0 and ALWAYS exists, otherwise they could not call the function to begin with. Peer ids are dependent on the perspective of the client.&nbsp;&nbsp;If you have client A and client B connected to each other. Client A will see client B as peer 1 and vice versa. And each of those will see themselves as peer 0.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="others" >
+    Others
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=TwVT3Qx9xEM" 
+				class="external-link" 
+				target="_blank" >
+                Synchronizing the game clock
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The method used to calculate latency is unnecessary, as ENetMultiplayerPeer already provides these statistics.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="ensuring-connection" >
+    Ensuring Connection
+</h5>
+<ul>
+	<li>
+		<p>
+            Port-forwarding
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If you're hosting a server on your own machine and want non-LAN clients to connect to it, you'll probably have to forward the server port on your router. This is required to make your server reachable from the Internet since most residential connections use NAT.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://icanhazip.com/" 
+						class="external-link" 
+						target="_blank" >
+                        My Public IP
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Android
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When exporting to Android, make sure to enable the 
+                    <code>INTERNET</code>
+                    &nbsp;permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="channels" >
+    Channels
+</h5>
+<ul>
+	<li>
+		<p>
+            For example, game chat messages and some core gameplay messages should all be sent reliably, but a gameplay message should not wait for a chat message to be acknowledged. This can be achieved by using different channels.
+		</p>
+	</li>
+	<li>
+		<p>
+            Modern networking protocols support channels, which are separate streams within the connection. This allows for multiple packet streams that do not interfere with each other.
+		</p>
+	</li>
+</ul>
+<h2
+	id="security-and-authentication" >
+    Security and Authentication
+</h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://godotsteam.com/" 
+				class="external-link" 
+				target="_blank" >
+                GodotSteam
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <a href="Android - Exportação e Google Play Services.html">
+            Android - Export and Google Play Services
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="hash-tables" >
+    Hash Tables
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=KyUTuwz_b7Q" 
+				class="external-link" 
+				target="_blank" >
+                Explanation of Hash Tables
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;The memory location where the value will go (index) is determined by the value of the object itself.&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    Great video.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Conflict resolution
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Best case (no collisions):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            $O(1)$.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    'Open addressing' techniques:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Linear Probing.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Worst case:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            $O(n)$.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Quadratic Probing.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Worst case:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            $O(?)$.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    'Closed addressing' techniques:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Linked List (Chained List).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="token-authentication" >
+    Token Authentication
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                My interpretation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The Token is the access key for the connection between the Client and the GameServer. The Client verifies its credentials with the GatewayServer -&gt; AuthenticationServer just to obtain a Token that will be accepted by the GameServer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Upon successful authentication, the Client and the GameServer receive the same Token, so the connection can only be established between the two if there is a match.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This extra security layer is for the case the Client tries to connect to the GameServer without confirming its credential.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Supposedly this could happen if the Client manages to call the connection functions to the GameServer via &quot;recompile&quot; of the code, who knows.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Allows players to stay connected without sending their credentials (username and password) for every action in the game.
+		</p>
+	</li>
+	<li>
+		<p>
+            Login flow:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The player logs in with credentials. The server validates the information.
+				</p>
+			</li>
+			<li>
+				<p>
+                    After successful verification, the server issues a token (like a JWT - JSON Web Token), representing the player's identity and some permissions.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This token is sent to the client (the player's device) and temporarily stored (in memory or local storage).
+				</p>
+			</li>
+			<li>
+				<p>
+                    For each interaction with the server (requesting game progress, buying items, etc.), the client sends the token instead of the credentials.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Advantages:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Session and Logout Control:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Token expiration also allows stricter session control. If the player disconnects from a session or changes devices, an expired token can prevent the player from being considered &quot;logged in&quot; in multiple locations simultaneously, which can cause conflicts in online games.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This allows developers to &quot;end&quot; an active session in case of suspicious activity or in response to a player logout request.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Duration:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In games, tokens commonly last between 1 to 12 hours, allowing the player to have a continuous session without needing to re-login. This provides security without compromising user experience.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Alternatives to Token Authentication:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Login Session with Cookies:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Common in websites and some web apps, where the server stores each user's session and identifies them via cookies.
+						</p>
+					</li>
+					<li>
+						<p>
+                            In online games, especially MMOs, maintaining sessions at scale can be complicated and resource-intensive, making it less scalable than token authentication.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Constant Credential Resending:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The client would send credentials (username and password) for each new request.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This exposes credentials to more interception attacks and is insecure, especially on unstable networks. Each new request represents a risk of credential capture, increasing system vulnerability.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Certificate-based Authentication:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            In some critical applications, digital certificates are used for mutual authentication, where both the client and server have private keys.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It is secure, but very complex to implement in games and difficult to manage for each player, especially in amateur or smaller-scale games.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=YOmMWP_8r9A" 
+				class="external-link" 
+				target="_blank" >
+                Token creation and verification
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Random number -&gt; convert to String with sha256 -&gt; unix_time as String -&gt; concatenate the two strings (just put one in front of the other).
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The 'unix_time' is based on the user's computer date, which may be questionable.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {~13:50}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Token verification process, via comparing the current time and the clock concatenated at the end of the Token; if greater than 30 (seconds), the Token is removed from the &quot;expected Tokens&quot; list.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Once the Token is used to login, it is removed from the 'expected Tokens' list.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="authentication-server" >
+    Authentication Server
+</h5>
+<ul>
+	<li>
+		<p>
+            In GameDev:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Defined in a separate project.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Responsible for verifying credentials and issuing tokens. In games, it acts as the &quot;security gatekeeper.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            Login process (without the Gateway):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The player opens the game and sends credentials to the authentication server.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The server checks the password hash and salt in the database to confirm the player's identity.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If everything is correct, the authentication server generates a token and returns it to the client.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This token is used in subsequent client communications with the game server.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="gateway" >
+    Gateway
+</h5>
+<ul>
+	<li>
+		<p>
+            In GameDev:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Defined in a separate project.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Acts as an intermediary between the client (player's device) and the game servers. It acts as a &quot;gate,&quot; facilitating communication and protecting main servers from direct access, while providing centralized traffic and security control.
+		</p>
+	</li>
+	<li>
+		<p>
+            Purposes
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Security against attacks:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The gateway is the first point of contact for all client requests. This allows it to filter suspicious or malicious traffic before it reaches main game servers.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It can block common attacks like DDoS (many requests sent to overload the system) and code injection attacks (hackers inserting malicious code).
+						</p>
+					</li>
+					<li>
+						<p>
+                            In some systems, it also checks authentication tokens, ensuring only authenticated players access game features.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Authentication Server Security:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The gateway works with the authentication server: it receives initial login requests and forwards them to the authentication server. Once the player is authenticated, the gateway can redirect the request to the correct game server.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This adds an extra protection layer since the authentication server is never directly exposed to clients.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Encryption:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The gateway is responsible for implementing and managing connection encryption. It ensures all communication between client and servers is secure, using protocols like HTTPS or TLS (Transport Layer Security).
+						</p>
+					</li>
+					<li>
+						<p>
+                            This means that even if an attacker intercepts the communication, they cannot read the data due to encryption.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Load Balancing
+				</p>
+				<ul>
+					<li>
+						<p>
+                            As online games attract many players simultaneously, the gateway can act as a load balancer, distributing requests across servers evenly, avoiding overload.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The gateway ensures all player connections flow smoothly and the system continues to work even under heavy load.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Monitoring:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            As the gateway receives all player requests, it serves as a central point to monitor and log traffic. Useful for developers to analyze usage patterns, detect errors, and suspicious activity.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It also allows the security team to quickly identify unusual behaviors, like login spikes or unusual activity, and take preventive measures.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Login process:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The player opens the game and enters credentials.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The client (game app) sends the login request to the gateway.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The gateway redirects the request to the authentication server, which verifies credentials.
+				</p>
+			</li>
+			<li>
+				<p>
+                    After authentication, the server issues a token and the gateway sends it back to the client.
+				</p>
+			</li>
+			<li>
+				<p>
+                    With the token, the client sends a new request (e.g., to start a match) to the gateway.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The gateway verifies the token and, if valid, redirects the request to the correct game server.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Initially, a Gateway may not be necessary. For a small MMO, you can manage traffic directly with the game server and authentication server. If the game grows and requires multiple servers, the gateway becomes very useful for load balancing and security.&quot;
+		</p>
+	</li>
+</ul>
+<h5
+	id="local-network" >
+    Local Network
+</h5>
+<ul>
+	<li>
+		<p>
+            Yes, you can connect the 
+			<em>
+                GameServer
+			</em>
+            , 
+			<em>
+                GatewayServer
+			</em>
+            , and 
+			<em>
+                AuthenticationServer
+			</em>
+            &nbsp;all on the same local network, and this is common practice for MMOs and other online games requiring fast and secure communication between different server components. This setup benefits from reduced latency, security, and simplicity.
+		</p>
+	</li>
+	<li>
+		<p>
+            Recommended to do so. There are significant advantages to managing everything within the same internal network. It's safer.
+		</p>
+	</li>
+	<li>
+		<p>
+            Complications:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Local Network Bottleneck
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Depending on the number of players, traffic may overload the local network. Ensure the infrastructure (routers and switches) supports the required load.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Single Point of Failure Dependency
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            With all servers on the same network, a failure in the local network infrastructure can affect all of them. Redundancy for the network and backups for each server can mitigate this.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Keeping 
+			<em>
+                GameServer
+			</em>
+            , 
+			<em>
+                GatewayServer
+			</em>
+            , and 
+			<em>
+                AuthenticationServer
+			</em>
+            &nbsp;on a single machine can be viable, especially considering an initial number of 10 players.
+		</p>
+	</li>
+</ul>
+<h3
+	id="tls-transport-layer-security-ssl-secure-sockets-layer-and-dtls" >
+    TLS (Transport Layer Security), SSL (Secure Sockets Layer) and DTLS
+</h3>
+<h5
+	id="tls" >
+    TLS
+</h5>
+<ul>
+	<li>
+		<p>
+            SSL is a security protocol designed to ensure secure communication on the internet, mainly between browsers and servers.
+		</p>
+	</li>
+	<li>
+		<p>
+            It creates an encrypted connection that protects transmitted data, preventing third parties from intercepting or altering the information.
+		</p>
+	</li>
+	<li>
+		<p>
+            When you access a website using SSL (indicated by &quot;https://&quot; in the URL), the server presents an SSL certificate issued by a trusted certificate authority (such as VeriSign, DigiCert). The browser verifies the validity of this certificate before establishing the connection.
+		</p>
+	</li>
+	<li>
+		<p>
+            In addition to encrypting and authenticating, SSL also ensures that data has not been altered or corrupted during transit. It uses functions called hashes to verify data integrity.
+		</p>
+	</li>
+	<li>
+		<p>
+            A website using SSL displays a padlock in the browser and uses &quot;https://&quot; instead of &quot;http://&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Characteristics
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    TLS uses TCP:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            TCP is a connection-oriented protocol, ensuring the order and delivery of all packets. If a packet is lost, TCP automatically attempts to retransmit it and puts the packets in the correct order for the application.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="tls-vs-ssl" >
+    TLS vs SSL
+</h5>
+<ul>
+	<li>
+		<p>
+            The most current and secure version of the protocol is TLS, which is an evolution of SSL and provides greater security and efficiency.
+		</p>
+	</li>
+	<li>
+		<p>
+            Nowadays, most secure communications on the internet use TLS, but the term &quot;SSL&quot; continues to be used as a general reference.
+		</p>
+	</li>
+</ul>
+<h5
+	id="dtls-datagram-transport-layer-security" >
+    DTLS (Datagram Transport Layer Security)
+</h5>
+<ul>
+	<li>
+		<p>
+            It is a version of the TLS (Transport Layer Security) protocol, but for UDP (User Datagram Protocol).
+		</p>
+	</li>
+	<li>
+		<p>
+            It is mainly used in network applications that require secure communication, but where speed and low latency are priorities, such as voice and video calls, 
+			<em>
+                online games
+			</em>
+            , and streaming.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Main Features of DTLS
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Low-latency security
+					</strong>
+                    : DTLS allows fast and secure communication without the delivery and ordering guarantees of TCP, which is essential for real-time applications.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Connection independence
+					</strong>
+                    : Since UDP does not establish a formal &quot;connection,&quot; DTLS must also handle sessions securely even without the guaranteed connection steps of TCP.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Optional retransmission support
+					</strong>
+                    : DTLS tries to retransmit important data (such as parts of the initial handshake) if packet loss compromises the authentication process, but this retransmission is limited since UDP's priority is to minimize latency.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://youtu.be/gcopx40pwvY?si=1PLKjRMHXfCBkgae&t=316" 
+				class="external-link" 
+				target="_blank" >
+                Generating an X509 Certificate for the DTLS Security Protocol in Godot
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A .crt file (certificate) and a .key file (encryption key) are generated.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The certificate is created and used during the Client-to-Server connection process.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Usage in Godot 4 with ENetMultiplayerPeer
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Server:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-swift" data-lang="swift"> const _certificado_x509 : X509Certificate = preload('res://certificados/X509_certificado.crt')
+ const _key : CryptoKey = preload('res://certificados/X509_key.key')
+ 
+ func _criar_servidor_gateway() -&gt; Error:
+&nbsp;&nbsp;&nbsp;&nbsp; var peer := ENetMultiplayerPeer.new()
+&nbsp;&nbsp;&nbsp;&nbsp; var erro : Error = peer.create_server(_PORTA_GATEWAY, _CONEXOES_MAXIMAS)
+&nbsp;&nbsp;&nbsp;&nbsp; if erro:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return erro
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp; peer.get_host().dtls_server_setup(TLSOptions.server(_key, _certificado_x509))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp; get_tree().set_multiplayer(_servidor_gateway, get_path())
+&nbsp;&nbsp;&nbsp;&nbsp; _servidor_gateway.set_multiplayer_peer(peer)
+ 
+&nbsp;&nbsp;&nbsp;&nbsp; return OK
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Client:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-swift" data-lang="swift"> const _certificado_x509 : X509Certificate = preload('res://certificados/X509_certificado.crt')
+ 
+ func entrar_no_servidor_gateway() -&gt; Error:&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; var peer := ENetMultiplayerPeer.new()
+&nbsp;&nbsp;&nbsp;&nbsp; var erro := peer.create_client(_SERVER_IP_DEFAULT, _PORTA_GATEWAY)
+&nbsp;&nbsp;&nbsp;&nbsp; if erro:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return erro
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp; peer.get_host().dtls_client_setup(_SERVER_IP_DEFAULT, TLSOptions.client_unsafe(_certificado_x509))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp; get_tree().set_multiplayer(_servidor_gateway, get_path())
+&nbsp;&nbsp;&nbsp;&nbsp; _servidor_gateway.set_multiplayer_peer(peer)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp; return OK
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Tested and works 100%.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If you use 
+                            <code>TLSOptions.client()</code>
+                            &nbsp;instead of 
+                            <code>TLSOptions.client_unsafe()</code>
+                            , errors occur and the connection is not established, as expected.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the certificate differs between Client and Server, errors occur and the connection is not established, as expected.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="x-509-certificate" >
+    X.509 Certificate
+</h5>
+<ul>
+	<li>
+		<p>
+            An X.509 certificate is a requirement for TLS/SSL protocols.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is a type of digital certificate that follows a widely used standard to authenticate and establish secure connections in communication systems, such as in Public Key Infrastructure (PKI). It is crucial to ensure data security and the authenticity of online identities, especially in protocols like 
+			<em>
+                TLS/SSL
+			</em>
+            , used for secure HTTPS connections.
+		</p>
+	</li>
+	<li>
+		<p>
+            The relationship between X.509 and DTLS lies in the 
+			<strong>
+                USE
+			</strong>
+            &nbsp;of digital certificates (X.509) as part of the authentication and encryption process in secure connections established with DTLS.
+		</p>
+	</li>
+</ul>
+<h5
+	id="-crt-file" >
+    .crt File
+</h5>
+<ul>
+	<li>
+		<p>
+            A .crt file is a type of file that contains a digital certificate, usually in the 
+			<em>
+                X.509
+			</em>
+            &nbsp;format.
+		</p>
+	</li>
+</ul>
+<h3
+	id="oauth-open-authorization" >
+    OAuth (Open Authorization)
+</h3>
+<h5
+	id="oauth-vs-auth0" >
+    OAuth vs Auth0
+</h5>
+<ul>
+	<li>
+		<p>
+            OAuth (Open Authorization) is an authorization protocol that allows you to grant access to protected resources on a server (for example, accessing information from a Google or Facebook account) without sharing your credentials (such as username and password). It is widely used to delegate permissions securely between different systems.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Example: When using Google or Facebook login on a website, OAuth enables this authentication.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Auth0 is an identity-as-a-service platform that provides complete authentication and authorization solutions. It can be used to implement protocols like 
+			<em>
+                OAuth
+			</em>
+            , OpenID Connect, SAML, among others, but Auth0 is 
+			<em>
+                a complete solution
+			</em>
+            &nbsp;that abstracts and simplifies authentication and authorization implementation.
+		</p>
+	</li>
+</ul>
+<h2
+	id="communication-protocols" >
+    Communication Protocols
+</h2>
+<h3
+	id="rpc-remote-procedure-calls" >
+    RPC (Remote Procedure Calls)
+</h3>
+<ul>
+	<li>
+		<p>
+            RPC is a protocol that allows a program to execute functions on another computer or remote server as if it were calling a local function. It abstracts the complexity of network communication, making it appear as though the program is calling an internal function, when in fact the function resides on another system.
+		</p>
+	</li>
+</ul>
+<h5
+	id="grpc-google-rpc" >
+    gRPC (Google RPC)
+</h5>
+<ul>
+	<li>
+		<p>
+            Uses 
+			<strong>
+                Protobuf
+			</strong>
+            &nbsp;(Protocol Buffers) for data serialization and 
+			<strong>
+                HTTP/2
+			</strong>
+            &nbsp;for transport.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Structure
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each gRPC message starts with a 5-byte length field.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The first byte is used to store a flag, while the next 4 bytes represent the total message size.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    HTTP/2 divides communication into frames.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Each frame carries a payload size, and the frames are used to transport the actual message, being reassembled at the destination to reconstruct the original message.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Widely used in distributed systems and microservices.
+		</p>
+	</li>
+</ul>
+<h5
+	id="json-rpc" >
+    JSON-RPC
+</h5>
+<ul>
+	<li>
+		<p>
+            An RPC protocol that uses the JSON format for requests and responses, generally used for web systems.
+		</p>
+	</li>
+</ul>
+<h5
+	id="xml-rpc" >
+    XML-RPC
+</h5>
+<ul>
+	<li>
+		<p>
+            Similar to JSON-RPC but uses XML to structure requests and responses.
+		</p>
+	</li>
+</ul>
+<h3
+	id="http" >
+    HTTP
+</h3>
+<ul>
+	<li>
+		<p>
+            <a href="Network - HTTP.html">
+            Network - HTTP
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="websockets" >
+    WebSockets
+</h3>
+<ul>
+	<li>
+		<p>
+            WebSockets are a communication protocol that allows a 
+			<em>
+                bidirectional
+			</em>
+            , 
+			<em>
+                real-time
+			</em>
+            &nbsp;connection between a client (usually a browser) and a server.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If these two features are not needed, HTTP may be better due to its simplicity.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Unlike HTTP, which is based on a 
+			<em>
+                request/response
+			</em>
+            &nbsp;model (the client makes a request and the server responds), the WebSocket maintains an open and persistent connection between client and server, allowing both to send and receive data at any time.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It is based on signals/events.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            It still uses a 
+			<em>
+                TCP
+			</em>
+            &nbsp;connection, which is good for reliability but not for latency, so it is not ideal for real-time applications like VoIP and fast-paced games.
+		</p>
+	</li>
+</ul>
+<h5
+	id="usage-examples" >
+    Usage Examples
+</h5>
+<ul>
+	<li>
+		<p>
+            Real-time chats.
+		</p>
+	</li>
+	<li>
+		<p>
+            Multiplayer games.
+		</p>
+	</li>
+	<li>
+		<p>
+            Financial trading applications.
+		</p>
+	</li>
+</ul>
+<h5
+	id="address-uri" >
+    Address (URI)
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                <code>ws://</code>
+			</strong>
+            &nbsp;(Unsecured WebSocket):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The standard, unencrypted WebSocket protocol.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used for communication on local networks or when security is not a priority, such as in development environments or internal networks.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Works similarly to 
+                    <code>http://</code>
+                    , without encryption or a security layer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                <code>wss://</code>
+			</strong>
+            &nbsp;(Secure WebSocket):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The secure version of WebSocket, where communication is encrypted using TLS (Transport Layer Security), the same security mechanism used by 
+                    <code>https://</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used when security is important, such as in production environments where sensitive data is transmitted.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ensures that communication is protected against interception and attacks (such as man-in-the-middle attacks).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="explanations" >
+    Explanations
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=fG4dkrlaZAA" 
+				class="external-link" 
+				target="_blank" >
+                WebSockets vs REST (HTTP)
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    WebSockets are discussed only at the end of the video. Most of the video criticizes the HTTP method.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="in-godot" >
+    In Godot
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/networking/websocket.html" 
+				class="external-link" 
+				target="_blank" >
+                WebSockets
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=YrgZaYpfUlM" 
+				class="external-link" 
+				target="_blank" >
+                Using WebSockets to Turn an Android into a Controller
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The example basically follows Godot's documentation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Two different projects are used, one to run the game and another to control the game from Android.
+				</p>
+			</li>
+			<li>
+				<p>
+                    On Android, the App acts as a controller for the game running on the PC.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The Android device uses the accelerometer to control a ship on the PC.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Communication is done via sending and receiving packets, without 
+                    <code>@rpc</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="in-python" >
+    In Python
+</h4>
+<h5
+	id="requirements" >
+    Requirements
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>pip install websockets</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Use of 'asyncio'.
+		</p>
+	</li>
+</ul>
+<h5
+	id="example" >
+    Example
+</h5>
+<pre><code class="language-python" data-lang="python">import asyncio
+import websockets
+
+async def echo(websocket, path):
+&nbsp;&nbsp;&nbsp;&nbsp;async for message in websocket:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"Received message: {message}")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Echo the message back to the client
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await websocket.send(f"Echo: {message}")
+
+start_server = websockets.serve(echo, "0.0.0.0", &lt;port&gt;)
+
+asyncio.get_event_loop().run_until_complete(start_server)
+asyncio.get_event_loop().run_forever()
+
+</code></pre>
+<ul>
+	<li>
+		<p>
+            About asynchrony:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        <code>asyncio</code>
+					</strong>
+                    &nbsp;is Python's standard library for asynchronous programming.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Using asynchronous functions is essential for creating responsive, efficient, and scalable applications, especially in environments where I/O and network communication are common. They allow cleaner, easier-to-maintain code and optimize system resource usage. If you are developing an application involving operations that may take time, using asynchronous functions is a good practice.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="ftp-file-transfer-protocol" >
+    FTP (File Transfer Protocol)
+</h3>
+<ul>
+	<li>
+		<p>
+            Communication protocol used to transfer files between a client and a server over a network.
+		</p>
+	</li>
+	<li>
+		<p>
+            Not secure by default (uses plaintext), but can be combined with SSL/TLS (FTPS) to add security.
+		</p>
+	</li>
+</ul>
+<h2
+	id="communication-protocols-low-level" >
+    Communication Protocols: Low-level
+</h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://protohackers.com/problems" 
+				class="external-link" 
+				target="_blank" >
+                Proto Hackers
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Exercises for server development.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="sockets" >
+    Sockets
+</h5>
+<ul>
+	<li>
+		<p>
+            Each socket = one endpoint of a single connection.
+		</p>
+	</li>
+</ul>
+<h5
+	id="socket-ids-file-descriptors-fd" >
+    Socket IDs (File Descriptors) (fd)
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                File descriptor
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The term file descriptor comes from Unix and Unix-like operating systems, and it’s deeply rooted in how these systems abstract I/O.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In Unix philosophy, &quot;everything is a file&quot;.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Disk files
+						</p>
+					</li>
+					<li>
+						<p>
+                            Pipes
+						</p>
+					</li>
+					<li>
+						<p>
+                            Devices
+						</p>
+					</li>
+					<li>
+						<p>
+                            Sockets
+						</p>
+					</li>
+					<li>
+						<p>
+                            Terminals
+						</p>
+					</li>
+					<li>
+						<p>
+                            Etc.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    So:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            When you open a file → you get a file descriptor.
+						</p>
+					</li>
+					<li>
+						<p>
+                            When you open a socket → you also get a file descriptor.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    They’re both handled through the same I/O API: 
+                    <code>read()</code>
+                    , 
+                    <code>write()</code>
+                    , 
+                    <code>close()</code>
+                    , etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This abstraction is why sockets use file descriptors — they’re just &quot;special files&quot; from the OS’s point of view.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Usage
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The socket ID is used by your program to interact with the OS-managed socket.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The OS routes TCP packets based on the socket's internal connection tuple, not your program directly.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>Local Socket A: 127.0.0.1:6060&nbsp;&nbsp;</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>Local Socket B: 127.0.0.1:50543&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;&nbsp;&nbsp;&nbsp;&nbsp; 127.0.0.1:6061 </code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The OS&nbsp;&nbsp;stores and manages the mapping between:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Socket ID
+						</p>
+					</li>
+					<li>
+						<p>
+                            The internal state of that connection
+						</p>
+					</li>
+					<li>
+						<p>
+                            File/socket types, flags, permissions, etc.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    You can think of the socket ID&nbsp;&nbsp;as an index or key into a kernel-managed table of open resources, much like a hashmap, though it's typically implemented as a simple indexed array inside the OS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            You can safely have one listening socket on 
+            <code>6060</code>
+            &nbsp;and one connected socket to 
+            <code>6061</code>
+            &nbsp;in the same program.
+		</p>
+	</li>
+</ul>
+<h3
+	id="tcp-transmission-control-protocol" >
+    TCP (Transmission Control Protocol)
+</h3>
+<ul>
+	<li>
+		<p>
+            A reliable communication protocol that guarantees the delivery of data packets between two devices.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is part of the 
+			<em>
+                TCP/IP
+			</em>
+            &nbsp;suite and is used by many protocols such as HTTP, HTTPS, FTP, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;TCP ensures packets will always arrive reliably and in order, but latency is generally higher due to error correction. It's also quite a complex protocol because it understands what a &quot;connection&quot; is, and optimizes for goals that often don't suit applications like multiplayer games. Packets are buffered to be sent in larger batches, trading less per-packet overhead for higher latency. This can be useful for things like HTTP, but generally not for games. Some of this can be configured and disabled (e.g. by disabling &quot;Nagle's algorithm&quot; for the TCP connection).&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="protocol" >
+    Protocol
+</h5>
+<ul>
+	<li>
+		<p>
+            SYN -&gt; SYN ACK -&gt; ACK.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20241121112657.png" width="475" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            TCP packets do not contain a reliable sender ID that can be verified directly.
+		</p>
+	</li>
+</ul>
+<h5
+	id="closing-codeclose-code" >
+    Closing (
+    <code>close</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                What it does
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The socket's file descriptor (e.g., 
+                    <code>sockfd</code>
+                    ) is marked as available for reuse.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Decrements the reference count for the socket.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Sockets may have multiple references (e.g., via 
+                            <code>dup()</code>
+                            , 
+                            <code>fork()</code>
+                            , or threading).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Resources are only freed (e.g., memory, kernel structures) when the reference count reaches zero.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    It initiates connection teardown (sends 
+                    <code>FIN</code>
+                    &nbsp;if it’s the last reference).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The integer value representing the descriptor can now be reassigned by future 
+            <code>socket()</code>
+            , 
+            <code>open()</code>
+            , or similar calls.
+		</p>
+	</li>
+	<li>
+		<p>
+            The client cannot close the connection to the server; it's impossible. Reasons:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The client doesn't have the server socket available to it.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The client has no way to reference the server’s socket.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    While TCP connections are bidirectional (peer-to-peer), socket descriptors are local to each process.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The client and server communicate via IP:Port pairs, but their socket file descriptors (
+                            <code>sockfd</code>
+                            ) are private.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The kernel enforces this separation for security and stability.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Even if the client sends malicious packets (e.g., a spoofed 
+                    <code>RST</code>
+                    ), the server’s OS will handle it at the TCP layer, not the application socket layer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The 
+			<em>
+                only way
+			</em>
+            &nbsp;the server’s socket closes is if:
+		</p>
+		<ol>
+			<li>
+				<p>
+                    The server explicitly calls 
+                    <code>close()</code>
+                    &nbsp;on its socket.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The server process crashes (kernel cleans up resources).
+				</p>
+			</li>
+			<li>
+				<p>
+                    The OS terminates the process (e.g., 
+                    <code>kill -9</code>
+                    ).
+				</p>
+			</li>
+		</ol>
+	</li>
+</ul>
+<h5
+	id="shutdown-codeshutdown-code" >
+    Shutdown (
+    <code>shutdown</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                What it does
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Forces a partial or full closure of communication in a specified direction.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Does not free the socket descriptor (still needs 
+                    <code>close()</code>
+                    &nbsp;later).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Immediately affects the TCP connection state (sends 
+                    <code>FIN</code>
+                    &nbsp;or 
+                    <code>RST</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="connection" >
+    Connection
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Server
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    listen
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Puts the socket into passive mode, indicating it will accept connections.
+						</p>
+					</li>
+					<li>
+						<p>
+                            “I am ready to accept TCP connections.”
+						</p>
+					</li>
+					<li>
+						<p>
+                            Necessary before: 
+                            <code>accept</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Relevant only for TCP (stream) sockets, not UDP.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Internally does a bind
+							</em>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    bind
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Associates the socket with a local address (IP + port).
+						</p>
+					</li>
+					<li>
+						<p>
+                            “I want to use this IP:port for this socket.”
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    accept
+				</p>
+				<ul>
+					<li>
+						<p>
+                            In 
+							<strong>
+                                Odin
+							</strong>
+                            , the 
+                            <code>accept()</code>
+                            &nbsp;call on a TCP socket is blocking by default, meaning execution halts until a client tries to connect to the socket.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Blocks until a client does 
+                                    <code>dial()</code>
+                                    &nbsp;to that address/port.
+								</p>
+							</li>
+							<li>
+								<p>
+									<em>
+                                        Non-blocking mode
+									</em>
+                                    :
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            You need to configure the socket with system flags, usually requiring a direct OS syscall (not abstracted by default in 
+                                            <code>core:net</code>
+                                            ).
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Alternatively, use 
+                                            <code>select</code>
+                                            , 
+                                            <code>poll</code>
+                                            , or threads/coroutines to handle multiple connections concurrently.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Client
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    dial
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Establishes an active connection with a remote server.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Connects to an IP + port that is listening.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="security" >
+    Security
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Sender identification
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The remote IP and port can be read with 
+                    <code>conn.RemoteAddr()</code>
+                    , but:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This can be 
+							<strong>
+                                forged in MITM attacks
+							</strong>
+                            &nbsp;if no encryption is present.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Even with IP/port, 
+							<strong>
+                                identity is not guaranteed
+							</strong>
+                            &nbsp;(e.g., NAT, spoofing, etc.).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    In Godot:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The peer_id is sent along with the packet.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This would be extremely insecure if it weren’t for a 
+							<em>
+                                supposed
+							</em>
+                            &nbsp;verification between the sender peer_id and its address upon receiving a packet.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If the peer_id and address do not match the stored value in a hashmap, it is an attempted forgery.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            This is completely insecure if the peer_id and address are forged simultaneously, in a spoofing attack.
+						</p>
+					</li>
+					<li>
+						<p>
+                            In this case, encryption is required.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                &quot;Double listen&quot;
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;If a legitimate server is doing 
+                    <code>listen</code>
+                    &nbsp;on an IP:port, is it possible for another computer (a remote attacker) to also 
+                    <code>listen</code>
+                    &nbsp;on the same IP:port to intercept connections?&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    Routers/Internet/DNS/etc will forward packets only to the host that has the corresponding public IP.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Example
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The legitimate server is at 
+                            <code>192.168.1.100:8080</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            An attacker on another host (e.g., 
+                            <code>192.168.1.250</code>
+                            ) tries to 
+                            <code>listen</code>
+                            &nbsp;also on 
+                            <code>0.0.0.0:8080</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Result:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The attacker only receives connections sent to its own local IP.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Connections sent to the legitimate server IP still go to 192.168.1.100, as IP routing determines.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Cases where the attack may work
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Involve network manipulation.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                ARP spoofing / ARP poisoning (LAN)
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The attacker impersonates the &quot;server IP&quot; on the local network.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    If successful, LAN clients may redirect packets to them.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    They can then 
+                                    <code>listen</code>
+                                    &nbsp;and receive connections destined for the legitimate IP.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                DNS spoofing
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The attacker tricks the client into thinking 
+                                    <code>api.myserver.com</code>
+                                    &nbsp;resolves to the attacker’s IP.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The client then connects to the attacker.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This attack depends on name resolution control, not 
+                                    <code>listen</code>
+                                    &nbsp;directly.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                BGP hijacking (Internet level)
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Much rarer and more complex.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The attacker announces false routes on the Internet backbone, intercepting traffic to the server’s IP.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Applicable only in highly sophisticated attacks.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="head-of-line-blocking" >
+    Head-of-line Blocking
+</h5>
+<ul>
+	<li>
+		<p>
+            TCP ensures packets arrive 
+			<strong>
+                in order
+			</strong>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            If a packet is lost, all subsequent packets must wait for retransmission before delivery to the application. This creates a bottleneck, as correctly received packets get &quot;stuck&quot; until the lost packet is received.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You send 3 packets: 
+					<strong>
+                        P1
+					</strong>
+                    , 
+					<strong>
+                        P2
+					</strong>
+                    , 
+					<strong>
+                        P3
+					</strong>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The receiver gets 
+					<strong>
+                        P1
+					</strong>
+                    &nbsp;and 
+					<strong>
+                        P3
+					</strong>
+                    , but 
+					<strong>
+                        P2
+					</strong>
+                    &nbsp;is lost.
+				</p>
+			</li>
+			<li>
+				<p>
+                    TCP waits for retransmission of 
+					<strong>
+                        P2
+					</strong>
+                    &nbsp;before releasing 
+					<strong>
+                        P3
+					</strong>
+                    &nbsp;to the application.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Result: 
+					<strong>
+                        Unnecessary delay
+					</strong>
+                    , because 
+					<strong>
+                        P3
+					</strong>
+                    &nbsp;could have been processed earlier.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            This blocking is one reason TCP can be slow for games and other low-latency applications.
+		</p>
+	</li>
+</ul>
+<h4
+	id="paid-tcp-services" >
+    Paid TCP Services
+</h4>
+<h5
+	id="redis" >
+    Redis
+</h5>
+<ul>
+	<li>
+		<p>
+            Redis is an in-memory storage system, often used as a cache or fast database to improve application performance, including multiplayer games. It is not a low-latency networking engine by itself, but can be used to coordinate game state data, server synchronization, and maintain real-time state variables.
+		</p>
+	</li>
+	<li>
+		<p>
+            Redis is an in-memory database that primarily uses the 
+			<strong>
+                TCP
+			</strong>
+            &nbsp;protocol for communication. It is designed for fast access and data caching, but is not a network transport solution for UDP. In network scenarios, Redis is usually combined with other technologies that handle UDP transport, but Redis itself is not a UDP transporter.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Very fast and ideal for temporary storage and quick access to data that needs to be shared in real time.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Redis offers replication, persistence, and clustering features, aiding scalability.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Does not provide a complete network solution, mostly used as support in networking and game server setups.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Working with Redis requires a network structure to consume the data (e.g., 
+					<em>
+                        Photon
+					</em>
+                    , 
+					<em>
+                        KCP
+					</em>
+                    , or others).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pricing Model
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Redis is free and open-source under the BSD license for on-premise use.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Paid versions (like 
+					<a
+						href="https://redis.io/pricing/#monthly" 
+						class="external-link" 
+						target="_blank" >
+                        Redis Enterprise
+					</a>
+                    ) offer extra features, advanced scalability, and cloud support.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Real-time games and applications needing fast cache and data sharing across multiple server instances.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="udp-user-datagram-protocol" >
+    UDP (User Datagram Protocol)
+</h3>
+<ul>
+	<li>
+		<p>
+            Communication protocol that sends data packets without establishing a reliable connection, making it faster but less secure than TCP.
+		</p>
+	</li>
+	<li>
+		<p>
+            Used in applications where speed is more important than reliability, such as video streaming or online gaming.
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;UDP is a simpler protocol, which only sends packets (and has no concept of a &quot;connection&quot;). No error correction makes it pretty quick (low latency), but packets may be lost along the way or received in the wrong order. Added to that, the MTU (maximum packet size) for UDP is generally low (only a few hundred bytes), so transmitting larger packets means splitting them, reorganizing them and retrying if a part fails.&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="closing-codeclose-code" >
+    Closing (
+    <code>close</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                What it does
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No connection teardown occurs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The local port is released, and kernel buffers are cleared.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="paid-udp-services" >
+    Paid UDP Services
+</h4>
+<h5
+	id="photon-realtime" >
+    Photon Realtime
+</h5>
+<ul>
+	<li>
+		<p>
+            Photon is a cloud networking solution designed specifically for game development. It supports UDP communication with tools tailored for games and real-time synchronization.
+		</p>
+	</li>
+	<li>
+		<p>
+            Photon Realtime is designed for multiplayer games focusing on low latency and scalability, primarily using UDP. It also supports TCP in some cases, but UDP is the common protocol due to its efficiency in gaming networks.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Scalable and optimized for online games, with integrated cloud infrastructure, reducing setup and maintenance overhead.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Costs increase with scale, as it follows a usage-based model. Customization is more limited.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Multiplayer games needing a ready-to-use, highly scalable solution.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Paid service based on subscriptions and volume of users/connections.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pricing Model
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Offers free basic plans with limitations and paid plans as needed.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="photon-quantum" >
+    Photon Quantum
+</h5>
+<ul>
+	<li>
+		<p>
+            Photon Quantum is a network solution based on a deterministic engine, specifically for multiplayer games with advanced physics, such as fighting games and simulators. Instead of sending continuous state packets, Quantum sends user inputs, keeping physics synchronized for all players.
+		</p>
+	</li>
+	<li>
+		<p>
+            Photon Quantum uses UDP for network communication, essential for low latency and high performance in games requiring precise synchronization, particularly in deterministic physics games where response time is critical. Quantum is optimized to ensure input data is transmitted quickly with minimal delay.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Designed for highly synchronized games, Quantum handles games where state consistency is critical. Supports rollback and reconciliation, ideal for high-precision, delay-sensitive games.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can be complex to implement for games without deterministic physics or synchronization needs. Paid solution with costs scaling with player count.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pricing Model
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Photon Quantum is paid, with subscription and usage-based pricing. Free plans for testing and prototyping exist but with limitations.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Multiplayer games with advanced physics and precision mechanics, like fighting games or simulations where all players must share the same game state.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="photon-server" >
+    Photon Server
+</h5>
+<ul>
+	<li>
+		<p>
+            Photon Server is a self-hosted solution for multiplayer game development. Unlike Photon Realtime (cloud service), Photon Server lets developers host their own server, reducing costs and offering greater control.
+		</p>
+	</li>
+	<li>
+		<p>
+            Photon Server supports 
+			<strong>
+                UDP
+			</strong>
+            &nbsp;and 
+			<strong>
+                TCP
+			</strong>
+            . UDP is ideal for multiplayer games requiring rapid, frequent updates, such as FPS and MOBA games. Photon Server lets developers choose the protocol depending on game needs, with UDP being the low-latency choice.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Provides flexibility and scalability, allowing developers to control infrastructure and adapt it to game requirements. Ideal for developers preferring on-premise solutions for long-term cost reduction and network control.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Requires server setup and maintenance, which can be complex for developers without server infrastructure experience. Less scalable than a managed cloud solution.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pricing Model
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Photon Server offers a free license for up to 100 CCU (concurrent users), ideal for development and prototyping. Beyond that, paid licenses are required, scaled by user count.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Multiplayer games where developers want more control over infrastructure, especially useful for companies avoiding recurring cloud service costs.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="communication-protocols-udp-networking-libraries" >
+    Communication Protocols: UDP Networking Libraries
+</h2>
+<h3
+	id="enet" >
+    ENet
+</h3>
+<h5
+	id="about" >
+    About
+</h5>
+<ul>
+	<li>
+		<p>
+            Free and open-source.
+		</p>
+	</li>
+	<li>
+		<p>
+            Designed for reliability over UDP with low latency.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Supports reliability and flow control over UDP.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Highly optimized for large-scale multiplayer games, especially for low-latency, real-time state communication.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Good scalability, supporting multiple clients.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Solid documentation and active community.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Slightly more complex implementation compared to other solutions due to fine-grained control.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    MIT License.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="packet-flags-enet" >
+    Packet Flags: ENet
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/lsalzman/enet/blob/657eaf97d9d335917c58484a4a4b5e03838ebd8e/include/enet/enet.h#L100" 
+				class="external-link" 
+				target="_blank" >
+                Enet Github
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="http://enet.bespin.org/enet_8h.html#a38c59a481ed607b07d63b7bc3e88ca98" 
+				class="external-link" 
+				target="_blank" >
+                Documentation
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                ENET_PACKET_FLAG_RELIABLE:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;packet must be received by the target peer and resend attempts should be made until the packet is delivered&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                ENET_PACKET_FLAG_UNSEQUENCED:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;packet will not be sequenced with other packets. not supported for reliable packets&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                ENET_PACKET_FLAG_UNRELIABLE_FRAGMENT:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;packet will be fragmented using unreliable (instead of reliable) sends if it exceeds the MTU&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="packet-flags-godot" >
+    Packet Flags: Godot
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                FLAG_RELIABLE
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Mark the packet to be sent as reliable.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                FLAG_UNSEQUENCED
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Mark the packet to be sent unsequenced (unreliable).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                FLAG_UNRELIABLE_FRAGMENT
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Mark the packet to be sent unreliable even if the packet is too big and needs fragmentation (increasing the chance of it being dropped).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/godotengine/godot/blob/c2732ae4b6fa4e7b543c065bedcd92759f6db387/modules/enet/enet_multiplayer_peer.cpp#L342" 
+				class="external-link" 
+				target="_blank" >
+                Godot Github
+			</a>
+            .
+		</p>
+<pre><code class="language-cpp" data-lang="cpp"> switch (get_transfer_mode()) {
+&nbsp;&nbsp;&nbsp;&nbsp; case TRANSFER_MODE_UNRELIABLE: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; packet_flags = ENET_PACKET_FLAG_UNSEQUENCED | ENET_PACKET_FLAG_UNRELIABLE_FRAGMENT;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; channel = SYSCH_UNRELIABLE;
+&nbsp;&nbsp;&nbsp;&nbsp; } break;
+&nbsp;&nbsp;&nbsp;&nbsp; case TRANSFER_MODE_UNRELIABLE_ORDERED: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; packet_flags = ENET_PACKET_FLAG_UNRELIABLE_FRAGMENT;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; channel = SYSCH_UNRELIABLE;
+&nbsp;&nbsp;&nbsp;&nbsp; } break;
+&nbsp;&nbsp;&nbsp;&nbsp; case TRANSFER_MODE_RELIABLE: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; packet_flags = ENET_PACKET_FLAG_RELIABLE;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; channel = SYSCH_RELIABLE;
+&nbsp;&nbsp;&nbsp;&nbsp; } break;
+ }
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="enet-reliable" >
+    ENet Reliable
+</h5>
+<ul>
+	<li>
+		<p>
+            ENet is based on UDP, which does not guarantee packet delivery by default. To fix this, ENet implements its own reliability system:
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                ACKs (acknowledgment) and Retransmissions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each reliable packet has a unique sequence number.
+				</p>
+			</li>
+			<li>
+				<p>
+                    When the receiver gets a packet, it sends an ACK confirming receipt.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the sender does not receive an ACK in time, it retransmits the packet.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This continues until the packet is confirmed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Dynamic Timeout
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ENet measures Round-Trip Time (RTT) and dynamically adjusts the retransmission time for lost packets.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Reduces unnecessary retransmissions and improves performance on unstable networks.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example of ENet reliability
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Client sends P1, P2, P3
+				</p>
+			</li>
+			<li>
+				<p>
+                    Server receives P1 and P3, but P2 is lost
+				</p>
+			</li>
+			<li>
+				<p>
+                    Server sends ACKs for P1 and P3, but not P2
+				</p>
+			</li>
+			<li>
+				<p>
+                    Client notices P2 was not acknowledged and retransmits it
+				</p>
+			</li>
+			<li>
+				<p>
+                    Server receives P2 and sends an ACK
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="enet-reliable-vs-tcp" >
+    ENet Reliable vs TCP
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                TCP
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Reliable, guarantees ordered delivery without loss, retransmitting packets as needed. But it has more overhead and may have higher latency due to congestion control and acknowledgments.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                ENet (reliable)
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ENet reliable is generally faster than TCP in most scenarios where it is supported.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Uses UDP as a base, but implements reliability with optional retransmissions and ordering. It is lighter and faster than TCP for games and low-latency networks, as it avoids some of TCP's restrictions, such as global congestion control and head-of-line blocking.
+				</p>
+				<ul>
+					<li>
+						<p>
+							<strong>
+                                How does ENet avoid Head-of-Line Blocking?
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    ENet solves this problem in three main ways:
+								</p>
+							</li>
+							<li>
+								<p>
+									<strong>
+                                        Multiple Channels
+									</strong>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            In ENet, packets can be sent on different channels within the same connection.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            If a reliable packet is lost, only packets on that specific channel wait for retransmission.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Other channels continue sending packets unaffected.
+										</p>
+									</li>
+									<li>
+										<p>
+											<strong>
+                                                Example:
+											</strong>
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Channel 0 sends P1, P2, P3
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Channel 1 sends A1, A2, A3
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    If P2 (from Channel 0) is lost, only P3 waits. A1, A2, and A3 continue normally!
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Result: Less delay, smoother communication
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+									<strong>
+                                        Retransmission without blocking other packets
+									</strong>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            ENet only retransmits lost packets at the channel level, without blocking the delivery of independent packets.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            TCP, on the other hand, must guarantee global order, so a single lost packet can block everything.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+									<strong>
+                                        Custom reliability control
+									</strong>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            In TCP, all packets are reliable and ordered.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            In ENet, you can mix reliable and unreliable packets, choosing when to guarantee delivery and when to prioritize speed.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                &quot;When would you choose to use TCP then?&quot;
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Standard and compatible environment
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            TCP is natively supported by any operating system and does not require an extra library like ENet.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Works well with firewalls and NAT
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Since it uses established connections, TCP has fewer problems with firewalls and NAT than UDP.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Transmission of large and continuous data
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            For things like HTTP, downloads, file streaming, TCP is optimized to ensure everything arrives without loss and efficiently.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Less manual work
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            With TCP, you don't need to manage retransmissions, congestion control, or implement your own reliability logic. It handles everything automatically.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Verdict
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ENet appears superior to TCP in almost all scenarios where it is supported, especially for online games, VoIP, and other applications requiring low latency.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Despite ENet's advantages, TCP still has its uses, mainly because it is native across all platforms and networks.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Universal compatibility – TCP works without additional libraries, while ENet requires implementation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Works better with firewalls and NAT – Many networks block UDP (the base of ENet), while TCP is always allowed.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Use in non-interactive applications – For HTTP, downloads, file streaming, TCP works very well and is already optimized for that.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="kcp-fast-and-reliable-udp-library" >
+    KCP (Fast and Reliable UDP Library)
+</h3>
+<ul>
+	<li>
+		<p>
+            KCP is a popular library for UDP focused on fast and reliable connections, widely used in games and network applications that require low latency.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Easy to integrate and offers customizable settings for flow control and packet loss recovery. It is a lightweight alternative to QUIC, maintaining good performance.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Excellent for high-latency and packet-loss environments, as it is designed to maintain reliability without sacrificing performance.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Widely used in games that require good scalability.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Simple implementation and easy to integrate.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Does not have built-in security and may require manual tuning for scalability and optimal traffic configuration.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Lacks advanced network control features like ENet, such as packet ordering or finely adjustable flow control.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Multiplayer games and applications requiring low latency and reliable transmission over networks without built-in encryption.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ideal for games needing reliable communication without the costs and complexity of a protocol like TCP. KCP is efficient in MMOs where latency is critical, but some packet loss can be tolerated.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="quic-quick-udp-internet-connections" >
+    QUIC (Quick UDP Internet Connections)
+</h3>
+<ul>
+	<li>
+		<p>
+            Developed by Google and now an IETF standard, QUIC is a UDP-based protocol that offers built-in reliability and security features (e.g., TLS encryption).
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    High scalability for multiple users, congestion control, and lost packet recovery, all with very low latency. It is one of the best options for reliable and secure data transmission over UDP.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    More complex to implement than ENet and other libraries. Also, built-in security can require more computational resources compared to lighter solutions.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Low-latency applications with high scalability, such as video streaming, multiplayer games, or secure web connections.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Varies by library, but Quiche, for example, is licensed under the BSD license.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="reliable-udp-rudp" >
+    Reliable UDP (RUDP)
+</h3>
+<ul>
+	<li>
+		<p>
+            RUDP is a UDP extension that implements reliability, providing packet acknowledgment and retransmission while maintaining the simplicity of the protocol.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Offers more control over data transmission than pure UDP but with less overhead than TCP. Facilitates scalable implementation, as it has flow control and packet acknowledgment.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    RUDP libraries can be more complex and vary in efficiency. Basic reliability may not be sufficient for data-intensive use cases.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Applications that need more guaranteed delivery than pure UDP but do not require the full complexity and overhead of TCP.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    License varies depending on implementation, but many are MIT or BSD.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Several free implementations are available, especially on GitHub, although RUDP is more of a technique than a single library.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="webrtc-web-real-time-communication" >
+    WebRTC (Web Real-Time Communication)
+</h3>
+<ul>
+	<li>
+		<p>
+            WebRTC enables real-time communication via UDP using data channels. It is widely used in browsers and supports NAT traversal features.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/networking/webrtc.html" 
+				class="external-link" 
+				target="_blank" >
+                WebRTC
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Harder to implement than WebSockets and not necessary if you only need data exchange.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=WmR9IMUD_CY" 
+				class="external-link" 
+				target="_blank" >
+                WebRTC explanation in 100 seconds
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Interesting.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            WebRTC is a technology that enables real-time communication of audio, video, and data directly between browsers or devices without intermediate servers.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is especially useful for peer-to-peer communication and is widely used in video and voice call applications.
+		</p>
+	</li>
+	<li>
+		<p>
+            It has low latency, making it ideal for real-time communication like video calls and fast file sharing.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Scalable and very useful for peer-to-peer connections. Provides built-in encryption and is free on local networks and easy to configure between browsers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Focused on peer-to-peer connections, which limits use in centralized server architectures. NAT traversal overhead may add latency.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Applications requiring P2P communication and moderate scalability, such as browser games or video/audio apps.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Varies depending on implementation, but most browsers that support WebRTC use permissive licenses like BSD.
+				</p>
+			</li>
+			<li>
+				<p>
+                    WebRTC is a free standard with open-source implementations in browsers and communication frameworks.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="comparison-with-websockets" >
+    Comparison with WebSockets
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=jth1QB32Ask" 
+				class="external-link" 
+				target="_blank" >
+                Video call comparison between WebSockets and WebRTC
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Very cool.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Harder to implement than WebSockets and not necessary if you only need data exchange.
+		</p>
+	</li>
+	<li>
+		<p>
+            WebRTC uses technologies like 
+			<em>
+                UDP
+			</em>
+            &nbsp;to transmit data, which can result in lower latency compared to TCP (protocol used by WebSockets), especially on unstable networks.
+		</p>
+	</li>
+</ul>
+<h5
+	id="usage-examples" >
+    Usage Examples
+</h5>
+<ul>
+	<li>
+		<p>
+            Video calls and Voice (VoIP).
+		</p>
+	</li>
+	<li>
+		<p>
+            File sharing.
+		</p>
+	</li>
+	<li>
+		<p>
+            Real-time games.
+		</p>
+	</li>
+</ul>
+<h3
+	id="grpc-with-udp-non-native" >
+    gRPC with UDP (non-native)
+</h3>
+<ul>
+	<li>
+		<p>
+            gRPC is a high-performance RPC library that usually works over HTTP/2 but can be adapted for UDP in some cases.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Since gRPC is widely adopted, adapting it to UDP in microservices can allow fast calls between services, with scalability in distributed systems.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Not natively UDP-based, so it requires adaptations. Scalability and performance may vary depending on the level of customization.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Microservice environments requiring low latency but that can forgo full reliability and robust sequencing.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Apache License 2.0.
+				</p>
+			</li>
+			<li>
+				<p>
+                    gRPC is free and open-source, but adaptations are needed for use with UDP, which can be done without additional costs.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="lidgren-network" >
+    Lidgren.Network
+</h3>
+<ul>
+	<li>
+		<p>
+            Lidgren.Network is a network library aimed at games and is a reliable solution over UDP. It is written in C# and is popular for games requiring high performance and low latency.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Support for reliable connections and real-time communication.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Easy to integrate and highly optimized for game networks.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Designed for games with a high number of simultaneous users, with scalability capabilities.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Focused on C#, which may be a limitation if you are developing in another language.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenario
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Perfect for MMOs written in C#, especially on platforms like Unity, where Lidgren can be easily integrated with the game engine.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    MIT License
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="raknet" >
+    RakNet
+</h3>
+<ul>
+	<li>
+		<p>
+            A network library widely used in multiplayer games, supporting many players and features aimed at MMOs.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Originally open-source under the MIT license, but later acquired by Oculus (Facebook), and the latest version is available under a commercial license.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+						<a
+							href="/docs/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
+                            &nbsp;&lsaquo; Previous
+						</a>
+						<a
+							href="/docs/Network/Network - Low Level e Etc/Network - Low Level e Etc.html" >
+                            Next &rsaquo; 
+						</a>
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2025-10-30 🚀
+			</footer>
+		</div>
+		<aside
+			id="right-sidebar" >
+			<nav
+				id="table-of-contents" >
+				<strong>
+                    On this page
+				</strong>
+				<ul>
+					<li>
+						<a
+							href="#network-architecture" >
+                            Network Architecture
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#authority" >
+                                    Authority
+								</a>
+							</li>
+							<li>
+								<a
+									href="#peer-to-peer-p2p" >
+                                    Peer-to-Peer (P2P)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#dedicated-server" >
+                                    Dedicated Server
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#bottlenecks" >
+                            Bottlenecks
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#godot-high-level-multiplayer" >
+                            Godot High-level Multiplayer
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#high-level-api" >
+                                    High-level API
+								</a>
+							</li>
+							<li>
+								<a
+									href="#synchronization" >
+                                    Synchronization
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#security-and-authentication" >
+                            Security and Authentication
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#tls-transport-layer-security-ssl-secure-sockets-layer-and-dtls" >
+                                    TLS (Transport Layer Security), SSL (Secure Sockets Layer) and DTLS
+								</a>
+							</li>
+							<li>
+								<a
+									href="#oauth-open-authorization" >
+                                    OAuth (Open Authorization)
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#communication-protocols" >
+                            Communication Protocols
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#rpc-remote-procedure-calls" >
+                                    RPC (Remote Procedure Calls)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#http" >
+                                    HTTP
+								</a>
+							</li>
+							<li>
+								<a
+									href="#websockets" >
+                                    WebSockets
+								</a>
+							</li>
+							<li>
+								<a
+									href="#ftp-file-transfer-protocol" >
+                                    FTP (File Transfer Protocol)
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#communication-protocols-low-level" >
+                            Communication Protocols: Low-level
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#tcp-transmission-control-protocol" >
+                                    TCP (Transmission Control Protocol)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#udp-user-datagram-protocol" >
+                                    UDP (User Datagram Protocol)
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#communication-protocols-udp-networking-libraries" >
+                            Communication Protocols: UDP Networking Libraries
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#enet" >
+                                    ENet
+								</a>
+							</li>
+							<li>
+								<a
+									href="#kcp-fast-and-reliable-udp-library" >
+                                    KCP (Fast and Reliable UDP Library)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#quic-quick-udp-internet-connections" >
+                                    QUIC (Quick UDP Internet Connections)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#reliable-udp-rudp" >
+                                    Reliable UDP (RUDP)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#webrtc-web-real-time-communication" >
+                                    WebRTC (Web Real-Time Communication)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#grpc-with-udp-non-native" >
+                                    gRPC with UDP (non-native)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#lidgren-network" >
+                                    Lidgren.Network
+								</a>
+							</li>
+							<li>
+								<a
+									href="#raknet" >
+                                    RakNet
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+		<script
+			src="/static/docs.js" >
+		</script>
+	</body>
+</html>

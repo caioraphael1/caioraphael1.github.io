@@ -1,0 +1,1532 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/favicon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script
+			src="/static/docs_load.js" >
+		</script>
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js" >
+		</script>
+		<script
+			src="https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.min.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/docs.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Graphics Programming
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Vulkan/Vulkan.html" >
+                                Vulkan
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Render Engineering/Render Engineering.html" >
+                                Render Engineering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Graphics and Shaders/Graphics and Shaders.html" >
+                                Graphics and Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GLSL/GLSL.html" >
+                                GLSL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GPU/GPU.html" >
+                                GPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/OpenGL/OpenGL.html" >
+                                OpenGL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - DOD e COP/Design - DOD e COP.html" >
+                                Design - DOD e COP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - ECS/Design - ECS.html" >
+                                Design - ECS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Design Patterns/Design - Design Patterns.html" >
+                                Design - Design Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Architecture Patterns.html" >
+                                Design - Architecture Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Concepts and Terminology.html" >
+                                Design - Concepts and Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
+                                Design - Rules of thumb - Laws - Guidelines and Principles
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Paradigms.html" >
+                                Design - Paradigms
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/docs/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
+                                Design - Production Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Backend/Network - Backend.html" >
+                                Network - Backend
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Low Level e Etc/Network - Low Level e Etc.html" >
+                                Network - Low Level e Etc
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Netcode/Network - Netcode.html" >
+                                Network - Netcode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - HTTP/Network - HTTP.html" >
+                                Network - HTTP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Encryption.html" >
+                                Encryption
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/SSH.html" >
+                                SSH
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Things
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking.html" >
+                                Build Systems - Compilation - Linking
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/CPU/CPU.html" >
+                                CPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Setup/NeoVim - Setup.html" >
+                                NeoVim - Setup
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Uso/NeoVim - Uso.html" >
+                                NeoVim - Uso
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/VSCode - VSCodium.html" >
+                                VSCode - VSCodium
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/Visual Studio/Visual Studio.html" >
+                                Visual Studio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Debuggers.html" >
+                                Debuggers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Dependencies.html" >
+                                Dependencies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Git/Git.html" >
+                                Git
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Handmade Hero/Handmade Hero.html" >
+                                Handmade Hero
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Linux/Linux.html" >
+                                Linux
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Memory/Memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Multithreading/Multithreading.html" >
+                                Multithreading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/RegEx.html" >
+                                RegEx
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Shells/Shells.html" >
+                                Shells
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Terminal/Terminal.html" >
+                                Terminal
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Programming Languages
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Assembly - ASM.html" >
+                                Assembly - ASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C++/C++.html" >
+                                C++
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C.html" >
+                                C
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/CSharp/CSharp.html" >
+                                CSharp
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Go.html" >
+                                Go
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Haxe.html" >
+                                Haxe
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/JAI.html" >
+                                JAI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Java.html" >
+                                Java
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Kotlin.html" >
+                                Kotlin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Lua.html" >
+                                Lua
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Nim/Nim.html" >
+                                Nim
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Odin/Odin.html" >
+                                Odin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Python.html" >
+                                Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Rust/Rust.html" >
+                                Rust
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Swift/Swift.html" >
+                                Swift
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Zig/Zig.html" >
+                                Zig
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        WebDev
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebDev/WebDev.html" >
+                                WebDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML/HTML.html" >
+                                HTML
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTMX.html" >
+                                HTMX
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebAssembly - WASM/WebAssembly - WASM.html" >
+                                WebAssembly - WASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/CSS/CSS.html" >
+                                CSS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript/JavaScript.html" >
+                                JavaScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/TypeScript.html" >
+                                TypeScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Frameworks and Libraries/JavaScript - Frameworks and Libraries.html" >
+                                JavaScript - Frameworks and Libraries
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Runtime Environments.html" >
+                                JavaScript - Runtime Environments
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Hugo/Hugo.html" >
+                                Hugo
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Static Site Generators.html" >
+                                Static Site Generators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML - Tests/HTML - Tests.html" >
+                                HTML - Tests
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Databases
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - MongoDB.html" >
+                                Databases - MongoDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - SQL - Relational/Databases - SQL - Relational.html" >
+                                Databases - SQL - Relational
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Document Oriented.html" >
+                                Databases - Document Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Object Oriented.html" >
+                                Databases - Object Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - ORMs.html" >
+                                Databases - ORMs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Electronics
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Sources and Studies.html" >
+                                Electronics - Sources and Studies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Projects and Tutorials.html" >
+                                Electronics - Projects and Tutorials
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Arduino.html" >
+                                Arduino
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<header
+				id="central-header" >
+				<nav
+					id="dropdown-menu" >
+					<select
+						onchange="if (this.value) window.location.href=this.value" >
+						<option
+							value="/" 
+>
+                            🏡 Home
+						</option>
+						<option
+							value="/docs/_index.html" 
+							selected="">
+                            📖 Docs
+						</option>
+					</select>
+				</nav>
+				<button
+					class="btn" 
+					id="button-color-theme" >
+					<i>
+                        ☀️ / 🌑
+					</i>
+				</button>
+			</header>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Design - Production Methodologies
+						</h1>
+						<p>
+							<time
+								datetime="2023-10-07" >
+                                🕒 Created: 2023-10-07
+							</time>
+							<time
+								datetime="2025-10-29" >
+                                | Updated: 2025-10-29
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="design-process" >
+    Design Process
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://en.wikipedia.org/wiki/List_of_software_development_philosophies" 
+				class="external-link" 
+				target="_blank" >
+                List of software development philosophies
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/how_to_build_a_car.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/how_to_build_a_car_2.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://youtu.be/WN90HYiFpAw?t=82" 
+				class="external-link" 
+				target="_blank" >
+                DesignProcess: Elon Musk's design process {1:22 -&gt; 4:24}
+			</a>
+            .
+		</p>
+		<ol>
+			<li>
+				<p>
+                    &quot;Make your requirements less dumb&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Delete the part or process&quot;.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Possibly the most common error of a smart engineer is to optimize a thing that should not exist&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    &quot;Simplify and optimize&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Accelerate&quot;.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;But don't go faster if you are digging your own grave&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    &quot;Automate&quot;.
+				</p>
+			</li>
+		</ol>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=u8Da6k5IKPI" 
+				class="external-link" 
+				target="_blank" >
+                3 ideas from the book 'Refactoring by Martin Fowler'
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The ideas:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Write code for humans to understand.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Make code that can be 'maintainable' and that can be changed in the future.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Only after 3 strikes do a refactor.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Do not refactor initially. Focus on the goal, leaving refactor for when the topic becomes a problem.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Make easy changes first, then make the complete changes.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This is because there is usually a lot of uncertainty, so wait to see which uncertainties will arise, without spending so much time on the first uncertainty you encounter.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The first two ideas are the most interesting:
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p
+			class="line-emphasis" >
+            &quot;Fail fast&quot;
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Think, write notes, prototype. All of it quickly, to avoid spending time on something that would not survive in the future.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=5i_O6NLXYsM" 
+				class="external-link" 
+				target="_blank" >
+                Game Development Caution - Fear of producing new things in a team
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Interesting.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="apps" >
+    Apps
+</h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://app.gather.town/app" 
+				class="external-link" 
+				target="_blank" >
+                Gather
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Pixel art app for meetings.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="software-testing" >
+    Software Testing
+</h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=u6QfIXgjwGQ" 
+				class="external-link" 
+				target="_blank" >
+                Software Testing in 100 seconds
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h2
+	id="methodologies" >
+    Methodologies
+</h2>
+<h3
+	id="devops" >
+    DevOps
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=scEDHsr3APg" 
+				class="external-link" 
+				target="_blank" >
+                Fireship explanation
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=0yWAtQ6wYNM" 
+				class="external-link" 
+				target="_blank" >
+                General explanation
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It is an iterative method, in a loop.
+		</p>
+	</li>
+</ul>
+<h5
+	id="implementation" >
+    Implementation
+</h5>
+<ul>
+	<li>
+		<p>
+            DevOps:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    DevOps == 'Development', 'Operations'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A broad concept, something like a philosophy.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            DevOps:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    DevSecOps == 'Development', 'Security', 'Operations'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's DevOps but with emphasis on Security, in addition to the other concepts.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            DevOps Engineer:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It's a role.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use of CI/CD Pipeline.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            SRE:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It's a role.
+				</p>
+			</li>
+			<li>
+				<p>
+                    SRE == 'Site Reliability Engineering'
+				</p>
+			</li>
+			<li>
+				<p>
+                    Part of DevOps. As the name says, but focused on 'reliability'.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="continuous-integration-continuous-deployment-ci-cd-pipeline" >
+    Continuous Integration / Continuous Deployment (CI/CD Pipeline)
+</h5>
+<ul>
+	<li>
+		<p>
+            Steps:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Code repository:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Git.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Containers / Packaging.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Explanation:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Similar in functionality to a Virtual Machine, but focused on the app rather than the Operating System.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Docker.
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://www.youtube.com/watch?v=Gjnup-PuquQ" 
+										class="external-link" 
+										target="_blank" >
+                                        Explanation of Docker and why using Containers is useful
+									</a>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Build tools / Package managers:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Maven.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Gradle.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Npm.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    'Push to artifact repository':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Nexus.
+						</p>
+					</li>
+					<li>
+						<p>
+                            DockerHub.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Automation of all steps (Build automation):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    GitLab.
+				</p>
+			</li>
+			<li>
+				<p>
+                    GitHub Actions.
+				</p>
+			</li>
+			<li>
+				<p>
+                    TeamCity.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Jenkins.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Cloud infrastructure as a service:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    AWS (Amazon).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Google Cloud.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Microsoft Azure.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Alibaba Cloud.
+				</p>
+			</li>
+			<li>
+				<p>
+                    IBM Cloud.
+				</p>
+			</li>
+			<li>
+				<p>
+                    SalesForce.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Tencent Cloud.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Oracle Cloud.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="waterfall" >
+    Waterfall
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=ZESZ6pr0J1E" 
+				class="external-link" 
+				target="_blank" >
+                Understanding Waterfall and its big problems
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=yhwaisT0VTM" 
+				class="external-link" 
+				target="_blank" >
+                Understanding S-Type, P-Type and E-Type Systems and why Waterfall is generally bad
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The argument is that most productions are based on creating something that is an E-Type System, which indicates a constant feedback loop is needed to produce a good application. Since Waterfall does not loop, it does not fare well in this type of production. It is argued that Waterfall is only valid for S-Type Systems (the simplest and most predictable of all).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Be careful with the central graph in the video (Stacey Matrix). He inverted the direction of the axes and only fixed it around 7:00.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="agile" >
+    Agile
+</h3>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="lean-for-software-development-startup" >
+    Lean (for Software Development / Startup)
+</h3>
+<ul>
+	<li>
+		<p>
+            Supposedly used for 'Anarchy' productions, where there is no certainty and no agreement.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=hnR03T9Hujw" 
+				class="external-link" 
+				target="_blank" >
+                Explanation of the '8 wastes of Lean'
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.google.com/search?q=lean+startup" 
+				class="external-link" 
+				target="_blank" >
+                Lean Startup
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+						<a
+							href="/docs/Design/Design - Paradigms.html" >
+                            &nbsp;&lsaquo; Previous
+						</a>
+						<a
+							href="/docs/Network/Network - Backend/Network - Backend.html" >
+                            Next &rsaquo; 
+						</a>
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2025-10-30 🚀
+			</footer>
+		</div>
+		<aside
+			id="right-sidebar" >
+			<nav
+				id="table-of-contents" >
+				<strong>
+                    On this page
+				</strong>
+				<ul>
+					<ul>
+						<li>
+							<a
+								href="#design-process" >
+                                Design Process
+							</a>
+						</li>
+					</ul>
+					<li>
+						<a
+							href="#apps" >
+                            Apps
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#software-testing" >
+                            Software Testing
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#methodologies" >
+                            Methodologies
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#devops" >
+                                    DevOps
+								</a>
+							</li>
+							<li>
+								<a
+									href="#waterfall" >
+                                    Waterfall
+								</a>
+							</li>
+							<li>
+								<a
+									href="#agile" >
+                                    Agile
+								</a>
+							</li>
+							<li>
+								<a
+									href="#lean-for-software-development-startup" >
+                                    Lean (for Software Development / Startup)
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+		<script
+			src="/static/docs.js" >
+		</script>
+	</body>
+</html>

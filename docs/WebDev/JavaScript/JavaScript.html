@@ -1,0 +1,2963 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/favicon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script
+			src="/static/docs_load.js" >
+		</script>
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js" >
+		</script>
+		<script
+			src="https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.min.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/docs.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Graphics Programming
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Vulkan/Vulkan.html" >
+                                Vulkan
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Render Engineering/Render Engineering.html" >
+                                Render Engineering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Graphics and Shaders/Graphics and Shaders.html" >
+                                Graphics and Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GLSL/GLSL.html" >
+                                GLSL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GPU/GPU.html" >
+                                GPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/OpenGL/OpenGL.html" >
+                                OpenGL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - DOD e COP/Design - DOD e COP.html" >
+                                Design - DOD e COP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - ECS/Design - ECS.html" >
+                                Design - ECS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Design Patterns/Design - Design Patterns.html" >
+                                Design - Design Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Architecture Patterns.html" >
+                                Design - Architecture Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Concepts and Terminology.html" >
+                                Design - Concepts and Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
+                                Design - Rules of thumb - Laws - Guidelines and Principles
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Paradigms.html" >
+                                Design - Paradigms
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
+                                Design - Production Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Backend/Network - Backend.html" >
+                                Network - Backend
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Low Level e Etc/Network - Low Level e Etc.html" >
+                                Network - Low Level e Etc
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Netcode/Network - Netcode.html" >
+                                Network - Netcode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - HTTP/Network - HTTP.html" >
+                                Network - HTTP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Encryption.html" >
+                                Encryption
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/SSH.html" >
+                                SSH
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Things
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking.html" >
+                                Build Systems - Compilation - Linking
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/CPU/CPU.html" >
+                                CPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Setup/NeoVim - Setup.html" >
+                                NeoVim - Setup
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Uso/NeoVim - Uso.html" >
+                                NeoVim - Uso
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/VSCode - VSCodium.html" >
+                                VSCode - VSCodium
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/Visual Studio/Visual Studio.html" >
+                                Visual Studio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Debuggers.html" >
+                                Debuggers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Dependencies.html" >
+                                Dependencies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Git/Git.html" >
+                                Git
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Handmade Hero/Handmade Hero.html" >
+                                Handmade Hero
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Linux/Linux.html" >
+                                Linux
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Memory/Memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Multithreading/Multithreading.html" >
+                                Multithreading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/RegEx.html" >
+                                RegEx
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Shells/Shells.html" >
+                                Shells
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Terminal/Terminal.html" >
+                                Terminal
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Programming Languages
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Assembly - ASM.html" >
+                                Assembly - ASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C++/C++.html" >
+                                C++
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C.html" >
+                                C
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/CSharp/CSharp.html" >
+                                CSharp
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Go.html" >
+                                Go
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Haxe.html" >
+                                Haxe
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/JAI.html" >
+                                JAI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Java.html" >
+                                Java
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Kotlin.html" >
+                                Kotlin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Lua.html" >
+                                Lua
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Nim/Nim.html" >
+                                Nim
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Odin/Odin.html" >
+                                Odin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Python.html" >
+                                Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Rust/Rust.html" >
+                                Rust
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Swift/Swift.html" >
+                                Swift
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Zig/Zig.html" >
+                                Zig
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        WebDev
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebDev/WebDev.html" >
+                                WebDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML/HTML.html" >
+                                HTML
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTMX.html" >
+                                HTMX
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebAssembly - WASM/WebAssembly - WASM.html" >
+                                WebAssembly - WASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/CSS/CSS.html" >
+                                CSS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/docs/WebDev/JavaScript/JavaScript.html" >
+                                JavaScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/TypeScript.html" >
+                                TypeScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Frameworks and Libraries/JavaScript - Frameworks and Libraries.html" >
+                                JavaScript - Frameworks and Libraries
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Runtime Environments.html" >
+                                JavaScript - Runtime Environments
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Hugo/Hugo.html" >
+                                Hugo
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Static Site Generators.html" >
+                                Static Site Generators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML - Tests/HTML - Tests.html" >
+                                HTML - Tests
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Databases
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - MongoDB.html" >
+                                Databases - MongoDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - SQL - Relational/Databases - SQL - Relational.html" >
+                                Databases - SQL - Relational
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Document Oriented.html" >
+                                Databases - Document Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Object Oriented.html" >
+                                Databases - Object Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - ORMs.html" >
+                                Databases - ORMs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Electronics
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Sources and Studies.html" >
+                                Electronics - Sources and Studies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Projects and Tutorials.html" >
+                                Electronics - Projects and Tutorials
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Arduino.html" >
+                                Arduino
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<header
+				id="central-header" >
+				<nav
+					id="dropdown-menu" >
+					<select
+						onchange="if (this.value) window.location.href=this.value" >
+						<option
+							value="/" 
+>
+                            🏡 Home
+						</option>
+						<option
+							value="/docs/_index.html" 
+							selected="">
+                            📖 Docs
+						</option>
+					</select>
+				</nav>
+				<button
+					class="btn" 
+					id="button-color-theme" >
+					<i>
+                        ☀️ / 🌑
+					</i>
+				</button>
+			</header>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            JavaScript
+						</h1>
+						<p>
+							<time
+								datetime="2024-07-15" >
+                                🕒 Created: 2024-07-15
+							</time>
+							<time
+								datetime="2025-10-29" >
+                                | Updated: 2025-10-29
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h2
+	id="about" >
+    About
+</h2>
+<ul>
+	<li>
+		<p>
+            JavaScript is the only language natively supported by all browsers for dynamic execution on the client-side (frontend).
+		</p>
+	</li>
+	<li>
+		<p>
+            It has direct access to the DOM, events, network (AJAX/fetch), localStorage, WebGL, WebAudio, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            A dynamic client-side website is one that can:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Change page content without reloading (AJAX, SPAs).
+				</p>
+			</li>
+			<li>
+				<p>
+                    React to user events (clicks, typing, animations).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Update or create HTML elements dynamically.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            These features require a language that the browser executes after loading the page.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Why only JavaScript?
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Natively supported by all browsers
+				</p>
+			</li>
+			<li>
+				<p>
+                    Access to the DOM
+				</p>
+			</li>
+			<li>
+				<p>
+                    Access to browser events and APIs
+				</p>
+			</li>
+			<li>
+				<p>
+                    Runs sandboxed on the client
+				</p>
+			</li>
+			<li>
+				<p>
+                    Does not require plugins or runtime.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Is there a replacement for JavaScript?
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Yes, but 
+					<em>
+                        indirectly
+					</em>
+                    . They all rely on JavaScript as a bridge.
+				</p>
+			</li>
+			<li>
+				<p>
+                    WebAssembly (WASM)
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Compiles from C/C++, Rust, Go, etc. to 
+                            <code>.wasm</code>
+                            , which runs in the browser.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Requires bootstrap JS to load and interact with the DOM.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Dart (via Flutter Web)
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Dart compiles to JS or WASM.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Compiles to JS behind the scenes.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    TypeScript
+				</p>
+				<ul>
+					<li>
+						<p>
+                            JS superset with typing.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Compiles to JS.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Emscripten output
+				</p>
+				<ul>
+					<li>
+						<p>
+                            C/C++ code compiled to JS + WASM.
+						</p>
+					</li>
+					<li>
+						<p>
+                            JS wrapper is automatically generated.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Brython / Pyodide
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Python running in the browser via WASM or transpilation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Uses JS/WASM underneath.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Blazor WebAssembly
+				</p>
+				<ul>
+					<li>
+						<p>
+                            .NET in WASM.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Uses a WASM + JS runtime bridge for the DOM.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                What doesn't work as a replacement
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    PHP, Python, Ruby, C, Go, etc. → only work on the server.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="when-you-truly-need-javascript" >
+    When you truly need JavaScript
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Rich client-side interactivity / SPA
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You 
+					<strong>
+                        must
+					</strong>
+                    &nbsp;use JS or compile-to-JS languages.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Browsers don’t natively understand C, Rust, Odin, etc.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Complex state management, routing, live updates
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Almost always require JS or something that compiles to it.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="package-registry" >
+    Package Registry
+</h2>
+<h5
+	id="javascript-registry-jsr" >
+    JavaScript Registry (jsr)
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://jsr.io/" 
+				class="external-link" 
+				target="_blank" >
+                JSR
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Open-source.
+		</p>
+	</li>
+	<li>
+		<p>
+            Created by Deno.
+		</p>
+	</li>
+	<li>
+		<p>
+            Superset of npm.
+		</p>
+	</li>
+	<li>
+		<p>
+            Made for TypeScript.
+		</p>
+	</li>
+	<li>
+		<p>
+            ECMAScript standard.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=gOfOSRertMA" 
+				class="external-link" 
+				target="_blank" >
+                Comparison between NPM and JSR
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://youtu.be/cTFBiwYY3vs?si=F_SwghYmhtAvz5-j&t=159" 
+				class="external-link" 
+				target="_blank" >
+                Using packages with JSR
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=7uiL4WYvZVs" 
+				class="external-link" 
+				target="_blank" >
+                Publishing packages with JSR
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="node-package-manager-npm" >
+    Node Package Manager (npm)
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;It's a JavaScript package manager&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.npmjs.com/" 
+				class="external-link" 
+				target="_blank" >
+                npm
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It's from Microsoft.
+		</p>
+	</li>
+</ul>
+<h2
+	id="syntax" >
+    Syntax
+</h2>
+<h3
+	id="es6-vs-old-alternatives" >
+    ES6 vs Old Alternatives
+</h3>
+<ul>
+	<li>
+		<p>
+            ES6 (ECMAScript 2015).
+		</p>
+	</li>
+</ul>
+<h5
+	id="imports" >
+    Imports
+</h5>
+<ul>
+	<li>
+		<p>
+            Node.js:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">const mongoose = require('mongoose');
+</code></pre>
+<ul>
+	<li>
+		<p>
+            ES6:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">import mongoose from 'mongoose';
+</code></pre>
+<h3
+	id="comments-and-error-handling" >
+    Comments and Error Handling
+</h3>
+<h5
+	id="comments" >
+    Comments
+</h5>
+<ul>
+	<li>
+		<p>
+            Inline comment:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>// Comment</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Print&quot;:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>Console.log()</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="error-handling" >
+    Error handling
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                <code>try</code>
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The code inside this block is what you want to monitor for errors. If an error occurs inside this block, control passes directly to the 
+                    <code>catch</code>
+                    &nbsp;block.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                <code>catch</code>
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If an error occurs inside the 
+                    <code>try</code>
+                    &nbsp;block, JavaScript stops normal execution and begins executing the 
+                    <code>catch</code>
+                    &nbsp;block. The 
+                    <code>error</code>
+                    &nbsp;object contains information about the error, including the error message (
+                    <code>error.message</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                <code>finally</code>
+			</strong>
+            &nbsp;(optional):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This block is optional and will execute regardless of whether an error occurred. It is useful for cleaning up resources or performing actions that must run regardless of how the 
+                    <code>try</code>
+                    &nbsp;block finished.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">function divideNumbers(a, b) {
+&nbsp;&nbsp;try {
+&nbsp;&nbsp;&nbsp;&nbsp;if (b === 0) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error('Division by zero is not allowed');
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return a / b;
+&nbsp;&nbsp;} catch (error) {
+&nbsp;&nbsp;&nbsp;&nbsp;console.error('An error occurred:', error.message);
+&nbsp;&nbsp;&nbsp;&nbsp;return null; // Returns null to indicate an error occurred
+&nbsp;&nbsp;} finally {
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Division operation finished');
+&nbsp;&nbsp;}
+}
+
+console.log(divideNumbers(10, 2)); // Output: 5
+console.log(divideNumbers(10, 0)); // Expected output: An error occurred: Division by zero is not allowed
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Division operation finished
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Output: null
+</code></pre>
+<h3
+	id="basic" >
+    Basic
+</h3>
+<h5
+	id="introduction" >
+    Introduction
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=W6NZfCO5SIk" 
+				class="external-link" 
+				target="_blank" >
+                Browser vs Node, initial VSCode setup, initial HTML setup, variable declarations, dynamic typing, objects, arrays, functions
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Very simple, nothing crazy.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Well explained.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=PFmuCDHHpwk" 
+				class="external-link" 
+				target="_blank" >
+                OOP in js
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Explains Constructor Functions and Factory Functions.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The first half of the video talks about some lower-level technical things.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The rest of the video are demonstrations and applications.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="declarations" >
+    Declarations
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>const</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Constants
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>let</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Variable with scope similar to GDScript, and similar to the vast majority of programming languages.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>var</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Declares a variable in a &quot;function scope&quot;, making things confusing and accessible in unintuitive places.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Simply never use 
+                    <code>var</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=XgSjoHgy3Rk" 
+				class="external-link" 
+				target="_blank" >
+                Differences between 'let' and 'var'
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=pJ_oKVFHMK0" 
+				class="external-link" 
+				target="_blank" >
+                Explanation of Hoisting
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            **In summary:
+		</p>
+		<ul>
+			<li>
+				<p
+					class="line-emphasis" >
+                    Never use 
+                    <code>var</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p
+					class="line-emphasis" >
+                    Prefer ES6.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="boolean-operations" >
+    Boolean Operations
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>&&</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    and
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>||</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    or
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>!</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    not
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&lt;</code>
+            , 
+            <code>&gt;</code>
+            , 
+            <code>&lt;=</code>
+            , 
+            <code>&gt;=</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    comparisons
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>==</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Equality Operator&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Performs type coercion. This means it will try to convert values before comparing, which can lead to unexpected results in some cases.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-js" data-lang="js"> console.log(5 == '5');&nbsp;&nbsp;// true, because '5' is converted to number 5 before comparison
+ console.log(0 == false); // true, because false is converted to 0 before comparison
+ console.log('' == false); // true, because '' is converted to false before comparison
+</code></pre>
+	</li>
+	<li>
+		<p>
+            <code>!==</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Negation of the &quot;Equality Operator&quot;, i.e., a &quot;Not Equal&quot; operator.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>===</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Strict Equality Operator&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Does not perform type coercion. Checks equality in value and type.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-js" data-lang="js"> console.log(5 === '5');&nbsp;&nbsp;// false, because '5' is a string and 5 is a number
+ console.log(0 === false); // false, because 0 is a number and false is a boolean
+ console.log('' === false); // false, because '' is a string and false is a boolean
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20241211230445.png" width="350" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20241226100935.png" width="350" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>!===</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Negation of the &quot;Strict Equality Operator&quot;, i.e., a &quot;Strict Not Equal&quot; operator.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="strings" >
+    Strings
+</h5>
+<ul>
+	<li>
+		<p>
+            ~Various things, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=NgF9-pdTDGs" 
+				class="external-link" 
+				target="_blank" >
+                Template Literals
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used to format output in a clearer way.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Super useful.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="undefined-vs-null" >
+    undefined vs null
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>undefined</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Indicates a variable was declared but not yet assigned a value.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>null</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Represents the intentional absence of a value. Used when you explicitly want to indicate an invalid or empty value.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Differences:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>undefined</code>
+                    &nbsp;is a JavaScript type, while 
+                    <code>null</code>
+                    &nbsp;is a special value of type 
+                    <code>object</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>undefined</code>
+                    &nbsp;is automatically assigned to uninitialized variables, while 
+                    <code>null</code>
+                    &nbsp;must be assigned explicitly.
+				</p>
+			</li>
+			<li>
+				<p>
+                    To check for 
+                    <code>undefined</code>
+                    &nbsp;use 
+                    <code>typeof</code>
+                    &nbsp;or direct comparison (
+                    <code>=== undefined</code>
+                    ). To check for 
+                    <code>null</code>
+                    &nbsp;use 
+                    <code>=== null</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="imports" >
+    Imports
+</h3>
+<ul>
+	<li>
+		<p>
+            ~I don't know:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">import mongoose from 'mongoose';
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Exporting everything.
+		</p>
+<pre><code class="language-js" data-lang="js"> import * as utils from './utils.ts';
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Exporting only the 
+            <code>sum</code>
+            &nbsp;function.
+		</p>
+<pre><code class="language-js" data-lang="js"></code></pre>
+	</li>
+</ul>
+<p>
+    import {sum} from './utils.ts';
+    <br>
+    <code>- Function declaration:</code>
+    js
+    <br>
+    export function sum(a: number, b: number): number {
+    <br>
+    return a + b;
+    <br>
+    }
+    <br>
+    ```
+</p>
+<ul>
+	<li>
+		<p>
+            Exporting only the 
+            <code>sum</code>
+            &nbsp;function as the DEFAULT export.
+		</p>
+<pre><code class="language-js" data-lang="js"></code></pre>
+	</li>
+</ul>
+<p>
+    import sum from './utils.ts';
+    <br>
+    <code>- Function declaration:</code>
+    js
+    <br>
+    export default function sum(a: number, b: number): number {
+    <br>
+    return a + b;
+    <br>
+    }
+    <br>
+    ```
+</p>
+<h3
+	id="types" >
+    Types
+</h3>
+<h5
+	id="array" >
+    Array
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;Arrays are ordered collections of values. They can store any data type, like numbers, strings, objects, etc.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            The initial index is 
+			<strong>
+                0
+			</strong>
+            .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">let arr = [1, 2, 3, 4, 5]; 
+let arr2 = new Array(1, 2, 3, 4, 5);
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<em>
+                Access
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>console.log(arr[0]); // 1</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>console.log(arr[4]); // 5</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                push
+			</strong>
+            : Adds one or more elements to the end of the array.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>arr.push(6); // [1, 2, 3, 4, 5, 6]</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                pop
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Removes the last element of the array.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>arr.pop(); // [1, 2, 3, 4, 5]</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                shift
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Removes the first element of the array.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>arr.shift(); // [2, 3, 4, 5]</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                unshift
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Adds one or more elements to the beginning of the array.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>arr.unshift(0); // [0, 2, 3, 4, 5]</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                map
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Creates a new array with the results of calling a function on every element.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>let arr3 = arr.map(x =&gt; x * 2); // [2, 4, 6, 8, 10]</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                filter
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Creates a new array with all elements that pass the test implemented by the function.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>let arr4 = arr.filter(x =&gt; x &gt; 3); // [4, 5]</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="set" >
+    Set
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;Collection of unique items&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;You can add, delete and check existence of values in a 
+            <code>Set</code>
+            , but not access them by index.&quot;
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">let set = new Set([1, 2, 3, 4, 5]);
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                add
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Adds a value to the set.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>set.add(6); // Set(6) { 1, 2, 3, 4, 5, 6 }</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                delete
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Removes a value from the set.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>set.delete(1); // Set(5) { 2, 3, 4, 5, 6 }</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                has
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Checks if a value exists in the set.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>console.log(set.has(3)); // true</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                size
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the number of values in the set.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>console.log(set.size); // 5</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="maps-aka-dictionaries" >
+    Maps (aka Dictionaries)
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;Maps are collections of key-value pairs. They allow any type of value (objects, functions, etc.) as a key.&quot;
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">let map = new Map([
+&nbsp;&nbsp;["a", 1],
+&nbsp;&nbsp;["b", 2],
+&nbsp;&nbsp;["c", 3]
+]);
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                set
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Adds or updates a key-value pair in the map.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>map.set("d", 4); // Map(4) { 'a' =&gt; 1, 'b' =&gt; 2, 'c' =&gt; 3, 'd' =&gt; 4 }</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                get
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the value associated with a key.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>console.log(map.get("a")); // 1</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                has
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Checks if a key exists in the map.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>console.log(map.has("b")); // true</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                delete
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Removes a key-value pair from the map.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>map.delete("c"); // Map(3) { 'a' =&gt; 1, 'b' =&gt; 2, 'd' =&gt; 4 }</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                size
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the number of key-value pairs in the map.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>console.log(map.size); // 3</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="loops" >
+    Loops
+</h3>
+<h5
+	id="for" >
+    for
+</h5>
+<pre><code class="language-js" data-lang="js">for (let i = 0; i &lt; 5; i++) {
+
+}
+</code></pre>
+<h3
+	id="functions" >
+    Functions
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;In JS, functions 
+			<strong>
+                are
+			</strong>
+            &nbsp;objects&quot;.
+		</p>
+	</li>
+</ul>
+<h5
+	id="functions" >
+    Functions
+</h5>
+<pre><code class="language-js" data-lang="js">function fun(a, b) {
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b;
+}
+</code></pre>
+<h5
+	id="anonymous-functions" >
+    Anonymous Functions
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                No Name
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Anonymous functions have no name, so you cannot call them directly after defining them unless they are assigned to a variable or passed as an argument.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Common Use in Callbacks
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Widely used as callbacks in events, timers, or array methods.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Inline Definition
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Often defined inline where needed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Example:
+		</p>
+<pre><code class="language-js" data-lang="js"> // Traditional syntax
+ const anonFunc = function(a, b) { 
+&nbsp;&nbsp;&nbsp;&nbsp; return a + b; 
+ }; 
+ console.log(anonFunc(3, 4)); // 7&nbsp;&nbsp;&nbsp;&nbsp;
+
+ // Arrow function syntax
+ const anonFunc = (a, b) =&gt; a + b; 
+ console.log(anonFunc(3, 4)); // 7
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="anonymous-functions-lambda-functions-arrow-functions" >
+    Anonymous Functions: Lambda Functions (Arrow Functions)
+</h5>
+<ul>
+	<li>
+		<p>
+            Lambda functions are 
+			<em>
+                always
+			</em>
+            &nbsp;anonymous.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Concise Syntax
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Arrow functions allow more concise definition. If the function has a single expression, 
+                    <code>return</code>
+                    &nbsp;is implicit and 
+                    <code>{}</code>
+                    &nbsp;can be omitted.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                No own 
+                <code>this</code>
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Arrow functions do not have their own 
+                    <code>this</code>
+                    . They inherit 
+                    <code>this</code>
+                    &nbsp;from the defining context.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Not suitable as methods
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Due to 
+                    <code>this</code>
+                    &nbsp;behavior, arrow functions are not suitable as object methods.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                No 
+                <code>arguments</code>
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Arrow functions do not have the 
+                    <code>arguments</code>
+                    &nbsp;object. Use rest parameters (
+                    <code>...args</code>
+                    ) instead.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Basic example:
+		</p>
+<pre><code class="language-js" data-lang="js"> // Normal function 
+ function sum(a, b) {
+&nbsp;&nbsp;&nbsp;&nbsp; return a + b; 
+ } 
+ 
+ // Arrow function 
+ const sum = (a, b) =&gt; a + b;
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Usage example:
+		</p>
+<pre><code class="language-js" data-lang="js"> // Array of numbers 
+ const numbers = [1, 2, 3, 4, 5]; 
+ // Using arrow function with map to double values
+ const doubled = numbers.map(num =&gt; num * 2); 
+ console.log(doubled); // [2, 4, 6, 8, 10]
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Multiline usage:
+		</p>
+<pre><code class="language-js" data-lang="js"> const sum = (a, b) =&gt; { 
+&nbsp;&nbsp;&nbsp;&nbsp; const result = a + b; 
+&nbsp;&nbsp;&nbsp;&nbsp; return result; 
+ }; 
+ console.log(sum(3, 4)); // 7
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="objects" >
+    Objects
+</h3>
+<h5
+	id="this" >
+    this
+</h5>
+<ul>
+	<li>
+		<p>
+            Normally a reference to an object.
+		</p>
+	</li>
+	<li>
+		<p>
+            If used in the global scope:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Window object in the browser&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="objects-creating-objects" >
+    Objects: Creating objects
+</h3>
+<h5
+	id="using-object-literal" >
+    Using Object Literal
+</h5>
+<ul>
+	<li>
+		<p>
+            The most common and simple way to create an object.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">const person = {
+&nbsp;&nbsp;name: "João",
+&nbsp;&nbsp;age: 30,
+&nbsp;&nbsp;greet: function() {
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, my name is ${this.name}`);
+&nbsp;&nbsp;}
+};
+
+// Accessing properties
+console.log(person.name); // João
+console.log(person["age"]); // 30
+
+// Calling a method
+person.greet(); // Hello, my name is João
+</code></pre>
+<ul>
+	<li>
+		<p>
+            &quot;In JavaScript, 
+            <code>const</code>
+            &nbsp;creates a constant that cannot be reassigned. However, that does not mean the value inside the constant object cannot be modified. 
+            <code>const</code>
+            &nbsp;protects the reference to the object, but not the mutability of the object itself.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;You can declare an object with 
+            <code>let</code>
+            . This allows both modification of internal properties and reassignment of the variable. However, if you don't intend to reassign, using 
+            <code>const</code>
+            &nbsp;is recommended to indicate the reference should not change.&quot;
+		</p>
+	</li>
+</ul>
+<h5
+	id="using-new-object" >
+    Using new Object
+</h5>
+<pre><code class="language-js" data-lang="js">const car = new Object();
+car.brand = "Toyota";
+car.model = "Corolla";
+car.year = 2020;
+
+console.log(car.brand); // Toyota
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>const car = {};</code>
+            &nbsp;or 
+            <code>const car = new Object();</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    They are 
+					<em>
+                        exactly
+					</em>
+                    &nbsp;the same. Under the hood 
+                    <code>{}</code>
+                    &nbsp;is 
+                    <code>new Object()</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Yes, in JavaScript you can access and set properties that were not previously defined. If you do 
+            <code>car.brand</code>
+            &nbsp;and 
+            <code>brand</code>
+            &nbsp;doesn't exist, JavaScript returns 
+            <code>undefined</code>
+            &nbsp;without throwing an error. If you assign a value to a nonexistent property, JavaScript creates that property on the object.&quot;
+		</p>
+	</li>
+</ul>
+<h5
+	id="using-constructor-functions-or-factory-functions-uncommon" >
+    Using Constructor Functions or Factory Functions (uncommon)
+</h5>
+<ul>
+	<li>
+		<p>
+            Both are ways to create objects while defining construction characteristics.
+		</p>
+	</li>
+	<li>
+		<p>
+            Prefer 'Constructor Functions' over 'Factory Functions', but both work.
+		</p>
+	</li>
+	<li>
+		<p>
+            'Constructor Function':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Use 
+                    <code>new</code>
+                    .
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-js" data-lang="js"> function Person(name, age) {
+&nbsp;&nbsp; this.name = name;
+&nbsp;&nbsp; this.age = age;
+&nbsp;&nbsp; this.greet = function() {
+&nbsp;&nbsp;&nbsp;&nbsp; console.log(`Hello, my name is ${this.name}`);
+&nbsp;&nbsp; };
+ }
+ 
+ const maria = new Person("Maria", 25);
+ console.log(maria.name); // Maria
+ maria.greet(); // Hello, my name is Maria
+</code></pre>
+	</li>
+	<li>
+		<p>
+            'Factory Function':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No need to use 
+                    <code>new</code>
+                    .
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-js" data-lang="js"> function createCircle(radius) {
+&nbsp;&nbsp;&nbsp;&nbsp; return {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; radius,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; draw: function() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log('drawing')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; };
+ }
+ 
+ const my_circle = createCircle(1);
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="using-classes" >
+    Using Classes
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;The most common and modern way to construct classes in JavaScript is using 
+            <code>class</code>
+            &nbsp;syntax introduced in ES6 (2015). While constructor functions still work, 
+            <code>class</code>
+            &nbsp;syntax is preferred for clarity and familiarity.&quot;
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">class Person {
+&nbsp;&nbsp;&nbsp;&nbsp;constructor(name, age) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.age = age;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;greet() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, my name is ${this.name}`);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+const pedro = new Person("Pedro", 40);
+console.log(pedro.name); // Pedro
+pedro.greet(); // Hello, my name is Pedro
+</code></pre>
+<h3
+	id="objects-manipulation" >
+    Objects: Manipulation
+</h3>
+<ul>
+	<li>
+		<p>
+            Class used in examples:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">const book = {}
+book.title = "JavaScript: The Definitive Guide"; 
+book.author = "David Flanagan";
+</code></pre>
+<h5
+	id="add-and-update-properties" >
+    Add and update properties
+</h5>
+<pre><code class="language-js" data-lang="js">book.year = 2020; // Adding a new property 
+book.year = 2021; // Updating an existing property
+</code></pre>
+<h5
+	id="remove-properties" >
+    Remove properties
+</h5>
+<pre><code class="language-js" data-lang="js">delete book.year;
+console.log(book); // {title: "JavaScript: The Definitive Guide", author: "David Flanagan"}
+</code></pre>
+<h5
+	id="access" >
+    Access
+</h5>
+<ul>
+	<li>
+		<p>
+            Dynamic access (using a variable as property name):
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">const key = "title"; 
+console.log(book[key]); // JavaScript: The Definitive Guide
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Keys:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">console.log(Object.keys(book)); // ["title", "author", "year"]
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Values:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">console.log(Object.values(book)); // ["JavaScript: The Definitive Guide", "David Flanagan", 2021]
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Entries:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">console.log(Object.entries(book)); // [["title", "JavaScript: The Definitive Guide"], ["author", "David Flanagan"], ["year", 2021]]
+</code></pre>
+<h3
+	id="objects-sets-and-gets" >
+    Objects: Sets and Gets
+</h3>
+<pre><code class="language-js" data-lang="js">class Person {
+&nbsp;&nbsp;constructor(name, gender) {
+&nbsp;&nbsp;&nbsp;&nbsp;this._name = name;
+&nbsp;&nbsp;&nbsp;&nbsp;this._gender = gender;
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;// Getter for gender property
+&nbsp;&nbsp;get gender() {
+&nbsp;&nbsp;&nbsp;&nbsp;return this._gender;
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;// Setter for gender property
+&nbsp;&nbsp;set gender(newGender) {
+&nbsp;&nbsp;&nbsp;&nbsp;this._gender = newGender;
+&nbsp;&nbsp;}
+}
+
+const person = new Person("João", "Male");
+
+// Using the getter
+console.log(person.gender); // Male
+
+// Using the setter
+person.gender = "Female";
+console.log(person.gender); // Female
+</code></pre>
+<h3
+	id="asynchrony-and-threads" >
+    Asynchrony and Threads
+</h3>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            &quot;Promise&quot;.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    &quot;Resolve&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    &quot;Reject&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    &quot;.then()&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    &quot;.catch()&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            &quot;async function&quot;.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+						<a
+							href="/docs/WebDev/CSS/CSS.html" >
+                            &nbsp;&lsaquo; Previous
+						</a>
+						<a
+							href="/docs/WebDev/TypeScript.html" >
+                            Next &rsaquo; 
+						</a>
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2025-10-30 🚀
+			</footer>
+		</div>
+		<aside
+			id="right-sidebar" >
+			<nav
+				id="table-of-contents" >
+				<strong>
+                    On this page
+				</strong>
+				<ul>
+					<li>
+						<a
+							href="#about" >
+                            About
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#when-you-truly-need-javascript" >
+                                    When you truly need JavaScript
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#package-registry" >
+                            Package Registry
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#syntax" >
+                            Syntax
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#es6-vs-old-alternatives" >
+                                    ES6 vs Old Alternatives
+								</a>
+							</li>
+							<li>
+								<a
+									href="#comments-and-error-handling" >
+                                    Comments and Error Handling
+								</a>
+							</li>
+							<li>
+								<a
+									href="#basic" >
+                                    Basic
+								</a>
+							</li>
+							<li>
+								<a
+									href="#imports" >
+                                    Imports
+								</a>
+							</li>
+							<li>
+								<a
+									href="#types" >
+                                    Types
+								</a>
+							</li>
+							<li>
+								<a
+									href="#loops" >
+                                    Loops
+								</a>
+							</li>
+							<li>
+								<a
+									href="#functions" >
+                                    Functions
+								</a>
+							</li>
+							<li>
+								<a
+									href="#objects" >
+                                    Objects
+								</a>
+							</li>
+							<li>
+								<a
+									href="#objects-creating-objects" >
+                                    Objects: Creating objects
+								</a>
+							</li>
+							<li>
+								<a
+									href="#objects-manipulation" >
+                                    Objects: Manipulation
+								</a>
+							</li>
+							<li>
+								<a
+									href="#objects-sets-and-gets" >
+                                    Objects: Sets and Gets
+								</a>
+							</li>
+							<li>
+								<a
+									href="#asynchrony-and-threads" >
+                                    Asynchrony and Threads
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+		<script
+			src="/static/docs.js" >
+		</script>
+	</body>
+</html>

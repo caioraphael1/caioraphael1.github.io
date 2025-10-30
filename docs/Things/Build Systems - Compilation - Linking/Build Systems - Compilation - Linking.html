@@ -1,0 +1,4122 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/favicon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script
+			src="/static/docs_load.js" >
+		</script>
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js" >
+		</script>
+		<script
+			src="https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.min.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/docs.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Graphics Programming
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Vulkan/Vulkan.html" >
+                                Vulkan
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Render Engineering/Render Engineering.html" >
+                                Render Engineering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Graphics and Shaders/Graphics and Shaders.html" >
+                                Graphics and Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GLSL/GLSL.html" >
+                                GLSL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GPU/GPU.html" >
+                                GPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/OpenGL/OpenGL.html" >
+                                OpenGL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - DOD e COP/Design - DOD e COP.html" >
+                                Design - DOD e COP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - ECS/Design - ECS.html" >
+                                Design - ECS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Design Patterns/Design - Design Patterns.html" >
+                                Design - Design Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Architecture Patterns.html" >
+                                Design - Architecture Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Concepts and Terminology.html" >
+                                Design - Concepts and Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
+                                Design - Rules of thumb - Laws - Guidelines and Principles
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Paradigms.html" >
+                                Design - Paradigms
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
+                                Design - Production Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Backend/Network - Backend.html" >
+                                Network - Backend
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Low Level e Etc/Network - Low Level e Etc.html" >
+                                Network - Low Level e Etc
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Netcode/Network - Netcode.html" >
+                                Network - Netcode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - HTTP/Network - HTTP.html" >
+                                Network - HTTP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Encryption.html" >
+                                Encryption
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/SSH.html" >
+                                SSH
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Things
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/docs/Things/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking.html" >
+                                Build Systems - Compilation - Linking
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/CPU/CPU.html" >
+                                CPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Setup/NeoVim - Setup.html" >
+                                NeoVim - Setup
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Uso/NeoVim - Uso.html" >
+                                NeoVim - Uso
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/VSCode - VSCodium.html" >
+                                VSCode - VSCodium
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/Visual Studio/Visual Studio.html" >
+                                Visual Studio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Debuggers.html" >
+                                Debuggers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Dependencies.html" >
+                                Dependencies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Git/Git.html" >
+                                Git
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Handmade Hero/Handmade Hero.html" >
+                                Handmade Hero
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Linux/Linux.html" >
+                                Linux
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Memory/Memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Multithreading/Multithreading.html" >
+                                Multithreading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/RegEx.html" >
+                                RegEx
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Shells/Shells.html" >
+                                Shells
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Terminal/Terminal.html" >
+                                Terminal
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Programming Languages
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Assembly - ASM.html" >
+                                Assembly - ASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C++/C++.html" >
+                                C++
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C.html" >
+                                C
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/CSharp/CSharp.html" >
+                                CSharp
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Go.html" >
+                                Go
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Haxe.html" >
+                                Haxe
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/JAI.html" >
+                                JAI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Java.html" >
+                                Java
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Kotlin.html" >
+                                Kotlin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Lua.html" >
+                                Lua
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Nim/Nim.html" >
+                                Nim
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Odin/Odin.html" >
+                                Odin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Python.html" >
+                                Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Rust/Rust.html" >
+                                Rust
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Swift/Swift.html" >
+                                Swift
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Zig/Zig.html" >
+                                Zig
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        WebDev
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebDev/WebDev.html" >
+                                WebDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML/HTML.html" >
+                                HTML
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTMX.html" >
+                                HTMX
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebAssembly - WASM/WebAssembly - WASM.html" >
+                                WebAssembly - WASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/CSS/CSS.html" >
+                                CSS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript/JavaScript.html" >
+                                JavaScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/TypeScript.html" >
+                                TypeScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Frameworks and Libraries/JavaScript - Frameworks and Libraries.html" >
+                                JavaScript - Frameworks and Libraries
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Runtime Environments.html" >
+                                JavaScript - Runtime Environments
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Hugo/Hugo.html" >
+                                Hugo
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Static Site Generators.html" >
+                                Static Site Generators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML - Tests/HTML - Tests.html" >
+                                HTML - Tests
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Databases
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - MongoDB.html" >
+                                Databases - MongoDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - SQL - Relational/Databases - SQL - Relational.html" >
+                                Databases - SQL - Relational
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Document Oriented.html" >
+                                Databases - Document Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Object Oriented.html" >
+                                Databases - Object Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - ORMs.html" >
+                                Databases - ORMs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Electronics
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Sources and Studies.html" >
+                                Electronics - Sources and Studies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Projects and Tutorials.html" >
+                                Electronics - Projects and Tutorials
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Arduino.html" >
+                                Arduino
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<header
+				id="central-header" >
+				<nav
+					id="dropdown-menu" >
+					<select
+						onchange="if (this.value) window.location.href=this.value" >
+						<option
+							value="/" 
+>
+                            🏡 Home
+						</option>
+						<option
+							value="/docs/_index.html" 
+							selected="">
+                            📖 Docs
+						</option>
+					</select>
+				</nav>
+				<button
+					class="btn" 
+					id="button-color-theme" >
+					<i>
+                        ☀️ / 🌑
+					</i>
+				</button>
+			</header>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Build Systems - Compilation - Linking
+						</h1>
+						<p>
+							<time
+								datetime="2025-05-27" >
+                                🕒 Created: 2025-05-27
+							</time>
+							<time
+								datetime="2025-10-29" >
+                                | Updated: 2025-10-29
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            Compiled with the C Compilation Process in mind.
+		</p>
+	</li>
+</ul>
+<h2
+	id="compilation-process" >
+    Compilation Process
+</h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=3tIqpEmWMLI" 
+				class="external-link" 
+				target="_blank" >
+                Compilation Process in C++
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Good video.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The header file example is interesting.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>}</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The preprocessor examples are good.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>#define INTEGER int</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Compiler optimizations shown in ASM.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Demonstrates normal vs speed.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=N2y6csonII4" 
+				class="external-link" 
+				target="_blank" >
+                Compiling, assembling and linking
+			</a>
+		</p>
+		<ul>
+			<li>
+                <img src="assets/image_20250613162808.png" width="500" >
+
+			</li>
+			<li>
+                <img src="assets/image_20250613162836.png" width="500" >
+
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=ksJ9bdSX5Yo" 
+				class="external-link" 
+				target="_blank" >
+                C/C++ Compilation Process
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Preprocessor
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates 
+                            <code>source.i</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Compiler
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates 
+                            <code>source.s</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    ASM
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates 
+                            <code>source.o</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="linker" >
+    Linker
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=H4s55GgAg0I" 
+				class="external-link" 
+				target="_blank" >
+                Linking in C++
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Errors starting with C: Compiler Error
+				</p>
+			</li>
+			<li>
+				<p>
+                    Errors starting with LNK: Linker Error
+				</p>
+			</li>
+			<li>
+				<p>
+                    Many examples of errors caused by Compiler vs Linker.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Examples of how 
+                    <code>static</code>
+                    &nbsp;and 
+                    <code>inline</code>
+                    &nbsp;interact with 
+                    <code>#include</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Last example shows linking via header files.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="static-linker" >
+    Static Linker
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>.lib</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is the MSVC library format.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Can be a Static Library or an Import Library.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Static Library (.lib)
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Contains compiled object code that is statically linked into the final executable.
+						</p>
+					</li>
+					<li>
+						<p>
+                            All code and data from the library are copied into the executable at build time.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The resulting executable does not depend on the 
+                            <code>.lib</code>
+                            &nbsp;file at runtime.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Used when you want everything in one binary without external dependencies.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Import Library (.lib)
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Provides symbols for linking against a DLL (Dynamic Link Library).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Contains only symbol references, not actual code.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The executable will require the corresponding 
+                            <code>.dll</code>
+                            &nbsp;file at runtime.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Used when linking against DLLs. The linker uses the 
+                            <code>.lib</code>
+                            &nbsp;to resolve symbols, but the actual code resides in the 
+                            <code>.dll</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    You can determine whether a 
+                    <code>.lib</code>
+                    &nbsp;is static or import:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If it's paired with a 
+                            <code>.dll</code>
+                            , it's likely an import library.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If there's no 
+                            <code>.dll</code>
+                            , or the 
+                            <code>.lib</code>
+                            &nbsp;is explicitly intended for static linking, then it's a static library.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>.a</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is the GCC/MinGW library format.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>.o</code>
+		</p>
+	</li>
+</ul>
+<h5
+	id="dynamic-linker" >
+    Dynamic Linker
+</h5>
+<ul>
+	<li>
+		<p>
+            Linux:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>.so</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Windows:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>.dll</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Mac
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>.dylib</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="compilers" >
+    Compilers
+</h2>
+<h3
+	id="gcc-gnu-c-compiler-gt-gnu-compiler-collection" >
+    GCC (GNU C Compiler -&gt; GNU Compiler Collection)
+</h3>
+<ul>
+	<li>
+		<p>
+            Originally, the name was &quot;GNU C Compiler&quot; because it only compiled the C language. Over time, it began to support other languages and was renamed &quot;GNU Compiler Collection&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Part of the GNU project; widely used in Linux. Supports multiple languages.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Open-source GPL.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Platforms
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows (via MinGW), Linux, macOS, BSD
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Debugging
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    GDB.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Minimum requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            MinGW.
+						</p>
+					</li>
+					<li>
+						<p>
+                            ~MSYS2.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    You don't need MSYS2 to use GCC on Windows. MinGW already provides GCC ready to use.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    MSYS2 is an additional environment that facilitates installation and package management, but it is not mandatory.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Linux:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Just the package.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                My version
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    [2025/06/13] 14.2.0
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-sh" data-lang="sh">gcc -o main main.c
+
+gcc -o main main.c random.c -lm
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=NGPo7mz1oa4" 
+				class="external-link" 
+				target="_blank" >
+                GCC Explanation {1:20 -&gt; 5:33}
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="mingw-minimalist-gnu-for-windows" >
+    MinGW (Minimalist GNU for Windows)
+</h5>
+<ul>
+	<li>
+		<p>
+            It is a set of development tools that allows compiling C, C++, and Fortran code on Windows using the GNU ecosystem (GCC, GDB, Make, etc.), without relying on Microsoft Visual Studio (MSVC).
+		</p>
+	</li>
+	<li>
+		<p>
+            It fits into two main categories:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    As a Build Tool (providing compilers like 
+                    <code>gcc</code>
+                    &nbsp;and 
+                    <code>g++</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    As an alternative to MSVC (Microsoft compiler).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                MinGW Features
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>gcc</code>
+                    &nbsp;and 
+                    <code>g++</code>
+                    &nbsp;(GNU compilers for C/C++ on Windows).
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>make</code>
+                    &nbsp;(build tool for 
+                    <code>Makefile</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>gdb</code>
+                    &nbsp;(GNU debugger).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Standard GNU libraries (glibc, libstdc++).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                UCRT vs MSVCRT
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    UCRT is available as an alternative to MSVCRT.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Unless you are targeting older versions of Windows, UCRT as runtime library is the better choice, as it was written to better support recent Windows versions as well as provide better standards conformance.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                MSYS2 (Minimal SYStem 2)
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is a package-based development environment that provides a Unix-like terminal on Windows, along with tools like GCC (MinGW-w64), Make, Git, Python, and a package manager (
+                    <code>pacman</code>
+                    , the same as Arch Linux).
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is an evolution of the old MSYS and Cygwin, but focuses on:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Compiling native Windows programs (with MinGW-w64).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Offering a Unix-like environment without sacrificing Windows compatibility.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Easily managing libraries and dependencies via 
+                            <code>pacman</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    MSYS2 has three different &quot;environments,&quot; each with a specific purpose:
+				</p>
+				<ul>
+					<li>
+						<p>
+							<em>
+                                MSYS2
+							</em>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Base environment with Bash shell, coreutils (like 
+                                    <code>ls</code>
+                                    , 
+                                    <code>grep</code>
+                                    ), and 
+                                    <code>pacman</code>
+                                    &nbsp;for package and script management.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                MinGW-w64 (UCRT/MSVCRT)
+							</em>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Compilers to generate native Windows executables.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                CLANG64/CLANG32
+							</em>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Versions of Clang/LLVM for Windows.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    You choose the environment via the terminal shortcut that opens:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            MSYS2 Shell (for administration).
+						</p>
+					</li>
+					<li>
+						<p>
+                            MinGW-w64 Shell (to compile with GCC).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Clang64 Shell (to compile with Clang).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Installation
+			</em>
+            :
+		</p>
+<pre><code class="language-sh" data-lang="sh"> pacman -S mingw-w64-x86_64-gcc&nbsp;&nbsp;# Install GCC 64-bit
+ pacman -S mingw-w64-i686-gcc&nbsp;&nbsp;&nbsp;&nbsp;# Install GCC 32-bit
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="commands" >
+    Commands
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>-o</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sets the name of the output file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>-std=c11</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specify Language Standard.
+				</p>
+			</li>
+			<li>
+				<p>
+                    C89, C99, C11, C17, etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>-ansi</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Forces compliance with C89/C90.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Compilation
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-c</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Compile without linking, creating the object file 
+                            <code>.o</code>
+                            &nbsp;/ 
+                            <code>.obj</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-v</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Verbose mode (shows compilation steps).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Linking
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-l&lt;name&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Link with a library.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>-lm</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Link with the Math Library 
+                                    <code>libm</code>
+                                    .
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Needed for functions like 
+                                            <code>sin()</code>
+                                            , 
+                                            <code>cos()</code>
+                                            , 
+                                            <code>sqrt()</code>
+                                            , 
+                                            <code>pow()</code>
+                                            , etc.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>-lpthread</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    For threads.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-L&lt;path&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Adds a library directory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>-L./lib</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-static</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Link statically (avoids dynamic dependencies).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-shared</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates a shared library (
+                            <code>.so</code>
+                            &nbsp;/ 
+                            <code>.dll</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fPIC</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates position-independent code (used in shared libs).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Pre-processor / Macro
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-I&lt;path&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Adds an include directory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>-I./include</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Looks for headers in 
+                                    <code>./include</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-D&lt;macro&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Defines a macro (ex: 
+                            <code>-DDEBUG</code>
+                            &nbsp;is equivalent to 
+                            <code>define DEBUG</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-U&lt;macro&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Undefines a macro.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-E</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Only preprocesses (outputs 
+                            <code>include</code>
+                            &nbsp;and 
+                            <code>define</code>
+                            &nbsp;results).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-M</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates build dependencies (useful for Makefiles).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Debug
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-g</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Includes debug symbols (needed for 
+							<em>
+                                gdb
+							</em>
+                            &nbsp;and 
+							<em>
+                                valgrind
+							</em>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-ggdb</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Optimizes debug symbols for 
+							<em>
+                                GDB
+							</em>
+                            &nbsp;(more detailed than 
+                            <code>-g</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fsanitize=address</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Detects memory leaks, buffer overflows (AddressSanitizer).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fsanitize=undefined</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Detects undefined behavior (UB).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fstack-protector</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Protection against stack smashing.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fno-stack-protector</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Disables stack overflow protection.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Warnings / Errors
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-Wall</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enable Compilation Warnings.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Wextra</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enables extra warnings beyond 
+                            <code>-Wall</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Wpedantic</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enforces strict C standard compliance (complains about GNU extensions).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Wno-warning_name</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Disables a specific warning (ex: 
+                            <code>-Wno-unused-variable</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Werror</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Treat Warning as Errors.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Optimizations
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-O0</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            No optimization (better for debugging).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-O1</code>
+                    , 
+                    <code>-O2</code>
+                    , 
+                    <code>-O3</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Levels of code optimization. Higher = faster, but harder to debug.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Os</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Optimization for size (reduces executable).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Ofast</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Aggressive optimization + relaxes IEEE standards (may affect precision).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="clang-llvm" >
+    Clang/LLVM
+</h3>
+<ul>
+	<li>
+		<p>
+            Focus on modularity, clear error messages.
+		</p>
+	</li>
+	<li>
+		<p>
+            High compatibility with GCC.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Open-source Apache 2.0.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Platforms
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows, Linux, macOS, BSD
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Debugging
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    LLDB.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            More modern than GDB.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Minimum requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows / Linux / macOS:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            LLVM.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                My version
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    [2025/06/13] 19.1.1, x86_64-w64-windows-gnu
+				</p>
+			</li>
+			<li>
+				<p>
+                    Installed at 
+                    <code>C:/msys64/ucrt64/bin</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=IR_L1xf4PrU" 
+				class="external-link" 
+				target="_blank" >
+                How LLVM and Clang works
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The video is good, but the guy is overly enthusiastic and pro-Apple.
+				</p>
+			</li>
+			<li>
+				<p>
+                    {00:00 -&gt; 12:00}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            In-depth conceptual explanation.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {12:00 -&gt; 22:00}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            ASM code and LLVM code.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;Sometimes using ASM directly generates slower code, due to missing compiler optimizations&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {22:00 -&gt; end}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Same, repeating.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=oyltMd8adD0" 
+				class="external-link" 
+				target="_blank" >
+                Using in VSCode
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Decent, I guess.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="commands" >
+    Commands
+</h5>
+<ul>
+	<li>
+		<p>
+            The vast majority of all commands are 
+			<strong>
+                exactly the same
+			</strong>
+            &nbsp;as GCC.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Exclusive to Clang
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-fcolor-diagnostics</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Displays colored errors/warnings (great for readability).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Weverything</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enables all warnings (even the most pedantic).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-MJ &lt;file.json&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates JSON output for analysis tools (ex: IDEs).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="opinions" >
+    Opinions
+</h5>
+<ul>
+	<li>
+		<p>
+            Ginger Bill:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I wish I never used LLVM in the first place.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It has been the vast majority of the bugs in the Odin compiler.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's slow as fuck, even for development builds.
+				</p>
+			</li>
+			<li>
+				<p>
+                    And it gets worse with each release.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's alluring because it's free and is the basis of clang.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="msvc-microsoft-visual-c" >
+    <s>MSVC (Microsoft Visual C++)</s>
+</h3>
+<ul>
+	<li>
+		<p>
+            A piece of junk, overall.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is the default compiler for Visual Studio.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>cl.exe</code>
+            &nbsp;(MSVC).
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Microsoft proprietary.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Platforms
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows / Linux.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Languages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Limited support for C11/C17
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Install Visual Studio (Community Edition is free).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Or maybe the Build Tools.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Honestly, you will have to download Visual Studio anyway.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Linux:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Limited support (using 
+                            <code>clang-cl</code>
+                            &nbsp;or WSL).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                My version
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    14.42.34433 (came with Visual Studio).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Had to add 
+                    <code>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64</code>
+                    &nbsp;to the global PATH environment variable.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="commands" >
+    Commands
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                GCC or Clang equivalents
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250618135556.png" width="475" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                MSVC-specific
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>/MD</code>
+                    &nbsp;vs 
+                    <code>/MT</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Chooses runtime: shared DLL (
+                            <code>/MD</code>
+                            ) or static (
+                            <code>/MT</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>/EHsc</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enables C++ exceptions (default in C++ projects).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>/JMC</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Supports &quot;Just My Code&quot; in the debugger.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>/MP</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Parallel compilation (speeds up large builds).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-c" data-lang="c">// Equivalent to `gcc -o`
+cl hello.c /Fehello.exe
+
+// Compile with maximum warnings and debug
+cl /W4 /WX /Zi hello.c /Fehello_debug.exe
+
+// Compile with optimization (`/O2`) and C17 standard
+cl /O2 /std:c17 programa.c /Feprograma_otimizado.exe
+
+// Link with Windows libraries (e.g., `user32.lib`)
+cl winapp.c /link user32.lib /Fewinapp.exe
+
+// Compile multiple files
+cl /c arquivo1.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Generates arquivo1.obj
+cl /c arquivo2.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Generates arquivo2.obj
+cl arquivo1.obj arquivo2.obj /Feprograma.exe
+</code></pre>
+<h3
+	id="qbe" >
+    QBE
+</h3>
+<ul>
+	<li>
+		<p>
+            https://c9x.me/compile/
+		</p>
+	</li>
+	<li>
+		<p>
+            Ginger Bill:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    On Windows, and it's actually awful.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Worse than LLVM.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You have to generate a textual IR that you then pass to its library for it to be consumed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    And mainly because you cannot use it as a library whatsoever. It's designed not to be used as a library.
+				</p>
+			</li>
+			<li>
+				<p>
+                    QBE is a no-go.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I've considered before, and no.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="build-tools" >
+    Build Tools
+</h2>
+<ul>
+	<li>
+		<p>
+            They execute compilation commands directly (e.g., 
+            <code>gcc</code>
+            , 
+            <code>clang</code>
+            , 
+            <code>javac</code>
+            ).
+		</p>
+	</li>
+	<li>
+		<p>
+            Work with specific configuration files (
+            <code>Makefile</code>
+            , 
+            <code>build.ninja</code>
+            ).
+		</p>
+	</li>
+	<li>
+		<p>
+            Called manually or by meta-build tools.
+		</p>
+	</li>
+</ul>
+<h3
+	id="command-runners" >
+    Command Runners
+</h3>
+<h5
+	id="about" >
+    About
+</h5>
+<ul>
+	<li>
+		<p>
+            Batch file style.
+		</p>
+	</li>
+	<li>
+		<p>
+            No Incremental Builds, no Change Detection.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Has this source file changed since it was compiled, or its dependencies?&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="just-or-justfile" >
+    Just (or JustFile)
+</h5>
+<ul>
+	<li>
+		<p>
+			<em>
+                Impressions
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Seems to provide very few options for args and conditional execution of programs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Apparently on Windows it must be run via cmd or powershell, so any programming is internally done by the chosen shell, OR through Just’s own language.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Didn’t like it.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/casey/just" 
+				class="external-link" 
+				target="_blank" >
+                Just
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Download and place the folder in the environment.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>just</code>
+            &nbsp;is a command runner, similar to 
+            <code>make</code>
+            , but with a more modern and simplified syntax.
+		</p>
+	</li>
+	<li>
+		<p>
+            It has no language-specific knowledge like C, Rust, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            You define recipes in the 
+            <code>justfile</code>
+            , which are basically terminal commands to execute.
+		</p>
+	</li>
+	<li>
+		<p>
+            For C projects, 
+            <code>make</code>
+            &nbsp;or more specialized tools like 
+            <code>CMake</code>
+            &nbsp;or 
+            <code>Meson</code>
+            &nbsp;provide features like:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Dependency detection.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Incremental compilation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Cross-platform support.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>just</code>
+            &nbsp;is more useful when you want a simple file to organize reusable commands (build, run, test, etc.), without dependency logic between files.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Tutorial
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The file must be named 
+                    <code>justfile</code>
+                    , without extension.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/casey/just?tab=readme-ov-file#quick-start" 
+						class="external-link" 
+						target="_blank" >
+                        quick-start
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://cheatography.com/linux-china/cheat-sheets/justfile/" 
+						class="external-link" 
+						target="_blank" >
+                        Cheat sheet
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-sh" data-lang="sh"> recipe-name:
+&nbsp;&nbsp; echo 'This is a recipe!'
+ 
+ # this is a comment
+ another-recipe:
+&nbsp;&nbsp; @echo 'This is another recipe.'
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Running 
+                    <code>just</code>
+                    &nbsp;with no arguments runs the first recipe in the 
+                    <code>justfile</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    One or more arguments specify the recipe(s) to run.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Recipes can depend on other recipes. Here the 
+                    <code>test</code>
+                    &nbsp;recipe depends on the 
+                    <code>build</code>
+                    &nbsp;recipe, so 
+                    <code>build</code>
+                    &nbsp;will run before 
+                    <code>test</code>
+                    :
+				</p>
+<pre><code class="language-sh" data-lang="sh"> build:
+&nbsp;&nbsp; cc main.c foo.c bar.c -o main
+ 
+ test: build
+&nbsp;&nbsp; ./test
+ 
+ sloc:
+&nbsp;&nbsp; @echo "`wc -l *.c` lines of code"
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Recipes without dependencies run in the order given on the command line:
+				</p>
+<pre><code class="language-sh" data-lang="sh"> $ just build sloc
+ cc main.c foo.c bar.c -o main
+ 1337 lines of code
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="batch" >
+    Batch
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="ninja" >
+    Ninja
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/ninja-build/ninja" 
+				class="external-link" 
+				target="_blank" >
+                Ninja
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;Focus on speed&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Less flexibility.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;It's designed to have its input files generated by a higher-level build system&quot;.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    So don’t use it alone; have something generate Ninja files using a Meta Build System, like CMake.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Not designed to be written manually.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                My version
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    1.12.1.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=AkGt0fsQ17o" 
+				class="external-link" 
+				target="_blank" >
+                Ninja vs CMake
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Ninja vs CMake doesn’t make sense, but Ninja WITH CMake does; it’s a good choice, especially for large projects.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="gnu-make" >
+    GNU Make
+</h3>
+<ul>
+	<li>
+		<ol>
+			<li>
+			</li>
+		</ol>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=NGPo7mz1oa4" 
+				class="external-link" 
+				target="_blank" >
+                Make explanation {5:36 -&gt; 10:00}
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=PWYSyD2rVbM" 
+				class="external-link" 
+				target="_blank" >
+                Make vs CMake pt1
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Make has an absurdly more confusing syntax.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=GJ4O_flGrYw" 
+				class="external-link" 
+				target="_blank" >
+                Make vs CMake pt2
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="msbuild-visual-studio-project" >
+    MSBuild / Visual Studio Project
+</h3>
+<ul>
+	<li>
+		<p>
+            <a href="Visual Studio.html">
+            Visual Studio
+            </a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Create a project, add files inside using the IDE, click 
+			<em>
+                Build Solution
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=ebVd5Y7J5FY" 
+				class="external-link" 
+				target="_blank" >
+                Visual Studio Project vs CMake
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="disadvantages" >
+    Disadvantages
+</h5>
+<ul>
+	<li>
+		<p>
+            Completely Windows-focused.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Using a VS project limits deployment targets.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Technically possible to export to other platforms, but not easy.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Less Flexible.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You may not always be able to do or get what you want.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="msbuild" >
+    MSBuild
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>MSBuild</code>
+            &nbsp;is Microsoft’s default build engine for .NET, C++, and others.
+		</p>
+	</li>
+	<li>
+		<p>
+            It interprets project files (
+            <code>.vcxproj</code>
+            , 
+            <code>.csproj</code>
+            ) and executes build steps.
+		</p>
+	</li>
+	<li>
+		<p>
+            Works via command line and is used internally by Visual Studio.
+		</p>
+	</li>
+	<li>
+		<p>
+            Visual Studio uses MSBuild internally when you click Build Solution.
+		</p>
+	</li>
+	<li>
+		<p>
+            Visual Studio 
+			<em>
+                does not compile directly
+			</em>
+            &nbsp;– it 
+			<em>
+                calls MSBuild
+			</em>
+            &nbsp;(or other systems like CMake).
+		</p>
+	</li>
+</ul>
+<h5
+	id="visual-studio-solution-generated-by-cmake" >
+    Visual Studio solution generated by CMake
+</h5>
+<ul>
+	<li>
+		<p>
+            The projects 
+			<strong>
+                <code>install</code>
+			</strong>
+            , 
+			<strong>
+                <code>ALL_BUILD</code>
+			</strong>
+            , and 
+			<strong>
+                <code>ZERO_CHECK</code>
+			</strong>
+            &nbsp;are defaults when CMake generates solutions for Visual Studio.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                ALLBUILD
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Function: Project that depends on all other projects created by CMake, except 
+                    <code>INSTALL</code>
+                    &nbsp;and 
+                    <code>ZEROCHECK</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used to: Build all defined targets (executables, libraries, etc.) at once.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Behavior: Compiling 
+                    <code>ALLBUILD</code>
+                    &nbsp;builds everything configured in CMake.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                ZEROCHECK
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Function: Ensures CMake reconfigures the project if CMakeLists.txt files change.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used to: Automate regeneration of project files when build configuration changes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Behavior: Runs automatically before any build, unless disabled.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                INSTALL
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Function: Executes rules defined by 
+                    <code>install(...)</code>
+                    &nbsp;commands in CMakeLists.txt.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used to: Copy binaries, headers, libraries, etc., to defined directories (like 
+                    <code>/usr/local</code>
+                    &nbsp;or an 
+                    <code>install</code>
+                    &nbsp;folder).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Behavior: Only makes sense if the CMake script has installation instructions.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="bazel" >
+    Bazel
+</h3>
+<ul>
+	<li>
+		<p>
+            From Google.
+		</p>
+	</li>
+	<li>
+		<p>
+            For multiple languages: Java, C++, Go, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Bazelisk.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=t5rrEO6CRso" 
+				class="external-link" 
+				target="_blank" >
+                Bazel vs CMake
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    User experience was kind of messy.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="gradle" >
+    <s>Gradle</s>
+</h3>
+<ul>
+	<li>
+		<p>
+            Java/Kotlin.
+		</p>
+	</li>
+	<li>
+		<p>
+            Build manager for the JVM (Android, Java, etc.).
+		</p>
+	</li>
+</ul>
+<h3
+	id="xcodebuild" >
+    <s>XCodeBuild</s>
+</h3>
+<ul>
+	<li>
+		<p>
+            Build tool for macOS/iOS projects (Xcode).
+		</p>
+	</li>
+</ul>
+<h2
+	id="meta-build-tools" >
+    Meta Build Tools
+</h2>
+<h5
+	id="about" >
+    About
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;Build tool for build tools&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Generate build files for other tools (do not compile directly).
+		</p>
+	</li>
+	<li>
+		<p>
+            Allow cross-platform configuration (Linux, Windows, macOS).
+		</p>
+	</li>
+	<li>
+		<p>
+            Use languages or DSLs (CMakeLists.txt, Meson.build, etc.).
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;Great for working with different compilers in different types of systems&quot;.
+		</p>
+	</li>
+</ul>
+<h3
+	id="cmake" >
+    CMake
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://cmake.org/download/" 
+				class="external-link" 
+				target="_blank" >
+                CMake
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Cross-platform.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                My version
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    cmake-3.31.3-windows-x86_64.msi.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Can use Make, Ninja, etc.
+		</p>
+	</li>
+</ul>
+<h5
+	id="commands" >
+    Commands
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>cmake</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Starts CMake.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>-S "./../"</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sets the 
+					<em>
+                        source directory
+					</em>
+                    &nbsp;where the 
+                    <code>CMakeLists.txt</code>
+                    &nbsp;is.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Here: The source directory is the parent of the current directory (
+                    <code>./../</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>-B "vs2022_x64"</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sets the 
+					<em>
+                        build directory
+					</em>
+                    &nbsp;where CMake and Visual Studio generated files will be placed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Here: 
+                    <code>vs2022_x64</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>-G "Visual Studio 17 2022"</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specifies the generator, i.e., the type of project to generate.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Here: Solution for Visual Studio 2022.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>-A x64</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sets the 
+					<em>
+                        build architecture
+					</em>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Here: 64-bit.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>-DCMAKE_INSTALL_PREFIX:String="SDK"</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sets the 
+                    <code>CMAKE_INSTALL_PREFIX</code>
+                    &nbsp;variable to 
+                    <code>"SDK"</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Defines the installation path for project artifacts (e.g., when running 
+                            <code>cmake --install</code>
+                            &nbsp;or the 
+                            <code>INSTALL</code>
+                            &nbsp;target).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Here: 
+                    <code>"SDK"</code>
+                    &nbsp;will be the installation prefix.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Note: 
+                    <code>:String</code>
+                    &nbsp;is redundant here. CMake correctly interprets 
+                    <code>-DVAR=VALUE</code>
+                    &nbsp;without type.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>-DCMAKE_BUILD_TYPE:String=Distribution</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sets 
+                    <code>CMAKE_BUILD_TYPE</code>
+                    &nbsp;to 
+                    <code>"Distribution"</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Single-config builds (like Makefile or Ninja).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Note
+					</em>
+                    : Ignored in multi-config generators like Visual Studio, where build type (Debug/Release/etc.) is selected in the IDE or via 
+                    <code>--config</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>%*</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Inserts all arguments passed to the script/batch.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allows passing additional arguments.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="breaking-when-moving" >
+    Breaking when moving
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                <code>CMakeCache.txt</code>
+			</strong>
+            &nbsp;stores absolute paths to source and build directories.
+		</p>
+	</li>
+	<li>
+		<p>
+            Visual Studio project files generated by CMake (like 
+            <code>.vcxproj</code>
+            ) also reference absolute paths.
+		</p>
+	</li>
+	<li>
+		<p>
+            If you move the folder, these paths become invalid, causing build errors or inability to open in Visual Studio.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Options
+			</strong>
+            :
+		</p>
+		<ol>
+			<li>
+				<p>
+                    Recreate the build folder:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Delete the build folder (not the source folder).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Move the source folder to the new location.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Recreate the build directory in the new location:
+						</p>
+<pre><code class="language-sh" data-lang="sh"> cmake .. -G "Visual Studio 17 2022"
+</code></pre>
+					</li>
+					<li>
+						<p>
+                            Open the generated 
+                            <code>.sln</code>
+                            &nbsp;file in Visual Studio again.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Delete all CMake-generated files.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>CMakeCache.txt</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>CMakeFiles/</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            All 
+                            <code>.vcxproj</code>
+                            , 
+                            <code>.sln</code>
+                            , 
+                            <code>.user</code>
+                            , 
+                            <code>.filters</code>
+                            , etc.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Move the folder to the new location.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Reconfigure with CMake:
+						</p>
+<pre><code class="language-sh" data-lang="sh"> cmake .. -G "Visual Studio 17 2022"
+</code></pre>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Not recommended
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Too many build artifacts (e.g., 
+                                    <code>.o</code>
+                                    , 
+                                    <code>.obj</code>
+                                    , 
+                                    <code>.vcxproj</code>
+                                    , 
+                                    <code>.sln</code>
+                                    , 
+                                    <code>CMakeCache.txt</code>
+                                    , etc.) are placed inside the source directory.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Switching between different build systems or CMake options (e.g., different generators or toolchains) may cause conflicts.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Difficult to isolate multiple build configurations (e.g., Debug vs Release).
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Some tools/scripts assume a clean separation of source and build.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Use a separate 
+                    <code>build/</code>
+                    &nbsp;directory and always build out-of-source.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            CMake documentation strongly encourages out-of-source builds.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</li>
+</ul>
+<h5
+	id="properties" >
+    Properties
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://cmake.org/cmake/help/latest/manual/cmake-properties.7.html" 
+				class="external-link" 
+				target="_blank" >
+                CMake Properties
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            CMake generates a 
+            <code>.sln</code>
+            &nbsp;and 
+            <code>.vcxproj</code>
+            &nbsp;with extra Visual Studio-specific information.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex
+			</strong>
+            :
+		</p>
+<pre><code class="language-python" data-lang="python"> # Use solution folders to organize projects
+ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="variables" >
+    Variables
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html" 
+				class="external-link" 
+				target="_blank" >
+                CMake Variables
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-python" data-lang="python">&nbsp;&nbsp;&nbsp;&nbsp;# Configure CMake global variables
+&nbsp;&nbsp;&nbsp;&nbsp;set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+&nbsp;&nbsp;&nbsp;&nbsp;set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+&nbsp;&nbsp;&nbsp;&nbsp;set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
+</code></pre>
+<h3
+	id="meson" >
+    Meson
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=FlTpn_Olqvw" 
+				class="external-link" 
+				target="_blank" >
+                Meson vs CMake
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Similar to CMake.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Needs to be used from Visual Studio CMD.
+		</p>
+	</li>
+	<li>
+		<p>
+            Modern alternative to CMake, generates 
+            <code>Ninja</code>
+            &nbsp;or 
+            <code>Visual Studio</code>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="premake" >
+    Premake
+</h3>
+<ul>
+	<li>
+		<p>
+            Generates 
+            <code>Makefile</code>
+            , 
+            <code>Visual Studio</code>
+            , 
+            <code>Xcode</code>
+            &nbsp;from Lua scripts.
+		</p>
+	</li>
+</ul>
+<h3
+	id="autotools" >
+    <s>autotools</s>
+</h3>
+<ul>
+	<li>
+		<p>
+            GNU.
+		</p>
+	</li>
+	<li>
+		<p>
+            Uses 
+            <code>configure</code>
+            &nbsp;+ 
+            <code>Makefile.in</code>
+            &nbsp;to generate 
+            <code>Makefile</code>
+            &nbsp;(old, but still used).
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+						<a
+							href="/docs/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                            &nbsp;&lsaquo; Previous
+						</a>
+						<a
+							href="/docs/Things/CPU/CPU.html" >
+                            Next &rsaquo; 
+						</a>
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2025-10-30 🚀
+			</footer>
+		</div>
+		<aside
+			id="right-sidebar" >
+			<nav
+				id="table-of-contents" >
+				<strong>
+                    On this page
+				</strong>
+				<ul>
+					<li>
+						<a
+							href="#compilation-process" >
+                            Compilation Process
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#linker" >
+                                    Linker
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#compilers" >
+                            Compilers
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#gcc-gnu-c-compiler-gt-gnu-compiler-collection" >
+                                    GCC (GNU C Compiler -&gt; GNU Compiler Collection)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#clang-llvm" >
+                                    Clang/LLVM
+								</a>
+							</li>
+							<li>
+								<a
+									href="#msvc-microsoft-visual-c" >
+                                    <s>MSVC (Microsoft Visual C++)</s>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#qbe" >
+                                    QBE
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#build-tools" >
+                            Build Tools
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#command-runners" >
+                                    Command Runners
+								</a>
+							</li>
+							<li>
+								<a
+									href="#ninja" >
+                                    Ninja
+								</a>
+							</li>
+							<li>
+								<a
+									href="#gnu-make" >
+                                    GNU Make
+								</a>
+							</li>
+							<li>
+								<a
+									href="#msbuild-visual-studio-project" >
+                                    MSBuild / Visual Studio Project
+								</a>
+							</li>
+							<li>
+								<a
+									href="#bazel" >
+                                    Bazel
+								</a>
+							</li>
+							<li>
+								<a
+									href="#gradle" >
+                                    <s>Gradle</s>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#xcodebuild" >
+                                    <s>XCodeBuild</s>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#meta-build-tools" >
+                            Meta Build Tools
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#cmake" >
+                                    CMake
+								</a>
+							</li>
+							<li>
+								<a
+									href="#meson" >
+                                    Meson
+								</a>
+							</li>
+							<li>
+								<a
+									href="#premake" >
+                                    Premake
+								</a>
+							</li>
+							<li>
+								<a
+									href="#autotools" >
+                                    <s>autotools</s>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+		<script
+			src="/static/docs.js" >
+		</script>
+	</body>
+</html>

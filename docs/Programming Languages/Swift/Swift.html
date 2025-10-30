@@ -1,0 +1,5743 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/favicon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script
+			src="/static/docs_load.js" >
+		</script>
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js" >
+		</script>
+		<script
+			src="https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.min.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/docs.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Graphics Programming
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Vulkan/Vulkan.html" >
+                                Vulkan
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Render Engineering/Render Engineering.html" >
+                                Render Engineering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Graphics and Shaders/Graphics and Shaders.html" >
+                                Graphics and Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GLSL/GLSL.html" >
+                                GLSL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GPU/GPU.html" >
+                                GPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/OpenGL/OpenGL.html" >
+                                OpenGL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - DOD e COP/Design - DOD e COP.html" >
+                                Design - DOD e COP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - ECS/Design - ECS.html" >
+                                Design - ECS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Design Patterns/Design - Design Patterns.html" >
+                                Design - Design Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Architecture Patterns.html" >
+                                Design - Architecture Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Concepts and Terminology.html" >
+                                Design - Concepts and Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
+                                Design - Rules of thumb - Laws - Guidelines and Principles
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Paradigms.html" >
+                                Design - Paradigms
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
+                                Design - Production Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Backend/Network - Backend.html" >
+                                Network - Backend
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Low Level e Etc/Network - Low Level e Etc.html" >
+                                Network - Low Level e Etc
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Netcode/Network - Netcode.html" >
+                                Network - Netcode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - HTTP/Network - HTTP.html" >
+                                Network - HTTP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Encryption.html" >
+                                Encryption
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/SSH.html" >
+                                SSH
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Things
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking.html" >
+                                Build Systems - Compilation - Linking
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/CPU/CPU.html" >
+                                CPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Setup/NeoVim - Setup.html" >
+                                NeoVim - Setup
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Uso/NeoVim - Uso.html" >
+                                NeoVim - Uso
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/VSCode - VSCodium.html" >
+                                VSCode - VSCodium
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/Visual Studio/Visual Studio.html" >
+                                Visual Studio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Debuggers.html" >
+                                Debuggers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Dependencies.html" >
+                                Dependencies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Git/Git.html" >
+                                Git
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Handmade Hero/Handmade Hero.html" >
+                                Handmade Hero
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Linux/Linux.html" >
+                                Linux
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Memory/Memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Multithreading/Multithreading.html" >
+                                Multithreading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/RegEx.html" >
+                                RegEx
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Shells/Shells.html" >
+                                Shells
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Terminal/Terminal.html" >
+                                Terminal
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Programming Languages
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Assembly - ASM.html" >
+                                Assembly - ASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C++/C++.html" >
+                                C++
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C.html" >
+                                C
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/CSharp/CSharp.html" >
+                                CSharp
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Go.html" >
+                                Go
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Haxe.html" >
+                                Haxe
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/JAI.html" >
+                                JAI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Java.html" >
+                                Java
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Kotlin.html" >
+                                Kotlin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Lua.html" >
+                                Lua
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Nim/Nim.html" >
+                                Nim
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Odin/Odin.html" >
+                                Odin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Python.html" >
+                                Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Rust/Rust.html" >
+                                Rust
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/docs/Programming Languages/Swift/Swift.html" >
+                                Swift
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Zig/Zig.html" >
+                                Zig
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        WebDev
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebDev/WebDev.html" >
+                                WebDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML/HTML.html" >
+                                HTML
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTMX.html" >
+                                HTMX
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebAssembly - WASM/WebAssembly - WASM.html" >
+                                WebAssembly - WASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/CSS/CSS.html" >
+                                CSS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript/JavaScript.html" >
+                                JavaScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/TypeScript.html" >
+                                TypeScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Frameworks and Libraries/JavaScript - Frameworks and Libraries.html" >
+                                JavaScript - Frameworks and Libraries
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Runtime Environments.html" >
+                                JavaScript - Runtime Environments
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Hugo/Hugo.html" >
+                                Hugo
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Static Site Generators.html" >
+                                Static Site Generators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML - Tests/HTML - Tests.html" >
+                                HTML - Tests
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Databases
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - MongoDB.html" >
+                                Databases - MongoDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - SQL - Relational/Databases - SQL - Relational.html" >
+                                Databases - SQL - Relational
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Document Oriented.html" >
+                                Databases - Document Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Object Oriented.html" >
+                                Databases - Object Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - ORMs.html" >
+                                Databases - ORMs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Electronics
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Sources and Studies.html" >
+                                Electronics - Sources and Studies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Projects and Tutorials.html" >
+                                Electronics - Projects and Tutorials
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Arduino.html" >
+                                Arduino
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<header
+				id="central-header" >
+				<nav
+					id="dropdown-menu" >
+					<select
+						onchange="if (this.value) window.location.href=this.value" >
+						<option
+							value="/" 
+>
+                            🏡 Home
+						</option>
+						<option
+							value="/docs/_index.html" 
+							selected="">
+                            📖 Docs
+						</option>
+					</select>
+				</nav>
+				<button
+					class="btn" 
+					id="button-color-theme" >
+					<i>
+                        ☀️ / 🌑
+					</i>
+				</button>
+			</header>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Swift
+						</h1>
+						<p>
+							<time
+								datetime="2025-01-03" >
+                                🕒 Created: 2025-01-03
+							</time>
+							<time
+								datetime="2025-10-29" >
+                                | Updated: 2025-10-29
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="impressions" >
+    Impressions
+</h3>
+<ul>
+	<li>
+		<p>
+            See 
+            <a href="Godot - GDExtensions.html">
+            Godot - GDExtensions
+            </a>
+            &nbsp;for the issues I had with the language.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is a very solid language and seems good for beginners, but it doesn’t challenge me in any way and doesn’t seem to offer any advantage compared to the existing Python ecosystem.
+		</p>
+	</li>
+	<li>
+		<p>
+            Considering that the language doesn’t offer anything special, it’s not worth the loss of features and support that more popular languages have.
+		</p>
+	</li>
+	<li>
+		<p>
+            Obviously, not to mention that it is something immersed in the Apple environment, which leaves a bad taste.
+		</p>
+	</li>
+	<li>
+		<p>
+            The ecosystem seemed terrible, Windows support is weak and mostly neglected. I couldn’t get LSP to work, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            I got quite discouraged with the language, despite it being syntactically better than Kotlin.
+		</p>
+	</li>
+</ul>
+<h3
+	id="about" >
+    About
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.swift.org/" 
+				class="external-link" 
+				target="_blank" >
+                Swift
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language" 
+				class="external-link" 
+				target="_blank" >
+                Documentation
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p
+					class="line-emphasis" >
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    https://docs.swift.org/swift-book/documentation/the-swift-programming-language/properties/
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.swift.org/getting-started/cli-swiftpm/" 
+				class="external-link" 
+				target="_blank" >
+                CLI usage example
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Default:
+			</strong>
+            &nbsp;Internal.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Class, struct, and enum members are 
+					<strong>
+                        <code>internal</code>
+					</strong>
+                    &nbsp;by default, meaning they are only accessible within the same module.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="features" >
+    Features
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=nAchMctX4YA" 
+				class="external-link" 
+				target="_blank" >
+                Swift in 1 minute
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Static typing.
+		</p>
+	</li>
+	<li>
+		<p>
+            Supports OOP, has classes and methods.
+		</p>
+	</li>
+	<li>
+		<p>
+            The creator of LLVM created Swift. It is LLVM-based.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Opinions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Very similar to C#, but more modern.&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Kotlin with better error handling, worse STD, and slightly better tooling.&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;I played around with Swift back when I used to use Mac and I have to say… Swift is the most sensible, sane and pleasant language I’ve ever used. Simple for easy beginner things yet gives all the features &amp; efficiency you could want for serious applications. Shame it doesn’t really exist outside of Apple’s ecosystem.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="swiftpm" >
+    SwiftPM
+</h5>
+<ul>
+	<li>
+		<p>
+            Swift comes bundled with the 
+			<a
+				href="https://www.swift.org/documentation/package-manager/" 
+				class="external-link" 
+				target="_blank" >
+                Swift Package Manager (SwiftPM)
+			</a>
+            &nbsp;that manages the distribution of Swift code. It allows easy importing of other Swift packages into your applications and libraries.
+		</p>
+	</li>
+</ul>
+<h2
+	id="setup" >
+    Setup
+</h2>
+<h5
+	id="dependencies" >
+    Dependencies
+</h5>
+<ul>
+	<li>
+		<p>
+            [2025/01/09] Using version 6.0.3
+		</p>
+	</li>
+	<li>
+		<p>
+            [2025/01/23] Using version 5.10.1
+		</p>
+	</li>
+	<li>
+		<p>
+            Visual Studio.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Install VS Community and Desktop C++.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Windows SDK.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Besides installing, I had to add 
+                            <code>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64</code>
+                            &nbsp;to the global PATH environment variable.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Maybe this comes with the VS installation.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    CMake.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Downloaded version: cmake-3.31.3-windows-x86_64.msi.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Ninja.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Downloaded version: 1.12.1.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Enabled Windows Developer Mode.
+		</p>
+	</li>
+	<li>
+		<p>
+            Enabled long paths in Windows.
+		</p>
+	</li>
+</ul>
+<h5
+	id="installation" >
+    Installation
+</h5>
+<ul>
+	<li>
+		<p>
+            Installation path:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>C:\Users\caior\AppData\Local\Programs\Swift</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="package" >
+    Package
+</h5>
+<ul>
+	<li>
+		<p>
+            Library
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>swift package init --type library</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="windows-issues" >
+    Windows Issues
+</h5>
+<ul>
+	<li>
+		<p>
+            The folder path on Windows 10 
+			<strong>
+                cannot
+			</strong>
+            &nbsp;have accented characters, otherwise it will fail.
+		</p>
+	</li>
+	<li>
+		<p>
+            Windows has a problem with very deep directory structures that the Swift Build system can produce, and this is compounded by the default location of files that you might have, something like 
+            <code>C:\Users\Users\migueldeicaza\Documents\GitHub\Experiments\MyGames</code>
+            &nbsp;and you find yourself with odd errors.
+		</p>
+	</li>
+	<li>
+		<p>
+            You should use the 
+            <code>subst</code>
+            &nbsp;command in Windows to map a new drive to that path.
+		</p>
+	</li>
+	<li>
+		<p>
+            The issue of shared libraries comes down to the extension name of shared libraries (you need to use 
+            <code>.dll</code>
+            &nbsp;instead of 
+            <code>.dylib</code>
+            &nbsp;or 
+            <code>.so</code>
+            ) when describing those in your extension file.
+		</p>
+	</li>
+	<li>
+		<p>
+            You will also need to copy the Swift standard library DLLs. The default installer adds them to 
+            <code>C:/Users/[USER]/AppData/Local/Programs/Swift/Runtimes/[Swift Version]/usr/bin</code>
+		</p>
+	</li>
+</ul>
+<h5
+	id="build" >
+    Build
+</h5>
+<ul>
+	<li>
+		<p>
+            Debug:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>swift build</code>
+                    &nbsp;/ 
+                    <code>swift build --configuration debug</code>
+                    &nbsp; / 
+                    <code>swift build -c debug</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Release:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>swift build -c release</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Debug vs Release
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250117153223.png" width="" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="package-swift" >
+    Package.Swift
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html" 
+				class="external-link" 
+				target="_blank" >
+                Package
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The most important part is about Dependencies and the 
+                    <code>Package.resolve</code>
+                    &nbsp;file.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Useful commands:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>swift package clean</code>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>swift package purge-cache</code>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>swift package resolve</code>
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Useful tips:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Delete the Package.resolve file.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://developer.apple.com/documentation/packagedescription/package" 
+				class="external-link" 
+				target="_blank" >
+                Package
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://developer.apple.com/documentation/packagedescription/package/dependency" 
+				class="external-link" 
+				target="_blank" >
+                .package
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="dynamic" >
+    Dynamic
+</h5>
+<ul>
+	<li>
+		<p>
+            For a library, the output will be a 
+            <code>.dll</code>
+            &nbsp;file.
+		</p>
+	</li>
+	<li>
+		<p>
+            A 
+			<strong>
+                dynamic package
+			</strong>
+            &nbsp;or 
+			<strong>
+                dynamic framework
+			</strong>
+            &nbsp;is a module that is loaded dynamically at runtime.
+		</p>
+	</li>
+	<li>
+		<p>
+            Key characteristics:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Runtime loading
+					</strong>
+                    : The framework code is loaded when the application runs, not at compile time.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Reusability
+					</strong>
+                    : Can be shared among multiple processes or applications, as it is a separate binary.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Smaller final binary size
+					</strong>
+                    : Since the framework is not embedded directly into the application binary, the final app size may be smaller.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Independent updates
+					</strong>
+                    : The framework can be updated without recompiling the application that uses it.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Performance
+					</strong>
+                    : May be slightly slower due to an additional runtime loading step.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Example use:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used when the framework needs to be shared between multiple applications.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Large libraries that do not need to be embedded directly into the binary.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="static" >
+    Static
+</h5>
+<ul>
+	<li>
+		<p>
+            For a library, the output will be a 
+            <code>.lib</code>
+            &nbsp;file.
+		</p>
+	</li>
+	<li>
+		<p>
+            A 
+			<strong>
+                static package
+			</strong>
+            &nbsp;or 
+			<strong>
+                static framework
+			</strong>
+            &nbsp;is a module whose code is linked directly into the final application binary at compile time.
+		</p>
+	</li>
+	<li>
+		<p>
+            Key characteristics:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Compile-time loading
+					</strong>
+                    : All framework code is embedded directly in the final binary during compilation.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Independence
+					</strong>
+                    : The final binary includes everything needed, making it independent of external frameworks at runtime.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Larger final binary size
+					</strong>
+                    : Because the framework code is embedded in the binary, the final app size increases.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Performance
+					</strong>
+                    : Generally faster, as there is no additional runtime loading cost.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Updates
+					</strong>
+                    : Any change in the framework requires recompilation of the application.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Example use:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used in libraries that need to be fully integrated into the final binary.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Scenarios where performance is critical and simplicity in distribution is desired.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="difference-between-code-dll-code-and-code-lib-code-in-windows-context" >
+    Difference between 
+    <code>.dll</code>
+    &nbsp;and 
+    <code>.lib</code>
+    &nbsp;in Windows context
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                <code>.dll</code>
+                &nbsp;(Dynamic Link Library)
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A dynamic library that can be loaded and linked at runtime.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used by Godot to integrate extensions and expose the functions and classes created in the extension.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                <code>.lib</code>
+                &nbsp;(Static Library or Import Library)
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can be a static library (code embedded directly into the final binary) or an &quot;import library&quot; (used only as a reference to link the corresponding 
+                    <code>.dll</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Godot does not use 
+                    <code>.lib</code>
+                    &nbsp;directly because a static 
+                    <code>.lib</code>
+                    &nbsp;must be linked at the compilation of the main executable, and Godot does not recompile its core with the extension.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="memory" >
+    Memory
+</h2>
+<ul>
+	<li>
+		<p>
+            Garbage Collector via Reference Counting.
+		</p>
+	</li>
+	<li>
+		<p>
+            Rust-styled borrow system.
+		</p>
+	</li>
+	<li>
+		<p>
+            Encourages use of Structs.
+		</p>
+	</li>
+</ul>
+<h2
+	id="access-control" >
+    Access Control
+</h2>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Default:
+			</strong>
+            &nbsp;Internal.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Class, struct, and enum members are 
+					<strong>
+                        <code>internal</code>
+					</strong>
+                    &nbsp;by default, meaning they are only accessible within the same module.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Inside 
+					<strong>
+                        private extensions
+					</strong>
+                    , members are treated as 
+					<strong>
+                        <code>private</code>
+					</strong>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="nullability" >
+    Nullability
+</h2>
+<h5
+	id="null-safety" >
+    Null Safety
+</h5>
+<ul>
+	<li>
+		<p>
+            Using 
+            <code>?</code>
+            &nbsp;allows the type to be null.
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let hello: String? = 'hi mom'
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    This makes 
+                    <code>hello</code>
+                    &nbsp;nullable.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="null-handling" >
+    Null handling
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Crashes
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func hit(enemy: Monster?, with weapon: Weapon) {
+&nbsp;&nbsp;&nbsp;&nbsp; if enemy.isAlive {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enemy.health -= weapon.damage
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+</code></pre>
+	</li>
+</ul>
+<h2
+	id="error-handling" >
+    Error Handling
+</h2>
+<ul>
+	<li>
+		<p>
+            A function indicates that it can throw an error by including the 
+            <code>throws</code>
+            &nbsp;keyword in its declaration. When you call a function that can throw an error, you prepend the 
+            <code>try</code>
+            &nbsp;keyword to the expression.
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func canThrowAnError() throws {
+&nbsp;&nbsp;&nbsp;&nbsp; // this function may or may not throw an error
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+            When you call a function that can throw an error, you prepend the 
+            <code>try</code>
+            &nbsp;keyword to the expression.
+		</p>
+	</li>
+	<li>
+		<p>
+            Swift automatically propagates errors out of their current scope until they’re handled by a 
+            <code>catch</code>
+            &nbsp;clause.
+		</p>
+<pre><code class="language-swift" data-lang="swift"> do {
+&nbsp;&nbsp;&nbsp;&nbsp; try canThrowAnError()
+&nbsp;&nbsp;&nbsp;&nbsp; // no error was thrown
+ } catch {
+&nbsp;&nbsp;&nbsp;&nbsp; // an error was thrown
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func makeASandwich() throws {
+&nbsp;&nbsp;&nbsp;&nbsp; // ...
+ }
+ 
+ 
+ do {
+&nbsp;&nbsp;&nbsp;&nbsp; try makeASandwich()
+&nbsp;&nbsp;&nbsp;&nbsp; eatASandwich()
+ } catch SandwichError.outOfCleanDishes {
+&nbsp;&nbsp;&nbsp;&nbsp; washDishes()
+ } catch SandwichError.missingIngredients(let ingredients) {
+&nbsp;&nbsp;&nbsp;&nbsp; buyGroceries(ingredients)
+ }
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="precondition" >
+    precondition
+</h3>
+<pre><code class="language-swift" data-lang="swift">// In the implementation of a subscript...
+precondition(index &gt; 0, "Index must be greater than zero.")
+</code></pre>
+<h3
+	id="assert" >
+    assert
+</h3>
+<pre><code class="language-swift" data-lang="swift">let age = -3
+assert(age &gt;= 0, "A person's age can't be less than zero.")
+// This assertion fails because -3 isn't &gt;= 0.
+</code></pre>
+<h3
+	id="guard" >
+    guard
+</h3>
+<pre><code class="language-swift" data-lang="swift">func hit(enemy: Monster?, with weapon: Weapon) {
+&nbsp;&nbsp;&nbsp;&nbsp;guard let enemy else { return }
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;if enemy.isAlive {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemy.health -= weapon.damage
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+<h3
+	id="if-let" >
+    if let
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Extended version:
+			</strong>
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">let myNumber = Int(possibleNumber)
+// Here, myNumber is an optional integer
+if let myNumber = myNumber {
+&nbsp;&nbsp;&nbsp;&nbsp;// Here, myNumber is a non-optional integer
+&nbsp;&nbsp;&nbsp;&nbsp;print("My number is \(myNumber)")
+}
+// Prints "My number is 123"
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Simplified version:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Because this kind of code is so common, you can use a shorter spelling to unwrap an optional value: Write just the name of the constant or variable that you’re unwrapping. The new, unwrapped constant or variable implicitly uses the same name as the optional value.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-swift" data-lang="swift"> if let myNumber {
+&nbsp;&nbsp;&nbsp;&nbsp; print("My number is \(myNumber)")
+ }
+ // Prints "My number is 123"
+</code></pre>
+	</li>
+	<li>
+		<p>
+            You can include as many optional bindings and Boolean conditions in a single 
+            <code>if</code>
+            &nbsp;statement as you need to, separated by commas. If any of the values in the optional bindings are 
+            <code>nil</code>
+            &nbsp;or any Boolean condition evaluates to 
+            <code>false</code>
+            , the whole 
+            <code>if</code>
+            &nbsp;statement’s condition is considered to be 
+            <code>false</code>
+            . The following 
+            <code>if</code>
+            &nbsp;statements are equivalent:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">if let firstNumber = Int("4"), let secondNumber = Int("42"), firstNumber &lt; secondNumber && secondNumber &lt; 100 {
+&nbsp;&nbsp;&nbsp;&nbsp;print("\(firstNumber) &lt; \(secondNumber) &lt; 100")
+}
+// Prints "4 &lt; 42 &lt; 100"
+
+
+if let firstNumber = Int("4") {
+&nbsp;&nbsp;&nbsp;&nbsp;if let secondNumber = Int("42") {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if firstNumber &lt; secondNumber && secondNumber &lt; 100 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("\(firstNumber) &lt; \(secondNumber) &lt; 100")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+// Prints "4 &lt; 42 &lt; 100"
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func hit(enemy: Monster?, with weapon: Weapon) {
+&nbsp;&nbsp;&nbsp;&nbsp; if let enemy {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if enemy.isAlive {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enemy.health -= weapon.damage
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    “If the optional 
+                    <code>Monster</code>
+                    &nbsp;returned by 
+                    <code>enemy</code>
+                    &nbsp;contains a value, then it is true&quot;.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-swift" data-lang="swift"> func hit(enemy: Monster?, with weapon: Weapon) {
+&nbsp;&nbsp;&nbsp;&nbsp; if let new_enemy = enemy {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if new_enemy.isAlive {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new_enemy.health -= weapon.damage
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    “If the optional 
+                    <code>Monster</code>
+                    &nbsp;returned by 
+                    <code>enemy</code>
+                    &nbsp;contains a value, set a new constant called 
+                    <code>new_enemy</code>
+                    &nbsp;to the value contained in the optional.”
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="fallback" >
+    Fallback
+</h3>
+<ul>
+	<li>
+		<p>
+            Another way to handle a missing value is to supply a default value using the nil-coalescing operator (
+            <code>??</code>
+            ). If the optional on the left of the 
+            <code>??</code>
+            &nbsp;isn’t 
+            <code>nil</code>
+            , that value is unwrapped and used. Otherwise, the value on the right of 
+            <code>??</code>
+            &nbsp;is used. For example, the code below greets someone by name if one is specified, and uses a generic greeting when the name is 
+            <code>nil</code>
+            .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">let name: String? = nil
+let greeting = "Hello, " + (name ?? "friend") + "!"
+print(greeting)
+// Prints "Hello, friend!"
+</code></pre>
+<h3
+	id="force-unwrapping" >
+    Force Unwrapping
+</h3>
+<ul>
+	<li>
+		<p>
+            You can ignore the fact that the object might be nil, using the 
+            <code>!</code>
+            &nbsp;operator:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> var selected: String?
+ 
+ func okPressed() {
+&nbsp;&nbsp;&nbsp;&nbsp; // I "know" 'selected' will never be null, let me use it.
+&nbsp;&nbsp;&nbsp;&nbsp; saveFile(selected!)
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+            If it is 
+            <code>nil</code>
+            , it will crash at runtime, so 
+            <code>!</code>
+            &nbsp;and 
+            <code>fatalError</code>
+            &nbsp;are equivalent.
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let possibleNumber = "123"
+ let convertedNumber = Int(possibleNumber)
+ 
+ 
+ let number = convertedNumber!
+ 
+ 
+ guard let number = convertedNumber else {
+&nbsp;&nbsp;&nbsp;&nbsp; fatalError("The number was invalid")
+ }
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="implicity-unwrap" >
+    Implicity Unwrap
+</h3>
+<ul>
+	<li>
+		<p>
+            You can think of an implicitly unwrapped optional as giving permission for the optional to be force-unwrapped if needed.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Usage
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Implicitly unwrapped optionals are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter.
+				</p>
+			</li>
+			<li>
+				<p>
+                    An implicitly unwrapped optional is a normal optional behind the scenes, but can also be used like a non-optional value, without the need to unwrap the optional value each time it’s accessed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Cautions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If an implicitly unwrapped optional is 
+                    <code>nil</code>
+                    &nbsp;and you try to access its wrapped value, you’ll trigger a runtime error.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The result is exactly the 
+					<em>
+                        same
+					</em>
+                    &nbsp;as if you write an exclamation point to force unwrap a normal optional that doesn’t contain a value.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Creation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You write an implicitly unwrapped optional by placing an exclamation point (
+                    <code>String!</code>
+                    ) rather than a question mark (
+                    <code>String?</code>
+                    ) after the type that you want to make optional.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Rather than placing an exclamation point after the optional’s name when you use it, you place an exclamation point after the optional’s type when you declare it.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Differences between Implicit and Explicit
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let possibleString: String? = "An optional string."
+ let forcedString: String = possibleString! // Requires explicit unwrapping
+ 
+ 
+ let assumedString: String! = "An implicitly unwrapped optional string."
+ let implicitString: String = assumedString // Unwrapped automatically
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="overflow" >
+    Overflow
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Crashes
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> var score = Int.max
+ 
+ score = score + 1&nbsp;&nbsp;// Crashes due to overflow.
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ignoring with 
+                <code>&</code>
+                &nbsp;(yolo operator)
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> var score = Int.max
+ 
+ score = score &+ 1&nbsp;&nbsp;// Does not crash, but overflows (the number flips and becomes negative).
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="concurrency" >
+    Concurrency
+</h3>
+<pre><code class="language-swift" data-lang="swift">var a = [1, 2, 3, 4, 5]
+
+Task {
+&nbsp;&nbsp;&nbsp;&nbsp;print(a.count)
+}
+
+a.append(10)&nbsp;&nbsp;// Gives a warning for trying to modify something in a "race condition".
+</code></pre>
+<h2
+	id="debug" >
+    Debug
+</h2>
+<h5
+	id="comments" >
+    Comments
+</h5>
+<pre><code class="language-swift" data-lang="swift">// This is a comment.
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">/* This is also a comment
+but is written over multiple lines. */
+</code></pre>
+<h2
+	id="basics" >
+    Basics
+</h2>
+<ul>
+	<li>
+		<p>
+            Code starts in the global scope, just like in Python.
+		</p>
+	</li>
+</ul>
+<h5
+	id="use-of-code-code" >
+    Use of 
+    <code>;</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            Swift doesn’t require you to write a semicolon (
+            <code>;</code>
+            ) after each statement in your code, although you can do so if you wish.
+		</p>
+	</li>
+	<li>
+		<p>
+            Semicolons 
+			<em>
+                are
+			</em>
+            &nbsp;required if you want to write multiple separate statements on a single line:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">let cat = "🐱"; print(cat)
+// Prints "🐱"
+</code></pre>
+<h2
+	id="keywords" >
+    Keywords
+</h2>
+<h5
+	id="let-constant" >
+    let (constant)
+</h5>
+<ul>
+	<li>
+		<p>
+            Not modifiable at any time
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">let a = 10
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">let a = [10, 20, 30]
+a.append(10) // Crash.
+</code></pre>
+<h5
+	id="var" >
+    var
+</h5>
+<ul>
+	<li>
+		<p>
+            Modifiable at any time
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">var a = 10
+</code></pre>
+<h5
+	id="multiple-declaration" >
+    Multiple declaration
+</h5>
+<pre><code class="language-swift" data-lang="swift">var x = 0.0, y = 0.0, z = 0.0
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">var red, green, blue: Double
+</code></pre>
+<h2
+	id="operations" >
+    Operations
+</h2>
+<h3
+	id="numeric-operations" >
+    Numeric Operations
+</h3>
+<h5
+	id="arithmetic" >
+    Arithmetic
+</h5>
+<ul>
+	<li>
+		<p>
+            Addition
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>+</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Subtraction
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Multiplication
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>*</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Division
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>/</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Remainder
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="compound" >
+    Compound
+</h5>
+<ul>
+	<li>
+		<p>
+            All operators support Operation + Assignment:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>counter += 1</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="logical-comparisons" >
+    Logical Comparisons
+</h3>
+<h5
+	id="basic" >
+    Basic
+</h5>
+<ul>
+	<li>
+		<p>
+            Equal
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>==</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Not equal
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>!=</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Greater
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>&gt;</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Less
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>&lt;</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            AND
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>&&</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            OR
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>||</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            NOT
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>!</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Identical:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Check whether two constants or variables refer to the 
+					<em>
+                        same
+					</em>
+                    &nbsp;single 
+					<em>
+                        instance
+					</em>
+                    &nbsp;(class).
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>===</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Not-identical:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Check whether two constants or variables refer to a 
+					<em>
+                        different
+					</em>
+                    &nbsp;
+					<em>
+                        instance
+					</em>
+                    &nbsp;(class).
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>!==</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="bitwise" >
+    Bitwise
+</h5>
+<ul>
+	<li>
+		<p>
+            AND
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>&</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            OR
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>|</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            XOR
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>^</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            L SHIFT
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>&lt;&lt;</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            R SHIFT
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>&gt;&gt;</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="types" >
+    Types
+</h2>
+<h5
+	id="type-inference" >
+    Type Inference
+</h5>
+<ul>
+	<li>
+		<p>
+            Equivalent:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let hello = 'hi mom'
+ let hello: String = 'hi mom'
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="value-type" >
+    Value Type
+</h5>
+<ul>
+	<li>
+		<p>
+            It's a type whose value is 
+			<em>
+                copied
+			</em>
+            &nbsp;when it’s assigned to a variable or constant, or when it’s passed to a function.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Value Types
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Integers
+				</p>
+			</li>
+			<li>
+				<p>
+                    Floating-point numbers
+				</p>
+			</li>
+			<li>
+				<p>
+                    Booleans
+				</p>
+			</li>
+			<li>
+				<p>
+                    Strings
+				</p>
+			</li>
+			<li>
+				<p>
+                    Arrays
+				</p>
+			</li>
+			<li>
+				<p>
+                    Dictionaries
+				</p>
+			</li>
+			<li>
+				<p>
+                    Structs
+				</p>
+				<ul>
+					<li>
+						<p>
+                            All basic types are implemented as structures behind the scenes.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Enums
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex1
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> struct Resolution {
+&nbsp;&nbsp;&nbsp;&nbsp; var width = 0
+&nbsp;&nbsp;&nbsp;&nbsp; var height = 0
+ }
+ 
+ let hd = Resolution(width: 1920, height: 1080)
+ var cinema = hd
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Because 
+                    <code>Resolution</code>
+                    &nbsp;is a structure, a 
+					<em>
+                        copy
+					</em>
+                    &nbsp;of the existing instance is made, and this new copy is assigned to 
+                    <code>cinema</code>
+                    . Even though 
+                    <code>hd</code>
+                    &nbsp;and 
+                    <code>cinema</code>
+                    &nbsp;now have the same width and height, they’re two completely different instances behind the scenes.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="reference-types" >
+    Reference Types
+</h5>
+<ul>
+	<li>
+		<p>
+			<em>
+                Reference types
+			</em>
+            &nbsp;are 
+			<em>
+                not
+			</em>
+            &nbsp;copied when they’re assigned to a variable or constant, or when they’re passed to a function. Rather than a copy, a reference to the same existing instance is used.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Reference Types
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Classes
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex1
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlaced = true
+tenEighty.name = "1080i"
+tenEighty.frameRate = 25.0
+
+let alsoTenEighty = tenEighty
+alsoTenEighty.frameRate = 30.0
+
+print("The frameRate property of tenEighty is now \(tenEighty.frameRate)")
+// Prints "The frameRate property of tenEighty is now 30.0". Both are 30.0.
+</code></pre>
+<h3
+	id="booleans" >
+    Booleans
+</h3>
+<pre><code class="language-swift" data-lang="swift">let orangesAreOrange = true
+let turnipsAreDelicious = false
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Not allowed
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let i = 1
+ if i {
+&nbsp;&nbsp;&nbsp;&nbsp; // this example will not compile, and will report an error
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Allowed
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let i = 1
+ if i == 1 {
+&nbsp;&nbsp;&nbsp;&nbsp; // this example will compile successfully
+ }
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="numbers" >
+    Numbers
+</h3>
+<h5
+	id="int" >
+    Int
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Types
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>Int8</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>Int16</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>Int32</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>Int64</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>UInt8</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>UInt16</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>UInt32</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>UInt64</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Generic
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In most cases, you don’t need to pick a specific size of integer to use in your code. Swift provides an additional integer type, 
+                    <code>Int</code>
+                    &nbsp;/ 
+                    <code>UInt</code>
+                    , which has the same size as the current platform’s native word size:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            On a 32-bit platform:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>Int</code>
+                                    &nbsp;/ 
+                                    <code>UInt</code>
+                                    &nbsp;is the same size as 
+                                    <code>Int32</code>
+                                    &nbsp;/ 
+                                    <code>UInt32</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            On a 64-bit platform:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>Int</code>
+                                    &nbsp;/ 
+                                    <code>UInt</code>
+                                    &nbsp;is the same size as 
+                                    <code>Int64</code>
+                                    &nbsp;/ 
+                                    <code>UInt64</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Unless you need to work with a specific size of integer, always use 
+                    <code>Int</code>
+                    &nbsp;for integer values in your code. This aids code consistency and interoperability.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Even on 32-bit platforms, 
+                    <code>Int</code>
+                    &nbsp;can store any value between 
+                    <code>-2,147,483,648</code>
+                    &nbsp;and 
+                    <code>2,147,483,647</code>
+                    , and is large enough for many integer ranges.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Note about UInt
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Use 
+                            <code>UInt</code>
+                            &nbsp;only when you specifically need an unsigned integer type with the same size as the platform’s native word size. If this isn’t the case, 
+                            <code>Int</code>
+                            &nbsp;is preferred, even when the values to be stored are known to be nonnegative. A consistent use of 
+                            <code>Int</code>
+                            &nbsp;for integer values aids code interoperability, avoids the need to convert between different number types, and matches integer type inference, as described in 
+							<a
+								href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/thebasics#Type-Safety-and-Type-Inference" 
+								class="external-link" 
+								target="_blank" >
+                                Type Safety and Type Inference
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Bounds
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>UInt8.min</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>UInt8.max</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="float" >
+    Float
+</h5>
+<ul>
+	<li>
+		<p>
+            Represents a 32-bit floating-point number.
+		</p>
+	</li>
+	<li>
+		<p>
+            Can have a precision as little as 6 decimal digits.
+		</p>
+	</li>
+</ul>
+<h5
+	id="double" >
+    Double
+</h5>
+<ul>
+	<li>
+		<p>
+            Represents a 64-bit floating-point number.
+		</p>
+	</li>
+	<li>
+		<p>
+            Has a precision of at least 15 decimal digits.
+		</p>
+	</li>
+	<li>
+		<p>
+            In situations where either type would be appropriate, 
+            <code>Double</code>
+            &nbsp;is preferred.
+		</p>
+	</li>
+</ul>
+<h5
+	id="numeric-literals" >
+    Numeric Literals
+</h5>
+<pre><code class="language-swift" data-lang="swift">let decimalInteger = 17
+let binaryInteger = 0b10001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 17 in binary notation
+let octalInteger = 0o21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 17 in octal notation
+let hexadecimalInteger = 0x11&nbsp;&nbsp;&nbsp;&nbsp; // 17 in hexadecimal notation
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Decimals:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>1.25e2</code>
+                    &nbsp;means 1.25 x 10², or 
+                    <code>125.0</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>1.25e-2</code>
+                    &nbsp;means 1.25 x 10⁻², or 
+                    <code>0.0125</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Hexadecimals:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>0xFp2</code>
+                    &nbsp;means 15 x 2², or 
+                    <code>60.0</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>0xFp-2</code>
+                    &nbsp;means 15 x 2⁻², or 
+                    <code>3.75</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="formatting" >
+    Formatting
+</h5>
+<pre><code class="language-swift" data-lang="swift">let paddedDouble = 000123.456
+let oneMillion = 1_000_000
+let justOverOneMillion = 1_000_000.000_000_1
+</code></pre>
+<h3
+	id="string" >
+    String
+</h3>
+<h5
+	id="literals" >
+    Literals
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Singleline
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let someString = "Some string literal value"
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Multiline
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let quotation = """
+ The White Rabbit put on his spectacles.&nbsp;&nbsp;"Where shall I begin,
+ please your Majesty?" he asked.
+ 
+ "Begin at the beginning," the King said gravely, "and go on
+ till you come to the end; then stop."
+ """
+</code></pre>
+<pre><code class="language-swift" data-lang="swift"> let singleLineString = "These are the same."
+ let multilineString = """
+ These are the same.
+ """
+</code></pre>
+<pre><code class="language-swift" data-lang="swift"> let softWrappedQuotation = """
+ The White Rabbit put on his spectacles.&nbsp;&nbsp;"Where shall I begin, \
+ please your Majesty?" he asked.
+ 
+ "Begin at the beginning," the King said gravely, "and go on \
+ till you come to the end; then stop."
+ """
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    If you’re using multiline string literals to build up the lines of a longer string, you want every line in the string to end with a line break, including the last line.
+				</p>
+<pre><code class="language-swift" data-lang="swift"> let badStart = """
+&nbsp;&nbsp;&nbsp;&nbsp; one
+&nbsp;&nbsp;&nbsp;&nbsp; two
+&nbsp;&nbsp;&nbsp;&nbsp; """
+ let end = """
+&nbsp;&nbsp;&nbsp;&nbsp; three
+&nbsp;&nbsp;&nbsp;&nbsp; """
+ print(badStart + end)
+ // Prints two lines:
+ // one
+ // twothree
+ 
+ 
+ let goodStart = """
+&nbsp;&nbsp;&nbsp;&nbsp; one
+&nbsp;&nbsp;&nbsp;&nbsp; two
+ 
+&nbsp;&nbsp;&nbsp;&nbsp; """
+ print(goodStart + end)
+ // Prints three lines:
+ // one
+ // two
+ // three
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="concatenation" >
+    Concatenation
+</h5>
+<pre><code class="language-swift" data-lang="swift">"hello, " + "world"&nbsp;&nbsp;// equals "hello, world"
+</code></pre>
+<h5
+	id="interpolation" >
+    Interpolation
+</h5>
+<pre><code class="language-swift" data-lang="swift">let multiplier = 3
+let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
+// message is "3 times 2.5 is 7.5"
+</code></pre>
+<h5
+	id="chars" >
+    Chars
+</h5>
+<pre><code class="language-swift" data-lang="swift">for character in "Dog!🐶" {
+&nbsp;&nbsp;&nbsp;&nbsp;print(character)
+}
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">let exclamationMark: Character = "!"
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">let catCharacters: [Character] = ["C", "a", "t", "!", "🐱"]
+let catString = String(catCharacters)
+print(catString)
+// Prints "Cat!🐱"
+</code></pre>
+<h5
+	id="special-chars" >
+    Special Chars
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>\0</code>
+            &nbsp;(null character)
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>\\</code>
+            &nbsp;(backslash)
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>\t</code>
+            &nbsp;(horizontal tab)
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>\n</code>
+            &nbsp;(line feed)
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>\r</code>
+            &nbsp;(carriage return)
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>\"</code>
+            &nbsp;(double quotation mark)
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>\'</code>
+            &nbsp;(single quotation mark)
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>\u{</code>
+			<em>
+                n
+			</em>
+            <code>}</code>
+            , where 
+			<em>
+                n
+			</em>
+            &nbsp;is a 1–8 digit hexadecimal number.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                How to avoid using special chars
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift">print(#"Write an interpolated string in Swift using \(multiplier)."#)
+// Prints "Write an interpolated string in Swift using \(multiplier)."
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">let threeMoreDoubleQuotationMarks = #"""
+Here are three more double quotes: """
+"\""#&nbsp;&nbsp;// remove the backslash
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="manipulation" >
+    Manipulation
+</h5>
+<ul>
+	<li>
+		<p>
+            Length:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let unusualMenagerie = "Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪"
+ print("unusualMenagerie has \(unusualMenagerie.count) characters")
+ // Prints "unusualMenagerie has 40 characters"
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Insert and Remove:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> var welcome = "hello"
+ welcome.insert("!", at: welcome.endIndex)
+ // welcome now equals "hello!"
+ 
+ 
+ welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))
+ // welcome now equals "hello there!"
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Subranges:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> welcome.remove(at: welcome.index(before: welcome.endIndex))
+ // welcome now equals "hello there"
+ 
+ let range = welcome.index(welcome.endIndex, offsetBy: -6)..&lt;welcome.endIndex
+ welcome.removeSubrange(range)
+ // welcome now equals "hello"
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Substrings:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let greeting = "Hello, world!"
+ let index = greeting.firstIndex(of: ",") ?? greeting.endIndex
+ let beginning = greeting[..&lt;index]
+ // beginning is "Hello"
+ 
+ 
+ // Convert the result to a String for long-term storage.
+ let newString = String(beginning)
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Prefixes:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let romeoAndJuliet = [
+&nbsp;&nbsp;&nbsp;&nbsp; "Act 1 Scene 1: Verona, A public place",
+&nbsp;&nbsp;&nbsp;&nbsp; "Act 1 Scene 2: Capulet's mansion",
+&nbsp;&nbsp;&nbsp;&nbsp; "Act 1 Scene 3: A room in Capulet's mansion",
+ ]
+
+ // PREFIX
+ var act1SceneCount = 0
+ for scene in romeoAndJuliet {
+&nbsp;&nbsp;&nbsp;&nbsp; if scene.hasPrefix("Act 1 ") {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; act1SceneCount += 1
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+ print("There are \(act1SceneCount) scenes in Act 1")
+ // Prints "There are 5 scenes in Act 1"
+
+
+ // SUFFIX
+ var mansionCount = 0
+ var cellCount = 0
+ for scene in romeoAndJuliet {
+&nbsp;&nbsp;&nbsp;&nbsp; if scene.hasSuffix("Capulet's mansion") {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mansionCount += 1
+&nbsp;&nbsp;&nbsp;&nbsp; } else if scene.hasSuffix("Friar Lawrence's cell") {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cellCount += 1
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+ print("\(mansionCount) mansion scenes; \(cellCount) cell scenes")
+ // Prints "6 mansion scenes; 2 cell scenes"
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="tuples" >
+    Tuples
+</h3>
+<h5
+	id="creation" >
+    Creation
+</h5>
+<ul>
+	<li>
+		<p>
+			<em>
+                Tuples
+			</em>
+            &nbsp;group multiple values into a single compound value.
+		</p>
+	</li>
+	<li>
+		<p>
+            The values within a tuple can be of any type and don’t have to be of the same type as each other.
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let http404Error = (404, "Not Found")
+ // http404Error is of type (Int, String), and equals (404, "Not Found")
+</code></pre>
+	</li>
+	<li>
+		<p>
+            If you name the elements in a tuple, you can use the element names to access the values of those elements:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let http200Status = (statusCode: 200, description: "OK")
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Tuples are particularly useful as the return values of functions. A function that tries to retrieve a web page might return the 
+            <code>(Int, String)</code>
+            &nbsp;tuple type to describe the success or failure of the page retrieval. By returning a tuple with two distinct values, each of a different type, the function provides more useful information about its outcome than if it could only return a single value of a single type.
+		</p>
+	</li>
+</ul>
+<h5
+	id="access" >
+    Access
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Index
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> print("The status code is \(http404Error.0)")
+ // Prints "The status code is 404"
+ print("The status message is \(http404Error.1)")
+ // Prints "The status message is Not Found"
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Name
+			</strong>
+            &nbsp;(if defined):
+		</p>
+<pre><code class="language-swift" data-lang="swift"> print("The status code is \(http200Status.statusCode)")
+ // Prints "The status code is 200"
+ print("The status message is \(http200Status.description)")
+ // Prints "The status message is OK"
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Destructuring / Decomposition
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let (statusCode, statusMessage) = http404Error
+ print("The status code is \(statusCode)")
+ // Prints "The status code is 404"
+ print("The status message is \(statusMessage)")
+ // Prints "The status message is Not Found"
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    If you only need some of the tuple’s values, ignore parts of the tuple with an underscore (
+                    <code>_</code>
+                    ) when you decompose the tuple:
+				</p>
+<pre><code class="language-swift" data-lang="swift"> let (justTheStatusCode, _) = http404Error
+ print("The status code is \(justTheStatusCode)")
+ // Prints "The status code is 404"
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="logical-comparisons-in-tuples" >
+    Logical Comparisons in Tuples
+</h5>
+<ul>
+	<li>
+		<p>
+            You can compare two tuples if they have the same type and the same number of values. Tuples are compared from left to right, one value at a time, until the comparison finds two values that aren’t equal.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">(1, "zebra") &lt; (2, "apple")&nbsp;&nbsp; // true because 1 is less than 2; "zebra" and "apple" aren't compared
+(3, "apple") &lt; (3, "bird")&nbsp;&nbsp;&nbsp;&nbsp;// true because 3 is equal to 3, and "apple" is less than "bird"
+(4, "dog") == (4, "dog")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// true because 4 is equal to 4, and "dog" is equal to "dog"
+</code></pre>
+<h3
+	id="arrays" >
+    Arrays
+</h3>
+<h5
+	id="creation" >
+    Creation
+</h5>
+<pre><code class="language-swift" data-lang="swift">var someInts: [Int] = []
+print("someInts is of type [Int] with \(someInts.count) items.")
+// Prints "someInts is of type [Int] with 0 items."
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">var threeDoubles = Array(repeating: 0.0, count: 3)
+// threeDoubles is of type [Double], and equals [0.0, 0.0, 0.0]
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">var sixDoubles = threeDoubles + anotherThreeDoubles
+</code></pre>
+<ul>
+	<li>
+		<p>
+            New array of Strings, via the content of a Dictionary:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let airportCodes = [String](airports.keys)
+ // airportCodes is ["LHR", "YYZ"]
+ 
+ 
+ let airportNames = [String](airports.values)
+ // airportNames is ["London Heathrow", "Toronto Pearson"]
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="access" >
+    Access
+</h5>
+<pre><code class="language-swift" data-lang="swift">var firstItem = shoppingList[0]
+// firstItem is equal to "Eggs"
+</code></pre>
+<h5
+	id="modification" >
+    Modification
+</h5>
+<ul>
+	<li>
+		<p>
+            You can use subscript syntax to change an 
+			<strong>
+                existing
+			</strong>
+            &nbsp;value at a given index:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">shoppingList[0] = "Six eggs"
+// the first item in the list is now equal to "Six eggs" rather than "Eggs"
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">shoppingList[4...6] = ["Bananas", "Apples"]
+// shoppingList now contains 6 items
+</code></pre>
+<h5
+	id="insert" >
+    Insert
+</h5>
+<ul>
+	<li>
+		<p>
+            Via 
+            <code>append</code>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> shoppingList.append("Flour")
+ // shoppingList now contains 3 items, and someone is making pancakes
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Via 
+            <code>insert</code>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> shoppingList.insert("Maple Syrup", at: 0)
+ // shoppingList now contains 7 items
+ // "Maple Syrup" is now the first item in the list
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Via 
+            <code>+=</code>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> shoppingList += ["Baking Powder"]
+ // shoppingList now contains 4 items
+ shoppingList += ["Chocolate Spread", "Cheese", "Butter"]
+ // shoppingList now contains 7 items
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="remove" >
+    Remove
+</h5>
+<ul>
+	<li>
+		<p>
+            Via 
+            <code>remove</code>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let mapleSyrup = shoppingList.remove(at: 0)
+ // the item that was at index 0 has just been removed
+ // shoppingList now contains 6 items, and no Maple Syrup
+ // the mapleSyrup constant is now equal to the removed "Maple Syrup" string
+</code></pre>
+	</li>
+	<li>
+		<p>
+            <code>removeLast</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="other-common-methods" >
+    Other common methods
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>isEmpty</code>
+		</p>
+	</li>
+</ul>
+<h3
+	id="set" >
+    Set
+</h3>
+<ul>
+	<li>
+		<p>
+            A 
+			<em>
+                set
+			</em>
+            &nbsp;stores distinct values of the same type in a collection with no defined ordering.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Uses
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You can use a set instead of an array when the order of items isn’t important
+				</p>
+			</li>
+			<li>
+				<p>
+                    Or when you need to ensure that an item 
+					<strong>
+                        only appears once
+					</strong>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                My interpretation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It's a 
+					<em>
+                        &quot;dictionary that only has keys, no values&quot;
+					</em>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="creation" >
+    Creation
+</h5>
+<pre><code class="language-swift" data-lang="swift">var letters = Set&lt;Character&gt;()
+print("letters is of type Set&lt;Character&gt; with \(letters.count) items.")
+// Prints "letters is of type Set&lt;Character&gt; with 0 items."
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">var favoriteGenres: Set&lt;String&gt; = ["Rock", "Classical", "Hip hop"]
+// favoriteGenres has been initialized with three initial items
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">var favoriteGenres: Set = ["Rock", "Classical", "Hip hop"]
+</code></pre>
+<h5
+	id="modification" >
+    Modification
+</h5>
+<pre><code class="language-swift" data-lang="swift">letters.insert("a")
+// letters now contains 1 value of type Character
+letters = []
+// letters is now an empty set, but is still of type Set&lt;Character&gt;
+</code></pre>
+<h5
+	id="operations" >
+    Operations
+</h5>
+<ul>
+	<li>
+		<p>
+            Use the 
+            <code>intersection(_:)</code>
+            &nbsp;method to create a new set with only the values common to both sets.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use the 
+            <code>symmetricDifference(_:)</code>
+            &nbsp;method to create a new set with values in either set, but not both.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use the 
+            <code>union(_:)</code>
+            &nbsp;method to create a new set with all of the values in both sets.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use the 
+            <code>subtracting(_:)</code>
+            &nbsp;method to create a new set with values not in the specified set.
+		</p>
+	</li>
+</ul>
+<h5
+	id="logic" >
+    Logic
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Contains
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">if favoriteGenres.contains("Funk") {
+&nbsp;&nbsp;&nbsp;&nbsp;print("I get up on the good foot.")
+} else {
+&nbsp;&nbsp;&nbsp;&nbsp;print("It's too funky in here.")
+}
+// Prints "It's too funky in here."
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Use the “is equal” operator (
+            <code>==</code>
+            ) to determine whether two sets contain all of the same values.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use the 
+            <code>isSubset(of:)</code>
+            &nbsp;method to determine whether all of the values of a set are contained in the specified set.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use the 
+            <code>isSuperset(of:)</code>
+            &nbsp;method to determine whether a set contains all of the values in a specified set.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use the 
+            <code>isStrictSubset(of:)</code>
+            &nbsp;or 
+            <code>isStrictSuperset(of:)</code>
+            &nbsp;methods to determine whether a set is a subset or superset, but not equal to, a specified set.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use the 
+            <code>isDisjoint(with:)</code>
+            &nbsp;method to determine whether two sets have no values in common.
+		</p>
+	</li>
+</ul>
+<h3
+	id="dictionary" >
+    Dictionary
+</h3>
+<h5
+	id="creation" >
+    Creation
+</h5>
+<pre><code class="language-swift" data-lang="swift">var namesOfIntegers: [Int: String] = [:]
+// namesOfIntegers is an empty [Int: String] dictionary
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">namesOfIntegers[16] = "sixteen"
+// namesOfIntegers now contains 1 key-value pair
+namesOfIntegers = [:]
+// namesOfIntegers is once again an empty dictionary of type [Int: String]
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">var airports: [String: String] = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">var airports = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+</code></pre>
+<h5
+	id="modification" >
+    Modification
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Insert / Modify
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> airports["LHR"] = "London"
+ // the airports dictionary now contains 3 items
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Remove
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> airports["APL"] = nil
+ // APL has now been removed from the dictionary
+</code></pre>
+	</li>
+	<li>
+		<p>
+            <code>updateValue</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the 
+					<em>
+                        old
+					</em>
+                    &nbsp;value after performing an update.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-swift" data-lang="swift"> if let oldValue = airports.updateValue("Dublin Airport", forKey: "DUB") {
+&nbsp;&nbsp;&nbsp;&nbsp; print("The old value for DUB was \(oldValue).")
+ }
+ // Prints "The old value for DUB was Dublin."
+</code></pre>
+	</li>
+	<li>
+		<p>
+            <code>removeValue</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Removes the key-value pair if it exists and returns the removed value, or returns 
+                    <code>nil</code>
+                    &nbsp;if no value existed
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-swift" data-lang="swift"> if let removedValue = airports.removeValue(forKey: "DUB") {
+&nbsp;&nbsp;&nbsp;&nbsp; print("The removed airport's name is \(removedValue).")
+ } else {
+&nbsp;&nbsp;&nbsp;&nbsp; print("The airports dictionary doesn't contain a value for DUB.")
+ }
+ // Prints "The removed airport's name is Dublin Airport."
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="optionals" >
+    Optionals
+</h3>
+<ul>
+	<li>
+		<p>
+            An optional represents two possibilities: Either there 
+			<em>
+                is
+			</em>
+            &nbsp;a value of a specified type, and you can unwrap the optional to access that value, or there 
+			<em>
+                isn’t
+			</em>
+            &nbsp;a value at all.
+		</p>
+	</li>
+</ul>
+<h5
+	id="creation" >
+    Creation
+</h5>
+<ul>
+	<li>
+		<p>
+            To write an optional type, you write a question mark (
+            <code>?</code>
+            ) after the name of the type that the optional contains.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For example, the type of an optional 
+                    <code>Int</code>
+                    &nbsp;is 
+                    <code>Int?</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">let possibleNumber = "123"
+let convertedNumber = Int(possibleNumber)
+// As the conversion `Int()` can't always be made, the returned type for convertedNumber is "optional Int".
+</code></pre>
+<h3
+	id="nil" >
+    Nil
+</h3>
+<pre><code class="language-swift" data-lang="swift">var serverResponseCode: Int? = 404
+// serverResponseCode contains an actual Int value of 404
+serverResponseCode = nil
+// serverResponseCode now contains no value
+</code></pre>
+<h5
+	id="default-with-code-code" >
+    Default with 
+    <code>?</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            If you define an optional variable without providing a default value, the variable is automatically set to 
+            <code>nil</code>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">var surveyAnswer: String?
+// surveyAnswer is automatically set to nil
+</code></pre>
+<h5
+	id="what-to-do-when-it-is-codenil-code" >
+    What to do when it is 
+    <code>nil</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            Skip the code that operates on the value when it’s 
+            <code>nil</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            ? Propagate the 
+            <code>nil</code>
+            &nbsp;value, by returning 
+            <code>nil</code>
+            &nbsp;or using the 
+            <code>?.</code>
+            &nbsp;operator described in 
+			<a
+				href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/optionalchaining" 
+				class="external-link" 
+				target="_blank" >
+                Optional Chaining
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Provide a fallback value, using the 
+            <code>??</code>
+            &nbsp;operator.
+		</p>
+	</li>
+	<li>
+		<p>
+            Stop program execution, using the 
+            <code>!</code>
+            &nbsp;operator.
+		</p>
+	</li>
+</ul>
+<h2
+	id="control-flow" >
+    Control Flow
+</h2>
+<h3
+	id="conditionals-if-else" >
+    Conditionals: if / else
+</h3>
+<h5
+	id="basic" >
+    Basic
+</h5>
+<pre><code class="language-swift" data-lang="swift">temperatureInFahrenheit = 90
+if temperatureInFahrenheit &lt;= 32 {
+&nbsp;&nbsp;&nbsp;&nbsp;print("It's very cold. Consider wearing a scarf.")
+} else if temperatureInFahrenheit &gt;= 86 {
+&nbsp;&nbsp;&nbsp;&nbsp;print("It's really warm. Don't forget to wear sunscreen.")
+} else {
+&nbsp;&nbsp;&nbsp;&nbsp;print("It's not that cold. Wear a T-shirt.")
+}
+// Prints "It's really warm. Don't forget to wear sunscreen."
+</code></pre>
+<h5
+	id="if-expressions" >
+    If Expressions
+</h5>
+<pre><code class="language-swift" data-lang="swift">let weatherAdvice = if temperatureInCelsius &lt;= 0 {
+&nbsp;&nbsp;&nbsp;&nbsp;"It's very cold. Consider wearing a scarf."
+} else if temperatureInCelsius &gt;= 30 {
+&nbsp;&nbsp;&nbsp;&nbsp;"It's really warm. Don't forget to wear sunscreen."
+} else {
+&nbsp;&nbsp;&nbsp;&nbsp;"It's not that cold. Wear a T-shirt."
+}
+
+print(weatherAdvice)
+// Prints "It's not that cold. Wear a T-shirt."
+</code></pre>
+<h5
+	id="checking-codenil-code-in-an-optional" >
+    Checking 
+    <code>nil</code>
+    &nbsp;in an Optional
+</h5>
+<pre><code class="language-swift" data-lang="swift">let possibleNumber = "123"
+let convertedNumber = Int(possibleNumber)
+
+
+if convertedNumber != nil {
+&nbsp;&nbsp;&nbsp;&nbsp;print("convertedNumber contains some integer value.")
+}
+</code></pre>
+<h5
+	id="ternary" >
+    Ternary
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Without Ternary
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let contentHeight = 40
+ let hasHeader = true
+ let rowHeight: Int
+ if hasHeader {
+&nbsp;&nbsp;&nbsp;&nbsp; rowHeight = contentHeight + 50
+ } else {
+&nbsp;&nbsp;&nbsp;&nbsp; rowHeight = contentHeight + 20
+ }
+ // rowHeight is equal to 90
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                With Ternary
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let contentHeight = 40
+ let hasHeader = true
+ let rowHeight = contentHeight + (hasHeader ? 50 : 20)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // "if hasHeader, 50, else, 20"
+ // rowHeight is equal to 90
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="conditionals-match" >
+    Conditionals: match
+</h3>
+<ul>
+	<li>
+		<p>
+            Every 
+            <code>switch</code>
+            &nbsp;statement must be 
+			<em>
+                exhaustive
+			</em>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="match" >
+    Match
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Basic
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let someCharacter: Character = "z"
+ switch someCharacter {
+ case "a":
+&nbsp;&nbsp;&nbsp;&nbsp; print("The first letter of the Latin alphabet")
+ case "z":
+&nbsp;&nbsp;&nbsp;&nbsp; print("The last letter of the Latin alphabet")
+ default:
+&nbsp;&nbsp;&nbsp;&nbsp; print("Some other character")
+ }
+ // Prints "The last letter of the Latin alphabet"
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Range
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let approximateCount = 62
+ let countedThings = "moons orbiting Saturn"
+ let naturalCount: String
+ switch approximateCount {
+ case 0:
+&nbsp;&nbsp;&nbsp;&nbsp; naturalCount = "no"
+ case 1..&lt;5:
+&nbsp;&nbsp;&nbsp;&nbsp; naturalCount = "a few"
+ case 5..&lt;12:
+&nbsp;&nbsp;&nbsp;&nbsp; naturalCount = "several"
+ case 12..&lt;100:
+&nbsp;&nbsp;&nbsp;&nbsp; naturalCount = "dozens of"
+ case 100..&lt;1000:
+&nbsp;&nbsp;&nbsp;&nbsp; naturalCount = "hundreds of"
+ default:
+&nbsp;&nbsp;&nbsp;&nbsp; naturalCount = "many"
+ }
+ print("There are \(naturalCount) \(countedThings).")
+ // Prints "There are dozens of moons orbiting Saturn."
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Tuples
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let somePoint = (1, 1)
+ switch somePoint {
+ case (0, 0):
+&nbsp;&nbsp;&nbsp;&nbsp; print("\(somePoint) is at the origin")
+ case (_, 0):
+&nbsp;&nbsp;&nbsp;&nbsp; print("\(somePoint) is on the x-axis")
+ case (0, _):
+&nbsp;&nbsp;&nbsp;&nbsp; print("\(somePoint) is on the y-axis")
+ case (-2...2, -2...2):
+&nbsp;&nbsp;&nbsp;&nbsp; print("\(somePoint) is inside the box")
+ default:
+&nbsp;&nbsp;&nbsp;&nbsp; print("\(somePoint) is outside of the box")
+ }
+ // Prints "(1, 1) is inside the box"
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="multi-match" >
+    Multi-Match
+</h5>
+<pre><code class="language-swift" data-lang="swift">let anotherCharacter: Character = "a"
+switch anotherCharacter {
+case "a", "A":
+&nbsp;&nbsp;&nbsp;&nbsp;print("The letter A")
+default:
+&nbsp;&nbsp;&nbsp;&nbsp;print("Not the letter A")
+}
+// Prints "The letter A"
+</code></pre>
+<h5
+	id="match-expression" >
+    Match Expression
+</h5>
+<pre><code class="language-swift" data-lang="swift">let anotherCharacter: Character = "a"
+let message = switch anotherCharacter {
+case "a":
+&nbsp;&nbsp;&nbsp;&nbsp;"The first letter of the Latin alphabet"
+case "z":
+&nbsp;&nbsp;&nbsp;&nbsp;"The last letter of the Latin alphabet"
+default:
+&nbsp;&nbsp;&nbsp;&nbsp;"Some other character"
+}
+
+print(message)
+// Prints "The first letter of the Latin alphabet"
+</code></pre>
+<h5
+	id="value-binding" >
+    Value Binding
+</h5>
+<ul>
+	<li>
+		<p>
+            A 
+            <code>switch</code>
+            &nbsp;case can name the value or values it matches to temporary constants or variables, for use in the body of the case.
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let anotherPoint = (2, 0)
+ switch anotherPoint {
+ case (let x, 0):
+&nbsp;&nbsp;&nbsp;&nbsp; print("on the x-axis with an x value of \(x)")
+ case (0, let y):
+&nbsp;&nbsp;&nbsp;&nbsp; print("on the y-axis with a y value of \(y)")
+ case let (x, y):
+&nbsp;&nbsp;&nbsp;&nbsp; print("somewhere else at (\(x), \(y))")
+ }
+ // Prints "on the x-axis with an x value of 2"
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Can be used with 
+            <code>where</code>
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let yetAnotherPoint = (1, -1)
+ switch yetAnotherPoint {
+ case let (x, y) where x == y:
+&nbsp;&nbsp;&nbsp;&nbsp; print("(\(x), \(y)) is on the line x == y")
+ case let (x, y) where x == -y:
+&nbsp;&nbsp;&nbsp;&nbsp; print("(\(x), \(y)) is on the line x == -y")
+ case let (x, y):
+&nbsp;&nbsp;&nbsp;&nbsp; print("(\(x), \(y)) is just some arbitrary point")
+ }
+ // Prints "(1, -1) is on the line x == -y"
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="fallthrough" >
+    Fallthrough
+</h5>
+<pre><code class="language-swift" data-lang="swift">let integerToDescribe = 5
+var description = "The number \(integerToDescribe) is"
+switch integerToDescribe {
+case 2, 3, 5, 7, 11, 13, 17, 19:
+&nbsp;&nbsp;&nbsp;&nbsp;description += " a prime number, and also"
+&nbsp;&nbsp;&nbsp;&nbsp;fallthrough
+default:
+&nbsp;&nbsp;&nbsp;&nbsp;description += " an integer."
+}
+print(description)
+// Prints "The number 5 is a prime number, and also an integer."
+</code></pre>
+<h3
+	id="loops-for" >
+    Loops: For
+</h3>
+<h5
+	id="keywords" >
+    Keywords
+</h5>
+<ul>
+	<li>
+		<p>
+            Classic:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>continue</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>break</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="ranges" >
+    Ranges
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Two-sided Ranges
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Closed
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Defines a range that runs from 
+                            <code>a</code>
+                            &nbsp;to 
+                            <code>b</code>
+                            , and 
+							<em>
+                                includes
+							</em>
+                            &nbsp;the values 
+                            <code>a</code>
+                            &nbsp;and 
+                            <code>b</code>
+                            :
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-swift" data-lang="swift"> for index in 1...5 {
+&nbsp;&nbsp;&nbsp;&nbsp; print("\(index) times 5 is \(index * 5)")
+ }
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Half-Opened
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Defines a range that runs from 
+                            <code>a</code>
+                            &nbsp;to 
+                            <code>b</code>
+                            , but 
+							<em>
+                                doesn’t include
+							</em>
+                            &nbsp;
+                            <code>b</code>
+                            .
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-swift" data-lang="swift"> let names = ["Anna", "Alex", "Brian", "Jack"]
+ let count = names.count
+ for i in 0..&lt;count {
+&nbsp;&nbsp;&nbsp;&nbsp; print("Person \(i + 1) is called \(names[i])")
+ }
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                One-sided Ranges
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Closed
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Continue as far as possible in one direction
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-swift" data-lang="swift"> // Includes all the elements of an array from index 2 to the end of the array.
+ for name in names[2...] {
+&nbsp;&nbsp;&nbsp;&nbsp; print(name)
+ }
+ // Includes all the elements of an array from index 0 to index 2, including index 2.
+ for name in names[...2] {
+&nbsp;&nbsp;&nbsp;&nbsp; print(name)
+ }
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Half-Opened
+					</strong>
+                    :
+				</p>
+<pre><code class="language-swift" data-lang="swift"> for name in names[..&lt;2] {
+&nbsp;&nbsp;&nbsp;&nbsp; print(name)
+ }
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="iterating" >
+    Iterating
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Array
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> for (index, value) in shoppingList.enumerated() {
+&nbsp;&nbsp;&nbsp;&nbsp; print("Item \(index + 1): \(value)")
+ }
+ // Item 1: Six eggs
+ // Item 2: Milk
+ // Item 3: Flour
+ // Item 4: Baking Powder
+ // Item 5: Bananas
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Dictionary
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> for (airportCode, airportName) in airports {
+&nbsp;&nbsp;&nbsp;&nbsp; print("\(airportCode): \(airportName)")
+ }
+ // LHR: London Heathrow
+ // YYZ: Toronto Pearson
+</code></pre>
+<pre><code class="language-swift" data-lang="swift"> for airportCode in airports.keys {
+&nbsp;&nbsp;&nbsp;&nbsp; print("Airport code: \(airportCode)")
+ }
+ // Airport code: LHR
+ // Airport code: YYZ
+ 
+ 
+ for airportName in airports.values {
+&nbsp;&nbsp;&nbsp;&nbsp; print("Airport name: \(airportName)")
+ }
+ // Airport name: London Heathrow
+ // Airport name: Toronto Pearson
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="other-iteration-types" >
+    Other Iteration Types
+</h5>
+<ul>
+	<li>
+		<p>
+            Ignoring the iteration value:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let base = 3
+ let power = 10
+ var answer = 1
+ for _ in 1...power {
+&nbsp;&nbsp;&nbsp;&nbsp; answer *= base
+ }
+ print("\(base) to the power of \(power) is \(answer)")
+ // Prints "3 to the power of 10 is 59049"
+</code></pre>
+	</li>
+	<li>
+		<p>
+            With intervals:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let minuteInterval = 5
+ for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
+&nbsp;&nbsp;&nbsp;&nbsp; // render the tick mark every 5 minutes (0, 5, 10, 15 ... 45, 50, 55)
+ }
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="loops-while" >
+    Loops: While
+</h3>
+<pre><code class="language-swift" data-lang="swift">var square = 0
+var diceRoll = 0
+while square &lt; finalSquare {
+&nbsp;&nbsp;&nbsp;&nbsp;// roll the dice
+&nbsp;&nbsp;&nbsp;&nbsp;diceRoll += 1
+&nbsp;&nbsp;&nbsp;&nbsp;if diceRoll == 7 { diceRoll = 1 }
+&nbsp;&nbsp;&nbsp;&nbsp;// move by the rolled amount
+&nbsp;&nbsp;&nbsp;&nbsp;square += diceRoll
+&nbsp;&nbsp;&nbsp;&nbsp;if square &lt; board.count {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// if we're still on the board, move up or down for a snake or a ladder
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;square += board[square]
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+print("Game over!")
+</code></pre>
+<h3
+	id="loops-repeat-while" >
+    Loops: Repeat-While
+</h3>
+<h5
+	id="differences" >
+    Differences
+</h5>
+<ul>
+	<li>
+		<p>
+            Performs a single pass through the loop block first, 
+			<em>
+                before
+			</em>
+            &nbsp;considering the loop’s condition.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">repeat {
+&nbsp;&nbsp;&nbsp;&nbsp;// move up or down for a snake or ladder
+&nbsp;&nbsp;&nbsp;&nbsp;square += board[square]
+&nbsp;&nbsp;&nbsp;&nbsp;// roll the dice
+&nbsp;&nbsp;&nbsp;&nbsp;diceRoll += 1
+&nbsp;&nbsp;&nbsp;&nbsp;if diceRoll == 7 { diceRoll = 1 }
+&nbsp;&nbsp;&nbsp;&nbsp;// move by the rolled amount
+&nbsp;&nbsp;&nbsp;&nbsp;square += diceRoll
+} while square &lt; finalSquare
+print("Game over!")
+</code></pre>
+<h3
+	id="deferred" >
+    Deferred
+</h3>
+<pre><code class="language-swift" data-lang="swift">var score = 1
+if score &lt; 10 {
+&nbsp;&nbsp;&nbsp;&nbsp;defer {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(score)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;score += 5
+}
+// Prints "6"
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">var score = 3
+if score &lt; 100 {
+&nbsp;&nbsp;&nbsp;&nbsp;score += 100
+&nbsp;&nbsp;&nbsp;&nbsp;defer {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score -= 100
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;// Other code that uses the score with its bonus goes here.
+&nbsp;&nbsp;&nbsp;&nbsp;print(score)
+}
+// Prints "103"
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">if score &lt; 10 {
+&nbsp;&nbsp;&nbsp;&nbsp;defer {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(score)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;defer {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("The score is:")
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;score += 5
+}
+// Prints "The score is:"
+// Prints "6"
+</code></pre>
+<h2
+	id="functions" >
+    Functions
+</h2>
+<h3
+	id="classic-functions" >
+    Classic Functions
+</h3>
+<h5
+	id="basic" >
+    Basic
+</h5>
+<pre><code class="language-swift" data-lang="swift">func greeting(for person: String) -&gt; String {
+&nbsp;&nbsp;&nbsp;&nbsp;"Hello, " + person + "!"
+}
+print(greeting(for: "Dave"))
+// Prints "Hello, Dave!"
+
+
+func anotherGreeting(for person: String) -&gt; String {
+&nbsp;&nbsp;&nbsp;&nbsp;return "Hello, " + person + "!"
+}
+print(anotherGreeting(for: "Dave"))
+// Prints "Hello, Dave!"
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">func greet(person: String) -&gt; String {
+&nbsp;&nbsp;&nbsp;&nbsp;let greeting = "Hello, " + person + "!"
+&nbsp;&nbsp;&nbsp;&nbsp;return greeting
+}
+print(greet("Dave"))
+// Prints "Hello, Dave!"
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">func greet(person: String) {
+&nbsp;&nbsp;&nbsp;&nbsp;print("Hello, \(person)!")
+}
+greet(person: "Dave")
+// Prints "Hello, Dave!"
+</code></pre>
+<h5
+	id="mutability-inout" >
+    Mutability: inout
+</h5>
+<ul>
+	<li>
+		<p>
+            Function parameters are constants by default. Trying to change the value of a function parameter from within the body of that function results in a compile-time error.
+		</p>
+	</li>
+	<li>
+		<p>
+            If you want a function to modify a parameter’s value, and you want those changes to persist after the function call has ended, define that parameter as an 
+			<em>
+                in-out parameter
+			</em>
+            &nbsp;instead.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+&nbsp;&nbsp;&nbsp;&nbsp;let temporaryA = a
+&nbsp;&nbsp;&nbsp;&nbsp;a = b
+&nbsp;&nbsp;&nbsp;&nbsp;b = temporaryA
+}
+
+var someInt = 3
+var anotherInt = 107
+swapTwoInts(&someInt, &anotherInt)
+print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
+// Prints "someInt is now 107, and anotherInt is now 3"
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Note
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In-out parameters can’t have default values, and variadic parameters can’t be marked as 
+                    <code>inout</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="return-multiple-returns" >
+    Return: Multiple returns
+</h5>
+<pre><code class="language-swift" data-lang="swift">func minMax(array: [Int]) -&gt; (min: Int, max: Int) {
+&nbsp;&nbsp;&nbsp;&nbsp;var currentMin = array[0]
+&nbsp;&nbsp;&nbsp;&nbsp;var currentMax = array[0]
+&nbsp;&nbsp;&nbsp;&nbsp;for value in array[1..&lt;array.count] {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if value &lt; currentMin {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentMin = value
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if value &gt; currentMax {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentMax = value
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return (currentMin, currentMax)
+}
+
+let bounds = minMax(array: [8, -6, 2, 109, 3, 71])
+print("min is \(bounds.min) and max is \(bounds.max)")
+// Prints "min is -6 and max is 109"
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Can be optional:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func minMax(array: [Int]) -&gt; (min: Int, max: Int)? {
+&nbsp;&nbsp;&nbsp;&nbsp; if array.isEmpty { return nil }
+&nbsp;&nbsp;&nbsp;&nbsp; var currentMin = array[0]
+&nbsp;&nbsp;&nbsp;&nbsp; var currentMax = array[0]
+&nbsp;&nbsp;&nbsp;&nbsp; for value in array[1..&lt;array.count] {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if value &lt; currentMin {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; currentMin = value
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if value &gt; currentMax {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; currentMax = value
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; return (currentMin, currentMax)
+ }
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="return-ignoring-the-return" >
+    Return: Ignoring the return
+</h5>
+<ul>
+	<li>
+		<p>
+            The return value of a function can be ignored when it’s called:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">func printAndCount(string: String) -&gt; Int {
+&nbsp;&nbsp;&nbsp;&nbsp;print(string)
+&nbsp;&nbsp;&nbsp;&nbsp;return string.count
+}
+
+let _ = printAndCount(string: "Caio")
+</code></pre>
+<h5
+	id="parameters-order" >
+    Parameters: Order
+</h5>
+<ul>
+	<li>
+		<p>
+            Using 
+            <code>_</code>
+            &nbsp;in a function allows positional arguments, as in 
+            <code>whatsUp('jeff', emoji: 'foguinho')</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="parameters-default" >
+    Parameters: Default
+</h5>
+<pre><code class="language-swift" data-lang="swift">func someFunction(parameterWithoutDefault: Int, parameterWithDefault: Int = 12) {
+&nbsp;&nbsp;&nbsp;&nbsp;// If you omit the second argument when calling this function, then
+&nbsp;&nbsp;&nbsp;&nbsp;// the value of parameterWithDefault is 12 inside the function body.
+}
+someFunction(parameterWithoutDefault: 3, parameterWithDefault: 6) // parameterWithDefault is 6
+someFunction(parameterWithoutDefault: 4) // parameterWithDefault is 12
+</code></pre>
+<h5
+	id="parameters-labels" >
+    Parameters: Labels
+</h5>
+<ul>
+	<li>
+		<p>
+            If a parameter has an argument label, the argument 
+			<em>
+                must
+			</em>
+            &nbsp;be labeled when you call the function.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">func greeting(for person: String) -&gt; String {
+&nbsp;&nbsp;&nbsp;&nbsp;"Hello, " + person + "!"
+}
+print(greeting(for: "Dave"))
+// Prints "Hello, Dave!"
+
+
+func anotherGreeting(for person: String) -&gt; String {
+&nbsp;&nbsp;&nbsp;&nbsp;return "Hello, " + person + "!"
+}
+print(anotherGreeting(for: "Dave"))
+// Prints "Hello, Dave!"
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Omitting the label:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func someFunction(_ firstParameterName: Int, secondParameterName: Int) {
+&nbsp;&nbsp;&nbsp;&nbsp; // In the function body, firstParameterName and secondParameterName
+&nbsp;&nbsp;&nbsp;&nbsp; // refer to the argument values for the first and second parameters.
+ }
+ someFunction(1, secondParameterName: 2)
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="parameters-variadic" >
+    Parameters: Variadic
+</h5>
+<pre><code class="language-swift" data-lang="swift">func arithmeticMean(_ numbers: Double...) -&gt; Double {
+&nbsp;&nbsp;&nbsp;&nbsp;var total: Double = 0
+&nbsp;&nbsp;&nbsp;&nbsp;for number in numbers {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total += number
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return total / Double(numbers.count)
+}
+arithmeticMean(1, 2, 3, 4, 5)
+// returns 3.0, which is the arithmetic mean of these five numbers
+arithmeticMean(3, 8.25, 18.75)
+// returns 10.0, which is the arithmetic mean of these three numbers
+</code></pre>
+<h5
+	id="function-as-arguments-function-types" >
+    Function as Arguments / Function Types
+</h5>
+<ul>
+	<li>
+		<p>
+            Functions are 'first-class objects'.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;
+            <code>(Int, Int) -&gt; Int</code>
+            &quot;:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func addTwoInts(_ a: Int, _ b: Int) -&gt; Int {
+&nbsp;&nbsp;&nbsp;&nbsp; return a + b
+ }
+</code></pre>
+<pre><code class="language-swift" data-lang="swift"> let anotherMathFunction = addTwoInts
+ // anotherMathFunction is inferred to be of type (Int, Int) -&gt; Int
+</code></pre>
+	</li>
+	<li>
+		<p>
+            &quot;
+            <code>() -&gt; Void</code>
+            &quot;:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func printHelloWorld() {
+&nbsp;&nbsp;&nbsp;&nbsp; print("hello, world")
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex1
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> var mathFunction: (Int, Int) -&gt; Int = addTwoInts
+
+ print("Result: \(mathFunction(2, 3))")
+ // Prints "Result: 5"
+</code></pre>
+<pre><code class="language-swift" data-lang="swift"> func printMathResult(_ mathFunction: (Int, Int) -&gt; Int, _ a: Int, _ b: Int) {
+&nbsp;&nbsp;&nbsp;&nbsp; print("Result: \(mathFunction(a, b))")
+ }
+ printMathResult(addTwoInts, 3, 5)
+ // Prints "Result: 8"
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex2
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func stepForward(_ input: Int) -&gt; Int {
+&nbsp;&nbsp;&nbsp;&nbsp; return input + 1
+ }
+ func stepBackward(_ input: Int) -&gt; Int {
+&nbsp;&nbsp;&nbsp;&nbsp; return input - 1
+ }
+ 
+ func chooseStepFunction(backward: Bool) -&gt; (Int) -&gt; Int {
+&nbsp;&nbsp;&nbsp;&nbsp; return backward ? stepBackward : stepForward
+ }
+
+ var currentValue = 3
+ let moveNearerToZero = chooseStepFunction(backward: currentValue &gt; 0)
+ // moveNearerToZero now refers to the stepBackward() function
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex3
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func backward(_ s1: String, _ s2: String) -&gt; Bool {
+&nbsp;&nbsp;&nbsp;&nbsp; return s1 &gt; s2
+ }
+ var reversedNames = names.sorted(by: backward)
+ // reversedNames is equal to ["Ewa", "Daniella", "Chris", "Barry", "Alex"]
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="nested-functions" >
+    Nested Functions
+</h5>
+<ul>
+	<li>
+		<p>
+            Nested functions are hidden from the outside world by default.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">func chooseStepFunction(backward: Bool) -&gt; (Int) -&gt; Int {
+&nbsp;&nbsp;&nbsp;&nbsp;func stepForward(input: Int) -&gt; Int { return input + 1 }
+&nbsp;&nbsp;&nbsp;&nbsp;func stepBackward(input: Int) -&gt; Int { return input - 1 }
+&nbsp;&nbsp;&nbsp;&nbsp;return backward ? stepBackward : stepForward
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Can be returned as a parameter to be accessed outside the function.
+		</p>
+	</li>
+</ul>
+<h3
+	id="closures" >
+    Closures
+</h3>
+<h5
+	id="ways-to-write" >
+    Ways to Write
+</h5>
+<pre><code class="language-swift" data-lang="swift">reversedNames = names.sorted(by: { (s1: String, s2: String) -&gt; Bool in
+&nbsp;&nbsp;&nbsp;&nbsp;return s1 &gt; s2
+})
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">reversedNames = names.sorted(by: { (s1: String, s2: String) -&gt; Bool in return s1 &gt; s2 } )
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">reversedNames = names.sorted(by: { s1, s2 in return s1 &gt; s2 } )
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">reversedNames = names.sorted(by: { s1, s2 in s1 &gt; s2 } )
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">reversedNames = names.sorted(by: { $0 &gt; $1 } )&nbsp;&nbsp;// shorthanded
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">reversedNames = names.sorted(by: &gt;)&nbsp;&nbsp;// Using the default implementation of the `&gt;` symbol
+</code></pre>
+<h5
+	id="when-the-closure-is-called" >
+    When the Closure is Called
+</h5>
+<ul>
+	<li>
+		<p>
+            An 
+			<em>
+                autoclosure
+			</em>
+            &nbsp;is a closure that’s automatically created to wrap an expression that’s being passed as an argument to a function.
+		</p>
+	</li>
+	<li>
+		<p>
+            It doesn’t take any arguments, and when it’s called, it returns the value of the expression that’s wrapped inside of it.
+		</p>
+	</li>
+	<li>
+		<p>
+            An autoclosure lets you delay evaluation because the code inside isn’t run until you call the closure.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+print(customersInLine.count)
+// Prints "5"
+
+
+let customerProvider = { customersInLine.remove(at: 0) }
+print(customersInLine.count)
+// Prints "5"
+
+
+print("Now serving \(customerProvider())!")
+// Prints "Now serving Chris!"
+print(customersInLine.count)
+// Prints "4"
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">// customersInLine is ["Alex", "Ewa", "Barry", "Daniella"]
+func serve(customer customerProvider: () -&gt; String) {
+&nbsp;&nbsp;&nbsp;&nbsp;print("Now serving \(customerProvider())!")
+}
+serve(customer: { customersInLine.remove(at: 0) } )
+// Prints "Now serving Alex!"
+</code></pre>
+<h5
+	id="shorthand" >
+    Shorthand
+</h5>
+<pre><code class="language-swift" data-lang="swift">reversedNames = names.sorted(by: { $0 &gt; $1 } )
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Here, 
+            <code>$0</code>
+            &nbsp;and 
+            <code>$1</code>
+            &nbsp;refer to the closure’s first and second 
+            <code>String</code>
+            &nbsp;arguments. Because 
+            <code>$1</code>
+            &nbsp;is the shorthand argument with the highest number, the closure is understood to take two arguments. Because the 
+            <code>sorted(by:)</code>
+            &nbsp;function here expects a closure whose arguments are both strings, the shorthand arguments 
+            <code>$0</code>
+            &nbsp;and 
+            <code>$1</code>
+            &nbsp;are both of type 
+            <code>String</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="ways-to-call-trailing-closures" >
+    Ways to Call (Trailing Closures)
+</h5>
+<ul>
+	<li>
+		<p>
+            You write a trailing closure after the function call’s parentheses, even though the trailing closure is still an argument to the function.
+		</p>
+	</li>
+	<li>
+		<p>
+            When you use the trailing closure syntax, you don’t write the argument label for the first closure as part of the function call.
+		</p>
+	</li>
+	<li>
+		<p>
+            A function call can include multiple trailing closures; however, the first few examples below use a single trailing closure.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">reversedNames = names.sorted(by: { $0 &gt; $1 } )
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">reversedNames = names.sorted() { $0 &gt; $1 }
+</code></pre>
+<ul>
+	<li>
+		<p>
+            If a closure expression is provided as the function’s or method’s only argument and you provide that expression as a trailing closure, you don’t need to write a pair of parentheses 
+            <code>()</code>
+            &nbsp;after the function or method’s name when you call the function:
+		</p>
+<pre><code class="language-swift" data-lang="swift"> reversedNames = names.sorted { $0 &gt; $1 }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex1
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> let digitNames = [
+&nbsp;&nbsp;&nbsp;&nbsp; 0: "Zero", 1: "One", 2: "Two",&nbsp;&nbsp; 3: "Three", 4: "Four",
+&nbsp;&nbsp;&nbsp;&nbsp; 5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"
+ ]
+ let numbers = [16, 58, 510]
+ 
+ 
+ let strings = numbers.map { (number) -&gt; String in
+&nbsp;&nbsp;&nbsp;&nbsp; var number = number
+&nbsp;&nbsp;&nbsp;&nbsp; var output = ""
+&nbsp;&nbsp;&nbsp;&nbsp; repeat {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output = digitNames[number % 10]! + output
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; number /= 10
+&nbsp;&nbsp;&nbsp;&nbsp; } while number &gt; 0
+&nbsp;&nbsp;&nbsp;&nbsp; return output
+ }
+ // strings is inferred to be of type [String]
+ // its value is ["OneSix", "FiveEight", "FiveOneZero"]
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex2
+			</strong>
+            &nbsp;(multiple closures):
+		</p>
+<pre><code class="language-swift" data-lang="swift"> func loadPicture(from server: Server, completion: (Picture) -&gt; Void, onFailure: () -&gt; Void) {
+&nbsp;&nbsp;&nbsp;&nbsp; if let picture = download("photo.jpg", from: server) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; completion(picture)
+&nbsp;&nbsp;&nbsp;&nbsp; } else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; onFailure()
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+</code></pre>
+<pre><code class="language-swift" data-lang="swift"> loadPicture(from: someServer) { picture in
+&nbsp;&nbsp;&nbsp;&nbsp; someView.currentPicture = picture
+ } onFailure: {
+&nbsp;&nbsp;&nbsp;&nbsp; print("Couldn't download the next picture.")
+ }
+</code></pre>
+	</li>
+</ul>
+<h2
+	id="enums" >
+    Enums
+</h2>
+<h5
+	id="without-associated-type" >
+    Without Associated Type
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Creation
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> enum CompassPoint {
+&nbsp;&nbsp;&nbsp;&nbsp; case north
+&nbsp;&nbsp;&nbsp;&nbsp; case south
+&nbsp;&nbsp;&nbsp;&nbsp; case east
+&nbsp;&nbsp;&nbsp;&nbsp; case west
+ }
+</code></pre>
+<pre><code class="language-swift" data-lang="swift"> enum Planet {
+&nbsp;&nbsp;&nbsp;&nbsp; case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
+ }
+</code></pre>
+	</li>
+</ul>
+<pre><code class="language-" data-lang="">- **Access**:
+&nbsp;&nbsp;&nbsp;&nbsp;```swift
+&nbsp;&nbsp;&nbsp;&nbsp;var directionToHead = CompassPoint.west
+&nbsp;&nbsp;&nbsp;&nbsp;```
+&nbsp;&nbsp;&nbsp;&nbsp;- Once `directionToHead` is declared as a `CompassPoint`, you can set it to a different `CompassPoint` value using a shorter dot syntax:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```swift
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directionToHead = .east
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```swift
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directionToHead = .south
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch directionToHead {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case .north:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Lots of planets have a north")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case .south:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Watch out for penguins")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case .east:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Where the sun rises")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case .west:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Where the skies are blue")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```
+
+##### With Associated Type
+- **Creation**:
+&nbsp;&nbsp;&nbsp;&nbsp;```swift
+&nbsp;&nbsp;&nbsp;&nbsp;enum Barcode {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case upc(Int, Int, Int, Int)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case qrCode(String)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;```
+&nbsp;&nbsp;&nbsp;&nbsp;- This definition doesn’t provide any actual `Int` or `String` values — it just defines the _type_ of associated values that constants and variables can store when they’re equal to `Barcode.upc` or `Barcode.qrCode`.
+&nbsp;&nbsp;&nbsp;&nbsp;```swift
+&nbsp;&nbsp;&nbsp;&nbsp;var productBarcode = Barcode.upc(8, 85909, 51226, 3)
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
+&nbsp;&nbsp;&nbsp;&nbsp;```
+- **Access**:
+&nbsp;&nbsp;&nbsp;&nbsp;```swift
+&nbsp;&nbsp;&nbsp;&nbsp;switch productBarcode {
+&nbsp;&nbsp;&nbsp;&nbsp;case .upc(let numberSystem, let manufacturer, let product, let check):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("UPC: \(numberSystem), \(manufacturer), \(product), \(check).")
+&nbsp;&nbsp;&nbsp;&nbsp;case .qrCode(let productCode):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("QR code: \(productCode).")
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;// Prints "QR code: ABCDEFGHIJKLMNOP."
+&nbsp;&nbsp;&nbsp;&nbsp;```
+&nbsp;&nbsp;&nbsp;&nbsp;- If all of the associated values for an enumeration case are extracted as constants, or if all are extracted as variables, you can place a single `let` or `var` annotation before the case name, for brevity:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```swift
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch productBarcode {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case let .upc(numberSystem, manufacturer, product, check):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("UPC : \(numberSystem), \(manufacturer), \(product), \(check).")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case let .qrCode(productCode):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("QR code: \(productCode).")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Prints "QR code: ABCDEFGHIJKLMNOP."
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```
+
+##### Iterating
+- Swift exposes a collection of all the cases as an `allCases` property of the enumeration type if you write `CaseIterable` after the enumeration’s name.
+```swift
+enum Beverage: CaseIterable {
+&nbsp;&nbsp;&nbsp;&nbsp;case coffee, tea, juice
+}
+
+let numberOfChoices = Beverage.allCases.count
+print("\(numberOfChoices) beverages available")
+// Prints "3 beverages available"
+
+
+for beverage in Beverage.allCases {
+&nbsp;&nbsp;&nbsp;&nbsp;print(beverage)
+}
+// coffee
+// tea
+// juice
+</code></pre>
+<h5
+	id="default-value" >
+    Default Value
+</h5>
+<ul>
+	<li>
+		<p>
+            Swift enumeration cases don’t have an integer value set by default.
+		</p>
+	</li>
+	<li>
+		<p>
+            In the 
+            <code>CompassPoint</code>
+            &nbsp;example above, 
+            <code>north</code>
+            , 
+            <code>south</code>
+            , 
+            <code>east</code>
+            &nbsp;and 
+            <code>west</code>
+            &nbsp;don’t implicitly equal 
+            <code>0</code>
+            , 
+            <code>1</code>
+            , 
+            <code>2</code>
+            &nbsp;and 
+            <code>3</code>
+            . Instead, the different enumeration cases are values in their own right, with an explicitly defined type of 
+            <code>CompassPoint</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="other-topics" >
+    Other Topics
+</h5>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            Raw Values.
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            Recursive Enumerations.
+		</p>
+	</li>
+</ul>
+<h2
+	id="structs-and-classes" >
+    Structs and Classes
+</h2>
+<h3
+	id="structs-and-classes" >
+    Structs and Classes
+</h3>
+<h5
+	id="similarities" >
+    Similarities
+</h5>
+<ul>
+	<li>
+		<p>
+            Define properties to store values
+		</p>
+	</li>
+	<li>
+		<p>
+            Define methods to provide functionality
+		</p>
+	</li>
+	<li>
+		<p>
+            Define subscripts to provide access to their values using subscript syntax
+		</p>
+	</li>
+	<li>
+		<p>
+            Define initializers to set up their initial state
+		</p>
+	</li>
+	<li>
+		<p>
+            Be extended to expand their functionality beyond a default implementation
+		</p>
+	</li>
+	<li>
+		<p>
+            Conform to protocols to provide standard functionality of a certain kind
+		</p>
+	</li>
+	<li>
+		<p>
+            Whenever you define a new structure or class, you define a new Swift type.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Give types 
+                    <code>UpperCamelCase</code>
+                    &nbsp;names (such as 
+                    <code>SomeStructure</code>
+                    &nbsp;and 
+                    <code>SomeClass</code>
+                    &nbsp;here) to match the capitalization of standard Swift types (such as 
+                    <code>String</code>
+                    , 
+                    <code>Int</code>
+                    , and 
+                    <code>Bool</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Give properties and methods 
+                    <code>lowerCamelCase</code>
+                    &nbsp;names (such as 
+                    <code>frameRate</code>
+                    &nbsp;and 
+                    <code>incrementCount</code>
+                    ) to differentiate them from type names.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="creation" >
+    Creation
+</h5>
+<pre><code class="language-swift" data-lang="swift">struct Resolution {
+&nbsp;&nbsp;&nbsp;&nbsp;var width = 0
+&nbsp;&nbsp;&nbsp;&nbsp;var height = 0
+}
+
+class VideoMode {
+&nbsp;&nbsp;&nbsp;&nbsp;var resolution = Resolution()
+&nbsp;&nbsp;&nbsp;&nbsp;var interlaced = false
+&nbsp;&nbsp;&nbsp;&nbsp;var frameRate = 0.0
+&nbsp;&nbsp;&nbsp;&nbsp;var name: String?
+}
+</code></pre>
+<h5
+	id="instantiation" >
+    Instantiation
+</h5>
+<pre><code class="language-swift" data-lang="swift">let someResolution = Resolution()
+let someVideoMode = VideoMode()
+</code></pre>
+<h5
+	id="property-access" >
+    Property Access
+</h5>
+<pre><code class="language-swift" data-lang="swift">print("The width of someResolution is \(someResolution.width)")
+// Prints "The width of someResolution is 0"
+</code></pre>
+<pre><code class="language-swift" data-lang="swift">someVideoMode.resolution.width = 1280
+print("The width of someVideoMode is now \(someVideoMode.resolution.width)")
+// Prints "The width of someVideoMode is now 1280"
+</code></pre>
+<h3
+	id="struct-exclusive" >
+    Struct-Exclusive
+</h3>
+<ul>
+	<li>
+		<p>
+            Are 
+			<strong>
+                Value Types
+			</strong>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="quotadvantagesquot-of-structs" >
+    &quot;Advantages&quot; of Structs
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Value Type vs Reference Type
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Reference types can be harder to reason about (such as Classes).
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If instances of the same Class were far apart in your program’s code, it could be difficult to find all the ways that the video mode is changed. Wherever you use one, you also have to think about the code that uses the other, and vice versa.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    In contrast, value types (such as Structs) are easier to reason about because all of the code that interacts with the same value is close together in your source files.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="initialization" >
+    Initialization
+</h5>
+<pre><code class="language-swift" data-lang="swift">let vga = Resolution(width: 640, height: 480)
+</code></pre>
+<h3
+	id="class-exclusive" >
+    Class-Exclusive
+</h3>
+<ul>
+	<li>
+		<p>
+            Are 
+			<strong>
+                Reference Types
+			</strong>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="what-a-class-has-extra" >
+    What a Class Has Extra
+</h5>
+<ul>
+	<li>
+		<p>
+            Inheritance enables one class to inherit the characteristics of another.
+		</p>
+	</li>
+	<li>
+		<p>
+            Type casting enables you to check and interpret the type of a class instance at runtime.
+		</p>
+	</li>
+	<li>
+		<p>
+            Deinitializers enable an instance of a class to free up any resources it has assigned.
+		</p>
+	</li>
+	<li>
+		<p>
+            Reference counting allows more than one reference to a class instance.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+						<a
+							href="/docs/Programming Languages/Rust/Rust.html" >
+                            &nbsp;&lsaquo; Previous
+						</a>
+						<a
+							href="/docs/Programming Languages/Zig/Zig.html" >
+                            Next &rsaquo; 
+						</a>
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2025-10-30 🚀
+			</footer>
+		</div>
+		<aside
+			id="right-sidebar" >
+			<nav
+				id="table-of-contents" >
+				<strong>
+                    On this page
+				</strong>
+				<ul>
+					<ul>
+						<li>
+							<a
+								href="#impressions" >
+                                Impressions
+							</a>
+						</li>
+						<li>
+							<a
+								href="#about" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<li>
+						<a
+							href="#setup" >
+                            Setup
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#memory" >
+                            Memory
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#access-control" >
+                            Access Control
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#nullability" >
+                            Nullability
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#error-handling" >
+                            Error Handling
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#precondition" >
+                                    precondition
+								</a>
+							</li>
+							<li>
+								<a
+									href="#assert" >
+                                    assert
+								</a>
+							</li>
+							<li>
+								<a
+									href="#guard" >
+                                    guard
+								</a>
+							</li>
+							<li>
+								<a
+									href="#if-let" >
+                                    if let
+								</a>
+							</li>
+							<li>
+								<a
+									href="#fallback" >
+                                    Fallback
+								</a>
+							</li>
+							<li>
+								<a
+									href="#force-unwrapping" >
+                                    Force Unwrapping
+								</a>
+							</li>
+							<li>
+								<a
+									href="#implicity-unwrap" >
+                                    Implicity Unwrap
+								</a>
+							</li>
+							<li>
+								<a
+									href="#overflow" >
+                                    Overflow
+								</a>
+							</li>
+							<li>
+								<a
+									href="#concurrency" >
+                                    Concurrency
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#debug" >
+                            Debug
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#basics" >
+                            Basics
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#keywords" >
+                            Keywords
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#operations" >
+                            Operations
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#numeric-operations" >
+                                    Numeric Operations
+								</a>
+							</li>
+							<li>
+								<a
+									href="#logical-comparisons" >
+                                    Logical Comparisons
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#types" >
+                            Types
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#booleans" >
+                                    Booleans
+								</a>
+							</li>
+							<li>
+								<a
+									href="#numbers" >
+                                    Numbers
+								</a>
+							</li>
+							<li>
+								<a
+									href="#string" >
+                                    String
+								</a>
+							</li>
+							<li>
+								<a
+									href="#tuples" >
+                                    Tuples
+								</a>
+							</li>
+							<li>
+								<a
+									href="#arrays" >
+                                    Arrays
+								</a>
+							</li>
+							<li>
+								<a
+									href="#set" >
+                                    Set
+								</a>
+							</li>
+							<li>
+								<a
+									href="#dictionary" >
+                                    Dictionary
+								</a>
+							</li>
+							<li>
+								<a
+									href="#optionals" >
+                                    Optionals
+								</a>
+							</li>
+							<li>
+								<a
+									href="#nil" >
+                                    Nil
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#control-flow" >
+                            Control Flow
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#conditionals-if-else" >
+                                    Conditionals: if / else
+								</a>
+							</li>
+							<li>
+								<a
+									href="#conditionals-match" >
+                                    Conditionals: match
+								</a>
+							</li>
+							<li>
+								<a
+									href="#loops-for" >
+                                    Loops: For
+								</a>
+							</li>
+							<li>
+								<a
+									href="#loops-while" >
+                                    Loops: While
+								</a>
+							</li>
+							<li>
+								<a
+									href="#loops-repeat-while" >
+                                    Loops: Repeat-While
+								</a>
+							</li>
+							<li>
+								<a
+									href="#deferred" >
+                                    Deferred
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#functions" >
+                            Functions
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#classic-functions" >
+                                    Classic Functions
+								</a>
+							</li>
+							<li>
+								<a
+									href="#closures" >
+                                    Closures
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#enums" >
+                            Enums
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#structs-and-classes" >
+                            Structs and Classes
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#structs-and-classes" >
+                                    Structs and Classes
+								</a>
+							</li>
+							<li>
+								<a
+									href="#struct-exclusive" >
+                                    Struct-Exclusive
+								</a>
+							</li>
+							<li>
+								<a
+									href="#class-exclusive" >
+                                    Class-Exclusive
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+		<script
+			src="/static/docs.js" >
+		</script>
+	</body>
+</html>

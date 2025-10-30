@@ -1,0 +1,1484 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/favicon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/favicon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script
+			src="/static/docs_load.js" >
+		</script>
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js" >
+		</script>
+		<script
+			src="https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.min.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/docs.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Graphics Programming
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Vulkan/Vulkan.html" >
+                                Vulkan
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Render Engineering/Render Engineering.html" >
+                                Render Engineering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Graphics and Shaders/Graphics and Shaders.html" >
+                                Graphics and Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GLSL/GLSL.html" >
+                                GLSL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/GPU/GPU.html" >
+                                GPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/OpenGL/OpenGL.html" >
+                                OpenGL
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - DOD e COP/Design - DOD e COP.html" >
+                                Design - DOD e COP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - ECS/Design - ECS.html" >
+                                Design - ECS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Design Patterns/Design - Design Patterns.html" >
+                                Design - Design Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Architecture Patterns.html" >
+                                Design - Architecture Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/docs/Design/Design - Concepts and Terminology.html" >
+                                Design - Concepts and Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
+                                Design - Rules of thumb - Laws - Guidelines and Principles
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Paradigms.html" >
+                                Design - Paradigms
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
+                                Design - Production Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Backend/Network - Backend.html" >
+                                Network - Backend
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Low Level e Etc/Network - Low Level e Etc.html" >
+                                Network - Low Level e Etc
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - Netcode/Network - Netcode.html" >
+                                Network - Netcode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Network - HTTP/Network - HTTP.html" >
+                                Network - HTTP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Encryption.html" >
+                                Encryption
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/SSH.html" >
+                                SSH
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Things
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking.html" >
+                                Build Systems - Compilation - Linking
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/CPU/CPU.html" >
+                                CPU
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Setup/NeoVim - Setup.html" >
+                                NeoVim - Setup
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/NeoVim - Uso/NeoVim - Uso.html" >
+                                NeoVim - Uso
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/VSCode - VSCodium.html" >
+                                VSCode - VSCodium
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Code Editors/Visual Studio/Visual Studio.html" >
+                                Visual Studio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Debuggers.html" >
+                                Debuggers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Dependencies.html" >
+                                Dependencies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Git/Git.html" >
+                                Git
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Handmade Hero/Handmade Hero.html" >
+                                Handmade Hero
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Linux/Linux.html" >
+                                Linux
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Memory/Memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Multithreading/Multithreading.html" >
+                                Multithreading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/RegEx.html" >
+                                RegEx
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Shells/Shells.html" >
+                                Shells
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Things/Terminal/Terminal.html" >
+                                Terminal
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Programming Languages
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Assembly - ASM.html" >
+                                Assembly - ASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C++/C++.html" >
+                                C++
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/C.html" >
+                                C
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/CSharp/CSharp.html" >
+                                CSharp
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Go.html" >
+                                Go
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Haxe.html" >
+                                Haxe
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/JAI.html" >
+                                JAI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Java.html" >
+                                Java
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Kotlin.html" >
+                                Kotlin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Lua.html" >
+                                Lua
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Nim/Nim.html" >
+                                Nim
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Odin/Odin.html" >
+                                Odin
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Python.html" >
+                                Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Rust/Rust.html" >
+                                Rust
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Swift/Swift.html" >
+                                Swift
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Programming Languages/Zig/Zig.html" >
+                                Zig
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        WebDev
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebDev/WebDev.html" >
+                                WebDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML/HTML.html" >
+                                HTML
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTMX.html" >
+                                HTMX
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/WebAssembly - WASM/WebAssembly - WASM.html" >
+                                WebAssembly - WASM
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/CSS/CSS.html" >
+                                CSS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript/JavaScript.html" >
+                                JavaScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/TypeScript.html" >
+                                TypeScript
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Frameworks and Libraries/JavaScript - Frameworks and Libraries.html" >
+                                JavaScript - Frameworks and Libraries
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/JavaScript - Runtime Environments.html" >
+                                JavaScript - Runtime Environments
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Hugo/Hugo.html" >
+                                Hugo
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/Static Site Generators.html" >
+                                Static Site Generators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/WebDev/HTML - Tests/HTML - Tests.html" >
+                                HTML - Tests
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Databases
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - MongoDB.html" >
+                                Databases - MongoDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - SQL - Relational/Databases - SQL - Relational.html" >
+                                Databases - SQL - Relational
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Document Oriented.html" >
+                                Databases - Document Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - Object Oriented.html" >
+                                Databases - Object Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Databases/Databases - ORMs.html" >
+                                Databases - ORMs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Electronics
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Sources and Studies.html" >
+                                Electronics - Sources and Studies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Electronics - Projects and Tutorials.html" >
+                                Electronics - Projects and Tutorials
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/docs/Electronics/Arduino.html" >
+                                Arduino
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<header
+				id="central-header" >
+				<nav
+					id="dropdown-menu" >
+					<select
+						onchange="if (this.value) window.location.href=this.value" >
+						<option
+							value="/" 
+>
+                            🏡 Home
+						</option>
+						<option
+							value="/docs/_index.html" 
+							selected="">
+                            📖 Docs
+						</option>
+					</select>
+				</nav>
+				<button
+					class="btn" 
+					id="button-color-theme" >
+					<i>
+                        ☀️ / 🌑
+					</i>
+				</button>
+			</header>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Design - Concepts and Terminology
+						</h1>
+						<p>
+							<time
+								datetime="2023-10-07" >
+                                🕒 Created: 2023-10-07
+							</time>
+							<time
+								datetime="2025-10-29" >
+                                | Updated: 2025-10-29
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="general" >
+    General
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/@CodeAesthetic/videos" 
+				class="external-link" 
+				target="_blank" >
+                CodeAesthetic
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Aesthetics and programming theories.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="casing" >
+    Casing
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                camelCase
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    getCookie
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                snake_case
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    get_cookie
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                PascalCase
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    GetCookie
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="anonymous-functions-vs-lambda-functions-vs-closures" >
+    Anonymous Functions vs Lambda Functions vs Closures
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Lambda
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    They are Anonymous Functions, even smaller, in one line.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Closures
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    An Anonymous Function, but aware of its surroundings.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="operators" >
+    Operators
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Unary
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Operators operate on a single target (such as 
+                    <code>-a</code>
+                    ). Unary 
+					<em>
+                        prefix
+					</em>
+                    &nbsp;operators appear immediately before their target (such as 
+                    <code>!b</code>
+                    ), and unary 
+					<em>
+                        postfix
+					</em>
+                    &nbsp;operators appear immediately after their target (such as 
+                    <code>c!</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Binary
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Operators operate on two targets (such as 
+                    <code>2 + 3</code>
+                    ) and are 
+					<em>
+                        infix
+					</em>
+                    &nbsp;because they appear between their two targets.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ternary
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Operators operate on three targets. Like C, Swift has only one ternary operator, the ternary conditional operator (
+                    <code>a ? b : c</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The values that operators affect are 
+			<em>
+                operands
+			</em>
+            . In the expression 
+            <code>1 + 2</code>
+            , the 
+            <code>+</code>
+            &nbsp;symbol is an infix operator and its two operands are the values 
+            <code>1</code>
+            &nbsp;and 
+            <code>2</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="compilation-interpreter" >
+    Compilation / Interpreter
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://youtu.be/4SBGeBzgnfI?si=7mMBZac_mMRgNm6G&t=1108" 
+				class="external-link" 
+				target="_blank" >
+                Compilation and Interpreter {18:28 -&gt; 27:41}
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="reflection" >
+    Reflection
+</h5>
+<ul>
+	<li>
+		<p>
+            It is the ability of a program to inspect and manipulate its own structure at runtime.
+		</p>
+	</li>
+	<li>
+		<p>
+            This includes:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Listing types, functions, fields, attributes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Getting function argument types.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Dynamically creating instances of types.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Invoking functions by their names.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Function Introspection
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A subtype of reflection. Refers specifically to the ability to:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Get the function name.
+						</p>
+					</li>
+					<li>
+						<p>
+                            View its parameters and types.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Know its return type.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Inspect attributes.
+						</p>
+					</li>
+					<li>
+						<p>
+                            View its source code.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="components" >
+    Components
+</h3>
+<ul>
+	<li>
+		<p>
+            Components are modular units of software that encapsulate logic, state, and presentation.
+		</p>
+	</li>
+	<li>
+		<p>
+            They are often used in architectures such as Component-Based Architecture, common in frameworks like React, Vue.js, and Angular.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Main characteristics
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Encapsulation
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            A component is an independent entity that can have its own state and internal logic.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Reusability
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It can be used in different parts of the system without code duplication.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Interoperability
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It can interact with other components through properties (props), events, or interfaces.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Lifecycle
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It can have initialization, update, and destruction phases.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="composition" >
+    Composition
+</h3>
+<h5
+	id="about" >
+    About
+</h5>
+<ul>
+	<li>
+		<p>
+            Composition is a code structuring technique where objects, functions, or components are built by combining smaller, reusable entities.
+		</p>
+	</li>
+	<li>
+		<p>
+            Composition can occur in different forms, such as:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Object Composition
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            An object contains other objects as attributes.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Functional Composition
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Functions are combined to form processing pipelines.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Component Composition
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            A component is composed of smaller components.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="inheritance-vs-composition" >
+    Inheritance vs Composition
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=hxGOiiR9ZKg" 
+				class="external-link" 
+				target="_blank" >
+                Inheritance vs Composition, by CodeAesthetic
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://youtu.be/HNzP1aLAffM?si=nvvfLPG_sy3b4cak&t=200" 
+				class="external-link" 
+				target="_blank" >
+                Inheritance vs Composition, by MetaphoricallySpeaking
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I liked the drawer organization example.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=n92GBp2WMkg" 
+				class="external-link" 
+				target="_blank" >
+                Inheritance vs Composition, by Tutemic
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    He calls it Component Pattern instead of Composition, but I believe it’s the same thing.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+        <img src="assets/inheritance_vs_composition.excalidraw" width="486" alt="<excalidraw_not_loaded>" >
+
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=74y6zWZfQKk" 
+				class="external-link" 
+				target="_blank" >
+                Inheritance vs Composition, in Godot, by Bitlytic
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=htu0ICv8awM" 
+				class="external-link" 
+				target="_blank" >
+                Inheritance vs Composition, in Godot, by Freddy
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="in-godot" >
+    In Godot
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=rCu8vQrdDDI" 
+				class="external-link" 
+				target="_blank" >
+                Composition in Godot, for creating entities
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://youtu.be/htRINVnBVIQ?si=QJ7Abx7MkwRXdTH-&t=295" 
+				class="external-link" 
+				target="_blank" >
+                Composition in Godot, for defining attacks
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    {4:55 -&gt; 8:40}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            He uses the combination of components to define what can happen during the attack.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The activation of these components is done via an AnimationPlayer dedicated to the attack.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+						<a
+							href="/docs/Design/Design - Architecture Patterns.html" >
+                            &nbsp;&lsaquo; Previous
+						</a>
+						<a
+							href="/docs/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
+                            Next &rsaquo; 
+						</a>
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2025-10-30 🚀
+			</footer>
+		</div>
+		<aside
+			id="right-sidebar" >
+			<nav
+				id="table-of-contents" >
+				<strong>
+                    On this page
+				</strong>
+				<ul>
+					<ul>
+						<li>
+							<a
+								href="#general" >
+                                General
+							</a>
+						</li>
+						<li>
+							<a
+								href="#components" >
+                                Components
+							</a>
+						</li>
+						<li>
+							<a
+								href="#composition" >
+                                Composition
+							</a>
+						</li>
+					</ul>
+				</ul>
+			</nav>
+		</aside>
+		<script
+			src="/static/docs.js" >
+		</script>
+	</body>
+</html>

@@ -327,7 +327,7 @@ window.MathJax = {
 					</ul>
 				</details>
 				<details
->
+					open="">
 					<summary>
                         Network
 					</summary>
@@ -388,7 +388,7 @@ window.MathJax = {
 					<ul>
 						<li>
 							<a
-								class="" 
+								class="active" 
 								href="/studies/Network/Security.html" >
                                 Security
 							</a>
@@ -405,7 +405,7 @@ window.MathJax = {
 					</ul>
 				</details>
 				<details
-					open="">
+>
 					<summary>
                         Game Development
 					</summary>
@@ -1217,7 +1217,7 @@ window.MathJax = {
 					id="note-article" >
 					<header>
 						<h1>
-                            _index
+                            Security
 						</h1>
 						<p>
 							<time
@@ -1232,16 +1232,689 @@ window.MathJax = {
 					</header>
 					<div
 						id="note-content" >
+<h2
+	id="inspect-site" >
+    Inspect Site
+</h2>
+<h3
+	id="web-scanners" >
+    Web Scanners
+</h3>
+<h5
+	id="virustotal" >
+    VirusTotal
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.virustotal.com/gui/home/upload" 
+				class="external-link" 
+				target="_blank" >
+                VirusTotal
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    [2025-11-02]
+				</p>
+			</li>
+			<li>
+				<p>
+                    My github pages site passed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Quick multi-engine check.
+		</p>
+	</li>
+	<li>
+		<p>
+            Open VirusTotal, paste the URL in the 
+			<strong>
+                URL
+			</strong>
+            &nbsp;field, hit search.
+		</p>
+	</li>
+	<li>
+		<p>
+            If any engines or community reports mark it malicious, do not open.
+		</p>
+	</li>
+	<li>
+		<p>
+            Why use it: it checks the URL against many antivirus and blacklist engines at once.
+		</p>
+	</li>
+</ul>
+<h5
+	id="urlscan-io" >
+    urlscan.io
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://urlscan.io/" 
+				class="external-link" 
+				target="_blank" >
+                urlscan.io
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    [2025-11-02]
+				</p>
+			</li>
+			<li>
+				<p>
+                    My github pages site passed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251102172831.png" alt="|500" />
+                    |500
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            live page snapshot and resource list.
+		</p>
+	</li>
+	<li>
+		<p>
+            Paste the URL and run a scan (use 
+			<strong>
+                Unlisted/Private
+			</strong>
+            &nbsp;if the link is private).
+		</p>
+	</li>
+	<li>
+		<p>
+            Look at the screenshot, the list of external hosts, and the resource requests. If you see strange redirects or many unknown hosts, avoid the page.
+		</p>
+	</li>
+	<li>
+		<p>
+            Note: public scans are visible to others. Use private mode for sensitive URLs.
+		</p>
+	</li>
+</ul>
+<h5
+	id="google-safe-browsing-transparency-report" >
+    Google Safe Browsing / Transparency Report
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://transparencyreport.google.com/safe-browsing/search?hl=en" 
+				class="external-link" 
+				target="_blank" >
+                Google Transparency Report
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    [2025-11-02]
+				</p>
+			</li>
+			<li>
+				<p>
+                    My github pages site passed, I think. It showed &quot;No available data&quot; as the result.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Enter the URL into Google’s Safe Browsing lookup. It reports phishing/malware listings used by Chrome and other products. If flagged, do not open.
+		</p>
+	</li>
+</ul>
+<h3
+	id="http-headers" >
+    HTTP Headers
+</h3>
+<ul>
+	<li>
+		<p>
+            These tools let you probe the network behavior of a site safely at the protocol level, before any code or file is executed locally.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>curl -I https://example.com</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sends a 
+                    <code>HEAD</code>
+                    &nbsp;request (fetches only headers).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Check 
+                    <code>Location</code>
+                    , 
+                    <code>Set-Cookie</code>
+                    , 
+                    <code>Content-Type</code>
+                    , 
+                    <code>Content-Length</code>
+                    , 
+                    <code>Server</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Expect 
+                    <code>Strict-Transport-Security</code>
+                    , 
+                    <code>Content-Security-Policy</code>
+                    , 
+                    <code>X-Content-Type-Options</code>
+                    , 
+                    <code>Referrer-Policy</code>
+                    , 
+                    <code>X-Frame-Options</code>
+                    . Absence is a risk signal.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If you see:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-" data-lang=""> HTTP/1.1 301 Moved Permanently
+ Location: http://malicious.example.com
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    you know to avoid visiting it the site.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>-s</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Silent
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-L</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            follow redirects.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-k</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            ignore certificate verification (not advised except for testing).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-J</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            use 
+                            <code>Content-Disposition</code>
+                            &nbsp;header filename (when present).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-v</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            verbose mode; shows SSL/TLS handshake details.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-o</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            write output to file.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-O</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            save to remote filename
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Note
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Works on CMD, not on PowerShell.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>wget --spider https://example.com</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Makes a lightweight request to test if a URL exists or redirects.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It prints connection info, HTTP status, and redirection chain.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It doesn’t download or store the page body.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>--server-response</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            shows headers.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>--max-redirect=0</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            stops following redirects to detect them manually.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>--no-check-certificate</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            skip TLS verification (for testing only).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="no-javascript" >
+    No JavaScript
+</h3>
+<ul>
+	<li>
+		<p>
+            Download raw HTML without executing resources.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>curl -sL https://example.com -o page.html</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Inspect with 
+                    <code>less</code>
+                    , 
+                    <code>sed</code>
+                    , or 
+                    <code>grep</code>
+                    &nbsp;for 
+                    <code>&lt;script src=...&gt;</code>
+                    , 
+                    <code>eval(</code>
+                    , 
+                    <code>new Function</code>
+                    , large base64 blobs.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            View text-only render.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Useful to spot social engineering copy, visible links, and inline URLs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>lynx -dump https://example.com</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Lynx fetches the page like a normal browser but does not run JavaScript. It follows HTTP(S) and shows forms as text.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Safer than a full browser because no client-side script execution. Still makes network requests.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Prints to stdout.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    or
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>w3m -dump https://example.com</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Same category as Lynx, but formatting differs.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Renders HTML to plain text and prints it.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Helps spot social-engineering text and visible links.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="network-dns-ownership" >
+    Network, DNS, Ownership
+</h3>
+<ul>
+	<li>
+		<p>
+            DNS records and delegation.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>dig +short example.com A AAAA CNAME</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>dig +trace example.com</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Look for unexpected CNAMEs, CDN hosts, or external domains.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            WHOIS and registrar.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>whois example.com</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Check creation date, registrar, contact, privacy proxy.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Reverse IP / hosting.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>host example.com</code>
+                    &nbsp;or 
+                    <code>dig +short @8.8.8.8 example.com</code>
+                    &nbsp;then 
+                    <code>whois &lt;ip&gt;</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    See if many unrelated sites share the IP.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="capture-packets" >
+    Capture packets
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>tcpdump -i any host example.com</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Capture packets to/from 
+                    <code>example.com</code>
+                    &nbsp;on all interfaces.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You see raw packet-level traffic. TCP SYN/ACK, HTTP requests and responses if not encrypted, TLS handshakes, DNS queries.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Typical use: run while loading a page in an isolated browser to record all outbound connections.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Encrypted payloads remain encrypted. Captures can contain sensitive info. Store captures securely. Requires root/administrator privileges.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>-w capture.pcap</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            save
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-nn</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            numeric addresses/ports
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-s 0</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            capture full packets.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>nmap -sV -p- example.com</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Port/service scan.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Probe all TCP ports (
+                    <code>-p-</code>
+                    ) and attempt to identify service versions (
+                    <code>-sV</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    What you see: open ports, service names, version fingerprints, possible OS hints.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Useful to: find exposed management interfaces or unexpected services.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Risk note: scanning may be logged or blocked. Some networks treat it as hostile. Obtain permission.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="tls-certificate" >
+    TLS Certificate
+</h3>
+<ul>
+	<li>
+		<p>
+            Inspect cert chain and ciphers.
+            <code>openssl s_client -connect example.com:443 -servername example.com -showcerts</code>
+            
+            Check validity dates, issuer, SANs, weak ciphers.
+		</p>
+	</li>
+	<li>
+		<p>
+            Quick cipher list.
+            <code>nmap --script ssl-enum-ciphers -p 443 example.com</code>
+		</p>
+	</li>
+</ul>
 
 					</div>
 					<footer
 						id="previous-next" >
 						<a
-							href="" >
+							href="/studies/Network/Serialization - Encoding/Serialization - Encoding.html" >
                             &nbsp;&lsaquo; Previous
 						</a>
 						<a
-							href="" >
+							href="/studies/Network/SSH.html" >
                             Next &rsaquo; 
 						</a>
 					</footer>
@@ -1266,6 +1939,50 @@ window.MathJax = {
                     On this page
 				</strong>
 				<ul>
+					<li>
+						<a
+							href="#inspect-site" >
+                            Inspect Site
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#web-scanners" >
+                                    Web Scanners
+								</a>
+							</li>
+							<li>
+								<a
+									href="#http-headers" >
+                                    HTTP Headers
+								</a>
+							</li>
+							<li>
+								<a
+									href="#no-javascript" >
+                                    No JavaScript
+								</a>
+							</li>
+							<li>
+								<a
+									href="#network-dns-ownership" >
+                                    Network, DNS, Ownership
+								</a>
+							</li>
+							<li>
+								<a
+									href="#capture-packets" >
+                                    Capture packets
+								</a>
+							</li>
+							<li>
+								<a
+									href="#tls-certificate" >
+                                    TLS Certificate
+								</a>
+							</li>
+						</ul>
+					</li>
 				</ul>
 			</nav>
 		</aside>

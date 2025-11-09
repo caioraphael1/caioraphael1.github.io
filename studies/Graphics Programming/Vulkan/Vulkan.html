@@ -206,6 +206,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers.html" >
+                                Profilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Low-Level Systems/C.html" >
                                 C
 							</a>
@@ -1225,8 +1234,8 @@ window.MathJax = {
                                 🕒 Created: 2025-08-01
 							</time>
 							<time
-								datetime="2025-10-31" >
-                                | Updated: 2025-10-31
+								datetime="2025-11-06" >
+                                | Updated: 2025-11-06
 							</time>
 						</p>
 					</header>
@@ -8876,7 +8885,7 @@ transition_image_layout(
 <ul>
 	<li>
 		<p>
-            Nah, I don't think it's necessary.
+            I'm not sure, I don't think it's necessary.
 		</p>
 	</li>
 	<li>
@@ -16110,35 +16119,6 @@ transition_image_layout(
 		</ul>
 	</li>
 </ul>
-<h5
-	id="multi-threading" >
-    Multi-threading
-</h5>
-<ul>
-	<li>
-		<p>
-            You can allocate as many 
-            <code>VkCommandBuffer</code>
-            &nbsp;as you want from a given pool, but you can only record commands from one thread at a time.
-		</p>
-	</li>
-	<li>
-		<p>
-            If you want multithreaded command recording, you need more 
-            <code>VkCommandPool</code>
-            &nbsp;objects. For that reason, we will pair a command buffer with its command allocator.
-		</p>
-	</li>
-	<li>
-		<p>
-            Command pools are externally synchronized, meaning that a command pool 
-			<strong>
-                must
-			</strong>
-            &nbsp;not be used concurrently in multiple threads. That includes use via recording commands on any command buffers allocated from the pool, as well as operations that allocate, free, and reset command buffers or the pool itself.
-		</p>
-	</li>
-</ul>
 <h3
 	id="command-buffer" >
     Command Buffer
@@ -16155,7 +16135,6 @@ transition_image_layout(
 				class="external-link" 
 				target="_blank" >
                 <code>VkCommandBuffer</code>
-                &nbsp;
 			</a>
             .
 		</p>
@@ -16179,7 +16158,6 @@ transition_image_layout(
 				class="external-link" 
 				target="_blank" >
                 <code>vkAllocateCommandBuffers()</code>
-                &nbsp;
 			</a>
             .
 		</p>
@@ -16671,7 +16649,7 @@ transition_image_layout(
 										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandBufferInheritanceInfo.html" 
 										class="external-link" 
 										target="_blank" >
-                                        VkCommandBufferInheritanceInfo
+                                        <code>VkCommandBufferInheritanceInfo</code>
 									</a>
                                     .
 								</p>
@@ -16752,6 +16730,245 @@ transition_image_layout(
 				</p>
 			</li>
 		</ul>
+	</li>
+</ul>
+<h3
+	id="pre-recording" >
+    Pre-recording
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;Many early Vulkan tutorials and documents recommended writing a command buffer once and re-using it wherever possible. In practice however re-use rarely has the advertized performance benefit while incurring a non-trivial development burden due to the complexity of implementation. While it may appear counterintuitive, as re-using computed data is a common optimization, managing a scene with objects being added and removed as well as techniques such as frustum culling which vary the draw calls issued on a per frame basis make reusing command buffers a serious design challenge. It requires a caching scheme to manage command buffers and maintaining state for determining if and when re-recording becomes necessary. Instead, prefer to re-record fresh command buffers every frame. If performance is a problem, recording can be multithreaded as well as using secondary command buffers for non-variable draw calls, like post processing.&quot;
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://docs.vulkan.org/guide/latest/common_pitfalls.html#_recording_command_buffers" 
+						class="external-link" 
+						target="_blank" >
+                        Source
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="multi-threading-recording" >
+    Multi-threading Recording
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                External synchronization
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A type of synchronization 
+					<strong>
+                        required
+					</strong>
+                    &nbsp;of the application, where parameters defined to be externally synchronized 
+					<strong>
+                        must
+					</strong>
+                    &nbsp;not be used simultaneously in multiple threads.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Internal Synchronization
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A type of synchronization 
+					<strong>
+                        required
+					</strong>
+                    &nbsp;of the implementation, where parameters not defined to be externally synchronized 
+					<strong>
+                        may
+					</strong>
+                    &nbsp;require internal mutexing to avoid multithreaded race conditions.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Any object parameters that are not labeled as externally synchronized are either not mutated by the command or are internally synchronized.
+		</p>
+	</li>
+	<li>
+		<p>
+            Additionally, certain objects related to a command’s parameters (e.g. command pools and descriptor pools) 
+			<strong>
+                may
+			</strong>
+            &nbsp;be affected by a command, and 
+			<strong>
+                must
+			</strong>
+            &nbsp;also be externally synchronized.
+		</p>
+	</li>
+</ul>
+<h5
+	id="queues" >
+    Queues
+</h5>
+<ul>
+	<li>
+		<p>
+            Only a single thread can be submitting to a given queue at any time. If you want multiple threads doing 
+            <code>VkQueueSubmit</code>
+            , then you need to create multiple queues.
+		</p>
+	</li>
+	<li>
+		<p>
+            As the number of queues can be as low as 1 in some devices, what engines tend to do for this is to do something similar to the pipeline compile thread or the OpenGL api call thread, and have a thread dedicated to just doing 
+            <code>VkQueueSubmit</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            As 
+            <code>VkQueueSubmit</code>
+            &nbsp;is a very expensive operation, this can bring a very nice speedup as the time spent executing that call is done in a second thread and the main logic of the engine doesn’t have to stop.
+		</p>
+	</li>
+	<li>
+		<p>
+            Data upload is another section that is very often multithreaded. In here, you have a dedicated IO thread that will load assets to disk, and said IO thread will have its own queue and command allocators, hopefully a transfer queue. This way it is possible to upload assets at a speed completely separated from the main frame loop, so if it takes half a second to upload a set of big textures, you don’t have a hitch. To do that, you need to create a transfer or async-compute queue (if available), and dedicate that one to the loader thread. Once you have that, it’s similar to what was commented on the pipeline compiler thread, and you have an IO thread that communicates through a parallel queue with the main simulation loop to upload data in an asynchronous way. Once a transfer has been uploaded, and checked that it has finished with a Fence, then the IO thread can send the info to the main loop, and then the engine can connect the new textures or models into the renderer.
+		</p>
+	</li>
+</ul>
+<h5
+	id="command-pools" >
+    Command Pools
+</h5>
+<ul>
+	<li>
+		<p>
+            When you record command buffers, their command pools can only be used from one thread at a time. While you can create multiple command buffers from a command pool, you cant fill those commands from multiple threads. If you want to record command buffers from multiple threads, then you will need more command pools, one per thread.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Secondary Command Buffers
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Vulkan command buffers have a system for primary and secondary command buffers. The primary buffers are the ones that open and close RenderPasses, and can get directly submitted to a queue. Secondary command buffers are used as “child” command buffers that execute as part of a primary one.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Their main purpose is multithreading.
+					</em>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Secondary command buffers cant be submitted into a queue on their own.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Command Pools are a system to allow recording command buffers across multiple threads.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    They enable different threads to use different allocators, without internal synchronization on each use.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            A single command pool must be 
+			<em>
+                externally synchronized
+			</em>
+            ; it must not be accessed simultaneously from multiple threads.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    That includes use via recording commands on any command buffers allocated from the pool, as well as operations that allocate, free, and reset command buffers or the pool itself.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            If you want multithreaded command recording, you need more 
+            <code>VkCommandPool</code>
+            &nbsp;objects. By using a separate command pool in each host-thread the application can create multiple command buffers in parallel without any costly locks.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For that reason, we will pair a command buffer with its command allocator.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            You can allocate as many 
+            <code>VkCommandBuffer</code>
+            &nbsp;as you want from a given pool, but you can only record commands from one thread at a time.
+		</p>
+	</li>
+	<li>
+		<p>
+            Command buffers can be recorded on multiple threads while having a relatively light thread handle the submissions.
+		</p>
+	</li>
+	<li>
+		<p>
+            If two commands access the same object or memory and at least one of the commands declares the object to be externally synchronized, then the caller 
+			<strong>
+                must
+			</strong>
+            &nbsp;guarantee not only that the commands do not execute simultaneously, but also that the two commands are separated by an appropriate memory barrier (if needed).
+		</p>
+	</li>
+	<li>
+		<p>
+            Similarly, if a Vulkan command accesses a non-const memory parameter and the application also accesses that memory, or if the application writes to that memory and the command accesses it as a const memory parameter, the application 
+			<strong>
+                must
+			</strong>
+            &nbsp;ensure the accesses are properly synchronized with a memory barrier if needed.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory barriers are particularly relevant for hosts based on the ARM CPU architecture, which is more weakly ordered than many developers are accustomed to from x86/x64 programming. Fortunately, most higher-level synchronization primitives (like the pthread library) perform memory barriers as a part of mutual exclusion, so mutexing Vulkan objects via these primitives will have the desired effect.
+		</p>
 	</li>
 </ul>
 <h2
@@ -32974,6 +33191,30 @@ vec4 data = subpassLoad(inputAttachment);
 			</li>
 		</ul>
 	</li>
+	<li>
+		<p>
+			<strong>
+                Multithreading
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Descriptor pools are externally synchronized, meaning that the application 
+					<strong>
+                        must
+					</strong>
+                    &nbsp;not allocate and/or free descriptor sets from the same pool in multiple threads simultaneously.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Command Pools are used to allocate, free, reset, and update descriptor sets. By creating multiple descriptor pools, each application host thread is able to manage a descriptor set in each descriptor pool at the same time.
+				</p>
+			</li>
+		</ul>
+	</li>
 </ul>
 <h5
 	id="update-write" >
@@ -37124,6 +37365,651 @@ vec4 data = subpassLoad(inputAttachment);
 	</li>
 </ol>
 <h2
+	id="profiling" >
+    Profiling
+</h2>
+<ul>
+	<li>
+		<p>
+            Provides your application with a mechanism to time the execution of commands on the GPU.
+		</p>
+	</li>
+	<li>
+		<p>
+            You can specify any pipeline stage at which the timestamp should be written, a lot of stage combinations and orderings won’t give meaningful result.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    So while it may may sound reasonable to write timestamps for the vertex and fragment shader stage directly one after another, that will usually not return meaningful results due to how the GPU works.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            You can’t compare timestamps taken on different queues.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/samples/latest/samples/api/timestamp_queries/README.html" 
+				class="external-link" 
+				target="_blank" >
+                Sample
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    We’ll be using 6 time points, one for the start and one for the end of three render passes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The code 
+                    <code>samples/api/timestamp_queries</code>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses 
+                            <code>VK_QUERY_RESULT_64_BIT | VK_QUERY_RESULT_WAIT_BIT</code>
+                            , so it's not optimal.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The query is made after 
+                            <code>vkQueueSubmit()</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pavelsmejkal.net/Posts/GPUTimingBasics" 
+				class="external-link" 
+				target="_blank" >
+                GPU Timing Basics
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Vulkan and DX12.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Uses 
+                    <code>VK_QUERY_RESULT_64_BIT</code>
+                    &nbsp;and enables the 
+                    <code>hostQueryReset</code>
+                    &nbsp;for 
+                    <code>vk.PhysicalDeviceVulkan12Features</code>
+                    , using 
+                    <code>vk.ResetQueryPool()</code>
+                    &nbsp;right after creating the 
+                    <code>QueryPool</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#queries" 
+				class="external-link" 
+				target="_blank" >
+                Queries
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkCmdWriteTimestamp2</code>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This is pretty much the same as the 
+                    <code>vkCmdWriteTimestamp</code>
+                    &nbsp;function used in this sample, but adds support for some additional pipeline stages using 
+                    <code>VkPipelineStageFlags2</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="support" >
+    Support
+</h3>
+<ul>
+	<li>
+		<p>
+            Device limits:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>timestampPeriod</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If the limit of the physical device is greater than zero, timestamp queries are supported.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If your device has a 
+                            <code>timestampPeriod</code>
+                            &nbsp;of 1, so that one increment in the result maps to exactly one nanosecond.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It contains the number of nanoseconds it takes for a timestamp query value to be increased by 1 (&quot;tick&quot;).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>timestampComputeAndGraphics</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If is 
+                            <code>VK_TRUE</code>
+                            , timestamps are supported by every queue family that supports either graphics or compute operations
+						</p>
+					</li>
+					<li>
+						<p>
+                            If not, we need to check if the queue we want to use supports timestamps.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="query-pool" >
+    Query Pool
+</h3>
+<ul>
+	<li>
+		<p>
+            A query pool is then used to either directly fetch or copy over the results to the host.
+		</p>
+	</li>
+	<li>
+		<p>
+            Used to store and read back the results.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>queryType</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    We set to 
+                    <code>VK_QUERY_TYPE_TIMESTAMP</code>
+                    &nbsp;for using timestamp queries
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>queryCount</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The maximum number of the the timestamp query result this pool can store.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="reset" >
+    Reset
+</h5>
+<ul>
+	<li>
+		<p>
+            Before we can start writing data to the query pool, we need to reset it.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkCmdResetQueryPool</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    At the start of the command buffer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Sets the status of query indices [
+                    <code>firstQuery</code>
+                    , 
+                    <code>firstQuery</code>
+                    &nbsp;+ 
+                    <code>queryCount</code>
+                    &nbsp;- 1] to unavailable.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Defines an execution dependency between other query commands that reference the same query.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/queries.html#vkResetQueryPool" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkResetQueryPool()</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>VK_QUERY_POOL_CREATE_RESET_BIT_KHR</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    During Query Pool creation.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="writing" >
+    Writing
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>vkCmdWriteTimestamp</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Will request a timestamp to be written from the GPU for a certain pipeline stage and write that value to memory.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="reading" >
+    Reading
+</h3>
+<ul>
+	<li>
+		<p>
+            Reading back the results can be done in two ways:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Copy the results into a 
+                    <code>VkBuffer</code>
+                    &nbsp;inside the command buffer using 
+                    <code>vkCmdCopyQueryPoolResults</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Get the results after the command buffer has finished executing using 
+                    <code>vkGetQueryPoolResults</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>vkGetQueryPoolResults()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>VK_QUERY_RESULT_64_BIT</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Will tell the api that we want to get the results as 64 bit values. Without this flag, we would only get 32 bit values. And since timestamp queries can operate in nanoseconds, only using 32 bits could result into an overflow.
+						</p>
+					</li>
+					<li>
+						<p>
+                            if your device has a 
+                            <code>timestampPeriod</code>
+                            &nbsp;of 1, so that one increment in the result maps to exactly one nanosecond, with 32 bit precision you’d run into such an overflow after only about 0.43 seconds.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VK_QUERY_RESULT_WAIT_BIT</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Tells the api to wait for all results to be available. So when using this flag the values written to our 
+                            <code>time_stamps</code>
+                            &nbsp;vector is guaranteed to be available after calling 
+                            <code>vkGetQueryPoolResults</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            This is fine for our use-case where we want to immediately access the results, but may introduce unnecessary stalls in other scenarios.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VK_QUERY_RESULT_WITH_AVAILABILITY_BIT</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Will let you poll the availability of the results and defer writing new timestamps until the results are available.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This should be the preferred way of fetching the results in a real-world application. Using this flag an additional availability value is inserted after each query value. If that value becomes non-zero, the result is available. You then check availability before writing the timestamp again.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="occlusion-queries" >
+    Occlusion Queries
+</h3>
+<ul>
+	<li>
+		<p>
+            Occlusion queries track the number of samples that pass the per-fragment tests for a set of drawing commands. As such, occlusion queries are only available on queue families supporting graphics operations. The application 
+			<strong>
+                can
+			</strong>
+            &nbsp;then use these results to inform future rendering decisions.
+		</p>
+	</li>
+	<li>
+		<p>
+            An occlusion query is begun and ended by calling 
+            <code>vkCmdBeginQuery</code>
+            &nbsp;and 
+            <code>vkCmdEndQuery</code>
+            , respectively.
+		</p>
+	</li>
+	<li>
+		<p>
+            When an occlusion query begins, the count of passing samples always starts at zero.
+		</p>
+	</li>
+	<li>
+		<p>
+            For each drawing command, the count is incremented as described in 
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/fragops.html#fragops-samplecount" 
+				class="external-link" 
+				target="_blank" >
+                Sample Counting
+			</a>
+            . If 
+            <code>flags</code>
+            &nbsp;does not contain 
+            <code>VK_QUERY_CONTROL_PRECISE_BIT</code>
+            &nbsp;an implementation 
+			<strong>
+                may
+			</strong>
+            &nbsp;generate any non-zero result value for the query if the count of passing samples is non-zero.
+		</p>
+	</li>
+</ul>
+<h3
+	id="pipeline-statistics-queries" >
+    Pipeline Statistics Queries
+</h3>
+<ul>
+	<li>
+		<p>
+            Pipeline statistics queries allow the application to sample a specified set of 
+            <code>VkPipeline</code>
+            &nbsp;counters. These counters are accumulated by Vulkan for a set of either drawing or dispatching commands while a pipeline statistics query is active. As such, pipeline statistics queries are available on queue families supporting compute operations.
+		</p>
+	</li>
+	<li>
+		<p>
+            The availability of pipeline statistics queries is indicated by the 
+            <code>pipelineStatisticsQuery</code>
+            &nbsp;member of the 
+            <code>VkPhysicalDeviceFeatures</code>
+            &nbsp;object (see 
+            <code>vkGetPhysicalDeviceFeatures</code>
+            &nbsp;and 
+            <code>vkCreateDevice</code>
+            &nbsp;for detecting and requesting this query type on a 
+            <code>VkDevice</code>
+            ).
+		</p>
+	</li>
+	<li>
+		<p>
+            A pipeline statistics query is begun and ended by calling 
+            <code>vkCmdBeginQuery</code>
+            &nbsp;and 
+            <code>vkCmdEndQuery</code>
+            , respectively.
+		</p>
+	</li>
+	<li>
+		<p>
+            When a pipeline statistics query begins, all statistics counters are set to zero. While the query is active, the pipeline type determines which set of statistics are available, but these 
+			<strong>
+                must
+			</strong>
+            &nbsp;be configured on the query pool when it is created. If a statistic counter is issued on a command buffer that does not support the corresponding operation, or the counter corresponds to a shading stage which is missing from any of the pipelines used while the query is active, the value of that counter is 
+			<strong>
+                undefined
+			</strong>
+            &nbsp;after the query has been made available. At least one statistic counter relevant to the operations supported on the recording command buffer 
+			<strong>
+                must
+			</strong>
+            &nbsp;be enabled.
+		</p>
+	</li>
+</ul>
+<h3
+	id="performance-queries" >
+    Performance Queries
+</h3>
+<ul>
+	<li>
+		<p>
+            Provide applications with a mechanism for getting performance counter information about the execution of command buffers, render passes, and commands.
+		</p>
+	</li>
+	<li>
+		<p>
+            Each queue family advertises the performance counters that 
+			<strong>
+                can
+			</strong>
+            &nbsp;be queried on a queue of that family via a call to 
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/devsandqueues.html#vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR" 
+				class="external-link" 
+				target="_blank" >
+                vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR
+			</a>
+            . Implementations 
+			<strong>
+                may
+			</strong>
+            &nbsp;limit access to performance counters based on platform requirements or only to specialized drivers for development purposes.
+		</p>
+	</li>
+	<li>
+		<p>
+            Performance queries use the existing 
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/queries.html#vkCmdBeginQuery" 
+				class="external-link" 
+				target="_blank" >
+                vkCmdBeginQuery
+			</a>
+            &nbsp;and 
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/queries.html#vkCmdEndQuery" 
+				class="external-link" 
+				target="_blank" >
+                vkCmdEndQuery
+			</a>
+            &nbsp;to control what command buffers, render passes, or commands to get performance information for.
+		</p>
+	</li>
+</ul>
+<h3
+	id="mesh-shaders-queries" >
+    Mesh Shaders Queries
+</h3>
+<ul>
+	<li>
+		<p>
+            When a generated mesh primitives query is active, the mesh-primitives-generated count is incremented every time a primitive emitted from the mesh shader stage reaches the fragment shader stage. When a generated mesh primitives query begins, the mesh-primitives-generated count starts from zero.
+		</p>
+	</li>
+	<li>
+		<p>
+            Mesh and task shader pipeline statistics queries function the same way that invocation queries work for other shader stages, counting the number of times the respective shader stage has been run. When the statistics query begins, the invocation counters start from zero.
+		</p>
+	</li>
+</ul>
+<h3
+	id="result-status-queries" >
+    Result Status Queries
+</h3>
+<ul>
+	<li>
+		<p>
+            Result status queries serve a single purpose: allowing the application to determine whether a set of operations have completed successfully or not, as indicated by the 
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/queries.html#VkQueryResultStatusKHR" 
+				class="external-link" 
+				target="_blank" >
+                VkQueryResultStatusKHR
+			</a>
+            &nbsp;value written when retrieving the result of a query using the 
+            <code>VK_QUERY_RESULT_WITH_STATUS_BIT_KHR</code>
+            &nbsp;flag.
+		</p>
+	</li>
+	<li>
+		<p>
+            Unlike other query types, result status queries do not track or maintain any other data beyond the completion status, thus no other data is written when retrieving their results.
+		</p>
+	</li>
+	<li>
+		<p>
+            Support for result status queries is indicated by 
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/devsandqueues.html#VkQueueFamilyQueryResultStatusPropertiesKHR" 
+				class="external-link" 
+				target="_blank" >
+                VkQueueFamilyQueryResultStatusPropertiesKHR
+			</a>
+            ::
+            <code>queryResultStatusSupport</code>
+            &nbsp;, as returned by 
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/devsandqueues.html#vkGetPhysicalDeviceQueueFamilyProperties2" 
+				class="external-link" 
+				target="_blank" >
+                vkGetPhysicalDeviceQueueFamilyProperties2
+			</a>
+            &nbsp;for the queue family in question.
+		</p>
+	</li>
+</ul>
+<h3
+	id="other-queries" >
+    Other Queries
+</h3>
+<ul>
+	<li>
+		<p>
+            Transform Feedback Queries.
+		</p>
+	</li>
+	<li>
+		<p>
+            Primitives Generated Queries.
+		</p>
+	</li>
+	<li>
+		<p>
+            Intel Performance Queries.
+		</p>
+	</li>
+	<li>
+		<p>
+            Video Encode Feedback Queries.
+		</p>
+	</li>
+</ul>
+<h2
 	id="mobile" >
     Mobile
 </h2>
@@ -37747,7 +38633,7 @@ vec4 data = subpassLoad(inputAttachment);
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-02 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-11-09 🚀
 			</footer>
 		</div>
 		<aside
@@ -37990,6 +38876,18 @@ vec4 data = subpassLoad(inputAttachment);
 								<a
 									href="#command-buffer-recording" >
                                     Command Buffer Recording
+								</a>
+							</li>
+							<li>
+								<a
+									href="#pre-recording" >
+                                    Pre-recording
+								</a>
+							</li>
+							<li>
+								<a
+									href="#multi-threading-recording" >
+                                    Multi-threading Recording
 								</a>
 							</li>
 						</ul>
@@ -38244,6 +39142,74 @@ vec4 data = subpassLoad(inputAttachment);
                             HDR Support
 						</a>
 						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#profiling" >
+                            Profiling
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#support" >
+                                    Support
+								</a>
+							</li>
+							<li>
+								<a
+									href="#query-pool" >
+                                    Query Pool
+								</a>
+							</li>
+							<li>
+								<a
+									href="#writing" >
+                                    Writing
+								</a>
+							</li>
+							<li>
+								<a
+									href="#reading" >
+                                    Reading
+								</a>
+							</li>
+							<li>
+								<a
+									href="#occlusion-queries" >
+                                    Occlusion Queries
+								</a>
+							</li>
+							<li>
+								<a
+									href="#pipeline-statistics-queries" >
+                                    Pipeline Statistics Queries
+								</a>
+							</li>
+							<li>
+								<a
+									href="#performance-queries" >
+                                    Performance Queries
+								</a>
+							</li>
+							<li>
+								<a
+									href="#mesh-shaders-queries" >
+                                    Mesh Shaders Queries
+								</a>
+							</li>
+							<li>
+								<a
+									href="#result-status-queries" >
+                                    Result Status Queries
+								</a>
+							</li>
+							<li>
+								<a
+									href="#other-queries" >
+                                    Other Queries
+								</a>
+							</li>
 						</ul>
 					</li>
 					<li>

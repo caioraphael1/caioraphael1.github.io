@@ -206,6 +206,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers.html" >
+                                Profilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Low-Level Systems/C.html" >
                                 C
 							</a>
@@ -1225,8 +1234,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-28
 							</time>
 							<time
-								datetime="2025-11-02" >
-                                | Updated: 2025-11-02
+								datetime="2025-11-09" >
+                                | Updated: 2025-11-09
 							</time>
 						</p>
 					</header>
@@ -2355,13 +2364,36 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="compile-time-stuff" >
-    Compile-time Stuff
+	id="subsystems" >
+    Subsystems
 </h3>
 <h5
+	id="remove-terminal-from-executable" >
+    Remove terminal from executable
+</h5>
+<ul>
+	<li>
+		<p>
+            For Windows:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-subsystem:windows</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h2
+	id="compile-time-stuff" >
+    Compile-time Stuff
+</h2>
+<h3
 	id="when" >
     When
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -2427,16 +2459,66 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
-<h5
+<h3
 	id="config" >
     #config
-</h5>
+</h3>
 <pre><code class="language-sh" data-lang="sh">odin run . -define:TRACY_ENABLE=true
 </code></pre>
-<h5
+<h3
+	id="comp-time-loop" >
+    Comp-time Loop
+</h3>
+<ul>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    There's no compile-time loop, though. I seem to recall Bill saying something about not wanting to add it, IIRC because it's a bit of a slippery slope (e.g. then people will want to be able to iterate over struct fields). I can't find the message I'm thinking of, though.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Sobex:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Since you unroll you can kinda do a unrolled loop with inlined recursion
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"></code></pre>
+	</li>
+</ul>
+<p>
+        comp_loop :: #force_inline proc(as: []int, $i: int, $end: int) {
+    <br>
+            _, _ = args[i].(intrinsics.type_proc_parameter_type(F, i))
+    <br>
+            a := as[i]
+    <br>
+            fmt.print(a)
+    <br>
+            when i + 1 != end do comp_loop(as, i+1, end)
+    <br>
+        }
+    <br>
+        as := [?]int{5, 4, 3, 2, 1}
+    <br>
+        comp_loop(as[:], 0, 5)
+    <br>
+    ```
+</p>
+<h3
 	id="build-tags" >
     Build Tags
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -2485,52 +2567,101 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
-<h5
+<h3
 	id="ignore" >
     Ignore
-</h5>
+</h3>
 <pre><code class="language-odin" data-lang="odin">#+build ignore
 </code></pre>
-<h5
+<h3
 	id="optimizations" >
     Optimizations
+</h3>
+<h5
+	id="force-inline-codeforce_inline-code" >
+    Force Inline (
+    <code>#force_inline</code>
+    )
 </h5>
 <ul>
 	<li>
 		<p>
-            <code>#force_inline</code>
-            &nbsp;doesn't work on 
+            Doesn't work on 
             <code>-o:none</code>
             .
 		</p>
 	</li>
 </ul>
 <h3
-	id="subsystems" >
-    Subsystems
+	id="intrinsics" >
+    Intrinsics
 </h3>
-<h5
-	id="remove-terminal-from-executable" >
-    Remove terminal from executable
-</h5>
 <ul>
 	<li>
 		<p>
-            For Windows:
+			<a
+				href="https://pkg.odin-lang.org/base/intrinsics/" 
+				class="external-link" 
+				target="_blank" >
+                Intrinsics
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>intrinsics.type_is_integer()</code>
 		</p>
 		<ul>
 			<li>
 				<p>
-                    <code>-subsystem:windows</code>
-                    .
+                    Caio:
+				</p>
+<pre><code class="language-odin" data-lang="odin"> proc (a: [$T]any) where intrinsics.type_is_integer(T)
+ 
+ Expected a type for 'type_is_integer', got 'T'
+&nbsp;&nbsp;&nbsp;&nbsp; intrinsics.type_is_integer(T)
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Blob:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Because the type of 
+                            <code>T</code>
+                            &nbsp;is an untyped integer, as it's technically a constant, &amp; there's no way to check against an untyped type (I would like there to be honestly). What you'd want to check against is the type of the array itself 
+                            <code>proc (a: $E/[$T]any) where intrinsics.type_is_array(E)</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>instrinsics.type_elem_type()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Underlying type.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Useful for arrays.
 				</p>
 			</li>
 		</ul>
 	</li>
 </ul>
 <h2
-	id="packages" >
-    Packages
+	id="package-system" >
+    Package System
 </h2>
 <ul>
 	<li>
@@ -3003,12 +3134,9 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Created the ols.json file in my project directory in VSCode, with configs from the OLS GitHub.
-		</p>
-	</li>
-	<li>
-		<p>
-            In other words, I followed all steps described on the OLS GitHub and a few other things.
+            Created the 
+            <code>ols.json</code>
+            &nbsp;file in my project directory in VSCode, with configs from the OLS GitHub.
 		</p>
 	</li>
 </ul>
@@ -5754,194 +5882,6 @@ string(bytes[:length])
 	</li>
 </ul>
 <h3
-	id="any" >
-    any
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/base/builtin/#any" 
-				class="external-link" 
-				target="_blank" >
-                <code>any</code>
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="composition" >
-    Composition
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/base/runtime/#Raw_Any" 
-				class="external-link" 
-				target="_blank" >
-                <code>Raw_Any</code>
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">Raw_Any :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp;data: [rawptr](https://pkg.odin-lang.org/base/builtin#rawptr),
-&nbsp;&nbsp;&nbsp;&nbsp;id:&nbsp;&nbsp; [typeid](https://pkg.odin-lang.org/base/builtin#typeid),
-}
-</code></pre>
-<pre><code class="language-odin" data-lang="odin">@(require_results)
-any_data :: #force_inline proc(v: any) -&gt; (data: rawptr, id: typeid) {
-    return v.data, v.id
-}
-</code></pre>
-<h5
-	id="useful-procedures" >
-    Useful Procedures
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_bool" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_bool</code>
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_bytes" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_bytes</code>
-			</a>
-            .
-		</p>
-<pre><code class="language-odin" data-lang="odin"> @(require_results)
- as_bytes :: proc(v: any) -&gt; []byte {
-     if v != nil {
-         sz := size_of_typeid(v.id)
-         return ([^]byte)(v.data)[:sz]
-     }
-     return nil
- }
-</code></pre>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_f64" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_f64</code>
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_i64" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_i64</code>
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_int" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_int</code>
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_pointer" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_pointer</code>
-			</a>
-            .
-		</p>
-<pre><code class="language-odin" data-lang="odin"> // Various considerations first.
- result = (^rawptr)(any_value.data)^
-</code></pre>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_raw_data" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_raw_data</code>
-			</a>
-            .
-		</p>
-<pre><code class="language-odin" data-lang="odin"> // Various considerations first.
- result = any_value.data
-</code></pre>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_string" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_string</code>
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_u64" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_u64</code>
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/reflect/#as_uint" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_uint</code>
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="examples" >
-    Examples
-</h5>
-<ul>
-	<li>
-		<p>
-            See the example below about 
-            <code>typeid</code>
-            s.
-		</p>
-	</li>
-</ul>
-<h3
 	id="type-typeid-size_of" >
     type / typeid / size_of
 </h3>
@@ -6308,38 +6248,1418 @@ any_data :: #force_inline proc(v: any) -&gt; (data: rawptr, id: typeid) {
 		</ul>
 	</li>
 </ul>
-<h3
-	id="intrinsics" >
-    Intrinsics
-</h3>
+<h2
+	id="any" >
+    any
+</h2>
 <ul>
 	<li>
 		<p>
 			<a
-				href="https://pkg.odin-lang.org/base/intrinsics/" 
+				href="https://pkg.odin-lang.org/base/builtin/#any" 
 				class="external-link" 
 				target="_blank" >
-                Intrinsics
+                <code>any</code>
 			</a>
             .
 		</p>
 	</li>
 	<li>
 		<p>
-            <code>type_elem_type()</code>
+			<a
+				href="https://pkg.odin-lang.org/base/runtime/#Raw_Any" 
+				class="external-link" 
+				target="_blank" >
+                <code>Raw_Any</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It is functionally equivalent to 
+            <code>struct {data: rawptr, id: typeid}</code>
+            &nbsp;with extra semantics on how assignment and type assertion works.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>any</code>
+            &nbsp;value is only valid as long as the underlying data is still valid. Passing a literal to an 
+            <code>any</code>
+            &nbsp;will allocate the literal in the current stack frame.
+		</p>
+	</li>
+</ul>
+<h3
+	id="comparison-codeany-code-vs-codeunion-code" >
+    Comparison 
+    <code>any</code>
+    &nbsp;vs 
+    <code>union</code>
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>any</code>
+            &nbsp;is a topologically-dual to a 
+            <code>union</code>
+            &nbsp;in terms of its usage.
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Underlying type.
+                    Both support assignments of differing types (
+                    <code>any</code>
+                    &nbsp;being open to any type, 
+                    <code>union</code>
+                    &nbsp;being closed to a specific set of types).
 				</p>
 			</li>
 			<li>
 				<p>
-                    Useful for arrays.
+                    Both support type assertions (
+                    <code>x.(T)</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Both support 
+                    <code>switch in</code>
+                    .
 				</p>
 			</li>
 		</ul>
+	</li>
+	<li>
+		<p>
+            The main internal difference is how the memory is stored.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A 
+                    <code>any</code>
+                    &nbsp;being open is a pointer+typeid, a 
+                    <code>union</code>
+                    &nbsp;is a blob+tag.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A 
+                    <code>union</code>
+                    &nbsp;does not need to store a 
+                    <code>typeid</code>
+                    &nbsp;because it is a closed ABI-consistent set of variant types.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="structure" >
+    Structure
+</h3>
+<pre><code class="language-odin" data-lang="odin">Raw_Any :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;data: rawptr, // pointer to the data
+&nbsp;&nbsp;&nbsp;&nbsp;id:&nbsp;&nbsp; typeid, // type of the data
+}
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">@(require_results)
+any_data :: #force_inline proc(v: any) -&gt; (data: rawptr, id: typeid) {
+    return v.data, v.id
+}
+</code></pre>
+<h3
+	id="storing-data" >
+    Storing data
+</h3>
+<ul>
+	<li>
+		<p>
+            It always stores a pointer to the data.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>any</code>
+            &nbsp;only works by having a pointer to something. This something can be stored in the heap or on the stack.
+		</p>
+	</li>
+	<li>
+		<p>
+            If the data is already stored somewhere the operation is more direct, otherwise a temp variable is created on the stack and a pointer to this temp variable is used instead.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+			<em>
+                only
+			</em>
+            &nbsp;way to make 
+            <code>any</code>
+            &nbsp;hold a value that outlasts the stack, the value needs to be stored in the heap. This is needed as an 
+            <code>any</code>
+            &nbsp;only stores a pointer to something; this indirection makes things a quite more annoying.
+		</p>
+	</li>
+</ul>
+<h5
+	id="loose-examples" >
+    Loose examples
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                The value is already stored
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">x: int = 123
+a: any = x
+
+// equivalent to
+
+a: any = { data = &x, id = typeid_of(type_of(x)) }
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">x: ^int = new(123)
+a: any = x
+
+// equivalent to
+
+a: any = { data = &x, id = typeid_of(type_of(x)) }
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                The value is not yet stored
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-" data-lang="">a: any = 123
+
+// equivalent to
+
+_tmp: int = 123&nbsp;&nbsp;// variable created on the stack
+a: any = { data = &_tmp, id = typeid_of(type_of(_tmp)) }
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">x: int = 123
+a: any = &x
+
+// equivalent to
+
+_tmp: ^int = &x // variable created on the stack
+a: any = { data = &_tmp, id = typeid_of(type_of(_tmp)) }
+</code></pre>
+<h5
+	id="storing-a-pointer-to-something-on-the-stack" >
+    Storing a pointer to something on the stack
+</h5>
+<ul>
+	<li>
+		<p>
+            It's possible to get a pointer to the value (the value is stored):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Assigning implicitly:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>x: int = 123; a: any = x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;is a value on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores&nbsp;&nbsp;
+                                    <code>a.data = &x</code>
+                                    , which is a pointer to the value on the 
+									<strong>
+                                        stack
+									</strong>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>x: ^int = &i; a: any = x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>i</code>
+                                    &nbsp;is a value on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;stores a pointer to something on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores&nbsp;&nbsp;
+                                    <code>a.data = &x</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , to a pointer to something on the stack.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>x := make([]int, 3); a: any = x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;is a array slice on the stack, that stores a pointer to something on the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &x</code>
+                                    , which is a pointer to the array slice on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , which then points to the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This is a really weird one, but 
+                                    <code>x</code>
+                                    &nbsp;is indeed on the stack, as mentioned by 'Barinzaya' and 'rats'.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>x: ^int = new_clone(123); a: any = x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;is a pointer to the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &x</code>
+                                    , which is a pointer on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , to a pointer on the heap.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Assigning explicitly (storing directly into the 
+                    <code>.data</code>
+                    &nbsp;field):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>x: ^int = &i; a: any = { data = x, id = typeid_of(int) }</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>i</code>
+                                    &nbsp;is a value on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;stores a pointer to something on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Note how an indirection is removed, when comparing to 
+                                    <code>x: ^int = &i; a: any = x</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            It's not possible to get a pointer to the value (the value is not stored):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Assigning implicitly:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>a</code>
+                            &nbsp;will 
+							<em>
+                                always
+							</em>
+                            &nbsp;store 
+                            <code>a.data = &_tmp</code>
+                            , where 
+                            <code>_tmp</code>
+                            &nbsp;is on the stack; therefore, it always stores a pointer to the 
+							<strong>
+                                stack
+							</strong>
+                            , due to the indirection of&nbsp;&nbsp;
+                            <code>&_tmp</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>a: any = 123</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>123</code>
+                                    &nbsp;is a literal, not yet stored.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>_tmp: int = 123</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &_tmp</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>x: int = 123; a: any = &x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>&x</code>
+                                    &nbsp;is a pointer to 
+                                    <code>x</code>
+                                    ; the value is stored, but the pointer is not yet stored.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>_tmp: ^int = &x</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &_tmp</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , to a pointer to something on the stack.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>a: any = new_clone(123)</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>new_clone(123)</code>
+                                    &nbsp;is a pointer to 
+                                    <code>123</code>
+                                    &nbsp;on the heap; the value is stored on the heap, but the pointer is not yet stored.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>_tmp: ^int = new_clone(123)</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &_tmp</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , to a pointer to something on the heap.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Assigning explicitly (storing directly into the 
+                    <code>.data</code>
+                    &nbsp;field):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>a: any = { data = &i, id = typeid_of(int) }</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the same case as 
+                                    <code>x: ^int = &i; a: any = { data = x, id = typeid_of(int) }</code>
+                                    , but removing the need for 
+                                    <code>x</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="storing-a-pointer-to-something-on-the-heap" >
+    Storing a pointer to something on the heap
+</h5>
+<ul>
+	<li>
+		<p>
+            It's possible to get a pointer to the value (the value is stored):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Assigning implicitly:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>x := make([]int, 3); a: any = x[2]</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;is a array slice on the stack, that stores a pointer to something on the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &x[2]</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        heap
+									</strong>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Even though 
+                                    <code>x</code>
+                                    &nbsp;is on the stack, 
+                                    <code>x[i]</code>
+                                    &nbsp;is a value on the heap, so 
+                                    <code>&x[i]</code>
+                                    &nbsp;is a pointer on the heap.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Assigning explicitly (storing directly into the 
+                    <code>.data</code>
+                    &nbsp;field):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>x: ^int = new_clone(123, context.temp_allocator); a: any = { data = x, id = typeid_of(int) }</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;stores a pointer to something on the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores a pointer to something on the heap.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This is 
+											<strong>
+                                                not
+											</strong>
+                                            &nbsp;the same as doing:
+										</p>
+<pre><code class="language-" data-lang=""> x: ^int = new_clone(123)
+ a: any = x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</code></pre>
+										<ul>
+											<li>
+												<p>
+                                                    <code>a</code>
+                                                    &nbsp;stores a pointer to 
+                                                    <code>x</code>
+                                                    &nbsp;on the stack, which stores a pointer to something on the heap.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Note how 
+                                    <code>id</code>
+                                    &nbsp;needs to be 
+                                    <code>int</code>
+                                    , while 
+                                    <code>x: ^int</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    When unwrapping the data, we'll get an 
+                                    <code>int</code>
+                                    , not the original 
+                                    <code>^int</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The original 
+                                    <code>^int</code>
+                                    &nbsp;can actually be retrieved by doing 
+                                    <code>(cast(^int)a.data)</code>
+                                    , instead of 
+                                    <code>(cast(^int)a.data)^</code>
+                                    ; this has to be done manually.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The second option is done automatically by 
+                                            <code>a.(int)</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Doing something like 
+                                            <code>a.(^int)</code>
+                                            &nbsp;in this case will just cause a failure, as 
+                                            <code>(cast(^^int)a.data)^</code>
+                                            &nbsp;is not valid; the data is not 
+                                            <code>^^int</code>
+                                            , but 
+                                            <code>^int</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    If the original 
+                                    <code>^int</code>
+                                    &nbsp;is not retrieved, then the pointer is lost and the memory cannot be freed; to avoid this, this technique should use of arena allocators, such as 
+                                    <code>context.temp_allocator</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    [2025-11-08]
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            I tested this and it worked correctly:
+										</p>
+									</li>
+								</ul>
+<pre><code class="language-odin" data-lang="odin"> batch := new_clone(Batch(T){
+&nbsp;&nbsp;&nbsp;&nbsp; index  = i32(i),
+&nbsp;&nbsp;&nbsp;&nbsp; offset = i32(offset),
+&nbsp;&nbsp;&nbsp;&nbsp; data   = data[offset:min(offset + max_batch_size, len(data))],
+ }, context.temp_allocator)
+ args[0] = { data = batch, id = typeid_of(Batch(T)) }
+</code></pre>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            It's not possible to get a pointer to the value (the value is not stored):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <s>Assigning implicitly</s>:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This makes a 
+                            <code>_tmp</code>
+                            &nbsp;be created, which will always be on the stack, so this is not possible if you want to store a pointer to something on the heap.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Assigning explicitly (storing directly into the 
+                    <code>.data</code>
+                    &nbsp;field):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>a: any = { data = new_clone(123, context.temp_allocator), id = typeid_of(int) }</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Same case as 
+                                    <code>x: ^int = new_clone(123, context.temp_allocator); a: any = { data = x, id = typeid_of(int) }</code>
+                                    , but removing the need for 
+                                    <code>x</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="about-array-slices-with-codeany-code" >
+    About array/slices with 
+    <code>any</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A slice is a pointer and length, in 
+                    <code>x := make([]int)</code>
+                    &nbsp;
+                    <code>x</code>
+                    &nbsp;would still be on the stack.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Rats:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Variables are always on the stack.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You can't have a &quot;heap allocated variable&quot;, but you can have a variable holding a pointer into the heap.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Barinazaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    That's what 
+                    <code>x</code>
+                    &nbsp;is. The actual data 
+					<em>
+                        in
+					</em>
+                    &nbsp;the slice is behind the pointer, and can be anywhere (heap, stack, mapped file, static data, etc.)
+				</p>
+			</li>
+			<li>
+				<p>
+                    A slice is ultimately just a kind of pointer, it just points to an 
+					<em>
+                        array
+					</em>
+                    &nbsp;of a variable number of things rather than just one thing
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/base/runtime/#Raw_Slice" 
+						class="external-link" 
+						target="_blank" >
+                        <code>Raw_Slice</code>
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    is it possible to do something like 
+                    <code>x := make([]int); a: any = x.data</code>
+                    , so the 
+                    <code>a.data = &x.data</code>
+                    , which then is a pointer to the heap?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Kind of, but you wouldn't be able to keep the length
+				</p>
+			</li>
+			<li>
+				<p>
+                    That's basically what 
+                    <code>a: any = x[0]</code>
+                    &nbsp;would do -- it would store a pointer to the first element in the backing data. But it loses the length.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If you knew the length, you could &quot;rebuild&quot; the slice, but 
+                    <code>any</code>
+                    &nbsp;won't really help with that.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    so then, there's no way for me to store a whole array inside a 
+                    <code>any</code>
+                    ?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You'd have to allocate 
+					<em>
+                        the slice itself
+					</em>
+                    &nbsp;too
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> x_data := make([]int, 4)
+ x := new_clone(x_data)
+ a: any = x^
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    But that means you need to handle 
+                    <code>delete</code>
+                    ing/
+                    <code>free</code>
+                    ing both levels of indirection. If you're getting to that point, maybe it's time to reconsider 
+					<em>
+                        why
+					</em>
+                    &nbsp;you need that.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="getting-the-underlying-value" >
+    Getting the underlying value
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>(cast(^T)a.data)^</code>
+            &nbsp;is the same as 
+            <code>a.(T)</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Also asserting the 
+                    <code>id</code>
+                    , but otherwise yes, they are the same.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Not possible:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>(cast(^(a.id))a.data)^</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    or
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>a.(a.id)</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    As the 
+                    <code>.id</code>
+                    &nbsp;id runtime known, not comptime known.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="using-code-code" >
+    Using 
+    <code>.()</code>
+</h5>
+<pre><code class="language-odin" data-lang="odin">My_Struct :: struct{
+    x: int,
+    y: intrinsics.Atomic_Memory_Order,
+}
+main :: proc() {
+    {
+        a: int = 123
+        b: any = a
+        c := b.(int)
+        fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+    }
+    {
+        a: [4]bool
+        b: any = a
+        c := b.([4]bool)
+        fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+    }
+    {
+        a := make([dynamic]My_Struct, context.temp_allocator)
+        append(&a, My_Struct{}, My_Struct{ 2, .Relaxed })
+        b: any = a
+        c := b.([dynamic]My_Struct)
+        fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+    }
+    {
+        a := make([dynamic]My_Struct, context.temp_allocator)
+        append(&a, My_Struct{}, My_Struct{ 2, .Relaxed })
+        b: any = a[:]
+        c := b.([]My_Struct)
+        fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+    }
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>a</code>
+            , 
+            <code>b</code>
+            &nbsp;and 
+            <code>c</code>
+            &nbsp;here are always printed the same, while 
+            <code>c</code>
+            &nbsp;has the type of 
+            <code>a</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="using-the-codereflect-code-procedures" >
+    Using the 
+    <code>reflect</code>
+    &nbsp;procedures
+</h5>
+<ul>
+	<li>
+		<p>
+            They do the same operation as shown, but fancier.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_bool" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_bool</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_bytes" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_bytes</code>
+			</a>
+            .
+		</p>
+<pre><code class="language-odin" data-lang="odin"> @(require_results)
+ as_bytes :: proc(v: any) -&gt; []byte {
+     if v != nil {
+         sz := size_of_typeid(v.id)
+         return ([^]byte)(v.data)[:sz]
+     }
+     return nil
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_f64" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_f64</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_i64" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_i64</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_u64" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_u64</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_int" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_int</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_uint" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_uint</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_pointer" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_pointer</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Attempts to convert an 
+                    <code>any</code>
+                    &nbsp;to a 
+                    <code>rawptr</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    This only works for 
+                    <code>^T</code>
+                    , 
+                    <code>[^]T</code>
+                    , 
+                    <code>cstring</code>
+                    , 
+                    <code>cstring16</code>
+                    &nbsp;based types.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> // Various considerations first.
+ result = (^rawptr)(any_value.data)^
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_raw_data" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_raw_data</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the equivalent of doing 
+                    <code>raw_data(v)</code>
+                    &nbsp;where 
+                    <code>v</code>
+                    &nbsp;is a non-any value
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> // Various considerations first.
+ result = any_value.data
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_string" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_string</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_string16" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_string16</code>
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="etc" >
+    Etc
+</h3>
+<h5
+	id="is" >
+    Is
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#is_nil" 
+				class="external-link" 
+				target="_blank" >
+                <code>is_nil</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns true if the 
+                    <code>any</code>
+                    &nbsp;value is either 
+                    <code>nil</code>
+                    &nbsp;or the data stored at the address is all zeroed
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="etc" >
+    Etc
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_string16" 
+				class="external-link" 
+				target="_blank" >
+                <code>deref</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Dereferences 
+                    <code>any</code>
+                    &nbsp;if it represents a pointer-based value (
+                    <code>^T -&gt; T</code>
+                    )
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#enum_name_from_value_any" 
+				class="external-link" 
+				target="_blank" >
+                <code>enum_name_from_value_any</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the name of enum field if a valid name using reflection, otherwise returns 
+                    <code>"", false</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#equal" 
+				class="external-link" 
+				target="_blank" >
+                <code>equal</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Checks to see if two 
+                    <code>any</code>
+                    &nbsp;values are semantically equivalent
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#get_union_variant" 
+				class="external-link" 
+				target="_blank" >
+                <code>get_union_variant</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the underlying variant value of a union. Panics if a union was not passed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#get_union_variant_raw_tag" 
+				class="external-link" 
+				target="_blank" >
+                <code>get_union_variant_raw_tag</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    UNSAFE: Returns the underlying tag value of a union. Panics if a union was not passed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#index" 
+				class="external-link" 
+				target="_blank" >
+                <code>index</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Ggets the value by an index, if the type is indexable. Returns 
+                    <code>nil</code>
+                    &nbsp;if not possible
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="examples" >
+    Examples
+</h5>
+<ul>
+	<li>
+		<p>
+            See the example below about 
+            <code>typeid</code>
+            s.
+		</p>
 	</li>
 </ul>
 <h2
@@ -10945,10 +12265,15 @@ n := halve(4).? or_else 0
 fmt.println(n)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 2
 </code></pre>
 <h2
-	id="bit-sets-bit_set" >
-    Bit Sets (bit_set)
+	id="bit-sets" >
+    Bit Sets
 </h2>
 <ul>
+	<li>
+		<p>
+            <code>bit_set[_bitset_type_; _backing_type_]</code>
+		</p>
+	</li>
 	<li>
 		<p>
 			<a
@@ -11319,7 +12644,7 @@ unique_sets: bit_set[u32(0)..&lt;32; u32]
 				<p>
                     The 
                     <code>bit_set</code>
-                    &nbsp;handles turning it into a mask
+                    &nbsp;handles turning it into a mask.
 				</p>
 			</li>
 		</ul>
@@ -11329,10 +12654,10 @@ unique_sets: bit_set[u32(0)..&lt;32; u32]
 	id="arrays" >
     Arrays
 </h2>
-<h6
+<h5
 	id="alternatives" >
     Alternatives
-</h6>
+</h5>
 <ul>
 	<li>
 		<p>
@@ -11398,45 +12723,252 @@ unique_sets: bit_set[u32(0)..&lt;32; u32]
 <pre><code class="language-odin" data-lang="odin"> unordered_remove(&dyn_arr, idx)
 </code></pre>
 	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/runtime/#ordered_remove" 
+				class="external-link" 
+				target="_blank" >
+                <code>ordered_remove</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Doesn't change the order of elements.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> ordered_remove(&dyn_arr, idx)
+</code></pre>
+	</li>
 </ul>
-<pre><code class="language-" data-lang="">- [`ordered_remove`](https://pkg.odin-lang.org/base/runtime/#ordered_remove).
-&nbsp;&nbsp;&nbsp;&nbsp;- Doesn't change the order of elements.
-&nbsp;&nbsp;&nbsp;&nbsp;```odin
-&nbsp;&nbsp;&nbsp;&nbsp;ordered_remove(&dyn_arr, idx)
-&nbsp;&nbsp;&nbsp;&nbsp;```
-
-##### Info
-- [`len`](https://pkg.odin-lang.org/base/builtin/#len).
-&nbsp;&nbsp;&nbsp;&nbsp;- The `len` built-in procedure returns the length of `v` according to its type:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Array: the number of elements in v.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Pointer to (any) array: the number of elements in `v^` (even if `v` is `nil`).
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Slice, dynamic array, or map: the number of elements in `v`; if `v` is `nil`, `len(v)` is zero.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- String: the number of bytes in `v`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Enumerated array: the number elements in v.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Enum type: the number of enumeration fields.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `#soa` array: the number of elements in `v`; if `v` is `nil`, `len(v)` is zero.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `#simd` vector: the number of elements in `v`.
-&nbsp;&nbsp;&nbsp;&nbsp;- For some arguments, such as a string literal or a simple array expression, the result can be constant.
-- [`cap`](https://pkg.odin-lang.org/base/builtin/#cap).
-&nbsp;&nbsp;&nbsp;&nbsp;- The `cap` built-in procedure returns the length of `v` according to its type:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Array: the number of elements in v.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Pointer to (any) array: the number of elements in `v^` (even if `v` is `nil`).
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Dynamic array, or map: the reserved number of elements in `v`; if `v` is `nil`, `len(v)` is zero.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Enum type: equal to `max(Enum)-min(Enum)+1`.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `#soa` dynamic array: the reserved number of elements in `v`; if `v` is `nil`, `len(v)` is zero.
-&nbsp;&nbsp;&nbsp;&nbsp;- For some arguments, such as a string literal or a simple array expression, the result can be constant.
-
-
-### Fixed Arrays (`[n]T`)
-
-- [Fixed Arrays](https://odin-lang.org/docs/overview/#fixed-arrays).
-- *Similarity to structs*:
-&nbsp;&nbsp;&nbsp;&nbsp;- Fixed arrays are equivalent to a struct with a field for each element. 
-&nbsp;&nbsp;&nbsp;&nbsp;- They are just a number of values in a row in memory.
-
-##### Creation and Assigning
-```odin
-some_ints: [7]int
+<h5
+	id="info" >
+    Info
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/builtin/#len" 
+				class="external-link" 
+				target="_blank" >
+                <code>len</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The 
+                    <code>len</code>
+                    &nbsp;built-in procedure returns the length of 
+                    <code>v</code>
+                    &nbsp;according to its type:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Array: the number of elements in v.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Pointer to (any) array: the number of elements in 
+                            <code>v^</code>
+                            &nbsp;(even if 
+                            <code>v</code>
+                            &nbsp;is 
+                            <code>nil</code>
+                            ).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Slice, dynamic array, or map: the number of elements in 
+                            <code>v</code>
+                            ; if 
+                            <code>v</code>
+                            &nbsp;is 
+                            <code>nil</code>
+                            , 
+                            <code>len(v)</code>
+                            &nbsp;is zero.
+						</p>
+					</li>
+					<li>
+						<p>
+                            String: the number of bytes in 
+                            <code>v</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            Enumerated array: the number elements in v.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Enum type: the number of enumeration fields.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>#soa</code>
+                            &nbsp;array: the number of elements in 
+                            <code>v</code>
+                            ; if 
+                            <code>v</code>
+                            &nbsp;is 
+                            <code>nil</code>
+                            , 
+                            <code>len(v)</code>
+                            &nbsp;is zero.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>#simd</code>
+                            &nbsp;vector: the number of elements in 
+                            <code>v</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    For some arguments, such as a string literal or a simple array expression, the result can be constant.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/builtin/#cap" 
+				class="external-link" 
+				target="_blank" >
+                <code>cap</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The 
+                    <code>cap</code>
+                    &nbsp;built-in procedure returns the length of 
+                    <code>v</code>
+                    &nbsp;according to its type:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Array: the number of elements in v.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Pointer to (any) array: the number of elements in 
+                            <code>v^</code>
+                            &nbsp;(even if 
+                            <code>v</code>
+                            &nbsp;is 
+                            <code>nil</code>
+                            ).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Dynamic array, or map: the reserved number of elements in 
+                            <code>v</code>
+                            ; if 
+                            <code>v</code>
+                            &nbsp;is 
+                            <code>nil</code>
+                            , 
+                            <code>len(v)</code>
+                            &nbsp;is zero.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Enum type: equal to 
+                            <code>max(Enum)-min(Enum)+1</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>#soa</code>
+                            &nbsp;dynamic array: the reserved number of elements in 
+                            <code>v</code>
+                            ; if 
+                            <code>v</code>
+                            &nbsp;is 
+                            <code>nil</code>
+                            , 
+                            <code>len(v)</code>
+                            &nbsp;is zero.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    For some arguments, such as a string literal or a simple array expression, the result can be constant.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="fixed-arrays-codent-code" >
+    Fixed Arrays (
+    <code>[n]T</code>
+    )
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#fixed-arrays" 
+				class="external-link" 
+				target="_blank" >
+                Fixed Arrays
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Similarity to structs
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Fixed arrays are equivalent to a struct with a field for each element.
+				</p>
+			</li>
+			<li>
+				<p>
+                    They are just a number of values in a row in memory.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="creation-and-assigning" >
+    Creation and Assigning
+</h5>
+<pre><code class="language-odin" data-lang="odin">some_ints: [7]int
 </code></pre>
 <pre><code class="language-odin" data-lang="odin">// With inferred size.
 some_ints := [?]int{1, 2, 3, 4, 5}
@@ -11621,7 +13153,7 @@ nice_rating := #partial [Nice_People]int {
 				href="https://pkg.odin-lang.org/core/slice/" 
 				class="external-link" 
 				target="_blank" >
-                core:slices
+                <code>core:slices</code>
 			</a>
             .
 		</p>
@@ -11632,7 +13164,7 @@ nice_rating := #partial [Nice_People]int {
 				href="https://pkg.odin-lang.org/base/runtime/#Raw_Slice" 
 				class="external-link" 
 				target="_blank" >
-                Raw_Slice
+                <code>Raw_Slice</code>
 			</a>
             .
 		</p>
@@ -11645,38 +13177,41 @@ nice_rating := #partial [Nice_People]int {
 <ul>
 	<li>
 		<p>
-			<em>
+			<strong>
                 Via Fixed Array
-			</em>
+			</strong>
             :
 		</p>
-<pre><code class="language-odin" data-lang="odin"> some_ints := [7]int{5, 4, 3, 1, 2, 98, 100} 
-&nbsp;&nbsp;&nbsp;&nbsp; // This is an Array Literal.
- slice_of_some_ints := some_ints[2:5]
-</code></pre>
-	</li>
-	<li>
-		<p>
-			<em>
-                Via Slice Literal
-			</em>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Creates the same array as above, and then creates a slice that references it.
-				</p>
-			</li>
-		</ul>
-<pre><code class="language-odin" data-lang="odin"> slice_of_some_ints := []int{1, 6, 3} 
-&nbsp;&nbsp;&nbsp;&nbsp; // This is a Slice Literal.
+<pre><code class="language-odin" data-lang="odin"> a := [7]int{ 5, 4, 3, 1, 2, 98, 100 } 
+&nbsp;&nbsp;&nbsp;&nbsp; // Left side:&nbsp;&nbsp;Fixed Array.
+&nbsp;&nbsp;&nbsp;&nbsp; // Right side: Array Literal.
+ b := a[2:5]
+&nbsp;&nbsp;&nbsp;&nbsp; // Left side: Slice.
 </code></pre>
 	</li>
 	<li>
 		<p>
 			<strong>
-                Zero value
+                Via Slice Literal
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Implicitly creates a stack fixed array, and then get a reference to it.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> a := []int{ 1, 6, 3 } 
+&nbsp;&nbsp;&nbsp;&nbsp; // Left side:&nbsp;&nbsp;Slice.
+&nbsp;&nbsp;&nbsp;&nbsp; // Right side: Slice Literal.
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Zero valued
 			</strong>
             :
 		</p>
@@ -11691,40 +13226,117 @@ nice_rating := #partial [Nice_People]int {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-odin" data-lang="odin"> s: []int
- if s == nil {
-&nbsp;&nbsp;&nbsp;&nbsp; fmt.println("s is nil!")
+<pre><code class="language-odin" data-lang="odin"> a: []int
+ if a == nil {
+&nbsp;&nbsp;&nbsp;&nbsp; fmt.println("a is nil!")
  }
 </code></pre>
+	</li>
+</ul>
+<h5
+	id="batch-assignment" >
+    Batch assignment
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Heap allocated slice
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        NOT WHAT YOU WANT
+					</strong>
+                    :
+				</p>
+<pre><code class="language-odin" data-lang="odin"> a := make([]int, 4, context.allocator)
+ a = { 10, 20, 30, 40 } 
+</code></pre>
+				<ul>
+					<li>
+						<p>
+                            This replaces the heap allocated slice with a stack slice.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Using 
+                        <code>copy</code>
+					</em>
+                    :
+				</p>
+<pre><code class="language-odin" data-lang="odin"> a := make([]int, 4, context.allocator)
+ copy(a, []int{ 10, 20, 30, 40 })
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Using 
+                        <code>slice.clone</code>
+					</em>
+                    :
+				</p>
+<pre><code class="language-odin" data-lang="odin"> a := slice.clone([]int{ 10, 20, 30, 40 }, context.allocator)
+</code></pre>
+			</li>
+		</ul>
 	</li>
 </ul>
 <h5
 	id="destruction" >
     Destruction
 </h5>
-<pre><code class="language-odin" data-lang="odin">delete(dyn_array)
-</code></pre>
-<h5
-	id="access" >
-    Access
-</h5>
 <ul>
 	<li>
 		<p>
+            You only need to delete the slice 
 			<strong>
-                Range
+                if
 			</strong>
-            :
+            &nbsp;the underlying value is heap allocated.
 		</p>
-<pre><code class="language-odin" data-lang="odin"> // Everything
- some_ints[:]
- // From idx 3 to the end
- some_ints[3:]
- // From start to idx 5
- some_ints[:5]
-</code></pre>
+	</li>
+	<li>
+		<p>
+            You could delete the original 
+            <code>[dynamic]int</code>
+            &nbsp;or the 
+            <code>[]int</code>
+            ; both will delete the same memory.
+		</p>
 	</li>
 </ul>
+<pre><code class="language-odin" data-lang="odin">a := make([dynamic]int, context.allocator)
+b := a[:]
+delete(b)
+&nbsp;&nbsp;&nbsp;&nbsp;// Will delete the underlying memory of `a` and `b`, as both point to heap memory.
+
+// or
+
+a := make([]int, context.allocator)
+delete(a)
+</code></pre>
+<h5
+	id="access-range" >
+    Access range
+</h5>
+<pre><code class="language-odin" data-lang="odin">// Everything
+a[:]
+
+// From idx 3 to the end
+a[3:]
+
+// From start to idx 5
+a[:5]
+</code></pre>
 <h5
 	id="memory" >
     Memory
@@ -11736,7 +13348,7 @@ nice_rating := #partial [Nice_People]int {
 			<strong>
                 not
 			</strong>
-            &nbsp;known at compile time.
+            &nbsp;known at compile-time.
 		</p>
 	</li>
 	<li>
@@ -11790,35 +13402,6 @@ nice_rating := #partial [Nice_People]int {
 				</p>
 			</li>
 		</ul>
-	</li>
-	<li>
-		<p>
-			<input
-				type="checkbox" 
-				disabled=""
->
-            As shown in the 
-			<a
-				href="https://odin-lang.org/docs/overview/#making-and-deleting-slices-and-dynamic-arrays" 
-				class="external-link" 
-				target="_blank" >
-                link
-			</a>
-            , we can use 
-            <code>make</code>
-            &nbsp;to create an array slice out of thin air, but that points to what?
-		</p>
-	</li>
-	<li>
-		<p>
-			<input
-				type="checkbox" 
-				disabled=""
->
-            You can create an array slice by doing 
-            <code>[]int{1, 2, 3}</code>
-            , which in this case is creating a Fixed Array &quot;somewhere&quot;, from which we get a slice; this also seems a bit weird.
-		</p>
 	</li>
 	<li>
 		<p>
@@ -11879,7 +13462,7 @@ nice_rating := #partial [Nice_People]int {
 				href="https://pkg.odin-lang.org/base/runtime/#Raw_Dynamic_Array" 
 				class="external-link" 
 				target="_blank" >
-                Raw_Dynamic_Array
+                <code>Raw_Dynamic_Array</code>
 			</a>
             .
 		</p>
@@ -14579,6 +16162,94 @@ made_map_with_reservation := make(map[string]int, 64)
 	</li>
 </ul>
 <h3
+	id="stack-use-after-return" >
+    Stack Use After Return
+</h3>
+<h5
+	id="pointer-to-a-pointer-on-the-stack" >
+    Pointer to a pointer on the stack
+</h5>
+<ul>
+	<li>
+		<p>
+            If I have a procedure that does 
+            <code>x: ^int = new_clone(123)</code>
+            , if I return 
+            <code>&x</code>
+            , is this a stack-use-after-return bug?
+		</p>
+	</li>
+	<li>
+		<p>
+            Pointer or not, 
+            <code>x</code>
+            &nbsp;is still a local variable, so 
+            <code>&x</code>
+            &nbsp;would be a pointer 
+			<em>
+                to
+			</em>
+            &nbsp;a pointer on the stack, yes. The thing that 
+            <code>x</code>
+            &nbsp;
+			<em>
+                points to
+			</em>
+            , however, is not.
+		</p>
+	</li>
+</ul>
+<h5
+	id="examples" >
+    Examples
+</h5>
+<pre><code class="language-odin" data-lang="odin">x_proc :: proc() -&gt; ^int {
+    x_value: int = 123
+    return &x_value
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// `x` is a value stored in the stack, while `&x` is a pointer to a value stored in the stack; this is invalid.
+        // Compiler Error: It is unsafe to return the address of a local variable ('&x_value') from a procedure, as it uses the current stack frame's memory
+}
+
+a_proc :: proc() -&gt; ^int {
+    a_slice := make([]int, 4, context.temp_allocator)
+    a_slice[2] = 30
+    return &a_slice[2]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// `a_slice[2]` is a value stored in the heap, while `&a_slice[2]` is a pointer to a value stored in the heap, so it's fine.
+}
+
+b_proc :: proc() -&gt; (a: any) {
+    b_slice := make([]int, 4, context.temp_allocator)
+    b_slice[2] = 30
+    return b_slice[2]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// `b_slice[2]` is a value stored in the heap, while `a: any = &b_slice[2]` which is a pointer to a value stored in the heap, so it's fine.
+}
+
+c_proc :: proc() -&gt; (a: any) {
+    c_slice := make([]int, 4, context.temp_allocator)
+    c_slice[2] = 30
+    return &c_slice[2]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// `&c_slice[2]` is a pointer to a value stored in the heap, but `any` created an implicit indirection with `_tmp`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// So, this ends up being `c.data = &_tmp`, where `_tmp` is in the stack of `c_proc`, so this is invalid.
+}
+
+main :: proc() {
+    a := a_proc()
+    fmt.printfln("a:    %v", a)            // prints an address
+    fmt.printfln("a^:   %v", a^)           // prints '30'
+    
+    b := b_proc()
+    fmt.printfln("b:       %v", b)         // prints '30'
+    fmt.printfln("b.():    %v", b.(int))   // prints '30'
+    fmt.printfln("b.data:  %v", b.data)    // prints an address
+    // fmt.printfln("b.data^: %v", b.data^)   // Not possible to dereference rawptr.
+    
+    c := c_proc()
+    fmt.printfln("c:      %v", c)          // Invalid. This is accessing invalid memory; ASan doesn't crash, but it should.
+    fmt.printfln("c^:     %v", c.(^int))   // Invalid. This is accessing invalid memory; ASan doesn't crash, but it should.
+&nbsp;&nbsp;&nbsp;&nbsp;    // Barinzaya: I wonder if `any`s aren't integrated with ASan.
+}
+</code></pre>
+<h3
 	id="use-after-free-uaf" >
     Use After Free (UAF)
 </h3>
@@ -16874,6 +18545,13 @@ fmt.println(int_ptr)&nbsp;&nbsp; // 0x262CC7B6518
 	</li>
 	<li>
 		<p>
+            It will replace 
+            <code>core:os</code>
+            &nbsp;in 2026.
+		</p>
+	</li>
+	<li>
+		<p>
             [2025/07/07]
 		</p>
 		<ul>
@@ -17228,41 +18906,9 @@ fmt.println(int_ptr)&nbsp;&nbsp; // 0x262CC7B6518
 		</p>
 	</li>
 </ul>
-<h3
-	id="cli-tooling" >
-    CLI Tooling
-</h3>
-<h5
-	id="colors-and-strings" >
-    Colors and Strings
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://forum.odin-lang.org/t/odin-cli-best-practices/175" 
-				class="external-link" 
-				target="_blank" >
-                Post about ANSI Colors and string lengths
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://github.com/hrszpuk/odin-color/tree/main/examples" 
-				class="external-link" 
-				target="_blank" >
-                odin-color
-			</a>
-            .
-		</p>
-	</li>
-</ul>
 <h2
-	id="etc" >
-    Etc
+	id="useful-packages" >
+    Useful Packages
 </h2>
 <ul>
 	<li>
@@ -17272,6 +18918,47 @@ fmt.println(int_ptr)&nbsp;&nbsp; // 0x262CC7B6518
 				class="external-link" 
 				target="_blank" >
                 Collection of tools
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="math" >
+    Math
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Omair-R/fftod" 
+				class="external-link" 
+				target="_blank" >
+                FFTOD - Odin
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Fast Fourier Transform (FFT) written in the Odin language.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="geometry" >
+    Geometry
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Binasaurus-Hex/PolyMerge" 
+				class="external-link" 
+				target="_blank" >
+                Odin-poly-merge
 			</a>
             .
 		</p>
@@ -17289,23 +18976,6 @@ fmt.println(int_ptr)&nbsp;&nbsp; // 0x262CC7B6518
 				class="external-link" 
 				target="_blank" >
                 Odin-pathgrid
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h3
-	id="geometry" >
-    Geometry
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://github.com/Binasaurus-Hex/PolyMerge" 
-				class="external-link" 
-				target="_blank" >
-                Odin-poly-merge
 			</a>
             .
 		</p>
@@ -17799,6 +19469,34 @@ main :: proc() {
 &nbsp;&nbsp;&nbsp;&nbsp;fmt.println("got sigint!")
 }
 </code></pre>
+<h4
+	id="colors-and-strings" >
+    Colors and Strings
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://forum.odin-lang.org/t/odin-cli-best-practices/175" 
+				class="external-link" 
+				target="_blank" >
+                Post about ANSI Colors and string lengths
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/hrszpuk/odin-color" 
+				class="external-link" 
+				target="_blank" >
+                odin-color
+			</a>
+            .
+		</p>
+	</li>
+</ul>
 <h3
 	id="formats" >
     Formats
@@ -17913,6 +19611,13 @@ main :: proc() {
                                 BLEND
 							</a>
                             &nbsp;is deprecated. It is too time-consuming to maintain an undocumented format which contains so much more than we need.
+						</p>
+					</li>
+					<li>
+						<p>
+                            No 
+                            <code>.exr</code>
+                            .
 						</p>
 					</li>
 				</ul>
@@ -18514,7 +20219,7 @@ main :: proc() {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-02 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-11-09 🚀
 			</footer>
 		</div>
 		<aside
@@ -18567,12 +20272,6 @@ main :: proc() {
 						<ul>
 							<li>
 								<a
-									href="#compile-time-stuff" >
-                                    Compile-time Stuff
-								</a>
-							</li>
-							<li>
-								<a
 									href="#subsystems" >
                                     Subsystems
 								</a>
@@ -18581,8 +20280,58 @@ main :: proc() {
 					</li>
 					<li>
 						<a
-							href="#packages" >
-                            Packages
+							href="#compile-time-stuff" >
+                            Compile-time Stuff
+						</a>
+						<ul>
+							<li>
+								<a
+									href="#when" >
+                                    When
+								</a>
+							</li>
+							<li>
+								<a
+									href="#config" >
+                                    #config
+								</a>
+							</li>
+							<li>
+								<a
+									href="#comp-time-loop" >
+                                    Comp-time Loop
+								</a>
+							</li>
+							<li>
+								<a
+									href="#build-tags" >
+                                    Build Tags
+								</a>
+							</li>
+							<li>
+								<a
+									href="#ignore" >
+                                    Ignore
+								</a>
+							</li>
+							<li>
+								<a
+									href="#optimizations" >
+                                    Optimizations
+								</a>
+							</li>
+							<li>
+								<a
+									href="#intrinsics" >
+                                    Intrinsics
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#package-system" >
+                            Package System
 						</a>
 						<ul>
 							<li>
@@ -18719,20 +20468,46 @@ main :: proc() {
 							</li>
 							<li>
 								<a
-									href="#any" >
-                                    any
-								</a>
-							</li>
-							<li>
-								<a
 									href="#type-typeid-size_of" >
                                     type / typeid / size_of
 								</a>
 							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#any" >
+                            any
+						</a>
+						<ul>
 							<li>
 								<a
-									href="#intrinsics" >
-                                    Intrinsics
+									href="#comparison-codeany-code-vs-codeunion-code" >
+                                    Comparison <code>any</code> vs <code>union</code>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#structure" >
+                                    Structure
+								</a>
+							</li>
+							<li>
+								<a
+									href="#storing-data" >
+                                    Storing data
+								</a>
+							</li>
+							<li>
+								<a
+									href="#getting-the-underlying-value" >
+                                    Getting the underlying value
+								</a>
+							</li>
+							<li>
+								<a
+									href="#etc" >
+                                    Etc
 								</a>
 							</li>
 						</ul>
@@ -18885,8 +20660,8 @@ main :: proc() {
 					</li>
 					<li>
 						<a
-							href="#bit-sets-bit_set" >
-                            Bit Sets (bit_set)
+							href="#bit-sets" >
+                            Bit Sets
 						</a>
 						<ul>
 						</ul>
@@ -18901,6 +20676,12 @@ main :: proc() {
 								<a
 									href="#common-operations" >
                                     Common Operations
+								</a>
+							</li>
+							<li>
+								<a
+									href="#fixed-arrays-codent-code" >
+                                    Fixed Arrays (<code>[n]T</code>)
 								</a>
 							</li>
 							<li>
@@ -18967,6 +20748,12 @@ main :: proc() {
 								<a
 									href="#deletion-delete-free" >
                                     Deletion (delete / free)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#stack-use-after-return" >
+                                    Stack Use After Return
 								</a>
 							</li>
 							<li>
@@ -19121,30 +20908,30 @@ main :: proc() {
                                     <s>core:c/libc</s>
 								</a>
 							</li>
-							<li>
-								<a
-									href="#cli-tooling" >
-                                    CLI Tooling
-								</a>
-							</li>
 						</ul>
 					</li>
 					<li>
 						<a
-							href="#etc" >
-                            Etc
+							href="#useful-packages" >
+                            Useful Packages
 						</a>
 						<ul>
 							<li>
 								<a
-									href="#pathfinding" >
-                                    Pathfinding
+									href="#math" >
+                                    Math
 								</a>
 							</li>
 							<li>
 								<a
 									href="#geometry" >
                                     Geometry
+								</a>
+							</li>
+							<li>
+								<a
+									href="#pathfinding" >
+                                    Pathfinding
 								</a>
 							</li>
 							<li>

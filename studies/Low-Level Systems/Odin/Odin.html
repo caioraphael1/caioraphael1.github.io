@@ -16999,6 +16999,59 @@ nil_allocator_proc :: proc(
 	id="heap-allocator" >
     Heap Allocator
 </h3>
+<ul>
+	<li>
+		<p>
+            Heap Allocators are a high level construct, and a specific kind of allocator.
+		</p>
+	</li>
+	<li>
+		<p>
+            Odin just generalizes the concept of an allocator.
+		</p>
+	</li>
+	<li>
+		<p>
+            A heap in general is a data structure and in the context of allocators it is a &quot;general purpose allocator&quot;. Most common heap allocators are built on top of allocating virtual memory directly. The point of the &quot;general purpose&quot; aspect means you can allocate &quot;things&quot; of varying size, alignment, and free them at arbitrary times (i.e. the lifetimes of each allocation is out of order). And to do this, they require storing some sort of metadata about the size of the allocation, and where the free allocations are (called a free list). More complicated algorithms do more things to be more efficient.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Thread-safe
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is 
+                    <code>context.allocator</code>
+                    &nbsp;thread-safe? it's just uses what the OS provides. which generally are, yes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    And when we have our own malloc implementation, it'll be thread-safe too.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The current PR for it: 
+							<a
+								href="https://github.com/odin-lang/Odin/pull/4749" 
+								class="external-link" 
+								target="_blank" >
+                                https://github.com/odin-lang/Odin/pull/4749
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
 <pre><code class="language-odin" data-lang="odin">@(require_results)
 heap_allocator :: proc() -&gt; Allocator {
     return Allocator{
@@ -17320,6 +17373,11 @@ heap_allocator :: proc() -&gt; Allocator {
 				</strong>
 			</em>
             &nbsp;(constant).
+		</p>
+	</li>
+	<li>
+		<p>
+            On arenas being slices, it's important to realize that what they are is an implementation. All the abstract idea is, is to allocate linearly from a buffer such that you can quickly free everything. Whether it's a single buffer and cannot grow at all depends entirely on the arena allocator implementation in question.
 		</p>
 	</li>
 	<li>
@@ -18235,6 +18293,19 @@ arena_allocator_proc :: proc(allocator_data: rawptr, mode: Allocator_Mode,
 	<li>
 		<p>
             Reserving virtual memory does not increase memory usage. It goes up when the dynamic array actually grows into that reserved space.
+		</p>
+	</li>
+	<li>
+		<p>
+            Uses virtual memory 
+			<em>
+                directly
+			</em>
+            , whereas the arenas in mem use a 
+            <code>[]byte</code>
+            &nbsp;or 
+            <code>[dynamic]byte</code>
+            &nbsp;for their memory, so they basically still exist inside the heap allocator.
 		</p>
 	</li>
 	<li>

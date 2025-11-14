@@ -1265,312 +1265,6 @@ window.MathJax = {
 			</li>
 		</ul>
 	</li>
-	<li>
-		<p>
-            Caio:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    hello, I'm studying allocations and I hope someone could take a look at my understanding and check if I'm making any mistakes. I appreciate :)
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            when calling 
-            <code>new()</code>
-            &nbsp;or 
-            <code>make()</code>
-            &nbsp;with the default heap allocator (
-            <code>context.allocator</code>
-            ), Odin internally calls 
-            <code>malloc</code>
-            /
-            <code>calloc</code>
-            &nbsp;(at least on Unix) which internally calls 
-            <code>mmap</code>
-            &nbsp;to reserve a chunk of virtual memory (4MiB in x86_64), which is only physically allocated when touching the memory on read/write (in Odin I assume this is done immediately as for ZII). A 
-            <code>new(int)</code>
-            &nbsp;is allocated inside a free slot list inside a run inside the chunk; apparently something like 16B for an 
-            <code>int</code>
-            &nbsp;(this sounds weird to me as it can lead to 8B of waste in a 64bit system).
-		</p>
-	</li>
-	<li>
-		<p>
-            For heap-allocated arenas in Odin, it seems like you 
-			<em>
-                need
-			</em>
-            &nbsp;to create a buffer using a heap allocator before you can use the arena, which was confusing to me at first, as I thought the arena would call 
-            <code>mmap</code>
-            &nbsp;internally or something like that, but I guess it makes sense? First I thought arenas were something more low-level than a heap allocator, but I just see them now as a &quot;managed slice of bytes in memory&quot; inside the allocated region from the heap allocator. Seems like I can't avoid using a heap allocator anyway, as it's the only allocator that calls 
-            <code>mmap</code>
-            &nbsp;(through 
-            <code>malloc</code>
-            ).
-		</p>
-	</li>
-	<li>
-		<p>
-            I'm not sure about 
-            <code>core:mem/virtual</code>
-            , tho. I thought everything was already virtualized...
-		</p>
-	</li>
-	<li>
-		<p>
-            Heap Allocators are a high level construct, and a specific kind of allocator.
-		</p>
-	</li>
-	<li>
-		<p>
-            Odin just generalizes the concept of an allocator.
-		</p>
-	</li>
-	<li>
-		<p>
-            A heap in general is a data structure and in the context of allocators it is a &quot;general purpose allocator&quot;. Most common heap allocators are built on top of allocating virtual memory directly. The point of the &quot;general purpose&quot; aspect means you can allocate &quot;things&quot; of varying size, alignment, and free them at arbitrary times (i.e. the lifetimes of each allocation is out of order). And to do this, they require storing some sort of metadata about the size of the allocation, and where the free allocations are (called a free list). More complicated algorithms do more things to be more efficient.
-		</p>
-	</li>
-	<li>
-		<p>
-            On arenas being slices, it's important to realise that what they are is an implementation. All the abstract idea is, is to allocate linearly from a buffer such that you can quickly free everything. Whether it's a single buffer and cannot grow at all depends entirely on the arena allocator implementation in question.
-		</p>
-	</li>
-	<li>
-		<p>
-            Virtual memory is &quot;merely&quot; the way the OS exposes memory to userspace applications. It is not how most allocators work.
-		</p>
-	</li>
-	<li>
-		<p>
-            For the most part, one can simplify the concept of virtual memory down to &quot;I ask the OS for a block of memory that is a number of pages in size&quot;, where a &quot;page&quot; is defined by the OS. Modern systems often have it as 4096 bytes. You'll say you want 8 pages, and the OS gives you a pointer to the first byte in a 
-            <code>8*4096</code>
-            &nbsp;byte block to use. You can also do things like set whether each page is readable, writable, executable, etc.
-		</p>
-	</li>
-	<li>
-		<p>
-            And, as you alluded to initially, each page can be resident or not. So to say, actually backed by physical memory, or only theorectically set up for access however you've not touched it yet
-		</p>
-	</li>
-	<li>
-		<p>
-            Caio:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    &quot;Even when allocator gets a mapped virtual range from the kernel, actual physical pages are usually allocated only when you touch them (page fault on first write/read). So 
-                    <code>mmap</code>
-                    /
-                    <code>sbrk</code>
-                    &nbsp;creates virtual address space; the kernel populates physical pages on demand. Physical memory for those pages is usually committed lazily; when the process first touches a page, the kernel allocates a physical frame and updates the page tables.&quot; Or from the spec of 
-                    <code>malloc</code>
-                    : Allocates 
-                    <code>size</code>
-                    &nbsp;bytes and returns a pointer to the allocated memory. 
-					<strong>
-                        The memory is not initialized
-					</strong>
-                    . If 
-                    <code>size</code>
-                    &nbsp;is 0, then 
-                    <code>malloc()</code>
-                    &nbsp;returns a unique pointer value that can later be successfully passed to 
-                    <code>free()</code>
-                    . So what I got from both is that a page just has garbage at first, and doesn't actually have anything physical to it, just a virtual reservation of memory, but when writing to memory the OS would actually physically allocate that memory. So when I said &quot;the act of Odin zeroing the memory would interact with the OS&quot; I was referring to making the OS physically allocate the memory right away, not &quot;lazily&quot;, if that makes sense.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            &quot;Not initialized&quot; is like Odin's 
-            <code>---</code>
-            . It will be garbage. &quot;Committing lazily&quot; is about what I said before about being assigned to physical memory vs merely being set up for use.
-		</p>
-	</li>
-	<li>
-		<p>
-            To be committed is to be resident is to be assigned to physical memory
-		</p>
-	</li>
-	<li>
-		<p>
-            but only use a few megs
-		</p>
-	</li>
-	<li>
-		<p>
-            why provide all of it
-		</p>
-	</li>
-	<li>
-		<p>
-            Some OSes (linux being a good example) allowes overcommit
-		</p>
-	</li>
-	<li>
-		<p>
-            requesting memory from the OS is &quot;the OS promisies to give you the memory when you actually use it&quot;
-		</p>
-	</li>
-	<li>
-		<p>
-            (nb: depends on the OS/configuration/etc)
-		</p>
-	</li>
-	<li>
-		<p>
-            For example, despite the fact that &quot;being committed&quot; means &quot;assigned to physical memory&quot;, does that in fact mean that once you tell the OS to make some memory committed, that it will immediately appear in the task manager as taking up your RAM?
-		</p>
-	</li>
-	<li>
-		<p>
-            as a warning, doing better is &quot;non-trivial&quot;
-		</p>
-	</li>
-	<li>
-		<p>
-            for the mem/virtual stuff, those allocators use virtual memory 
-			<em>
-                directly
-			</em>
-            , whereas the arenas in mem use a []byte or [dynamic]byte for their memory, so they basically still exist inside the heap allocator
-		</p>
-	</li>
-	<li>
-		<p>
-            Is 
-            <code>context.allocator</code>
-            &nbsp;thread-safe? it's just uses what the OS provides. which generally are, yes.
-		</p>
-	</li>
-	<li>
-		<p>
-            And when we have our own malloc implementation, it'll be thread-safe too.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    The current PR for it: 
-					<a
-						href="https://github.com/odin-lang/Odin/pull/4749" 
-						class="external-link" 
-						target="_blank" >
-                        https://github.com/odin-lang/Odin/pull/4749
-					</a>
-                    .
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h4
-	id="where-to-allocate" >
-    Where to allocate
-</h4>
-<h5
-	id="algorithms-for-searching-for-free-blocks" >
-    Algorithms for searching for free blocks
-</h5>
-<ul>
-	<li>
-		<p>
-            First Fit.
-		</p>
-	</li>
-	<li>
-		<p>
-            Next Fit.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Optimization from First Fit, but increases fragmentation, apparently.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Best Fit.
-		</p>
-	</li>
-</ul>
-<h4
-	id="coalescing-quotgrowing-together-fusingquot" >
-    Coalescing (&quot;Growing together, fusing&quot;)
-</h4>
-<ul>
-	<li>
-		<p>
-            When we have two free blocks next to each other, merge them together into one large block.
-		</p>
-	</li>
-</ul>
-<h5
-	id="strategies" >
-    Strategies
-</h5>
-<ul>
-	<li>
-		<p>
-            On free: coalesce.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Coalesce only above and below, once on free.
-				</p>
-			</li>
-			<li>
-				<p>
-                    This is preferred as it has a more predictable performance.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Coalesce once in a while.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    This can take a little while, but removes the need to do it every operation.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=UTii4dyhR5c" 
-				class="external-link" 
-				target="_blank" >
-                Free List, Where to allocate a block, Coalescing - Chris Kanich
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=EhmZvyNA-1A" 
-				class="external-link" 
-				target="_blank" >
-                Exploring a heap allocated memory with 
-                <code>gdb</code>
-                , showing free lists, etc - Chris Kanich
-			</a>
-            .
-		</p>
-	</li>
 </ul>
 <h2
 	id="virtual-memory" >
@@ -1609,6 +1303,61 @@ window.MathJax = {
 		<p>
             &quot;A process view of memory&quot;.
 		</p>
+	</li>
+	<li>
+		<p>
+            Virtual memory is &quot;merely&quot; the way the OS exposes memory to user-space applications. It is not how most allocators work.
+		</p>
+	</li>
+	<li>
+		<p>
+            For the most part, one can simplify the concept of virtual memory down to &quot;I ask the OS for a block of memory that is a number of pages in size&quot;, where a &quot;page&quot; is defined by the OS. Modern systems often have it as 4096 bytes. You'll say you want 8 pages, and the OS gives you a pointer to the first byte in a 
+            <code>8*4096</code>
+            &nbsp;byte block to use. You can also do things like set whether each page is readable, writable, executable, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            And, as you alluded to initially, each page can be resident or not. So to say, actually backed by physical memory, or only theoretically set up for access however you've not touched it yet.
+		</p>
+	</li>
+	<li>
+		<p>
+            My current understanding:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    [2025-11-14]
+				</p>
+			</li>
+			<li>
+				<p>
+                    when calling 
+                    <code>new()</code>
+                    &nbsp;or 
+                    <code>make()</code>
+                    &nbsp;with the default heap allocator (
+                    <code>context.allocator</code>
+                    ), Odin internally calls 
+                    <code>malloc</code>
+                    /
+                    <code>calloc</code>
+                    &nbsp;(at least on Unix) which internally calls 
+                    <code>mmap</code>
+                    &nbsp;to reserve a chunk of virtual memory (4MiB (is it maybe 4KB?) in x86_64), which is only physically allocated when touching the memory on read/write (in Odin I assume this is done immediately as for ZII). A 
+                    <code>new(int)</code>
+                    &nbsp;is allocated inside a free slot list inside a run inside the chunk; apparently something like 16B for an 
+                    <code>int</code>
+                    &nbsp;(this sounds weird to me as it can lead to 8B of waste in a 64bit system).
+				</p>
+			</li>
+			<li>
+				<p>
+                    For heap-allocated arenas in Odin, it seems like you need to create a buffer using a heap allocator before you can use the arena, which was confusing to me at first, but it makes sense now. I just see them now as a &quot;managed slice of bytes in memory&quot; inside the allocated region from the heap allocator.
+				</p>
+			</li>
+		</ul>
 	</li>
 	<li>
 		<p>
@@ -1780,6 +1529,84 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
+	</li>
+</ul>
+<h5
+	id="initial-content" >
+    Initial content
+</h5>
+<ul>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Even when allocator gets a mapped virtual range from the kernel, actual physical pages are usually allocated only when you touch them (page fault on first write/read). So 
+                    <code>mmap</code>
+                    /
+                    <code>sbrk</code>
+                    &nbsp;creates virtual address space; the kernel populates physical pages on demand. Physical memory for those pages is usually committed lazily; when the process first touches a page, the kernel allocates a physical frame and updates the page tables.&quot; Or from the spec of 
+                    <code>malloc</code>
+                    : Allocates 
+                    <code>size</code>
+                    &nbsp;bytes and returns a pointer to the allocated memory. 
+					<strong>
+                        The memory is not initialized
+					</strong>
+                    . If 
+                    <code>size</code>
+                    &nbsp;is 0, then 
+                    <code>malloc()</code>
+                    &nbsp;returns a unique pointer value that can later be successfully passed to 
+                    <code>free()</code>
+                    . So what I got from both is that a page just has garbage at first, and doesn't actually have anything physical to it, just a virtual reservation of memory, but when writing to memory the OS would actually physically allocate that memory. So when I said &quot;the act of Odin zeroing the memory would interact with the OS&quot; I was referring to making the OS physically allocate the memory right away, not &quot;lazily&quot;, if that makes sense.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Not initialized&quot; is like Odin's 
+            <code>---</code>
+            . It will be garbage. &quot;Committing lazily&quot; is about what I said before about being assigned to physical memory vs merely being set up for use.
+		</p>
+	</li>
+	<li>
+		<p>
+            To be committed is to be resident is to be assigned to physical memory
+		</p>
+	</li>
+	<li>
+		<p>
+            but only use a few megs
+		</p>
+	</li>
+	<li>
+		<p>
+            why provide all of it
+		</p>
+	</li>
+	<li>
+		<p>
+            Some OSes (linux being a good example) allows overcommit
+		</p>
+	</li>
+	<li>
+		<p>
+            requesting memory from the OS is &quot;the OS promises to give you the memory when you actually use it&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            (nb: depends on the OS/configuration/etc)
+		</p>
+	</li>
+	<li>
+		<p>
+            Despite the fact that &quot;being committed&quot; means &quot;assigned to physical memory&quot;, does that in fact mean that once you tell the OS to make some memory committed, that it will immediately appear in the task manager as taking up your RAM? You should create your own alloc and see what happens.
+		</p>
 	</li>
 </ul>
 <h3
@@ -3014,6 +2841,112 @@ window.MathJax = {
 				class="internal-link" 
 				target="_self" >
                 C#malloc
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="making-your-own-allocator" >
+    Making your own allocator
+</h3>
+<h4
+	id="where-to-allocate" >
+    Where to allocate
+</h4>
+<h5
+	id="algorithms-for-searching-for-free-blocks" >
+    Algorithms for searching for free blocks
+</h5>
+<ul>
+	<li>
+		<p>
+            First Fit.
+		</p>
+	</li>
+	<li>
+		<p>
+            Next Fit.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Optimization from First Fit, but increases fragmentation, apparently.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Best Fit.
+		</p>
+	</li>
+</ul>
+<h4
+	id="coalescing-quotgrowing-together-fusingquot" >
+    Coalescing (&quot;Growing together, fusing&quot;)
+</h4>
+<ul>
+	<li>
+		<p>
+            When we have two free blocks next to each other, merge them together into one large block.
+		</p>
+	</li>
+</ul>
+<h5
+	id="strategies" >
+    Strategies
+</h5>
+<ul>
+	<li>
+		<p>
+            On free: coalesce.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Coalesce only above and below, once on free.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is preferred as it has a more predictable performance.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Coalesce once in a while.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This can take a little while, but removes the need to do it every operation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=UTii4dyhR5c" 
+				class="external-link" 
+				target="_blank" >
+                Free List, Where to allocate a block, Coalescing - Chris Kanich
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=EhmZvyNA-1A" 
+				class="external-link" 
+				target="_blank" >
+                Exploring a heap allocated memory with 
+                <code>gdb</code>
+                , showing free lists, etc - Chris Kanich
 			</a>
             .
 		</p>
@@ -6747,6 +6680,12 @@ int main() {
 								<a
 									href="#types-of-allocators" >
                                     Types of Allocators
+								</a>
+							</li>
+							<li>
+								<a
+									href="#making-your-own-allocator" >
+                                    Making your own allocator
 								</a>
 							</li>
 						</ul>

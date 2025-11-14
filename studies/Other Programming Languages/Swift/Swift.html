@@ -1234,8 +1234,8 @@ window.MathJax = {
                                 🕒 Created: 2025-01-03
 							</time>
 							<time
-								datetime="2025-11-02" >
-                                | Updated: 2025-11-02
+								datetime="2025-11-12" >
+                                | Updated: 2025-11-12
 							</time>
 						</p>
 					</header>
@@ -5440,68 +5440,137 @@ serve(customer: { customersInLine.remove(at: 0) } )
  }
 </code></pre>
 	</li>
+	<li>
+		<p>
+			<strong>
+                Access
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> var directionToHead = CompassPoint.west
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Once 
+                    <code>directionToHead</code>
+                    &nbsp;is declared as a 
+                    <code>CompassPoint</code>
+                    , you can set it to a different 
+                    <code>CompassPoint</code>
+                    &nbsp;value using a shorter dot syntax:
+				</p>
+<pre><code class="language-swift" data-lang="swift"> directionToHead = .east
+</code></pre>
+<pre><code class="language-swift" data-lang="swift"> directionToHead = .south
+ switch directionToHead {
+ case .north:
+&nbsp;&nbsp;&nbsp;&nbsp; print("Lots of planets have a north")
+ case .south:
+&nbsp;&nbsp;&nbsp;&nbsp; print("Watch out for penguins")
+ case .east:
+&nbsp;&nbsp;&nbsp;&nbsp; print("Where the sun rises")
+ case .west:
+&nbsp;&nbsp;&nbsp;&nbsp; print("Where the skies are blue")
+ }
+</code></pre>
+			</li>
+		</ul>
+	</li>
 </ul>
-<pre><code class="language-" data-lang="">- **Access**:
-&nbsp;&nbsp;&nbsp;&nbsp;```swift
-&nbsp;&nbsp;&nbsp;&nbsp;var directionToHead = CompassPoint.west
-&nbsp;&nbsp;&nbsp;&nbsp;```
-&nbsp;&nbsp;&nbsp;&nbsp;- Once `directionToHead` is declared as a `CompassPoint`, you can set it to a different `CompassPoint` value using a shorter dot syntax:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```swift
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directionToHead = .east
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```swift
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directionToHead = .south
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch directionToHead {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case .north:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Lots of planets have a north")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case .south:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Watch out for penguins")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case .east:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Where the sun rises")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case .west:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Where the skies are blue")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```
-
-##### With Associated Type
-- **Creation**:
-&nbsp;&nbsp;&nbsp;&nbsp;```swift
-&nbsp;&nbsp;&nbsp;&nbsp;enum Barcode {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case upc(Int, Int, Int, Int)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case qrCode(String)
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;```
-&nbsp;&nbsp;&nbsp;&nbsp;- This definition doesn’t provide any actual `Int` or `String` values — it just defines the _type_ of associated values that constants and variables can store when they’re equal to `Barcode.upc` or `Barcode.qrCode`.
-&nbsp;&nbsp;&nbsp;&nbsp;```swift
-&nbsp;&nbsp;&nbsp;&nbsp;var productBarcode = Barcode.upc(8, 85909, 51226, 3)
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
-&nbsp;&nbsp;&nbsp;&nbsp;```
-- **Access**:
-&nbsp;&nbsp;&nbsp;&nbsp;```swift
-&nbsp;&nbsp;&nbsp;&nbsp;switch productBarcode {
-&nbsp;&nbsp;&nbsp;&nbsp;case .upc(let numberSystem, let manufacturer, let product, let check):
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("UPC: \(numberSystem), \(manufacturer), \(product), \(check).")
-&nbsp;&nbsp;&nbsp;&nbsp;case .qrCode(let productCode):
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("QR code: \(productCode).")
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;// Prints "QR code: ABCDEFGHIJKLMNOP."
-&nbsp;&nbsp;&nbsp;&nbsp;```
-&nbsp;&nbsp;&nbsp;&nbsp;- If all of the associated values for an enumeration case are extracted as constants, or if all are extracted as variables, you can place a single `let` or `var` annotation before the case name, for brevity:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```swift
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch productBarcode {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case let .upc(numberSystem, manufacturer, product, check):
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("UPC : \(numberSystem), \(manufacturer), \(product), \(check).")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case let .qrCode(productCode):
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("QR code: \(productCode).")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Prints "QR code: ABCDEFGHIJKLMNOP."
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```
-
-##### Iterating
-- Swift exposes a collection of all the cases as an `allCases` property of the enumeration type if you write `CaseIterable` after the enumeration’s name.
-```swift
-enum Beverage: CaseIterable {
+<h5
+	id="with-associated-type" >
+    With Associated Type
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Creation
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> enum Barcode {
+&nbsp;&nbsp;&nbsp;&nbsp; case upc(Int, Int, Int, Int)
+&nbsp;&nbsp;&nbsp;&nbsp; case qrCode(String)
+ }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    This definition doesn’t provide any actual 
+                    <code>Int</code>
+                    &nbsp;or 
+                    <code>String</code>
+                    &nbsp;values — it just defines the 
+					<em>
+                        type
+					</em>
+                    &nbsp;of associated values that constants and variables can store when they’re equal to 
+                    <code>Barcode.upc</code>
+                    &nbsp;or 
+                    <code>Barcode.qrCode</code>
+                    .
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-swift" data-lang="swift"> var productBarcode = Barcode.upc(8, 85909, 51226, 3)
+ 
+ productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Access
+			</strong>
+            :
+		</p>
+<pre><code class="language-swift" data-lang="swift"> switch productBarcode {
+ case .upc(let numberSystem, let manufacturer, let product, let check):
+&nbsp;&nbsp;&nbsp;&nbsp; print("UPC: \(numberSystem), \(manufacturer), \(product), \(check).")
+ case .qrCode(let productCode):
+&nbsp;&nbsp;&nbsp;&nbsp; print("QR code: \(productCode).")
+ }
+ // Prints "QR code: ABCDEFGHIJKLMNOP."
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    If all of the associated values for an enumeration case are extracted as constants, or if all are extracted as variables, you can place a single 
+                    <code>let</code>
+                    &nbsp;or 
+                    <code>var</code>
+                    &nbsp;annotation before the case name, for brevity:
+				</p>
+<pre><code class="language-swift" data-lang="swift"> switch productBarcode {
+ case let .upc(numberSystem, manufacturer, product, check):
+&nbsp;&nbsp;&nbsp;&nbsp; print("UPC : \(numberSystem), \(manufacturer), \(product), \(check).")
+ case let .qrCode(productCode):
+&nbsp;&nbsp;&nbsp;&nbsp; print("QR code: \(productCode).")
+ }
+ // Prints "QR code: ABCDEFGHIJKLMNOP."
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="iterating" >
+    Iterating
+</h5>
+<ul>
+	<li>
+		<p>
+            Swift exposes a collection of all the cases as an 
+            <code>allCases</code>
+            &nbsp;property of the enumeration type if you write 
+            <code>CaseIterable</code>
+            &nbsp;after the enumeration’s name.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">enum Beverage: CaseIterable {
 &nbsp;&nbsp;&nbsp;&nbsp;case coffee, tea, juice
 }
 
@@ -5808,7 +5877,7 @@ print("The width of someVideoMode is now \(someVideoMode.resolution.width)")
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-09 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-11-14 🚀
 			</footer>
 		</div>
 		<aside

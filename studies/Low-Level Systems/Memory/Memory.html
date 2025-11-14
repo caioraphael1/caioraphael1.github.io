@@ -1234,13 +1234,344 @@ window.MathJax = {
                                 🕒 Created: 2025-03-12
 							</time>
 							<time
-								datetime="2025-11-02" >
-                                | Updated: 2025-11-02
+								datetime="2025-11-14" >
+                                | Updated: 2025-11-14
 							</time>
 						</p>
 					</header>
 					<div
 						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://github.com/lighthousand/books/blob/master/Modern%20Operating%20Systems%204th%20Edition--Andrew%20Tanenbaum.pdf" 
+				class="external-link" 
+				target="_blank" >
+                Modern Operating Systems 4th Edition--Andrew Tanenbaum.pdf
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    There's a whole section dedicated to memory.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    hello, I'm studying allocations and I hope someone could take a look at my understanding and check if I'm making any mistakes. I appreciate :)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            when calling 
+            <code>new()</code>
+            &nbsp;or 
+            <code>make()</code>
+            &nbsp;with the default heap allocator (
+            <code>context.allocator</code>
+            ), Odin internally calls 
+            <code>malloc</code>
+            /
+            <code>calloc</code>
+            &nbsp;(at least on Unix) which internally calls 
+            <code>mmap</code>
+            &nbsp;to reserve a chunk of virtual memory (4MiB in x86_64), which is only physically allocated when touching the memory on read/write (in Odin I assume this is done immediately as for ZII). A 
+            <code>new(int)</code>
+            &nbsp;is allocated inside a free slot list inside a run inside the chunk; apparently something like 16B for an 
+            <code>int</code>
+            &nbsp;(this sounds weird to me as it can lead to 8B of waste in a 64bit system).
+		</p>
+	</li>
+	<li>
+		<p>
+            For heap-allocated arenas in Odin, it seems like you 
+			<em>
+                need
+			</em>
+            &nbsp;to create a buffer using a heap allocator before you can use the arena, which was confusing to me at first, as I thought the arena would call 
+            <code>mmap</code>
+            &nbsp;internally or something like that, but I guess it makes sense? First I thought arenas were something more low-level than a heap allocator, but I just see them now as a &quot;managed slice of bytes in memory&quot; inside the allocated region from the heap allocator. Seems like I can't avoid using a heap allocator anyway, as it's the only allocator that calls 
+            <code>mmap</code>
+            &nbsp;(through 
+            <code>malloc</code>
+            ).
+		</p>
+	</li>
+	<li>
+		<p>
+            I'm not sure about 
+            <code>core:mem/virtual</code>
+            , tho. I thought everything was already virtualized...
+		</p>
+	</li>
+	<li>
+		<p>
+            Heap Allocators are a high level construct, and a specific kind of allocator.
+		</p>
+	</li>
+	<li>
+		<p>
+            Odin just generalizes the concept of an allocator.
+		</p>
+	</li>
+	<li>
+		<p>
+            A heap in general is a data structure and in the context of allocators it is a &quot;general purpose allocator&quot;. Most common heap allocators are built on top of allocating virtual memory directly. The point of the &quot;general purpose&quot; aspect means you can allocate &quot;things&quot; of varying size, alignment, and free them at arbitrary times (i.e. the lifetimes of each allocation is out of order). And to do this, they require storing some sort of metadata about the size of the allocation, and where the free allocations are (called a free list). More complicated algorithms do more things to be more efficient.
+		</p>
+	</li>
+	<li>
+		<p>
+            On arenas being slices, it's important to realise that what they are is an implementation. All the abstract idea is, is to allocate linearly from a buffer such that you can quickly free everything. Whether it's a single buffer and cannot grow at all depends entirely on the arena allocator implementation in question.
+		</p>
+	</li>
+	<li>
+		<p>
+            Virtual memory is &quot;merely&quot; the way the OS exposes memory to userspace applications. It is not how most allocators work.
+		</p>
+	</li>
+	<li>
+		<p>
+            For the most part, one can simplify the concept of virtual memory down to &quot;I ask the OS for a block of memory that is a number of pages in size&quot;, where a &quot;page&quot; is defined by the OS. Modern systems often have it as 4096 bytes. You'll say you want 8 pages, and the OS gives you a pointer to the first byte in a 
+            <code>8*4096</code>
+            &nbsp;byte block to use. You can also do things like set whether each page is readable, writable, executable, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            And, as you alluded to initially, each page can be resident or not. So to say, actually backed by physical memory, or only theorectically set up for access however you've not touched it yet
+		</p>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Even when allocator gets a mapped virtual range from the kernel, actual physical pages are usually allocated only when you touch them (page fault on first write/read). So 
+                    <code>mmap</code>
+                    /
+                    <code>sbrk</code>
+                    &nbsp;creates virtual address space; the kernel populates physical pages on demand. Physical memory for those pages is usually committed lazily; when the process first touches a page, the kernel allocates a physical frame and updates the page tables.&quot; Or from the spec of 
+                    <code>malloc</code>
+                    : Allocates 
+                    <code>size</code>
+                    &nbsp;bytes and returns a pointer to the allocated memory. 
+					<strong>
+                        The memory is not initialized
+					</strong>
+                    . If 
+                    <code>size</code>
+                    &nbsp;is 0, then 
+                    <code>malloc()</code>
+                    &nbsp;returns a unique pointer value that can later be successfully passed to 
+                    <code>free()</code>
+                    . So what I got from both is that a page just has garbage at first, and doesn't actually have anything physical to it, just a virtual reservation of memory, but when writing to memory the OS would actually physically allocate that memory. So when I said &quot;the act of Odin zeroing the memory would interact with the OS&quot; I was referring to making the OS physically allocate the memory right away, not &quot;lazily&quot;, if that makes sense.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Not initialized&quot; is like Odin's 
+            <code>---</code>
+            . It will be garbage. &quot;Committing lazily&quot; is about what I said before about being assigned to physical memory vs merely being set up for use.
+		</p>
+	</li>
+	<li>
+		<p>
+            To be committed is to be resident is to be assigned to physical memory
+		</p>
+	</li>
+	<li>
+		<p>
+            but only use a few megs
+		</p>
+	</li>
+	<li>
+		<p>
+            why provide all of it
+		</p>
+	</li>
+	<li>
+		<p>
+            Some OSes (linux being a good example) allowes overcommit
+		</p>
+	</li>
+	<li>
+		<p>
+            requesting memory from the OS is &quot;the OS promisies to give you the memory when you actually use it&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            (nb: depends on the OS/configuration/etc)
+		</p>
+	</li>
+	<li>
+		<p>
+            For example, despite the fact that &quot;being committed&quot; means &quot;assigned to physical memory&quot;, does that in fact mean that once you tell the OS to make some memory committed, that it will immediately appear in the task manager as taking up your RAM?
+		</p>
+	</li>
+	<li>
+		<p>
+            as a warning, doing better is &quot;non-trivial&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            for the mem/virtual stuff, those allocators use virtual memory 
+			<em>
+                directly
+			</em>
+            , whereas the arenas in mem use a []byte or [dynamic]byte for their memory, so they basically still exist inside the heap allocator
+		</p>
+	</li>
+	<li>
+		<p>
+            Is 
+            <code>context.allocator</code>
+            &nbsp;thread-safe? it's just uses what the OS provides. which generally are, yes.
+		</p>
+	</li>
+	<li>
+		<p>
+            And when we have our own malloc implementation, it'll be thread-safe too.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The current PR for it: 
+					<a
+						href="https://github.com/odin-lang/Odin/pull/4749" 
+						class="external-link" 
+						target="_blank" >
+                        https://github.com/odin-lang/Odin/pull/4749
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="where-to-allocate" >
+    Where to allocate
+</h4>
+<h5
+	id="algorithms-for-searching-for-free-blocks" >
+    Algorithms for searching for free blocks
+</h5>
+<ul>
+	<li>
+		<p>
+            First Fit.
+		</p>
+	</li>
+	<li>
+		<p>
+            Next Fit.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Optimization from First Fit, but increases fragmentation, apparently.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Best Fit.
+		</p>
+	</li>
+</ul>
+<h4
+	id="coalescing-quotgrowing-together-fusingquot" >
+    Coalescing (&quot;Growing together, fusing&quot;)
+</h4>
+<ul>
+	<li>
+		<p>
+            When we have two free blocks next to each other, merge them together into one large block.
+		</p>
+	</li>
+</ul>
+<h5
+	id="strategies" >
+    Strategies
+</h5>
+<ul>
+	<li>
+		<p>
+            On free: coalesce.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Coalesce only above and below, once on free.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is preferred as it has a more predictable performance.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Coalesce once in a while.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This can take a little while, but removes the need to do it every operation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=UTii4dyhR5c" 
+				class="external-link" 
+				target="_blank" >
+                Free List, Where to allocate a block, Coalescing - Chris Kanich
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=EhmZvyNA-1A" 
+				class="external-link" 
+				target="_blank" >
+                Exploring a heap allocated memory with 
+                <code>gdb</code>
+                , showing free lists, etc - Chris Kanich
+			</a>
+            .
+		</p>
+	</li>
+</ul>
 <h2
 	id="virtual-memory" >
     Virtual Memory
@@ -1274,7 +1605,866 @@ window.MathJax = {
             Memory is virtually-mapped and linear, and you can split that linear memory space into sections.
 		</p>
 	</li>
+	<li>
+		<p>
+            &quot;A process view of memory&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Pasted%20image%2020251112092912.png" alt="Pasted image 20251112092912|378" />
+            Pasted image 20251112092912|378
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The program still assumes the memory is continuous.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Pasted%20image%2020251113085433.png" alt="Pasted image 20251113085433|395" />
+            Pasted image 20251113085433|395
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=dFIqNZ8VbRY" 
+				class="external-link" 
+				target="_blank" >
+                Excelent talk by JF Bastien
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The whole video is really cool.
+				</p>
+			</li>
+			<li>
+				<p>
+                    {28:30} He starts talking about Virtual Memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112142739.png" alt="Pasted image 20251112142739|613" />
+                    Pasted image 20251112142739|613
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112142808.png" alt="Pasted image 20251112142808|620" />
+                    Pasted image 20251112142808|620
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112142831.png" alt="Pasted image 20251112142831|584" />
+                    Pasted image 20251112142831|584
+                    ..
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112141125.png" alt="Pasted image 20251112141125|571" />
+                    Pasted image 20251112141125|571
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112141416.png" alt="Pasted image 20251112141416|570" />
+                    Pasted image 20251112141416|570
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Caches make all this thing described work.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112142053.png" alt="Pasted image 20251112142053|561" />
+                    Pasted image 20251112142053|561
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=QyYoj9pkwCs" 
+				class="external-link" 
+				target="_blank" >
+                Motivations for Virtual Memory - Chris Kanich
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.youtube.com/watch?v=sGHYRr31BPE" 
+				class="external-link" 
+				target="_blank" >
+                The magic of the page fault: understanding demand paging of virtual memory in linux
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.youtube.com/watch?v=hd8bYx7QCS0" 
+				class="external-link" 
+				target="_blank" >
+                Page tables for your page tables: understanding how multi level page tables work
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.youtube.com/watch?v=ccWRlNP1UsY" 
+				class="external-link" 
+				target="_blank" >
+                Demystifying Page Tables
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.youtube.com/watch?v=8hVLcyBkSXY" 
+				class="external-link" 
+				target="_blank" >
+                Virtual Memory, mmap, Shared Memory, Copy On Write, creating a new process via Fork, Exec - Chris Kanich
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I haven't see the whole video. The content seemed distant to what I need right now.
+				</p>
+			</li>
+		</ul>
+	</li>
 </ul>
+<h3
+	id="os-pages" >
+    OS Pages
+</h3>
+<ul>
+	<li>
+		<p>
+            The page is the fundamental unit of virtual memory managed by the operating system and the CPU’s MMU (Memory Management Unit).
+		</p>
+	</li>
+	<li>
+		<p>
+            The kernel can only map, protect, or page-in/page-out whole pages. There’s no such thing as “half a page” to the MMU.
+		</p>
+	</li>
+	<li>
+		<p>
+            Pages are what the OS maps between virtual addresses (what your process sees) and physical memory (RAM).
+		</p>
+	</li>
+	<li>
+		<p>
+            When a process calls 
+            <code>mmap()</code>
+            &nbsp;or 
+            <code>sbrk()</code>
+            , the OS reserves a region of virtual address space measured in pages. Physical memory for those pages is usually committed lazily — when the process first touches a page, the kernel allocates a physical frame and updates the page tables.
+		</p>
+	</li>
+</ul>
+<h5
+	id="typical-size" >
+    Typical size
+</h5>
+<ul>
+	<li>
+		<p>
+            CPU/kernel page size is usually 4 KiB on x86_64 — that’s the granularity the MMU uses.
+		</p>
+	</li>
+</ul>
+<h3
+	id="chunk" >
+    Chunk
+</h3>
+<ul>
+	<li>
+		<p>
+            Pool of memory for suballocations.
+		</p>
+	</li>
+	<li>
+		<p>
+            A chunk is made up of many OS pages.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's an allocator-internal bookkeeping unit — a larger contiguous region of virtual memory (often multiple pages) that the allocator manages.
+		</p>
+	</li>
+	<li>
+		<p>
+            It helps reduce syscall overhead. The allocator calls 
+            <code>mmap</code>
+            /
+            <code>sbrk</code>
+            &nbsp;once to get a big chunk, then fulfills thousands of small allocations (1 B–1 KiB) from that memory by splitting it into bins or slabs.
+		</p>
+	</li>
+	<li>
+		<p>
+            The allocator requests a contiguous virtual region (a chunk) and the OS provides that region in page-sized units.
+		</p>
+	</li>
+	<li>
+		<p>
+            The allocator only maps or expands its arena in chunk-sized (or threshold-driven) increments.
+		</p>
+	</li>
+</ul>
+<h5
+	id="typical-size" >
+    Typical size
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>glibc malloc</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Variable, based on 
+                    <code>brk</code>
+                    &nbsp;or 
+                    <code>mmap</code>
+                    &nbsp;thresholds.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>jemalloc</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Often 4 MiB per chunk.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>tcmalloc</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Often 2 MiB per span.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Btw: 4 MiB chunk = 1024 OS pages.
+		</p>
+	</li>
+</ul>
+<h5
+	id="size-class" >
+    Size class
+</h5>
+<ul>
+	<li>
+		<p>
+            Allocator rounds requested sizes up to a small set of sizes (e.g. 8, 16, 24, …, 1024, then larger classes).
+		</p>
+	</li>
+	<li>
+		<p>
+            Allocators round requested sizes up to a 
+			<em>
+                size class
+			</em>
+            &nbsp;for alignment and bookkeeping simplicity.
+		</p>
+	</li>
+	<li>
+		<p>
+            Typical rules on 64-bit systems:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Minimum alignment/slot is often 
+					<strong>
+                        8 or 16 bytes
+					</strong>
+                    &nbsp;(16 is common on x86_64 for SIMD/alignment safety).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Sizes are rounded up into a small table of classes (e.g. 8,16,24,32,… or 16,32,48,64,… depending on allocator).
+				</p>
+			</li>
+			<li>
+				<p>
+                    A run is created for a size class (e.g. 16 B slots); a page (4 KiB) then contains 
+                    <code>4096 / 16 = 256</code>
+                    &nbsp;slots.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Implication:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each 
+                    <code>int</code>
+                    &nbsp;allocation carries 
+					<em>
+                        internal fragmentation
+					</em>
+                    &nbsp;(unused bytes inside the slot). An 
+                    <code>int</code>
+                    &nbsp;is 4B, but uses a 16 B slot, that’s 12 B wasted per allocation (in-slot waste).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="run-span" >
+    Run / span
+</h5>
+<ul>
+	<li>
+		<p>
+            A contiguous subrange of pages inside a chunk that the allocator uses for a particular size class.
+		</p>
+	</li>
+	<li>
+		<p>
+            One or more whole pages inside a chunk that the allocator dedicates to a single 
+			<em>
+                size class
+			</em>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="bins-free-lists" >
+    Bins / free lists
+</h5>
+<ul>
+	<li>
+		<p>
+            Per-size-class pools of free blocks ready to be returned for 
+            <code>malloc</code>
+            &nbsp;without splitting.
+		</p>
+	</li>
+</ul>
+<h5
+	id="slot-block-object" >
+    Slot / block / object
+</h5>
+<ul>
+	<li>
+		<p>
+            An individual allocation returned to the program (one slot inside a run).
+		</p>
+	</li>
+	<li>
+		<p>
+            They are the small pieces inside a run.
+		</p>
+	</li>
+</ul>
+<h5
+	id="illustration-chatgpt" >
+    Illustration (ChatGPT)
+</h5>
+<ul>
+	<li>
+		<p>
+            Before any allocation:
+		</p>
+<pre><code class="language-txt" data-lang="txt"> Chunk (4 MiB)
+ [ chunk header | page0 | page1 | page2 | ... | page1023 ]
+</code></pre>
+	</li>
+	<li>
+		<p>
+            First allocation: 
+            <code>new int</code>
+            &nbsp;(4B → rounded to 16B)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Allocator path:
+				</p>
+				<ol>
+					<li>
+						<p>
+                            Translate request size → size-class 16 B.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Look for an existing run for 16 B with free slots.
+						</p>
+					</li>
+					<li>
+						<p>
+                            None yet in any chunk/arena, so allocator 
+							<strong>
+                                converts one page
+							</strong>
+                            &nbsp;from the chunk into a run for the 16 B class. (This means the allocator marks page0 as a run and initializes its free-slot data: bitmap or free-list.)
+						</p>
+					</li>
+					<li>
+						<p>
+                            Allocate the first slot (slot 0) from that run and return pointer 
+                            <code>p = base_of_page0 + 0</code>
+                            .
+						</p>
+					</li>
+				</ol>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt"> Chunk
+ [ chunk header | page0: RUN(16B) [slot0=used, slot1..slot255=free] | page1 | ... ]
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Physical pages: if allocator zeroes the returned memory (language runtime 
+                    <code>new</code>
+                    &nbsp;semantics), writing to the slot causes a page-fault and kernel provides a physical frame for page0. If allocator does not touch payload, that page may still be unbacked until first write.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Next few allocations: more small 
+            <code>new()</code>
+            &nbsp;calls:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each further 
+                    <code>new(…)</code>
+                    &nbsp;of size ≤16 B:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Pop next free slot from page0’s free-list (slot1, slot2, ...).
+						</p>
+					</li>
+					<li>
+						<p>
+                            No syscalls; purely allocator metadata ops (possibly lock-free if per-thread).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt"> page0: RUN(16B) [slot0..slot9 = used, slot10..slot255 = free]
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Physical pages: once the program touches each used slot, page0's single physical frame services all those slots.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Run exhaustion: allocate the 257th small object
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When page0’s 256 slots are all consumed:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allocator sees the run is full.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It selects another free page inside the chunk (page1) and converts it into a new run for the 16 B size-class.
+						</p>
+					</li>
+					<li>
+						<p>
+                            page1 gets initialized with its own free-list/bitmap; allocation returns page1 slot0.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt"> [ chunk header | page0: RUN(16B) [all used] | page1: RUN(16B) [slot0=used, slot1..=free] | page2 ... ]
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Still no new 
+                    <code>mmap</code>
+                    &nbsp;syscall — allocator used pages already reserved inside the chunk. If the chunk had no free pages left for runs, allocator would 
+                    <code>mmap</code>
+                    &nbsp;a new chunk.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Mixed-size allocations appear later:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Suppose you then 
+                    <code>malloc(1 KiB)</code>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allocator maps that request to a larger size-class (say 1024 B).
+						</p>
+					</li>
+					<li>
+						<p>
+                            It will allocate from a run/span dedicated to that class. If none exists:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    It may grab one or more pages inside the same chunk and create a span for 1 KiB blocks. Example: one page can hold 
+                                    <code>4096 / 1024 = 4</code>
+                                    &nbsp;blocks.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            If the large request exceeds the allocator’s “large” threshold it may instead call 
+                            <code>mmap</code>
+                            &nbsp;and give the caller an independent mapping (outside chunk).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt"> [ chunk header |
+&nbsp;&nbsp; page0: RUN(16B) full |
+&nbsp;&nbsp; page1: RUN(16B) partly-used |
+&nbsp;&nbsp; page2: RUN(1KB) [blk0..blk3 some used] |
+&nbsp;&nbsp; page3: free page |
+&nbsp;&nbsp; ... ]
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Freeing behavior
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Freeing a 16 B slot: allocator marks the slot free (pushes to free-list or clears bitmap). The page remains a run page. Usually the allocator 
+					<strong>
+                        does not
+					</strong>
+                    &nbsp;
+                    <code>munmap</code>
+                    &nbsp;a single partially-used page.
+				</p>
+			</li>
+			<li>
+				<p>
+                    When an entire run/span (one or more pages) becomes fully unused, allocator heuristics may decide to:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            keep it for reuse (common), or
+						</p>
+					</li>
+					<li>
+						<p>
+                            coalesce and 
+                            <code>munmap</code>
+                            &nbsp;the pages to return virtual address space (or release them to a central pool). This is allocator-specific.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="virtual-memory-mapping" >
+    Virtual Memory Mapping
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=XV5sRaSVtXQ" 
+				class="external-link" 
+				target="_blank" >
+                mmap and brk example
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=m7E9piHcfr4" 
+				class="external-link" 
+				target="_blank" >
+                using mmap to read and write a file
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=rPV6b8BUwxM" 
+				class="external-link" 
+				target="_blank" >
+                using mmap to share memory between processes
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="mmap" >
+    mmap
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>mmap(..)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            Tells the OS to allow read/write to a file/device as if it were in memory with byte 0 at a given address.
+		</p>
+	</li>
+	<li>
+		<p>
+            Even when allocator gets a mapped virtual range from the kernel, actual physical pages are usually allocated only when you touch them (page fault on first write/read). So 
+            <code>mmap</code>
+            /
+            <code>sbrk</code>
+            &nbsp;creates virtual address space; the kernel populates physical pages on demand.
+		</p>
+	</li>
+	<li>
+		<p>
+            It does 
+			<strong>
+                not
+			</strong>
+            &nbsp;magically remember or manage allocator chunks — the allocator (e.g. 
+            <code>malloc</code>
+            , jemalloc, tcmalloc) is what 
+			<em>
+                tracks
+			</em>
+            &nbsp;chunks and decides when to call 
+            <code>mmap</code>
+            &nbsp;or 
+            <code>munmap</code>
+            . 
+            <code>mmap</code>
+            &nbsp;simply asks the kernel to reserve/map a virtual-address region; the kernel records that region in its VM structures and returns the address. The allocator then sub-allocates from that region without further syscalls until it needs more space (or decides to return space).
+		</p>
+	</li>
+</ul>
+<h5
+	id="brk" >
+    brk
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>brk(..)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            shrink with 
+            <code>brk</code>
+            &nbsp;can be used as &quot;unmap&quot;.
+		</p>
+	</li>
+</ul>
+<h5
+	id="sbrk" >
+    sbrk
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>sbrk(..)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            Asks the OS to expand/contract the size of the valid memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;You get multiples of page size, one way or the other&quot;.
+		</p>
+	</li>
+</ul>
+<h5
+	id="munmap" >
+    munmap
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>munmap</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            Free pages, unmap.
+		</p>
+	</li>
+</ul>
+<h3
+	id="process" >
+    Process
+</h3>
+<ol>
+	<li>
+		<p>
+            Your allocator (
+            <code>malloc</code>
+            ) decides it needs more virtual address space (its internal chunks/arenas are exhausted).
+		</p>
+	</li>
+	<li>
+		<p>
+            The allocator issues a syscall (
+            <code>mmap</code>
+            &nbsp;or sometimes 
+            <code>sbrk</code>
+            /
+            <code>brk</code>
+            ) requesting a contiguous virtual region of some size (an allocator-chosen chunk, e.g. 4 MiB).
+		</p>
+	</li>
+	<li>
+		<p>
+            The kernel creates a VMA (e.g. 
+            <code>vm_area_struct</code>
+            &nbsp;on Linux) covering that range and returns the base address to the allocator. No physical pages are necessarily assigned yet — only virtual address space is reserved.
+		</p>
+	</li>
+	<li>
+		<p>
+            The allocator records that new region in its own metadata (free lists, bitmaps, arena/chunk tables) and hands out pointers for subsequent 
+            <code>malloc</code>
+            /
+            <code>new</code>
+            &nbsp;requests from that region — no further 
+            <code>mmap</code>
+            &nbsp;needed while that region has free space.
+		</p>
+	</li>
+	<li>
+		<p>
+            When the program first accesses pages inside the region the CPU triggers page faults and the kernel assigns physical frames (demand paging).
+		</p>
+	</li>
+	<li>
+		<p>
+            If the allocator later frees enough whole pages or decides it no longer needs the region, it may call 
+            <code>munmap</code>
+            &nbsp;(or shrink with 
+            <code>brk</code>
+            ) to return the virtual range to the kernel.
+		</p>
+	</li>
+</ol>
 <h2
 	id="memory-alignment" >
     Memory Alignment
@@ -1494,6 +2684,10 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
+<h2
+	id="address" >
+    Address
+</h2>
 <h3
 	id="alignment" >
     Alignment
@@ -1527,113 +2721,72 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-			<strong>
-                Implicit Alignment
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    When placing a field, the compiler ensures the field's offset is a multiple of the field's alignment. If the current offset is 
-					<em>
-                        not
-					</em>
-                    &nbsp;a multiple of the field's alignment, the compiler inserts padding before the field so the resulting offset becomes a multiple of the alignment.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            When placing field F the compiler ensures 
-                            <code>offset(F) % align(F) == 0</code>
-                            .
-						</p>
-					</li>
-					<li>
-						<p>
-                            If not, it inserts 
-                            <code>padding = (align(F) - (offset % align(F))) % align(F)</code>
-                            &nbsp;bytes before F.
-						</p>
-					</li>
-					<li>
-						<p>
-                            The struct’s overall alignment is 
-                            <code>max(align(member))</code>
-                            . The compiler may add trailing padding so 
-                            <code>sizeof(struct)</code>
-                            &nbsp;is a multiple of that max alignment.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    A struct adds implicit padding between members, based on the alignment of the member with the highest alignment.
-				</p>
-			</li>
-			<li>
-				<p>
-                    The gray dots indicate the implicit padding added by the compiler.
-				</p>
-			</li>
-			<li>
-				<p>
-                    <img src="assets/image_20251009083656.png" width="400" >
-                    .
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            It may also add padding at the end of the struct, so the struct is divisible by its alignment. This ensures that when the struct is used as an array, each struct will be properly aligned along with its members.
+            An address is said to be 
+			<em>
+                aligned to 
+                <code>N</code>
+                &nbsp;bytes
+			</em>
+            , if the addresses's numeric value is divisible by 
+            <code>N</code>
+            . The number 
+            <code>N</code>
+            &nbsp;in this case can be referred to as the 
+			<em>
+                alignment boundary
+			</em>
+            . Typically an alignment is a power of two integer value.
 		</p>
 	</li>
 	<li>
 		<p>
-			<strong>
-                Odin
-			</strong>
-            :
+            A 
+			<em>
+                natural alignment
+			</em>
+            &nbsp;of an object is typically equal to its size. For example a 16 bit integer has a natural alignment of 2 bytes.
 		</p>
-		<ul>
-			<li>
-				<p>
-                    Alignment, Size and the Pointer are related, such as:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>size_of(T) % align_of(T) == 0</code>
-                            .
-						</p>
-					</li>
-					<li>
-						<p>
-                            <code>uintptr(&t) % align_of(t) == 0</code>
-                            .
-						</p>
-					</li>
-					<li>
-						<p>
-                            Check 
-                            <a href="Odin.html#Alignment">
-                            Odin#Alignment
-                            </a>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
 	</li>
 </ul>
-<h3
-	id="unaligned-memory" >
-    Unaligned Memory
-</h3>
+<h5
+	id="unalignment" >
+    Unalignment
+</h5>
 <ul>
+	<li>
+		<p>
+            When an object is not located on its natural alignment boundary, accesses to that object are considered 
+			<em>
+                unaligned
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Some machines issue a hardware 
+			<strong>
+                exception
+			</strong>
+            , or experience 
+			<strong>
+                slowdowns
+			</strong>
+            &nbsp;when a memory access operation occurs from an unaligned address. Examples of such operations are:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    SIMD instructions on x86. These instructions require all memory accesses to be on an address that is aligned to 16 bytes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    On ARM unaligned loads have an extra cycle penalty.
+				</p>
+			</li>
+		</ul>
+	</li>
 	<li>
 		<p>
             If you have an unaligned memory access (on a processor that allows it), the processor will have to read multiple “words”. This means that an unaligned memory access 
@@ -1646,6 +2799,113 @@ window.MathJax = {
 	<li>
 		<p>
             This can also lead to undefined behavior if the unaligned memory is within cache bounds.
+		</p>
+	</li>
+</ul>
+<h5
+	id="implicit-alignment" >
+    Implicit Alignment
+</h5>
+<ul>
+	<li>
+		<p>
+            When placing a field, the compiler ensures the field's offset is a multiple of the field's alignment. If the current offset is 
+			<em>
+                not
+			</em>
+            &nbsp;a multiple of the field's alignment, the compiler inserts padding before the field so the resulting offset becomes a multiple of the alignment.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When placing field F the compiler ensures 
+                    <code>offset(F) % align(F) == 0</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If not, it inserts 
+                    <code>padding = (align(F) - (offset % align(F))) % align(F)</code>
+                    &nbsp;bytes before F.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The struct’s overall alignment is 
+                    <code>max(align(member))</code>
+                    . The compiler may add trailing padding so 
+                    <code>sizeof(struct)</code>
+                    &nbsp;is a multiple of that max alignment.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            A struct adds implicit padding between members, based on the alignment of the member with the highest alignment.
+		</p>
+	</li>
+	<li>
+		<p>
+            The gray dots indicate the implicit padding added by the compiler.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251009083656.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It may also add padding at the end of the struct, so the struct is divisible by its alignment. This ensures that when the struct is used as an array, each struct will be properly aligned along with its members.
+		</p>
+	</li>
+</ul>
+<h5
+	id="odin" >
+    Odin
+</h5>
+<ul>
+	<li>
+		<p>
+            Alignment, Size and the Pointer are related, such as:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>size_of(T) % align_of(T) == 0</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>uintptr(&t) % align_of(t) == 0</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Check 
+                    <a href="Odin.html#Alignment">
+                    Odin#Alignment
+                    </a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Many operations that allocate memory in this package allow to explicitly specify the alignment of allocated pointers/slices.
+		</p>
+	</li>
+	<li>
+		<p>
+            The default alignment for all operations is specified in a constant 
+            <code>mem.DEFAULT_ALIGNMENT</code>
+            .
 		</p>
 	</li>
 </ul>
@@ -1725,607 +2985,37 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="linear-arena-allocator" >
-    Linear / Arena Allocator
+	id="types-of-allocators" >
+    Types of Allocators
 </h3>
 <ul>
 	<li>
 		<p>
 			<a
-				href="https://www.gingerbill.org/article/2019/02/08/memory-allocation-strategies-002/" 
-				class="external-link" 
-				target="_blank" >
-                Linear/Arena Allocator - Ginger Bill
+				href="Odin.html#Memory%20Allocators" 
+				class="internal-link" 
+				target="_self" >
+                Odin#Memory: Allocators
 			</a>
             .
 		</p>
-	</li>
-	<li>
-		<p>
-            The arena’s logic only requires an offset (or pointer) to indicate the end of the last allocation.
-		</p>
-	</li>
-	<li>
-		<p>
-            To allocate some memory from the arena, it is as simple as moving the offset (or pointer) forward. In Big-O notation, the allocation has complexity of 
-			<em>
-				<strong>
-                    O(1)
-				</strong>
-			</em>
-            &nbsp;(constant).
-		</p>
-	</li>
-	<li>
-		<p>
-            Due to being the simplest allocator possible, the arena allocator does not allow the user to free certain blocks of memory. The memory is usually freed all at once.
-		</p>
-	</li>
-</ul>
-<h5
-	id="examples" >
-    Examples
-</h5>
-<ul>
-	<li>
-		<p>
-            The simplest arena allocator 
-			<em>
-                could
-			</em>
-            &nbsp;look like this:
-		</p>
-	</li>
-</ul>
-<pre><code class="language-c" data-lang="c">static unsigned char *arena_buffer;
-static size_t arena_buffer_length;
-static size_t arena_offset;
-
-void *arena_alloc(size_t size) {
-&nbsp;&nbsp;&nbsp;&nbsp;// Check to see if the backing memory has space left
-&nbsp;&nbsp;&nbsp;&nbsp;if (arena_offset+size &lt;= arena_buffer_length) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void *ptr = &arena_buffer[arena_offset];
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arena_offset += size;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Zero new memory by default
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memset(ptr, 0, size);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ptr;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;// Return NULL if the arena is out of memory
-&nbsp;&nbsp;&nbsp;&nbsp;return NULL;
-}
-</code></pre>
-<ul>
-	<li>
-		<p>
-            There are two issues with this basic approach:
-		</p>
 		<ul>
 			<li>
 				<p>
-                    You cannot reuse this procedure for different arenas
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Can be easily solved by coupling that global data into a structure and passing that to the procedure 
-                            <code>arena_alloc</code>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    The pointer returned may not be aligned correctly for the data you need.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            This requires understanding the basic issues of 
-							<em>
-                                unaligned memory
-							</em>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            It's also missing some important features of a practical implementation:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>init</code>
-                    , 
-                    <code>alloc</code>
-                    , 
-                    <code>free</code>
-                    , 
-                    <code>resize</code>
-                    , 
-                    <code>free_all</code>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://www.gingerbill.org/code/memory-allocation-strategies/part002.c" 
-						class="external-link" 
-						target="_blank" >
-                        Practical implementation of an arena allocator
-					</a>
-                    .
+                    There's a lot of things there.
 				</p>
 			</li>
 		</ul>
 	</li>
-</ul>
-<h3
-	id="stack-allocator-lifo" >
-    Stack Allocator (LIFO)
-</h3>
-<ul>
 	<li>
 		<p>
 			<a
-				href="https://www.gingerbill.org/article/2019/02/15/memory-allocation-strategies-003/" 
-				class="external-link" 
-				target="_blank" >
-                Stack Allocator - Ginger Bill
+				href="C.html#malloc" 
+				class="internal-link" 
+				target="_self" >
+                C#malloc
 			</a>
             .
-		</p>
-	</li>
-	<li>
-		<p>
-            A stack-like allocator means that the allocator acts like a data structure following the 
-			<em>
-                last-in, first-out
-			</em>
-            &nbsp;(LIFO) principle.
-		</p>
-	</li>
-	<li>
-		<p>
-            This has nothing to do with 
-			<em>
-                the stack
-			</em>
-            &nbsp;or the 
-			<em>
-                stack frame
-			</em>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Evolution of an Arena Allocator
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    As with the arena allocator, an offset into the memory block will be stored and will be moved forwards on every allocation.
-				</p>
-			</li>
-			<li>
-				<p>
-                    The difference is that the offset can also be moved backwards when memory is 
-					<em>
-                        freed
-					</em>
-                    . With an arena, you could only free all the memory all at once.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="header" >
-    Header
-</h5>
-<ul>
-	<li>
-		<p>
-            The offset of the previous allocation needs to be tracked. This is required in order to free memory on a 
-			<em>
-                per-allocation
-			</em>
-            &nbsp;basis.
-		</p>
-	</li>
-	<li>
-		<p>
-            One approach is to store a 
-			<em>
-                header
-			</em>
-            &nbsp;which stores information about that allocation. This 
-			<em>
-                header
-			</em>
-            &nbsp;allows the allocator to know how far back it should move the offset to free that memory.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    The stack allocator is the first of many allocators that will use the concept of a 
-					<em>
-                        header
-					</em>
-                    &nbsp;for allocations.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            To allocate some memory from the stack allocator, as with the arena allocator, it is as simple as moving the offset forward while accounting for the header. In Big-O notation, the allocation has complexity of 
-			<em>
-				<strong>
-                    O(1)
-				</strong>
-			</em>
-            &nbsp;(constant).
-		</p>
-	</li>
-	<li>
-		<p>
-            To free a block, the header stored before the block of memory can be read in order to move the offset backwards. In Big-O notation, freeing this memory has complexity of 
-			<em>
-				<strong>
-                    O(1)
-				</strong>
-			</em>
-            &nbsp;(constant).
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                What's stored in the header
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    There are three main approaches:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Store the padding from the previous offset
-						</p>
-					</li>
-					<li>
-						<p>
-                            Store the previous offset
-						</p>
-					</li>
-					<li>
-						<p>
-                            Store the size of the allocation
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="implementation" >
-    Implementation
-</h5>
-<ul>
-	<li>
-		<p>
-            See the article 
-			<a
-				href="https://www.gingerbill.org/article/2019/02/15/memory-allocation-strategies-003/" 
-				class="external-link" 
-				target="_blank" >
-                Stack Allocator - Ginger Bill
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Improvements
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    You can extend the stack allocator even further by having two different offsets: one that starts at the beginning and increments forwards, and another that starts at the end and increments backwards. This is called a double-ended stack and allows for the maximization of memory usage whilst keeping fragmentation extremely low (as long as the offsets never overlap).
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="pool-allocator" >
-    Pool Allocator
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.gingerbill.org/article/2019/02/16/memory-allocation-strategies-004/" 
-				class="external-link" 
-				target="_blank" >
-                Pool Allocator - Ginger Bill
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            A pool splits the supplied backing buffer into 
-			<em>
-                chunks
-			</em>
-            &nbsp;of equal size and keeps track of which of the chunks are free.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    When an allocation is requested, a free chunk is given.
-				</p>
-			</li>
-			<li>
-				<p>
-                    When a chunk is freed, it adds that chunk back to the list of free chunks.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Pool allocators are extremely useful when you need to allocate chunks of memory of the same size that are created and destroyed dynamically, especially in a random order.
-		</p>
-	</li>
-	<li>
-		<p>
-            Pools also have the benefit that arenas and stacks have in that they provide very little fragmentation and allocate/free in constant time 
-			<em>
-				<strong>
-                    O(1)
-				</strong>
-			</em>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            Pool allocators are usually used to allocate 
-			<em>
-                groups
-			</em>
-            &nbsp;of “things” at once which share the same lifetime.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    An example could be within a game that creates and destroys entities in batches where each entity within a batch shares the same lifetime.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="free-list" >
-    Free List
-</h5>
-<ul>
-	<li>
-		<p>
-            A 
-			<a
-				href="https://wikipedia.org/wiki/Free_list" 
-				class="external-link" 
-				target="_blank" >
-                free list
-			</a>
-            &nbsp;is a data structure that internally stores a 
-			<a
-				href="https://wikipedia.org/wiki/Linked_list" 
-				class="external-link" 
-				target="_blank" >
-                linked list
-			</a>
-            &nbsp;of the free slots/chunks within the memory buffer.
-		</p>
-	</li>
-	<li>
-		<p>
-            The nodes of the list are stored in-place, meaning there is no need for an additional data structure (e.g., array, list, etc.) to keep track of the free slots.
-		</p>
-	</li>
-	<li>
-		<p>
-            The data is 
-			<em>
-                only
-			</em>
-            &nbsp;stored 
-			<em>
-                within
-			</em>
-            &nbsp;the backing buffer of the pool allocator.
-		</p>
-	</li>
-	<li>
-		<p>
-            The general approach is to store a header at the beginning of the chunk (not before the chunk like with the stack allocator) which 
-			<em>
-                points
-			</em>
-            &nbsp;to the next available free chunk.
-		</p>
-	</li>
-</ul>
-<h5
-	id="implementation" >
-    Implementation
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.gingerbill.org/code/memory-allocation-strategies/part004.c" 
-				class="external-link" 
-				target="_blank" >
-                Full implementation - Ginger Bill
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h3
-	id="free-list-based-allocator" >
-    Free List Based Allocator
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.gingerbill.org/article/2021/11/30/memory-allocation-strategies-005/" 
-				class="external-link" 
-				target="_blank" >
-                Free List Based Allocator - Ginger Bill
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            A free list is a general-purpose allocator which, compared to the other allocators we previously looked at, does not impose any restrictions.
-		</p>
-	</li>
-	<li>
-		<p>
-            It allows allocations and deallocations to be out of order and of any size.
-		</p>
-	</li>
-	<li>
-		<p>
-            Due to its nature, the allocator’s 
-			<strong>
-                performance is not as good
-			</strong>
-            &nbsp;as the others previously discussed in this series.
-		</p>
-	</li>
-</ul>
-<h5
-	id="implementation" >
-    Implementation
-</h5>
-<ul>
-	<li>
-		<p>
-            There are two common approaches to implementing a free list allocator:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Using a 
-					<a
-						href="https://wikipedia.org/wiki/Linked_list" 
-						class="external-link" 
-						target="_blank" >
-                        linked list
-					</a>
-				</p>
-			</li>
-			<li>
-				<p>
-                    Using a 
-					<a
-						href="https://wikipedia.org/wiki/Red%E2%80%93black_tree" 
-						class="external-link" 
-						target="_blank" >
-                        red-black tree
-					</a>
-                    .
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            See the article for the implementations.
-		</p>
-	</li>
-</ul>
-<h3
-	id="buddy-memory-allocation" >
-    Buddy Memory Allocation
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.gingerbill.org/article/2021/12/02/memory-allocation-strategies-006/" 
-				class="external-link" 
-				target="_blank" >
-                Buddy Memory Allocation - Ginger Bill
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            The buddy allocator is a powerful allocator and a conceptually simple algorithm, but implementing it efficiently is a 
-			<strong>
-                lot harder
-			</strong>
-            &nbsp;than all of the previous allocators above.
-		</p>
-	</li>
-	<li>
-		<p>
-            The 
-			<em>
-                Buddy Algorithm
-			</em>
-            &nbsp;assumes that the backing memory block is a power-of-two in bytes.
-		</p>
-	</li>
-	<li>
-		<p>
-            When an allocation is requested, the allocator looks for a block whose size is at least the size of the requested allocation (similar to a free list).
-		</p>
-	</li>
-	<li>
-		<p>
-            If the requested allocation size is less than half of the block, it is split into two (left and right), and the two resulting blocks are called “buddies.”
-		</p>
-	</li>
-	<li>
-		<p>
-            If this requested allocation size is still less than half the size of the left buddy, the buddy block is recursively split until the resulting buddy is as small as possible to fit the requested allocation size.
-		</p>
-	</li>
-	<li>
-		<p>
-            When a block is released, we can try to perform coalescence on buddies (contiguous neighboring blocks).
-		</p>
-	</li>
-	<li>
-		<p>
-            Similar to free lists, there are specific conditions that must be met. Coalescence cannot be performed if a block has no (free) buddy, the block is still in use, or the buddy block is partially used.
 		</p>
 	</li>
 </ul>
@@ -5946,7 +6636,7 @@ int main() {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-09 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-11-14 🚀
 			</footer>
 		</div>
 		<aside
@@ -5963,6 +6653,30 @@ int main() {
                             Virtual Memory
 						</a>
 						<ul>
+							<li>
+								<a
+									href="#os-pages" >
+                                    OS Pages
+								</a>
+							</li>
+							<li>
+								<a
+									href="#chunk" >
+                                    Chunk
+								</a>
+							</li>
+							<li>
+								<a
+									href="#virtual-memory-mapping" >
+                                    Virtual Memory Mapping
+								</a>
+							</li>
+							<li>
+								<a
+									href="#process" >
+                                    Process
+								</a>
+							</li>
 						</ul>
 					</li>
 					<li>
@@ -6001,16 +6715,18 @@ int main() {
                                     Stride
 								</a>
 							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#address" >
+                            Address
+						</a>
+						<ul>
 							<li>
 								<a
 									href="#alignment" >
                                     Alignment
-								</a>
-							</li>
-							<li>
-								<a
-									href="#unaligned-memory" >
-                                    Unaligned Memory
 								</a>
 							</li>
 							<li>
@@ -6029,32 +6745,8 @@ int main() {
 						<ul>
 							<li>
 								<a
-									href="#linear-arena-allocator" >
-                                    Linear / Arena Allocator
-								</a>
-							</li>
-							<li>
-								<a
-									href="#stack-allocator-lifo" >
-                                    Stack Allocator (LIFO)
-								</a>
-							</li>
-							<li>
-								<a
-									href="#pool-allocator" >
-                                    Pool Allocator
-								</a>
-							</li>
-							<li>
-								<a
-									href="#free-list-based-allocator" >
-                                    Free List Based Allocator
-								</a>
-							</li>
-							<li>
-								<a
-									href="#buddy-memory-allocation" >
-                                    Buddy Memory Allocation
+									href="#types-of-allocators" >
+                                    Types of Allocators
 								</a>
 							</li>
 						</ul>

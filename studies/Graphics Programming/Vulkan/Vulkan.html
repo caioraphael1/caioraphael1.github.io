@@ -1234,8 +1234,8 @@ window.MathJax = {
                                 🕒 Created: 2025-08-01
 							</time>
 							<time
-								datetime="2025-11-06" >
-                                | Updated: 2025-11-06
+								datetime="2025-11-12" >
+                                | Updated: 2025-11-12
 							</time>
 						</p>
 					</header>
@@ -7960,79 +7960,71 @@ transition_image_layout(
 					</li>
 				</ul>
 <pre><code class="language-glsl" data-lang="glsl">#version 450
+
+layout(local_size_x = 16, local_size_y = 16) in;
+layout(set=0, binding=0) uniform sampler2D gameTex;
+layout(set=0, binding=1) uniform sampler2D uiTex;
+layout(set=0, binding=2, rgba8) uniform writeonly image2D swapchainImg;
+
+void main() {
+&nbsp;&nbsp;&nbsp;&nbsp;ivec2 coord = ivec2(gl_GlobalInvocationID.xy);
+&nbsp;&nbsp;&nbsp;&nbsp;vec2 uv = vec2(coord) / textureSize(gameTex, 0);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// Sample inputs
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 game = texture(gameTex, uv).rgb;
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 ui = texture(uiTex, uv);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// Tonemap game (example: Reinhard)
+&nbsp;&nbsp;&nbsp;&nbsp;game = game / (game + vec3(1.0));
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// Composite: UI over game
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 final = mix(game, ui.rgb, ui.a);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// Write to swapchain
+&nbsp;&nbsp;&nbsp;&nbsp;imageStore(swapchainImg, coord, vec4(final, 1.0));
+}
+</code></pre>
+<pre><code class="language-glsl" data-lang="glsl">#version 450
+
+layout(local_size_x = 16, local_size_y = 16) in;
+
+layout(binding = 0) uniform sampler2D uSceneHDR;
+layout(binding = 1) uniform sampler2D uUI; // optional
+layout(binding = 2, rgba8) writeonly uniform image2D outImage; // target LDR image (could be swapchain-compatible image)
+
+vec3 reinhardTonemap(vec3 c) {
+&nbsp;&nbsp;&nbsp;&nbsp;return c / (1.0 + c);
+}
+
+vec3 toSRGB(vec3 linear) {
+&nbsp;&nbsp;&nbsp;&nbsp;return pow(linear, vec3(1.0/2.2));
+}
+
+void main() {
+&nbsp;&nbsp;&nbsp;&nbsp;ivec2 pix = ivec2(gl_GlobalInvocationID.xy);
+&nbsp;&nbsp;&nbsp;&nbsp;ivec2 size = imageSize(outImage);
+&nbsp;&nbsp;&nbsp;&nbsp;if (pix.x &gt;= size.x || pix.y &gt;= size.y) return;
+
+&nbsp;&nbsp;&nbsp;&nbsp;vec2 uv = (vec2(pix) + 0.5) / vec2(size);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 hdr = texture(uSceneHDR, uv).rgb;
+&nbsp;&nbsp;&nbsp;&nbsp;float exposure = 1.0;
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 mapped = reinhardTonemap(hdr * exposure);
+&nbsp;&nbsp;&nbsp;&nbsp;mapped = toSRGB(mapped);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Optionally composite UI
+&nbsp;&nbsp;&nbsp;&nbsp;// vec4 ui = texture(uUI, uv);
+&nbsp;&nbsp;&nbsp;&nbsp;// vec3 outc = mix(mapped, ui.rgb, ui.a);
+
+&nbsp;&nbsp;&nbsp;&nbsp;imageStore(outImage, pix, vec4(mapped, 1.0));
+}
+</code></pre>
+<pre><code class="language-c" data-lang="c">// Dispatch
+vkCmdBindPipeline(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, computePipe);
+vkCmdBindDescriptorSets(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, ...);
+vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 </code></pre>
 			</li>
 		</ol>
-	</li>
-	<li>
-<pre><code class="language-" data-lang="">&nbsp;&nbsp;layout(local_size_x = 16, local_size_y = 16) in;
-</code></pre>
-	</li>
-	<li>
-<pre><code class="language-" data-lang="">&nbsp;&nbsp;layout(set=0, binding=0) uniform sampler2D gameTex;
-&nbsp;&nbsp;layout(set=0, binding=1) uniform sampler2D uiTex;
-&nbsp;&nbsp;layout(set=0, binding=2, rgba8) uniform writeonly image2D swapchainImg;
-&nbsp;&nbsp;
-&nbsp;&nbsp;void main() {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ivec2 coord = ivec2(gl_GlobalInvocationID.xy);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec2 uv = vec2(coord) / textureSize(gameTex, 0);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Sample inputs
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3 game = texture(gameTex, uv).rgb;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec4 ui = texture(uiTex, uv);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Tonemap game (example: Reinhard)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game = game / (game + vec3(1.0));
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Composite: UI over game
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3 final = mix(game, ui.rgb, ui.a);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Write to swapchain
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imageStore(swapchainImg, coord, vec4(final, 1.0));
-&nbsp;&nbsp;}
-&nbsp;&nbsp;```
-&nbsp;&nbsp;```glsl
-&nbsp;&nbsp;#version 450
-&nbsp;&nbsp;
-&nbsp;&nbsp;layout(local_size_x = 16, local_size_y = 16) in;
-&nbsp;&nbsp;
-&nbsp;&nbsp;layout(binding = 0) uniform sampler2D uSceneHDR;
-&nbsp;&nbsp;layout(binding = 1) uniform sampler2D uUI; // optional
-&nbsp;&nbsp;layout(binding = 2, rgba8) writeonly uniform image2D outImage; // target LDR image (could be swapchain-compatible image)
-&nbsp;&nbsp;
-&nbsp;&nbsp;vec3 reinhardTonemap(vec3 c) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return c / (1.0 + c);
-&nbsp;&nbsp;}
-&nbsp;&nbsp;
-&nbsp;&nbsp;vec3 toSRGB(vec3 linear) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return pow(linear, vec3(1.0/2.2));
-&nbsp;&nbsp;}
-&nbsp;&nbsp;
-&nbsp;&nbsp;void main() {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ivec2 pix = ivec2(gl_GlobalInvocationID.xy);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ivec2 size = imageSize(outImage);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (pix.x &gt;= size.x || pix.y &gt;= size.y) return;
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec2 uv = (vec2(pix) + 0.5) / vec2(size);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3 hdr = texture(uSceneHDR, uv).rgb;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float exposure = 1.0;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3 mapped = reinhardTonemap(hdr * exposure);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mapped = toSRGB(mapped);
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Optionally composite UI
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// vec4 ui = texture(uUI, uv);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// vec3 outc = mix(mapped, ui.rgb, ui.a);
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imageStore(outImage, pix, vec4(mapped, 1.0));
-&nbsp;&nbsp;}
-&nbsp;&nbsp;```
-&nbsp;&nbsp;```c
-&nbsp;&nbsp;// Dispatch
-&nbsp;&nbsp;vkCmdBindPipeline(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, computePipe);
-&nbsp;&nbsp;vkCmdBindDescriptorSets(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, ...);
-&nbsp;&nbsp;vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
-&nbsp;&nbsp;```
-</code></pre>
 	</li>
 </ul>
 <h3
@@ -38633,7 +38625,7 @@ vec4 data = subpassLoad(inputAttachment);
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-09 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-11-14 🚀
 			</footer>
 		</div>
 		<aside

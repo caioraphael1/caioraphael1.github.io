@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.76216.css" >
+			href="/static/studies.77341.css" >
 	</head>
 	<body>
 		<aside
@@ -1251,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-06-23
 							</time>
 							<time
-								datetime="2025-11-12" >
-                                | Updated: 2025-11-12
+								datetime="2025-11-20" >
+                                | Updated: 2025-11-20
 							</time>
 						</p>
 					</header>
@@ -2939,6 +2939,76 @@ int main() {
 		</p>
 	</li>
 </ul>
+<h2
+	id="fingerprinting" >
+    Fingerprinting
+</h2>
+<ul>
+	<li>
+		<p>
+            Is a unique hash added to a file’s name (or query string) so browsers know when the file has changed.
+		</p>
+	</li>
+	<li>
+		<p>
+            Example:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>app.css</code>
+                    &nbsp;→ 
+                    <code>app.3f91c2.css</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The HTML must point to the exact hashed filenames produced by your build.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If the file is named 
+                    <code>studies-index.76216.css</code>
+                    &nbsp;on disk, that is what the HTML must reference.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            On every deploy, if the hash changes, the HTML needs to be updated to point to the new name.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This is why most setups use a build step or template system that injects the correct filenames automatically.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            You 
+			<em>
+                can’t
+			</em>
+            &nbsp;keep 
+            <code>name.css</code>
+            &nbsp;and expect caching to invalidate when content changes. The hash name is the cache-busting mechanism.
+		</p>
+	</li>
+	<li>
+		<p>
+            Working example:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-html" data-lang="html">&lt;link rel="stylesheet" href="/static/studies-index.76216.css"&gt;
+&lt;script src="/static/studies.76216.js"&gt;&lt;/script&gt;
+</code></pre>
 <h2
 	id="service-workers-sw" >
     Service Workers (SW)
@@ -4747,6 +4817,14 @@ console.log(html);
 					</li>
 					<li>
 						<a
+							href="#fingerprinting" >
+                            Fingerprinting
+						</a>
+						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
 							href="#service-workers-sw" >
                             Service Workers (SW)
 						</a>
@@ -4821,7 +4899,7 @@ console.log(html);
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.76216.js" >
+			src="/static/studies.77341.js" >
 		</script>
 	</body>
 </html>

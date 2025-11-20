@@ -266,12 +266,15 @@ pre, code {
 
     text-transform: uppercase;
     font-family: var(--logo-font);
-    font-size: 1.5em;
+    font-size: 2.3em;
     letter-spacing: 3px;
     font-weight: 800;
     
     background-clip: text;
     -webkit-background-clip: text;
+
+    background-position-x: -78px;
+    background-attachment: local;
 }
 
 
@@ -285,9 +288,11 @@ pre, code {
         top: 0;
         height: 100svh;
 
-        min-width: 15%;
+        width: 40%;
 
         overflow: auto;
+
+        padding: 5svh 0% 0% 10%;
     }
 
     #left-sidebar > a {
@@ -381,134 +386,6 @@ pre, code {
     }
 
 
-/* RIGHT SIDEBAR */
-    #right-sidebar {
-        background: var(--right-sidebar-bg);
-
-        /* Sticky */
-        position: sticky;
-        top: 0;
-        height: 100svh;
-
-        min-width: 12%;
-
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-    :root {
-        --padding: 16px;
-        --padding_d2: 8px;
-        --padding_x2: 32px;
-    }
-
-    #right-sidebar > nav {
-        border-left: 1px solid var(--right-sidebar-border);
-        /* margin: 0 var(--padding); */
-        height: 100%;
-    }
-
-    /* On This Page title */
-    #right-sidebar > nav > strong {
-        color: var(--right-sidebar-text-top);
-
-        display: flex;
-        padding: 30px 18px;
-        font-weight: bold;
-        font-size: large;
-    }
-
-    /* Container holding all table of contents */
-    #right-sidebar > nav > ul {
-        border-left: 1px solid var(--right-sidebar-border-details);
-
-        margin: 0 24px;
-        /* height: 100%; */
-    }
-
-    /* H2 Headers */
-    #right-sidebar > nav > ul > li > a {
-        color: var(--right-sidebar-h2);
-    }
-
-    #table-of-contents > nav > ul > li > a:hover:not(.active) {
-        background: var(--right-sidebar-hover-bg);
-        color: var(--right-sidebar-hover-h2);
-
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-    }
-
-    /* H3 Headers */
-    #table-of-contents a {
-        color: var(--right-sidebar-h3);
-
-        display: inline-block;
-        cursor: pointer;
-        padding: var(--padding_d2);
-    }
-
-    #table-of-contents a:hover:not(.active) {
-        background: var(--right-sidebar-hover-bg);
-        color: var(--right-sidebar-hover-h3);
-
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-    }
-
-    #table-of-contents ul a::before {
-        background: var(--right-sidebar-bg);
-        border: 1px solid var(--right-sidebar-border-details);
-        content: '';
-        display: inline-block;
-        position: relative;
-        left: -14px;
-        width: 11px;
-        height: 11px;
-        border-radius: 50%;
-    }
-    /* Circle with svg */
-    /* #table-of-contents ul a::before{
-        content: '';
-        display:inline-block;
-        width:12px;
-        height:12px;
-        background: var(--right-sidebar-bg);
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><circle cx='6' cy='6' r='5.5' fill='none' stroke='%23ffffff' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-        background-size: 12px 12px;
-        background-repeat: no-repeat;
-        transform: translate(-14.5px, 0px);
-    } */
-
-    #table-of-contents a.active {
-        background: var(--highlight-bg);
-
-        color: var(--highlight-text);
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-    }
-
-    #table-of-contents ul a.active::before {
-        background: var(--right-sidebar-bg);
-    }
-
-    #table-of-contents ul ul {
-        border-left: 1px solid var(--right-sidebar-border-details);
-
-        margin-left: calc(var(--padding) * 1.75);
-    }
-
-    /* Strike-through */
-    #table-of-contents del, #table-of-contents s {
-        /* font-weight: lighter; */
-        /* color: red; */
-        
-        text-decoration-line: line-through;
-        text-decoration-color: var(--table-strikethrough);
-        text-decoration-thickness: 2px;
-        /* text-decoration-style: dotted; */
-    }
-
 
 /* CENTRAL */
     #central-wrapper {
@@ -518,19 +395,7 @@ pre, code {
         flex-direction: column;
         flex: auto;
 
-        width: 73%;
-    }
-
-    #central-wrapper > .icon-home {
-        display: none;
-
-        position: sticky;
-
-        top: 20px;
-        left: 30px;
-        width: 50px;
-        color: whitesmoke;
-        opacity: 0.6;
+        width: 60%;
     }
 
     main {
@@ -546,18 +411,12 @@ pre, code {
         align-self: center;
     }
 
-    @media (min-width: 2600px) {
-        main {
-            width: 1800px;
-        }
-    }
-
     main > article {
         display: flex;
         flex: 1;
         flex-direction: column;
 
-        padding-top: var(--padding_x2);
+        padding-top: 5svh;
         
         overflow: auto;        
     }
@@ -584,213 +443,14 @@ pre, code {
     }
 
 
-/* DROPDOWN MENU */
-    /* 
-    Stylization for this is super limited. Some of the styles here don't work at all.
-    I'll probably use tabs anyway.
-    */
-    /* #dropdown-menu {
-        display: flex;
-        justify-content: end;
-        position: absolute;
-        top: 5px;
-        right: 160px;
-        font-size: 1.175em;
-    }
-
-    #dropdown-menu select {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-
-        color: var(--header-button-text);
-        background: var(--header-button-bg);
-        border: 1px solid var(--header-button-border);
-
-        display: flex;
-
-        width: 110px;
-        height: 45px;
-        padding: 8.5px 12px;
-
-        border-radius: var(--border-radius);
-        gap: var(--padding_d2);
-        cursor: pointer;
-    }
-
-    #dropdown-menu select:hover, #dropdown-menu select:focus {
-        background: var(--header-button-hover-bg);
-        color: var(--header-button-hover-text);
-    }
-
-    #dropdown-menu select::picker-icon {
-        content:"◂▸";
-        rotate: 90deg;
-        font-size: .8rem;
-    }
-
-    #dropdown-menu select:open::picker-icon {
-        content:"▸◂";
-        transition: 0.4s;
-    }
-
-    ::picker(#dropdown-menu select) {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-
-        border: none;
-
-        opacity: 0;
-        transition: all 0.2s allow-discrete;
-    }
-
-    ::picker(#dropdown-menu select):popover-open {
-        opacity: 1;
-    }
-
-    @starting-style {
-        ::picker(#dropdown-menu select):popover-open {
-            opacity: 0;
-        }
-    }
-
-    ::picker(#dropdown-menu select) {
-        top: calc(anchor(bottom) + 1px);
-        left: calc(-1*var(--padding));
-    }
-
-    option {
-        display: flex;
-        justify-content: flex-start;
-        padding: var(--padding_d2);
-
-        color: var(--header-button-text);
-        background: var(--header-button-bg);
-        border: 1px solid var(--header-button-border);
-
-        border-radius: var(--border-radius);
-        gap: var(--padding_d2);
-
-        transition: 0.6s;
-    }
-
-    option:first-of-type {
-        border-radius: var(--border-radius) var(--border-radius)  0 0;
-    }
-
-    option:last-of-type {
-        border-radius: 0 0 var(--border-radius) var(--border-radius) ;
-    }
-
-    option:not(option:last-of-type) {
-        border-bottom: none;
-    }
-
-    option:nth-of-type(even) {
-        background: var(--header-button-bg);
-    }
-
-    option:hover, option:focus {
-        color: var(--header-button-text);
-
-        font-weight: bold;
-    }
-
-    option .icon {
-        text-box: trim-both cap alphabetic;
-    }
-
-
-    option:checked {
-        background: var(--header-button-bg);
-    }
-
-    option::checkmark {
-        order: 1;
-        margin-left: auto;
-        content: "✅ ";
-    } */
-
-
-/* BUTTON CHANGE THEME */
-    /* #button-color-theme {
-        display: flex;
-
-        position: absolute;
-        top: 5px;
-        right: 30px;
-
-        font-size: 1.175em;
-        font-weight: 800;
-
-        width: 110px;
-        height: 45px;
-        padding: 8.5px 12px;
-        
-        justify-content: center;
-        
-        color: var(--header-button-text);
-        background: var(--header-button-bg);
-        border: 1px solid var(--header-button-border);
-
-        border-radius: var(--border-radius);
-        gap: var(--padding_d2);
-        cursor: pointer;
-        user-select: none;
-    }
-
-    #button-color-theme:hover, #button-color-theme:focus {
-        background: var(--header-button-hover-bg);
-        color: var(--header-button-hover-text);
-    } */
-
-
-/* PREVIOUS / NEXT */
-    #previous-next {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        padding: 35px 24px 15px 24px;
-        row-gap: var(--padding);
-    }
-
-    #previous-next > a {
-        background: var(--prev-next-bg);
-        color: var(--prev-next-text);
-        border: 1px solid var(--prev-next-border);
-        
-        display: flex;
-        padding: var(--padding);
-        gap: calc(var(--padding) / 4);
-        border-radius: var(--border-radius);
-        cursor: pointer;
-        width: 35%;
-    }
-
-    #previous-next > a:first-child {
-        justify-self: start;
-    }
-
-    #previous-next > a:last-child {
-        justify-self: end;
-        display: flex;
-        justify-content: end;
-    }
-
-    #previous-next > a:hover {
-        background: var(--prev-next-hover-bg);
-    }
-
-
 /* CENTRAL FOOTER */
     #central-footer {
         color: var(--footer-text);
 
         display: flex;
-        justify-content: center;
 
-        padding: 25px 12px 25px 12px;
+        justify-content: left;
+        padding: 25px 12px 25px 60px;
 
         gap: var(--padding_d2);
     }
@@ -803,22 +463,6 @@ pre, code {
         cursor: pointer;
         padding: 0 var(--padding_d2);
     }
-
-
-/* Mobile */
-@media (max-width: 1600px), (orientation: portrait) {
-    main {
-        padding-top: 2svh;
-    }
-    
-    #left-sidebar {
-        display: none;
-    }
-
-    #central-wrapper > .icon-home {
-        display: flex;
-    }
-}
 
 /* NOTE TITLE */
 

@@ -1234,8 +1234,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-28
 							</time>
 							<time
-								datetime="2025-11-16" >
-                                | Updated: 2025-11-16
+								datetime="2025-11-20" >
+                                | Updated: 2025-11-20
 							</time>
 						</p>
 					</header>
@@ -2483,6 +2483,19 @@ window.MathJax = {
     Compile-time Stuff
 </h2>
 <h3
+	id="compile-time-flags" >
+    Compile-time Flags
+</h3>
+<ul>
+	<li>
+		<p>
+            Check 
+            <code>base:builtin/builtin.odin</code>
+            .
+		</p>
+	</li>
+</ul>
+<h3
 	id="when" >
     When
 </h3>
@@ -2609,6 +2622,115 @@ window.MathJax = {
 			<li>
 				<p>
                     Only compiler flag.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="procedure-disabled" >
+    Procedure Disabled
+</h3>
+<pre><code class="language-odin" data-lang="odin">@(disabled=CONDITION)
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Disabled the procedure at compile-time if the condition is met.
+		</p>
+	</li>
+	<li>
+		<p>
+            The procedure will 
+			<em>
+                not be used
+			</em>
+            &nbsp;when called.
+		</p>
+	</li>
+	<li>
+		<p>
+            The procedure cannot have a return value.
+		</p>
+	</li>
+	<li>
+		<p>
+            The procedures using this are still type-checked.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This differs from Zig. Odin tries to check as much as possible.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Modify the compilation details or behavior of declarations.
+		</p>
+	</li>
+</ul>
+<h3
+	id="variable-and-procedure-access" >
+    Variable and Procedure Access
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#general-attributes" 
+				class="external-link" 
+				target="_blank" >
+                General Attributes
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>@(private)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Equivalent to 
+                    <code>@(private="package")</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Using 
+                    <code>#+private</code>
+                    &nbsp;before the package declaration will automatically add 
+                    <code>@(private)</code>
+                    &nbsp;to everything in that file.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>#+private file</code>
+                    &nbsp;is equivalent to automatically adding 
+                    <code>@(private="file")</code>
+                    &nbsp;to each declaration.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>@(static)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>@(rodata)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Read-only
 				</p>
 			</li>
 		</ul>
@@ -3318,27 +3440,6 @@ window.MathJax = {
 	</li>
 </ul>
 <h2
-	id="debugger-integration" >
-    Debugger Integration
-</h2>
-<h3
-	id="vscode" >
-    VSCode
-</h3>
-<ul>
-	<li>
-		<p>
-            <img src="assets/image_20250410210635.png" width="700" >
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            Pinned in the 'Beginners' channel of the Odin Discord server.
-		</p>
-	</li>
-</ul>
-<h2
 	id="operations" >
     Operations
 </h2>
@@ -3705,6 +3806,14 @@ for i in 0..=9 {
 for character in str {
 &nbsp;&nbsp;&nbsp;&nbsp;assert(type_of(character) == rune)
 &nbsp;&nbsp;&nbsp;&nbsp;fmt.println(character)
+}
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">memory_block_found := false
+for block := arena.curr_block; block != nil; block = block.prev {
+&nbsp;&nbsp;&nbsp;&nbsp;if block == temp.block {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory_block_found = true
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
+&nbsp;&nbsp;&nbsp;&nbsp;}
 }
 </code></pre>
 <h3
@@ -11374,6 +11483,46 @@ foo: u16 = 'x'
             &nbsp;they're pointers
 		</p>
 	</li>
+	<li>
+		<p>
+			<strong>
+                Allocator requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Ginger Bill:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            So the 
+                            <code>map</code>
+                            &nbsp;type in Odin REQUIRES an allocator that can do 64-byte aligned allocations.
+						</p>
+					</li>
+					<li>
+						<p>
+                            What you'll need to do is change the alignment when initializing the dynamic arena: 
+                            <code>dynamic_arena_init(&arena, alignment=64)</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            This does mean every allocation is a bit wasteful, unfortunately.
+						</p>
+					</li>
+					<li>
+						<p>
+                            But that's the problem of custom allocators and trying to treat them &quot;generally&quot; any way.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
 </ul>
 <h3
 	id="create" >
@@ -16523,21 +16672,64 @@ fmt.println(int_ptr)&nbsp;&nbsp; // 0x262CC7B6518
 		</ul>
 	</li>
 </ul>
-<pre><code class="language-odin" data-lang="odin">Context :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp;allocator:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allocator,
-&nbsp;&nbsp;&nbsp;&nbsp;temp_allocator:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allocator,
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;assertion_failure_proc: Assertion_Failure_Proc,
-&nbsp;&nbsp;&nbsp;&nbsp;logger:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Logger,
-&nbsp;&nbsp;&nbsp;&nbsp;random_generator:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Random_Generator,
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;user_ptr:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rawptr,
-&nbsp;&nbsp;&nbsp;&nbsp;user_index:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int,
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;// Internal use only
-&nbsp;&nbsp;&nbsp;&nbsp;_internal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rawptr,
-}
+<h5
+	id="usages" >
+    Usages
+</h5>
+<ul>
+	<li>
+		<p>
+            Ginger Bill: &quot;To even call an allocator, you need a 
+            <code>context</code>
+            .&quot;
+		</p>
+		<ul>
+			<li>
+				<p>
+                    [2025-11-19]
+				</p>
+			</li>
+			<li>
+				<p>
+                    Yea, but only because you enforced that. I don't think this was necessary. It just sounds a bit bloated having to carry this information around...
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            This is the usages I could find by 
+            <code>ctrl+shift+F</code>
+            &nbsp;on the whole Odin repository:
+		</p>
+<pre><code class="language-odin" data-lang="odin"> Context :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp; allocator:              Allocator,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Everywhere.
+&nbsp;&nbsp;&nbsp;&nbsp; temp_allocator:         Allocator,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Everywhere.
+&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp; assertion_failure_proc: Assertion_Failure_Proc,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Used in `assert`, `panic`, `ensure`, `unimplemented`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Used in `fmt` as: `assertf`, `panicf`, `ensuref`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Used in `log` as: `assert`, `assertf`, `ensure`, `ensuref`.
+&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp; random_generator:       Random_Generator, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Used in `math/rand`, `encoding/uuid`
+&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp; logger:                 Logger,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // `core:log` is imported for `core:text/table`, `vendor:fontstash`, `vendor:nanovg/gl`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // `context.logger` is used directly only once in `core:mem` (doesn't make any sense, tbh).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp; user_ptr:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rawptr,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Not used anywhere.
+&nbsp;&nbsp;&nbsp;&nbsp; user_index:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Not used anywhere.
+&nbsp;&nbsp;&nbsp;&nbsp; _internal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rawptr,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Not used anywhere, except in 1 Cpp script.
+ }
 </code></pre>
+	</li>
+</ul>
 <h5
 	id="context-allocator" >
     context.allocator
@@ -16614,6 +16806,91 @@ __init_context :: proc "contextless" (c: ^Context) {
     
     c.random_generator.procedure = default_random_generator_proc
     c.random_generator.data = nil
+}
+</code></pre>
+<h5
+	id="threading" >
+    Threading
+</h5>
+<ul>
+	<li>
+		<p>
+            A new context is created using 
+            <code>runtime.default_context()</code>
+            &nbsp;if not context is specified when calling 
+            <code>thread.create_and_start</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The new context will 
+			<em>
+                maybe
+			</em>
+            &nbsp;clean up its 
+            <code>context.temp_allocator</code>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Tetra, 2023-05-31:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If the user specifies a custom context for the thread, then it's entirely up to them to handle whatever allocators they're using.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">// core:thread
+_select_context_for_thread :: proc(init_context: Maybe(runtime.Context)) -&gt; runtime.Context {
+&nbsp;&nbsp;&nbsp;&nbsp;ctx, ok := init_context.?
+&nbsp;&nbsp;&nbsp;&nbsp;if !ok {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return runtime.default_context()
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;/*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOTE(tetra, 2023-05-31):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ensure that the temp allocator is thread-safe when the user provides a specific initial context to use.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Without this, the thread will use the same temp allocator state as the parent thread, and thus, bork it up.
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;when !ODIN_DEFAULT_TO_NIL_ALLOCATOR {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ctx.temp_allocator.procedure == runtime.default_temp_allocator_proc {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.temp_allocator.data = &runtime.global_default_temp_allocator_data
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return ctx
+}
+
+// core:thread
+_maybe_destroy_default_temp_allocator :: proc(init_context: Maybe(runtime.Context)) {
+&nbsp;&nbsp;&nbsp;&nbsp;if init_context != nil {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// NOTE(tetra, 2023-05-31): If the user specifies a custom context for the thread,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// then it's entirely up to them to handle whatever allocators they're using.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;if context.temp_allocator.procedure == runtime.default_temp_allocator_proc {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runtime.default_temp_allocator_destroy(auto_cast context.temp_allocator.data)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+// core/thread/thread_windows.odin:41 / core/thread/thread_unix.odin:54
+_create :: proc(procedure: Thread_Proc, priority: Thread_Priority) -&gt; ^Thread {
+&nbsp;&nbsp;&nbsp;&nbsp;// etc
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context = _select_context_for_thread(init_context)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defer {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_maybe_destroy_default_temp_allocator(init_context)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runtime.run_thread_local_cleaners()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.procedure(t)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;//etc
 }
 </code></pre>
 <h2
@@ -17074,6 +17351,707 @@ a := &_a
 		</p>
 	</li>
 </ul>
+<h5
+	id="notes" >
+    Notes
+</h5>
+<ul>
+	<li>
+		<p>
+            There are some allocator requirements for 
+            <code>map</code>
+            s; see the 
+			<a
+				href="#Maps%20(Hash%20Maps)" 
+				class="external-link" 
+				target="_blank" >
+                Maps (Hash Maps)
+			</a>
+            &nbsp;section.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;Arenas and Dynamic Allocators together can sometimes be inefficient&quot;.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=1WnqZPD-qVc" 
+						class="external-link" 
+						target="_blank" >
+                        Arenas + Dynamic Allocators
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    I didn't fully understand the concept.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="implicit-allocator-usage" >
+    Implicit Allocator Usage
+</h3>
+<h5
+	id="for-codecontext-allocator-code" >
+    For 
+    <code>context.allocator</code>
+</h5>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+            <code>runtime.default_allocator()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Only used if the 
+                    <code>context.temp_allocator</code>
+                    &nbsp;is not manually initialized.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+            <code>runtime.heap_allocator()</code>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used a lot around 
+                    <code>os2</code>
+                    &nbsp;and 
+                    <code>os</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    
+                    <code>TEMP_ALLOCATOR_GUARD</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            if the 
+                            <code>context.temp_allocator</code>
+                            &nbsp;is not manually initialized.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>os2._env: [dynamic]string</code>
+                    &nbsp;in the 
+                    <code>os2/env_linux.odin</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>os2.get_args()</code>
+                    &nbsp;/ 
+                    <code>os2.delete_args()</code>
+				</p>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>os2.file_allocator()</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+							<input
+								type="checkbox" 
+								disabled=""
+>
+                            
+                            <code>os2.walkers</code>
+						</p>
+					</li>
+					<li>
+						<p>
+							<input
+								type="checkbox" 
+								disabled=""
+>
+                            etc, a LOT of places inside the 
+                            <code>os2</code>
+                            &nbsp;lib.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+            <code>os.args</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Uses it implicitly.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is fixed by using 
+                    <code>os2</code>
+                    , which still uses a heap allocator implicitly, but at least is not the 
+                    <code>context.allocator</code>
+                    , but the 
+                    <code>os2.heap_allocator</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It's technically the same thing, but at least this doesn't break 
+                            <code>-default-to-panic-allocator</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="for-codecontext-temp_allocator-code" >
+    For 
+    <code>context.temp_allocator</code>
+</h5>
+<ul>
+	<li>
+		<p>
+			<em>
+                Conclusion
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>context.temp_allocator</code>
+                    &nbsp;/ 
+                    <code>runtime.DEFAULT_TEMP_ALLOCATOR_TEMP_GUARD</code>
+                    &nbsp;is used implicitly A LOT inside the 
+                    <code>core</code>
+                    &nbsp;libraries.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>base</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Nothing uses it. Just definition.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>core</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>compress/common</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Has 
+							<em>
+                                todo
+							</em>
+                            s to remove it.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>encoding/json</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>encoding/xml</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>flags</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>fmt</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>image/jpeg</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>image/netbpm</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly with guard.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>image/png</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly with guard.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>net</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>odin/parser</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>os</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly with guard.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>os/os2</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly with guard.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>path/filepath</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly with guard.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>path/slashpath</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly with guard.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>sys/windows</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>sys/darwin</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>sys/info</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>sys/orca</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    
+                    <code>testing</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uses implicitly.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    
+                    <code>encoding/cbor</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It's overridable in the parameters.
+						</p>
+					</li>
+					<li>
+						<p>
+							<input
+								type="checkbox" 
+								disabled=""
+>
+                            
+                            <code>cbor/tags.odin</code>
+                            , wtf?
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    I'm seeing 
+                                    <code>delete</code>
+                                    &nbsp;with 
+                                    <code>context.temp_allocator</code>
+                                    ...
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            The library is really messy.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    
+                    <code>container</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It's overridable in the parameters.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    
+                    <code>container/kmac</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It's overridable in the parameters.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    
+                    <code>dynlib</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It's overridable in the parameters.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    
+                    <code>thread</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Deletes the 
+                            <code>context.temp_allocator</code>
+                            &nbsp;if set.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
 <h3
 	id="default-allocators" >
     Default Allocators
@@ -17170,6 +18148,28 @@ nil_allocator_proc :: proc(
     return nil, nil
 }
 </code></pre>
+<h5
+	id="default-to-nil" >
+    Default to Nil
+</h5>
+<ul>
+	<li>
+		<p>
+            Use 
+            <code>-default-to-nil-allocator</code>
+            &nbsp;as a compilation flag.
+		</p>
+	</li>
+	<li>
+		<p>
+            Keep in mind: 
+            <code>-default-to-panic-allocator</code>
+            &nbsp;cannot be used with 
+            <code>-default-to-nil-allocator</code>
+            .
+		</p>
+	</li>
+</ul>
 <h3
 	id="panic-allocator" >
     Panic Allocator
@@ -17209,15 +18209,34 @@ nil_allocator_proc :: proc(
 		</ul>
 	</li>
 </ul>
+<h5
+	id="default-to-panic" >
+    Default to Panic
+</h5>
+<ul>
+	<li>
+		<p>
+            Use 
+            <code>-default-to-panic-allocator</code>
+            &nbsp;as a compilation flag.
+		</p>
+	</li>
+	<li>
+		<p>
+            Keep in mind: 
+            <code>-default-to-panic-allocator</code>
+            &nbsp;cannot be used with 
+            <code>-default-to-nil-allocator</code>
+            .
+		</p>
+	</li>
+</ul>
 <h3
-	id="arena-allocator-linear-allocator-bump-allocator-region-allocator" >
-    Arena Allocator / Linear Allocator / Bump Allocator / Region Allocator
-</h3>
-<h4
-	id="backed-directly-by-virtual-memory-codevmem-arena-code" >
-    Backed directly by virtual memory: 
+	id="arena-backed-directly-by-virtual-memory-codevmem-arena-code" >
+    Arena: Backed directly by virtual memory (
     <code>vmem.Arena</code>
-</h4>
+    )
+</h3>
 <ul>
 	<li>
 		<p>
@@ -17249,9 +18268,54 @@ nil_allocator_proc :: proc(
 		</p>
 	</li>
 </ul>
+<pre><code class="language-odin" data-lang="odin">// Create an `Allocator` from the provided `Arena`
+@(require_results, no_sanitize_address)
+arena_allocator :: proc(arena: ^Arena) -&gt; mem.Allocator {
+    return mem.Allocator{arena_allocator_proc, arena}
+}
+</code></pre>
 <h5
-	id="kind-buffer" >
-    <s>kind = .Buffer</s>
+	id="kind-code-static-code" >
+    kind 
+    <code>.Static</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            Contains a single 
+            <code>Memory_Block</code>
+            &nbsp;allocated with virtual memory.
+		</p>
+	</li>
+</ul>
+<h5
+	id="kind-code-growing-code" >
+    kind 
+    <code>.Growing</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            Is a linked list of 
+            <code>Memory_Block</code>
+            s allocated with virtual memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            Allows for 
+            <code>vmem.Arena_Temp</code>
+            &nbsp;which can call 
+            <code>vmem.arena_growing_free_last_memory_block</code>
+            , shrinking itself, from my understanding.
+		</p>
+	</li>
+</ul>
+<h5
+	id="kind-code-buffer-code" >
+    <s>kind 
+    <code>.Buffer</code>
+    </s>
 </h5>
 <ul>
 	<li>
@@ -17361,11 +18425,562 @@ nil_allocator_proc :: proc(
 		</ul>
 	</li>
 </ul>
+<h5
+	id="bootstrapping" >
+    Bootstrapping
+</h5>
+<pre><code class="language-odin" data-lang="odin">// Ability to bootstrap allocate a struct with an arena within the struct itself using the growing variant strategy.
+arena_growing_bootstrap_new :: proc{
+    arena_growing_bootstrap_new_by_offset,
+    arena_growing_bootstrap_new_by_name,
+}
+
+// Ability to bootstrap allocate a struct with an arena within the struct itself using the static variant strategy.
+arena_static_bootstrap_new :: proc{
+    arena_static_bootstrap_new_by_offset,
+    arena_static_bootstrap_new_by_name,
+}
+</code></pre>
+<h5
+	id="alloc-from-memory-block" >
+    Alloc from Memory Block
+</h5>
+<ul>
+	<li>
+		<p>
+            Allocates memory from the provided arena.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">@(require_results, no_sanitize_address, private)
+arena_alloc_unguarded :: proc(arena: ^Arena, size: uint, alignment: uint, loc := #caller_location) -&gt; (data: []byte, err: Allocator_Error) {
+    size := size
+    if size == 0 {
+        return nil, nil
+    }
+    switch arena.kind {
+    case .Growing:
+        prev_used := 0 if arena.curr_block == nil else arena.curr_block.used
+        data, err = alloc_from_memory_block(arena.curr_block, size, alignment, default_commit_size=arena.default_commit_size)
+        if err == .Out_Of_Memory {
+            if arena.minimum_block_size == 0 {
+                arena.minimum_block_size = DEFAULT_ARENA_GROWING_MINIMUM_BLOCK_SIZE
+                arena.minimum_block_size = mem.align_forward_uint(arena.minimum_block_size, DEFAULT_PAGE_SIZE)
+            }
+            if arena.default_commit_size == 0 {
+                arena.default_commit_size = min(DEFAULT_ARENA_GROWING_COMMIT_SIZE, arena.minimum_block_size)
+                arena.default_commit_size = mem.align_forward_uint(arena.default_commit_size, DEFAULT_PAGE_SIZE)
+            }
+            if arena.default_commit_size != 0 {
+                arena.default_commit_size, arena.minimum_block_size =
+                    min(arena.default_commit_size, arena.minimum_block_size),
+                    max(arena.default_commit_size, arena.minimum_block_size)
+            }
+            needed := mem.align_forward_uint(size, alignment)
+            needed = max(needed, arena.default_commit_size)
+            block_size := max(needed, arena.minimum_block_size)
+            new_block := memory_block_alloc(needed, block_size, alignment, {}) or_return
+            new_block.prev = arena.curr_block
+            arena.curr_block = new_block
+            arena.total_reserved += new_block.reserved
+            prev_used = 0
+            data, err = alloc_from_memory_block(arena.curr_block, size, alignment, default_commit_size=arena.default_commit_size)
+        }
+        arena.total_used += arena.curr_block.used - prev_used
+    case .Static:
+        if arena.curr_block == nil {
+            if arena.minimum_block_size == 0 {
+                arena.minimum_block_size = DEFAULT_ARENA_STATIC_RESERVE_SIZE
+            }
+            arena_init_static(arena, reserved=arena.minimum_block_size, commit_size=DEFAULT_ARENA_STATIC_COMMIT_SIZE) or_return
+        }
+        if arena.curr_block == nil {
+            return nil, .Out_Of_Memory
+        }
+        data, err = alloc_from_memory_block(arena.curr_block, size, alignment, default_commit_size=arena.default_commit_size)
+        arena.total_used = arena.curr_block.used
+    case .Buffer:
+        if arena.curr_block == nil {
+            return nil, .Out_Of_Memory
+        }
+        data, err = alloc_from_memory_block(arena.curr_block, size, alignment, default_commit_size=0)
+        arena.total_used = arena.curr_block.used
+    }
+    // sanitizer.address_unpoison(data)
+    return
+}
+
+@(require_results, no_sanitize_address)
+alloc_from_memory_block :: proc(block: ^Memory_Block, min_size, alignment: uint, default_commit_size: uint = 0) -&gt; (data: []byte, err: Allocator_Error) {
+    @(no_sanitize_address)
+    calc_alignment_offset :: proc "contextless" (block: ^Memory_Block, alignment: uintptr) -&gt; uint {
+        alignment_offset := uint(0)
+        ptr := uintptr(block.base[block.used:])
+        mask := alignment-1
+        if ptr & mask != 0 {
+            alignment_offset = uint(alignment - (ptr & mask))
+        }
+        return alignment_offset
+    }
+    @(no_sanitize_address)
+    do_commit_if_necessary :: proc(block: ^Memory_Block, size: uint, default_commit_size: uint) -&gt; (err: Allocator_Error) {
+        if block.committed - block.used &lt; size {
+            pmblock := (^Platform_Memory_Block)(block)
+            base_offset := uint(uintptr(pmblock.block.base) - uintptr(pmblock))
+            // NOTE(bill): [Heuristic] grow the commit size larger than needed
+            // TODO(bill): determine a better heuristic for this behaviour
+            extra_size := max(size, block.committed&gt;&gt;1)
+            platform_total_commit := base_offset + block.used + extra_size
+            platform_total_commit = align_formula(platform_total_commit, DEFAULT_PAGE_SIZE)
+            platform_total_commit = min(max(platform_total_commit, default_commit_size), pmblock.reserved)
+            assert(pmblock.committed &lt;= pmblock.reserved)
+            assert(pmblock.committed &lt; platform_total_commit)
+            platform_memory_commit(pmblock, platform_total_commit) or_return
+            pmblock.committed = platform_total_commit
+            block.committed = pmblock.committed - base_offset
+        }
+        return
+    }
+    if block == nil {
+        return nil, .Out_Of_Memory
+    }
+    alignment_offset := calc_alignment_offset(block, uintptr(alignment))
+    size, size_ok := safe_add(min_size, alignment_offset)
+    if !size_ok {
+        err = .Out_Of_Memory
+        return
+    }
+    if to_be_used, ok := safe_add(block.used, size); !ok || to_be_used &gt; block.reserved {
+        err = .Out_Of_Memory
+        return
+    }
+    assert(block.committed &lt;= block.reserved)
+    do_commit_if_necessary(block, size, default_commit_size) or_return
+    data = block.base[block.used+alignment_offset:][:min_size]
+    block.used += size
+    // sanitizer.address_unpoison(data)
+    return
+}
+
+@(require_results, no_sanitize_address)
+arena_alloc :: proc(arena: ^Arena, size: uint, alignment: uint, loc := #caller_location) -&gt; (data: []byte, err: Allocator_Error) {
+    assert(alignment & (alignment-1) == 0, "non-power of two alignment", loc)
+    size := size
+    if size == 0 {
+        return nil, nil
+    }
+    sync.mutex_guard(&arena.mutex)
+    return arena_alloc_unguarded(arena, size, alignment, loc)
+}
+
+@(no_sanitize_address)
+arena_allocator_proc :: proc(allocator_data: rawptr, mode: mem.Allocator_Mode,
+                             size, alignment: int,
+                             old_memory: rawptr, old_size: int,
+                             location := #caller_location) -&gt; (data: []byte, err: Allocator_Error) {
+    switch mode {
+    case .Resize, .Resize_Non_Zeroed:
+        // etc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_ = alloc_from_memory_block(block, new_end - old_end, 1, default_commit_size=arena.default_commit_size) or_return
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// etc
+        new_memory := arena_alloc_unguarded(arena, size, alignment, location) or_return
+    }
+    return
+}
+</code></pre>
+<h5
+	id="memory-block-alloc" >
+    Memory Block Alloc
+</h5>
+<pre><code class="language-odin" data-lang="odin">// Linux
+_commit :: proc "contextless" (data: rawptr, size: uint) -&gt; Allocator_Error {
+    errno := linux.mprotect(data, size, {.READ, .WRITE})
+    if errno == .EINVAL {
+        return .Invalid_Pointer
+    } else if errno == .ENOMEM {
+        return .Out_Of_Memory
+    }
+    return nil
+}
+
+// Windows
+@(no_sanitize_address)
+_commit :: proc "contextless" (data: rawptr, size: uint) -&gt; Allocator_Error {
+    result := VirtualAlloc(data, size, MEM_COMMIT, PAGE_READWRITE)
+    if result == nil {
+        switch err := GetLastError(); err {
+        case 0:
+            return .Invalid_Argument
+        case ERROR_INVALID_ADDRESS, ERROR_COMMITMENT_LIMIT:
+            return .Out_Of_Memory
+        }
+        return .Out_Of_Memory
+    }
+    return nil
+}
+
+@(no_sanitize_address)
+commit :: proc "contextless" (data: rawptr, size: uint) -&gt; Allocator_Error {
+    // sanitizer.address_unpoison(data, size)
+    return _commit(data, size)
+}
+
+// Linux
+_reserve :: proc "contextless" (size: uint) -&gt; (data: []byte, err: Allocator_Error) {
+    addr, errno := linux.mmap(0, size, {}, {.PRIVATE, .ANONYMOUS})
+    if errno == .ENOMEM {
+        return nil, .Out_Of_Memory
+    } else if errno == .EINVAL {
+        return nil, .Invalid_Argument
+    }
+    return (cast([^]byte)addr)[:size], nil
+}
+
+// Windows
+@(no_sanitize_address)
+_reserve :: proc "contextless" (size: uint) -&gt; (data: []byte, err: Allocator_Error) {
+    result := VirtualAlloc(nil, size, MEM_RESERVE, PAGE_READWRITE)
+    if result == nil {
+        err = .Out_Of_Memory
+        return
+    }
+    data = ([^]byte)(result)[:size]
+    return
+}
+
+@(require_results, no_sanitize_address)
+reserve :: proc "contextless" (size: uint) -&gt; (data: []byte, err: Allocator_Error) {
+    return _reserve(size)
+}
+
+@(no_sanitize_address)
+platform_memory_alloc :: proc "contextless" (to_commit, to_reserve: uint) -&gt; (block: ^Platform_Memory_Block, err: Allocator_Error) {
+    to_commit, to_reserve := to_commit, to_reserve
+    to_reserve = max(to_commit, to_reserve)
+    
+    total_to_reserved := max(to_reserve, size_of(Platform_Memory_Block))
+    to_commit = clamp(to_commit, size_of(Platform_Memory_Block), total_to_reserved)
+    
+    data := reserve(total_to_reserved) or_return
+    
+    commit_err := commit(raw_data(data), to_commit)
+    assert_contextless(commit_err == nil)
+    
+    block = (^Platform_Memory_Block)(raw_data(data))
+    block.committed = to_commit
+    block.reserved  = to_reserve
+    return
+}
+
+@(require_results, no_sanitize_address)
+memory_block_alloc :: proc(committed, reserved: uint, alignment: uint = 0, flags: Memory_Block_Flags = {}) -&gt; (block: ^Memory_Block, err: Allocator_Error) {
+    page_size := DEFAULT_PAGE_SIZE
+    assert(mem.is_power_of_two(uintptr(page_size)))
+    
+    committed := committed
+    reserved  := reserved
+    
+    committed = align_formula(committed, page_size)
+    reserved  = align_formula(reserved, page_size)
+    committed = clamp(committed, 0, reserved)
+    
+    total_size     := reserved + alignment + size_of(Platform_Memory_Block)
+    base_offset    := mem.align_forward_uintptr(size_of(Platform_Memory_Block), max(uintptr(alignment), align_of(Platform_Memory_Block)))
+    protect_offset := uintptr(0)
+    
+    do_protection := false
+    if .Overflow_Protection in flags { // overflow protection
+        rounded_size   := reserved
+        total_size     = uint(rounded_size + 2*page_size)
+        base_offset    = uintptr(page_size + rounded_size - uint(reserved))
+        protect_offset = uintptr(page_size + rounded_size)
+        do_protection  = true
+    }
+    
+    pmblock := platform_memory_alloc(0, total_size) or_return
+    
+    pmblock.block.base = ([^]byte)(pmblock)[base_offset:]
+    platform_memory_commit(pmblock, uint(base_offset) + committed) or_return
+    
+    // Should be zeroed
+    assert(pmblock.block.used == 0)
+    assert(pmblock.block.prev == nil)  
+    if do_protection {
+        protect(([^]byte)(pmblock)[protect_offset:], page_size, Protect_No_Access)
+    }
+    pmblock.block.committed = committed
+    pmblock.block.reserved  = reserved
+    
+    return &pmblock.block, nil
+}
+
+@(require_results, no_sanitize_address)
+arena_init_growing :: proc(arena: ^Arena, reserved: uint = DEFAULT_ARENA_GROWING_MINIMUM_BLOCK_SIZE) -&gt; (err: Allocator_Error) {
+    arena.kind           = .Growing
+    arena.curr_block     = memory_block_alloc(0, reserved, {}) or_return
+    arena.total_used     = 0
+    arena.total_reserved = arena.curr_block.reserved
+    if arena.minimum_block_size == 0 {
+        arena.minimum_block_size = reserved
+    }
+    // sanitizer.address_poison(arena.curr_block.base[:arena.curr_block.committed])
+    return
+}
+
+@(require_results, no_sanitize_address)
+arena_init_static :: proc(arena: ^Arena, reserved: uint = DEFAULT_ARENA_STATIC_RESERVE_SIZE, commit_size: uint = DEFAULT_ARENA_STATIC_COMMIT_SIZE) -&gt; (err: Allocator_Error) {
+    arena.kind           = .Static
+    arena.curr_block     = memory_block_alloc(commit_size, reserved, {}) or_return
+    arena.total_used     = 0
+    arena.total_reserved = arena.curr_block.reserved
+    // sanitizer.address_poison(arena.curr_block.base[:arena.curr_block.committed])
+    return
+}
+</code></pre>
+<h5
+	id="memory-block-dealloc" >
+    Memory Block Dealloc
+</h5>
+<pre><code class="language-odin" data-lang="odin">// Windows (this one seems odd)
+@(no_sanitize_address)
+_release :: proc "contextless" (data: rawptr, size: uint) {
+&nbsp;&nbsp;&nbsp;&nbsp;VirtualFree(data, 0, MEM_RELEASE)
+}
+
+// Linux
+_release :: proc "contextless" (data: rawptr, size: uint) {
+&nbsp;&nbsp;&nbsp;&nbsp;_ = linux.munmap(data, size)
+}
+
+@(no_sanitize_address)
+release :: proc "contextless" (data: rawptr, size: uint) {
+&nbsp;&nbsp;&nbsp;&nbsp;// sanitizer.address_unpoison(data, size)
+&nbsp;&nbsp;&nbsp;&nbsp;_release(data, size)
+}
+
+@(no_sanitize_address)
+platform_memory_free :: proc "contextless" (block: ^Platform_Memory_Block) {
+&nbsp;&nbsp;&nbsp;&nbsp;if block != nil {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;release(block, block.reserved)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+@(no_sanitize_address)
+memory_block_dealloc :: proc(block_to_free: ^Memory_Block) {
+&nbsp;&nbsp;&nbsp;&nbsp;if block := (^Platform_Memory_Block)(block_to_free); block != nil {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;platform_memory_free(block)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                For Growing arenas
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>vmem.arena_free_all()</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Will shrink the arena to the size of the first Memory Block.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Confirmed
+							</strong>
+                            : This is also shown in the Task Manager, as having much less memory when freeing all.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Deallocates all but the first memory block of the arena and resets the allocator's usage to 0.
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-Odin" data-lang="Odin"> @(no_sanitize_address)
+ arena_free_all :: proc(arena: ^Arena, loc := #caller_location) {
+     switch arena.kind {
+     case .Growing:
+         sync.mutex_guard(&arena.mutex)
+         // NOTE(bill): Free all but the first memory block (if it exists)
+         for arena.curr_block != nil && arena.curr_block.prev != nil {
+             arena_growing_free_last_memory_block(arena, loc)
+         }
+         // Zero the first block's memory
+         if arena.curr_block != nil {
+             curr_block_used := int(arena.curr_block.used)
+             arena.curr_block.used = 0
+             // sanitizer.address_unpoison(arena.curr_block.base[:curr_block_used])
+             mem.zero(arena.curr_block.base, curr_block_used)
+             // sanitizer.address_poison(arena.curr_block.base[:arena.curr_block.committed])
+         }
+         arena.total_used = 0
+     case .Static, .Buffer:
+         arena_static_reset_to(arena, 0)
+     }
+     arena.total_used = 0
+ }
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="allocator-procedure" >
+    Allocator Procedure
+</h5>
+<pre><code class="language-odin" data-lang="odin">// The allocator procedure used by an `Allocator` produced by `arena_allocator`
+@(no_sanitize_address)
+arena_allocator_proc :: proc(allocator_data: rawptr, mode: mem.Allocator_Mode,
+                             size, alignment: int,
+                             old_memory: rawptr, old_size: int,
+                             location := #caller_location) -&gt; (data: []byte, err: Allocator_Error) {
+    arena := (^Arena)(allocator_data)
+    size, alignment := uint(size), uint(alignment)
+    old_size := uint(old_size)
+    switch mode {
+    case .Alloc, .Alloc_Non_Zeroed:
+        return arena_alloc(arena, size, alignment, location)
+    case .Free:
+        err = .Mode_Not_Implemented
+    case .Free_All:
+        arena_free_all(arena, location)
+    case .Resize, .Resize_Non_Zeroed:
+        old_data := ([^]byte)(old_memory)
+        switch {
+        case old_data == nil:
+            return arena_alloc(arena, size, alignment, location)
+        case size == old_size:
+            // return old memory
+            data = old_data[:size]
+            return
+        case size == 0:
+            err = .Mode_Not_Implemented
+            return
+        }
+        sync.mutex_guard(&arena.mutex)
+        if uintptr(old_data) & uintptr(alignment-1) == 0 {
+            if size &lt; old_size {
+                // shrink data in-place
+                data = old_data[:size]
+                // sanitizer.address_poison(old_data[size:old_size])
+                return
+            }
+            if block := arena.curr_block; block != nil {
+                start := uint(uintptr(old_memory)) - uint(uintptr(block.base))
+                old_end := start + old_size
+                new_end := start + size
+                if start &lt; old_end && old_end == block.used && new_end &lt;= block.reserved {
+                    // grow data in-place, adjusting next allocation
+                    prev_used := block.used
+                    _ = alloc_from_memory_block(block, new_end - old_end, 1, default_commit_size=arena.default_commit_size) or_return
+                    arena.total_used += block.used - prev_used
+                    data = block.base[start:new_end]
+                    // sanitizer.address_unpoison(data)
+                    return
+                }
+            }
+        }
+        new_memory := arena_alloc_unguarded(arena, size, alignment, location) or_return
+        if new_memory == nil {
+            return
+        }
+        copy(new_memory, old_data[:old_size])
+        // sanitizer.address_poison(old_data[:old_size])
+        return new_memory, nil
+    case .Query_Features:
+        set := (^mem.Allocator_Mode_Set)(old_memory)
+        if set != nil {
+            set^ = {.Alloc, .Alloc_Non_Zeroed, .Free_All, .Resize, .Query_Features}
+        }
+    case .Query_Info:
+        err = .Mode_Not_Implemented
+    }
+    return
+}
+</code></pre>
 <h4
-	id="reset-codevmem-arena-code-to-previous-state-codevmem-arena_temp-code" >
-    Reset 
-    <code>vmem.Arena</code>
-    &nbsp;to previous state: 
+	id="rollback-the-offset-from-codevmem-arena-gt-static-code-with-codevmem-arena_static_reset_to-code" >
+    Rollback the offset from 
+    <code>vmem.Arena -&gt; .Static</code>
+    &nbsp;with 
+    <code>vmem.arena_static_reset_to</code>
+</h4>
+<ul>
+	<li>
+		<p>
+            Unlike other &quot;rollback arena options&quot;, there's no helper with that, but the following procedure can be used:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Resets the memory of a Static or Buffer arena to a specific 
+                    <code>position</code>
+                    &nbsp;(offset) and zeroes the previously used memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It doesn't have a 
+					<em>
+                        begin
+					</em>
+                    , 
+					<em>
+                        end
+					</em>
+                    , or 
+					<em>
+                        guard
+					</em>
+                    ; the offset need to be defined by the user without any helpers.
+				</p>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    It doesn't &quot;free&quot; the memory, etc.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> @(no_sanitize_address)
+ arena_static_reset_to :: proc(arena: ^Arena, pos: uint, loc := #caller_location) -&gt; bool {
+&nbsp;&nbsp;&nbsp;&nbsp; sync.mutex_guard(&arena.mutex)
+&nbsp;&nbsp;&nbsp;&nbsp; if arena.curr_block != nil {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assert(arena.kind != .Growing, "expected a non .Growing arena", loc)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev_pos := arena.curr_block.used
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arena.curr_block.used = clamp(pos, 0, arena.curr_block.reserved)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if prev_pos &gt; pos {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem.zero_slice(arena.curr_block.base[arena.curr_block.used:][:prev_pos-pos])
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arena.total_used = arena.curr_block.used
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // sanitizer.address_poison(arena.curr_block.base[:arena.curr_block.committed])
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return true
+&nbsp;&nbsp;&nbsp;&nbsp; } else if pos == 0 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arena.total_used = 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return true
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; return false
+ }
+</code></pre>
+	</li>
+</ul>
+<h4
+	id="free-last-memory-block-from-codevmem-arena-gt-growing-code-with-codevmem-arena_temp-code" >
+    Free last Memory Block from&nbsp;&nbsp;
+    <code>vmem.Arena -&gt; .Growing</code>
+    &nbsp;with 
     <code>vmem.Arena_Temp</code>
 </h4>
 <ul>
@@ -17427,6 +19042,7 @@ Arena_Temp :: struct {
  arena_temp_begin :: proc(arena: ^Arena, loc := #caller_location) -&gt; (temp: Arena_Temp) {
      assert(arena != nil, "nil arena", loc)
      sync.mutex_guard(&arena.mutex)
+     
      temp.arena = arena
      temp.block = arena.curr_block
      if arena.curr_block != nil {
@@ -17445,6 +19061,18 @@ Arena_Temp :: struct {
             :
 		</p>
 <pre><code class="language-odin" data-lang="odin"> @(no_sanitize_address)
+ arena_growing_free_last_memory_block :: proc(arena: ^Arena, loc := #caller_location) {
+     if free_block := arena.curr_block; free_block != nil {
+         assert(arena.kind == .Growing, "expected a .Growing arena", loc)
+         arena.total_used -= free_block.used
+         arena.total_reserved -= free_block.reserved
+         arena.curr_block = free_block.prev
+         // sanitizer.address_poison(free_block.base[:free_block.committed])
+         memory_block_dealloc(free_block)
+     }
+ }
+ 
+ @(no_sanitize_address)
  arena_temp_end :: proc(temp: Arena_Temp, loc := #caller_location) {
      assert(temp.arena != nil, "nil arena", loc)
      arena := temp.arena
@@ -17460,9 +19088,11 @@ Arena_Temp :: struct {
          if !memory_block_found {
              assert(arena.curr_block == temp.block, "memory block stored within Arena_Temp not owned by Arena", loc)
          }
+         
          for arena.curr_block != temp.block {
              arena_growing_free_last_memory_block(arena)
          }
+         
          if block := arena.curr_block; block != nil {
              assert(block.used &gt;= temp.used, "out of order use of arena_temp_end", loc)
              amount_to_zero := block.used-temp.used
@@ -17532,11 +19162,12 @@ Arena_Temp :: struct {
 </code></pre>
 	</li>
 </ul>
-<h4
-	id="backed-by-a-buffer-codemem-arena-code" >
-    Backed by a buffer: 
+<h3
+	id="arena-backed-buffer-as-an-arena-codemem-arena-code" >
+    Arena: Backed buffer as an arena (
     <code>mem.Arena</code>
-</h4>
+    )
+</h3>
 <ul>
 	<li>
 		<p>
@@ -17578,6 +19209,35 @@ Arena_Temp :: struct {
 		<p>
             On arenas being slices, it's important to realize that what they are is an implementation. All the abstract idea is, is to allocate linearly from a buffer such that you can quickly free everything. Whether it's a single buffer and cannot grow at all depends entirely on the arena allocator implementation in question.
 		</p>
+	</li>
+	<li>
+		<p>
+            You cannot deallocate memory individually in an arena allocator.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>free</code>
+                    &nbsp;for pointers created using an arena does not work.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Returns the error 
+                            <code>Mode_Not_Implemented</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The correct approach is to use 
+                    <code>delete</code>
+                    &nbsp;on the entire arena.
+				</p>
+			</li>
+		</ul>
 	</li>
 	<li>
 		<p>
@@ -17821,43 +19481,6 @@ void *arena_alloc(size_t size) {
 	</li>
 </ul>
 <h5
-	id="fun-facts" >
-    Fun Facts
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                You cannot deallocate memory individually in an arena allocator.
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>free</code>
-                    &nbsp;for pointers created using an arena does not work.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Returns the error 
-                            <code>Mode_Not_Implemented</code>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    The correct approach is to use 
-                    <code>delete</code>
-                    &nbsp;on the entire arena.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
 	id="initialize-an-arena" >
     Initialize an arena
 </h5>
@@ -17997,10 +19620,10 @@ arena_alloc_bytes_non_zeroed :: proc(
 }
 </code></pre>
 <h4
-	id="rollback-the-codemem-arena-code-offset-codemem-arena_temp_memory-code" >
-    Rollback the 
+	id="rollback-the-offset-from-codemem-arena-code-with-codemem-arena_temp_memory-code" >
+    Rollback the offset from 
     <code>mem.Arena</code>
-    &nbsp;offset: 
+    &nbsp;with: 
     <code>mem.Arena_Temp_Memory</code>
 </h4>
 <ul>
@@ -18117,13 +19740,14 @@ arena_alloc_bytes_non_zeroed :: proc(
 		</ul>
 	</li>
 </ul>
-<h4
-	id="growing-codemem-arena-code-codemem-dynamic_arena-code" >
-    Growing 
+<h3
+	id="arena-growing-codemem-arena-code-codemem-dynamic_arena-code" >
+    Arena: Growing 
     <code>mem.Arena</code>
-    : 
+    &nbsp;(
     <code>mem.Dynamic_Arena</code>
-</h4>
+    )
+</h3>
 <ul>
 	<li>
 		<p>
@@ -18155,29 +19779,6 @@ arena_alloc_bytes_non_zeroed :: proc(
             , the dynamic arena does not support freeing of individual objects.
 		</p>
 	</li>
-	<li>
-		<p>
-            &quot;Arenas and Dynamic Allocators together can sometimes be inefficient&quot;.
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://www.youtube.com/watch?v=1WnqZPD-qVc" 
-						class="external-link" 
-						target="_blank" >
-                        Arenas + Dynamic Allocators
-					</a>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    I didn't fully understand the concept.
-				</p>
-			</li>
-		</ul>
-	</li>
 </ul>
 <pre><code class="language-odin" data-lang="odin">Dynamic_Arena :: struct {
     block_size:           int,
@@ -18192,13 +19793,14 @@ arena_alloc_bytes_non_zeroed :: proc(
     block_allocator:      Allocator,
 }
 </code></pre>
-<h4
-	id="basis-for-codecontext-temp_allocator-code-coderuntime-default_temp_allocator-code" >
-    Basis for 
+<h3
+	id="arena-codecontext-temp_allocator-code-coderuntime-default_temp_allocator-code" >
+    Arena: 
     <code>context.temp_allocator</code>
-    : 
+    &nbsp;(
     <code>runtime.Default_Temp_Allocator</code>
-</h4>
+    )
+</h3>
 <ul>
 	<li>
 		<p>
@@ -18224,6 +19826,15 @@ arena_alloc_bytes_non_zeroed :: proc(
 				</p>
 			</li>
 		</ul>
+	</li>
+	<li>
+		<p>
+            By default, every 
+            <code>Memory_Block</code>
+            &nbsp;is backed by the 
+            <code>context.allocator</code>
+            .
+		</p>
 	</li>
 </ul>
 <pre><code class="language-odin" data-lang="odin">Arena :: struct {
@@ -18281,20 +19892,436 @@ default_temp_allocator :: proc(allocator: ^Default_Temp_Allocator) -&gt; Allocat
             &nbsp;once per &quot;frame-loop&quot; to prevent it from &quot;leaking&quot; memory.
 		</p>
 	</li>
+	<li>
+		<p>
+			<strong>
+                No Default
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin"> NO_DEFAULT_TEMP_ALLOCATOR: bool : ODIN_OS == .Freestanding || ODIN_DEFAULT_TO_NIL_ALLOCATOR
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Consequence of calling 
+                    <code>-default-to-nil-allocator</code>
+                    &nbsp;as a compiler flag.
+				</p>
+			</li>
+		</ul>
+	</li>
 </ul>
 <h5
-	id="size" >
-    Size
+	id="where-is-the-memory-actually-stored" >
+    Where is the memory actually stored
 </h5>
 <ul>
 	<li>
 		<p>
-            <code>base:runtime</code>
+            The 
+			<strong>
+                <code>Memory_Blocks</code>
+                &nbsp;struct
+			</strong>
+            &nbsp;and the 
+			<strong>
+                reserved region
+			</strong>
+            &nbsp;from within the 
+            <code>context.temp_allocator</code>
+            &nbsp;are stored in its 
+            <code>arena.backing_allocator</code>
+            &nbsp;(usually 
+            <code>context.allocator</code>
+            ).
 		</p>
 	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">DEFAULT_TEMP_ALLOCATOR_BACKING_SIZE: int : #config(DEFAULT_TEMP_ALLOCATOR_BACKING_SIZE, 4 * Megabyte)
+	<li>
+		<p>
+			<em>
+                Analysis
+			</em>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin"> @(require_results)
+ memory_block_alloc :: proc(allocator: Allocator, capacity: uint, alignment: uint, loc := #caller_location) -&gt; (block: ^Memory_Block, err: Allocator_Error) {
+     total_size  := uint(capacity + max(alignment, size_of(Memory_Block)))
+&nbsp;&nbsp;&nbsp;&nbsp;     // The total size of the data (`[]byte`) that will be used for `mem_alloc`.
+&nbsp;&nbsp;&nbsp;&nbsp;     // It's the `base_offset + capacity`; in other words: `Memory_Block` struct + `block.base` region.
+     
+     base_offset := uintptr(max(alignment, size_of(Memory_Block)))
+&nbsp;&nbsp;&nbsp;&nbsp;     // It's an offset from the data (`[]byte`) that will be allocated.
+&nbsp;&nbsp;&nbsp;&nbsp;     // It represents the start of the `block.base`, which is the region the block uses to allocate new data when called `alloc_from_memory_block`.
+     
+     min_alignment: int = max(16, align_of(Memory_Block), int(alignment))
+&nbsp;&nbsp;&nbsp;&nbsp;     // I'm not completely sure, but it's only used in `mem_alloc`.
+     
+     data := mem_alloc(int(total_size), min_alignment, allocator, loc) or_return
+&nbsp;&nbsp;&nbsp;&nbsp;     // A `[]byte` is alloc using the backing_allocator.
+&nbsp;&nbsp;&nbsp;&nbsp;     
+     block = (^Memory_Block)(raw_data(data))
+&nbsp;&nbsp;&nbsp;&nbsp;     // The pointer to this slice is used as the pointer to the block.
+&nbsp;&nbsp;&nbsp;&nbsp;     // This means that the block metadata will be the first thing populating the `[]byte` allocated.
+&nbsp;&nbsp;&nbsp;&nbsp;     
+     end := uintptr(raw_data(data)[len(data):])
+&nbsp;&nbsp;&nbsp;&nbsp;     // Fancy way to get the pointer of the last element in the data (`[]byte`) region.
+&nbsp;&nbsp;    
+     block.allocator = allocator
+&nbsp;&nbsp;&nbsp;&nbsp;     // The backing_allocator is saved as the `block.allocator`
+&nbsp;&nbsp;&nbsp;&nbsp;     
+     block.base = ([^]byte)(uintptr(block) + base_offset)
+&nbsp;&nbsp;&nbsp;&nbsp;     // The `base´ will be right after the block struct end (considering a custom alignment from the procedure args).
+&nbsp;&nbsp;&nbsp;&nbsp;     // It represents the start of the region the block uses to allocate new data when called `alloc_from_memory_block`.
+&nbsp;&nbsp;&nbsp;&nbsp;     
+     block.capacity = uint(end - uintptr(block.base))
+&nbsp;&nbsp;&nbsp;&nbsp;     // The size of the `block.base`.
+&nbsp;&nbsp;&nbsp;&nbsp;     // Represents the allocation "capacity" of the `block.base`, which is how much memory the block can store.
+&nbsp;&nbsp;&nbsp;&nbsp;     // Calculated by doing the pointer subtraction: `uintptr(end) - uintptr(block.base)`.
+     
+     return
+ }
 </code></pre>
+	</li>
+	<li>
+		<p>
+            What 
+            <code>arena.backing_allocator</code>
+            &nbsp;should be used?
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The 
+                    <code>Memory_Blocks</code>
+                    &nbsp;needs to be able to be free individually, as this is the main strategy around the 
+                    <code>context.temp_allocator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    In that sense, the 
+                    <code>backing_allocator</code>
+                    &nbsp;should be an allocator that implements 
+                    <code>.Free</code>
+                    ; this means that 
+                    <code>mem.Arena</code>
+                    &nbsp;is not good for this.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Any allocator that implements 
+                    <code>.Free</code>
+                    &nbsp;should be enough, I believe.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            So, what's stored &quot;inside the 
+            <code>context.temp_allocator</code>
+            &quot;?
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Nothing&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I mean, the 
+                    <code>context.temp_allocator</code>
+                    &nbsp;is a 
+                    <code>runtime.Arena</code>
+                    , which is:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> Arena :: struct {
+     backing_allocator:  Allocator,
+     curr_block:         ^Memory_Block,
+     total_used:         uint,
+     total_capacity:     uint,
+     minimum_block_size: uint,
+     temp_count:         uint,
+ }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    And it's stored inside the 
+                    <code>context</code>
+                    &nbsp;(which is on the stack), with its backing 
+                    <code>.data</code>
+                    &nbsp;being a pointer to 
+                    <code>global_default_temp_allocator_data</code>
+                    , which is a global variable.
+				</p>
+			</li>
+			<li>
+				<p>
+                    So, the 
+                    <code>context.temp_allocator</code>
+                    &nbsp;is just a struct on the stack; it doesn't store anything on the heap. Its 
+                    <code>arena.backing_allocator</code>
+                    &nbsp;is what actually decides where the memory is stored.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="threading" >
+    Threading
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Thread-safe?
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Ginger Bill:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Within a thread, yes. Across? No.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's a thread-local allocator.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            See 
+			<a
+				href="Odin#Context" 
+				class="external-link" 
+				target="_blank" >
+                Odin#Context
+			</a>
+            &nbsp;for information on how to handle the 
+            <code>context.temp_allocator</code>
+            &nbsp;if a existing one is used or not.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Practical example: CPU multithreaded texture loading
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        How I handled the 
+                        <code>context.temp_allocator</code>
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Each thread has a functional 
+                            <code>context.temp_allocator</code>
+                            , completely thread-local.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Storing the image data
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+							<em>
+                                Using 
+                                <code>context.temp_allocator</code>
+                                &nbsp;from the main thread
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    I was first using this while using a mutex in the 
+                                    <code>pixels = make([]byte, size, allocator)</code>
+                                    &nbsp;from 
+                                    <code>load_image_file</code>
+                                    , as the 
+                                    <code>context.temp_allocator</code>
+                                    &nbsp;is not thread-safe.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            If the allocator were a 
+                                            <code>vmem.Arena</code>
+                                            , this was not going to be necessary, as the 
+                                            <code>vmem.Arena</code>
+                                            &nbsp;already has a mutex inside it, being thread-safe.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    My main idea at first is that I would use the main thread's 
+                                    <code>context.temp_allocator</code>
+                                    , so the main thread can keep the data loaded from the other threads, as I need the main thread to be the one responsible for managing the loaded data's lifetime, to later can call 
+                                    <code>texture_copy_from_buffer()</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Tho, later I realized that the 
+                                    <code>context.temp_allocator</code>
+                                    &nbsp;from the main thread can not be used, as the main thread also participates in the 
+                                    <code>jobs.try_execute_queued_job_globals()</code>
+                                    , which then provokes its own 
+                                    <code>context.temp_allocator</code>
+                                    &nbsp;to do 
+                                    <code>free_all()</code>
+                                    &nbsp;after one of its jobs is executed, breaking everything.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    If a 
+									<em>
+                                        guard
+									</em>
+                                    &nbsp;is used instead of 
+                                    <code>free_all()</code>
+                                    , this fixes the freeing problem, but it would be 
+									<strong>
+                                        very
+									</strong>
+                                    &nbsp;weird handling 
+									<em>
+                                        guard
+									</em>
+                                    s when the 
+                                    <code>context.temp_allocator</code>
+                                    &nbsp;is being used in different threads; this is not a good option in this case.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Using a 
+                                <code>vmem.Arena</code>
+                                &nbsp;from the main thread
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Much better. This arena has a mutex and it's already thread-safe.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    There's no risk of freeing the data from this arena, as it's completely managed by the main thread and untouched by the Jobs System.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    There's no direct participation of a 
+                                    <code>context.temp_allocator</code>
+                                    &nbsp;from a different thread; it's much simpler.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    I'm now using a 
+									<em>
+                                        guard
+									</em>
+                                    &nbsp;for the 
+                                    <code>context.temp_allocator</code>
+                                    &nbsp;after the job is executed; this ensures no incorrect data is deleted by accident by calling 
+                                    <code>free_all()</code>
+                                    ; if this was not done, the main thread crashes 
+									<em>
+                                        after
+									</em>
+                                    &nbsp;all the jobs are executed, as it lost some important data from the dispatcher scope.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="tracy-interaction" >
+    Tracy interaction
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>free_all</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is ok, as it's just calling the 
+                    <code>allocator_proc</code>
+                    &nbsp;from inside its 
+                    <code>backing_allocator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the 
+                    <code>backing_allocator</code>
+                    &nbsp;is profiled, then it works perfectly fine.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>.Free_All</code>
+                    &nbsp;becames 
+                    <code>.Free</code>
+                    &nbsp;for every 
+                    <code>Memory_Block</code>
+                    , followed by the remaining 
+                    <code>Memory_Block</code>
+                    &nbsp;being zeroed out.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
 <h5
 	id="init" >
     Init
@@ -18302,28 +20329,266 @@ default_temp_allocator :: proc(allocator: ^Default_Temp_Allocator) -&gt; Allocat
 <ul>
 	<li>
 		<p>
-            <code>arena_init</code>
-            &nbsp;will initialize the arena with a usable block. This procedure is not necessary to use the Arena as the default zero as 
-            <code>arena_alloc</code>
-            &nbsp;will set things up if necessary.
+			<strong>
+                App initialization
+			</strong>
+            :
 		</p>
+		<ul>
+			<li>
+				<p>
+                    The first thing done before calling the entry point of the code, is:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> // Unix example
+ @(link_name="main", linkage="strong", require)
+ main :: proc "c" (argc: i32, argv: [^]cstring) -&gt; i32 {
+&nbsp;&nbsp;&nbsp;&nbsp; args__ = argv[:argc]
+&nbsp;&nbsp;&nbsp;&nbsp; context = default_context()
+&nbsp;&nbsp;&nbsp;&nbsp; #force_no_inline _startup_runtime()
+&nbsp;&nbsp;&nbsp;&nbsp; intrinsics.__entry_point()
+&nbsp;&nbsp;&nbsp;&nbsp; #force_no_inline _cleanup_runtime()
+&nbsp;&nbsp;&nbsp;&nbsp; return 0
+ }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    The 
+                    <code>default_context()</code>
+                    will internally call 
+                    <code>__init_context()</code>
+                    , which internally assigns:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> c.temp_allocator.procedure = default_temp_allocator_proc
+</code></pre>
 	</li>
 </ul>
-<pre><code class="language-odin" data-lang="odin">@(require_results)
-arena_init :: proc(arena: ^Arena, size: uint, backing_allocator: Allocator, loc := #caller_location) -&gt; Allocator_Error {
-    arena^ = {}
-    arena.backing_allocator = backing_allocator
-    arena.minimum_block_size = max(size, 1&lt;&lt;12) // minimum block size of 4 KiB
-    new_block := memory_block_alloc(arena.backing_allocator, arena.minimum_block_size, 0, loc) or_return
-    arena.curr_block = new_block
-    arena.total_capacity += new_block.capacity
-    return nil
-}
-
-default_temp_allocator_init :: proc(s: ^Default_Temp_Allocator, size: int, backing_allocator := context.allocator) {
-&nbsp;&nbsp;&nbsp;&nbsp;_ = arena_init(&s.arena, uint(size), backing_allocator)
-}
+<p>
+        when !NO_DEFAULT_TEMP_ALLOCATOR {
+    <br>
+            c.temp_allocator.data = &amp;global_default_temp_allocator_data
+    <br>
+        }
+    <br>
+    <code>- The `global_default_temp_allocator_data` is defined at comp-time as:</code>
+    odin
+    <br>
+    when !NO_DEFAULT_TEMP_ALLOCATOR {
+    <br>
+        when ODIN_ARCH == .i386 &amp;&amp; ODIN_OS == .Windows {
+    <br>
+            // Thread-local storage is problematic on Windows i386
+    <br>
+            global_default_temp_allocator_data: Default_Temp_Allocator
+    <br>
+        } else {
+    <br>
+            @thread_local global_default_temp_allocator_data: Default_Temp_Allocator
+    <br>
+        }
+    <br>
+    }
+    <br>
+    ```
+    <br>
+    - At this point, the 
+    <code>.data</code>
+    &nbsp;doesn't have anything, besides an empty `runtime.Arena`.
+</p>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Manually initialize the 
+                <code>context.temp_allocator</code>
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Initializes the global temporary allocator used as the default 
+                    <code>context.temp_allocator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is ignored when 
+                    <code>NO_DEFAULT_TEMP_ALLOCATOR</code>
+                    &nbsp;is true.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;This procedure is not necessary to use the Arena as the default zero as 
+                    <code>arena_alloc</code>
+                    &nbsp;will set things up if necessary&quot;; this means that if this is not called, the 
+                    <code>context.temp_allocator</code>
+                    &nbsp;will be initialized automatically during its first allocation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    As this is a builtin procedure, you can just call it as 
+                    <code>init_global_temporary_allocator(..)</code>
+                    .
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> @(builtin, disabled=NO_DEFAULT_TEMP_ALLOCATOR)
+ init_global_temporary_allocator :: proc(size: int, backup_allocator := context.allocator) {
+     when !NO_DEFAULT_TEMP_ALLOCATOR {
+         default_temp_allocator_init(&global_default_temp_allocator_data, size, backup_allocator)
+     }
+ }
 </code></pre>
+		<ul>
+			<li>
+				<p>
+                    Internally, this will be called:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> @(require_results)
+ memory_block_alloc :: proc(allocator: Allocator, capacity: uint, alignment: uint, loc := #caller_location) -&gt; (block: ^Memory_Block, err: Allocator_Error) {
+     total_size  := uint(capacity + max(alignment, size_of(Memory_Block)))
+     base_offset := uintptr(max(alignment, size_of(Memory_Block)))
+     
+     min_alignment: int = max(16, align_of(Memory_Block), int(alignment))
+     data := mem_alloc(int(total_size), min_alignment, allocator, loc) or_return
+     block = (^Memory_Block)(raw_data(data))
+     end := uintptr(raw_data(data)[len(data):])
+     
+     block.allocator = allocator
+     block.base = ([^]byte)(uintptr(block) + base_offset)
+     block.capacity = uint(end - uintptr(block.base))
+     
+     // sanitizer.address_poison(block.base, block.capacity)
+     
+     // Should be zeroed
+     assert(block.used == 0)
+     assert(block.prev == nil)
+     return
+ }
+ 
+ // Initializes the arena with a usable block. 
+ @(require_results)
+ arena_init :: proc(arena: ^Arena, size: uint, backing_allocator: Allocator, loc := #caller_location) -&gt; Allocator_Error {
+     arena^ = {}
+     arena.backing_allocator = backing_allocator
+     arena.minimum_block_size = max(size, 1&lt;&lt;12) // minimum block size of 4 KiB
+     new_block := memory_block_alloc(arena.backing_allocator, arena.minimum_block_size, 0, loc) or_return
+     arena.curr_block = new_block
+     arena.total_capacity += new_block.capacity
+     return nil
+ }
+ 
+ default_temp_allocator_init :: proc(s: ^Default_Temp_Allocator, size: int, backing_allocator := context.allocator) {
+&nbsp;&nbsp;&nbsp;&nbsp; _ = arena_init(&s.arena, uint(size), backing_allocator)
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Let the 
+                <code>context.temp_allocator</code>
+                &nbsp;be initialized automatically
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When using the 
+                    <code>context.temp_allocator</code>
+                    &nbsp;to alloc anything, this procedure will be called:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> default_temp_allocator_proc :: proc(allocator_data: rawptr, mode: Allocator_Mode,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size, alignment: int,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; old_memory: rawptr, old_size: int, loc := #caller_location) -&gt; (data: []byte, err: Allocator_Error) {
+&nbsp;&nbsp;&nbsp;&nbsp; s := (^Default_Temp_Allocator)(allocator_data)
+&nbsp;&nbsp;&nbsp;&nbsp; return arena_allocator_proc(&s.arena, mode, size, alignment, old_memory, old_size, loc)
+ }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    The 
+                    <code>runtime.arena_allocator_proc</code>
+                    &nbsp;will internally call 
+                    <code>runtime.arena_alloc</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Finally, if no 
+                    <code>backing_allocator</code>
+                    &nbsp;was set for the 
+                    <code>context.temp_allocator</code>
+                    , the 
+                    <code>default_allocator()</code>
+                    &nbsp;will be used:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> if arena.backing_allocator.procedure == nil {
+&nbsp;&nbsp;&nbsp;&nbsp; arena.backing_allocator = default_allocator()
+ }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    The default size will be:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> DEFAULT_TEMP_ALLOCATOR_BACKING_SIZE: int : #config(DEFAULT_TEMP_ALLOCATOR_BACKING_SIZE, 4 * Megabyte)
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    The minimum size is 
+                    <code>4 KiB</code>
+                    ; this is enforced by the 
+                    <code>arena_init</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The 
+                    <code>default_allocator</code>
+                    &nbsp;is the 
+                    <code>heap_allocator</code>
+                    &nbsp;if the conditions are met:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> when ODIN_DEFAULT_TO_NIL_ALLOCATOR {
+     default_allocator_proc :: nil_allocator_proc
+     default_allocator :: nil_allocator
+ } else when ODIN_DEFAULT_TO_PANIC_ALLOCATOR {
+     default_allocator_proc :: panic_allocator_proc
+     default_allocator :: panic_allocator
+ } else when ODIN_OS != .Orca && (ODIN_ARCH == .wasm32 || ODIN_ARCH == .wasm64p32) {
+     default_allocator :: default_wasm_allocator
+     default_allocator_proc :: wasm_allocator_proc
+ } else {
+     default_allocator :: heap_allocator
+     default_allocator_proc :: heap_allocator_proc
+ }
+</code></pre>
+	</li>
+</ul>
 <h5
 	id="deinit" >
     Deinit
@@ -18333,7 +20598,9 @@ default_temp_allocator_init :: proc(s: ^Default_Temp_Allocator, size: int, backi
 		<p>
             Called automatically after the 
             <code>main</code>
-            &nbsp;procedure ends.
+            &nbsp;procedure ends (
+            <code>@(fini)</code>
+            ).
 		</p>
 	</li>
 </ul>
@@ -18434,12 +20701,12 @@ arena_allocator_proc :: proc(allocator_data: rawptr, mode: Allocator_Mode,
 }
 </code></pre>
 <h4
-	id="reset-coderuntime-arena-code-codecontext-temp_allocator-code-to-previous-state-coderuntime-arena_temp-code-quottemp-allocator-tempquot-coderuntime-default_temp_allocator_temp_guard-code" >
-    Reset 
+	id="free-last-memory-block-from-coderuntime-arena-code-codecontext-temp_allocator-code-with-coderuntime-arena_temp-code-quottemp-allocator-tempquot-coderuntime-default_temp_allocator_temp_guard-code" >
+    Free last Memory Block from 
     <code>runtime.Arena</code>
     &nbsp;(
     <code>context.temp_allocator</code>
-    ) to previous state: 
+    ) with 
     <code>runtime.Arena_Temp</code>
     &nbsp;/ &quot;Temp Allocator Temp&quot; / 
     <code>runtime.DEFAULT_TEMP_ALLOCATOR_TEMP_GUARD</code>
@@ -18460,152 +20727,6 @@ arena_allocator_proc :: proc(allocator_data: rawptr, mode: Allocator_Mode,
             <code>arena_temp_ignore</code>
             .
 		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">Arena :: struct {
-    kind:                Arena_Kind,
-    curr_block:          ^Memory_Block,
-    total_used:          uint,
-    total_reserved:      uint,
-    default_commit_size: uint, // commit size &lt;= reservation size
-    minimum_block_size:  uint, // block size == total reservation
-    temp_count:          uint,
-    mutex:               sync.Mutex,
-}
-
-Memory_Block :: struct {
-    prev: ^Memory_Block,
-    base:      [^]byte,
-    used:      uint,
-    committed: uint,
-    reserved:  uint,
-}
-
-Arena_Temp :: struct {
-    arena: ^Arena,
-    block: ^Memory_Block,
-    used:  uint,
-}
-</code></pre>
-<h5
-	id="usage" >
-    Usage
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Begin
-			</strong>
-            :
-		</p>
-<pre><code class="language-odin" data-lang="odin"> @(require_results, no_sanitize_address)
- arena_temp_begin :: proc(arena: ^Arena, loc := #caller_location) -&gt; (temp: Arena_Temp) {
-     assert(arena != nil, "nil arena", loc)
-     sync.mutex_guard(&arena.mutex)
-     temp.arena = arena
-     temp.block = arena.curr_block
-     if arena.curr_block != nil {
-         temp.used = arena.curr_block.used
-     }
-     arena.temp_count += 1
-     return
- }
-</code></pre>
-	</li>
-	<li>
-		<p>
-			<strong>
-                End
-			</strong>
-            :
-		</p>
-<pre><code class="language-odin" data-lang="odin"> @(no_sanitize_address)
- arena_temp_end :: proc(temp: Arena_Temp, loc := #caller_location) {
-     assert(temp.arena != nil, "nil arena", loc)
-     arena := temp.arena
-     sync.mutex_guard(&arena.mutex)
-     if temp.block != nil {
-         memory_block_found := false
-         for block := arena.curr_block; block != nil; block = block.prev {
-             if block == temp.block {
-                 memory_block_found = true
-                 break
-             }
-         }
-         if !memory_block_found {
-             assert(arena.curr_block == temp.block, "memory block stored within Arena_Temp not owned by Arena", loc)
-         }
-         for arena.curr_block != temp.block {
-             arena_growing_free_last_memory_block(arena)
-         }
-         if block := arena.curr_block; block != nil {
-             assert(block.used &gt;= temp.used, "out of order use of arena_temp_end", loc)
-             amount_to_zero := block.used-temp.used
-             mem.zero_slice(block.base[temp.used:][:amount_to_zero])
-             block.used = temp.used
-             arena.total_used -= amount_to_zero
-         }
-     }
-     assert(arena.temp_count &gt; 0, "double-use of arena_temp_end", loc)
-     arena.temp_count -= 1
- }
-</code></pre>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Guard
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    I didn't find any guard implementations for this one.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Ignore
-			</strong>
-            :
-		</p>
-<pre><code class="language-odin" data-lang="odin"> @(no_sanitize_address)
- arena_temp_ignore :: proc(temp: Arena_Temp, loc := #caller_location) {
-     assert(temp.arena != nil, "nil arena", loc)
-     arena := temp.arena
-     sync.mutex_guard(&arena.mutex)
-     assert(arena.temp_count &gt; 0, "double-use of arena_temp_end", loc)
-     arena.temp_count -= 1
- }
-</code></pre>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Check
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Asserts that all uses of 
-                    <code>Arena_Temp</code>
-                    &nbsp;has been used by an 
-                    <code>Arena</code>
-				</p>
-			</li>
-		</ul>
-<pre><code class="language-odin" data-lang="odin"> @(no_sanitize_address)
- arena_check_temp :: proc(arena: ^Arena, loc := #caller_location) {
-     assert(arena.temp_count == 0, "Arena_Temp not been ended", loc)
- }
-</code></pre>
 	</li>
 	<li>
 		<p>
@@ -18692,15 +20813,75 @@ Arena_Temp :: struct {
 	</li>
 </ul>
 <h5
-	id="usage" >
-    Usage
+	id="tldr-and-faq-how-the-guard-works" >
+    TLDR and FAQ: How the guard works
 </h5>
 <ul>
 	<li>
 		<p>
-            <code>base:runtime -&gt; default_temp_allocator_arena.odin + default_temporary_allocator.odin</code>
+            When exiting the scope:
 		</p>
+		<ul>
+			<li>
+				<p>
+                    It frees all the new memory blocks from the arena.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Any new things in the 
+                    <code>temp.block</code>
+                    &nbsp;(which is now the 
+                    <code>arena.curr_block</code>
+                    ) are zeroed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The &quot;arena current position&quot; is rolled back (
+                    <code>block.used</code>
+                    ).
+				</p>
+			</li>
+		</ul>
 	</li>
+	<li>
+		<p>
+            Is it inefficient to use this guard everywhere? Where should I use this guard vs just using the 
+            <code>context.temp_allocator</code>
+            &nbsp;directly?
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The guard will not free any memory if there's no new block inside the arena, BUT, it will ensure the new memory created within the arena is zeroed and the &quot;arena current position&quot; is rolled back.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In that sense, even though it might have situations where nothing will be freed on the OS, the arena will have &quot;more space&quot;, as new things can be allocated disregarding the space used in allocations inside the guard scope.
+				</p>
+			</li>
+			<li>
+				<p>
+                    As a conclusion, it might not be that performance efficient to use the guard everywhere, but it reduces memory spikes. The more guards used, the more frequent the frees can be, reducing the memory spike, but approximating the allocator to a &quot;general allocator&quot; with 
+                    <code>new</code>
+                    /
+                    <code>free</code>
+                    . It's all about lifetimes. A good use of the guard is when placed where it prevents memory spikes and it's not frequent enough so it becomes inefficient.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="usage" >
+    Usage
+</h5>
+<p>
+    <code>base:runtime -&gt; default_temp_allocator_arena.odin + default_temporary_allocator.odin</code>
+</p>
+<ul>
 	<li>
 		<p>
 			<strong>
@@ -18728,6 +20909,23 @@ Arena_Temp :: struct {
 &nbsp;&nbsp;&nbsp;&nbsp; return
  }
 </code></pre>
+		<ul>
+			<li>
+				<p>
+                    The 
+                    <code>runtime.Arena</code>
+                    &nbsp;has a 
+                    <code>temp_count</code>
+                    &nbsp;to keep track to not used 
+                    <code>_end</code>
+                    &nbsp;twice in a row; if you just use the 
+					<strong>
+                        guard
+					</strong>
+                    , then this shouldn't matter.
+				</p>
+			</li>
+		</ul>
 	</li>
 	<li>
 		<p>
@@ -18736,7 +20934,34 @@ Arena_Temp :: struct {
 			</strong>
             :
 		</p>
-<pre><code class="language-odin" data-lang="odin"> arena_temp_end :: proc(temp: Arena_Temp, loc := #caller_location) {
+<pre><code class="language-odin" data-lang="odin"> mem_free :: #force_no_inline proc(ptr: rawptr, allocator := context.allocator, loc := #caller_location) -&gt; Allocator_Error {
+     if ptr == nil || allocator.procedure == nil {
+         return nil
+     }
+     _, err := allocator.procedure(allocator.data, .Free, 0, 0, ptr, 0, loc)
+     return err
+ }
+ 
+ memory_block_dealloc :: proc "contextless" (block_to_free: ^Memory_Block, loc := #caller_location) {
+     if block_to_free != nil {
+         allocator := block_to_free.allocator
+         // sanitizer.address_unpoison(block_to_free.base, block_to_free.capacity)
+         context = default_context()
+         context.allocator = allocator
+         mem_free(block_to_free, allocator, loc)
+     }
+ }
+ 
+ arena_free_last_memory_block :: proc(arena: ^Arena, loc := #caller_location) {
+     if free_block := arena.curr_block; free_block != nil {
+         arena.curr_block = free_block.prev
+         
+         arena.total_capacity -= free_block.capacity
+         memory_block_dealloc(free_block, loc)
+     }
+ }
+&nbsp;&nbsp; 
+ arena_temp_end :: proc(temp: Arena_Temp, loc := #caller_location) {
      if temp.arena == nil {
          assert(temp.block == nil)
          assert(temp.used == 0)
@@ -18774,6 +20999,62 @@ Arena_Temp :: struct {
 &nbsp;&nbsp;&nbsp;&nbsp; arena_temp_end(temp, loc)
  }
 </code></pre>
+		<ul>
+			<li>
+				<p>
+                    The most important operations are:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Frees any 
+							<em>
+                                new
+							</em>
+                            &nbsp;memory blocks from the 
+                            <code>context.temp_allocator</code>
+                            , comparing to the memory block stored on 
+                            <code>arena_temp_begin</code>
+                            :
+						</p>
+<pre><code class="language-odin" data-lang="odin"> for arena.curr_block != temp.block {
+</code></pre>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+                        arena_free_last_memory_block(arena)
+            <br>
+            }
+            <br>
+            <code>- Internally:</code>
+            odin
+            <br>
+            arena.curr_block = free_block.prev
+            <br>
+            arena.total_capacity -= free_block.capacity
+            <br>
+            <code>-&nbsp;&nbsp;- Zero the extra memory used during the scope:</code>
+            odin
+            <br>
+            amount_to_zero := block.used-temp.used
+            <br>
+            intrinsics.mem_zero(block.base[temp.used:], amount_to_zero)
+            <br>
+            <code>- Revert the `arena.curr_block.used` and `arena.total_used` </code>
+            odin
+            <br>
+            block.used = temp.used&nbsp;&nbsp;// 
+            <code>block</code>
+            &nbsp;is 
+            <code>arena.curr_block</code>
+            &nbsp;in this case.
+            <br>
+            arena.total_used -= amount_to_zero
+            <br>
+            ```
+		</p>
 	</li>
 	<li>
 		<p>
@@ -18792,6 +21073,15 @@ Arena_Temp :: struct {
                     &nbsp;in the 
                     <code>core</code>
                     &nbsp;library.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The return value from this procedure is never handled on purpose. The only reason there is a return is to send it to the 
+                    <code>default_temp_allocator_temp_end</code>
+                    &nbsp;on exiting the scope. The user doesn't usually care about the 
+                    <code>Arena_Temp</code>
+                    .
 				</p>
 			</li>
 		</ul>
@@ -19500,42 +21790,6 @@ Buddy_Allocator :: struct {
             A heap in general is a data structure and in the context of allocators it is a &quot;general purpose allocator&quot;. Most common heap allocators are built on top of allocating virtual memory directly. The point of the &quot;general purpose&quot; aspect means you can allocate &quot;things&quot; of varying size, alignment, and free them at arbitrary times (i.e. the lifetimes of each allocation is out of order). And to do this, they require storing some sort of metadata about the size of the allocation, and where the free allocations are (called a free list). More complicated algorithms do more things to be more efficient.
 		</p>
 	</li>
-	<li>
-		<p>
-			<strong>
-                Thread-safe
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Is 
-                    <code>context.allocator</code>
-                    &nbsp;thread-safe? it's just uses what the OS provides. which generally are, yes.
-				</p>
-			</li>
-			<li>
-				<p>
-                    And when we have our own malloc implementation, it'll be thread-safe too.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            The current PR for it: 
-							<a
-								href="https://github.com/odin-lang/Odin/pull/4749" 
-								class="external-link" 
-								target="_blank" >
-                                https://github.com/odin-lang/Odin/pull/4749
-							</a>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
 </ul>
 <pre><code class="language-odin" data-lang="odin">@(require_results)
 heap_allocator :: proc() -&gt; Allocator {
@@ -19545,6 +21799,147 @@ heap_allocator :: proc() -&gt; Allocator {
     }
 }
 </code></pre>
+<h5
+	id="in-codeos2-code" >
+    In 
+    <code>os2</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            The 
+            <code>heap_allocator</code>
+            &nbsp;is redefined internally if using Windows.
+		</p>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I'd guess probably because 
+					<a
+						href="https://github.com/odin-lang/Odin/pull/4749" 
+						class="external-link" 
+						target="_blank" >
+                        <code>runtime.heap_allocator</code>
+                        &nbsp;may eventually become an Odin-implemented heap allocator
+					</a>
+                    , and 
+                    <code>os.heap_allocator</code>
+                    &nbsp;is intended to specifically use the underlying OS allocator (which 
+                    <code>runtime.heap_allocator</code>
+                    &nbsp;currently also is).
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is done so 
+                    <code>os.heap_allocator</code>
+                    &nbsp;is 
+					<em>
+                        the OS's heap allocator
+					</em>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    As for 
+                    <code>os2</code>
+                    &nbsp;using its own allocators instead of 
+                    <code>context</code>
+                    &nbsp;ones... OS Stuff is Different™ is the usual reply I've seen.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="using-codeheap_allocator-code" >
+    Using 
+    <code>heap_allocator()</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            The procedure uses 
+            <code>data = nil</code>
+            , while the 
+            <code>heap_allocator_proc</code>
+            &nbsp;doesn't use the 
+            <code>allocator_data: rawptr</code>
+            . This means that every call to 
+            <code>heap_allocator</code>
+            &nbsp;uses the same backing region from the OS heap allocator implemented.
+		</p>
+	</li>
+	<li>
+		<p>
+            Example:
+		</p>
+<pre><code class="language-odin" data-lang="odin"> a := runtime.heap_allocator()
+ b := runtime.heap_allocator()
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    <code>a</code>
+                    &nbsp;and 
+                    <code>b</code>
+                    &nbsp;are the same. There's no new 
+                    <code>mmap</code>
+                    , or etc, being made.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="is-thread-safe" >
+    Is thread-safe?
+</h5>
+<ul>
+	<li>
+		<p>
+            Yes.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's just uses what the OS provides. which generally are, yes. And when we have our own malloc implementation, it'll be thread-safe too.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The current PR for it: 
+					<a
+						href="https://github.com/odin-lang/Odin/pull/4749" 
+						class="external-link" 
+						target="_blank" >
+                        https://github.com/odin-lang/Odin/pull/4749
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            ChatGPT: &quot;The C standard library implementations of 
+            <code>malloc</code>
+            , 
+            <code>calloc</code>
+            , 
+            <code>realloc</code>
+            , and 
+            <code>free</code>
+            &nbsp;provided by all mainstream libc variants (glibc, musl, BSD libc, Windows CRT, etc.) are thread-safe. They use internal locking or per-thread arenas to avoid corruption.&quot;
+		</p>
+	</li>
+</ul>
 <h5
 	id="allocator-proc" >
     Allocator Proc
@@ -22672,133 +25067,6 @@ _default_resize_bytes_align :: #force_inline proc(
 	</li>
 </ul>
 <h2
-	id="attributes" >
-    Attributes
-</h2>
-<ul>
-	<li>
-		<p>
-            Modify the compilation details or behavior of declarations.
-		</p>
-	</li>
-</ul>
-<h5
-	id="general-attributes" >
-    General Attributes
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://odin-lang.org/docs/overview/#general-attributes" 
-				class="external-link" 
-				target="_blank" >
-                General Attributes
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            <code>@(private)</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Equivalent to 
-                    <code>@(private="package")</code>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    Using 
-                    <code>#+private</code>
-                    &nbsp;before the package declaration will automatically add 
-                    <code>@(private)</code>
-                    &nbsp;to everything in that file.
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>#+private file</code>
-                    &nbsp;is equivalent to automatically adding 
-                    <code>@(private="file")</code>
-                    &nbsp;to each declaration.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="procedure-attributes" >
-    Procedure Attributes
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://odin-lang.org/docs/overview/#procedure-attributes" 
-				class="external-link" 
-				target="_blank" >
-                Procedure Attributes
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="variable-attributes" >
-    Variable Attributes
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://odin-lang.org/docs/overview/#variable-attributes" 
-				class="external-link" 
-				target="_blank" >
-                Variable Attributes
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            <code>@(static)</code>
-		</p>
-	</li>
-	<li>
-		<p>
-            <code>@(rodata)</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Read-only
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="linking-and-foreign-attributes" >
-    Linking and Foreign Attributes
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://odin-lang.org/docs/overview/#linking-and-foreign-attributes" 
-				class="external-link" 
-				target="_blank" >
-                Linking and Foreign Attributes
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h2
 	id="directives" >
     Directives
 </h2>
@@ -23997,6 +26265,17 @@ _default_resize_bytes_align :: #force_inline proc(
 				class="external-link" 
 				target="_blank" >
                 Odin-pathgrid
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/ChrisPHP/odin-flowfield" 
+				class="external-link" 
+				target="_blank" >
+                odin-flowfield
 			</a>
             .
 		</p>
@@ -25240,7 +27519,7 @@ main :: proc() {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-16 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-11-20 🚀
 			</footer>
 		</div>
 		<aside
@@ -25307,6 +27586,12 @@ main :: proc() {
 						<ul>
 							<li>
 								<a
+									href="#compile-time-flags" >
+                                    Compile-time Flags
+								</a>
+							</li>
+							<li>
+								<a
 									href="#when" >
                                     When
 								</a>
@@ -25315,6 +27600,18 @@ main :: proc() {
 								<a
 									href="#config" >
                                     #config
+								</a>
+							</li>
+							<li>
+								<a
+									href="#procedure-disabled" >
+                                    Procedure Disabled
+								</a>
+							</li>
+							<li>
+								<a
+									href="#variable-and-procedure-access" >
+                                    Variable and Procedure Access
 								</a>
 							</li>
 							<li>
@@ -25385,20 +27682,6 @@ main :: proc() {
 								<a
 									href="#examples" >
                                     Examples
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a
-							href="#debugger-integration" >
-                            Debugger Integration
-						</a>
-						<ul>
-							<li>
-								<a
-									href="#vscode" >
-                                    VSCode
 								</a>
 							</li>
 						</ul>
@@ -26029,6 +28312,12 @@ main :: proc() {
 						<ul>
 							<li>
 								<a
+									href="#implicit-allocator-usage" >
+                                    Implicit Allocator Usage
+								</a>
+							</li>
+							<li>
+								<a
 									href="#default-allocators" >
                                     Default Allocators
 								</a>
@@ -26047,8 +28336,26 @@ main :: proc() {
 							</li>
 							<li>
 								<a
-									href="#arena-allocator-linear-allocator-bump-allocator-region-allocator" >
-                                    Arena Allocator / Linear Allocator / Bump Allocator / Region Allocator
+									href="#arena-backed-directly-by-virtual-memory-codevmem-arena-code" >
+                                    Arena: Backed directly by virtual memory (<code>vmem.Arena</code>)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#arena-backed-buffer-as-an-arena-codemem-arena-code" >
+                                    Arena: Backed buffer as an arena (<code>mem.Arena</code>)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#arena-growing-codemem-arena-code-codemem-dynamic_arena-code" >
+                                    Arena: Growing <code>mem.Arena</code> (<code>mem.Dynamic_Arena</code>)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#arena-codecontext-temp_allocator-code-coderuntime-default_temp_allocator-code" >
+                                    Arena: <code>context.temp_allocator</code> (<code>runtime.Default_Temp_Allocator</code>)
 								</a>
 							</li>
 							<li>
@@ -26205,14 +28512,6 @@ main :: proc() {
                                     Conditions
 								</a>
 							</li>
-						</ul>
-					</li>
-					<li>
-						<a
-							href="#attributes" >
-                            Attributes
-						</a>
-						<ul>
 						</ul>
 					</li>
 					<li>

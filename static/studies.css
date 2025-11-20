@@ -229,6 +229,22 @@ pre, code {
         scroll-padding: 2em;
     }
 
+    /* Chrome, Safari, Edge: Scrollbar */
+    html::-webkit-scrollbar {
+        height: 12px;
+    }
+    html::-webkit-scrollbar-track {
+        background: var(--table-scrollbar);
+        border-radius: 6px;
+    }
+    html::-webkit-scrollbar-thumb {
+        background: var(--highlight-bg);
+        border-radius: 6px;
+    }
+    html::-webkit-scrollbar-thumb:hover {
+        background: var(--checkbox-border);
+    }
+
     body {
         display: flex;
 
@@ -498,6 +514,8 @@ pre, code {
     #central-wrapper {
         background: var(--central-bg);
         
+        display: flex;
+        flex-direction: column;
         flex: auto;
     }
 
@@ -505,10 +523,14 @@ pre, code {
         display: flex;
         flex-direction: row;
 
-        width: 100%;
-        min-height: 94%;
+        /* width: 100%;
+        min-height: 94%; */
 
         padding: 0 var(--padding_x2);
+
+        flex: 1 1 auto;
+        width: 1200px;
+        align-self: center;
     }
 
     main > article {
@@ -516,11 +538,9 @@ pre, code {
         flex: 1;
         flex-direction: column;
 
-        width: 60vw;
-
         padding-top: var(--padding_x2);
         
-        overflow: auto;
+        overflow: auto;        
     }
 
     main > article > nav > button:last-child {
@@ -1048,6 +1068,7 @@ input[type="checkbox"] {
 
     user-select: none;
 }
+
 
 #note-content .table:active {
     cursor: grabbing;

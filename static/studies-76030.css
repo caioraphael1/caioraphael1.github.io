@@ -229,21 +229,6 @@ pre, code {
         scroll-padding: 2em;
     }
 
-    /* Chrome, Safari, Edge: Scrollbar */
-    html::-webkit-scrollbar {
-        height: 12px;
-    }
-    html::-webkit-scrollbar-track {
-        background: var(--table-scrollbar);
-        border-radius: 6px;
-    }
-    html::-webkit-scrollbar-thumb {
-        background: var(--highlight-bg);
-        border-radius: 6px;
-    }
-    html::-webkit-scrollbar-thumb:hover {
-        background: var(--checkbox-border);
-    }
 
     body {
         display: flex;
@@ -257,6 +242,66 @@ pre, code {
         background-size: cover;
     }
 
+/* SCROLLBAR */
+    /* Ensure the containers own scrollbars (you already have this) */
+    /* html, */
+    #left-sidebar,
+    #right-sidebar,
+    main > article,
+    #left-sidebar nav {
+        /* you already have height:100svh on sidebars and overflow:auto/auto-y */
+        -webkit-overflow-scrolling: touch; /* optional, smooth scrolling on mobile */
+    }
+
+    /* Scrollbar styles for the actual scrollable elements (explicit) */
+    /* html::-webkit-scrollbar, */
+    #left-sidebar::-webkit-scrollbar,
+    #right-sidebar::-webkit-scrollbar,
+    main > article::-webkit-scrollbar,
+    #left-sidebar nav::-webkit-scrollbar {
+        width: 12px;   /* vertical */
+        height: 12px;  /* horizontal */
+    }
+
+    /* Track */
+    /* html::-webkit-scrollbar-track, */
+    #left-sidebar::-webkit-scrollbar-track,
+    #right-sidebar::-webkit-scrollbar-track,
+    main > article::-webkit-scrollbar-track,
+    #left-sidebar nav::-webkit-scrollbar-track {
+        background: var(--scrollbar-bg);
+        border-radius: 6px;
+    }
+
+    /* Thumb */
+    /* html::-webkit-scrollbar-thumb, */
+    #left-sidebar::-webkit-scrollbar-thumb,
+    #right-sidebar::-webkit-scrollbar-thumb,
+    main > article::-webkit-scrollbar-thumb,
+    #left-sidebar nav::-webkit-scrollbar-thumb {
+        /* background: var(--highlight-bg); */
+        background: #6f6f73;
+        border-radius: 6px;
+    }
+
+    /* Hover */
+    /* html::-webkit-scrollbar-thumb:hover, */
+    #left-sidebar::-webkit-scrollbar-thumb:hover,
+    #right-sidebar::-webkit-scrollbar-thumb:hover,
+    main > article::-webkit-scrollbar-thumb:hover,
+    #left-sidebar nav::-webkit-scrollbar-thumb:hover {
+        /* background: var(--highlight-hover-bg); */
+        background: #57575a;
+    }
+
+    /* Corner where a horizontal and vertical scrollbar meet (prevents default white square) */
+    /* html::-webkit-scrollbar-corner, */
+    #left-sidebar::-webkit-scrollbar-corner,
+    #right-sidebar::-webkit-scrollbar-corner,
+    main > article::-webkit-scrollbar-corner,
+    #left-sidebar nav::-webkit-scrollbar-corner {
+        background: var(--scrollbar-bg);
+    }
 
 .site-logo {
     color: transparent;
@@ -806,7 +851,7 @@ pre, code {
 
 
 /* Mobile */
-@media (max-width: 1600px), (orientation: portrait) {
+@media (orientation: portrait) {
     main {
         padding-top: 2svh;
     }

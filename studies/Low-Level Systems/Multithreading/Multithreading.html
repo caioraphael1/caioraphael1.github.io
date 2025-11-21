@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.77341.css" >
+			href="/static/studies.59452.css" >
 	</head>
 	<body>
 		<aside
@@ -1251,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-11
 							</time>
 							<time
-								datetime="2025-11-02" >
-                                | Updated: 2025-11-02
+								datetime="2025-11-21" >
+                                | Updated: 2025-11-21
 							</time>
 						</p>
 					</header>
@@ -1582,6 +1582,117 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
+<h5
+	id="read-with-concurrent-write" >
+    Read with concurrent Write
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;If a thread is modifing a variable and I try only READING this variable on a different thread, what can I expect? I assumed that only 2 thing could happen: I either get the old value, or the new value&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            More than just “old or new” can be observed in practice. Memory effects include seeing the old value, the new value, a 
+			<em>
+                torn
+			</em>
+            &nbsp;(partially-updated) value, or behavior caused by compiler/CPU reordering (stale values, values observed in surprising orders). Which of those can occur depends on alignment/size, hardware cache-coherence, and the language memory model and compiler.
+		</p>
+	</li>
+	<li>
+		<p>
+            atomic single-word writes (aligned to machine word)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    On most modern CPUs a naturally aligned write of a machine-word-sized integer is atomic at the hardware level — the hardware will not present a half-written word to another core. In that case the reader will typically see either the old value or the new value (once the write becomes visible).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Caveat: “typically” is not the same as “guaranteed by the language.” If your language/compiler does not declare the access atomic (e.g., plain 
+                    <code>int</code>
+                    &nbsp;in C/C++ pre-C11), the compiler may optimize assuming no concurrent writer, which can produce surprising behavior even if hardware atomicity holds. Use language atomics to get defined semantics.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            multi-word values or misaligned accesses → tearing possible
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If the write spans multiple machine words (for example writing a 64-bit value on a 32-bit CPU, or a struct covering multiple words) or is misaligned, hardware can perform the write as multiple smaller writes. A concurrent reader may see a value composed of some bytes from the old value and some bytes from the new value — a torn value (part old, part new). That is not just “old or new.”
+				</p>
+			</li>
+			<li>
+				<p>
+                    Example: on a 32-bit CPU writing a 64-bit integer might execute as two 32-bit stores; another core can read between them.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            caches, store buffers, and visibility delays
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Writing a value usually goes into the CPU core’s store buffer first; the write becomes globally visible when it propagates to other cores’ caches (through the coherence protocol). During that window another core may not yet see the new value and will read the old one. So a reader can see the old value for some time even after the write completed on the writer core.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The cache-coherence protocol (MESI / variants) guarantees eventual coherence, but not instantaneous visibility without synchronization/fences. On most coherent systems, once the write is visible it will appear as a single update for naturally aligned single-word writes; for multi-word/misaligned it may be torn.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            compiler and CPU reorderings (visibility and sequencing)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Compilers can cache a value in a register, reorder memory operations, or eliminate reads/writes if the code is not marked atomic/volatile as required by the language semantics. That means the value you read might be a stale register value or the read might be optimized away.
+				</p>
+			</li>
+			<li>
+				<p>
+                    CPUs reorder loads and stores (the allowed reorderings depend on the architecture). Without proper memory-ordering primitives (fences/atomic memory orders), the observed order of multiple memory operations can differ across threads.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            language-level oddities (Java “out-of-thin-air”, C/C++ undefined)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In Java, unsynchronized data races allow a wide set of behaviors — theoretically even values that seem “out of thin air” in some relaxed executions (practical occurrences are rare and subtle). 
+                    <code>volatile</code>
+                    &nbsp;or 
+                    <code>Atomic*</code>
+                    &nbsp;enforces ordering/visibility.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In C/C++ a plain non-atomic concurrent write+read is a data race → undefined behavior. That means anything can happen (including program crash, or surprising compiler-generated assumptions that make behavior impossible to reason about).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
 <h3
 	id="deadlock" >
     Deadlock
@@ -1590,6 +1701,27 @@ window.MathJax = {
 	<li>
 		<p>
             Occurs when two or more threads are blocked forever, waiting on each other’s resources.
+		</p>
+	</li>
+</ul>
+<h3
+	id="lock-free" >
+    Lock-Free
+</h3>
+<ul>
+	<li>
+		<p>
+            When using locks, sections of the code that access shared memory are guarded by locks, allowing limited access to threads and blocking the execution of other threads.
+		</p>
+	</li>
+	<li>
+		<p>
+            In lock-free programming, the data itself is organized such that threads don't intervene much.
+		</p>
+	</li>
+	<li>
+		<p>
+            It can be done via segmenting the data between threads, and/or by using atomic operations.
 		</p>
 	</li>
 </ul>
@@ -4701,6 +4833,871 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
+	id="atomic-operations-lock-free" >
+    Atomic Operations / Lock-free
+</h3>
+<ul>
+	<li>
+		<p>
+            Low-level CPU-supported operations (e.g., 
+            <code>atomic_add</code>
+            , 
+            <code>compare_and_swap</code>
+            ) that complete indivisibly.
+		</p>
+	</li>
+	<li>
+		<p>
+            No locking required.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Use case
+			</strong>
+            : Lightweight synchronization for counters, flags, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://blog.molecular-matters.com/2012/03/05/volatile-thread-synchronization/" 
+				class="external-link" 
+				target="_blank" >
+                Avoid using Volatile in C++
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I think this exemplifies a bit the necessity of using atomic operations.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="barrier" >
+    Barrier
+</h3>
+<ul>
+	<li>
+		<p>
+            Blocks a group of threads until all have reached the same point of execution.
+		</p>
+	</li>
+	<li>
+		<p>
+            Once 
+			<em>
+                all
+			</em>
+            &nbsp;threads arrive, they are released simultaneously.
+		</p>
+	</li>
+	<li>
+		<p>
+            Enables multiple threads to synchronize the beginning of some computation.
+		</p>
+	</li>
+	<li>
+		<p>
+            When 
+            <code>barrier_wait</code>
+            &nbsp;procedure is called by any thread, that thread will block the execution, until all threads associated with the barrier reach the same point of execution and also call 
+            <code>barrier_wait</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            When a barrier is initialized, a 
+            <code>thread_count</code>
+            &nbsp;parameter is passed, signifying the amount of participant threads of the barrier. The barrier also keeps track of an internal atomic counter. When a thread calls 
+            <code>barrier_wait</code>
+            , the internal counter is incremented. When the internal counter reaches 
+            <code>thread_count</code>
+            , it is reset and all threads waiting on the barrier are unblocked.
+		</p>
+	</li>
+	<li>
+		<p>
+            This type of synchronization primitive can be used to synchronize &quot;staged&quot; workloads, where the workload is split into stages, and until all threads have completed the previous threads, no thread is allowed to start work on the next stage. In this case, after each stage, a 
+            <code>barrier_wait</code>
+            &nbsp;shall be inserted in the thread procedure.
+		</p>
+	</li>
+</ul>
+<h3
+	id="mutex-mutual-exclusion-lock" >
+    Mutex (Mutual exclusion lock)
+</h3>
+<ul>
+	<li>
+		<p>
+            A Mutex is a 
+			<a
+				href="https://en.wikipedia.org/wiki/Mutual_exclusion" 
+				class="external-link" 
+				target="_blank" >
+                mutual exclusion lock
+			</a>
+            &nbsp;It can be used to prevent more than one thread from entering the critical section, and thus prevent access to same piece of memory by multiple threads, at the same time.
+		</p>
+	</li>
+	<li>
+		<p>
+            Mutex's zero-initializzed value represents an initial, 
+			<em>
+                unlocked
+			</em>
+            &nbsp;state.
+		</p>
+	</li>
+	<li>
+		<p>
+            If another thread tries to acquire the lock, while it's already held (typically by another thread), the thread's execution will be blocked, until the lock is released. Code or memory that is &quot;surrounded&quot; by a mutex lock and unlock operations is said to be &quot;guarded by a mutex&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Ensures only one thread accesses a critical section at a time.
+		</p>
+	</li>
+	<li>
+		<p>
+            If another thread tries to lock an already locked mutex, it blocks until the mutex is released.
+		</p>
+	</li>
+	<li>
+		<p>
+            Protect shared variables from concurrent modification.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://yashdhadve.hashnode.dev/multi-threading-in-odin-lang#heading-handling-deadlock-using-mutex" 
+				class="external-link" 
+				target="_blank" >
+                Odin - Preventing deadlock with Mutex
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="problems-prevented-by-mutex" >
+    Problems Prevented by Mutex
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Race conditions:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When multiple threads access and modify a resource simultaneously in an unpredictable way.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Data inconsistency:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Ensures that operations in a critical section are atomic.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="challenges-of-using-mutex" >
+    Challenges of Using Mutex
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Deadlock:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Occurs when two or more threads are stuck waiting for each other to release mutexes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Starvation:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A thread may wait indefinitely if mutexes are constantly acquired by others.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="what-a-mutex-actually-blocks" >
+    What a Mutex Actually Blocks
+</h5>
+<ul>
+	<li>
+		<p>
+            It blocks other threads from locking the same mutex.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If Thread A locks 
+                    <code>mutex</code>
+                    , Thread B will wait if it tries to lock 
+                    <code>mutex</code>
+                    &nbsp;until Thread A unlocks it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It does not block threads that don’t try to lock 
+                    <code>mutex</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            It does not block the entire function or thread.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The rest of your code (outside the mutex) runs normally.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Only the critical section (between 
+                    <code>lock</code>
+                    /
+                    <code>unlock</code>
+                    ) is protected.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Mutexes Protect Data, Not Functions or Threads.
+		</p>
+<pre><code class="language-odin" data-lang="odin"> textures: map[u32]Texture2D
+ textures_mutex: sync.Mutex
+ 
+ // Thread A (locks mutex, modifies textures)
+ sync.mutex_lock(&textures_mutex)&nbsp;&nbsp;// 🔒
+ textures[123] = load_texture("test.png")&nbsp;&nbsp;// Protected
+ sync.mutex_unlock(&textures_mutex)&nbsp;&nbsp;// 🔓
+ 
+ // Thread B (also needs the mutex to touch textures)
+ sync.mutex_lock(&textures_mutex)&nbsp;&nbsp;// ⏳ Waits if Thread A holds the lock
+ unload_texture(textures[123])
+ sync.mutex_unlock(&textures_mutex)
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    The mutex only blocks Thread B if it tries to lock 
+                    <code>textures_mutex</code>
+                    &nbsp;while Thread A holds it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If Thread B runs code that doesn’t lock 
+                    <code>textures_mutex</code>
+                    , it runs freely.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Mutexes Are Not &quot;Global Barriers&quot;. If two threads use different mutexes, they don’t block each other:
+		</p>
+<pre><code class="language-odin" data-lang="odin"> // Thread A (uses mutex_x)
+ sync.mutex_lock(&mutex_x)&nbsp;&nbsp;// 🔒
+ // ... do work ...
+ sync.mutex_unlock(&mutex_x)&nbsp;&nbsp;// 🔓
+ 
+ // Thread B (uses mutex_y)
+ sync.mutex_lock(&mutex_y)&nbsp;&nbsp;// ✅ Runs in parallel (no conflict)
+ // ... do work ...
+ sync.mutex_unlock(&mutex_y)
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="example-task-queue" >
+    Example: Task Queue
+</h5>
+<pre><code class="language-odin" data-lang="odin">// --- Shared Task System (Thread-safe) ---
+Task_Type :: enum {
+&nbsp;&nbsp;&nbsp;&nbsp;UNLOAD_TEXTURE,
+&nbsp;&nbsp;&nbsp;&nbsp;LOAD_TEXTURE,
+&nbsp;&nbsp;&nbsp;&nbsp;SWAP_SCENE_TEXTURES,
+&nbsp;&nbsp;&nbsp;&nbsp;// Add more as needed...
+}
+
+Task :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;type: Task_Type,
+&nbsp;&nbsp;&nbsp;&nbsp;// Add payload if needed (e.g., texture IDs)
+}
+
+task_queue: [dynamic]Task
+task_mutex: sync.Mutex
+
+// Thread A (Game Thread): Processes tasks
+process_tasks :: proc() {
+&nbsp;&nbsp;&nbsp;&nbsp;// 🔒 LOCK the mutex to safely read the queue
+&nbsp;&nbsp;&nbsp;&nbsp;sync.mutex_lock(&task_mutex)
+&nbsp;&nbsp;&nbsp;&nbsp;defer sync.mutex_unlock(&task_mutex)&nbsp;&nbsp;// 🔓 Unlock when done
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Make a local copy of tasks (optional but cleaner)
+&nbsp;&nbsp;&nbsp;&nbsp;tasks_to_process := task_queue[:]
+&nbsp;&nbsp;&nbsp;&nbsp;clear(&task_queue)&nbsp;&nbsp;// Empty the shared queue
+&nbsp;&nbsp;&nbsp;&nbsp;// 🔓 Mutex unlocked here (defer runs)
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Process tasks WITHOUT holding the mutex
+&nbsp;&nbsp;&nbsp;&nbsp;for task in tasks_to_process {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handle_task(task)&nbsp;&nbsp;// e.g., UnloadTexture(...)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+// Thread B (Network Thread): Adds a task
+add_task :: proc(new_task: Task) {
+&nbsp;&nbsp;&nbsp;&nbsp;// 🔒 LOCK the mutex to safely append
+&nbsp;&nbsp;&nbsp;&nbsp;sync.mutex_lock(&task_mutex)
+&nbsp;&nbsp;&nbsp;&nbsp;defer sync.mutex_unlock(&task_mutex)&nbsp;&nbsp;// 🔓 Unlock when done
+
+&nbsp;&nbsp;&nbsp;&nbsp;append(&task_queue, new_task)
+}
+</code></pre>
+<h5
+	id="example-read-and-write" >
+    Example: Read and Write
+</h5>
+<ul>
+	<li>
+		<p>
+            READ: MAKES A COPY (wrapped in a mutex), WRITE: MUTEX GUARD
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For read operations, make a copy of the data to read; for write operations, use a mutex.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// Shared data with mutex and atomic pointer for efficient reads
+std::mutex data_mutex;
+Data* atomic_data_ptr; // Atomic pointer for thread-safe access
+
+// Read Job
+void ReadJob() {
+&nbsp;&nbsp;Data local_copy;
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;std::lock_guard&lt;std::mutex&gt; lock(data_mutex); // Optional: Only if data isn't atomically swappable
+&nbsp;&nbsp;&nbsp;&nbsp;local_copy = *atomic_data_ptr; // Copy under mutex (or use atomic load)
+&nbsp;&nbsp;}
+&nbsp;&nbsp;// Use local_copy safely...
+}
+
+// Write Job
+void WriteJob() {
+&nbsp;&nbsp;std::lock_guard&lt;std::mutex&gt; lock(data_mutex);
+&nbsp;&nbsp;// Modify data...
+}
+</code></pre>
+<h3
+	id="futex-fast-userspace-mutex" >
+    Futex (Fast Userspace Mutex)
+</h3>
+<ul>
+	<li>
+		<p>
+            Allows most lock/unlock operations to be done in userspace.
+		</p>
+	</li>
+	<li>
+		<p>
+            System call is only used for contention resolution.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Use case
+			</strong>
+            : Efficient locking on Linux systems.
+		</p>
+	</li>
+</ul>
+<h5
+	id="user-space-atomic-spin-with-codecpu_relax-code-vs-futex" >
+    User-space atomic spin (with 
+    <code>cpu_relax</code>
+    ) vs Futex
+</h5>
+<ul>
+	<li>
+		<p>
+            For very short waits (tens–thousands of CPU cycles) a user-space atomic spin (with 
+            <code>cpurelax</code>
+            ) is lower latency than a futex because it avoids syscalls and context switches.
+		</p>
+	</li>
+	<li>
+		<p>
+            For longer waits (microseconds and above, or whenever contention is non-trivial) a futex is far better overall because it blocks the thread in the kernel and does not burn CPU.
+		</p>
+	</li>
+</ul>
+<h3
+	id="spinlock-spin-until-mutex-is-unlocked" >
+    Spinlock (Spin until Mutex is unlocked)
+</h3>
+<ul>
+	<li>
+		<p>
+            Like a mutex, but instead of blocking, it repeatedly checks (spins) until the lock becomes available.
+		</p>
+	</li>
+	<li>
+		<p>
+            Low overhead but inefficient if held for long.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Use case
+			</strong>
+            : Short critical sections on multiprocessor systems.
+		</p>
+	</li>
+</ul>
+<h3
+	id="read-write-mutex-read-write-lock" >
+    Read-Write Mutex / Read-Write Lock
+</h3>
+<h5
+	id="naming" >
+    Naming
+</h5>
+<ul>
+	<li>
+		<p>
+            A read–write lock (RW lock) lets many readers hold the lock concurrently but only one writer at a time. Calling it a 
+			<em>
+                read–write mutex
+			</em>
+            &nbsp;is common and acceptable; it’s a mutual-exclusion primitive with two modes (shared/read and exclusive/write).
+		</p>
+	</li>
+</ul>
+<h5
+	id="read-write-mutex" >
+    Read-Write Mutex
+</h5>
+<ul>
+	<li>
+		<p>
+            Allows 
+			<strong>
+                multiple readers
+			</strong>
+            &nbsp;or 
+			<strong>
+                one writer
+			</strong>
+            , but not both.
+            <br>
+             - Read-write mutual exclusion lock.
+		</p>
+	</li>
+	<li>
+		<p>
+            An 
+            <code>RW_Mutex</code>
+            &nbsp;is a reader/writer mutual exclusion lock. The lock can be held by any number of readers or a single writer.
+		</p>
+	</li>
+	<li>
+		<p>
+            This type of synchronization primitive supports two kinds of lock operations:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Exclusive lock (write lock)
+				</p>
+			</li>
+			<li>
+				<p>
+                    Shared lock (read lock)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            When an exclusive lock is acquired by any thread, all other threads, attempting to acquire either an exclusive or shared lock, will be blocked from entering the critical sections associated with the read-write mutex, until the exclusive owner of the lock releases the lock.
+		</p>
+	</li>
+	<li>
+		<p>
+            When a shared lock is acquired by any thread, any other thread attempting to acquire a shared lock will also be able to enter all the critical sections associated with the read-write mutex. However threads attempting to acquire an exclusive lock will be blocked from entering those critical sections, until all shared locks are released.
+		</p>
+	</li>
+</ul>
+<h5
+	id="how-it-works-internally" >
+    How it works internally
+</h5>
+<ul>
+	<li>
+		<p>
+            Most efficient implementations are user-space fast paths plus a kernel-assisted wait path.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                State word (atomic integer).
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Encodes reader count and writer flag (and sometimes waiter counts or ticket/sequence numbers).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Example encoding:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            low bits or a counter = number of active readers
+						</p>
+					</li>
+					<li>
+						<p>
+                            one bit = writer-active flag
+						</p>
+					</li>
+					<li>
+						<p>
+                            optional fields = number of waiters or ticket counters
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Fast path (uncontended):
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>AcquireRead</code>
+                    : atomically increment reader count if writer bit is 0.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>AcquireWrite</code>
+                    : atomically set writer bit (CAS) if reader count is 0 and writer bit was 0; if successful, you’re owner.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Slow path (contended):
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If fast path fails (writer present or racing), the thread either spins briefly or goes to sleep on a wait queue associated with the lock (on Linux typically via 
+                    <code>futex</code>
+                    , on Windows via wait-on-address / kernel wait objects).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Waiting threads sleep until a waking operation (writer release or explicit wake) changes the state and wakes them.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Release:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>ReleaseRead</code>
+                    : atomically decrement reader count. If reader count becomes 0 and a writer is waiting, wake one writer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>ReleaseWrite</code>
+                    : clear writer bit and wake either waiting writers (writer-preferring) or all readers (reader-preferring / fair), depending on policy.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="comparison-coderw_mutex-code-vs-double-buffering" >
+    Comparison 
+    <code>RW_Mutex</code>
+    &nbsp;vs Double-Buffering
+</h5>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20250522145205.png" width="625" >
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="srw-lock-slim-reader-writer-lock-windows-only" >
+    SRW Lock&nbsp;&nbsp;(Slim Reader/Writer lock) (Windows only)
+</h5>
+<ul>
+	<li>
+		<p>
+            It's a lightweight synchronization primitive in Windows that allows multiple concurrent readers or a single writer.
+		</p>
+	</li>
+	<li>
+		<p>
+            Supports 
+			<strong>
+                shared
+			</strong>
+            &nbsp;mode (multiple readers) and 
+			<strong>
+                exclusive
+			</strong>
+            &nbsp;mode (one writer).
+		</p>
+	</li>
+	<li>
+		<p>
+            Unfair by design; a writer may bypass waiting readers.
+		</p>
+	</li>
+	<li>
+		<p>
+            Very small footprint (pointer-sized structure).
+		</p>
+	</li>
+	<li>
+		<p>
+            Non-reentrant: a thread must not acquire the same SRW lock twice in the same mode.
+		</p>
+	</li>
+</ul>
+<h3
+	id="semaphore" >
+    Semaphore
+</h3>
+<ul>
+	<li>
+		<p>
+            A counter-based synchronization primitive.
+		</p>
+	</li>
+	<li>
+		<p>
+            Can allow multiple threads to access a resource (unlike a mutex, which is binary).
+		</p>
+	</li>
+	<li>
+		<p>
+            Types:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Counting Semaphore
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allows 
+                            <code>n</code>
+                            &nbsp;concurrent accesses.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Binary Semaphore
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Functions like a mutex.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            When waited upon, semaphore blocks until the internal count is greater than zero, then decrements the internal counter by one. Posting to the semaphore increases the count by one, or the provided amount.
+		</p>
+	</li>
+	<li>
+		<p>
+            This type of synchronization primitives can be useful for implementing queues. The internal counter of the semaphore can be thought of as the amount of items in the queue. After a data has been pushed to the queue, the thread shall call 
+            <code>sema_post()</code>
+             procedure, increasing the counter. When a thread takes an item from the queue to do the job, it shall call 
+            <code>sema_wait()</code>
+            , waiting on the semaphore counter to become non-zero and decreasing it, if necessary.
+		</p>
+	</li>
+</ul>
+<h3
+	id="condition-variable" >
+    Condition Variable
+</h3>
+<ul>
+	<li>
+		<p>
+            Allows threads to sleep and be awakened when a specific condition is true.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's a rendezvous point for threads waiting for signalling the occurence of an event. Condition variables are used in conjuction with mutexes to provide a shared access to one or more shared variable.
+		</p>
+	</li>
+	<li>
+		<p>
+            A typical usage of condition variable is as follows:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A thread that intends to modify a shared variable shall:
+				</p>
+				<ol>
+					<li>
+						<p>
+                            Acquire a lock on a mutex.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Modify the shared memory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Release the lock.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Call 
+                            <code>cond_signal</code>
+                            &nbsp;or 
+                            <code>cond_broadcast</code>
+                            .
+						</p>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<p>
+                    A thread that intends to wait on a shared variable shall:
+				</p>
+				<ol>
+					<li>
+						<p>
+                            Acquire a lock on a mutex.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Call 
+                            <code>cond_wait</code>
+                            &nbsp;or 
+                            <code>cond_wait_with_timeout</code>
+                            &nbsp;(will release the mutex).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Check the condition and keep waiting in a 
+							<strong>
+                                loop
+							</strong>
+                            &nbsp;if not satisfied with result.
+						</p>
+					</li>
+				</ol>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
 	id="double-buffering" >
     Double-Buffering
 </h3>
@@ -5009,637 +6006,6 @@ void Shutdown() {
 						</ul>
 					</li>
 				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="mutex-mutual-exclusion" >
-    Mutex (Mutual Exclusion)
-</h3>
-<ul>
-	<li>
-		<p>
-            Ensures only one thread accesses a critical section at a time.
-		</p>
-	</li>
-	<li>
-		<p>
-            If another thread tries to lock an already locked mutex, it blocks until the mutex is released.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Use case
-			</strong>
-            : Protect shared variables from concurrent modification.
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://yashdhadve.hashnode.dev/multi-threading-in-odin-lang#heading-handling-deadlock-using-mutex" 
-				class="external-link" 
-				target="_blank" >
-                Preventing deadlock with mutex
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="states" >
-    States
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                unlocked
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Any thread can acquire it.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                locked
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Only the thread that acquired it can release it.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="problems-prevented-by-mutex" >
-    Problems Prevented by Mutex
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Race conditions:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    When multiple threads access and modify a resource simultaneously in an unpredictable way.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Data inconsistency:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Ensures that operations in a critical section are atomic.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="challenges-of-using-mutex" >
-    Challenges of Using Mutex
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Deadlock:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Occurs when two or more threads are stuck waiting for each other to release mutexes.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Starvation:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    A thread may wait indefinitely if mutexes are constantly acquired by others.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="what-a-mutex-actually-blocks" >
-    What a Mutex Actually Blocks
-</h5>
-<ul>
-	<li>
-		<p>
-            It blocks other threads from locking the same mutex.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    If Thread A locks 
-                    <code>mutexx</code>
-                    , Thread B will wait if it tries to lock 
-                    <code>mutexx</code>
-                    &nbsp;until Thread A unlocks it.
-				</p>
-			</li>
-			<li>
-				<p>
-                    It does not block threads that don’t try to lock 
-                    <code>mutexx</code>
-                    .
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            It does not block the entire function or thread.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    The rest of your code (outside the mutex) runs normally.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Only the critical section (between 
-                    <code>lock</code>
-                    /
-                    <code>unlock</code>
-                    ) is protected.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Mutexes Protect Data, Not Functions or Threads.
-		</p>
-<pre><code class="language-odin" data-lang="odin"> textures: map[u32]Texture2D
- textures_mutex: sync.Mutex
- 
- // Thread A (locks mutex, modifies textures)
- sync.mutex_lock(&textures_mutex)&nbsp;&nbsp;// 🔒
- textures[123] = load_texture("test.png")&nbsp;&nbsp;// Protected
- sync.mutex_unlock(&textures_mutex)&nbsp;&nbsp;// 🔓
- 
- // Thread B (also needs the mutex to touch textures)
- sync.mutex_lock(&textures_mutex)&nbsp;&nbsp;// ⏳ Waits if Thread A holds the lock
- unload_texture(textures[123])
- sync.mutex_unlock(&textures_mutex)
-</code></pre>
-		<ul>
-			<li>
-				<p>
-                    The mutex only blocks Thread B if it tries to lock 
-                    <code>textures_mutex</code>
-                    &nbsp;while Thread A holds it.
-				</p>
-			</li>
-			<li>
-				<p>
-                    If Thread B runs code that doesn’t lock 
-                    <code>textures_mutex</code>
-                    , it runs freely.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Mutexes Are Not &quot;Global Barriers&quot;. If two threads use different mutexes, they don’t block each other:
-		</p>
-<pre><code class="language-odin" data-lang="odin"> // Thread A (uses mutex_x)
- sync.mutex_lock(&mutex_x)&nbsp;&nbsp;// 🔒
- // ... do work ...
- sync.mutex_unlock(&mutex_x)&nbsp;&nbsp;// 🔓
- 
- // Thread B (uses mutex_y)
- sync.mutex_lock(&mutex_y)&nbsp;&nbsp;// ✅ Runs in parallel (no conflict)
- // ... do work ...
- sync.mutex_unlock(&mutex_y)
-</code></pre>
-	</li>
-</ul>
-<h5
-	id="example-task-queue" >
-    Example: Task Queue
-</h5>
-<pre><code class="language-odin" data-lang="odin">// --- Shared Task System (Thread-safe) ---
-Task_Type :: enum {
-&nbsp;&nbsp;&nbsp;&nbsp;UNLOAD_TEXTURE,
-&nbsp;&nbsp;&nbsp;&nbsp;LOAD_TEXTURE,
-&nbsp;&nbsp;&nbsp;&nbsp;SWAP_SCENE_TEXTURES,
-&nbsp;&nbsp;&nbsp;&nbsp;// Add more as needed...
-}
-
-Task :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp;type: Task_Type,
-&nbsp;&nbsp;&nbsp;&nbsp;// Add payload if needed (e.g., texture IDs)
-}
-
-task_queue: [dynamic]Task
-task_mutex: sync.Mutex
-
-// Thread A (Game Thread): Processes tasks
-process_tasks :: proc() {
-&nbsp;&nbsp;&nbsp;&nbsp;// 🔒 LOCK the mutex to safely read the queue
-&nbsp;&nbsp;&nbsp;&nbsp;sync.mutex_lock(&task_mutex)
-&nbsp;&nbsp;&nbsp;&nbsp;defer sync.mutex_unlock(&task_mutex)&nbsp;&nbsp;// 🔓 Unlock when done
-
-&nbsp;&nbsp;&nbsp;&nbsp;// Make a local copy of tasks (optional but cleaner)
-&nbsp;&nbsp;&nbsp;&nbsp;tasks_to_process := task_queue[:]
-&nbsp;&nbsp;&nbsp;&nbsp;clear(&task_queue)&nbsp;&nbsp;// Empty the shared queue
-&nbsp;&nbsp;&nbsp;&nbsp;// 🔓 Mutex unlocked here (defer runs)
-
-&nbsp;&nbsp;&nbsp;&nbsp;// Process tasks WITHOUT holding the mutex
-&nbsp;&nbsp;&nbsp;&nbsp;for task in tasks_to_process {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handle_task(task)&nbsp;&nbsp;// e.g., UnloadTexture(...)
-&nbsp;&nbsp;&nbsp;&nbsp;}
-}
-
-// Thread B (Network Thread): Adds a task
-add_task :: proc(new_task: Task) {
-&nbsp;&nbsp;&nbsp;&nbsp;// 🔒 LOCK the mutex to safely append
-&nbsp;&nbsp;&nbsp;&nbsp;sync.mutex_lock(&task_mutex)
-&nbsp;&nbsp;&nbsp;&nbsp;defer sync.mutex_unlock(&task_mutex)&nbsp;&nbsp;// 🔓 Unlock when done
-
-&nbsp;&nbsp;&nbsp;&nbsp;append(&task_queue, new_task)
-}
-</code></pre>
-<h5
-	id="example-read-and-write" >
-    Example: Read and Write
-</h5>
-<ul>
-	<li>
-		<p>
-            READ: MAKES A COPY (wrapped in a mutex), WRITE: MUTEX GUARD
-		</p>
-		<ul>
-			<li>
-				<p>
-                    For read operations, make a copy of the data to read; for write operations, use a mutex.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<pre><code class="language-cpp" data-lang="cpp">// Shared data with mutex and atomic pointer for efficient reads
-std::mutex data_mutex;
-Data* atomic_data_ptr; // Atomic pointer for thread-safe access
-
-// Read Job
-void ReadJob() {
-&nbsp;&nbsp;Data local_copy;
-&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;std::lock_guard&lt;std::mutex&gt; lock(data_mutex); // Optional: Only if data isn't atomically swappable
-&nbsp;&nbsp;&nbsp;&nbsp;local_copy = *atomic_data_ptr; // Copy under mutex (or use atomic load)
-&nbsp;&nbsp;}
-&nbsp;&nbsp;// Use local_copy safely...
-}
-
-// Write Job
-void WriteJob() {
-&nbsp;&nbsp;std::lock_guard&lt;std::mutex&gt; lock(data_mutex);
-&nbsp;&nbsp;// Modify data...
-}
-</code></pre>
-<h5
-	id="futex-fast-userspace-mutex-linux-specific" >
-    Futex (Fast Userspace Mutex) (Linux-specific)
-</h5>
-<ul>
-	<li>
-		<p>
-            Allows most lock/unlock operations to be done in userspace.
-		</p>
-	</li>
-	<li>
-		<p>
-            System call is only used for contention resolution.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Use case
-			</strong>
-            : Efficient locking on Linux systems.
-		</p>
-	</li>
-</ul>
-<h3
-	id="spinlock" >
-    Spinlock
-</h3>
-<ul>
-	<li>
-		<p>
-            Like a mutex, but instead of blocking, it repeatedly checks (spins) until the lock becomes available.
-		</p>
-	</li>
-	<li>
-		<p>
-            Low overhead but inefficient if held for long.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Use case
-			</strong>
-            : Short critical sections on multiprocessor systems.
-		</p>
-	</li>
-</ul>
-<h3
-	id="barrier" >
-    Barrier
-</h3>
-<ul>
-	<li>
-		<p>
-            Blocks a group of threads until all have reached the same point of execution.
-		</p>
-	</li>
-	<li>
-		<p>
-            Once all threads arrive, they are released simultaneously.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Use case
-			</strong>
-            : Synchronize phases in parallel algorithms.
-		</p>
-	</li>
-</ul>
-<h3
-	id="read-write-mutex-lock-rwlock-rw_mutex" >
-    Read-Write Mutex/Lock (RWLock) (RW_Mutex)
-</h3>
-<ul>
-	<li>
-		<p>
-            Allows 
-			<strong>
-                multiple readers
-			</strong>
-            &nbsp;or 
-			<strong>
-                one writer
-			</strong>
-            , but not both.
-		</p>
-	</li>
-	<li>
-		<p>
-            Optimizes performance for read-heavy workloads.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Use case
-			</strong>
-            : Shared resource with frequent read, infrequent write.
-		</p>
-	</li>
-</ul>
-<h5
-	id="read-write-mutex" >
-    Read-Write Mutex
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#RW_Mutex" 
-				class="external-link" 
-				target="_blank" >
-                RW_Mutex
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            Multiple threads can read simultaneously (shared access).
-		</p>
-	</li>
-	<li>
-		<p>
-            Only one thread can write at a time (exclusive access).
-		</p>
-	</li>
-	<li>
-		<p>
-            Blocks new readers while a writer is waiting (to prevent starvation).
-		</p>
-	</li>
-</ul>
-<pre><code class="language-cpp" data-lang="cpp">#include &lt;shared_mutex&gt;
-
-struct GameWorld {
-&nbsp;&nbsp;&nbsp;&nbsp;std::unordered_map&lt;int, GameObject&gt; entities;
-&nbsp;&nbsp;&nbsp;&nbsp;// ... other game data
-};
-
-GameWorld game_world;
-std::shared_mutex rw_mutex;&nbsp;&nbsp;// Allows multiple readers or one writer
-
-// Read Job (Shared Lock)
-void ReadJob() {
-&nbsp;&nbsp;&nbsp;&nbsp;std::shared_lock&lt;std::shared_mutex&gt; lock(rw_mutex); // Multiple threads can enter
-&nbsp;&nbsp;&nbsp;&nbsp;// Safe to read 'game_world' here
-&nbsp;&nbsp;&nbsp;&nbsp;auto it = game_world.entities.find(10);
-&nbsp;&nbsp;&nbsp;&nbsp;if (it != game_world.entities.end()) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Process entity...
-&nbsp;&nbsp;&nbsp;&nbsp;}
-}
-
-// Write Job (Exclusive Lock)
-void WriteJob() {
-&nbsp;&nbsp;&nbsp;&nbsp;std::unique_lock&lt;std::shared_mutex&gt; lock(rw_mutex); // Only one writer allowed
-&nbsp;&nbsp;&nbsp;&nbsp;// Modify 'game_world' safely
-&nbsp;&nbsp;&nbsp;&nbsp;game_world.entities[20] = GameObject{...};
-}
-</code></pre>
-<ul>
-	<li>
-		<p>
-            RW_Mutex vs Double-Buffering
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <img src="assets/image_20250522145205.png" width="425" >
-                    .
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="semaphore" >
-    Semaphore
-</h3>
-<ul>
-	<li>
-		<p>
-            A counter-based synchronization primitive.
-		</p>
-	</li>
-	<li>
-		<p>
-            Can allow multiple threads to access a resource (unlike a mutex, which is binary).
-		</p>
-	</li>
-	<li>
-		<p>
-            Types:
-		</p>
-		<ul>
-			<li>
-				<p>
-					<strong>
-                        Counting Semaphore
-					</strong>
-                    :
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Allows 
-                            <code>n</code>
-                            &nbsp;concurrent accesses.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<strong>
-                        Binary Semaphore
-					</strong>
-                    :
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Functions like a mutex.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Use case
-			</strong>
-            : Limit access to a pool of resources (e.g., connection pool).
-		</p>
-	</li>
-</ul>
-<h3
-	id="condition-variable" >
-    Condition Variable
-</h3>
-<ul>
-	<li>
-		<p>
-            Allows threads to sleep and be awakened when a specific condition is true.
-		</p>
-	</li>
-	<li>
-		<p>
-            Used with a mutex to wait for or signal a condition.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Use case
-			</strong>
-            : Producer-consumer problem.
-		</p>
-	</li>
-</ul>
-<h3
-	id="atomic-operations" >
-    Atomic Operations
-</h3>
-<ul>
-	<li>
-		<p>
-            Low-level CPU-supported operations (e.g., 
-            <code>atomic_add</code>
-            , 
-            <code>compare_and_swap</code>
-            ) that complete indivisibly.
-		</p>
-	</li>
-	<li>
-		<p>
-            No locking required.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Use case
-			</strong>
-            : Lightweight synchronization for counters, flags, etc.
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://blog.molecular-matters.com/2012/03/05/volatile-thread-synchronization/" 
-				class="external-link" 
-				target="_blank" >
-                Avoid using Volatile in C++
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    I think this exemplifies a bit the necessity of using atomic operations.
-				</p>
 			</li>
 		</ul>
 	</li>
@@ -5980,7 +6346,7 @@ void WriteJob() {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-20 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-11-21 🚀
 			</footer>
 		</div>
 		<aside
@@ -6037,6 +6403,12 @@ void WriteJob() {
 								<a
 									href="#deadlock" >
                                     Deadlock
+								</a>
+							</li>
+							<li>
+								<a
+									href="#lock-free" >
+                                    Lock-Free
 								</a>
 							</li>
 							<li>
@@ -6181,20 +6553,8 @@ void WriteJob() {
 						<ul>
 							<li>
 								<a
-									href="#double-buffering" >
-                                    Double-Buffering
-								</a>
-							</li>
-							<li>
-								<a
-									href="#mutex-mutual-exclusion" >
-                                    Mutex (Mutual Exclusion)
-								</a>
-							</li>
-							<li>
-								<a
-									href="#spinlock" >
-                                    Spinlock
+									href="#atomic-operations-lock-free" >
+                                    Atomic Operations / Lock-free
 								</a>
 							</li>
 							<li>
@@ -6205,8 +6565,26 @@ void WriteJob() {
 							</li>
 							<li>
 								<a
-									href="#read-write-mutex-lock-rwlock-rw_mutex" >
-                                    Read-Write Mutex/Lock (RWLock) (RW_Mutex)
+									href="#mutex-mutual-exclusion-lock" >
+                                    Mutex (Mutual exclusion lock)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#futex-fast-userspace-mutex" >
+                                    Futex (Fast Userspace Mutex)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#spinlock-spin-until-mutex-is-unlocked" >
+                                    Spinlock (Spin until Mutex is unlocked)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#read-write-mutex-read-write-lock" >
+                                    Read-Write Mutex / Read-Write Lock
 								</a>
 							</li>
 							<li>
@@ -6223,8 +6601,8 @@ void WriteJob() {
 							</li>
 							<li>
 								<a
-									href="#atomic-operations" >
-                                    Atomic Operations
+									href="#double-buffering" >
+                                    Double-Buffering
 								</a>
 							</li>
 						</ul>
@@ -6247,7 +6625,7 @@ void WriteJob() {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.77341.js" >
+			src="/static/studies.59452.js" >
 		</script>
 	</body>
 </html>

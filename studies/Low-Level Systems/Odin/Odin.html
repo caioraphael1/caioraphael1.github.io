@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.25229.css" >
+			href="/static/studies.38954.css" >
 	</head>
 	<body>
 		<aside
@@ -24583,7 +24583,45 @@ _default_resize_bytes_align :: #force_inline proc(
 <ul>
 	<li>
 		<p>
-            Ginger Bill: &quot;Odin does have numerous threading and synchronization primitives in its core library. But it does not have any parallelism/concurrency features built directly into the language itself because all of them require some form of automatic memory management which is a no-go.&quot;
+			<em>
+                Note
+			</em>
+            : I'm still studying about Odin's implementation of multithreading, so the notes here are basically me organizing the content I found around the source code and 
+			<a
+				href="https://pkg.odin-lang.org/core/sync/" 
+				class="external-link" 
+				target="_blank" >
+                core:sync
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Ginger Bill:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Odin does have numerous threading and synchronization primitives in its core library. But it does not have any parallelism/concurrency features built directly into the language itself because all of them require some form of automatic memory management which is a no-go.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Odin handles threads similarly to how Go handles it&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://yashdhadve.hashnode.dev/multi-threading-in-odin-lang" 
+				class="external-link" 
+				target="_blank" >
+                Multithreading tutorial in Odin
+			</a>
+            .
 		</p>
 	</li>
 	<li>
@@ -24593,22 +24631,6 @@ _default_resize_bytes_align :: #force_inline proc(
 				class="external-link" 
 				target="_blank" >
                 odin-jobs
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            Odin handles threads similarly to how Go handles it.
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://yashdhadve.hashnode.dev/multi-threading-in-odin-lang" 
-				class="external-link" 
-				target="_blank" >
-                Good tutorial
 			</a>
             .
 		</p>
@@ -24816,8 +24838,31 @@ _default_resize_bytes_align :: #force_inline proc(
 	</li>
 </ul>
 <h3
-	id="synchronization-primitives-overview" >
-    Synchronization Primitives: Overview
+	id="cpu-yield" >
+    CPU Yield
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>cpu_relax</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This procedure may lower CPU consumption or yield to a hyperthreaded twin processor.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's exact function is architecture specific, but the intent is to say that you're not doing much on a CPU.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="synchronization-primitives-direct-comparisons" >
+    Synchronization Primitives: Direct Comparisons
 </h3>
 <h5
 	id="comparing-codesema-code-vs-codeatomic_sema-code" >
@@ -25339,6 +25384,554 @@ _default_resize_bytes_align :: #force_inline proc(
 	</li>
 </ul>
 <h3
+	id="atomics" >
+    Atomics
+</h3>
+<h4
+	id="memory-order" >
+    Memory Order
+</h4>
+<ul>
+	<li>
+		<p>
+            See 
+            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#atomics">
+            Multithreading#Atomics
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="implicit-memory-order" >
+    Implicit Memory Order
+</h5>
+<ul>
+	<li>
+		<p>
+            Non-explicit atomics will always be sequentially consistent (
+            <code>.Seq_Cst</code>
+            ).
+		</p>
+	</li>
+</ul>
+<h5
+	id="explicit-memory-order" >
+    Explicit Memory Order
+</h5>
+<ul>
+	<li>
+		<p>
+            In Odin there are 5 different memory ordering guaranties that can be provided to an atomic operation:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">Atomic_Memory_Order :: enum {
+&nbsp;&nbsp;&nbsp;&nbsp;Relaxed = 0, // Unordered
+&nbsp;&nbsp;&nbsp;&nbsp;Consume = 1, // Monotonic
+&nbsp;&nbsp;&nbsp;&nbsp;Acquire = 2,
+&nbsp;&nbsp;&nbsp;&nbsp;Release = 3,
+&nbsp;&nbsp;&nbsp;&nbsp;Acq_Rel = 4,
+&nbsp;&nbsp;&nbsp;&nbsp;Seq_Cst = 5,
+}
+</code></pre>
+<h4
+	id="operations" >
+    Operations
+</h4>
+<ul>
+	<li>
+		<p>
+            Most of the procedure have a &quot;normal&quot; and 
+            <code>_explicit</code>
+            &nbsp;variant.
+		</p>
+	</li>
+	<li>
+		<p>
+            The &quot;normal&quot; variant will always have a memory order sequentially consistent (
+            <code>.Seq_Cst</code>
+            ).
+		</p>
+	</li>
+	<li>
+		<p>
+            The &quot;normal&quot; variant will always have a memory order defined by the 
+            <code>order</code>
+            &nbsp;parameter (
+            <code>Atomic_Memory_Order</code>
+            ); unless specified differently.
+		</p>
+	</li>
+</ul>
+<h5
+	id="load-store" >
+    Load / Store
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>atomic_store</code>
+            &nbsp;/ 
+            <code>atomic_store_explicit</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically store a value into memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure stores a value to a memory location in such a way that no other thread is able to see partial reads.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>atomic_load</code>
+            &nbsp;/ 
+            <code>atomic_load_explicit</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically load a value from memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure loads a value from a memory location in such a way that the received value is not a partial read.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>atomic_exchange</code>
+            &nbsp;/ 
+            <code>atomic_exchange_explicit</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically exchange the value in a memory location, with the specified value.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure loads a value from the specified memory location, and stores the specified value into that memory location. Then the loaded value is returned, all done in a single atomic operation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This operation is an atomic equivalent of the following:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">     tmp := dst^
+     dst^ = val
+     return tmp
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="compare-exchange" >
+    Compare-Exchange
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>atomic_compare_exchange_strong</code>
+            &nbsp;/ 
+            <code>atomic_compare_exchange_strong_explicit</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically compare and exchange the value with a memory location.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure checks if the value pointed to by the 
+                    <code>dst</code>
+                    &nbsp;parameter is equal to 
+                    <code>old</code>
+                    , and if they are, it stores the value 
+                    <code>new</code>
+                    &nbsp;into the memory location, all done in a single atomic operation. This procedure returns the old value stored in a memory location and a boolean value signifying whether 
+                    <code>old</code>
+                    &nbsp;was equal to 
+                    <code>new</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure is an atomic equivalent of the following operation:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">     old_dst := dst^
+     if old_dst == old {
+         dst^ = new
+         return old_dst, true
+     } else {
+         return old_dst, false
+     }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    The strong version of compare exchange always returns true, when the returned old value stored in location pointed to by 
+                    <code>dst</code>
+                    &nbsp;and the 
+                    <code>old</code>
+                    &nbsp;parameter are equal.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Atomic compare exchange has two memory orderings: One is for the read-modify-write operation, if the comparison succeeds, and the other is for the load operation, if the comparison fails.
+				</p>
+			</li>
+			<li>
+				<p>
+                    For the non-explicit version: The memory ordering for both of of these operations is sequentially-consistent.
+				</p>
+			</li>
+			<li>
+				<p>
+                    For the explicit version: The memory ordering for these operations is as specified by 
+                    <code>success</code>
+                    &nbsp;and 
+                    <code>failure</code>
+                    &nbsp;parameters respectively.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>atomic_compare_exchange_weak</code>
+            &nbsp;/ 
+            <code>atomic_compare_exchange_weak_explicit</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically compare and exchange the value with a memory location.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure checks if the value pointed to by the 
+                    <code>dst</code>
+                    &nbsp;parameter is equal to 
+                    <code>old</code>
+                    , and if they are, it stores the value 
+                    <code>new</code>
+                    &nbsp;into the memory location, all done in a single atomic operation. This procedure returns the old value stored in a memory location and a boolean value signifying whether 
+                    <code>old</code>
+                    &nbsp;was equal to 
+                    <code>new</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure is an atomic equivalent of the following operation:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">     old_dst := dst^
+     if old_dst == old {
+         // may return false here
+         dst^ = new
+         return old_dst, true
+     } else {
+         return old_dst, false
+     }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    The weak version of compare exchange may return false, even if 
+                    <code>dst^ == old</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    On some platforms running weak compare exchange in a loop is faster than a strong version.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Atomic compare exchange has two memory orderings: One is for the read-modify-write operation, if the comparison succeeds, and the other is for the load operation, if the comparison fails.
+				</p>
+			</li>
+			<li>
+				<p>
+                    For the non-explicit version: The memory ordering for both of of these operations is sequentially-consistent.
+				</p>
+			</li>
+			<li>
+				<p>
+                    For the explicit version: The memory ordering for these operations is as specified by 
+                    <code>success</code>
+                    &nbsp;and 
+                    <code>failure</code>
+                    &nbsp;parameters respectively.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="arithmetic" >
+    Arithmetic
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>atomic_add</code>
+            &nbsp;/ 
+            <code>atomic_add_explicit </code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically add a value to the value stored in memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure loads a value from memory, adds the specified value to it, and stores it back as an atomic operation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This operation is an atomic equivalent of the following:
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>dst^ += val</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>atomic_sub</code>
+            &nbsp;/ 
+            <code>atomic_sub_explicit</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically subtract a value from the value stored in memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure loads a value from memory, subtracts the specified value from it, and stores the result back as an atomic operation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This operation is an atomic equivalent of the following:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>dst^ -= val</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="logical" >
+    Logical
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>atomic_and</code>
+            &nbsp;/ 
+            <code>atomic_and_explicit</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically replace the memory location with the result of AND operation with the specified value.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure loads a value from memory, calculates the result of AND operation between the loaded value and the specified value, and stores it back into the same memory location as an atomic operation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This operation is an atomic equivalent of the following:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>dst^ &= val</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>atomic_nand</code>
+            &nbsp;/ 
+            <code>atomic_nand_explicit</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically replace the memory location with the result of NAND operation with the specified value.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure loads a value from memory, calculates the result of NAND operation between the loaded value and the specified value, and stores it back into the same memory location as an atomic operation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This operation is an atomic equivalent of the following:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>dst^ = ~(dst^ & val)</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>atomic_or</code>
+                    &nbsp;/ 
+                    <code>atomic_or_explicit</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Atomically replace the memory location with the result of OR operation with the specified value.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This procedure loads a value from memory, calculates the result of OR operation between the loaded value and the specified value, and stores it back into the same memory location as an atomic operation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This operation is an atomic equivalent of the following:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>dst^ |= val</code>
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>atomic_xor</code>
+            &nbsp;/ 
+            <code>atomic_xor_explicit</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Atomically replace the memory location with the result of XOR operation with the specified value.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure loads a value from memory, calculates the result of XOR operation between the loaded value and the specified value, and stores it back into the same memory location as an atomic operation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This operation is an atomic equivalent of the following:
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>dst^ ~= val</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="ordering" >
+    Ordering
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>atomic_thread_fence</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Establish memory ordering.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure establishes memory ordering, without an associated atomic operation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>atomic_signal_fence</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Establish memory ordering between a current thread and a signal handler.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure establishes memory ordering between a thread and a signal handler, that run on the same thread, without an associated atomic operation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure is equivalent to 
+                    <code>atomic_thread_fence</code>
+                    , except it doesn't issue any CPU instructions for memory ordering.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
 	id="barrier-codesync-barrier-code" >
     Barrier (
     <code>sync.Barrier</code>
@@ -25519,165 +26112,6 @@ for t in threads {
 	</li>
 </ul>
 <h3
-	id="condition-variable-codesync-cond-code" >
-    Condition Variable (
-    <code>sync.Cond</code>
-    )
-</h3>
-<pre><code class="language-odin" data-lang="odin">Cond :: struct {
-    impl: _Cond,
-}
-</code></pre>
-<ul>
-	<li>
-		<p>
-            For any other OS:
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">Futex :: distinct u32
-
-Atomic_Cond :: struct {
-    state: Futex,
-}
-
-_Cond :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp;cond: Atomic_Cond,
-}
-</code></pre>
-<ul>
-	<li>
-		<p>
-            For Windows:
-		</p>
-	</li>
-</ul>
-<pre><code class="language-Odin" data-lang="Odin">LPVOID :: rawptr
-
-CONDITION_VARIABLE :: struct {
-    ptr: LPVOID,
-}
-
-_Cond :: struct {
-    cond: win32.CONDITION_VARIABLE,
-}
-</code></pre>
-<ul>
-	<li>
-		<p>
-            See 
-            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#condition-variable">
-            Multithreading#Condition Variable
-            </a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Note
-			</strong>
-            : A condition variable must not be copied after first use (e.g., after waiting on it the first time). This is because, in order to coordinate with other threads, all threads must watch the same memory address to know when the lock has been released. Trying to use a copy of the lock at a different memory address will result in broken and unsafe behavior. For this reason, condition variables are marked as 
-            <code>#no_copy</code>
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="usage" >
-    Usage
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#broadcast" 
-				class="external-link" 
-				target="_blank" >
-                <code>broadcast</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#cond_broadcast" 
-						class="external-link" 
-						target="_blank" >
-                        <code>cond_broadcast</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#signal" 
-				class="external-link" 
-				target="_blank" >
-                <code>signal</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#cond_signal" 
-						class="external-link" 
-						target="_blank" >
-                        <code>cond_signal</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#wait" 
-				class="external-link" 
-				target="_blank" >
-                <code>wait</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#cond_wait" 
-						class="external-link" 
-						target="_blank" >
-                        <code>cond_wait</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#wait_with_timeout" 
-				class="external-link" 
-				target="_blank" >
-                <code>wait_with_timeout</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#cond_wait_with_timeout" 
-						class="external-link" 
-						target="_blank" >
-                        <code>cond_wait_with_timeout</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
 	id="semaphore-codesync-sema-code" >
     Semaphore (
     <code>sync.Sema</code>
@@ -25705,14 +26139,6 @@ Sema :: struct {
             Multithreading#Semaphore
             </a>
             .
-		</p>
-	</li>
-	<li>
-		<p>
-            See 
-            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#semaphore">
-            Multithreading#Semaphore
-            </a>
 		</p>
 	</li>
 	<li>
@@ -25897,6 +26323,420 @@ Sema :: struct {
 	</li>
 </ul>
 <h3
+	id="benaphore-codesync-benaphore-code" >
+    Benaphore (
+    <code>sync.Benaphore</code>
+    )
+</h3>
+<pre><code class="language-odin" data-lang="odin">Futex :: distinct u32
+
+Atomic_Sema :: struct {
+    count: Futex,
+}
+
+_Sema :: struct {
+    atomic: Atomic_Sema,
+}
+
+Sema :: struct {
+    impl: _Sema,
+}
+
+Benaphore :: struct {
+    counter: i32,
+    sema:    Sema,
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            See 
+			<a
+				href="Multithreading.html#Benaphore" 
+				class="internal-link" 
+				target="_self" >
+                Multithreading#Benaphore
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="usage" >
+    Usage
+</h5>
+<ul>
+	<li>
+		<p
+			class="line-emphasis" >
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            Seems like a Mutex + Semaphore combined?
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#lock" 
+				class="external-link" 
+				target="_blank" >
+                <code>lock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#benaphore_lock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>benaphore_lock</code>
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Acquire a lock on a benaphore. If the lock on a benaphore is already held, this procedure also blocks the execution of the current thread, until the lock could be acquired.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Once a lock is acquired, all threads attempting to take a lock will be blocked from entering any critical sections associated with the same benaphore, until until the lock is released.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> benaphore_lock :: proc "contextless" (b: ^Benaphore) {
+     if atomic_add_explicit(&b.counter, 1, .Acquire) &gt; 0 {
+         sema_wait(&b.sema)
+     }
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#unlock" 
+				class="external-link" 
+				target="_blank" >
+                <code>unlock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#benaphore_unlock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>benaphore_unlock</code>
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Release a lock on a benaphore. If any of the threads are waiting on the lock, exactly one thread is allowed into a critical section associated with the same benaphore.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> benaphore_unlock :: proc "contextless" (b: ^Benaphore) {
+     if atomic_sub_explicit(&b.counter, 1, .Release) &gt; 1 {
+         sema_post(&b.sema)
+     }
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#try_lock" 
+				class="external-link" 
+				target="_blank" >
+                <code>try_lock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#benaphore_try_lock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>benaphore_try_lock</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#guard" 
+				class="external-link" 
+				target="_blank" >
+                <code>guard</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#benaphore_guard" 
+						class="external-link" 
+						target="_blank" >
+                        <code>benaphore_guard</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="recursive-benaphore-codesync-recursive_benaphore-code" >
+    Recursive Benaphore (
+    <code>sync.Recursive_Benaphore</code>
+    )
+</h3>
+<pre><code class="language-odin" data-lang="odin">Futex :: distinct u32
+
+Atomic_Sema :: struct {
+    count: Futex,
+}
+
+_Sema :: struct {
+    atomic: Atomic_Sema,
+}
+
+Sema :: struct {
+    impl: _Sema,
+}
+
+Recursive_Benaphore :: struct {
+    counter:   int,
+    owner:     int,
+    recursion: i32,
+    sema:      Sema,
+}
+</code></pre>
+<p>
+    See [Multithreading#Recursive Benaphore](Multithreading.md#Recursive Benaphore).
+</p>
+<h5
+	id="usage" >
+    Usage
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#lock" 
+				class="external-link" 
+				target="_blank" >
+                <code>lock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#recursive_benaphore_lock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>recursive_benaphore_lock</code>
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Acquire a lock on a recursive benaphore. If the benaphore is held by another thread, this function blocks until the lock can be acquired.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Once a lock is acquired, all other threads attempting to acquire a lock will be blocked from entering any critical sections associated with the same recursive benaphore, until the lock is released.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> recursive_benaphore_lock :: proc "contextless" (b: ^Recursive_Benaphore) {
+     tid := current_thread_id()
+     check_owner: if tid != atomic_load_explicit(&b.owner, .Acquire) {
+         atomic_add_explicit(&b.counter, 1, .Relaxed)
+         if _, ok := atomic_compare_exchange_strong_explicit(&b.owner, 0, tid, .Release, .Relaxed); ok {
+             break check_owner
+         }
+         sema_wait(&b.sema)
+         atomic_store_explicit(&b.owner, tid, .Release)
+     }
+     // inside the lock
+     b.recursion += 1
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#unlock" 
+				class="external-link" 
+				target="_blank" >
+                <code>unlock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#recursive_benaphore_unlock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>recursive_benaphore_unlock</code>
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Release a lock on a recursive benaphore. It also causes the critical sections associated with the same benaphore, to become open for other threads for entering.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin"> recursive_benaphore_unlock :: proc "contextless" (b: ^Recursive_Benaphore) {
+     tid := current_thread_id()
+     assert_contextless(tid == atomic_load_explicit(&b.owner, .Relaxed), "tid != b.owner")
+     b.recursion -= 1
+     recursion := b.recursion
+     if recursion == 0 {
+         if atomic_sub_explicit(&b.counter, 1, .Relaxed) == 1 {
+             atomic_store_explicit(&b.owner, 0, .Release)
+         } else {
+             sema_post(&b.sema)
+         }
+     }
+     // outside the lock
+ }
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#try_lock" 
+				class="external-link" 
+				target="_blank" >
+                <code>try_lock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#recursive_benaphore_try_lock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>recursive_benaphore_try_lock</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#guard" 
+				class="external-link" 
+				target="_blank" >
+                <code>guard</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#recursive_benaphore_guard" 
+						class="external-link" 
+						target="_blank" >
+                        <code>recursive_benaphore_guard</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="auto-reset-event-codesync-auto_reset_event-code" >
+    Auto Reset Event (
+    <code>sync.Auto_Reset_Event</code>
+    )
+</h3>
+<pre><code class="language-odin" data-lang="odin">Auto_Reset_Event :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;status: i32,
+&nbsp;&nbsp;&nbsp;&nbsp;sema:&nbsp;&nbsp; Sema,
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            See&nbsp;&nbsp;
+            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#auto-reset-event">
+            Multithreading#Auto Reset Event
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="usage" >
+    Usage
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Status
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>status ==&nbsp;&nbsp;0</code>
+                    :&nbsp;&nbsp;Event is reset and no threads are waiting
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>status ==&nbsp;&nbsp;1</code>
+                    :&nbsp;&nbsp;Event is signalled
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>status == -´N</code>
+                    : Event is reset and N threads are waiting
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#auto_reset_event_signal" 
+				class="external-link" 
+				target="_blank" >
+                <code>auto_reset_event_signal</code>
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#auto_reset_event_wait" 
+				class="external-link" 
+				target="_blank" >
+                <code>auto_reset_event_wait</code>
+			</a>
+		</p>
+	</li>
+</ul>
+<h3
 	id="mutex-codesync-mutex-code" >
     Mutex (
     <code>sync.Mutex</code>
@@ -25985,6 +26825,81 @@ _Mutex :: struct {
 	<li>
 		<p>
 			<a
+				href="https://pkg.odin-lang.org/core/sync/#lock" 
+				class="external-link" 
+				target="_blank" >
+                <code>lock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#mutex_lock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>mutex_lock</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#unlock" 
+				class="external-link" 
+				target="_blank" >
+                <code>unlock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#mutex_unlock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>mutex_unlock</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#try_lock" 
+				class="external-link" 
+				target="_blank" >
+                <code>try_lock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>true</code>
+                    &nbsp;if success, 
+                    <code>false</code>
+                    &nbsp;if failure.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#mutex_try_lock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>mutex_try_lock</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
 				href="https://pkg.odin-lang.org/core/sync/#guard" 
 				class="external-link" 
 				target="_blank" >
@@ -26016,87 +26931,47 @@ _Mutex :: struct {
 	<li>
 		<p>
 			<a
-				href="https://pkg.odin-lang.org/core/sync/#lock" 
-				class="external-link" 
-				target="_blank" >
-                <code>lock</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#mutex_lock" 
-						class="external-link" 
-						target="_blank" >
-                        <code>mutex_lock</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#try_lock" 
-				class="external-link" 
-				target="_blank" >
-                <code>try_lock</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Returns 
-                    <code>true</code>
-                    &nbsp;if sucess, 
-                    <code>false</code>
-                    &nbsp;if failure.
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#mutex_try_lock" 
-						class="external-link" 
-						target="_blank" >
-                        <code>mutex_try_lock</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#unlock" 
-				class="external-link" 
-				target="_blank" >
-                <code>unlock</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#mutex_unlock" 
-						class="external-link" 
-						target="_blank" >
-                        <code>mutex_unlock</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
 				href="https://pkg.odin-lang.org/core/sync/#wait" 
 				class="external-link" 
 				target="_blank" >
                 <code>wait</code>
 			</a>
 		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#cond_wait" 
+						class="external-link" 
+						target="_blank" >
+                        <code>cond_wait</code>
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Wait until the condition variable is signalled and release the associated mutex.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This procedure blocks the current thread until the specified condition variable is signalled, or until a spurious wakeup occurs. In addition, if the condition has been signalled, this procedure releases the lock on the specified mutex.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The mutex must be held by the calling thread, before calling the procedure.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Note
+					</strong>
+                    : This procedure can return on a spurious wake-up, even if the condition variable was not signalled by a thread.
+				</p>
+			</li>
+		</ul>
 	</li>
 	<li>
 		<p>
@@ -26107,26 +26982,18 @@ _Mutex :: struct {
                 <code>wait_with_timeout</code>
 			</a>
 		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#cond_wait" 
-				class="external-link" 
-				target="_blank" >
-                <code>cond_wait</code>
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#cond_wait_with_timeout" 
-				class="external-link" 
-				target="_blank" >
-                <code>cond_wait_with_timeout</code>
-			</a>
-		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#cond_wait_with_timeout" 
+						class="external-link" 
+						target="_blank" >
+                        <code>cond_wait_with_timeout</code>
+					</a>
+				</p>
+			</li>
+		</ul>
 	</li>
 </ul>
 <h3
@@ -26174,33 +27041,6 @@ _Mutex :: struct {
 	<li>
 		<p>
 			<a
-				href="https://pkg.odin-lang.org/core/sync/#broadcast" 
-				class="external-link" 
-				target="_blank" >
-                <code>broadcast</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Notify all threads.
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#futex_broadcast" 
-						class="external-link" 
-						target="_blank" >
-                        <code>futex_broadcast</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
 				href="https://pkg.odin-lang.org/core/sync/#signal" 
 				class="external-link" 
 				target="_blank" >
@@ -26220,6 +27060,33 @@ _Mutex :: struct {
 						class="external-link" 
 						target="_blank" >
                         <code>futex_signal</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#broadcast" 
+				class="external-link" 
+				target="_blank" >
+                <code>broadcast</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Notify all threads.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#futex_broadcast" 
+						class="external-link" 
+						target="_blank" >
+                        <code>futex_broadcast</code>
 					</a>
 				</p>
 			</li>
@@ -26268,6 +27135,114 @@ _Mutex :: struct {
 				</p>
 			</li>
 		</ul>
+	</li>
+</ul>
+<h3
+	id="one-shot-event-codesync-one_shot_event-code" >
+    One Shot Event (
+    <code>sync.One_Shot_Event</code>
+    )
+</h3>
+<pre><code class="language-odin" data-lang="odin">Futex :: distinct u32
+
+One_Shot_Event :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;state: Futex,
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            See&nbsp;&nbsp;
+            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#one-shot-event">
+            Multithreading#One Shot Event
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="usage" >
+    Usage
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#one_shot_event_signal" 
+				class="external-link" 
+				target="_blank" >
+                <code>one_shot_event_signal</code>
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#one_shot_event_wait" 
+				class="external-link" 
+				target="_blank" >
+                <code>one_shot_event_wait</code>
+			</a>
+		</p>
+	</li>
+</ul>
+<h3
+	id="parker-codesync-parker-code" >
+    Parker (
+    <code>sync.Parker</code>
+    )
+</h3>
+<pre><code class="language-odin" data-lang="odin">Futex :: distinct u32
+
+Parker :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;state: Futex,
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            See&nbsp;&nbsp;
+            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#parker">
+            Multithreading#Parker
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="usage" >
+    Usage
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#park" 
+				class="external-link" 
+				target="_blank" >
+                <code>park</code>
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#park_with_timeout" 
+				class="external-link" 
+				target="_blank" >
+                <code>park_with_timeout</code>
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#unpark" 
+				class="external-link" 
+				target="_blank" >
+                <code>unpark</code>
+			</a>
+		</p>
 	</li>
 </ul>
 <h3
@@ -26372,28 +27347,6 @@ _RW_Mutex :: struct {
 	<li>
 		<p>
 			<a
-				href="https://pkg.odin-lang.org/core/sync/#guard" 
-				class="external-link" 
-				target="_blank" >
-                <code>guard</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#rw_mutex_guard" 
-						class="external-link" 
-						target="_blank" >
-                        <code>rw_mutex_guard</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
 				href="https://pkg.odin-lang.org/core/sync/#lock" 
 				class="external-link" 
 				target="_blank" >
@@ -26416,20 +27369,64 @@ _RW_Mutex :: struct {
 	<li>
 		<p>
 			<a
-				href="https://pkg.odin-lang.org/core/sync/#shared_guard" 
+				href="https://pkg.odin-lang.org/core/sync/#unlock" 
 				class="external-link" 
 				target="_blank" >
-                <code>shared_guard</code>
+                <code>unlock</code>
 			</a>
 		</p>
 		<ul>
 			<li>
 				<p>
 					<a
-						href="https://pkg.odin-lang.org/core/sync/#rw_mutex_shared_guard" 
+						href="https://pkg.odin-lang.org/core/sync/#rw_mutex_unlock" 
 						class="external-link" 
 						target="_blank" >
-                        <code>rw_mutex_shared_guard</code>
+                        <code>rw_mutex_unlock</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#try_lock" 
+				class="external-link" 
+				target="_blank" >
+                <code>try_lock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#rw_mutex_try_lock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>rw_mutex_try_lock</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#guard" 
+				class="external-link" 
+				target="_blank" >
+                <code>guard</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#rw_mutex_guard" 
+						class="external-link" 
+						target="_blank" >
+                        <code>rw_mutex_guard</code>
 					</a>
 				</p>
 			</li>
@@ -26482,28 +27479,6 @@ _RW_Mutex :: struct {
 	<li>
 		<p>
 			<a
-				href="https://pkg.odin-lang.org/core/sync/#try_lock" 
-				class="external-link" 
-				target="_blank" >
-                <code>try_lock</code>
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/sync/#rw_mutex_try_lock" 
-						class="external-link" 
-						target="_blank" >
-                        <code>rw_mutex_try_lock</code>
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
 				href="https://pkg.odin-lang.org/core/sync/#try_shared_lock" 
 				class="external-link" 
 				target="_blank" >
@@ -26526,6 +27501,175 @@ _RW_Mutex :: struct {
 	<li>
 		<p>
 			<a
+				href="https://pkg.odin-lang.org/core/sync/#shared_guard" 
+				class="external-link" 
+				target="_blank" >
+                <code>shared_guard</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#rw_mutex_shared_guard" 
+						class="external-link" 
+						target="_blank" >
+                        <code>rw_mutex_shared_guard</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="once-codesync-once-code" >
+    Once (
+    <code>sync.Once</code>
+    )
+</h3>
+<pre><code class="language-odin" data-lang="odin">Once :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;m:&nbsp;&nbsp;&nbsp;&nbsp;Mutex,
+&nbsp;&nbsp;&nbsp;&nbsp;done: bool,
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            See&nbsp;&nbsp;
+            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#once">
+            Multithreading#Once
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="usage" >
+    Usage
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#once_do" 
+				class="external-link" 
+				target="_blank" >
+                <code>once_do</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#once_do_with_data" 
+						class="external-link" 
+						target="_blank" >
+                        <code>once_do_with_data</code>
+					</a>
+				</p>
+<pre><code class="language-odin" data-lang="odin"> once_do_without_data :: proc(o: ^Once, fn: proc()) {
+     @(cold)
+     do_slow :: proc(o: ^Once, fn: proc()) {
+         guard(&o.m)
+         if !o.done {
+             fn()
+             atomic_store_explicit(&o.done, true, .Release)
+         }
+     }
+     if atomic_load_explicit(&o.done, .Acquire) == false {
+         do_slow(o, fn)
+     }
+ }
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#once_do_with_data_contextless" 
+						class="external-link" 
+						target="_blank" >
+                        <code>once_do_with_data_contextless</code>
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#once_do_without_data" 
+						class="external-link" 
+						target="_blank" >
+                        <code>once_do_without_data</code>
+					</a>
+				</p>
+<pre><code class="language-odin" data-lang="odin"> once_do_with_data :: proc(o: ^Once, fn: proc(data: rawptr), data: rawptr) {
+     @(cold)
+     do_slow :: proc(o: ^Once, fn: proc(data: rawptr), data: rawptr) {
+         guard(&o.m)
+         if !o.done {
+             fn(data)
+             atomic_store_explicit(&o.done, true, .Release)
+         }
+     }
+     if atomic_load_explicit(&o.done, .Acquire) == false {
+         do_slow(o, fn, data)
+     }
+ }
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#once_do_without_data_contextless" 
+						class="external-link" 
+						target="_blank" >
+                        <code>once_do_without_data_contextless</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="ticket-mutex-codesync-ticket_mutex-code" >
+    Ticket Mutex (
+    <code>sync.Ticket_Mutex</code>
+    )
+</h3>
+<pre><code class="language-odin" data-lang="odin">Ticket_Mutex :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;ticket:&nbsp;&nbsp;uint,
+&nbsp;&nbsp;&nbsp;&nbsp;serving: uint,
+}
+</code></pre>
+<h5
+	id="usage" >
+    Usage
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#lock" 
+				class="external-link" 
+				target="_blank" >
+                <code>lock</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#ticket_mutex_lock" 
+						class="external-link" 
+						target="_blank" >
+                        <code>ticket_mutex_lock</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
 				href="https://pkg.odin-lang.org/core/sync/#unlock" 
 				class="external-link" 
 				target="_blank" >
@@ -26536,10 +27680,191 @@ _RW_Mutex :: struct {
 			<li>
 				<p>
 					<a
-						href="https://pkg.odin-lang.org/core/sync/#rw_mutex_unlock" 
+						href="https://pkg.odin-lang.org/core/sync/#ticket_mutex_unlock" 
 						class="external-link" 
 						target="_blank" >
-                        <code>rw_mutex_unlock</code>
+                        <code>ticket_mutex_unlock</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#guard" 
+				class="external-link" 
+				target="_blank" >
+                <code>guard</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#ticket_mutex_guard" 
+						class="external-link" 
+						target="_blank" >
+                        <code>ticket_mutex_guard</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="condition-variable-codesync-cond-code" >
+    Condition Variable (
+    <code>sync.Cond</code>
+    )
+</h3>
+<pre><code class="language-odin" data-lang="odin">Cond :: struct {
+    impl: _Cond,
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            For any other OS:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">Futex :: distinct u32
+
+Atomic_Cond :: struct {
+    state: Futex,
+}
+
+_Cond :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;cond: Atomic_Cond,
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            For Windows:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-Odin" data-lang="Odin">LPVOID :: rawptr
+
+CONDITION_VARIABLE :: struct {
+    ptr: LPVOID,
+}
+
+_Cond :: struct {
+    cond: win32.CONDITION_VARIABLE,
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            See 
+            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#condition-variable">
+            Multithreading#Condition Variable
+            </a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Note
+			</strong>
+            : A condition variable must not be copied after first use (e.g., after waiting on it the first time). This is because, in order to coordinate with other threads, all threads must watch the same memory address to know when the lock has been released. Trying to use a copy of the lock at a different memory address will result in broken and unsafe behavior. For this reason, condition variables are marked as 
+            <code>#no_copy</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="usage" >
+    Usage
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#broadcast" 
+				class="external-link" 
+				target="_blank" >
+                <code>broadcast</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#cond_broadcast" 
+						class="external-link" 
+						target="_blank" >
+                        <code>cond_broadcast</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#signal" 
+				class="external-link" 
+				target="_blank" >
+                <code>signal</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#cond_signal" 
+						class="external-link" 
+						target="_blank" >
+                        <code>cond_signal</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#wait" 
+				class="external-link" 
+				target="_blank" >
+                <code>wait</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#cond_wait" 
+						class="external-link" 
+						target="_blank" >
+                        <code>cond_wait</code>
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/sync/#wait_with_timeout" 
+				class="external-link" 
+				target="_blank" >
+                <code>wait_with_timeout</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/sync/#cond_wait_with_timeout" 
+						class="external-link" 
+						target="_blank" >
+                        <code>cond_wait_with_timeout</code>
 					</a>
 				</p>
 			</li>
@@ -26561,41 +27886,19 @@ _RW_Mutex :: struct {
 <ul>
 	<li>
 		<p>
-            Keep track of our threads.
-		</p>
-	</li>
-	<li>
-		<p>
-            Used to check if our thread has completed its work or not
-		</p>
-	</li>
-	<li>
-		<p>
-            Wait group is a synchronization primitive used by the waiting thread to wait, until all working threads finish work.
-		</p>
-	</li>
-	<li>
-		<p>
-            The waiting thread first sets the number of working threads it will expect to wait for using 
-            <code>wait_group_add</code>
-             call, and start waiting using 
-            <code>wait_group_wait</code>
-             call. When worker threads complete their work, each of them will call 
-            <code>wait_group_done</code>
-            , and after all working threads have called this procedure, the waiting thread will resume execution.
-		</p>
-	</li>
-	<li>
-		<p>
-            For the purpose of keeping track whether all working threads have finished their work, the wait group keeps an internal atomic counter. Initially, the waiting thread might set it to a certain non-zero amount. When each working thread completes the work, the internal counter is atomically decremented until it reaches zero. When it reaches zero, the waiting thread is unblocked. The counter is not allowed to become negative.
-		</p>
-	</li>
-	<li>
-		<p>
 			<strong>
                 Note
 			</strong>
             : Just like any synchronization primitives, a wait group cannot be copied after first use.
+		</p>
+	</li>
+	<li>
+		<p>
+            See&nbsp;&nbsp;
+            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#wait-group">
+            Multithreading#Wait Group
+            </a>
+            .
 		</p>
 	</li>
 </ul>
@@ -26667,25 +27970,6 @@ _RW_Mutex :: struct {
 				</p>
 			</li>
 		</ul>
-	</li>
-</ul>
-<h3
-	id="auto-reset-event-codesync-auto_reset_event-code" >
-    Auto Reset Event (
-    <code>sync.Auto_Reset_Event</code>
-    )
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/core/sync/#Auto_Reset_Event" 
-				class="external-link" 
-				target="_blank" >
-                <code>Auto_Reset_Event</code>
-			</a>
-            .
-		</p>
 	</li>
 </ul>
 <h2
@@ -30121,8 +31405,20 @@ main :: proc() {
 							</li>
 							<li>
 								<a
-									href="#synchronization-primitives-overview" >
-                                    Synchronization Primitives: Overview
+									href="#cpu-yield" >
+                                    CPU Yield
+								</a>
+							</li>
+							<li>
+								<a
+									href="#synchronization-primitives-direct-comparisons" >
+                                    Synchronization Primitives: Direct Comparisons
+								</a>
+							</li>
+							<li>
+								<a
+									href="#atomics" >
+                                    Atomics
 								</a>
 							</li>
 							<li>
@@ -30133,14 +31429,26 @@ main :: proc() {
 							</li>
 							<li>
 								<a
-									href="#condition-variable-codesync-cond-code" >
-                                    Condition Variable (<code>sync.Cond</code>)
+									href="#semaphore-codesync-sema-code" >
+                                    Semaphore (<code>sync.Sema</code>)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#semaphore-codesync-sema-code" >
-                                    Semaphore (<code>sync.Sema</code>)
+									href="#benaphore-codesync-benaphore-code" >
+                                    Benaphore (<code>sync.Benaphore</code>)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#recursive-benaphore-codesync-recursive_benaphore-code" >
+                                    Recursive Benaphore (<code>sync.Recursive_Benaphore</code>)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#auto-reset-event-codesync-auto_reset_event-code" >
+                                    Auto Reset Event (<code>sync.Auto_Reset_Event</code>)
 								</a>
 							</li>
 							<li>
@@ -30157,20 +31465,44 @@ main :: proc() {
 							</li>
 							<li>
 								<a
+									href="#one-shot-event-codesync-one_shot_event-code" >
+                                    One Shot Event (<code>sync.One_Shot_Event</code>)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#parker-codesync-parker-code" >
+                                    Parker (<code>sync.Parker</code>)
+								</a>
+							</li>
+							<li>
+								<a
 									href="#read-write-mutex-codesync-rw_mutex-code-codesys_windows-srwlock-code" >
                                     Read-Write Mutex (<code>sync.RW_Mutex</code>) / (<code>sys_windows.SRWLock</code>)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#wait-group-codesync-wait_group-code" >
-                                    Wait Group (<code>sync.Wait_Group</code>)
+									href="#once-codesync-once-code" >
+                                    Once (<code>sync.Once</code>)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#auto-reset-event-codesync-auto_reset_event-code" >
-                                    Auto Reset Event (<code>sync.Auto_Reset_Event</code>)
+									href="#ticket-mutex-codesync-ticket_mutex-code" >
+                                    Ticket Mutex (<code>sync.Ticket_Mutex</code>)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#condition-variable-codesync-cond-code" >
+                                    Condition Variable (<code>sync.Cond</code>)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#wait-group-codesync-wait_group-code" >
+                                    Wait Group (<code>sync.Wait_Group</code>)
 								</a>
 							</li>
 						</ul>
@@ -30321,7 +31653,7 @@ main :: proc() {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.25229.js" >
+			src="/static/studies.38954.js" >
 		</script>
 	</body>
 </html>

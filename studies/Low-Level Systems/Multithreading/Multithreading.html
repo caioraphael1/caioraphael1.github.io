@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.25229.css" >
+			href="/static/studies.38954.css" >
 	</head>
 	<body>
 		<aside
@@ -4666,159 +4666,144 @@ window.MathJax = {
 	</li>
 </ul>
 <h2
-	id="system-synchronization-primitives" >
-    System Synchronization Primitives
+	id="synchronization-primitives" >
+    Synchronization Primitives
 </h2>
+<ul>
+	<li>
+		<p>
+            Synchronization primitives can come from multiple layers of abstraction; some are provided directly by the operating system, while others are part of programming language libraries or runtime environments.
+		</p>
+	</li>
+</ul>
 <h5
-	id="about" >
-    About
+	id="operating-system-os-level" >
+    Operating System (OS) Level
 </h5>
 <ul>
 	<li>
 		<p>
-            Synchronization primitives can come from multiple layers of abstraction—some are provided directly by the operating system, while others are part of programming language libraries or runtime environments.
+            Most low-level synchronization primitives originate from the OS.
 		</p>
 	</li>
 	<li>
 		<p>
+            Provided through 
 			<strong>
-                Operating System (OS) Level
+                system calls
 			</strong>
+            &nbsp;or 
+			<strong>
+                kernel APIs
+			</strong>
+            .
 		</p>
-		<ul>
-			<li>
-				<p>
-                    Most low-level synchronization primitives originate from the OS.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Provided through 
-					<strong>
-                        system calls
-					</strong>
-                    &nbsp;or 
-					<strong>
-                        kernel APIs
-					</strong>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    Examples:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>pthread_mutex</code>
-                            , 
-                            <code>pthread_cond</code>
-                            &nbsp;(POSIX Threads on Unix/Linux)
-						</p>
-					</li>
-					<li>
-						<p>
-                            <code>WaitForSingleObject</code>
-                            , 
-                            <code>CreateSemaphore</code>
-                            &nbsp;(Windows API)
-						</p>
-					</li>
-					<li>
-						<p>
-                            <code>futex</code>
-                            &nbsp;(Linux-specific syscall)
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Typically used in C/C++, or by language runtimes internally.
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>
-                        Responsibilities of the OS
-					</strong>
-                    :
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Manage thread scheduling.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Handle context switching and resource blocking.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Provide kernel support for locks, semaphores, etc.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
 	</li>
 	<li>
 		<p>
-			<strong>
-                Programming Language Runtime
-			</strong>
-            :
+            Examples:
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Languages abstract OS primitives or implement their own strategies.
+                    <code>pthread_mutex</code>
+                    , 
+                    <code>pthread_cond</code>
+                    &nbsp;(POSIX Threads on Unix/Linux)
 				</p>
 			</li>
 			<li>
 				<p>
-                    May use OS-level primitives under the hood or optimize further in user-space.
+                    <code>WaitForSingleObject</code>
+                    , 
+                    <code>CreateSemaphore</code>
+                    &nbsp;(Windows API)
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>futex</code>
+                    &nbsp;(Linux-specific syscall)
 				</p>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<p>
+            Typically used in C/C++, or by language runtimes internally.
+		</p>
+	</li>
+	<li>
+		<p>
 			<strong>
-                User-Space Libraries
+                Responsibilities of the OS
 			</strong>
             :
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Some libraries provide synchronization mechanisms independent of the OS.
+                    Manage thread scheduling.
 				</p>
 			</li>
 			<li>
 				<p>
-                    Often optimized for performance (e.g., lock-free, wait-free algorithms).
+                    Handle context switching and resource blocking.
 				</p>
 			</li>
 			<li>
 				<p>
-                    Examples:
+                    Provide kernel support for locks, semaphores, etc.
 				</p>
-				<ul>
-					<li>
-						<p>
-                            Intel TBB (Threading Building Blocks)
-						</p>
-					</li>
-					<li>
-						<p>
-                            Boost.Thread (C++)
-						</p>
-					</li>
-				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="programming-language-runtime" >
+    Programming Language Runtime
+</h5>
+<ul>
+	<li>
+		<p>
+            Languages abstract OS primitives or implement their own strategies.
+		</p>
+	</li>
+	<li>
+		<p>
+            May use OS-level primitives under the hood or optimize further in user-space.
+		</p>
+	</li>
+</ul>
+<h5
+	id="user-space-libraries" >
+    User-Space Libraries
+</h5>
+<ul>
+	<li>
+		<p>
+            Some libraries provide synchronization mechanisms independent of the OS.
+		</p>
+	</li>
+	<li>
+		<p>
+            Often optimized for performance (e.g., lock-free, wait-free algorithms).
+		</p>
+	</li>
+	<li>
+		<p>
+            Examples:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Intel TBB (Threading Building Blocks)
+				</p>
+			</li>
+			<li>
+				<p>
+                    Boost.Thread (C++)
+				</p>
 			</li>
 		</ul>
 	</li>
@@ -4830,24 +4815,12 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            Low-level CPU-supported operations (e.g., 
-            <code>atomic_add</code>
-            , 
-            <code>compare_and_swap</code>
-            ) that complete indivisibly.
+            Low-level CPU-supported operations that are completely indivisible.
 		</p>
 	</li>
 	<li>
 		<p>
             No locking required.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Use case
-			</strong>
-            : Lightweight synchronization for counters, flags, etc.
 		</p>
 	</li>
 	<li>
@@ -4864,6 +4837,146 @@ window.MathJax = {
 			<li>
 				<p>
                     I think this exemplifies a bit the necessity of using atomic operations.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="atomic-operations" >
+    Atomic Operations
+</h4>
+<ul>
+	<li>
+		<p>
+            See 
+            <a href="/studies/Low-Level Systems/Multithreading/Odin.html#atomics">
+            Odin#Atomics
+            </a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I'm assuming the operations stated here are universal.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="atomic-memory-order" >
+    Atomic Memory Order
+</h4>
+<ul>
+	<li>
+		<p>
+            Modern CPU's contain multiple cores and caches specific to those cores. When a core performs a write to memory, the value is written to cache first. The issue is that a core doesn't typically see what's inside the caches of other cores. In order to make operations consistent CPU's implement mechanisms that synchronize memory operations across cores by asking other cores or by pushing data about writes to other cores.
+		</p>
+	</li>
+	<li>
+		<p>
+            Due to how these algorithms are implemented, the stores and loads performed by one core may seem to happen in a different order to another core. It also may happen that a core reorders stores and loads (independent of how compiler put them into the machine code). This can cause issues when trying to synchronize multiple memory locations between two cores. Which is why CPU's allow for stronger memory ordering guarantees if certain instructions or instruction variants are used.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>Relaxed</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The memory access (load or store) is unordered with respect to other memory accesses. This can be used to implement an atomic counter. Multiple threads access a single variable, but it doesn't matter when exactly it gets incremented, because it will become eventually consistent.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>Consume</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No loads or stores dependent on a memory location can be reordered before a load with consume memory order. If other threads released the same memory, it becomes visible.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>Acquire</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No loads or stores on a memory location can be reordered before a load of that memory location with acquire memory ordering. If other threads release the same memory, it becomes visible.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>Release</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No loads or stores on a memory location can be reordered after a store of that memory location with release memory ordering. All threads that acquire the same memory location will see all writes done by the current thread.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>Acq_Rel</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Acquire-release memory ordering: combines acquire and release memory orderings in the same operation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>Seq_Cst</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sequential consistency. The strongest memory ordering. A load will always be an acquire operation, a store will always be a release operation, and in addition to that all threads observe the same order of writes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Note(i386, x64)
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    x86 has a very strong memory model by default. It guarantees that all writes are ordered, stores and loads aren't reordered. In a sense, all operations are at least acquire and release operations. If 
+                    <code>lock</code>
+                    &nbsp;prefix is used, all operations are sequentially consistent. If you use explicit atomics, make sure you have the correct atomic memory order, because bugs likely will not show up in x86, but may show up on e.g. arm. More on x86 memory ordering can be found 
+					<a
+						href="https://www.cs.cmu.edu/~410-f10/doc/Intel_Reordering_318147.pdf" 
+						class="external-link" 
+						target="_blank" >
+                        here
+					</a>
+                    .
 				</p>
 			</li>
 		</ul>
@@ -4918,6 +5031,132 @@ window.MathJax = {
             This type of synchronization primitive can be used to synchronize &quot;staged&quot; workloads, where the workload is split into stages, and until all threads have completed the previous threads, no thread is allowed to start work on the next stage. In this case, after each stage, a 
             <code>barrier_wait</code>
             &nbsp;shall be inserted in the thread procedure.
+		</p>
+	</li>
+</ul>
+<h3
+	id="semaphore" >
+    Semaphore
+</h3>
+<ul>
+	<li>
+		<p>
+            A counter-based synchronization primitive.
+		</p>
+	</li>
+	<li>
+		<p>
+            Can allow multiple threads to access a resource (unlike a mutex, which is binary).
+		</p>
+	</li>
+	<li>
+		<p>
+            Types:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Counting Semaphore
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allows 
+                            <code>n</code>
+                            &nbsp;concurrent accesses.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Binary Semaphore
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Functions like a mutex.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            When waited upon, semaphore blocks until the internal count is greater than zero, then decrements the internal counter by one. Posting to the semaphore increases the count by one, or the provided amount.
+		</p>
+	</li>
+	<li>
+		<p>
+            This type of synchronization primitives can be useful for implementing queues. The internal counter of the semaphore can be thought of as the amount of items in the queue. After a data has been pushed to the queue, the thread shall call 
+            <code>sema_post()</code>
+             procedure, increasing the counter. When a thread takes an item from the queue to do the job, it shall call 
+            <code>sema_wait()</code>
+            , waiting on the semaphore counter to become non-zero and decreasing it, if necessary.
+		</p>
+	</li>
+</ul>
+<h3
+	id="benaphore" >
+    Benaphore
+</h3>
+<ul>
+	<li>
+		<p>
+            A benaphore is a combination of an atomic variable and a semaphore that can improve locking efficiency in a no-contention system. Acquiring a benaphore lock doesn't call into an internal semaphore, if no other thread is in the middle of a critical section.
+		</p>
+	</li>
+	<li>
+		<p>
+            Once a lock on a benaphore is acquired by a thread, no other thread is allowed into any critical sections, associted with the same benaphore, until the lock is released.
+		</p>
+	</li>
+</ul>
+<h3
+	id="recursive-benaphore" >
+    Recursive Benaphore
+</h3>
+<ul>
+	<li>
+		<p>
+            A recursive benaphore is just like a plain benaphore, except it allows reentrancy into the critical section.
+		</p>
+	</li>
+	<li>
+		<p>
+            When a lock is acquired on a benaphore, all other threads attempting to acquire a lock on the same benaphore will be blocked from any critical sections, associated with the same benaphore.
+		</p>
+	</li>
+	<li>
+		<p>
+            When a lock is acquired on a benaphore by a thread, that thread is allowed to acquire another lock on the same benaphore. When a thread has acquired the lock on a benaphore, the benaphore will stay locked until the thread releases the lock as many times as it has been locked by the thread.
+		</p>
+	</li>
+</ul>
+<h3
+	id="auto-reset-event" >
+    Auto Reset Event
+</h3>
+<ul>
+	<li>
+		<p>
+            Represents a thread synchronization primitive that, when signalled, releases one single waiting thread and then resets automatically to a state where it can be signalled again.
+		</p>
+	</li>
+	<li>
+		<p>
+            When a thread calls 
+            <code>auto_reset_event_wait</code>
+            , its execution will be blocked, until the event is signalled by another thread. The call to 
+            <code>auto_reset_event_signal</code>
+            &nbsp;wakes up exactly one thread waiting for the event.
 		</p>
 	</li>
 </ul>
@@ -5275,6 +5514,53 @@ void WriteJob() {
 	</li>
 </ul>
 <h3
+	id="one-shot-event" >
+    One Shot Event
+</h3>
+<ul>
+	<li>
+		<p>
+            One-shot event.
+		</p>
+	</li>
+	<li>
+		<p>
+            A one-shot event is an associated token which is initially not present:
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>one_shot_event_wait</code>
+            &nbsp;blocks the current thread until the event is made available The 
+            <code>one_shot_event_signal</code>
+            &nbsp;procedure automatically makes the token available if its was not already.
+		</p>
+	</li>
+</ul>
+<h3
+	id="parker" >
+    Parker
+</h3>
+<p>
+     - A Parker is an associated token which is initially not present:
+</p>
+<ul>
+	<li>
+		<p>
+            The 
+            <code>park</code>
+            &nbsp;procedure blocks the current thread unless or until the token is available, at which point the token is consumed. The 
+            <code>park_with_timeout</code>
+            &nbsp;procedures works the same as 
+            <code>park</code>
+            &nbsp;but only blocks for the specified duration. The 
+            <code>unpark</code>
+            &nbsp;procedure automatically makes the token available if it was not already.
+		</p>
+	</li>
+</ul>
+<h3
 	id="spinlock-spin-until-mutex-is-unlocked" >
     Spinlock (Spin until Mutex is unlocked)
 </h3>
@@ -5536,71 +5822,45 @@ void WriteJob() {
 	</li>
 </ul>
 <h3
-	id="semaphore" >
-    Semaphore
+	id="once" >
+    Once
 </h3>
 <ul>
 	<li>
 		<p>
-            A counter-based synchronization primitive.
+            Once action.
 		</p>
 	</li>
 	<li>
 		<p>
-            Can allow multiple threads to access a resource (unlike a mutex, which is binary).
+            <code>Once</code>
+            &nbsp;a synchronization primitive, that only allows a single entry into a critical section from a single thread.
+		</p>
+	</li>
+</ul>
+<h3
+	id="ticket-mutex" >
+    Ticket Mutex
+</h3>
+<ul>
+	<li>
+		<p>
+            Ticket lock.
 		</p>
 	</li>
 	<li>
 		<p>
-            Types:
-		</p>
-		<ul>
-			<li>
-				<p>
-					<strong>
-                        Counting Semaphore
-					</strong>
-                    :
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Allows 
-                            <code>n</code>
-                            &nbsp;concurrent accesses.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<strong>
-                        Binary Semaphore
-					</strong>
-                    :
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Functions like a mutex.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            When waited upon, semaphore blocks until the internal count is greater than zero, then decrements the internal counter by one. Posting to the semaphore increases the count by one, or the provided amount.
+            A ticket lock is a mutual exclusion lock that uses &quot;tickets&quot; to control which thread is allowed into a critical section.
 		</p>
 	</li>
 	<li>
 		<p>
-            This type of synchronization primitives can be useful for implementing queues. The internal counter of the semaphore can be thought of as the amount of items in the queue. After a data has been pushed to the queue, the thread shall call 
-            <code>sema_post()</code>
-             procedure, increasing the counter. When a thread takes an item from the queue to do the job, it shall call 
-            <code>sema_wait()</code>
-            , waiting on the semaphore counter to become non-zero and decreasing it, if necessary.
+            This synchronization primitive works just like spinlock, except that it implements a &quot;fairness&quot; guarantee, making sure that each thread gets a roughly equal amount of entries into the critical section.
+		</p>
+	</li>
+	<li>
+		<p>
+            This type of synchronization primitive is applicable for short critical sections in low-contention systems, as it uses a spinlock under the hood.
 		</p>
 	</li>
 </ul>
@@ -5689,9 +5949,36 @@ void WriteJob() {
 	</li>
 </ul>
 <h3
+	id="wait-group" >
+    Wait Group
+</h3>
+<ul>
+	<li>
+		<p>
+            Wait group is a synchronization primitive used by the waiting thread to wait, until all working threads finish work.
+		</p>
+	</li>
+	<li>
+		<p>
+            The waiting thread first sets the number of working threads it will expect to wait for using 
+            <code>wait_group_add</code>
+            &nbsp;call, and start waiting using 
+            <code>wait_group_wait</code>
+            &nbsp;call. When worker threads complete their work, each of them will call 
+            <code>wait_group_done</code>
+            , and after all working threads have called this procedure, the waiting thread will resume execution.
+		</p>
+	</li>
+	<li>
+		<p>
+            For the purpose of keeping track whether all working threads have finished their work, the wait group keeps an internal atomic counter. Initially, the waiting thread might set it to a certain non-zero amount. When each working thread completes the work, the internal counter is atomically decremented until it reaches zero. When it reaches zero, the waiting thread is unblocked. The counter is not allowed to become negative.
+		</p>
+	</li>
+</ul>
+<h2
 	id="double-buffering" >
     Double-Buffering
-</h3>
+</h2>
 <ul>
 	<li>
 		<p>
@@ -5700,10 +5987,7 @@ void WriteJob() {
 	</li>
 	<li>
 		<p>
-			<strong>
-                Use Case
-			</strong>
-            : Ideal when you have frequent reads and infrequent writes (e.g., rendering data, physics state).
+            Interesting when you have frequent reads and infrequent writes (e.g., rendering data, physics state).
 		</p>
 	</li>
 	<li>
@@ -5716,41 +6000,17 @@ void WriteJob() {
 		<ul>
 			<li>
 				<p>
-                    Maintain 
-					<strong>
-                        two buffers
-					</strong>
-                    : a 
-					<strong>
-                        front buffer
-					</strong>
-                    &nbsp;(for readers) and a 
-					<strong>
-                        back buffer
-					</strong>
-                    &nbsp;(for writers).
+                    Maintain two buffers: a front buffer (for readers) and a back buffer (for writers).
 				</p>
 			</li>
 			<li>
 				<p>
-                    Readers always access the 
-					<strong>
-                        front buffer
-					</strong>
-                    &nbsp;(no locks needed).
+                    Readers always access the front buffer (no locks needed).
 				</p>
 			</li>
 			<li>
 				<p>
-                    Writers modify the 
-					<strong>
-                        back buffer
-					</strong>
-                    , then 
-					<strong>
-                        atomically swap
-					</strong>
-                    &nbsp;the buffers when done.
+                    Writers modify the back buffer, then atomically swap the buffers when done.
 				</p>
 			</li>
 		</ul>
@@ -6534,8 +6794,8 @@ void Shutdown() {
 					</li>
 					<li>
 						<a
-							href="#system-synchronization-primitives" >
-                            System Synchronization Primitives
+							href="#synchronization-primitives" >
+                            Synchronization Primitives
 						</a>
 						<ul>
 							<li>
@@ -6552,6 +6812,30 @@ void Shutdown() {
 							</li>
 							<li>
 								<a
+									href="#semaphore" >
+                                    Semaphore
+								</a>
+							</li>
+							<li>
+								<a
+									href="#benaphore" >
+                                    Benaphore
+								</a>
+							</li>
+							<li>
+								<a
+									href="#recursive-benaphore" >
+                                    Recursive Benaphore
+								</a>
+							</li>
+							<li>
+								<a
+									href="#auto-reset-event" >
+                                    Auto Reset Event
+								</a>
+							</li>
+							<li>
+								<a
 									href="#mutex-mutual-exclusion-lock" >
                                     Mutex (Mutual exclusion lock)
 								</a>
@@ -6560,6 +6844,18 @@ void Shutdown() {
 								<a
 									href="#futex-fast-userspace-mutex" >
                                     Futex (Fast Userspace Mutex)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#one-shot-event" >
+                                    One Shot Event
+								</a>
+							</li>
+							<li>
+								<a
+									href="#parker" >
+                                    Parker
 								</a>
 							</li>
 							<li>
@@ -6576,8 +6872,14 @@ void Shutdown() {
 							</li>
 							<li>
 								<a
-									href="#semaphore" >
-                                    Semaphore
+									href="#once" >
+                                    Once
+								</a>
+							</li>
+							<li>
+								<a
+									href="#ticket-mutex" >
+                                    Ticket Mutex
 								</a>
 							</li>
 							<li>
@@ -6588,10 +6890,18 @@ void Shutdown() {
 							</li>
 							<li>
 								<a
-									href="#double-buffering" >
-                                    Double-Buffering
+									href="#wait-group" >
+                                    Wait Group
 								</a>
 							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#double-buffering" >
+                            Double-Buffering
+						</a>
+						<ul>
 						</ul>
 					</li>
 					<li>
@@ -6624,7 +6934,7 @@ void Shutdown() {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.25229.js" >
+			src="/static/studies.38954.js" >
 		</script>
 	</body>
 </html>

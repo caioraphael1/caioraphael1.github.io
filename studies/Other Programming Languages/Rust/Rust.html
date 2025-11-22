@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.79163.css" >
+			href="/static/studies.25229.css" >
 	</head>
 	<body>
 		<aside
@@ -128,6 +128,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Graphics Programming/Font Rendering.html" >
                                 Font Rendering
 							</a>
@@ -139,15 +148,6 @@ window.MathJax = {
 								class="" 
 								href="/studies/Graphics Programming/OpenGL/OpenGL.html" >
                                 OpenGL
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Graphics Programming/Slang.html" >
-                                Slang
 							</a>
 						</li>
 					</ul>
@@ -389,8 +389,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Network/Serialization - Encoding/Serialization - Encoding.html" >
-                                Serialization - Encoding
+								href="/studies/Network/Security.html" >
+                                Security
 							</a>
 						</li>
 					</ul>
@@ -398,8 +398,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Network/Security.html" >
-                                Security
+								href="/studies/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
 							</a>
 						</li>
 					</ul>
@@ -743,15 +743,6 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Other Programming Languages/Swift/Swift.html" >
-                                Swift
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
 								href="/studies/Other Programming Languages/Nim/Nim.html" >
                                 Nim
 							</a>
@@ -761,8 +752,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Other Programming Languages/Haxe.html" >
-                                Haxe
+								href="/studies/Other Programming Languages/Swift/Swift.html" >
+                                Swift
 							</a>
 						</li>
 					</ul>
@@ -772,6 +763,15 @@ window.MathJax = {
 								class="" 
 								href="/studies/Other Programming Languages/Python.html" >
                                 Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Other Programming Languages/Haxe.html" >
+                                Haxe
 							</a>
 						</li>
 					</ul>
@@ -5176,47 +5176,6 @@ if let Some(value) = opt.as_mut() {
 println!("{:?}", opt); // Output: Some("Hello, world!")
 </code></pre>
 <h3
-	id="the-code-code-operator" >
-    The 
-    <code>?</code>
-    &nbsp;operator
-</h3>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Without 
-                <code>?</code>
-			</strong>
-            :
-		</p>
-<pre><code class="language-rust" data-lang="rust"> fn add_last_numbers(stack: &mut Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; let a = stack.pop();
-&nbsp;&nbsp;&nbsp;&nbsp; let b = stack.pop();
- 
-&nbsp;&nbsp;&nbsp;&nbsp; match (a, b) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Some(x), Some(y)) =&gt; Some(x + y),
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _ =&gt; None,
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
-</code></pre>
-	</li>
-	<li>
-		<p>
-			<strong>
-                With 
-                <code>?</code>
-			</strong>
-            :
-		</p>
-<pre><code class="language-rust" data-lang="rust"> fn add_last_numbers(stack: &mut Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; Some(stack.pop()? + stack.pop()?)
- }
-</code></pre>
-	</li>
-</ul>
-<h3
 	id="adapters-for-working-with-references" >
     Adapters for working with references
 </h3>
@@ -5313,14 +5272,43 @@ println!("{:?}", opt); // Output: Some("Hello, world!")
 	</li>
 </ul>
 <h3
-	id="unwrapping" >
-    Unwrapping
+	id="using-code-code" >
+    Using 
+    <code>?</code>
 </h3>
 <ul>
 	<li>
 		<p>
-            .
+			<strong>
+                Without 
+                <code>?</code>
+			</strong>
+            :
 		</p>
+<pre><code class="language-rust" data-lang="rust"> fn add_last_numbers(stack: &mut Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp; let a = stack.pop();
+&nbsp;&nbsp;&nbsp;&nbsp; let b = stack.pop();
+ 
+&nbsp;&nbsp;&nbsp;&nbsp; match (a, b) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Some(x), Some(y)) =&gt; Some(x + y),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _ =&gt; None,
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+ 
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                With 
+                <code>?</code>
+			</strong>
+            :
+		</p>
+<pre><code class="language-rust" data-lang="rust"> fn add_last_numbers(stack: &mut Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp; Some(stack.pop()? + stack.pop()?)
+ }
+</code></pre>
 	</li>
 </ul>
 <h3
@@ -5607,72 +5595,6 @@ match version {
 </code></pre>
 			</li>
 		</ul>
-	</li>
-</ul>
-<h3
-	id="adapters-for-working-with-references" >
-    Adapters for working with references
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://doc.rust-lang.org/std/result/enum.Result.html#method.as_ref" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_ref</code>
-			</a>
-            &nbsp;converts from 
-            <code>&Result&lt;T, E&gt;</code>
-            &nbsp;to 
-            <code>Result&lt;&T, &E&gt;</code>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://doc.rust-lang.org/std/result/enum.Result.html#method.as_mut" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_mut</code>
-			</a>
-            &nbsp;converts from 
-            <code>&mut Result&lt;T, E&gt;</code>
-            &nbsp;to 
-            <code>Result&lt;&mut T, &mut E&gt;</code>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://doc.rust-lang.org/std/result/enum.Result.html#method.as_deref" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_deref</code>
-			</a>
-            &nbsp;converts from 
-            <code>&Result&lt;T, E&gt;</code>
-            &nbsp;to 
-            <code>Result&lt;&T::Target, &E&gt;</code>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://doc.rust-lang.org/std/result/enum.Result.html#method.as_deref_mut" 
-				class="external-link" 
-				target="_blank" >
-                <code>as_deref_mut</code>
-			</a>
-            &nbsp;converts from 
-            <code>&mut Result&lt;T, E&gt;</code>
-            &nbsp;to 
-            <code>Result&lt;&mut T::Target, &mut E&gt;</code>
-            .
-		</p>
 	</li>
 </ul>
 <h3
@@ -6661,20 +6583,14 @@ if let Some(max) = config_max {
 						<ul>
 							<li>
 								<a
-									href="#the-code-code-operator" >
-                                    The <code>?</code> operator
-								</a>
-							</li>
-							<li>
-								<a
 									href="#adapters-for-working-with-references" >
                                     Adapters for working with references
 								</a>
 							</li>
 							<li>
 								<a
-									href="#unwrapping" >
-                                    Unwrapping
+									href="#using-code-code" >
+                                    Using <code>?</code>
 								</a>
 							</li>
 							<li>
@@ -6695,12 +6611,6 @@ if let Some(max) = config_max {
 								<a
 									href="#the-code-code-operator" >
                                     The <code>?</code> operator
-								</a>
-							</li>
-							<li>
-								<a
-									href="#adapters-for-working-with-references" >
-                                    Adapters for working with references
 								</a>
 							</li>
 							<li>
@@ -6757,7 +6667,7 @@ if let Some(max) = config_max {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.79163.js" >
+			src="/static/studies.25229.js" >
 		</script>
 	</body>
 </html>

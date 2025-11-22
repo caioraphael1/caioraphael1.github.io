@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.79163.css" >
+			href="/static/studies.25229.css" >
 	</head>
 	<body>
 		<aside
@@ -128,6 +128,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Graphics Programming/Font Rendering.html" >
                                 Font Rendering
 							</a>
@@ -139,15 +148,6 @@ window.MathJax = {
 								class="" 
 								href="/studies/Graphics Programming/OpenGL/OpenGL.html" >
                                 OpenGL
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Graphics Programming/Slang.html" >
-                                Slang
 							</a>
 						</li>
 					</ul>
@@ -389,8 +389,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Network/Serialization - Encoding/Serialization - Encoding.html" >
-                                Serialization - Encoding
+								href="/studies/Network/Security.html" >
+                                Security
 							</a>
 						</li>
 					</ul>
@@ -398,8 +398,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Network/Security.html" >
-                                Security
+								href="/studies/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
 							</a>
 						</li>
 					</ul>
@@ -743,15 +743,6 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Other Programming Languages/Swift/Swift.html" >
-                                Swift
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
 								href="/studies/Other Programming Languages/Nim/Nim.html" >
                                 Nim
 							</a>
@@ -761,8 +752,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Other Programming Languages/Haxe.html" >
-                                Haxe
+								href="/studies/Other Programming Languages/Swift/Swift.html" >
+                                Swift
 							</a>
 						</li>
 					</ul>
@@ -772,6 +763,15 @@ window.MathJax = {
 								class="" 
 								href="/studies/Other Programming Languages/Python.html" >
                                 Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Other Programming Languages/Haxe.html" >
+                                Haxe
 							</a>
 						</li>
 					</ul>
@@ -1606,46 +1606,6 @@ layout(location = 0) out vec4 o_pos;
 				</ul>
 			</li>
 		</ul>
-	</li>
-</ul>
-<h3
-	id="interface-blocks" >
-    Interface Blocks
-</h3>
-<ul>
-	<li>
-		<p>
-            To implement our constant data we have to use an interface block. Interface blocks in shader code are used to group multiple global variables of the same 
-            <code>&lt;storage&gt;</code>
-            &nbsp;type.
-		</p>
-	</li>
-	<li>
-		<p>
-            In theory they aren’t necessarily solely for constant data.
-		</p>
-	</li>
-</ul>
-<pre><code class="language-glsl" data-lang="glsl">layout(set = 0, binding = 0) uniform PerMeshData {
-&nbsp;&nbsp;&nbsp;&nbsp;vec4 camera_position;
-&nbsp;&nbsp;&nbsp;&nbsp;mat4 model_matrix;
-&nbsp;&nbsp;&nbsp;&nbsp;vec3 mesh_color;
-} per_mesh_data;
-</code></pre>
-<ul>
-	<li>
-		<p>
-            Interface blocks are still global variables, and technically still follow the global variable format. However, the difference is that they have to be given a user-defined type.
-		</p>
-	</li>
-	<li>
-		<p>
-            They work exactly the same way as a 
-            <code>struct</code>
-            &nbsp;in GLSL/C++. For example, to access the model matrix in this interface block, you’d use 
-            <code>per_mesh_data.model_matrix</code>
-            .
-		</p>
 	</li>
 </ul>
 <h3
@@ -5119,6 +5079,40 @@ buffer BufferName { // externally visible name of buffer
 <ul>
 	<li>
 		<p>
+            To implement our constant data we have to use an interface block. Interface blocks in shader code are used to group multiple global variables of the same 
+            <code>&lt;storage&gt;</code>
+            &nbsp;type.
+		</p>
+	</li>
+	<li>
+		<p>
+            In theory they aren’t necessarily solely for constant data.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-glsl" data-lang="glsl">layout(set = 0, binding = 0) uniform PerMeshData {
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 camera_position;
+&nbsp;&nbsp;&nbsp;&nbsp;mat4 model_matrix;
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 mesh_color;
+} per_mesh_data;
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Interface blocks are still global variables, and technically still follow the global variable format. However, the difference is that they have to be given a user-defined type.
+		</p>
+	</li>
+	<li>
+		<p>
+            They work exactly the same way as a 
+            <code>struct</code>
+            &nbsp;in GLSL/C++. For example, to access the model matrix in this interface block, you’d use 
+            <code>per_mesh_data.model_matrix</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
             Input, output, uniform, and buffer variable declarations can be grouped into named interface blocks to provide coarser granularity backing than is achievable with individual declarations. They can have an optional instance name, used in the shader to reference their members. An output block of one programmable stage is backed by a corresponding input block in the subsequent programmable stage. A 
 			<em>
                 uniform block
@@ -6272,12 +6266,6 @@ layout(location = 0, component = 3) in float f[6];
 						</li>
 						<li>
 							<a
-								href="#interface-blocks" >
-                                Interface Blocks
-							</a>
-						</li>
-						<li>
-							<a
 								href="#cheat-sheet" >
                                 Cheat Sheet
 							</a>
@@ -6359,7 +6347,7 @@ layout(location = 0, component = 3) in float f[6];
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.79163.js" >
+			src="/static/studies.25229.js" >
 		</script>
 	</body>
 </html>

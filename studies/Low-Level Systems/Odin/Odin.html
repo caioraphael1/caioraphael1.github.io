@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.79163.css" >
+			href="/static/studies.25229.css" >
 	</head>
 	<body>
 		<aside
@@ -128,6 +128,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Graphics Programming/Font Rendering.html" >
                                 Font Rendering
 							</a>
@@ -139,15 +148,6 @@ window.MathJax = {
 								class="" 
 								href="/studies/Graphics Programming/OpenGL/OpenGL.html" >
                                 OpenGL
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Graphics Programming/Slang.html" >
-                                Slang
 							</a>
 						</li>
 					</ul>
@@ -389,8 +389,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Network/Serialization - Encoding/Serialization - Encoding.html" >
-                                Serialization - Encoding
+								href="/studies/Network/Security.html" >
+                                Security
 							</a>
 						</li>
 					</ul>
@@ -398,8 +398,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Network/Security.html" >
-                                Security
+								href="/studies/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
 							</a>
 						</li>
 					</ul>
@@ -743,15 +743,6 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Other Programming Languages/Swift/Swift.html" >
-                                Swift
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
 								href="/studies/Other Programming Languages/Nim/Nim.html" >
                                 Nim
 							</a>
@@ -761,8 +752,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Other Programming Languages/Haxe.html" >
-                                Haxe
+								href="/studies/Other Programming Languages/Swift/Swift.html" >
+                                Swift
 							</a>
 						</li>
 					</ul>
@@ -772,6 +763,15 @@ window.MathJax = {
 								class="" 
 								href="/studies/Other Programming Languages/Python.html" >
                                 Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Other Programming Languages/Haxe.html" >
+                                Haxe
 							</a>
 						</li>
 					</ul>
@@ -2244,6 +2244,19 @@ window.MathJax = {
 	id="installation" >
     Installation
 </h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/install/" 
+				class="external-link" 
+				target="_blank" >
+                Installation
+			</a>
+            .
+		</p>
+	</li>
+</ul>
 <h5
 	id="versions-used" >
     Versions used
@@ -2280,23 +2293,6 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-	</li>
-</ul>
-<h3
-	id="installation" >
-    Installation
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://odin-lang.org/docs/install/" 
-				class="external-link" 
-				target="_blank" >
-                Installation
-			</a>
-            .
-		</p>
 	</li>
 </ul>
 <h3
@@ -2514,7 +2510,7 @@ window.MathJax = {
 				href="https://odin-lang.org/docs/overview/#when-statements" 
 				class="external-link" 
 				target="_blank" >
-                When
+                <code>when</code>
 			</a>
             .
 		</p>
@@ -2537,7 +2533,11 @@ window.MathJax = {
 				<p>
                     Each condition must be a constant expression as a 
                     <code>when</code>
-                    &nbsp;statement is evaluated at compile time.
+                    &nbsp;statement is evaluated at 
+					<strong>
+                        compile time
+					</strong>
+                    .
 				</p>
 			</li>
 			<li>
@@ -2572,6 +2572,14 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
+<pre><code class="language-odin" data-lang="odin">when ODIN_ARCH == .i386 {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.println("32 bit")
+} else when ODIN_ARCH == .amd64 {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.println("64 bit")
+} else {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.println("Unsupported architecture")
+}
+</code></pre>
 <h3
 	id="config" >
     #config
@@ -3822,71 +3830,6 @@ for block := arena.curr_block; block != nil; block = block.prev {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory_block_found = true
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
 &nbsp;&nbsp;&nbsp;&nbsp;}
-}
-</code></pre>
-<h3
-	id="when" >
-    When
-</h3>
-<ul>
-	<li>
-		<p>
-            The 
-            <code>when</code>
-            &nbsp;statement is almost identical to the 
-            <code>if</code>
-            &nbsp;statement but with some differences:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Each condition must be a constant expression as a 
-                    <code>when</code>
-                    &nbsp;statement is evaluated at 
-					<strong>
-                        compile time
-					</strong>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    The statements within a branch do not create a new scope.
-				</p>
-			</li>
-			<li>
-				<p>
-                    The compiler checks the semantics and code 
-					<strong>
-                        only
-					</strong>
-                    &nbsp;for statements that belong to the first condition that is 
-                    <code>true</code>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    An initial statement is not allowed in a 
-                    <code>when</code>
-                    &nbsp;statement.
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>when</code>
-                    &nbsp;statements are allowed at file scope.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">when ODIN_ARCH == .i386 {
-&nbsp;&nbsp;&nbsp;&nbsp;fmt.println("32 bit")
-} else when ODIN_ARCH == .amd64 {
-&nbsp;&nbsp;&nbsp;&nbsp;fmt.println("64 bit")
-} else {
-&nbsp;&nbsp;&nbsp;&nbsp;fmt.println("Unsupported architecture")
 }
 </code></pre>
 <h3
@@ -9597,10 +9540,6 @@ rot: quaternion128 = 1 + 0i + 0j + 0k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 	id="strings" >
     Strings
 </h2>
-<h3
-	id="strings" >
-    Strings
-</h3>
 <ul>
 	<li>
 		<p>
@@ -11436,8 +11375,8 @@ foo: u16 = 'x'
 	</li>
 </ul>
 <h3
-	id="memory" >
-    Memory
+	id="maps-memory-layout" >
+    Maps Memory Layout
 </h3>
 <ul>
 	<li>
@@ -11795,8 +11734,8 @@ m["Chloe"].x = 0
 	</li>
 </ul>
 <h3
-	id="parametric-polymorphism-parapoly" >
-    Parametric Polymorphism (Parapoly)
+	id="structs-with-parametric-polymorphism-parapoly" >
+    Structs with Parametric Polymorphism (Parapoly)
 </h3>
 <ul>
 	<li>
@@ -12062,8 +12001,8 @@ slot: Table_Slot(string, int)
 	</li>
 </ul>
 <h3
-	id="memory-layout" >
-    Memory Layout
+	id="struct-memory-layout" >
+    Struct Memory Layout
 </h3>
 <h5
 	id="packed" >
@@ -12523,8 +12462,8 @@ slot: Table_Slot(string, int)
 	</li>
 </ul>
 <h3
-	id="etc" >
-    Etc
+	id="other-tags" >
+    Other tags
 </h3>
 <h5
 	id="no_copy" >
@@ -12557,8 +12496,8 @@ main :: proc() {
     Union
 </h2>
 <h3
-	id="parametric-polymorphism-parapoly" >
-    Parametric Polymorphism (Parapoly)
+	id="unions-with-parametric-polymorphism-parapoly" >
+    Unions with Parametric Polymorphism (Parapoly)
 </h3>
 <ul>
 	<li>
@@ -12580,38 +12519,8 @@ r = 123
 r = Error.Foo0
 </code></pre>
 <h3
-	id="print" >
-    Print
-</h3>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Union type
-			</strong>
-            :
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">fmt.printfln("%T", my_union)
-// or
-fmt.printfln("%v", typeid_of(type_of(my_union)))
-</code></pre>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Unwrapped Union type
-			</strong>
-            :
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">fmt.printfln("%v", reflect.union_variant_typeid(my_union))
-</code></pre>
-<h3
-	id="casting" >
-    Casting
+	id="union-casting" >
+    Union Casting
 </h3>
 <ul>
 	<li>
@@ -12665,6 +12574,36 @@ fmt.printfln("%v", typeid_of(type_of(my_union)))
 		</ul>
 	</li>
 </ul>
+<h3
+	id="print" >
+    Print
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Union type
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">fmt.printfln("%T", my_union)
+// or
+fmt.printfln("%v", typeid_of(type_of(my_union)))
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Unwrapped Union type
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">fmt.printfln("%v", reflect.union_variant_typeid(my_union))
+</code></pre>
 <h3
 	id="type-check" >
     Type check
@@ -26009,10 +25948,8 @@ _Mutex :: struct {
 	<li>
 		<p>
             See 
-            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#mutex-mutex">
-            Multithreading#Mutex (
-            <code>Mutex</code>
-            )
+            <a href="/studies/Low-Level Systems/Multithreading/Multithreading.html#mutex-mutual-exclusion-lock">
+            Multithreading#Mutex (Mutual exclusion lock)
             </a>
             .
 		</p>
@@ -29183,7 +29120,7 @@ main :: proc() {
 					<footer
 						id="previous-next" >
 						<a
-							href="/studies/Graphics Programming/Slang.html" >
+							href="/studies/Graphics Programming/OpenGL/OpenGL.html" >
                             &nbsp;&lsaquo; Previous
 						</a>
 						<a
@@ -29232,12 +29169,6 @@ main :: proc() {
                             Installation
 						</a>
 						<ul>
-							<li>
-								<a
-									href="#installation" >
-                                    Installation
-								</a>
-							</li>
 							<li>
 								<a
 									href="#building-from-source" >
@@ -29416,12 +29347,6 @@ main :: proc() {
 								<a
 									href="#for" >
                                     For
-								</a>
-							</li>
-							<li>
-								<a
-									href="#when" >
-                                    When
 								</a>
 							</li>
 							<li>
@@ -29636,12 +29561,6 @@ main :: proc() {
 						<ul>
 							<li>
 								<a
-									href="#strings" >
-                                    Strings
-								</a>
-							</li>
-							<li>
-								<a
 									href="#manipulation" >
                                     Manipulation
 								</a>
@@ -29694,8 +29613,8 @@ main :: proc() {
 						<ul>
 							<li>
 								<a
-									href="#memory" >
-                                    Memory
+									href="#maps-memory-layout" >
+                                    Maps Memory Layout
 								</a>
 							</li>
 							<li>
@@ -29756,8 +29675,8 @@ main :: proc() {
 						<ul>
 							<li>
 								<a
-									href="#parametric-polymorphism-parapoly" >
-                                    Parametric Polymorphism (Parapoly)
+									href="#structs-with-parametric-polymorphism-parapoly" >
+                                    Structs with Parametric Polymorphism (Parapoly)
 								</a>
 							</li>
 							<li>
@@ -29768,8 +29687,8 @@ main :: proc() {
 							</li>
 							<li>
 								<a
-									href="#memory-layout" >
-                                    Memory Layout
+									href="#struct-memory-layout" >
+                                    Struct Memory Layout
 								</a>
 							</li>
 							<li>
@@ -29780,8 +29699,8 @@ main :: proc() {
 							</li>
 							<li>
 								<a
-									href="#etc" >
-                                    Etc
+									href="#other-tags" >
+                                    Other tags
 								</a>
 							</li>
 						</ul>
@@ -29794,20 +29713,20 @@ main :: proc() {
 						<ul>
 							<li>
 								<a
-									href="#parametric-polymorphism-parapoly" >
-                                    Parametric Polymorphism (Parapoly)
+									href="#unions-with-parametric-polymorphism-parapoly" >
+                                    Unions with Parametric Polymorphism (Parapoly)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#union-casting" >
+                                    Union Casting
 								</a>
 							</li>
 							<li>
 								<a
 									href="#print" >
                                     Print
-								</a>
-							</li>
-							<li>
-								<a
-									href="#casting" >
-                                    Casting
 								</a>
 							</li>
 							<li>
@@ -30402,7 +30321,7 @@ main :: proc() {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.79163.js" >
+			src="/static/studies.25229.js" >
 		</script>
 	</body>
 </html>

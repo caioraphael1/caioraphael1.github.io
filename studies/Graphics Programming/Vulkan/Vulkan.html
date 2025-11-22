@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.79163.css" >
+			href="/static/studies.25229.css" >
 	</head>
 	<body>
 		<aside
@@ -128,6 +128,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Graphics Programming/Slang.html" >
+                                Slang
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Graphics Programming/Font Rendering.html" >
                                 Font Rendering
 							</a>
@@ -139,15 +148,6 @@ window.MathJax = {
 								class="" 
 								href="/studies/Graphics Programming/OpenGL/OpenGL.html" >
                                 OpenGL
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Graphics Programming/Slang.html" >
-                                Slang
 							</a>
 						</li>
 					</ul>
@@ -389,8 +389,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Network/Serialization - Encoding/Serialization - Encoding.html" >
-                                Serialization - Encoding
+								href="/studies/Network/Security.html" >
+                                Security
 							</a>
 						</li>
 					</ul>
@@ -398,8 +398,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Network/Security.html" >
-                                Security
+								href="/studies/Network/Serialization - Encoding/Serialization - Encoding.html" >
+                                Serialization - Encoding
 							</a>
 						</li>
 					</ul>
@@ -743,15 +743,6 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Other Programming Languages/Swift/Swift.html" >
-                                Swift
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
 								href="/studies/Other Programming Languages/Nim/Nim.html" >
                                 Nim
 							</a>
@@ -761,8 +752,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Other Programming Languages/Haxe.html" >
-                                Haxe
+								href="/studies/Other Programming Languages/Swift/Swift.html" >
+                                Swift
 							</a>
 						</li>
 					</ul>
@@ -772,6 +763,15 @@ window.MathJax = {
 								class="" 
 								href="/studies/Other Programming Languages/Python.html" >
                                 Python
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Other Programming Languages/Haxe.html" >
+                                Haxe
 							</a>
 						</li>
 					</ul>
@@ -9829,6 +9829,19 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
             , there is no concept of a only-inside-this-command-buffer synchronization.
 		</p>
 	</li>
+	<li>
+		<p>
+            Graphics pipelines are executable on queues supporting 
+            <code>VK_QUEUE_GRAPHICS_BIT</code>
+            . Stages executed by graphics pipelines 
+			<strong>
+                can
+			</strong>
+            &nbsp;only be specified in commands recorded for queues supporting 
+            <code>VK_QUEUE_GRAPHICS_BIT</code>
+            .
+		</p>
+	</li>
 </ul>
 <h5
 	id="queueidle-and-deviceidle" >
@@ -9933,6 +9946,271 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 		<p>
             <img src="assets/image_20250731212325.png" width="425" >
             .
+		</p>
+	</li>
+</ul>
+<h5
+	id="queue-family-ownership-transfer" >
+    Queue Family Ownership Transfer
+</h5>
+<ul>
+	<li>
+		<p>
+            Resources created with a 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#VkSharingMode" 
+				class="external-link" 
+				target="_blank" >
+                VkSharingMode
+			</a>
+            &nbsp;of 
+            <code>VK_SHARING_MODE_EXCLUSIVE</code>
+            &nbsp;
+			<strong>
+                must
+			</strong>
+            &nbsp;have their ownership explicitly transferred from one queue family to another in order to access their content in a well-defined manner on a queue in a different queue family.
+		</p>
+	</li>
+	<li>
+		<p>
+            Resources shared with external APIs or instances using external memory 
+			<strong>
+                must
+			</strong>
+            &nbsp;also explicitly manage ownership transfers between local and external queues (or equivalent constructs in external APIs) regardless of the 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#VkSharingMode" 
+				class="external-link" 
+				target="_blank" >
+                VkSharingMode
+			</a>
+            &nbsp;specified when creating them.
+		</p>
+	</li>
+	<li>
+		<p>
+            If you need to transfer ownership to a different queue family, you need memory barriers, one in each queue to release/acquire ownership.
+		</p>
+	</li>
+	<li>
+		<p>
+            If memory dependencies are correctly expressed between uses of such a resource between two queues in different families, but no ownership transfer is defined, the contents of that resource are undefined for any read accesses performed by the second queue family.
+		</p>
+	</li>
+	<li>
+		<p>
+            A queue family ownership transfer consists of two distinct parts:
+		</p>
+		<ol>
+			<li>
+				<p>
+                    Release exclusive ownership from the source queue family
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-queue-transfers-release" 
+								class="external-link" 
+								target="_blank" >
+                                queue family release operation
+							</a>
+						</p>
+					</li>
+					<li>
+						<p>
+                            Is defined when 
+                            <code>dstQueueFamilyIndex</code>
+                            &nbsp;is one of those values.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Acquire exclusive ownership for the destination queue family
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-queue-transfers-acquire" 
+								class="external-link" 
+								target="_blank" >
+                                queue family acquire operation
+							</a>
+						</p>
+					</li>
+					<li>
+						<p>
+                            Is defined when 
+                            <code>srcQueueFamilyIndex</code>
+                            &nbsp;is one of those values.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ol>
+		<ul>
+			<li>
+				<p>
+                    Is defined if the values 
+					<strong>
+                        are not equal,
+					</strong>
+                    &nbsp;and either is one of the special queue family values reserved for external memory ownership transfers
+				</p>
+			</li>
+			<li>
+				<p>
+                    An application 
+					<strong>
+                        must
+					</strong>
+                    &nbsp;ensure that these operations occur in the correct order by defining an execution dependency between them, e.g. using a semaphore.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A 
+					<em>
+                        release operation
+					</em>
+                    &nbsp;is used to release exclusive ownership of a range of a buffer or image subresource range. A release operation is defined by executing a 
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-buffer-memory-barriers" 
+						class="external-link" 
+						target="_blank" >
+                        buffer memory barrier
+					</a>
+                    &nbsp;(for a buffer range) or an 
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-image-memory-barriers" 
+						class="external-link" 
+						target="_blank" >
+                        image memory barrier
+					</a>
+                    &nbsp;(for an image subresource range) using a pipeline barrier command, on a queue from the source queue family.
+				</p>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    Etc, I haven't read much about it.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="command-buffers" >
+    Command Buffers
+</h5>
+<ul>
+	<li>
+		<p>
+            The specification states that commands start execution in-order, but complete out-of-order. Don’t get confused by this. The fact that commands start in-order is simply convenient language to make the spec language easier to write.
+		</p>
+	</li>
+	<li>
+		<p>
+            Unless you add synchronization yourself, all commands in a queue execute out of order. Reordering may happen across command buffers and even 
+            <code>vkQueueSubmits</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            This makes sense, considering that Vulkan only sees a linear stream of commands once you submit, it is a pitfall to assume that splitting command buffers or submits adds some magic synchronization for you.
+		</p>
+	</li>
+	<li>
+		<p>
+            Frame buffer operations inside a render pass happen in API-order, of course. This is a special exception which the spec calls out.
+		</p>
+	</li>
+</ul>
+<h5
+	id="queue-submissions-vkqueuesubmit" >
+    Queue Submissions (vkQueueSubmit)
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#devsandqueues-submission" 
+				class="external-link" 
+				target="_blank" >
+                Queue submission commands
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+            It automatically performs a 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-submission-host-writes" 
+				class="external-link" 
+				target="_blank" >
+                domain operation from host to device
+			</a>
+            &nbsp;for all writes performed before the command executes, so in most cases an explicit memory barrier is not needed for this case.
+		</p>
+	</li>
+	<li>
+		<p>
+            In the few circumstances where a submit does not occur between the host write and the device read access, writes 
+			<strong>
+                can
+			</strong>
+            &nbsp;be made available by using an explicit memory barrier.
+		</p>
+	</li>
+</ul>
+<h5
+	id="example" >
+    Example
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>vkCmdDispatch (VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkCmdCopyBuffer (VK_PIPELINE_STAGE_TRANSFER_BIT)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkCmdDispatch (VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkCmdPipelineBarrier (srcStageMask = VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            We would be referring to the two 
+            <code>vkCmdDispatch</code>
+            &nbsp;commands, as they perform their work in the COMPUTE stage. Even if we split these 4 commands into 4 different 
+            <code>vkQueueSubmits</code>
+            , we would still consider the same commands for synchronization.
+		</p>
+	</li>
+	<li>
+		<p>
+            Essentially, the work we are waiting for is 
+			<em>
+                all commands which have ever been submitted to the queue including any previous commands in the command buffer we’re recording.
+			</em>
 		</p>
 	</li>
 </ul>
@@ -10467,297 +10745,6 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 				</p>
 			</li>
 		</ul>
-	</li>
-</ul>
-<h3
-	id="queues" >
-    Queues
-</h3>
-<ul>
-	<li>
-		<p>
-            Any synchronization applies globally to a 
-            <code>VkQueue</code>
-            , there is no concept of a only-inside-this-command-buffer synchronization.
-		</p>
-	</li>
-	<li>
-		<p>
-            Graphics pipelines are executable on queues supporting 
-            <code>VK_QUEUE_GRAPHICS_BIT</code>
-            . Stages executed by graphics pipelines 
-			<strong>
-                can
-			</strong>
-            &nbsp;only be specified in commands recorded for queues supporting 
-            <code>VK_QUEUE_GRAPHICS_BIT</code>
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="queue-family-ownership-transfer" >
-    Queue Family Ownership Transfer
-</h5>
-<ul>
-	<li>
-		<p>
-            Resources created with a 
-			<a
-				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#VkSharingMode" 
-				class="external-link" 
-				target="_blank" >
-                VkSharingMode
-			</a>
-            &nbsp;of 
-            <code>VK_SHARING_MODE_EXCLUSIVE</code>
-            &nbsp;
-			<strong>
-                must
-			</strong>
-            &nbsp;have their ownership explicitly transferred from one queue family to another in order to access their content in a well-defined manner on a queue in a different queue family.
-		</p>
-	</li>
-	<li>
-		<p>
-            Resources shared with external APIs or instances using external memory 
-			<strong>
-                must
-			</strong>
-            &nbsp;also explicitly manage ownership transfers between local and external queues (or equivalent constructs in external APIs) regardless of the 
-			<a
-				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#VkSharingMode" 
-				class="external-link" 
-				target="_blank" >
-                VkSharingMode
-			</a>
-            &nbsp;specified when creating them.
-		</p>
-	</li>
-	<li>
-		<p>
-            If you need to transfer ownership to a different queue family, you need memory barriers, one in each queue to release/acquire ownership.
-		</p>
-	</li>
-	<li>
-		<p>
-            If memory dependencies are correctly expressed between uses of such a resource between two queues in different families, but no ownership transfer is defined, the contents of that resource are undefined for any read accesses performed by the second queue family.
-		</p>
-	</li>
-	<li>
-		<p>
-            A queue family ownership transfer consists of two distinct parts:
-		</p>
-		<ol>
-			<li>
-				<p>
-                    Release exclusive ownership from the source queue family
-				</p>
-				<ul>
-					<li>
-						<p>
-							<a
-								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-queue-transfers-release" 
-								class="external-link" 
-								target="_blank" >
-                                queue family release operation
-							</a>
-						</p>
-					</li>
-					<li>
-						<p>
-                            Is defined when 
-                            <code>dstQueueFamilyIndex</code>
-                            &nbsp;is one of those values.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Acquire exclusive ownership for the destination queue family
-				</p>
-				<ul>
-					<li>
-						<p>
-							<a
-								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-queue-transfers-acquire" 
-								class="external-link" 
-								target="_blank" >
-                                queue family acquire operation
-							</a>
-						</p>
-					</li>
-					<li>
-						<p>
-                            Is defined when 
-                            <code>srcQueueFamilyIndex</code>
-                            &nbsp;is one of those values.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ol>
-		<ul>
-			<li>
-				<p>
-                    Is defined if the values 
-					<strong>
-                        are not equal,
-					</strong>
-                    &nbsp;and either is one of the special queue family values reserved for external memory ownership transfers
-				</p>
-			</li>
-			<li>
-				<p>
-                    An application 
-					<strong>
-                        must
-					</strong>
-                    &nbsp;ensure that these operations occur in the correct order by defining an execution dependency between them, e.g. using a semaphore.
-				</p>
-			</li>
-			<li>
-				<p>
-                    A 
-					<em>
-                        release operation
-					</em>
-                    &nbsp;is used to release exclusive ownership of a range of a buffer or image subresource range. A release operation is defined by executing a 
-					<a
-						href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-buffer-memory-barriers" 
-						class="external-link" 
-						target="_blank" >
-                        buffer memory barrier
-					</a>
-                    &nbsp;(for a buffer range) or an 
-					<a
-						href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-image-memory-barriers" 
-						class="external-link" 
-						target="_blank" >
-                        image memory barrier
-					</a>
-                    &nbsp;(for an image subresource range) using a pipeline barrier command, on a queue from the source queue family.
-				</p>
-			</li>
-			<li>
-				<p>
-					<input
-						type="checkbox" 
-						disabled=""
->
-                    Etc, I haven't read much about it.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="command-buffers" >
-    Command Buffers
-</h5>
-<ul>
-	<li>
-		<p>
-            The specification states that commands start execution in-order, but complete out-of-order. Don’t get confused by this. The fact that commands start in-order is simply convenient language to make the spec language easier to write.
-		</p>
-	</li>
-	<li>
-		<p>
-            Unless you add synchronization yourself, all commands in a queue execute out of order. Reordering may happen across command buffers and even 
-            <code>vkQueueSubmits</code>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            This makes sense, considering that Vulkan only sees a linear stream of commands once you submit, it is a pitfall to assume that splitting command buffers or submits adds some magic synchronization for you.
-		</p>
-	</li>
-	<li>
-		<p>
-            Frame buffer operations inside a render pass happen in API-order, of course. This is a special exception which the spec calls out.
-		</p>
-	</li>
-</ul>
-<h5
-	id="queue-submissions-vkqueuesubmit" >
-    Queue Submissions (vkQueueSubmit)
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#devsandqueues-submission" 
-				class="external-link" 
-				target="_blank" >
-                Queue submission commands
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-            It automatically performs a 
-			<a
-				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-submission-host-writes" 
-				class="external-link" 
-				target="_blank" >
-                domain operation from host to device
-			</a>
-            &nbsp;for all writes performed before the command executes, so in most cases an explicit memory barrier is not needed for this case.
-		</p>
-	</li>
-	<li>
-		<p>
-            In the few circumstances where a submit does not occur between the host write and the device read access, writes 
-			<strong>
-                can
-			</strong>
-            &nbsp;be made available by using an explicit memory barrier.
-		</p>
-	</li>
-</ul>
-<h5
-	id="example" >
-    Example
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>vkCmdDispatch (VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT)</code>
-		</p>
-	</li>
-	<li>
-		<p>
-            <code>vkCmdCopyBuffer (VK_PIPELINE_STAGE_TRANSFER_BIT)</code>
-		</p>
-	</li>
-	<li>
-		<p>
-            <code>vkCmdDispatch (VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT)</code>
-		</p>
-	</li>
-	<li>
-		<p>
-            <code>vkCmdPipelineBarrier (srcStageMask = VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT)</code>
-		</p>
-	</li>
-	<li>
-		<p>
-            We would be referring to the two 
-            <code>vkCmdDispatch</code>
-            &nbsp;commands, as they perform their work in the COMPUTE stage. Even if we split these 4 commands into 4 different 
-            <code>vkQueueSubmits</code>
-            , we would still consider the same commands for synchronization.
-		</p>
-	</li>
-	<li>
-		<p>
-            Essentially, the work we are waiting for is 
-			<em>
-                all commands which have ever been submitted to the queue including any previous commands in the command buffer we’re recording.
-			</em>
-		</p>
 	</li>
 </ul>
 <h3
@@ -28552,7 +28539,7 @@ destinationStage = VK_PIPELINE_STAGE_2_EARLY_FRAGMENT_TESTS_BIT_KHR | VK_PIPELIN
 	<li>
 		<p>
             See 
-            <a href="Graphics Programming, Shaders.html#projection-matrix">
+            <a href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders.html#projection-matrix">
             Graphics Programming, Shaders#Projection Matrix
             </a>
             .
@@ -38846,12 +38833,6 @@ vec4 data = subpassLoad(inputAttachment);
 							</li>
 							<li>
 								<a
-									href="#queues" >
-                                    Queues
-								</a>
-							</li>
-							<li>
-								<a
 									href="#execution-dependencies-memory-dependencies-memory-model" >
                                     Execution Dependencies, Memory Dependencies, Memory Model
 								</a>
@@ -39302,7 +39283,7 @@ vec4 data = subpassLoad(inputAttachment);
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.79163.js" >
+			src="/static/studies.25229.js" >
 		</script>
 	</body>
 </html>

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-07-03
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1824,7 +1833,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            [2025/03/09] There is no official date for removal from browsers.
+            (2025-03-09) There is no official date for removal from browsers.
 		</p>
 	</li>
 	<li>
@@ -2464,33 +2473,33 @@ window.MathJax = {
 			</strong>
             :
 		</p>
-<pre><code class="language-hlsl" data-lang="hlsl"> // Vertex Shader
- struct VSInput {
-&nbsp;&nbsp;&nbsp;&nbsp; float3 position : POSITION;
-&nbsp;&nbsp;&nbsp;&nbsp; float3 color : COLOR;
- };
- 
- struct VSOutput {
-&nbsp;&nbsp;&nbsp;&nbsp; float4 position : SV_POSITION;
-&nbsp;&nbsp;&nbsp;&nbsp; float3 color : COLOR;
- };
- 
- VSOutput VS_main(VSInput input) {
-&nbsp;&nbsp;&nbsp;&nbsp; VSOutput output;
-&nbsp;&nbsp;&nbsp;&nbsp; output.position = float4(input.position, 1.0);
-&nbsp;&nbsp;&nbsp;&nbsp; output.color = input.color;
-&nbsp;&nbsp;&nbsp;&nbsp; return output;
- }
- 
- // Fragment Shader
- struct PSInput {
-&nbsp;&nbsp;&nbsp;&nbsp; float4 position : SV_POSITION;
-&nbsp;&nbsp;&nbsp;&nbsp; float3 color : COLOR;
- };
- 
- float4 PS_main(PSInput input) : SV_TARGET {
-&nbsp;&nbsp;&nbsp;&nbsp; return float4(input.color, 1.0);
- }
+<pre><code class="language-hlsl" data-lang="hlsl">// Vertex Shader
+struct VSInput {
+&nbsp;&nbsp;&nbsp;&nbsp;float3 position : POSITION;
+&nbsp;&nbsp;&nbsp;&nbsp;float3 color : COLOR;
+};
+
+struct VSOutput {
+&nbsp;&nbsp;&nbsp;&nbsp;float4 position : SV_POSITION;
+&nbsp;&nbsp;&nbsp;&nbsp;float3 color : COLOR;
+};
+
+VSOutput VS_main(VSInput input) {
+&nbsp;&nbsp;&nbsp;&nbsp;VSOutput output;
+&nbsp;&nbsp;&nbsp;&nbsp;output.position = float4(input.position, 1.0);
+&nbsp;&nbsp;&nbsp;&nbsp;output.color = input.color;
+&nbsp;&nbsp;&nbsp;&nbsp;return output;
+}
+
+// Fragment Shader
+struct PSInput {
+&nbsp;&nbsp;&nbsp;&nbsp;float4 position : SV_POSITION;
+&nbsp;&nbsp;&nbsp;&nbsp;float3 color : COLOR;
+};
+
+float4 PS_main(PSInput input) : SV_TARGET {
+&nbsp;&nbsp;&nbsp;&nbsp;return float4(input.color, 1.0);
+}
 </code></pre>
 	</li>
 	<li>
@@ -2627,31 +2636,31 @@ window.MathJax = {
 			</strong>
             :
 		</p>
-<pre><code class="language-hlsl" data-lang="hlsl"> // Vertex Shader
- #include &lt;metal_stdlib&gt;
- using namespace metal;
- 
- struct VertexIn {
-&nbsp;&nbsp;&nbsp;&nbsp; float3 position [[attribute(0)]];
-&nbsp;&nbsp;&nbsp;&nbsp; float3 color [[attribute(1)]];
- };
- 
- struct VertexOut {
-&nbsp;&nbsp;&nbsp;&nbsp; float4 position [[position.md]];
-&nbsp;&nbsp;&nbsp;&nbsp; float3 color;
- };
- 
- vertex VertexOut vertex_main(VertexIn in [[stage_in]]) {
-&nbsp;&nbsp;&nbsp;&nbsp; VertexOut out;
-&nbsp;&nbsp;&nbsp;&nbsp; out.position = float4(in.position, 1.0);
-&nbsp;&nbsp;&nbsp;&nbsp; out.color = in.color;
-&nbsp;&nbsp;&nbsp;&nbsp; return out;
- }
- 
- // Fragment Shader
- fragment float4 fragment_main(VertexOut in [[stage_in]]) {
-&nbsp;&nbsp;&nbsp;&nbsp; return float4(in.color, 1.0);
- }
+<pre><code class="language-hlsl" data-lang="hlsl">// Vertex Shader
+#include &lt;metal_stdlib&gt;
+using namespace metal;
+
+struct VertexIn {
+&nbsp;&nbsp;&nbsp;&nbsp;float3 position [[attribute(0)]];
+&nbsp;&nbsp;&nbsp;&nbsp;float3 color [[attribute(1)]];
+};
+
+struct VertexOut {
+&nbsp;&nbsp;&nbsp;&nbsp;float4 position [[position.md]];
+&nbsp;&nbsp;&nbsp;&nbsp;float3 color;
+};
+
+vertex VertexOut vertex_main(VertexIn in [[stage_in]]) {
+&nbsp;&nbsp;&nbsp;&nbsp;VertexOut out;
+&nbsp;&nbsp;&nbsp;&nbsp;out.position = float4(in.position, 1.0);
+&nbsp;&nbsp;&nbsp;&nbsp;out.color = in.color;
+&nbsp;&nbsp;&nbsp;&nbsp;return out;
+}
+
+// Fragment Shader
+fragment float4 fragment_main(VertexOut in [[stage_in]]) {
+&nbsp;&nbsp;&nbsp;&nbsp;return float4(in.color, 1.0);
+}
 </code></pre>
 	</li>
 </ul>
@@ -2685,7 +2694,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            [2025/10/04]
+            (2025-10-04)
 		</p>
 		<ul>
 			<li>
@@ -2745,7 +2754,7 @@ my_game.exe
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-sh" data-lang="sh"> gfxrecon-replay --pause-frame 1200 capture.gfxr
+<pre><code class="language-sh" data-lang="sh">gfxrecon-replay --pause-frame 1200 capture.gfxr
 </code></pre>
 		<ul>
 			<li>
@@ -2935,7 +2944,7 @@ my_game.exe
 		<ul>
 			<li>
 				<p>
-                    [2025/10/04]
+                    (2025-10-04)
 				</p>
 				<ul>
 					<li>
@@ -2995,6 +3004,17 @@ my_game.exe
 	id="choosing-the-space-to-compute-lighting" >
     Choosing the Space to compute Lighting
 </h2>
+<ul>
+	<li>
+		<p>
+            For more information about precision, check 
+            <a href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders.html#precision">
+            Graphics and Shaders#Precision
+            </a>
+            .
+		</p>
+	</li>
+</ul>
 <h5
 	id="view-space" >
     View Space
@@ -3145,7 +3165,7 @@ my_game.exe
 	<li>
 		<p>
 			<strong>
-                Trick for World Space with precision of View Space
+                Trick to improve precision: Fixing the camera and moving the world
 			</strong>
             :
 		</p>
@@ -3282,7 +3302,7 @@ my_game.exe
 			</li>
 			<li>
 				<p>
-                    [2025/09/10]
+                    (2025-09-10)
 				</p>
 				<ul>
 					<li>
@@ -3947,11 +3967,11 @@ void main() {
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> float D_GGX(float NoH, float roughness) {
-&nbsp;&nbsp;&nbsp;&nbsp; float a = NoH * roughness;
-&nbsp;&nbsp;&nbsp;&nbsp; float k = roughness / (1.0 - NoH * NoH + a * a);
-&nbsp;&nbsp;&nbsp;&nbsp; return k * k * (1.0 / PI);
- }
+<pre><code class="language-glsl" data-lang="glsl">float D_GGX(float NoH, float roughness) {
+&nbsp;&nbsp;&nbsp;&nbsp;float a = NoH * roughness;
+&nbsp;&nbsp;&nbsp;&nbsp;float k = roughness / (1.0 - NoH * NoH + a * a);
+&nbsp;&nbsp;&nbsp;&nbsp;return k * k * (1.0 / PI);
+}
 </code></pre>
 	</li>
 	<li>
@@ -3961,16 +3981,16 @@ void main() {
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> #define MEDIUMP_FLT_MAX&nbsp;&nbsp;&nbsp;&nbsp;65504.0
- #define saturateMediump(x) min(x, MEDIUMP_FLT_MAX)
- 
- float D_GGX(float roughness, float NoH, const vec3 n, const vec3 h) {
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 NxH = cross(n, h);
-&nbsp;&nbsp;&nbsp;&nbsp; float a = NoH * roughness;
-&nbsp;&nbsp;&nbsp;&nbsp; float k = roughness / (dot(NxH, NxH) + a * a);
-&nbsp;&nbsp;&nbsp;&nbsp; float d = k * k * (1.0 / PI);
-&nbsp;&nbsp;&nbsp;&nbsp; return saturateMediump(d);
- }
+<pre><code class="language-glsl" data-lang="glsl">#define MEDIUMP_FLT_MAX&nbsp;&nbsp;&nbsp;&nbsp;65504.0
+#define saturateMediump(x) min(x, MEDIUMP_FLT_MAX)
+
+float D_GGX(float roughness, float NoH, const vec3 n, const vec3 h) {
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 NxH = cross(n, h);
+&nbsp;&nbsp;&nbsp;&nbsp;float a = NoH * roughness;
+&nbsp;&nbsp;&nbsp;&nbsp;float k = roughness / (dot(NxH, NxH) + a * a);
+&nbsp;&nbsp;&nbsp;&nbsp;float d = k * k * (1.0 / PI);
+&nbsp;&nbsp;&nbsp;&nbsp;return saturateMediump(d);
+}
 </code></pre>
 	</li>
 	<li>
@@ -4033,12 +4053,12 @@ void main() {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> float V_SmithGGXCorrelated(float NoV, float NoL, float roughness) {
-&nbsp;&nbsp;&nbsp;&nbsp; float a2 = roughness * roughness;
-&nbsp;&nbsp;&nbsp;&nbsp; float GGXV = NoL * sqrt(NoV * NoV * (1.0 - a2) + a2);
-&nbsp;&nbsp;&nbsp;&nbsp; float GGXL = NoV * sqrt(NoL * NoL * (1.0 - a2) + a2);
-&nbsp;&nbsp;&nbsp;&nbsp; return 0.5 / (GGXV + GGXL);
- }
+<pre><code class="language-glsl" data-lang="glsl">float V_SmithGGXCorrelated(float NoV, float NoL, float roughness) {
+&nbsp;&nbsp;&nbsp;&nbsp;float a2 = roughness * roughness;
+&nbsp;&nbsp;&nbsp;&nbsp;float GGXV = NoL * sqrt(NoV * NoV * (1.0 - a2) + a2);
+&nbsp;&nbsp;&nbsp;&nbsp;float GGXL = NoV * sqrt(NoL * NoL * (1.0 - a2) + a2);
+&nbsp;&nbsp;&nbsp;&nbsp;return 0.5 / (GGXV + GGXL);
+}
 </code></pre>
 	</li>
 	<li>
@@ -4055,17 +4075,17 @@ void main() {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> float V_SmithGGXCorrelatedFast(float NoV, float NoL, float roughness) {
-&nbsp;&nbsp;&nbsp;&nbsp; float a = roughness;
-&nbsp;&nbsp;&nbsp;&nbsp; float GGXV = NoL * (NoV * (1.0 - a) + a);
-&nbsp;&nbsp;&nbsp;&nbsp; float GGXL = NoV * (NoL * (1.0 - a) + a);
-&nbsp;&nbsp;&nbsp;&nbsp; return 0.5 / (GGXV + GGXL);
- }
+<pre><code class="language-glsl" data-lang="glsl">float V_SmithGGXCorrelatedFast(float NoV, float NoL, float roughness) {
+&nbsp;&nbsp;&nbsp;&nbsp;float a = roughness;
+&nbsp;&nbsp;&nbsp;&nbsp;float GGXV = NoL * (NoV * (1.0 - a) + a);
+&nbsp;&nbsp;&nbsp;&nbsp;float GGXL = NoV * (NoL * (1.0 - a) + a);
+&nbsp;&nbsp;&nbsp;&nbsp;return 0.5 / (GGXV + GGXL);
+}
 </code></pre>
 		<ul>
 			<li>
 				<p>
-                    [2025/09/13] Note:
+                    (2025-09-13) Note:
 				</p>
 				<ul>
 					<li>
@@ -4210,7 +4230,7 @@ void main() {
 							</em>
                             :
 						</p>
-<pre><code class="language-glsl" data-lang="glsl"> vec3 f0 = 0.16 * reflectance * reflectance
+<pre><code class="language-glsl" data-lang="glsl">vec3 f0 = 0.16 * reflectance * reflectance
 </code></pre>
 						<ul>
 							<li>
@@ -4226,7 +4246,7 @@ void main() {
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-glsl" data-lang="glsl"> vec3 f0 = 0.16 * reflectance * reflectance * (1.0 - metallic) + baseColor * metallic;
+<pre><code class="language-glsl" data-lang="glsl">vec3 f0 = 0.16 * reflectance * reflectance * (1.0 - metallic) + baseColor * metallic;
 </code></pre>
 			</li>
 		</ul>
@@ -4260,9 +4280,9 @@ void main() {
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> vec3 F_Schlick(float u, vec3 f0, float f90) {
-&nbsp;&nbsp;&nbsp;&nbsp; return f0 + (vec3(f90) - f0) * pow(1.0 - u, 5.0);
- }
+<pre><code class="language-glsl" data-lang="glsl">vec3 F_Schlick(float u, vec3 f0, float f90) {
+&nbsp;&nbsp;&nbsp;&nbsp;return f0 + (vec3(f90) - f0) * pow(1.0 - u, 5.0);
+}
 </code></pre>
 		<ul>
 			<li>
@@ -4271,10 +4291,10 @@ void main() {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> vec3 F_Schlick(float u, vec3 f0) {
-&nbsp;&nbsp;&nbsp;&nbsp; float f = pow(1.0 - u, 5.0);
-&nbsp;&nbsp;&nbsp;&nbsp; return f + f0 * (1.0 - f);
- }
+<pre><code class="language-glsl" data-lang="glsl">vec3 F_Schlick(float u, vec3 f0) {
+&nbsp;&nbsp;&nbsp;&nbsp;float f = pow(1.0 - u, 5.0);
+&nbsp;&nbsp;&nbsp;&nbsp;return f + f0 * (1.0 - f);
+}
 </code></pre>
 		<ul>
 			<li>
@@ -4290,17 +4310,17 @@ void main() {
 					</em>
                     :
 				</p>
-<pre><code class="language-glsl" data-lang="glsl"> float fresnel(float amount, vec3 normal, vec3 view)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; return pow((1.0 - clamp(dot(normalize(normal), normalize(view)), 0.0, 1.0 )), amount);
- }
- 
- void fragment()
- {
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 base_color = vec3(0.0);
-&nbsp;&nbsp;&nbsp;&nbsp; float basic_fresnel = fresnel(3.0, NORMAL, VIEW);
-&nbsp;&nbsp;&nbsp;&nbsp; ALBEDO = base_color + basic_fresnel;
- }
+<pre><code class="language-glsl" data-lang="glsl">float fresnel(float amount, vec3 normal, vec3 view)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;return pow((1.0 - clamp(dot(normalize(normal), normalize(view)), 0.0, 1.0 )), amount);
+}
+
+void fragment()
+{
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 base_color = vec3(0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;float basic_fresnel = fresnel(3.0, NORMAL, VIEW);
+&nbsp;&nbsp;&nbsp;&nbsp;ALBEDO = base_color + basic_fresnel;
+}
 </code></pre>
 				<ul>
 					<li>
@@ -4331,18 +4351,18 @@ void main() {
 								</ul>
 							</li>
 						</ul>
-<pre><code class="language-glsl" data-lang="glsl"> vec3 fresnel_glow(float amount, float intensity, vec3 color, vec3 normal, vec3 view)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; return pow((1.0 - dot(normalize(normal), normalize(view))), amount) * color * intensity;
- }
- 
- void fragment()
- {
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 base_color = vec3(0.5, 0.2, 0.9);
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 fresnel_color = vec3(0.0, 0.7, 0.9);
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 fresnel = fresnel_glow(4.0, 4.5, fresnel_color, NORMAL, VIEW);
-&nbsp;&nbsp;&nbsp;&nbsp; ALBEDO = base_color + fresnel;
- }
+<pre><code class="language-glsl" data-lang="glsl">vec3 fresnel_glow(float amount, float intensity, vec3 color, vec3 normal, vec3 view)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;return pow((1.0 - dot(normalize(normal), normalize(view))), amount) * color * intensity;
+}
+
+void fragment()
+{
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 base_color = vec3(0.5, 0.2, 0.9);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 fresnel_color = vec3(0.0, 0.7, 0.9);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 fresnel = fresnel_glow(4.0, 4.5, fresnel_color, NORMAL, VIEW);
+&nbsp;&nbsp;&nbsp;&nbsp;ALBEDO = base_color + fresnel;
+}
 </code></pre>
 					</li>
 				</ul>
@@ -4443,11 +4463,11 @@ Fr *= pixel.energyCompensation;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> float Fd_Lambert() {
-&nbsp;&nbsp;&nbsp;&nbsp; return 1.0 / PI;
- }
- 
- vec3 Fd = diffuseColor * Fd_Lambert();
+<pre><code class="language-glsl" data-lang="glsl">float Fd_Lambert() {
+&nbsp;&nbsp;&nbsp;&nbsp;return 1.0 / PI;
+}
+
+vec3 Fd = diffuseColor * Fd_Lambert();
 </code></pre>
 	</li>
 	<li>
@@ -4484,16 +4504,16 @@ Fr *= pixel.energyCompensation;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> float F_Schlick(float u, float f0, float f90) {
-&nbsp;&nbsp;&nbsp;&nbsp; return f0 + (f90 - f0) * pow(1.0 - u, 5.0);
- }
- 
- float Fd_Burley(float NoV, float NoL, float LoH, float roughness) {
-&nbsp;&nbsp;&nbsp;&nbsp; float f90 = 0.5 + 2.0 * roughness * LoH * LoH;
-&nbsp;&nbsp;&nbsp;&nbsp; float lightScatter = F_Schlick(NoL, 1.0, f90);
-&nbsp;&nbsp;&nbsp;&nbsp; float viewScatter = F_Schlick(NoV, 1.0, f90);
-&nbsp;&nbsp;&nbsp;&nbsp; return lightScatter * viewScatter * (1.0 / PI);
- }
+<pre><code class="language-glsl" data-lang="glsl">float F_Schlick(float u, float f0, float f90) {
+&nbsp;&nbsp;&nbsp;&nbsp;return f0 + (f90 - f0) * pow(1.0 - u, 5.0);
+}
+
+float Fd_Burley(float NoV, float NoL, float LoH, float roughness) {
+&nbsp;&nbsp;&nbsp;&nbsp;float f90 = 0.5 + 2.0 * roughness * LoH * LoH;
+&nbsp;&nbsp;&nbsp;&nbsp;float lightScatter = F_Schlick(NoL, 1.0, f90);
+&nbsp;&nbsp;&nbsp;&nbsp;float viewScatter = F_Schlick(NoV, 1.0, f90);
+&nbsp;&nbsp;&nbsp;&nbsp;return lightScatter * viewScatter * (1.0 / PI);
+}
 </code></pre>
 	</li>
 	<li>
@@ -5337,7 +5357,7 @@ Fr *= pixel.energyCompensation;
 		<ul>
 			<li>
 				<p>
-                    [2025/09/12] Didn't work on Firefox, Brave, or Chrome.
+                    (2025-09-12) Didn't work on Firefox, Brave, or Chrome.
 				</p>
 			</li>
 		</ul>
@@ -5396,7 +5416,7 @@ Fr *= pixel.energyCompensation;
 				<ul>
 					<li>
 						<p>
-                            [2025/09/15]
+                            (2025-09-15)
 						</p>
 						<ul>
 							<li>
@@ -5406,7 +5426,7 @@ Fr *= pixel.energyCompensation;
 							</li>
 							<li>
 								<p>
-                                    Raylib does this same implementation in 
+                                    RayLib does this same implementation in 
                                     <code>GenMeshTangents</code>
                                     .
 								</p>
@@ -5589,10 +5609,10 @@ Fr *= pixel.energyCompensation;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> vec3 t = texture(baseMap,&nbsp;&nbsp; uv).xyz * vec3( 2.0,&nbsp;&nbsp;2.0, 2.0) + vec3(-1.0, -1.0,&nbsp;&nbsp;0.0);
- vec3 u = texture(detailMap, uv).xyz * vec3(-2.0, -2.0, 2.0) + vec3( 1.0,&nbsp;&nbsp;1.0, -1.0);
- vec3 r = normalize(t * dot(t, u) - u * t.z);
- return r;
+<pre><code class="language-glsl" data-lang="glsl">vec3 t = texture(baseMap,&nbsp;&nbsp; uv).xyz * vec3( 2.0,&nbsp;&nbsp;2.0, 2.0) + vec3(-1.0, -1.0,&nbsp;&nbsp;0.0);
+vec3 u = texture(detailMap, uv).xyz * vec3(-2.0, -2.0, 2.0) + vec3( 1.0,&nbsp;&nbsp;1.0, -1.0);
+vec3 r = normalize(t * dot(t, u) - u * t.z);
+return r;
 </code></pre>
 		<ul>
 			<li>
@@ -5620,10 +5640,10 @@ Fr *= pixel.energyCompensation;
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-glsl" data-lang="glsl"> vec3 t = texture(baseMap,&nbsp;&nbsp; uv).xyz * 2.0 - 1.0;
- vec3 u = texture(detailMap, uv).xyz * 2.0 - 1.0;
- vec3 r = normalize(t.xy + u.xy, t.z);
- return r;
+<pre><code class="language-glsl" data-lang="glsl">vec3 t = texture(baseMap,&nbsp;&nbsp; uv).xyz * 2.0 - 1.0;
+vec3 u = texture(detailMap, uv).xyz * 2.0 - 1.0;
+vec3 r = normalize(t.xy + u.xy, t.z);
+return r;
 </code></pre>
 			</li>
 		</ul>
@@ -5845,11 +5865,11 @@ Fr *= pixel.energyCompensation;
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> // diffuse indirect
- vec3 indirectDiffuse = max(irradianceSH(n), 0.0) * Fd_Lambert();
- 
- // ambient occlusion
- indirectDiffuse *= texture2D(aoMap, outUV).r;
+<pre><code class="language-glsl" data-lang="glsl">// diffuse indirect
+vec3 indirectDiffuse = max(irradianceSH(n), 0.0) * Fd_Lambert();
+
+// ambient occlusion
+indirectDiffuse *= texture2D(aoMap, outUV).r;
 </code></pre>
 	</li>
 	<li>
@@ -5859,20 +5879,20 @@ Fr *= pixel.energyCompensation;
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> float f90 = clamp(dot(f0, 50.0 * 0.33), 0.0, 1.0);
- // cheap luminance approximation
- float f90 = clamp(50.0 * f0.g, 0.0, 1.0);
+<pre><code class="language-glsl" data-lang="glsl">float f90 = clamp(dot(f0, 50.0 * 0.33), 0.0, 1.0);
+// cheap luminance approximation
+float f90 = clamp(50.0 * f0.g, 0.0, 1.0);
 </code></pre>
-<pre><code class="language-glsl" data-lang="glsl"> float computeSpecularAO(float NoV, float ao, float roughness) {
-&nbsp;&nbsp;&nbsp;&nbsp; return clamp(pow(NoV + ao, exp2(-16.0 * roughness - 1.0)) - 1.0 + ao, 0.0, 1.0);
- }
- 
- // specular indirect
- vec3 indirectSpecular = evaluateSpecularIBL(r, perceptualRoughness);
- 
- // ambient occlusion
- float ao = texture2D(aoMap, outUV).r;
- indirectSpecular *= computeSpecularAO(NoV, ao, roughness);
+<pre><code class="language-glsl" data-lang="glsl">float computeSpecularAO(float NoV, float ao, float roughness) {
+&nbsp;&nbsp;&nbsp;&nbsp;return clamp(pow(NoV + ao, exp2(-16.0 * roughness - 1.0)) - 1.0 + ao, 0.0, 1.0);
+}
+
+// specular indirect
+vec3 indirectSpecular = evaluateSpecularIBL(r, perceptualRoughness);
+
+// ambient occlusion
+float ao = texture2D(aoMap, outUV).r;
+indirectSpecular *= computeSpecularAO(NoV, ao, roughness);
 </code></pre>
 	</li>
 	<li>
@@ -5882,12 +5902,12 @@ Fr *= pixel.energyCompensation;
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> // specular indirect
- vec3 indirectSpecular = evaluateSpecularIBL(r, perceptualRoughness);
- 
- // horizon occlusion with falloff, should be computed for direct specular too
- float horizon = min(1.0 + dot(r, n), 1.0);
- indirectSpecular *= horizon * horizon;
+<pre><code class="language-glsl" data-lang="glsl">// specular indirect
+vec3 indirectSpecular = evaluateSpecularIBL(r, perceptualRoughness);
+
+// horizon occlusion with falloff, should be computed for direct specular too
+float horizon = min(1.0 + dot(r, n), 1.0);
+indirectSpecular *= horizon * horizon;
 </code></pre>
 	</li>
 	<li>
@@ -6062,19 +6082,19 @@ return final_color;
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> float at = max(roughness * (1.0 + anisotropy), 0.001);
- float ab = max(roughness * (1.0 - anisotropy), 0.001);
- 
- float D_GGX_Anisotropic(float NoH, const vec3 h,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const vec3 t, const vec3 b, float at, float ab) {
-&nbsp;&nbsp;&nbsp;&nbsp; float ToH = dot(t, h);
-&nbsp;&nbsp;&nbsp;&nbsp; float BoH = dot(b, h);
-&nbsp;&nbsp;&nbsp;&nbsp; float a2 = at * ab;
-&nbsp;&nbsp;&nbsp;&nbsp; highp vec3 v = vec3(ab * ToH, at * BoH, a2 * NoH);
-&nbsp;&nbsp;&nbsp;&nbsp; highp float v2 = dot(v, v);
-&nbsp;&nbsp;&nbsp;&nbsp; float w2 = a2 / v2;
-&nbsp;&nbsp;&nbsp;&nbsp; return a2 * w2 * w2 * (1.0 / PI);
- }
+<pre><code class="language-glsl" data-lang="glsl">float at = max(roughness * (1.0 + anisotropy), 0.001);
+float ab = max(roughness * (1.0 - anisotropy), 0.001);
+
+float D_GGX_Anisotropic(float NoH, const vec3 h,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const vec3 t, const vec3 b, float at, float ab) {
+&nbsp;&nbsp;&nbsp;&nbsp;float ToH = dot(t, h);
+&nbsp;&nbsp;&nbsp;&nbsp;float BoH = dot(b, h);
+&nbsp;&nbsp;&nbsp;&nbsp;float a2 = at * ab;
+&nbsp;&nbsp;&nbsp;&nbsp;highp vec3 v = vec3(ab * ToH, at * BoH, a2 * NoH);
+&nbsp;&nbsp;&nbsp;&nbsp;highp float v2 = dot(v, v);
+&nbsp;&nbsp;&nbsp;&nbsp;float w2 = a2 / v2;
+&nbsp;&nbsp;&nbsp;&nbsp;return a2 * w2 * w2 * (1.0 / PI);
+}
 </code></pre>
 	</li>
 	<li>
@@ -6241,9 +6261,9 @@ float V_SmithGGXCorrelated_Anisotropic(float at, float ab, float ToV, float BoV,
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> float V_Kelemen(float LoH) {
-&nbsp;&nbsp;&nbsp;&nbsp; return 0.25 / (LoH * LoH);
- }
+<pre><code class="language-glsl" data-lang="glsl">float V_Kelemen(float LoH) {
+&nbsp;&nbsp;&nbsp;&nbsp;return 0.25 / (LoH * LoH);
+}
 </code></pre>
 	</li>
 </ul>
@@ -6348,15 +6368,15 @@ float V_SmithGGXCorrelated_Anisotropic(float at, float ab, float ToV, float BoV,
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> float D_Ashikhmin(float roughness, float NoH) {
-&nbsp;&nbsp;&nbsp;&nbsp; // Ashikhmin 2007, "Distribution-based BRDFs"
-&nbsp;&nbsp;&nbsp;&nbsp; float a2 = roughness * roughness;
-&nbsp;&nbsp;&nbsp;&nbsp; float cos2h = NoH * NoH;
-&nbsp;&nbsp;&nbsp;&nbsp; float sin2h = max(1.0 - cos2h, 0.0078125); // 2^(-14/2), so sin2h^2 &gt; 0 in fp16
-&nbsp;&nbsp;&nbsp;&nbsp; float sin4h = sin2h * sin2h;
-&nbsp;&nbsp;&nbsp;&nbsp; float cot2 = -cos2h / (a2 * sin2h);
-&nbsp;&nbsp;&nbsp;&nbsp; return 1.0 / (PI * (4.0 * a2 + 1.0) * sin4h) * (4.0 * exp(cot2) + sin4h);
- }
+<pre><code class="language-glsl" data-lang="glsl">float D_Ashikhmin(float roughness, float NoH) {
+&nbsp;&nbsp;&nbsp;&nbsp;// Ashikhmin 2007, "Distribution-based BRDFs"
+&nbsp;&nbsp;&nbsp;&nbsp;float a2 = roughness * roughness;
+&nbsp;&nbsp;&nbsp;&nbsp;float cos2h = NoH * NoH;
+&nbsp;&nbsp;&nbsp;&nbsp;float sin2h = max(1.0 - cos2h, 0.0078125); // 2^(-14/2), so sin2h^2 &gt; 0 in fp16
+&nbsp;&nbsp;&nbsp;&nbsp;float sin4h = sin2h * sin2h;
+&nbsp;&nbsp;&nbsp;&nbsp;float cot2 = -cos2h / (a2 * sin2h);
+&nbsp;&nbsp;&nbsp;&nbsp;return 1.0 / (PI * (4.0 * a2 + 1.0) * sin4h) * (4.0 * exp(cot2) + sin4h);
+}
 </code></pre>
 	</li>
 	<li>
@@ -6373,13 +6393,13 @@ float V_SmithGGXCorrelated_Anisotropic(float at, float ab, float ToV, float BoV,
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> float D_Charlie(float roughness, float NoH) {
-&nbsp;&nbsp;&nbsp;&nbsp; // Estevez and Kulla 2017, "Production Friendly Microfacet Sheen BRDF"
-&nbsp;&nbsp;&nbsp;&nbsp; float invAlpha&nbsp;&nbsp;= 1.0 / roughness;
-&nbsp;&nbsp;&nbsp;&nbsp; float cos2h = NoH * NoH;
-&nbsp;&nbsp;&nbsp;&nbsp; float sin2h = max(1.0 - cos2h, 0.0078125); // 2^(-14/2), so sin2h^2 &gt; 0 in fp16
-&nbsp;&nbsp;&nbsp;&nbsp; return (2.0 + invAlpha) * pow(sin2h, invAlpha * 0.5) / (2.0 * PI);
- }
+<pre><code class="language-glsl" data-lang="glsl">float D_Charlie(float roughness, float NoH) {
+&nbsp;&nbsp;&nbsp;&nbsp;// Estevez and Kulla 2017, "Production Friendly Microfacet Sheen BRDF"
+&nbsp;&nbsp;&nbsp;&nbsp;float invAlpha&nbsp;&nbsp;= 1.0 / roughness;
+&nbsp;&nbsp;&nbsp;&nbsp;float cos2h = NoH * NoH;
+&nbsp;&nbsp;&nbsp;&nbsp;float sin2h = max(1.0 - cos2h, 0.0078125); // 2^(-14/2), so sin2h^2 &gt; 0 in fp16
+&nbsp;&nbsp;&nbsp;&nbsp;return (2.0 + invAlpha) * pow(sin2h, invAlpha * 0.5) / (2.0 * PI);
+}
 </code></pre>
 	</li>
 </ul>
@@ -6810,46 +6830,46 @@ vec3 luminance = BSDF(v, l) * illuminance;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> float getSquareFalloffAttenuation(vec3 posToLight, float lightInvRadius) {
-&nbsp;&nbsp;&nbsp;&nbsp; float distanceSquare = dot(posToLight, posToLight);
-&nbsp;&nbsp;&nbsp;&nbsp; float factor = distanceSquare * lightInvRadius * lightInvRadius;
-&nbsp;&nbsp;&nbsp;&nbsp; float smoothFactor = max(1.0 - factor * factor, 0.0);
-&nbsp;&nbsp;&nbsp;&nbsp; return (smoothFactor * smoothFactor) / max(distanceSquare, 1e-4);
- }
- 
- float getSpotAngleAttenuation(vec3 l, vec3 lightDir,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float innerAngle, float outerAngle) {
-&nbsp;&nbsp;&nbsp;&nbsp; // the scale and offset computations can be done CPU-side
-&nbsp;&nbsp;&nbsp;&nbsp; float cosOuter = cos(outerAngle);
-&nbsp;&nbsp;&nbsp;&nbsp; float spotScale = 1.0 / max(cos(innerAngle) - cosOuter, 1e-4)
-&nbsp;&nbsp;&nbsp;&nbsp; float spotOffset = -cosOuter * spotScale
- 
-&nbsp;&nbsp;&nbsp;&nbsp; float cd = dot(normalize(-lightDir), l);
-&nbsp;&nbsp;&nbsp;&nbsp; float attenuation = clamp(cd * spotScale + spotOffset, 0.0, 1.0);
-&nbsp;&nbsp;&nbsp;&nbsp; return attenuation * attenuation;
- }
- 
- vec3 evaluatePunctualLight() {
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 l = normalize(posToLight);
-&nbsp;&nbsp;&nbsp;&nbsp; float NoL = clamp(dot(n, l), 0.0, 1.0);
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 posToLight = lightPosition - worldPosition;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; float attenuation;
-&nbsp;&nbsp;&nbsp;&nbsp; attenuation&nbsp;&nbsp;= getSquareFalloffAttenuation(posToLight, lightInvRadius);
-&nbsp;&nbsp;&nbsp;&nbsp; attenuation *= getSpotAngleAttenuation(l, lightDir, innerAngle, outerAngle);
- 
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 luminance = (BSDF(v, l) * lightIntensity * attenuation * NoL) * lightColor;
-&nbsp;&nbsp;&nbsp;&nbsp; return luminance;
- }
- 
- 
- vec3 l = normalize(-lightDirection);
- float NoL = clamp(dot(n, l), 0.0, 1.0);
- 
- // lightIntensity is the illuminance
- // at perpendicular incidence in lux
- float illuminance = lightIntensity * NoL;
- vec3 luminance = BSDF(v, l) * illuminance;
+<pre><code class="language-glsl" data-lang="glsl">float getSquareFalloffAttenuation(vec3 posToLight, float lightInvRadius) {
+&nbsp;&nbsp;&nbsp;&nbsp;float distanceSquare = dot(posToLight, posToLight);
+&nbsp;&nbsp;&nbsp;&nbsp;float factor = distanceSquare * lightInvRadius * lightInvRadius;
+&nbsp;&nbsp;&nbsp;&nbsp;float smoothFactor = max(1.0 - factor * factor, 0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;return (smoothFactor * smoothFactor) / max(distanceSquare, 1e-4);
+}
+
+float getSpotAngleAttenuation(vec3 l, vec3 lightDir,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float innerAngle, float outerAngle) {
+&nbsp;&nbsp;&nbsp;&nbsp;// the scale and offset computations can be done CPU-side
+&nbsp;&nbsp;&nbsp;&nbsp;float cosOuter = cos(outerAngle);
+&nbsp;&nbsp;&nbsp;&nbsp;float spotScale = 1.0 / max(cos(innerAngle) - cosOuter, 1e-4)
+&nbsp;&nbsp;&nbsp;&nbsp;float spotOffset = -cosOuter * spotScale
+
+&nbsp;&nbsp;&nbsp;&nbsp;float cd = dot(normalize(-lightDir), l);
+&nbsp;&nbsp;&nbsp;&nbsp;float attenuation = clamp(cd * spotScale + spotOffset, 0.0, 1.0);
+&nbsp;&nbsp;&nbsp;&nbsp;return attenuation * attenuation;
+}
+
+vec3 evaluatePunctualLight() {
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 l = normalize(posToLight);
+&nbsp;&nbsp;&nbsp;&nbsp;float NoL = clamp(dot(n, l), 0.0, 1.0);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 posToLight = lightPosition - worldPosition;
+
+&nbsp;&nbsp;&nbsp;&nbsp;float attenuation;
+&nbsp;&nbsp;&nbsp;&nbsp;attenuation&nbsp;&nbsp;= getSquareFalloffAttenuation(posToLight, lightInvRadius);
+&nbsp;&nbsp;&nbsp;&nbsp;attenuation *= getSpotAngleAttenuation(l, lightDir, innerAngle, outerAngle);
+
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 luminance = (BSDF(v, l) * lightIntensity * attenuation * NoL) * lightColor;
+&nbsp;&nbsp;&nbsp;&nbsp;return luminance;
+}
+
+
+vec3 l = normalize(-lightDirection);
+float NoL = clamp(dot(n, l), 0.0, 1.0);
+
+// lightIntensity is the illuminance
+// at perpendicular incidence in lux
+float illuminance = lightIntensity * NoL;
+vec3 luminance = BSDF(v, l) * illuminance;
 </code></pre>
 	</li>
 </ul>
@@ -7074,26 +7094,26 @@ float lightIntensity = photometricLight.getMaxIntensity() * multiplier;
 			</strong>
             , like so:
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> // The inputs must be highp/single precision,
- // both for range (intensity) and precision (exposure)
- // The output is mediump/half precision
- float computePreExposedIntensity(highp float intensity, highp float exposure) {
-&nbsp;&nbsp;&nbsp;&nbsp; return intensity * exposure;
- }
- 
- Light getPointLight(uint index) {
-&nbsp;&nbsp;&nbsp;&nbsp; Light light;
-&nbsp;&nbsp;&nbsp;&nbsp; uint lightIndex = // fetch light index;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // the intensity must be highp/single precision
-&nbsp;&nbsp;&nbsp;&nbsp; highp vec4 colorIntensity&nbsp;&nbsp;= lightsUniforms.lights[lightIndex][1];
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // pre-expose the light
-&nbsp;&nbsp;&nbsp;&nbsp; light.colorIntensity.w = computePreExposedIntensity(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; colorIntensity.w, frameUniforms.exposure);
- 
-&nbsp;&nbsp;&nbsp;&nbsp; return light;
- }
+<pre><code class="language-glsl" data-lang="glsl">// The inputs must be highp/single precision,
+// both for range (intensity) and precision (exposure)
+// The output is mediump/half precision
+float computePreExposedIntensity(highp float intensity, highp float exposure) {
+&nbsp;&nbsp;&nbsp;&nbsp;return intensity * exposure;
+}
+
+Light getPointLight(uint index) {
+&nbsp;&nbsp;&nbsp;&nbsp;Light light;
+&nbsp;&nbsp;&nbsp;&nbsp;uint lightIndex = // fetch light index;
+
+&nbsp;&nbsp;&nbsp;&nbsp;// the intensity must be highp/single precision
+&nbsp;&nbsp;&nbsp;&nbsp;highp vec4 colorIntensity&nbsp;&nbsp;= lightsUniforms.lights[lightIndex][1];
+
+&nbsp;&nbsp;&nbsp;&nbsp;// pre-expose the light
+&nbsp;&nbsp;&nbsp;&nbsp;light.colorIntensity.w = computePreExposedIntensity(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorIntensity.w, frameUniforms.exposure);
+
+&nbsp;&nbsp;&nbsp;&nbsp;return light;
+}
 </code></pre>
 	</li>
 </ul>
@@ -7673,33 +7693,33 @@ float lightIntensity = photometricLight.getMaxIntensity() * multiplier;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> textures.envmap = load_texture_cubemap("textures/uffizi_rgba16f_cube.ktx", vkb::sg::Image::Color);
- 
- vkb::initializers::write_descriptor_set(descriptor_sets.object, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 0, &matrix_buffer_descriptor),
- vkb::initializers::write_descriptor_set(descriptor_sets.object, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1, &environment_image_descriptor),
-</code></pre>
-<pre><code class="language-glsl" data-lang="glsl"> // Vertex
- layout (location = 0) in vec3 inPos;
- layout (binding = 0) uniform UBO {
-&nbsp;&nbsp;&nbsp;&nbsp; mat4 projection;           // camera.matrices.perspective;
-&nbsp;&nbsp;&nbsp;&nbsp; mat4 skybox_modelview;     // camera.view
- } ubo;
- layout (location = 0) out vec3 outUVW;
- layout (location = 1) out vec3 outPos;
+<pre><code class="language-glsl" data-lang="glsl">textures.envmap = load_texture_cubemap("textures/uffizi_rgba16f_cube.ktx", vkb::sg::Image::Color);
 
- outUVW = inPos;
- outPos = vec3(mat3(ubo.skybox_modelview) * inPos);
- gl_Position = vec4(ubo.projection * vec4(outPos, 1.0));
- 
- // Frag
- layout (binding = 1) uniform samplerCube samplerEnvMap;
- layout (location = 0) in vec3 inUVW;
- layout (location = 0) out vec4 outColor0;
- 
- vec3 normal = normalize(inUVW);
- color = texture(samplerEnvMap, normal);
- // Color with manual exposure into attachment 0
- outColor0.rgb = vec3(1.0) - exp(-color.rgb * ubo.exposure);
+vkb::initializers::write_descriptor_set(descriptor_sets.object, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 0, &matrix_buffer_descriptor),
+vkb::initializers::write_descriptor_set(descriptor_sets.object, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1, &environment_image_descriptor),
+</code></pre>
+<pre><code class="language-glsl" data-lang="glsl">// Vertex
+layout (location = 0) in vec3 inPos;
+layout (binding = 0) uniform UBO {
+&nbsp;&nbsp;&nbsp;&nbsp;mat4 projection;           // camera.matrices.perspective;
+&nbsp;&nbsp;&nbsp;&nbsp;mat4 skybox_modelview;     // camera.view
+} ubo;
+layout (location = 0) out vec3 outUVW;
+layout (location = 1) out vec3 outPos;
+
+outUVW = inPos;
+outPos = vec3(mat3(ubo.skybox_modelview) * inPos);
+gl_Position = vec4(ubo.projection * vec4(outPos, 1.0));
+
+// Frag
+layout (binding = 1) uniform samplerCube samplerEnvMap;
+layout (location = 0) in vec3 inUVW;
+layout (location = 0) out vec4 outColor0;
+
+vec3 normal = normalize(inUVW);
+color = texture(samplerEnvMap, normal);
+// Color with manual exposure into attachment 0
+outColor0.rgb = vec3(1.0) - exp(-color.rgb * ubo.exposure);
 </code></pre>
 	</li>
 	<li>
@@ -8392,39 +8412,39 @@ vec4 shadeSurface(vec4 baseColor) {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> float GDFG(float NoV, float NoL, float a) {
-&nbsp;&nbsp;&nbsp;&nbsp; float a2 = a * a;
-&nbsp;&nbsp;&nbsp;&nbsp; float GGXL = NoV * sqrt((-NoL * a2 + NoL) * NoL + a2);
-&nbsp;&nbsp;&nbsp;&nbsp; float GGXV = NoL * sqrt((-NoV * a2 + NoV) * NoV + a2);
-&nbsp;&nbsp;&nbsp;&nbsp; return (2 * NoL) / (GGXV + GGXL);
- }
- 
- float2 DFG(float NoV, float a) {
-&nbsp;&nbsp;&nbsp;&nbsp; float3 V;
-&nbsp;&nbsp;&nbsp;&nbsp; V.x = sqrt(1.0f - NoV*NoV);
-&nbsp;&nbsp;&nbsp;&nbsp; V.y = 0.0f;
-&nbsp;&nbsp;&nbsp;&nbsp; V.z = NoV;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; float2 r = 0.0f;
-&nbsp;&nbsp;&nbsp;&nbsp; for (uint i = 0; i &lt; sampleCount; i++) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float2 Xi = hammersley(i, sampleCount);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float3 H = importanceSampleGGX(Xi, a, N);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float3 L = 2.0f * dot(V, H) * H - V;
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float VoH = saturate(dot(V, H));
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float NoL = saturate(L.z);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float NoH = saturate(H.z);
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (NoL &gt; 0.0f) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float G = GDFG(NoV, NoL, a);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float Gv = G * VoH / NoH;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float Fc = pow(1 - VoH, 5.0f);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r.x += Gv * (1 - Fc);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r.y += Gv * Fc;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; return r * (1.0f / sampleCount);
- }
+<pre><code class="language-glsl" data-lang="glsl">float GDFG(float NoV, float NoL, float a) {
+&nbsp;&nbsp;&nbsp;&nbsp;float a2 = a * a;
+&nbsp;&nbsp;&nbsp;&nbsp;float GGXL = NoV * sqrt((-NoL * a2 + NoL) * NoL + a2);
+&nbsp;&nbsp;&nbsp;&nbsp;float GGXV = NoL * sqrt((-NoV * a2 + NoV) * NoV + a2);
+&nbsp;&nbsp;&nbsp;&nbsp;return (2 * NoL) / (GGXV + GGXL);
+}
+
+float2 DFG(float NoV, float a) {
+&nbsp;&nbsp;&nbsp;&nbsp;float3 V;
+&nbsp;&nbsp;&nbsp;&nbsp;V.x = sqrt(1.0f - NoV*NoV);
+&nbsp;&nbsp;&nbsp;&nbsp;V.y = 0.0f;
+&nbsp;&nbsp;&nbsp;&nbsp;V.z = NoV;
+
+&nbsp;&nbsp;&nbsp;&nbsp;float2 r = 0.0f;
+&nbsp;&nbsp;&nbsp;&nbsp;for (uint i = 0; i &lt; sampleCount; i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float2 Xi = hammersley(i, sampleCount);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float3 H = importanceSampleGGX(Xi, a, N);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float3 L = 2.0f * dot(V, H) * H - V;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float VoH = saturate(dot(V, H));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float NoL = saturate(L.z);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float NoH = saturate(H.z);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (NoL &gt; 0.0f) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float G = GDFG(NoV, NoL, a);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float Gv = G * VoH / NoH;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float Fc = pow(1 - VoH, 5.0f);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.x += Gv * (1 - Fc);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.y += Gv * Fc;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return r * (1.0f / sampleCount);
+}
 </code></pre>
 	</li>
 	<li>
@@ -8708,60 +8728,60 @@ vec4 shadeSurface(vec4 baseColor) {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> static inline size_t SHindex(ssize_t m, size_t l) {
-&nbsp;&nbsp;&nbsp;&nbsp; return l * (l + 1) + m;
- }
- 
- void computeShBasis(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double* const SHb,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t numBands,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const vec3& s)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; // handle m=0 separately, since it produces only one coefficient
-&nbsp;&nbsp;&nbsp;&nbsp; double Pml_2 = 0;
-&nbsp;&nbsp;&nbsp;&nbsp; double Pml_1 = 1;
-&nbsp;&nbsp;&nbsp;&nbsp; SHb[0] =&nbsp;&nbsp;Pml_1;
-&nbsp;&nbsp;&nbsp;&nbsp; for (ssize_t l = 1; l &lt; numBands; l++) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double Pml = ((2 * l - 1) * Pml_1 * s.z - (l - 1) * Pml_2) / l;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pml_2 = Pml_1;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pml_1 = Pml;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHb[SHindex(0, l)] = Pml;
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; double Pmm = 1;
-&nbsp;&nbsp;&nbsp;&nbsp; for (ssize_t m = 1; m &lt; numBands ; m++) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pmm = (1 - 2 * m) * Pmm;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double Pml_2 = Pmm;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double Pml_1 = (2 * m + 1)*Pmm*s.z;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // l == m
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHb[SHindex(-m, m)] = Pml_2;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHb[SHindex( m, m)] = Pml_2;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (m + 1 &lt; numBands) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // l == m+1
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHb[SHindex(-m, m + 1)] = Pml_1;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHb[SHindex( m, m + 1)] = Pml_1;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (ssize_t l = m + 2; l &lt; numBands; l++) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double Pml = ((2 * l - 1) * Pml_1 * s.z - (l + m - 1) * Pml_2)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / (l - m);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pml_2 = Pml_1;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pml_1 = Pml;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHb[SHindex(-m, l)] = Pml;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHb[SHindex( m, l)] = Pml;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; double Cm = s.x;
-&nbsp;&nbsp;&nbsp;&nbsp; double Sm = s.y;
-&nbsp;&nbsp;&nbsp;&nbsp; for (ssize_t m = 1; m &lt;= numBands ; m++) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (ssize_t l = m; l &lt; numBands; l++) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHb[SHindex(-m, l)] *= Sm;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHb[SHindex( m, l)] *= Cm;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double Cm1 = Cm * s.x - Sm * s.y;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double Sm1 = Sm * s.x + Cm * s.y;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cm = Cm1;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sm = Sm1;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-glsl" data-lang="glsl">static inline size_t SHindex(ssize_t m, size_t l) {
+&nbsp;&nbsp;&nbsp;&nbsp;return l * (l + 1) + m;
+}
+
+void computeShBasis(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double* const SHb,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size_t numBands,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const vec3& s)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;// handle m=0 separately, since it produces only one coefficient
+&nbsp;&nbsp;&nbsp;&nbsp;double Pml_2 = 0;
+&nbsp;&nbsp;&nbsp;&nbsp;double Pml_1 = 1;
+&nbsp;&nbsp;&nbsp;&nbsp;SHb[0] =&nbsp;&nbsp;Pml_1;
+&nbsp;&nbsp;&nbsp;&nbsp;for (ssize_t l = 1; l &lt; numBands; l++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double Pml = ((2 * l - 1) * Pml_1 * s.z - (l - 1) * Pml_2) / l;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pml_2 = Pml_1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pml_1 = Pml;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHb[SHindex(0, l)] = Pml;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;double Pmm = 1;
+&nbsp;&nbsp;&nbsp;&nbsp;for (ssize_t m = 1; m &lt; numBands ; m++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pmm = (1 - 2 * m) * Pmm;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double Pml_2 = Pmm;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double Pml_1 = (2 * m + 1)*Pmm*s.z;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// l == m
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHb[SHindex(-m, m)] = Pml_2;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHb[SHindex( m, m)] = Pml_2;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (m + 1 &lt; numBands) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// l == m+1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHb[SHindex(-m, m + 1)] = Pml_1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHb[SHindex( m, m + 1)] = Pml_1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (ssize_t l = m + 2; l &lt; numBands; l++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double Pml = ((2 * l - 1) * Pml_1 * s.z - (l + m - 1) * Pml_2)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ (l - m);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pml_2 = Pml_1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pml_1 = Pml;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHb[SHindex(-m, l)] = Pml;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHb[SHindex( m, l)] = Pml;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;double Cm = s.x;
+&nbsp;&nbsp;&nbsp;&nbsp;double Sm = s.y;
+&nbsp;&nbsp;&nbsp;&nbsp;for (ssize_t m = 1; m &lt;= numBands ; m++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (ssize_t l = m; l &lt; numBands; l++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHb[SHindex(-m, l)] *= Sm;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHb[SHindex( m, l)] *= Cm;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double Cm1 = Cm * s.x - Sm * s.y;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double Sm1 = Sm * s.x + Cm * s.y;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cm = Cm1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sm = Sm1;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 		<ul>
 			<li>
@@ -8770,42 +8790,42 @@ vec4 shadeSurface(vec4 baseColor) {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> static double factorial(size_t n, size_t d = 1);
- 
- // &lt; cos(theta) &gt; SH coefficients pre-multiplied by 1 / K(0,l)
- double computeTruncatedCosSh(size_t l) {
-&nbsp;&nbsp;&nbsp;&nbsp; if (l == 0) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return M_PI;
-&nbsp;&nbsp;&nbsp;&nbsp; } else if (l == 1) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 2 * M_PI / 3;
-&nbsp;&nbsp;&nbsp;&nbsp; } else if (l & 1) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; const size_t l_2 = l / 2;
-&nbsp;&nbsp;&nbsp;&nbsp; double A0 = ((l_2 & 1) ? 1.0 : -1.0) / ((l + 2) * (l - 1));
-&nbsp;&nbsp;&nbsp;&nbsp; double A1 = factorial(l, l_2) / (factorial(l_2) * (1 &lt;&lt; l));
-&nbsp;&nbsp;&nbsp;&nbsp; return 2 * M_PI * A0 * A1;
- }
- 
- // returns n! / d!
- double factorial(size_t n, size_t d ) {
-&nbsp;&nbsp;&nbsp;&nbsp;d = std::max(size_t(1), d);
-&nbsp;&nbsp;&nbsp;&nbsp;n = std::max(size_t(1), n);
-&nbsp;&nbsp;&nbsp;&nbsp;double r = 1.0;
-&nbsp;&nbsp;&nbsp;&nbsp;if (n == d) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// intentionally left blank
-&nbsp;&nbsp;&nbsp;&nbsp;} else if (n &gt; d) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for ( ; n&gt;d ; n--) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r *= n;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;} else {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for ( ; d&gt;n ; d--) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r *= d;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r = 1.0 / r;
+<pre><code class="language-glsl" data-lang="glsl">static double factorial(size_t n, size_t d = 1);
+
+// &lt; cos(theta) &gt; SH coefficients pre-multiplied by 1 / K(0,l)
+double computeTruncatedCosSh(size_t l) {
+&nbsp;&nbsp;&nbsp;&nbsp;if (l == 0) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return M_PI;
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (l == 1) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 2 * M_PI / 3;
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (l & 1) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;
 &nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;return r;
- }
+&nbsp;&nbsp;&nbsp;&nbsp;const size_t l_2 = l / 2;
+&nbsp;&nbsp;&nbsp;&nbsp;double A0 = ((l_2 & 1) ? 1.0 : -1.0) / ((l + 2) * (l - 1));
+&nbsp;&nbsp;&nbsp;&nbsp;double A1 = factorial(l, l_2) / (factorial(l_2) * (1 &lt;&lt; l));
+&nbsp;&nbsp;&nbsp;&nbsp;return 2 * M_PI * A0 * A1;
+}
+
+// returns n! / d!
+double factorial(size_t n, size_t d ) {
+&nbsp;&nbsp; d = std::max(size_t(1), d);
+&nbsp;&nbsp; n = std::max(size_t(1), n);
+&nbsp;&nbsp; double r = 1.0;
+&nbsp;&nbsp; if (n == d) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // intentionally left blank
+&nbsp;&nbsp; } else if (n &gt; d) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for ( ; n&gt;d ; n--) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r *= n;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp; } else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for ( ; d&gt;n ; d--) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r *= d;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r = 1.0 / r;
+&nbsp;&nbsp; }
+&nbsp;&nbsp; return r;
+}
 </code></pre>
 	</li>
 	<li>
@@ -10626,56 +10646,56 @@ vec4 shadeSurface(vec4 baseColor) {
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> vec3 irradianceSH(vec3 n) {
-&nbsp;&nbsp;&nbsp;&nbsp; // uniform vec3 sphericalHarmonics[9]
-&nbsp;&nbsp;&nbsp;&nbsp; // We can use only the first 2 bands for better performance
-&nbsp;&nbsp;&nbsp;&nbsp; return
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sphericalHarmonics[0]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + sphericalHarmonics[1] * (n.y)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + sphericalHarmonics[2] * (n.z)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + sphericalHarmonics[3] * (n.x)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + sphericalHarmonics[4] * (n.y * n.x)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + sphericalHarmonics[5] * (n.y * n.z)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + sphericalHarmonics[6] * (3.0 * n.z * n.z - 1.0)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + sphericalHarmonics[7] * (n.z * n.x)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + sphericalHarmonics[8] * (n.x * n.x - n.y * n.y);
- }
- 
- // NOTE: this is the DFG LUT implementation of the function above
- vec2 prefilteredDFG_LUT(float coord, float NoV) {
-&nbsp;&nbsp;&nbsp;&nbsp; // coord = sqrt(roughness), which is the mapping used by the
-&nbsp;&nbsp;&nbsp;&nbsp; // IBL prefiltering code when computing the mipmaps
-&nbsp;&nbsp;&nbsp;&nbsp; return textureLod(dfgLut, vec2(NoV, coord), 0.0).rg;
- }
- 
- vec3 evaluateSpecularIBL(vec3 r, float perceptualRoughness) {
-&nbsp;&nbsp;&nbsp;&nbsp; // This assumes a 256x256 cubemap, with 9 mip levels
-&nbsp;&nbsp;&nbsp;&nbsp; float lod = 8.0 * perceptualRoughness;
-&nbsp;&nbsp;&nbsp;&nbsp; // decodeEnvironmentMap() either decodes RGBM or is a no-op if the
-&nbsp;&nbsp;&nbsp;&nbsp; // cubemap is stored in a float texture
-&nbsp;&nbsp;&nbsp;&nbsp; return decodeEnvironmentMap(textureCubeLodEXT(environmentMap, r, lod));
- }
- 
- vec3 evaluateIBL(vec3 n, vec3 v, vec3 diffuseColor, vec3 f0, vec3 f90, float perceptualRoughness) {
-&nbsp;&nbsp;&nbsp;&nbsp; float NoV = max(dot(n, v), 0.0);
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 r = reflect(-v, n);
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // Specular indirect
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 indirectSpecular = evaluateSpecularIBL(r, perceptualRoughness);
-&nbsp;&nbsp;&nbsp;&nbsp; vec2 env = prefilteredDFG_LUT(perceptualRoughness, NoV);
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 specularColor = f0 * env.x + f90 * env.y;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // Diffuse indirect
-&nbsp;&nbsp;&nbsp;&nbsp; // We multiply by the Lambertian BRDF to compute radiance from irradiance
-&nbsp;&nbsp;&nbsp;&nbsp; // With the Disney BRDF we would have to remove the Fresnel term that
-&nbsp;&nbsp;&nbsp;&nbsp; // depends on NoL (it would be rolled into the SH). The Lambertian BRDF
-&nbsp;&nbsp;&nbsp;&nbsp; // can be baked directly in the SH to save a multiplication here
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 indirectDiffuse = max(irradianceSH(n), 0.0) * Fd_Lambert();
- 
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // Indirect contribution
-&nbsp;&nbsp;&nbsp;&nbsp; return diffuseColor * indirectDiffuse + indirectSpecular * specularColor;
- }
+<pre><code class="language-glsl" data-lang="glsl">vec3 irradianceSH(vec3 n) {
+&nbsp;&nbsp;&nbsp;&nbsp;// uniform vec3 sphericalHarmonics[9]
+&nbsp;&nbsp;&nbsp;&nbsp;// We can use only the first 2 bands for better performance
+&nbsp;&nbsp;&nbsp;&nbsp;return
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sphericalHarmonics[0]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ sphericalHarmonics[1] * (n.y)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ sphericalHarmonics[2] * (n.z)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ sphericalHarmonics[3] * (n.x)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ sphericalHarmonics[4] * (n.y * n.x)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ sphericalHarmonics[5] * (n.y * n.z)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ sphericalHarmonics[6] * (3.0 * n.z * n.z - 1.0)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ sphericalHarmonics[7] * (n.z * n.x)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ sphericalHarmonics[8] * (n.x * n.x - n.y * n.y);
+}
+
+// NOTE: this is the DFG LUT implementation of the function above
+vec2 prefilteredDFG_LUT(float coord, float NoV) {
+&nbsp;&nbsp;&nbsp;&nbsp;// coord = sqrt(roughness), which is the mapping used by the
+&nbsp;&nbsp;&nbsp;&nbsp;// IBL prefiltering code when computing the mipmaps
+&nbsp;&nbsp;&nbsp;&nbsp;return textureLod(dfgLut, vec2(NoV, coord), 0.0).rg;
+}
+
+vec3 evaluateSpecularIBL(vec3 r, float perceptualRoughness) {
+&nbsp;&nbsp;&nbsp;&nbsp;// This assumes a 256x256 cubemap, with 9 mip levels
+&nbsp;&nbsp;&nbsp;&nbsp;float lod = 8.0 * perceptualRoughness;
+&nbsp;&nbsp;&nbsp;&nbsp;// decodeEnvironmentMap() either decodes RGBM or is a no-op if the
+&nbsp;&nbsp;&nbsp;&nbsp;// cubemap is stored in a float texture
+&nbsp;&nbsp;&nbsp;&nbsp;return decodeEnvironmentMap(textureCubeLodEXT(environmentMap, r, lod));
+}
+
+vec3 evaluateIBL(vec3 n, vec3 v, vec3 diffuseColor, vec3 f0, vec3 f90, float perceptualRoughness) {
+&nbsp;&nbsp;&nbsp;&nbsp;float NoV = max(dot(n, v), 0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 r = reflect(-v, n);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Specular indirect
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 indirectSpecular = evaluateSpecularIBL(r, perceptualRoughness);
+&nbsp;&nbsp;&nbsp;&nbsp;vec2 env = prefilteredDFG_LUT(perceptualRoughness, NoV);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 specularColor = f0 * env.x + f90 * env.y;
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Diffuse indirect
+&nbsp;&nbsp;&nbsp;&nbsp;// We multiply by the Lambertian BRDF to compute radiance from irradiance
+&nbsp;&nbsp;&nbsp;&nbsp;// With the Disney BRDF we would have to remove the Fresnel term that
+&nbsp;&nbsp;&nbsp;&nbsp;// depends on NoL (it would be rolled into the SH). The Lambertian BRDF
+&nbsp;&nbsp;&nbsp;&nbsp;// can be baked directly in the SH to save a multiplication here
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 indirectDiffuse = max(irradianceSH(n), 0.0) * Fd_Lambert();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Indirect contribution
+&nbsp;&nbsp;&nbsp;&nbsp;return diffuseColor * indirectDiffuse + indirectSpecular * specularColor;
+}
 </code></pre>
 	</li>
 	<li>
@@ -10693,24 +10713,24 @@ vec4 shadeSurface(vec4 baseColor) {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> // Calculation of the lighting contribution from an optional Image Based Light source.
- // Precomputed Environment Maps are required uniform inputs and are computed as outlined in [1].
- // See our README.md on Environment Maps [3] for additional discussion.
- vec3 getIBLContribution(PBRInfo pbrInputs, vec3 n, vec3 reflection)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; float lod = (pbrInputs.perceptualRoughness * uboParams.prefilteredCubeMipLevels);
-&nbsp;&nbsp;&nbsp;&nbsp; // retrieve a scale and bias to F0. See [1], Figure 3
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 brdf = (texture(samplerBRDFLUT, vec2(pbrInputs.NdotV, 1.0 - pbrInputs.perceptualRoughness))).rgb;
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 diffuseLight = SRGBtoLINEAR(tonemap(texture(samplerIrradiance, n))).rgb;
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 specularLight = SRGBtoLINEAR(tonemap(textureLod(prefilteredMap, reflection, lod))).rgb;
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 diffuse = diffuseLight * pbrInputs.diffuseColor;
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 specular = specularLight * (pbrInputs.specularColor * brdf.x + brdf.y);
-&nbsp;&nbsp;&nbsp;&nbsp; // For presentation, this allows us to disable IBL terms
-&nbsp;&nbsp;&nbsp;&nbsp; // For presentation, this allows us to disable IBL terms
-&nbsp;&nbsp;&nbsp;&nbsp; diffuse *= uboParams.scaleIBLAmbient;
-&nbsp;&nbsp;&nbsp;&nbsp; specular *= uboParams.scaleIBLAmbient;
-&nbsp;&nbsp;&nbsp;&nbsp; return diffuse + specular;
- }
+<pre><code class="language-glsl" data-lang="glsl">// Calculation of the lighting contribution from an optional Image Based Light source.
+// Precomputed Environment Maps are required uniform inputs and are computed as outlined in [1].
+// See our README.md on Environment Maps [3] for additional discussion.
+vec3 getIBLContribution(PBRInfo pbrInputs, vec3 n, vec3 reflection)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;float lod = (pbrInputs.perceptualRoughness * uboParams.prefilteredCubeMipLevels);
+&nbsp;&nbsp;&nbsp;&nbsp;// retrieve a scale and bias to F0. See [1], Figure 3
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 brdf = (texture(samplerBRDFLUT, vec2(pbrInputs.NdotV, 1.0 - pbrInputs.perceptualRoughness))).rgb;
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 diffuseLight = SRGBtoLINEAR(tonemap(texture(samplerIrradiance, n))).rgb;
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 specularLight = SRGBtoLINEAR(tonemap(textureLod(prefilteredMap, reflection, lod))).rgb;
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 diffuse = diffuseLight * pbrInputs.diffuseColor;
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 specular = specularLight * (pbrInputs.specularColor * brdf.x + brdf.y);
+&nbsp;&nbsp;&nbsp;&nbsp;// For presentation, this allows us to disable IBL terms
+&nbsp;&nbsp;&nbsp;&nbsp;// For presentation, this allows us to disable IBL terms
+&nbsp;&nbsp;&nbsp;&nbsp;diffuse *= uboParams.scaleIBLAmbient;
+&nbsp;&nbsp;&nbsp;&nbsp;specular *= uboParams.scaleIBLAmbient;
+&nbsp;&nbsp;&nbsp;&nbsp;return diffuse + specular;
+}
 </code></pre>
 		<ul>
 			<li>
@@ -10719,33 +10739,33 @@ vec4 shadeSurface(vec4 baseColor) {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> // Bla bla bla, basic lighting.
- vec3 F = specularReflection(pbrInputs);
- float G = geometricOcclusion(pbrInputs);
- float D = microfacetDistribution(pbrInputs);
- const vec3 u_LightColor = vec3(1.0);
- vec3 diffuseContrib = (1.0 - F) * diffuse(pbrInputs);
- vec3 specContrib = F * G * D / (4.0 * NdotL * NdotV);
- vec3 color = NdotL * u_LightColor * (diffuseContrib + specContrib);
- 
- // Calculate lighting contribution from image based lighting source (IBL)
- color += getIBLContribution(pbrInputs, n, reflection);
- const float u_OcclusionStrength = 1.0f;
- 
- // -&gt; Ambient Occlusion
- // Apply optional PBR terms for additional (optional) shading
- if (material.occlusionTextureSet &gt; -1) {
-&nbsp;&nbsp;&nbsp;&nbsp; float ao = texture(aoMap, (material.occlusionTextureSet == 0 ? inUV0 : inUV1)).r;
-&nbsp;&nbsp;&nbsp;&nbsp; color = mix(color, color * ao, u_OcclusionStrength);
- }
- 
- // Emissive
- vec3 emissive = material.emissiveFactor.rgb * material.emissiveStrength;
- if (material.emissiveTextureSet &gt; -1) {
-&nbsp;&nbsp;&nbsp;&nbsp; emissive *= SRGBtoLINEAR(texture(emissiveMap, material.emissiveTextureSet == 0 ? inUV0 : inUV1)).rgb;
- };
- color += emissive;
- outColor = vec4(color, baseColor.a);
+<pre><code class="language-glsl" data-lang="glsl">// Bla bla bla, basic lighting.
+vec3 F = specularReflection(pbrInputs);
+float G = geometricOcclusion(pbrInputs);
+float D = microfacetDistribution(pbrInputs);
+const vec3 u_LightColor = vec3(1.0);
+vec3 diffuseContrib = (1.0 - F) * diffuse(pbrInputs);
+vec3 specContrib = F * G * D / (4.0 * NdotL * NdotV);
+vec3 color = NdotL * u_LightColor * (diffuseContrib + specContrib);
+
+// Calculate lighting contribution from image based lighting source (IBL)
+color += getIBLContribution(pbrInputs, n, reflection);
+const float u_OcclusionStrength = 1.0f;
+
+// -&gt; Ambient Occlusion
+// Apply optional PBR terms for additional (optional) shading
+if (material.occlusionTextureSet &gt; -1) {
+&nbsp;&nbsp;&nbsp;&nbsp;float ao = texture(aoMap, (material.occlusionTextureSet == 0 ? inUV0 : inUV1)).r;
+&nbsp;&nbsp;&nbsp;&nbsp;color = mix(color, color * ao, u_OcclusionStrength);
+}
+
+// Emissive
+vec3 emissive = material.emissiveFactor.rgb * material.emissiveStrength;
+if (material.emissiveTextureSet &gt; -1) {
+&nbsp;&nbsp;&nbsp;&nbsp;emissive *= SRGBtoLINEAR(texture(emissiveMap, material.emissiveTextureSet == 0 ? inUV0 : inUV1)).rgb;
+};
+color += emissive;
+outColor = vec4(color, baseColor.a);
 </code></pre>
 	</li>
 </ul>
@@ -11328,10 +11348,10 @@ vec4 shadeSurface(vec4 baseColor) {
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-glsl" data-lang="glsl"> // select the greatest component of the face normal input[3] is the input array of three vertices
- float3 facenormal = abs(input[0].nor + input[1].nor + input[2].nor);
- uint maxi = facenormal[1] &gt; facenormal[0] ? 1 : 0;
- maxi = facenormal[2] &gt; facenormal[maxi] ? 2 : maxi;
+<pre><code class="language-glsl" data-lang="glsl">// select the greatest component of the face normal input[3] is the input array of three vertices
+float3 facenormal = abs(input[0].nor + input[1].nor + input[2].nor);
+uint maxi = facenormal[1] &gt; facenormal[0] ? 1 : 0;
+maxi = facenormal[2] &gt; facenormal[maxi] ? 2 : maxi;
 </code></pre>
 				<ul>
 					<li>
@@ -11340,27 +11360,27 @@ vec4 shadeSurface(vec4 baseColor) {
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-glsl" data-lang="glsl"> for (uint i = 0; i &lt; 3; ++i)
- {
- // voxel space pos:
-&nbsp;&nbsp;&nbsp;&nbsp; output[i].pos = float4((input[i].pos.xyz - g_xWorld_VoxelRadianceDataCenter) / g_xWorld_VoxelRadianceDataSize, 1);
-&nbsp;&nbsp;&nbsp;&nbsp; // Project onto dominant axis:
-&nbsp;&nbsp;&nbsp;&nbsp; if (maxi == 0)
-&nbsp;&nbsp;&nbsp;&nbsp; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output[i].pos.xyz = output[i].pos.zyx;
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; else if (maxi == 1)
-&nbsp;&nbsp;&nbsp;&nbsp; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output[i].pos.xyz = output[i].pos.xzy;
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; // projected pos:
-&nbsp;&nbsp;&nbsp;&nbsp; output[i].pos.xy /= g_xWorld_VoxelRadianceDataRes;
-&nbsp;&nbsp;&nbsp;&nbsp; output[i].pos.z = 1;
-&nbsp;&nbsp;&nbsp;&nbsp; output[i].N = input[i].nor;
-&nbsp;&nbsp;&nbsp;&nbsp; output[i].tex = input[i].tex;
-&nbsp;&nbsp;&nbsp;&nbsp; output[i].P = input[i].pos.xyz;
-&nbsp;&nbsp;&nbsp;&nbsp; output[i].instanceColor = input[i].instanceColor;
- }
+<pre><code class="language-glsl" data-lang="glsl">for (uint i = 0; i &lt; 3; ++i)
+{
+// voxel space pos:
+&nbsp;&nbsp;&nbsp;&nbsp;output[i].pos = float4((input[i].pos.xyz - g_xWorld_VoxelRadianceDataCenter) / g_xWorld_VoxelRadianceDataSize, 1);
+&nbsp;&nbsp;&nbsp;&nbsp;// Project onto dominant axis:
+&nbsp;&nbsp;&nbsp;&nbsp;if (maxi == 0)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output[i].pos.xyz = output[i].pos.zyx;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;else if (maxi == 1)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output[i].pos.xyz = output[i].pos.xzy;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;// projected pos:
+&nbsp;&nbsp;&nbsp;&nbsp;output[i].pos.xy /= g_xWorld_VoxelRadianceDataRes;
+&nbsp;&nbsp;&nbsp;&nbsp;output[i].pos.z = 1;
+&nbsp;&nbsp;&nbsp;&nbsp;output[i].N = input[i].nor;
+&nbsp;&nbsp;&nbsp;&nbsp;output[i].tex = input[i].tex;
+&nbsp;&nbsp;&nbsp;&nbsp;output[i].P = input[i].pos.xyz;
+&nbsp;&nbsp;&nbsp;&nbsp;output[i].instanceColor = input[i].instanceColor;
+}
 </code></pre>
 				<ul>
 					<li>
@@ -11369,15 +11389,15 @@ vec4 shadeSurface(vec4 baseColor) {
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-glsl" data-lang="glsl"> 
- // Conservative Rasterization setup:
- float2 side0N = normalize(output[1].pos.xy - output[0].pos.xy);
- float2 side1N = normalize(output[2].pos.xy - output[1].pos.xy);
- float2 side2N = normalize(output[0].pos.xy - output[2].pos.xy);
- const float texelSize = 1.0f / g_xWorld_VoxelRadianceDataRes;
- output[0].pos.xy += normalize(-side0N + side2N)*texelSize;
- output[1].pos.xy += normalize(side0N - side1N)*texelSize;
- output[2].pos.xy += normalize(side1N - side2N)*texelSize;
+<pre><code class="language-glsl" data-lang="glsl">
+// Conservative Rasterization setup:
+float2 side0N = normalize(output[1].pos.xy - output[0].pos.xy);
+float2 side1N = normalize(output[2].pos.xy - output[1].pos.xy);
+float2 side2N = normalize(output[0].pos.xy - output[2].pos.xy);
+const float texelSize = 1.0f / g_xWorld_VoxelRadianceDataRes;
+output[0].pos.xy += normalize(-side0N + side2N)*texelSize;
+output[1].pos.xy += normalize(side0N - side1N)*texelSize;
+output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 </code></pre>
 				<ul>
 					<li>
@@ -14552,10 +14572,10 @@ vec4 shadeSurface(vec4 baseColor) {
 >
             
 			<a
-				href="https://www.raylib.com/examples/shaders/loader.html?name=shaders_lightmap_rendering" 
+				href="https://www.RayLib.com/examples/shaders/loader.html?name=shaders_lightmap_rendering" 
 				class="external-link" 
 				target="_blank" >
-                Lightmap in Raylib
+                Lightmap in RayLib
 			</a>
             .
 		</p>
@@ -15189,7 +15209,7 @@ vec3 linear_to_srgb(vec3 linear) {
 		<p>
             For example:
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> color *= exp2(ev);
+<pre><code class="language-glsl" data-lang="glsl">color *= exp2(ev);
 </code></pre>
 		<ul>
 			<li>
@@ -15623,33 +15643,33 @@ color.rgb *= exposure;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> vec3 Tonemap_DisplayRange(const vec3 x) {
-&nbsp;&nbsp;&nbsp;&nbsp; // The 5th color in the array (cyan) represents middle gray (18%)
-&nbsp;&nbsp;&nbsp;&nbsp; // Every stop above or below middle gray causes a color shift
-&nbsp;&nbsp;&nbsp;&nbsp; float v = log2(luminance(x) / 0.18);
-&nbsp;&nbsp;&nbsp;&nbsp; v = clamp(v + 5.0, 0.0, 15.0);
-&nbsp;&nbsp;&nbsp;&nbsp; int index = int(floor(v));
-&nbsp;&nbsp;&nbsp;&nbsp; return mix(debugColors[index], debugColors[min(15, index + 1)], fract(v));
- }
- 
- const vec3 debugColors[16] = vec3[](
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.0, 0.0, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // black
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.0, 0.0, 0.1647),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// darkest blue
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.0, 0.0, 0.3647),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// darker blue
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.0, 0.0, 0.6647),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// dark blue
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.0, 0.0, 0.9647),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// blue
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.0, 0.9255, 0.9255),&nbsp;&nbsp; // cyan
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.0, 0.5647, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// dark green
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.0, 0.7843, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// green
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(1.0, 1.0, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // yellow
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.90588, 0.75294, 0.0), // yellow-orange
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(1.0, 0.5647, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// orange
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(1.0, 0.0, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // bright red
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.8392, 0.0, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// red
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(1.0, 0.0, 1.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // magenta
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(0.6, 0.3333, 0.7882),&nbsp;&nbsp; // purple
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3(1.0, 1.0, 1.0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// white
- );
+<pre><code class="language-glsl" data-lang="glsl">vec3 Tonemap_DisplayRange(const vec3 x) {
+&nbsp;&nbsp;&nbsp;&nbsp;// The 5th color in the array (cyan) represents middle gray (18%)
+&nbsp;&nbsp;&nbsp;&nbsp;// Every stop above or below middle gray causes a color shift
+&nbsp;&nbsp;&nbsp;&nbsp;float v = log2(luminance(x) / 0.18);
+&nbsp;&nbsp;&nbsp;&nbsp;v = clamp(v + 5.0, 0.0, 15.0);
+&nbsp;&nbsp;&nbsp;&nbsp;int index = int(floor(v));
+&nbsp;&nbsp;&nbsp;&nbsp;return mix(debugColors[index], debugColors[min(15, index + 1)], fract(v));
+}
+
+const vec3 debugColors[16] = vec3[](
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.0, 0.0, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // black
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.0, 0.0, 0.1647),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// darkest blue
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.0, 0.0, 0.3647),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// darker blue
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.0, 0.0, 0.6647),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// dark blue
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.0, 0.0, 0.9647),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// blue
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.0, 0.9255, 0.9255),&nbsp;&nbsp; // cyan
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.0, 0.5647, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// dark green
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.0, 0.7843, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// green
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(1.0, 1.0, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // yellow
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.90588, 0.75294, 0.0), // yellow-orange
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(1.0, 0.5647, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// orange
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(1.0, 0.0, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // bright red
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.8392, 0.0, 0.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// red
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(1.0, 0.0, 1.0),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // magenta
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(0.6, 0.3333, 0.7882),&nbsp;&nbsp; // purple
+&nbsp;&nbsp;&nbsp;&nbsp; vec3(1.0, 1.0, 1.0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// white
+);
 </code></pre>
 		<ul>
 			<li>
@@ -15942,94 +15962,94 @@ vec3 apply_color_correction(vec3 color) {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> // Vertex Shader
- #version 450
- layout (location = 0) out vec2 outUV;
- void main()
- {
-&nbsp;&nbsp;&nbsp;&nbsp; outUV = vec2((gl_VertexIndex &lt;&lt; 1) & 2, gl_VertexIndex & 2);
-&nbsp;&nbsp;&nbsp;&nbsp; gl_Position = vec4(outUV * 2.0f - 1.0f, 0.0f, 1.0f);
- }
- 
- 
- // Frag Shader
- #version 450
- layout (location = 0) in vec2 inUV;
- layout (location = 0) out vec4 outColor;
- layout (constant_id = 0) const uint NUM_SAMPLES = 1024u;
- const float PI = 3.1415926536;
- // Based omn http://byteblacksmith.com/improvements-to-the-canonical-one-liner-glsl-rand-for-opengl-es-2-0/
- float random(vec2 co)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; float a = 12.9898;
-&nbsp;&nbsp;&nbsp;&nbsp; float b = 78.233;
-&nbsp;&nbsp;&nbsp;&nbsp; float c = 43758.5453;
-&nbsp;&nbsp;&nbsp;&nbsp; float dt= dot(co.xy ,vec2(a,b));
-&nbsp;&nbsp;&nbsp;&nbsp; float sn= mod(dt,3.14);
-&nbsp;&nbsp;&nbsp;&nbsp; return fract(sin(sn) * c);
- }
- vec2 hammersley2d(uint i, uint N)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; // Radical inverse based on http://holger.dammertz.org/stuff/notes_HammersleyOnHemisphere.html
-&nbsp;&nbsp;&nbsp;&nbsp; uint bits = (i &lt;&lt; 16u) | (i &gt;&gt; 16u);
-&nbsp;&nbsp;&nbsp;&nbsp; bits = ((bits & 0x55555555u) &lt;&lt; 1u) | ((bits & 0xAAAAAAAAu) &gt;&gt; 1u);
-&nbsp;&nbsp;&nbsp;&nbsp; bits = ((bits & 0x33333333u) &lt;&lt; 2u) | ((bits & 0xCCCCCCCCu) &gt;&gt; 2u);
-&nbsp;&nbsp;&nbsp;&nbsp; bits = ((bits & 0x0F0F0F0Fu) &lt;&lt; 4u) | ((bits & 0xF0F0F0F0u) &gt;&gt; 4u);
-&nbsp;&nbsp;&nbsp;&nbsp; bits = ((bits & 0x00FF00FFu) &lt;&lt; 8u) | ((bits & 0xFF00FF00u) &gt;&gt; 8u);
-&nbsp;&nbsp;&nbsp;&nbsp; float rdi = float(bits) * 2.3283064365386963e-10;
-&nbsp;&nbsp;&nbsp;&nbsp; return vec2(float(i) /float(N), rdi);
- }
- // Based on http://blog.selfshadow.com/publications/s2013-shading-course/karis/s2013_pbs_epic_slides.pdf
- vec3 importanceSample_GGX(vec2 Xi, float roughness, vec3 normal)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; // Maps a 2D point to a hemisphere with spread based on roughness
-&nbsp;&nbsp;&nbsp;&nbsp; float alpha = roughness * roughness;
-&nbsp;&nbsp;&nbsp;&nbsp; float phi = 2.0 * PI * Xi.x + random(normal.xz) * 0.1;
-&nbsp;&nbsp;&nbsp;&nbsp; float cosTheta = sqrt((1.0 - Xi.y) / (1.0 + (alpha*alpha - 1.0) * Xi.y));
-&nbsp;&nbsp;&nbsp;&nbsp; float sinTheta = sqrt(1.0 - cosTheta * cosTheta);
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 H = vec3(sinTheta * cos(phi), sinTheta * sin(phi), cosTheta);
-&nbsp;&nbsp;&nbsp;&nbsp; // Tangent space
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 up = abs(normal.z) &lt; 0.999 ? vec3(0.0, 0.0, 1.0) : vec3(1.0, 0.0, 0.0);
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 tangentX = normalize(cross(up, normal));
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 tangentY = normalize(cross(normal, tangentX));
-&nbsp;&nbsp;&nbsp;&nbsp; // Convert to world Space
-&nbsp;&nbsp;&nbsp;&nbsp; return normalize(tangentX * H.x + tangentY * H.y + normal * H.z);
- }
- // Geometric Shadowing function
- float G_SchlicksmithGGX(float dotNL, float dotNV, float roughness)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; float k = (roughness * roughness) / 2.0;
-&nbsp;&nbsp;&nbsp;&nbsp; float GL = dotNL / (dotNL * (1.0 - k) + k);
-&nbsp;&nbsp;&nbsp;&nbsp; float GV = dotNV / (dotNV * (1.0 - k) + k);
-&nbsp;&nbsp;&nbsp;&nbsp; return GL * GV;
- }
- vec2 BRDF(float NoV, float roughness)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; // Normal always points along z-axis for the 2D lookup
-&nbsp;&nbsp;&nbsp;&nbsp; const vec3 N = vec3(0.0, 0.0, 1.0);
-&nbsp;&nbsp;&nbsp;&nbsp; vec3 V = vec3(sqrt(1.0 - NoV*NoV), 0.0, NoV);
-&nbsp;&nbsp;&nbsp;&nbsp; vec2 LUT = vec2(0.0);
-&nbsp;&nbsp;&nbsp;&nbsp; for(uint i = 0u; i &lt; NUM_SAMPLES; i++) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vec2 Xi = hammersley2d(i, NUM_SAMPLES);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vec3 H = importanceSample_GGX(Xi, roughness, N);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vec3 L = 2.0 * dot(V, H) * H - V;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float dotNL = max(dot(N, L), 0.0);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float dotNV = max(dot(N, V), 0.0);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float dotVH = max(dot(V, H), 0.0);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float dotNH = max(dot(H, N), 0.0);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (dotNL &gt; 0.0) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float G = G_SchlicksmithGGX(dotNL, dotNV, roughness);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float G_Vis = (G * dotVH) / (dotNH * dotNV);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float Fc = pow(1.0 - dotVH, 5.0);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LUT += vec2((1.0 - Fc) * G_Vis, Fc * G_Vis);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; return LUT / float(NUM_SAMPLES);
- }
- void main()
- {
-&nbsp;&nbsp;&nbsp;&nbsp; outColor = vec4(BRDF(inUV.s, 1.0-inUV.t), 0.0, 1.0);
- }
+<pre><code class="language-glsl" data-lang="glsl">// Vertex Shader
+#version 450
+layout (location = 0) out vec2 outUV;
+void main()
+{
+&nbsp;&nbsp;&nbsp;&nbsp;outUV = vec2((gl_VertexIndex &lt;&lt; 1) & 2, gl_VertexIndex & 2);
+&nbsp;&nbsp;&nbsp;&nbsp;gl_Position = vec4(outUV * 2.0f - 1.0f, 0.0f, 1.0f);
+}
+
+
+// Frag Shader
+#version 450
+layout (location = 0) in vec2 inUV;
+layout (location = 0) out vec4 outColor;
+layout (constant_id = 0) const uint NUM_SAMPLES = 1024u;
+const float PI = 3.1415926536;
+// Based omn http://byteblacksmith.com/improvements-to-the-canonical-one-liner-glsl-rand-for-opengl-es-2-0/
+float random(vec2 co)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;float a = 12.9898;
+&nbsp;&nbsp;&nbsp;&nbsp;float b = 78.233;
+&nbsp;&nbsp;&nbsp;&nbsp;float c = 43758.5453;
+&nbsp;&nbsp;&nbsp;&nbsp;float dt= dot(co.xy ,vec2(a,b));
+&nbsp;&nbsp;&nbsp;&nbsp;float sn= mod(dt,3.14);
+&nbsp;&nbsp;&nbsp;&nbsp;return fract(sin(sn) * c);
+}
+vec2 hammersley2d(uint i, uint N)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;// Radical inverse based on http://holger.dammertz.org/stuff/notes_HammersleyOnHemisphere.html
+&nbsp;&nbsp;&nbsp;&nbsp;uint bits = (i &lt;&lt; 16u) | (i &gt;&gt; 16u);
+&nbsp;&nbsp;&nbsp;&nbsp;bits = ((bits & 0x55555555u) &lt;&lt; 1u) | ((bits & 0xAAAAAAAAu) &gt;&gt; 1u);
+&nbsp;&nbsp;&nbsp;&nbsp;bits = ((bits & 0x33333333u) &lt;&lt; 2u) | ((bits & 0xCCCCCCCCu) &gt;&gt; 2u);
+&nbsp;&nbsp;&nbsp;&nbsp;bits = ((bits & 0x0F0F0F0Fu) &lt;&lt; 4u) | ((bits & 0xF0F0F0F0u) &gt;&gt; 4u);
+&nbsp;&nbsp;&nbsp;&nbsp;bits = ((bits & 0x00FF00FFu) &lt;&lt; 8u) | ((bits & 0xFF00FF00u) &gt;&gt; 8u);
+&nbsp;&nbsp;&nbsp;&nbsp;float rdi = float(bits) * 2.3283064365386963e-10;
+&nbsp;&nbsp;&nbsp;&nbsp;return vec2(float(i) /float(N), rdi);
+}
+// Based on http://blog.selfshadow.com/publications/s2013-shading-course/karis/s2013_pbs_epic_slides.pdf
+vec3 importanceSample_GGX(vec2 Xi, float roughness, vec3 normal)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;// Maps a 2D point to a hemisphere with spread based on roughness
+&nbsp;&nbsp;&nbsp;&nbsp;float alpha = roughness * roughness;
+&nbsp;&nbsp;&nbsp;&nbsp;float phi = 2.0 * PI * Xi.x + random(normal.xz) * 0.1;
+&nbsp;&nbsp;&nbsp;&nbsp;float cosTheta = sqrt((1.0 - Xi.y) / (1.0 + (alpha*alpha - 1.0) * Xi.y));
+&nbsp;&nbsp;&nbsp;&nbsp;float sinTheta = sqrt(1.0 - cosTheta * cosTheta);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 H = vec3(sinTheta * cos(phi), sinTheta * sin(phi), cosTheta);
+&nbsp;&nbsp;&nbsp;&nbsp;// Tangent space
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 up = abs(normal.z) &lt; 0.999 ? vec3(0.0, 0.0, 1.0) : vec3(1.0, 0.0, 0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 tangentX = normalize(cross(up, normal));
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 tangentY = normalize(cross(normal, tangentX));
+&nbsp;&nbsp;&nbsp;&nbsp;// Convert to world Space
+&nbsp;&nbsp;&nbsp;&nbsp;return normalize(tangentX * H.x + tangentY * H.y + normal * H.z);
+}
+// Geometric Shadowing function
+float G_SchlicksmithGGX(float dotNL, float dotNV, float roughness)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;float k = (roughness * roughness) / 2.0;
+&nbsp;&nbsp;&nbsp;&nbsp;float GL = dotNL / (dotNL * (1.0 - k) + k);
+&nbsp;&nbsp;&nbsp;&nbsp;float GV = dotNV / (dotNV * (1.0 - k) + k);
+&nbsp;&nbsp;&nbsp;&nbsp;return GL * GV;
+}
+vec2 BRDF(float NoV, float roughness)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;// Normal always points along z-axis for the 2D lookup
+&nbsp;&nbsp;&nbsp;&nbsp;const vec3 N = vec3(0.0, 0.0, 1.0);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 V = vec3(sqrt(1.0 - NoV*NoV), 0.0, NoV);
+&nbsp;&nbsp;&nbsp;&nbsp;vec2 LUT = vec2(0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;for(uint i = 0u; i &lt; NUM_SAMPLES; i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec2 Xi = hammersley2d(i, NUM_SAMPLES);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3 H = importanceSample_GGX(Xi, roughness, N);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec3 L = 2.0 * dot(V, H) * H - V;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float dotNL = max(dot(N, L), 0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float dotNV = max(dot(N, V), 0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float dotVH = max(dot(V, H), 0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float dotNH = max(dot(H, N), 0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (dotNL &gt; 0.0) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float G = G_SchlicksmithGGX(dotNL, dotNV, roughness);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float G_Vis = (G * dotVH) / (dotNH * dotNV);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float Fc = pow(1.0 - dotVH, 5.0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LUT += vec2((1.0 - Fc) * G_Vis, Fc * G_Vis);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return LUT / float(NUM_SAMPLES);
+}
+void main()
+{
+&nbsp;&nbsp;&nbsp;&nbsp;outColor = vec4(BRDF(inUV.s, 1.0-inUV.t), 0.0, 1.0);
+}
 </code></pre>
 	</li>
 </ul>
@@ -16815,15 +16835,15 @@ vec3 apply_bcs(vec3 color, vec3 bcs) {
 		<p>
             Vertex Output:
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> struct VertexShaderOutput
- {
-&nbsp;&nbsp;&nbsp;&nbsp; float3 positionVS&nbsp;&nbsp; : TEXCOORD0;&nbsp;&nbsp;&nbsp;&nbsp;// View space position.
-&nbsp;&nbsp;&nbsp;&nbsp; float2 texCoord&nbsp;&nbsp;&nbsp;&nbsp; : TEXCOORD1;&nbsp;&nbsp;&nbsp;&nbsp;// Texture coordinate
-&nbsp;&nbsp;&nbsp;&nbsp; float3 tangentVS&nbsp;&nbsp;&nbsp;&nbsp;: TANGENT;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// View space tangent.
-&nbsp;&nbsp;&nbsp;&nbsp; float3 binormalVS&nbsp;&nbsp; : BINORMAL;&nbsp;&nbsp;&nbsp;&nbsp; // View space binormal.
-&nbsp;&nbsp;&nbsp;&nbsp; float3 normalVS&nbsp;&nbsp;&nbsp;&nbsp; : NORMAL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // View space normal.
-&nbsp;&nbsp;&nbsp;&nbsp; float4 position&nbsp;&nbsp;&nbsp;&nbsp; : SV_POSITION;&nbsp;&nbsp;// Clip space position.
- };
+<pre><code class="language-glsl" data-lang="glsl">struct VertexShaderOutput
+{
+&nbsp;&nbsp;&nbsp;&nbsp;float3 positionVS&nbsp;&nbsp; : TEXCOORD0;&nbsp;&nbsp;&nbsp;&nbsp;// View space position.
+&nbsp;&nbsp;&nbsp;&nbsp;float2 texCoord&nbsp;&nbsp;&nbsp;&nbsp; : TEXCOORD1;&nbsp;&nbsp;&nbsp;&nbsp;// Texture coordinate
+&nbsp;&nbsp;&nbsp;&nbsp;float3 tangentVS&nbsp;&nbsp;&nbsp;&nbsp;: TANGENT;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// View space tangent.
+&nbsp;&nbsp;&nbsp;&nbsp;float3 binormalVS&nbsp;&nbsp; : BINORMAL;&nbsp;&nbsp;&nbsp;&nbsp; // View space binormal.
+&nbsp;&nbsp;&nbsp;&nbsp;float3 normalVS&nbsp;&nbsp;&nbsp;&nbsp; : NORMAL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // View space normal.
+&nbsp;&nbsp;&nbsp;&nbsp;float4 position&nbsp;&nbsp;&nbsp;&nbsp; : SV_POSITION;&nbsp;&nbsp;// Clip space position.
+};
 </code></pre>
 		<ul>
 			<li>
@@ -16841,21 +16861,21 @@ vec3 apply_bcs(vec3 color, vec3 bcs) {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> VertexShaderOutput VS_main( AppData IN )
- {
-&nbsp;&nbsp;&nbsp;&nbsp; VertexShaderOutput OUT;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; OUT.position = mul( ModelViewProjection, float4( IN.position, 1.0f ) );
- 
-&nbsp;&nbsp;&nbsp;&nbsp; OUT.positionVS = mul( ModelView, float4( IN.position, 1.0f ) ).xyz;
-&nbsp;&nbsp;&nbsp;&nbsp; OUT.tangentVS = mul( ( float3x3 )ModelView, IN.tangent );
-&nbsp;&nbsp;&nbsp;&nbsp; OUT.binormalVS = mul( ( float3x3 )ModelView, IN.binormal );
-&nbsp;&nbsp;&nbsp;&nbsp; OUT.normalVS = mul( ( float3x3 )ModelView, IN.normal );
- 
-&nbsp;&nbsp;&nbsp;&nbsp; OUT.texCoord = IN.texCoord;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; return OUT;
- }
+<pre><code class="language-glsl" data-lang="glsl">VertexShaderOutput VS_main( AppData IN )
+{
+&nbsp;&nbsp;&nbsp;&nbsp;VertexShaderOutput OUT;
+
+&nbsp;&nbsp;&nbsp;&nbsp;OUT.position = mul( ModelViewProjection, float4( IN.position, 1.0f ) );
+
+&nbsp;&nbsp;&nbsp;&nbsp;OUT.positionVS = mul( ModelView, float4( IN.position, 1.0f ) ).xyz;
+&nbsp;&nbsp;&nbsp;&nbsp;OUT.tangentVS = mul( ( float3x3 )ModelView, IN.tangent );
+&nbsp;&nbsp;&nbsp;&nbsp;OUT.binormalVS = mul( ( float3x3 )ModelView, IN.binormal );
+&nbsp;&nbsp;&nbsp;&nbsp;OUT.normalVS = mul( ( float3x3 )ModelView, IN.normal );
+
+&nbsp;&nbsp;&nbsp;&nbsp;OUT.texCoord = IN.texCoord;
+
+&nbsp;&nbsp;&nbsp;&nbsp;return OUT;
+}
 </code></pre>
 		<ul>
 			<li>
@@ -16885,42 +16905,42 @@ vec3 apply_bcs(vec3 color, vec3 bcs) {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> struct Material
- {
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp;GlobalAmbient;
-&nbsp;&nbsp;&nbsp;&nbsp; //-------------------------- ( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp;AmbientColor;
-&nbsp;&nbsp;&nbsp;&nbsp; //-------------------------- ( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp;EmissiveColor;
-&nbsp;&nbsp;&nbsp;&nbsp; //-------------------------- ( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp;DiffuseColor;
-&nbsp;&nbsp;&nbsp;&nbsp; //-------------------------- ( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp;SpecularColor;
-&nbsp;&nbsp;&nbsp;&nbsp; //-------------------------- ( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; // Reflective value.
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp;Reflectance;
-&nbsp;&nbsp;&nbsp;&nbsp; //-------------------------- ( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp; Opacity;
-&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp; SpecularPower;
-&nbsp;&nbsp;&nbsp;&nbsp; // For transparent materials, IOR &gt; 0.
-&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp; IndexOfRefraction;
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;HasAmbientTexture;
-&nbsp;&nbsp;&nbsp;&nbsp; //-------------------------- ( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;HasEmissiveTexture;
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;HasDiffuseTexture;
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;HasSpecularTexture;
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;HasSpecularPowerTexture;
-&nbsp;&nbsp;&nbsp;&nbsp; //-------------------------- ( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;HasNormalTexture;
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;HasBumpTexture;
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;HasOpacityTexture;
-&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp; BumpIntensity;
-&nbsp;&nbsp;&nbsp;&nbsp; //-------------------------- ( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp; SpecularScale;
-&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp; AlphaThreshold;
-&nbsp;&nbsp;&nbsp;&nbsp; float2&nbsp;&nbsp;Padding;
-&nbsp;&nbsp;&nbsp;&nbsp; //--------------------------- ( 16 bytes )
- };&nbsp;&nbsp;//--------------------------- ( 16 * 10 = 160 bytes )
+<pre><code class="language-glsl" data-lang="glsl">struct Material
+{
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp;GlobalAmbient;
+&nbsp;&nbsp;&nbsp;&nbsp;//-------------------------- ( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp;AmbientColor;
+&nbsp;&nbsp;&nbsp;&nbsp;//-------------------------- ( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp;EmissiveColor;
+&nbsp;&nbsp;&nbsp;&nbsp;//-------------------------- ( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp;DiffuseColor;
+&nbsp;&nbsp;&nbsp;&nbsp;//-------------------------- ( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp;SpecularColor;
+&nbsp;&nbsp;&nbsp;&nbsp;//-------------------------- ( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;// Reflective value.
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp;Reflectance;
+&nbsp;&nbsp;&nbsp;&nbsp;//-------------------------- ( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp; Opacity;
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp; SpecularPower;
+&nbsp;&nbsp;&nbsp;&nbsp;// For transparent materials, IOR &gt; 0.
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp; IndexOfRefraction;
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;HasAmbientTexture;
+&nbsp;&nbsp;&nbsp;&nbsp;//-------------------------- ( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;HasEmissiveTexture;
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;HasDiffuseTexture;
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;HasSpecularTexture;
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;HasSpecularPowerTexture;
+&nbsp;&nbsp;&nbsp;&nbsp;//-------------------------- ( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;HasNormalTexture;
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;HasBumpTexture;
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;HasOpacityTexture;
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp; BumpIntensity;
+&nbsp;&nbsp;&nbsp;&nbsp;//-------------------------- ( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp; SpecularScale;
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp; AlphaThreshold;
+&nbsp;&nbsp;&nbsp;&nbsp;float2&nbsp;&nbsp;Padding;
+&nbsp;&nbsp;&nbsp;&nbsp;//--------------------------- ( 16 bytes )
+};&nbsp;&nbsp;//--------------------------- ( 16 * 10 = 160 bytes )
 </code></pre>
 		<ul>
 			<li>
@@ -17026,19 +17046,19 @@ vec3 apply_bcs(vec3 color, vec3 bcs) {
 		<p>
             The material properties are passed to the pixel shader using a constant buffer.
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> cbuffer Material : register( b2 )
- {
-&nbsp;&nbsp;&nbsp;&nbsp; Material Mat;
- };
+<pre><code class="language-glsl" data-lang="glsl">cbuffer Material : register( b2 )
+{
+&nbsp;&nbsp;&nbsp;&nbsp;Material Mat;
+};
 
- Texture2D AmbientTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: register( t0 );
- Texture2D EmissiveTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : register( t1 );
- Texture2D DiffuseTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: register( t2 );
- Texture2D SpecularTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : register( t3 );
- Texture2D SpecularPowerTexture&nbsp;&nbsp;: register( t4 );
- Texture2D NormalTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : register( t5 );
- Texture2D BumpTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : register( t6 );
- Texture2D OpacityTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: register( t7 );&nbsp;&nbsp;&nbsp;&nbsp;
+Texture2D AmbientTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: register( t0 );
+Texture2D EmissiveTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : register( t1 );
+Texture2D DiffuseTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: register( t2 );
+Texture2D SpecularTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : register( t3 );
+Texture2D SpecularPowerTexture&nbsp;&nbsp;: register( t4 );
+Texture2D NormalTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : register( t5 );
+Texture2D BumpTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : register( t6 );
+Texture2D OpacityTexture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: register( t7 );&nbsp;&nbsp; 
 </code></pre>
 	</li>
 	<li>
@@ -17048,69 +17068,69 @@ vec3 apply_bcs(vec3 color, vec3 bcs) {
 			</strong>
             :
 		</p>
-<pre><code class="language-glsl" data-lang="glsl"> StructuredBuffer&lt;uint&gt; LightIndexList: register(&nbsp;&nbsp;t9 );
- Texture2D&lt;uint2&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LightGrid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register( t10 );
- 
- struct Light
- {
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp; * Position for point and spot lights (World space).
+<pre><code class="language-glsl" data-lang="glsl">StructuredBuffer&lt;uint&gt; LightIndexList: register(&nbsp;&nbsp;t9 );
+Texture2D&lt;uint2&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LightGrid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register( t10 );
+
+struct Light
+{
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp;* Position for point and spot lights (World space).
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp; PositionWS;
+&nbsp;&nbsp;&nbsp;&nbsp;//--------------------------------------------------------------( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp;* Direction for spot and directional lights (World space).
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp; DirectionWS;
+&nbsp;&nbsp;&nbsp;&nbsp;//--------------------------------------------------------------( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp;* Position for point and spot lights (View space).
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp; PositionVS;
+&nbsp;&nbsp;&nbsp;&nbsp;//--------------------------------------------------------------( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp;* Direction for spot and directional lights (View space).
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp; DirectionVS;
+&nbsp;&nbsp;&nbsp;&nbsp;//--------------------------------------------------------------( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp;* Color of the light. Diffuse and specular colors are not separated.
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;float4&nbsp;&nbsp; Color;
+&nbsp;&nbsp;&nbsp;&nbsp;//--------------------------------------------------------------( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp;* The half angle of the spotlight cone.
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp;&nbsp;&nbsp;SpotlightAngle;
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp;* The range of the light.
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp;&nbsp;&nbsp;Range;
+
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp; * The intensity of the light.
 &nbsp;&nbsp;&nbsp;&nbsp; */
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp; PositionWS;
-&nbsp;&nbsp;&nbsp;&nbsp; //--------------------------------------------------------------( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp; * Direction for spot and directional lights (World space).
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp;&nbsp;&nbsp;Intensity;
+
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp;* Disable or enable the light.
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;Enabled;
+&nbsp;&nbsp;&nbsp;&nbsp;//--------------------------------------------------------------( 16 bytes )
+
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp; * Is the light selected in the editor?
 &nbsp;&nbsp;&nbsp;&nbsp; */
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp; DirectionWS;
-&nbsp;&nbsp;&nbsp;&nbsp; //--------------------------------------------------------------( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp; * Position for point and spot lights (View space).
-&nbsp;&nbsp;&nbsp;&nbsp; */
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp; PositionVS;
-&nbsp;&nbsp;&nbsp;&nbsp; //--------------------------------------------------------------( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp; * Direction for spot and directional lights (View space).
-&nbsp;&nbsp;&nbsp;&nbsp; */
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp; DirectionVS;
-&nbsp;&nbsp;&nbsp;&nbsp; //--------------------------------------------------------------( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp; * Color of the light. Diffuse and specular colors are not separated.
-&nbsp;&nbsp;&nbsp;&nbsp; */
-&nbsp;&nbsp;&nbsp;&nbsp; float4&nbsp;&nbsp; Color;
-&nbsp;&nbsp;&nbsp;&nbsp; //--------------------------------------------------------------( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp; * The half angle of the spotlight cone.
-&nbsp;&nbsp;&nbsp;&nbsp; */
-&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp;&nbsp;&nbsp;SpotlightAngle;
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp; * The range of the light.
-&nbsp;&nbsp;&nbsp;&nbsp; */
-&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp;&nbsp;&nbsp;Range;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* The intensity of the light.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
-&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp;&nbsp;&nbsp;Intensity;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp; * Disable or enable the light.
-&nbsp;&nbsp;&nbsp;&nbsp; */
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;Enabled;
-&nbsp;&nbsp;&nbsp;&nbsp; //--------------------------------------------------------------( 16 bytes )
- 
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Is the light selected in the editor?
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
-&nbsp;&nbsp;&nbsp;&nbsp; bool&nbsp;&nbsp;&nbsp;&nbsp;Selected;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; /**
-&nbsp;&nbsp;&nbsp;&nbsp; * The type of the light.
-&nbsp;&nbsp;&nbsp;&nbsp; */
-&nbsp;&nbsp;&nbsp;&nbsp; uint&nbsp;&nbsp;&nbsp;&nbsp;Type;
-&nbsp;&nbsp;&nbsp;&nbsp; float2&nbsp;&nbsp;Padding;
-&nbsp;&nbsp;&nbsp;&nbsp; //--------------------------------------------------------------( 16 bytes )
-&nbsp;&nbsp;&nbsp;&nbsp; //--------------------------------------------------------------( 16 * 7 = 112 bytes )
- };
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;Selected;
+
+&nbsp;&nbsp;&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;&nbsp;* The type of the light.
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;uint&nbsp;&nbsp;&nbsp;&nbsp;Type;
+&nbsp;&nbsp;&nbsp;&nbsp;float2&nbsp;&nbsp;Padding;
+&nbsp;&nbsp;&nbsp;&nbsp;//--------------------------------------------------------------( 16 bytes )
+&nbsp;&nbsp;&nbsp;&nbsp;//--------------------------------------------------------------( 16 * 7 = 112 bytes )
+};
 </code></pre>
 		<ul>
 			<li>
@@ -17188,9 +17208,9 @@ vec3 apply_bcs(vec3 color, vec3 bcs) {
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-glsl" data-lang="glsl"> #define POINT_LIGHT 0
- #define SPOT_LIGHT 1
- #define DIRECTIONAL_LIGHT 2
+<pre><code class="language-glsl" data-lang="glsl">#define POINT_LIGHT 0
+#define SPOT_LIGHT 1
+#define DIRECTIONAL_LIGHT 2
 </code></pre>
 			</li>
 			<li>
@@ -17226,7 +17246,7 @@ vec3 apply_bcs(vec3 color, vec3 bcs) {
 					</strong>
                     . Most lighting shader implementations will use a constant buffer to store the lights array but constant buffers are limited to 64 KB in size which means that it would be limited to about 570 lights before running out of constant memory on the GPU. Structured buffers are stored in texture memory which is limited to the amount of texture memory available on the GPU (usually in the GB range on desktop GPUs). Texture memory is also very fast on most GPUs so storing the lights in a structured buffer did not impose a performance impact. In fact, on my particular GPU (NVIDIA GeForce GTX 680) I noticed a considerable performance improvement when I moved the lights array to a structure buffer.
 				</p>
-<pre><code class="language-glsl" data-lang="glsl"> StructuredBuffer&lt;Light&gt; Lights : register( t8 );
+<pre><code class="language-glsl" data-lang="glsl">StructuredBuffer&lt;Light&gt; Lights : register( t8 );
 </code></pre>
 			</li>
 		</ul>
@@ -18906,29 +18926,29 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> #define MAX_LIGHT_COUNT 16 // max number of lights per froxel
- 
- uniform uvec4 froxels; // res x, res y, count y, count y
- uniform vec4 zParams;&nbsp;&nbsp;// c0, c1, index scale, index bias
- 
- uint getDepthSlice() {
-&nbsp;&nbsp;&nbsp;&nbsp; return uint(max(0.0, log2(zParams.x * gl_FragCoord.z + zParams.y) *
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zParams.z + zParams.w));
- }
- 
- uint getFroxelOffset(uint depthSlice) {
-&nbsp;&nbsp;&nbsp;&nbsp; uvec2 froxelCoord = uvec2(gl_FragCoord.xy) / froxels.xy;
-&nbsp;&nbsp;&nbsp;&nbsp; froxelCoord.y = (froxels.w - 1u) - froxelCoord.y;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; uint index = froxelCoord.x + froxelCoord.y * froxels.z +
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; depthSlice * froxels.z * froxels.w;
-&nbsp;&nbsp;&nbsp;&nbsp; return index * MAX_FROXEL_LIGHT_COUNT;
- }
- 
- uint slice = getDepthSlice();
- uint offset = getFroxelOffset(slice);
- 
- // Compute lighting...
+<pre><code class="language-glsl" data-lang="glsl">#define MAX_LIGHT_COUNT 16 // max number of lights per froxel
+
+uniform uvec4 froxels; // res x, res y, count y, count y
+uniform vec4 zParams;&nbsp;&nbsp;// c0, c1, index scale, index bias
+
+uint getDepthSlice() {
+&nbsp;&nbsp;&nbsp;&nbsp;return uint(max(0.0, log2(zParams.x * gl_FragCoord.z + zParams.y) *
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zParams.z + zParams.w));
+}
+
+uint getFroxelOffset(uint depthSlice) {
+&nbsp;&nbsp;&nbsp;&nbsp;uvec2 froxelCoord = uvec2(gl_FragCoord.xy) / froxels.xy;
+&nbsp;&nbsp;&nbsp;&nbsp;froxelCoord.y = (froxels.w - 1u) - froxelCoord.y;
+
+&nbsp;&nbsp;&nbsp;&nbsp;uint index = froxelCoord.x + froxelCoord.y * froxels.z +
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;depthSlice * froxels.z * froxels.w;
+&nbsp;&nbsp;&nbsp;&nbsp;return index * MAX_FROXEL_LIGHT_COUNT;
+}
+
+uint slice = getDepthSlice();
+uint offset = getFroxelOffset(slice);
+
+// Compute lighting...
 </code></pre>
 		<ul>
 			<li>
@@ -18937,15 +18957,15 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> froxels[0] = TILE_RESOLUTION_IN_PX;
- froxels[1] = TILE_RESOLUTION_IN_PX;
- froxels[2] = numberOfTilesInX;
- froxels[3] = numberOfTilesInY;
- 
- zParams[0] = 1.0f - Z_FAR / Z_NEAR;
- zParams[1] = Z_FAR / Z_NEAR;
- zParams[2] = (MAX_DEPTH_SLICES - 1) / log2(Z_SPECIAL_NEAR / Z_FAR);
- zParams[3] = MAX_DEPTH_SLICES;
+<pre><code class="language-glsl" data-lang="glsl">froxels[0] = TILE_RESOLUTION_IN_PX;
+froxels[1] = TILE_RESOLUTION_IN_PX;
+froxels[2] = numberOfTilesInX;
+froxels[3] = numberOfTilesInY;
+
+zParams[0] = 1.0f - Z_FAR / Z_NEAR;
+zParams[1] = Z_FAR / Z_NEAR;
+zParams[2] = (MAX_DEPTH_SLICES - 1) / log2(Z_SPECIAL_NEAR / Z_FAR);
+zParams[3] = MAX_DEPTH_SLICES;
 </code></pre>
 	</li>
 	<li>
@@ -19884,112 +19904,112 @@ bool testSphereAABB(uint light, uint tile){
 								</ul>
 							</li>
 						</ul>
-<pre><code class="language-glsl" data-lang="glsl"> #version 310 es
- 
- precision highp float;
- precision highp int;
- 
- 
- #define FROXEL_RESOLUTION 80u
- 
- layout(local_size_x = 1, local_size_y = 1, local_size_z = 1) in;
- 
- layout(location = 0) uniform mat4 projectionMatrix;
- layout(location = 1) uniform mat4 projectionInverseMatrix;
- layout(location = 2) uniform vec4 depthParams; // index scale, index bias, near, far
- layout(location = 3) uniform float clipSpaceSize;
- 
- struct Froxel {
-&nbsp;&nbsp;&nbsp;&nbsp; // NOTE: the planes should be stored in vec4[4] but the
-&nbsp;&nbsp;&nbsp;&nbsp; // Adreno shader compiler has a bug that causes the data
-&nbsp;&nbsp;&nbsp;&nbsp; // to not be read properly inside the loop
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 plane0;
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 plane1;
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 plane2;
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 plane3;
-&nbsp;&nbsp;&nbsp;&nbsp; vec2 minMaxZ;
- };
- 
- layout(binding = 0, std140) writeonly restrict buffer FroxelBuffer {
-&nbsp;&nbsp;&nbsp;&nbsp; Froxel data[];
- } froxels;
- 
- shared vec4 corners[4];
- shared vec2 minMaxZ;
- 
- vec4 projectionToView(vec4 p) {
-&nbsp;&nbsp;&nbsp;&nbsp; p = projectionInverseMatrix * p;
-&nbsp;&nbsp;&nbsp;&nbsp; return p / p.w;
- }
- 
- vec4 createPlane(vec4 b, vec4 c) {
-&nbsp;&nbsp;&nbsp;&nbsp; // standard plane equation, with a at (0, 0, 0)
-&nbsp;&nbsp;&nbsp;&nbsp; return vec4(normalize(cross(c.xyz, b.xyz)), 1.0);
- }
- 
- void main() {
-&nbsp;&nbsp;&nbsp;&nbsp; uint index = gl_WorkGroupID.x + gl_WorkGroupID.y * gl_NumWorkGroups.x +
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gl_WorkGroupID.z * gl_NumWorkGroups.x * gl_NumWorkGroups.y;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; if (gl_LocalInvocationIndex == 0u) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // first tile the screen and build the frustum for the current tile
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vec2 renderTargetSize = vec2(FROXEL_RESOLUTION * gl_NumWorkGroups.xy);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vec2 frustumMin = vec2(FROXEL_RESOLUTION * gl_WorkGroupID.xy);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vec2 frustumMax = vec2(FROXEL_RESOLUTION * (gl_WorkGroupID.xy + 1u));
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; corners[0] = vec4(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frustumMin.x / renderTargetSize.x * clipSpaceSize - 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (renderTargetSize.y - frustumMin.y) / renderTargetSize.y
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * clipSpaceSize - 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; corners[1] = vec4(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frustumMax.x / renderTargetSize.x * clipSpaceSize - 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (renderTargetSize.y - frustumMin.y) / renderTargetSize.y
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * clipSpaceSize - 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; corners[2] = vec4(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frustumMax.x / renderTargetSize.x * clipSpaceSize - 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (renderTargetSize.y - frustumMax.y) / renderTargetSize.y
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * clipSpaceSize - 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; corners[3] = vec4(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frustumMin.x / renderTargetSize.x * clipSpaceSize - 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (renderTargetSize.y - frustumMax.y) / renderTargetSize.y
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * clipSpaceSize - 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint froxelSlice = gl_WorkGroupID.z;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minMaxZ = vec2(0.0, 0.0);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (froxelSlice &gt; 0u) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minMaxZ.x = exp2((float(froxelSlice) - depthParams.y) * depthParams.x)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * depthParams.w;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minMaxZ.y = exp2((float(froxelSlice + 1u) - depthParams.y) * depthParams.x)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * depthParams.w;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; if (gl_LocalInvocationIndex == 0u) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vec4 frustum[4];
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frustum[0] = projectionToView(corners[0]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frustum[1] = projectionToView(corners[1]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frustum[2] = projectionToView(corners[2]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frustum[3] = projectionToView(corners[3]);
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; froxels.data[index].plane0 = createPlane(frustum[0], frustum[1]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; froxels.data[index].plane1 = createPlane(frustum[1], frustum[2]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; froxels.data[index].plane2 = createPlane(frustum[2], frustum[3]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; froxels.data[index].plane3 = createPlane(frustum[3], frustum[0]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; froxels.data[index].minMaxZ = minMaxZ;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-glsl" data-lang="glsl">#version 310 es
+
+precision highp float;
+precision highp int;
+
+
+#define FROXEL_RESOLUTION 80u
+
+layout(local_size_x = 1, local_size_y = 1, local_size_z = 1) in;
+
+layout(location = 0) uniform mat4 projectionMatrix;
+layout(location = 1) uniform mat4 projectionInverseMatrix;
+layout(location = 2) uniform vec4 depthParams; // index scale, index bias, near, far
+layout(location = 3) uniform float clipSpaceSize;
+
+struct Froxel {
+&nbsp;&nbsp;&nbsp;&nbsp;// NOTE: the planes should be stored in vec4[4] but the
+&nbsp;&nbsp;&nbsp;&nbsp;// Adreno shader compiler has a bug that causes the data
+&nbsp;&nbsp;&nbsp;&nbsp;// to not be read properly inside the loop
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 plane0;
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 plane1;
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 plane2;
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 plane3;
+&nbsp;&nbsp;&nbsp;&nbsp;vec2 minMaxZ;
+};
+
+layout(binding = 0, std140) writeonly restrict buffer FroxelBuffer {
+&nbsp;&nbsp;&nbsp;&nbsp;Froxel data[];
+} froxels;
+
+shared vec4 corners[4];
+shared vec2 minMaxZ;
+
+vec4 projectionToView(vec4 p) {
+&nbsp;&nbsp;&nbsp;&nbsp;p = projectionInverseMatrix * p;
+&nbsp;&nbsp;&nbsp;&nbsp;return p / p.w;
+}
+
+vec4 createPlane(vec4 b, vec4 c) {
+&nbsp;&nbsp;&nbsp;&nbsp;// standard plane equation, with a at (0, 0, 0)
+&nbsp;&nbsp;&nbsp;&nbsp;return vec4(normalize(cross(c.xyz, b.xyz)), 1.0);
+}
+
+void main() {
+&nbsp;&nbsp;&nbsp;&nbsp;uint index = gl_WorkGroupID.x + gl_WorkGroupID.y * gl_NumWorkGroups.x +
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gl_WorkGroupID.z * gl_NumWorkGroups.x * gl_NumWorkGroups.y;
+
+&nbsp;&nbsp;&nbsp;&nbsp;if (gl_LocalInvocationIndex == 0u) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// first tile the screen and build the frustum for the current tile
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec2 renderTargetSize = vec2(FROXEL_RESOLUTION * gl_NumWorkGroups.xy);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec2 frustumMin = vec2(FROXEL_RESOLUTION * gl_WorkGroupID.xy);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec2 frustumMax = vec2(FROXEL_RESOLUTION * (gl_WorkGroupID.xy + 1u));
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;corners[0] = vec4(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frustumMin.x / renderTargetSize.x * clipSpaceSize - 1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(renderTargetSize.y - frustumMin.y) / renderTargetSize.y
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* clipSpaceSize - 1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;corners[1] = vec4(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frustumMax.x / renderTargetSize.x * clipSpaceSize - 1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(renderTargetSize.y - frustumMin.y) / renderTargetSize.y
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* clipSpaceSize - 1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;corners[2] = vec4(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frustumMax.x / renderTargetSize.x * clipSpaceSize - 1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(renderTargetSize.y - frustumMax.y) / renderTargetSize.y
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* clipSpaceSize - 1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;corners[3] = vec4(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frustumMin.x / renderTargetSize.x * clipSpaceSize - 1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(renderTargetSize.y - frustumMax.y) / renderTargetSize.y
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* clipSpaceSize - 1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint froxelSlice = gl_WorkGroupID.z;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minMaxZ = vec2(0.0, 0.0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (froxelSlice &gt; 0u) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minMaxZ.x = exp2((float(froxelSlice) - depthParams.y) * depthParams.x)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* depthParams.w;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minMaxZ.y = exp2((float(froxelSlice + 1u) - depthParams.y) * depthParams.x)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* depthParams.w;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;if (gl_LocalInvocationIndex == 0u) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec4 frustum[4];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frustum[0] = projectionToView(corners[0]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frustum[1] = projectionToView(corners[1]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frustum[2] = projectionToView(corners[2]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frustum[3] = projectionToView(corners[3]);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;froxels.data[index].plane0 = createPlane(frustum[0], frustum[1]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;froxels.data[index].plane1 = createPlane(frustum[1], frustum[2]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;froxels.data[index].plane2 = createPlane(frustum[2], frustum[3]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;froxels.data[index].plane3 = createPlane(frustum[3], frustum[0]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;froxels.data[index].minMaxZ = minMaxZ;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 						<ul>
 							<li>
@@ -20048,131 +20068,131 @@ bool testSphereAABB(uint light, uint tile){
 								</ul>
 							</li>
 						</ul>
-<pre><code class="language-glsl" data-lang="glsl"> #version 310 es
- precision highp float;
- precision highp int;
- 
- #define LIGHT_BUFFER_SENTINEL 0x7fffffffu
- #define MAX_FROXEL_LIGHT_COUNT 32u
- 
- #define THREADS_PER_FROXEL_X 8u
- #define THREADS_PER_FROXEL_Y 8u
- #define THREADS_PER_FROXEL_Z 1u
- #define THREADS_PER_FROXEL (THREADS_PER_FROXEL_X * \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THREADS_PER_FROXEL_Y * THREADS_PER_FROXEL_Z)
- 
- layout(local_size_x = THREADS_PER_FROXEL_X,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;local_size_y = THREADS_PER_FROXEL_Y,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;local_size_z = THREADS_PER_FROXEL_Z) in;
- 
- // x = point lights, y = spot lights
- layout(location = 0) uniform uvec2 totalLightCount;
- layout(location = 1) uniform mat4 viewMatrix;
- 
- layout(binding = 0, packed) writeonly restrict buffer LightIndexBuffer {
-&nbsp;&nbsp;&nbsp;&nbsp; uint index[];
- } lightIndexBuffer;
- 
- struct PointLight {
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 positionFalloff; // x, y, z, falloff
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 colorIntensity;&nbsp;&nbsp;// r, g, b, intensity
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 directionIES;&nbsp;&nbsp;&nbsp;&nbsp;// dir x, dir y, dir z, IES profile index
- };
- 
- layout(binding = 1, std140) readonly restrict buffer PointLightBuffer {
-&nbsp;&nbsp;&nbsp;&nbsp; PointLight lights[];
- } pointLights;
- 
- struct SpotLight {
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 positionFalloff; // x, y, z, falloff
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 colorIntensity;&nbsp;&nbsp;// r, g, b, intensity
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 directionIES;&nbsp;&nbsp;&nbsp;&nbsp;// dir x, dir y, dir z, IES profile index
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 angle;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // angle scale, angle offset, unused, unused
- };
- 
- layout(binding = 2, std140) readonly restrict buffer SpotLightBuffer {
-&nbsp;&nbsp;&nbsp;&nbsp; SpotLight lights[];
- } spotLights;
- 
- struct Froxel {
-&nbsp;&nbsp;&nbsp;&nbsp; // NOTE: the planes should be stored in vec4[4] but the
-&nbsp;&nbsp;&nbsp;&nbsp; // Adreno shader compiler has a bug that causes the data
-&nbsp;&nbsp;&nbsp;&nbsp; // to not be read properly inside the loop
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 plane0;
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 plane1;
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 plane2;
-&nbsp;&nbsp;&nbsp;&nbsp; vec4 plane3;
-&nbsp;&nbsp;&nbsp;&nbsp; vec2 minMaxZ;
- };
- 
- layout(binding = 3, std140) readonly restrict buffer FroxelBuffer {
-&nbsp;&nbsp;&nbsp;&nbsp; Froxel data[];
- } froxels;
- 
- shared uint groupLightCounter;
- shared uint groupLightIndexBuffer[MAX_FROXEL_LIGHT_COUNT];
- 
- float signedDistanceFromPlane(vec4 p, vec4 plane) {
-&nbsp;&nbsp;&nbsp;&nbsp; // plane.w == 0.0, simplify computation
-&nbsp;&nbsp;&nbsp;&nbsp; return dot(plane.xyz, p.xyz);
- }
- 
- void synchronize() {
-&nbsp;&nbsp;&nbsp;&nbsp; memoryBarrierShared();
-&nbsp;&nbsp;&nbsp;&nbsp; barrier();
- }
- 
- void main() {
-&nbsp;&nbsp;&nbsp;&nbsp; if (gl_LocalInvocationIndex == 0u) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; groupLightCounter = 0u;
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; memoryBarrierShared();
- 
-&nbsp;&nbsp;&nbsp;&nbsp; uint froxelIndex = gl_WorkGroupID.x + gl_WorkGroupID.y * gl_NumWorkGroups.x +
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gl_WorkGroupID.z * gl_NumWorkGroups.x * gl_NumWorkGroups.y;
-&nbsp;&nbsp;&nbsp;&nbsp; Froxel current = froxels.data[froxelIndex];
- 
-&nbsp;&nbsp;&nbsp;&nbsp; uint offset = gl_LocalInvocationID.x +
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gl_LocalInvocationID.y * THREADS_PER_FROXEL_X;
-&nbsp;&nbsp;&nbsp;&nbsp; for (uint i = 0u; i &lt; totalLightCount.x &&
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; groupLightCounter &lt; MAX_FROXEL_LIGHT_COUNT &&
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; offset + i &lt; totalLightCount.x; i += THREADS_PER_FROXEL) {
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint currentLight = offset + i;
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vec4 center = pointLights.lights[currentLight].positionFalloff;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; center.xyz = (viewMatrix * vec4(center.xyz, 1.0)).xyz;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float r = inversesqrt(center.w);
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (-center.z + r &gt; current.minMaxZ.x &&
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -center.z - r &lt;= current.minMaxZ.y) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (signedDistanceFromPlane(center, current.plane0) &lt; r &&
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signedDistanceFromPlane(center, current.plane1) &lt; r &&
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signedDistanceFromPlane(center, current.plane2) &lt; r &&
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signedDistanceFromPlane(center, current.plane3) &lt; r) {
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint index = atomicAdd(groupLightCounter, 1u);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; groupLightIndexBuffer[index] = currentLight;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; synchronize();
- 
-&nbsp;&nbsp;&nbsp;&nbsp; uint pointLightCount = groupLightCounter;
-&nbsp;&nbsp;&nbsp;&nbsp; offset = froxelIndex * MAX_FROXEL_LIGHT_COUNT;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; for (uint i = gl_LocalInvocationIndex; i &lt; pointLightCount;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += THREADS_PER_FROXEL) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lightIndexBuffer.index[offset + i] = groupLightIndexBuffer[i];
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; if (gl_LocalInvocationIndex == 0u) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (pointLightCount &lt; MAX_FROXEL_LIGHT_COUNT) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lightIndexBuffer.index[offset + pointLightCount] = LIGHT_BUFFER_SENTINEL;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-glsl" data-lang="glsl">#version 310 es
+precision highp float;
+precision highp int;
+
+#define LIGHT_BUFFER_SENTINEL 0x7fffffffu
+#define MAX_FROXEL_LIGHT_COUNT 32u
+
+#define THREADS_PER_FROXEL_X 8u
+#define THREADS_PER_FROXEL_Y 8u
+#define THREADS_PER_FROXEL_Z 1u
+#define THREADS_PER_FROXEL (THREADS_PER_FROXEL_X * \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;THREADS_PER_FROXEL_Y * THREADS_PER_FROXEL_Z)
+
+layout(local_size_x = THREADS_PER_FROXEL_X,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; local_size_y = THREADS_PER_FROXEL_Y,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; local_size_z = THREADS_PER_FROXEL_Z) in;
+
+// x = point lights, y = spot lights
+layout(location = 0) uniform uvec2 totalLightCount;
+layout(location = 1) uniform mat4 viewMatrix;
+
+layout(binding = 0, packed) writeonly restrict buffer LightIndexBuffer {
+&nbsp;&nbsp;&nbsp;&nbsp;uint index[];
+} lightIndexBuffer;
+
+struct PointLight {
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 positionFalloff; // x, y, z, falloff
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 colorIntensity;&nbsp;&nbsp;// r, g, b, intensity
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 directionIES;&nbsp;&nbsp;&nbsp;&nbsp;// dir x, dir y, dir z, IES profile index
+};
+
+layout(binding = 1, std140) readonly restrict buffer PointLightBuffer {
+&nbsp;&nbsp;&nbsp;&nbsp;PointLight lights[];
+} pointLights;
+
+struct SpotLight {
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 positionFalloff; // x, y, z, falloff
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 colorIntensity;&nbsp;&nbsp;// r, g, b, intensity
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 directionIES;&nbsp;&nbsp;&nbsp;&nbsp;// dir x, dir y, dir z, IES profile index
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 angle;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // angle scale, angle offset, unused, unused
+};
+
+layout(binding = 2, std140) readonly restrict buffer SpotLightBuffer {
+&nbsp;&nbsp;&nbsp;&nbsp;SpotLight lights[];
+} spotLights;
+
+struct Froxel {
+&nbsp;&nbsp;&nbsp;&nbsp;// NOTE: the planes should be stored in vec4[4] but the
+&nbsp;&nbsp;&nbsp;&nbsp;// Adreno shader compiler has a bug that causes the data
+&nbsp;&nbsp;&nbsp;&nbsp;// to not be read properly inside the loop
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 plane0;
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 plane1;
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 plane2;
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 plane3;
+&nbsp;&nbsp;&nbsp;&nbsp;vec2 minMaxZ;
+};
+
+layout(binding = 3, std140) readonly restrict buffer FroxelBuffer {
+&nbsp;&nbsp;&nbsp;&nbsp;Froxel data[];
+} froxels;
+
+shared uint groupLightCounter;
+shared uint groupLightIndexBuffer[MAX_FROXEL_LIGHT_COUNT];
+
+float signedDistanceFromPlane(vec4 p, vec4 plane) {
+&nbsp;&nbsp;&nbsp;&nbsp;// plane.w == 0.0, simplify computation
+&nbsp;&nbsp;&nbsp;&nbsp;return dot(plane.xyz, p.xyz);
+}
+
+void synchronize() {
+&nbsp;&nbsp;&nbsp;&nbsp;memoryBarrierShared();
+&nbsp;&nbsp;&nbsp;&nbsp;barrier();
+}
+
+void main() {
+&nbsp;&nbsp;&nbsp;&nbsp;if (gl_LocalInvocationIndex == 0u) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupLightCounter = 0u;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;memoryBarrierShared();
+
+&nbsp;&nbsp;&nbsp;&nbsp;uint froxelIndex = gl_WorkGroupID.x + gl_WorkGroupID.y * gl_NumWorkGroups.x +
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gl_WorkGroupID.z * gl_NumWorkGroups.x * gl_NumWorkGroups.y;
+&nbsp;&nbsp;&nbsp;&nbsp;Froxel current = froxels.data[froxelIndex];
+
+&nbsp;&nbsp;&nbsp;&nbsp;uint offset = gl_LocalInvocationID.x +
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gl_LocalInvocationID.y * THREADS_PER_FROXEL_X;
+&nbsp;&nbsp;&nbsp;&nbsp;for (uint i = 0u; i &lt; totalLightCount.x &&
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupLightCounter &lt; MAX_FROXEL_LIGHT_COUNT &&
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offset + i &lt; totalLightCount.x; i += THREADS_PER_FROXEL) {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint currentLight = offset + i;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vec4 center = pointLights.lights[currentLight].positionFalloff;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;center.xyz = (viewMatrix * vec4(center.xyz, 1.0)).xyz;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float r = inversesqrt(center.w);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (-center.z + r &gt; current.minMaxZ.x &&
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-center.z - r &lt;= current.minMaxZ.y) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (signedDistanceFromPlane(center, current.plane0) &lt; r &&
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signedDistanceFromPlane(center, current.plane1) &lt; r &&
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signedDistanceFromPlane(center, current.plane2) &lt; r &&
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signedDistanceFromPlane(center, current.plane3) &lt; r) {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint index = atomicAdd(groupLightCounter, 1u);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupLightIndexBuffer[index] = currentLight;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;synchronize();
+
+&nbsp;&nbsp;&nbsp;&nbsp;uint pointLightCount = groupLightCounter;
+&nbsp;&nbsp;&nbsp;&nbsp;offset = froxelIndex * MAX_FROXEL_LIGHT_COUNT;
+
+&nbsp;&nbsp;&nbsp;&nbsp;for (uint i = gl_LocalInvocationIndex; i &lt; pointLightCount;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i += THREADS_PER_FROXEL) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lightIndexBuffer.index[offset + i] = groupLightIndexBuffer[i];
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;if (gl_LocalInvocationIndex == 0u) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (pointLightCount &lt; MAX_FROXEL_LIGHT_COUNT) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lightIndexBuffer.index[offset + pointLightCount] = LIGHT_BUFFER_SENTINEL;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 					</li>
 				</ul>
@@ -22376,10 +22396,10 @@ bool testSphereAABB(uint light, uint tile){
 	id="optimization-techniques" >
     Optimization Techniques
 </h2>
-<h5
+<h3
 	id="shader-branching" >
     Shader Branching
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -22405,17 +22425,181 @@ bool testSphereAABB(uint light, uint tile){
 		</p>
 	</li>
 </ul>
+<h3
+	id="azdo-approach-zero-driver-overhead" >
+    AZDO (Approach Zero Driver Overhead)
+</h3>
 <h5
-	id="gpu-driven-rendering" >
-    GPU Driven Rendering
+	id="motivation" >
+    Motivation
 </h5>
 <ul>
 	<li>
 		<p>
-			<strong>
-                High-level overview
-			</strong>
-            :
+            GPUs have orders of magnitude higher performance than CPU on data-parallel algorithms. Rendering is almost all data parallel algorithms.
+		</p>
+	</li>
+	<li>
+		<p>
+            With the GPU deciding its own work, latencies are minimized as there is no roundtrip from CPU to GPU and back.
+		</p>
+	</li>
+	<li>
+		<p>
+            Frees up the CPU from a lot of work which can now be used on other things.
+		</p>
+	</li>
+	<li>
+		<p>
+            Repeated small 
+            <code>vkCmdBindVertexBuffers</code>
+            /
+            <code>vkCmdBindIndexBuffer</code>
+            &nbsp;and 
+            <code>vkCmdDrawIndexed</code>
+            &nbsp;calls force the driver to record many small draw commands (and possibly do relocations or check memory), which is expensive.
+		</p>
+	</li>
+	<li>
+		<p>
+            Many small state changes cause the driver to update internal tables, validate, or patch commands — that’s CPU work and cannot be avoided without batching.
+		</p>
+	</li>
+	<li>
+		<p>
+            Different drivers / GPUs behave differently. Some drivers do more CPU work per bind/draw and will be worse in this pattern.
+		</p>
+	</li>
+	<li>
+		<p>
+            Query commands from a GPU buffer. This has two significant advantages:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Draw calls can be generated from the GPU (such as in a &quot;compute shader&quot;), and
+				</p>
+			</li>
+			<li>
+				<p>
+                    An array of draw calls can be called at once, reducing command buffer overhead
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="optimizations" >
+    Optimizations
+</h5>
+<ul>
+	<li>
+		<p>
+            Batch 
+            <code>vkCmdDrawIndexed</code>
+            : Multi-draw Indirect.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>vkCmdDrawIndexedIndirect</code>
+                    &nbsp;/ multi-draw indirect to let GPU consume a small indirect buffer with many draws in one driver call.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Avoid binding vertex/index buffer per draw — bind the quad vertex/index buffer once and supply per-instance data via instance attributes or an SSBO.
+				</p>
+			</li>
+			<li>
+				<p>
+                    See 
+                    <a href="/studies/Graphics Programming/Vulkan/Vulkan.html#drawing-commands">
+                    Vulkan.md#Drawing Commands
+                    </a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Batch 
+            <code>vkCmdPushConstants</code>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    (2025-12-01) From 5 push calls taking 7.65us, to now 1 push call taking 3.08us.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Batch 
+            <code>vkCmdBindDescriptorSets</code>
+            : using Bindless.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Bindless Textures.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Bindless / descriptor indexing (
+                    <code>VK_EXT_descriptor_indexing</code>
+                    &nbsp;/ descriptor arrays with update-after-bind) so you can bind a single descriptor set containing all textures and index into it in the shader using the per-instance texture index. This removes the per-draw 
+                    <code>vkCmdBindDescriptorSets</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Binding a descriptor set per draw is heavy if each set references different image samplers; the driver must ensure the GPU has correct descriptors ready (or patch them).
+				</p>
+			</li>
+			<li>
+				<p>
+                    See 
+                    <a href="/studies/Graphics Programming/Vulkan/Vulkan.html#descriptor-sets">
+                    Vulkan.md#Descriptor Sets
+                    </a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Batch textures: Texture Atlas.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Pack multiple textures into atlases or a texture array and index into them.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Pre-record commands.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Useful if CPU-bound.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            GPU Culling:
 		</p>
 		<ul>
 			<li>
@@ -22426,56 +22610,444 @@ bool testSphereAABB(uint light, uint tile){
 			</li>
 			<li>
 				<p>
-                    In the real world all culling passes would be a single pass, for performance reasons.
+                    All culling passes would be a single pass, for performance reasons.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h6
+	id="etc" >
+    Etc
+</h6>
+<ul>
+	<li>
+		<p
+			class="line-emphasis" >
+            Once we have a renderer where everything is stored in big GPU buffers, and we don’t use PushConstants or descriptor sets per object, we are ready to go with a GPU-driven-renderer.
+		</p>
+	</li>
+	<li>
+		<p>
+            Because it takes its parameters from a buffer, it is possible to use compute shaders to write into these buffers and do culling or LOD selection in compute shaders. Doing culling this way is one of the simplest and most performant ways of doing culling. Due to the power of the GPU you can easily expect to cull more than a million objects in less than half a millisecond. Normal scenes don’t tend to go as far. In more advanced pipelines like the one in Dragon Age or Rainbow Six, they go one step further and also cull individual triangles from the meshes. They do that by writing an output Index Buffer with the surviving triangles and using indirect to draw that.
+		</p>
+	</li>
+	<li>
+		<p>
+            Store the matrices for all loaded objects into a big SSBO. In GPU driven pipelines, we also want to store more data, such as material ID and cull bounds.
+		</p>
+	</li>
+	<li>
+		<p>
+            GPU driven pipelines work best when the amount of binds is as limited as possible. Best case scenario is to do a extremely minimal amount of BindVertexBuffer, BindIndexBuffer, BindPipeline, and BindDescriptorSet calls.
+		</p>
+	</li>
+	<li>
+		<p>
+            The less drawcalls you use to render your scene, the better, as modern GPUs are really big and have a big ramp up/ramp down time. Big modern GPUs love when you give them massive amounts of work on each drawcall, as that way they can ramp up to 100% usage.
+		</p>
+	</li>
+	<li>
+		<p>
+            The new Unreal 5 engine relies heavily on compute shaders for software rasterization.
+		</p>
+	</li>
+	<li>
+		<p>
+            The first thing is to go all in on object data in GPU buffers. Per-object PushConstants are removed, per-object dynamic uniform buffers are removed, and everything is replaced by ObjectBuffer where we store the object matrix and we index into it from the shader.
+		</p>
+	</li>
+	<li>
+		<p>
+            A Batch is a set of objects that matches material and mesh. Each batch will be rendered with one DrawIndirect call that does instanced drawing. Each mesh pass (forward pass, shadow pass, others) contains an array of batches which it will use for rendering.
+		</p>
+	</li>
+	<li>
+		<p>
+            When starting the frame, we sync the objects that are on each mesh pass into a buffer. This buffer will be an array of ObjectID + BatchID. The BatchID maps directly as an index into the batch array of the mesh-pass.
+		</p>
+	</li>
+	<li>
+		<p>
+            Once we have that buffer uploaded and synced, we execute a compute shader that performs the culling.
+		</p>
+	</li>
+	<li>
+		<p>
+            For every object in said array of ObjectID + BatchID pairs, we access the object data in the ObjectBuffer using the ObjectID, and check if it is visible. If it’s visible, we use the BatchID index to insert the draw into the Batches array, which contains the draw indirect calls, increasing the instance count. We also write it into the indirection buffer that maps from the instance ID of each batch into the ObjectID.
+		</p>
+	</li>
+	<li>
+		<p>
+            With that done, on the CPU side we iterate over the batches in a mesh pass, and execute each of them in order, making sure to bind each batch pipeline and material descriptor set. The gpu will then use the parameters it just wrote into from the culling pass to render the objects.
+		</p>
+	</li>
+	<li>
+		<p>
+            Buffer Storage.
+		</p>
+	</li>
+	<li>
+		<p>
+            Direct State Access.
+		</p>
+	</li>
+	<li>
+		<p>
+            Shader Buffer Load.
+		</p>
+	</li>
+	<li>
+		<p>
+            UBO &amp; SSBO.
+		</p>
+	</li>
+	<li>
+		<p>
+            and more...
+		</p>
+	</li>
+</ul>
+<h5
+	id="avoid-being-vertex-bound" >
+    Avoid being Vertex Bound
+</h5>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20250909101124.png" width="500" >
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    TBDR: Tile Based Deferred Renderer GPU.
+				</p>
+			</li>
+			<li>
+				<p>
+                    TBIR: Tile Based Immediate Renderer GPU.
 				</p>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<p>
-			<strong>
-                Scene Management
-			</strong>
-            :
+			<a
+				href="https://github.com/zeux/meshoptimizer" 
+				class="external-link" 
+				target="_blank" >
+                MeshOptimizer
+			</a>
+            .
 		</p>
 		<ul>
 			<li>
-                <img src="assets/image_20250909090718.png" width="500" >
-
-			</li>
-			<li>
 				<p>
-					<input
-						type="checkbox" 
-						disabled=""
->
-                    See 
-					<a
-						href="https://vkguide.dev/docs/gpudriven/gpu_driven_engines/" 
-						class="external-link" 
-						target="_blank" >
-                        GPU Driven Rendering - VkGuide
-					</a>
-                    .
+                    When a GPU renders triangle meshes, various stages of the GPU pipeline have to process vertex and index data. The efficiency of these stages depends on the data you feed to them; this library provides algorithms to help optimize meshes for these stages, as well as algorithms to reduce the mesh complexity and storage overhead.
 				</p>
 			</li>
 			<li>
 				<p>
-					<input
-						type="checkbox" 
-						disabled=""
->
-                    
+                    The library provides a C and C++ interface for all algorithms; you can use it from C/C++ or from other languages via FFI (such as P/Invoke).
+				</p>
+			</li>
+			<li>
+				<p>
 					<a
-						href="https://www.youtube.com/watch?v=oETErEkFICE" 
-						class="external-link" 
-						target="_blank" >
-                        OpenGL Indirect Rendering
+						href="https://github.com/zeux/meshoptimizer/blob/master/gltf/README.html" 
+						class="internal-link" 
+						target="_self" >
+                        gltfack
 					</a>
                     .
 				</p>
+				<ul>
+					<li>
+						<p>
+                            gltfpack is a tool that can automatically optimize glTF files to reduce the download size and improve loading and rendering speed.
+						</p>
+					</li>
+				</ul>
 			</li>
 		</ul>
+	</li>
+</ul>
+<h3
+	id="instancing" >
+    Instancing
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Y0Ko0kvwfgA" 
+				class="external-link" 
+				target="_blank" >
+                Billboard Grass and GPU Instancing
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Rendering millions of grass&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The video is cool.
+				</p>
+			</li>
+			<li>
+				<p>
+                    We'll use a compute shader.
+				</p>
+			</li>
+			<li>
+				<p>
+                    We take the thread id of our compute shader thread. For a 300 square space, we can do 
+                    <code>position = id.xy - 150</code>
+                    &nbsp;so it's centered over the origin.
+				</p>
+			</li>
+			<li>
+				<p>
+                    As our grass is made of 3 meshes (3 billboard quads), this will result in 3 separate instancing calls.
+				</p>
+			</li>
+			<li>
+				<p>
+                    To increase the density of grasses in the square space, we can 
+                    <code>position *= (1 / density)</code>
+                    ; I'll use 
+                    <code>density = 2</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    For this example, I'll render 2,160,000 triangles at 523 fps.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Screen: 1289x621
+						</p>
+					</li>
+					<li>
+						<p>
+                            Setup? GTX 1660, apparently.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    To get randomness, I did 
+                    <code>pos.xz += noise()</code>
+                    &nbsp;for the position and 
+                    <code>position.y += noise()</code>
+                    &nbsp;to get a different height (higher grass will be grouped with higher grasses).
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This uses a simplex noise.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    To animate, I'll just skew the top 2 vertices of the mesh in the vertex shader.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            {9:20} Explanation of what was done to randomize the intensity and frequency of grass sway movement.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Hash the instance id to get a hash id. With the hash_id, we check against a threshold to know if we perform a fast cosine or a slow cosine.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The grass height changed the cosine frequency.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Etc.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    To get the grass displaced with the terrain displacement, we convert the space coordinates of our grass to uv coordinates, such as they can sample the same height map as the terrain mesh.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <img src="assets/image_20250907212336.png" width="500" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    I also introduced a color variance in the grass, by making the tip of the grass more yellow, to show aging of the grass. This affects higher grasses a bit more, as they are older.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=jw00MbIJcrk" 
+						class="external-link" 
+						target="_blank" >
+                        Continuation: Grass Mesh instead of Billboarding and GPU Culling with the Scan and Compact technique
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The video is the continuation of the previous one, changing: noise texture for wind simulation and optimizations with frustum culling with Scan and Compact.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The video is cool, though it has less content than the previous one.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    It shows no implementation or formulas.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Noise is used for wind movement, more sophisticated using a noise texture with oscillations ~etc, different from the randomization used in the billboarding solution.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Then, optimization is discussed. This new technique is 
+							<em>
+                                much
+							</em>
+                            &nbsp;heavier than the previous, so he uses Frustum Culling to optimize what is actually instanced.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This frustum culling apparently is harder to do, because it requires the Compute Buffer array to be contiguous.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    He uses: Scan and Compact.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The array is scanned, marked for modification and a new array is created with the desired elements.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    For this, a Prefix Sum Scan is used to define which entries form the new array.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This is not explained.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=PNvlqsXdQic" 
+						class="external-link" 
+						target="_blank" >
+                        Continuation: LOD with Chunking
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The video is quite short, only talking about the optimization below. It shows no implementation or formulas.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It uses a mesh with lower poly count when the object's distance to the camera is greater than a threshold.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The justification for using chunking is to help with LOD.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Apparently LOD would be done in chunks (?) which would reduce the need for having a second position buffer, specific to the low-poly LOD mesh.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            The final performance is 110fps, with 408MB of VRAM.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="scene-management" >
+    Scene Management
+</h3>
+<ul>
+	<li>
+		<p>
+            Google &quot;GPU Scene Management&quot; for some ideas - BVH, scene graph, ECS on the GPU, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            It has a concept of an &quot;object&quot; that users can place in the world.
+		</p>
+	</li>
+	<li>
+		<p>
+            These objects can contain multiple meshes and have a bounding box.
+		</p>
+	</li>
+	<li>
+		<p>
+            There is hierarchy (refer to flecs queries on how to do it efficiently).
+		</p>
+	</li>
+	<li>
+		<p>
+            Streaming is handled.
+		</p>
 	</li>
 </ul>
 <h3
@@ -22492,22 +23064,6 @@ bool testSphereAABB(uint light, uint tile){
 	<li>
 		<p>
             <img src="assets/image_20250909090657.png" width="500" >
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<input
-				type="checkbox" 
-				disabled=""
->
-            See 
-			<a
-				href="https://vkguide.dev/docs/gpudriven/compute_culling/" 
-				class="external-link" 
-				target="_blank" >
-                Compute Based Culling - VkGuide
-			</a>
             .
 		</p>
 	</li>
@@ -22695,43 +23251,108 @@ bool testSphereAABB(uint light, uint tile){
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-glsl" data-lang="glsl"> bool is_visible(const RenderObject& obj, const glm::mat4& viewproj) {
-&nbsp;&nbsp;&nbsp;&nbsp; std::array&lt;glm::vec3, 8&gt; corners {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 { 1, 1, 1 },
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 { 1, 1, -1 },
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 { 1, -1, 1 },
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 { 1, -1, -1 },
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 { -1, 1, 1 },
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 { -1, 1, -1 },
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 { -1, -1, 1 },
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 { -1, -1, -1 },
-&nbsp;&nbsp;&nbsp;&nbsp; };
- 
-&nbsp;&nbsp;&nbsp;&nbsp; glm::mat4 matrix = viewproj * obj.transform;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 min = { 1.5, 1.5, 1.5 };
-&nbsp;&nbsp;&nbsp;&nbsp; glm::vec3 max = { -1.5, -1.5, -1.5 };
- 
-&nbsp;&nbsp;&nbsp;&nbsp; for (int c = 0; c &lt; 8; c++) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // project each corner into clip space
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; glm::vec4 v = matrix * glm::vec4(obj.bounds.origin + (corners[c] * obj.bounds.extents), 1.f);
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // perspective correction
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v.x = v.x / v.w;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v.y = v.y / v.w;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v.z = v.z / v.w;
- 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min = glm::min(glm::vec3 { v.x, v.y, v.z }, min);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max = glm::max(glm::vec3 { v.x, v.y, v.z }, max);
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // check the clip space box is within the view
-&nbsp;&nbsp;&nbsp;&nbsp; if (min.z &gt; 1.f || max.z &lt; 0.f || min.x &gt; 1.f || max.x &lt; -1.f || min.y &gt; 1.f || max.y &lt; -1.f) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return false;
-&nbsp;&nbsp;&nbsp;&nbsp; } else {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return true;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-glsl" data-lang="glsl">bool is_visible(const RenderObject& obj, const glm::mat4& viewproj) {
+&nbsp;&nbsp;&nbsp;&nbsp;std::array&lt;glm::vec3, 8&gt; corners {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 { 1, 1, 1 },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 { 1, 1, -1 },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 { 1, -1, 1 },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 { 1, -1, -1 },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 { -1, 1, 1 },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 { -1, 1, -1 },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 { -1, -1, 1 },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 { -1, -1, -1 },
+&nbsp;&nbsp;&nbsp;&nbsp;};
+
+&nbsp;&nbsp;&nbsp;&nbsp;glm::mat4 matrix = viewproj * obj.transform;
+
+&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 min = { 1.5, 1.5, 1.5 };
+&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 max = { -1.5, -1.5, -1.5 };
+
+&nbsp;&nbsp;&nbsp;&nbsp;for (int c = 0; c &lt; 8; c++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// project each corner into clip space
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec4 v = matrix * glm::vec4(obj.bounds.origin + (corners[c] * obj.bounds.extents), 1.f);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// perspective correction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.x = v.x / v.w;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.y = v.y / v.w;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.z = v.z / v.w;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = glm::min(glm::vec3 { v.x, v.y, v.z }, min);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = glm::max(glm::vec3 { v.x, v.y, v.z }, max);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;// check the clip space box is within the view
+&nbsp;&nbsp;&nbsp;&nbsp;if (min.z &gt; 1.f || max.z &lt; 0.f || min.x &gt; 1.f || max.x &lt; -1.f || min.y &gt; 1.f || max.y &lt; -1.f) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;
+&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+	</li>
+	<li>
+		<p>
+            VkGuide:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The instanceBuffer is AllocatedBuffer
+                    <GPUInstance>
+                    &nbsp;instanceBuffer; from the last article. It stores ObjectID + BatchID (draw indirect ID)
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-glsl" data-lang="glsl">bool IsVisible(uint objectIndex)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;//grab sphere cull data from the object buffer
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 sphereBounds = objectBuffer.objects[objectIndex].spherebounds;
+
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 center = sphereBounds.xyz;
+&nbsp;&nbsp;&nbsp;&nbsp;center = (cullData.view * vec4(center,1.f)).xyz;
+&nbsp;&nbsp;&nbsp;&nbsp;float radius = sphereBounds.w;
+
+&nbsp;&nbsp;&nbsp;&nbsp;bool visible = true;
+
+&nbsp;&nbsp;&nbsp;&nbsp;//frustrum culling
+&nbsp;&nbsp;&nbsp;&nbsp;visible = visible && center.z * cullData.frustum[1] - abs(center.x) * cullData.frustum[0] &gt; -radius;
+&nbsp;&nbsp;&nbsp;&nbsp;visible = visible && center.z * cullData.frustum[3] - abs(center.y) * cullData.frustum[2] &gt; -radius;
+
+&nbsp;&nbsp;&nbsp;&nbsp;if(cullData.distCull != 0)
+&nbsp;&nbsp;&nbsp;&nbsp;{// the near/far plane culling uses camera space Z directly
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visible = visible && center.z + radius &gt; cullData.znear && center.z - radius &lt; cullData.zfar;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;visible = visible || cullData.cullingEnabled == 0;
+
+&nbsp;&nbsp;&nbsp;&nbsp;return visible;
+}
+
+void main()
+{
+&nbsp;&nbsp;&nbsp;&nbsp;uint gID = gl_GlobalInvocationID.x;
+&nbsp;&nbsp;&nbsp;&nbsp;if(gID &lt; cullData.drawCount)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//grab object ID from the buffer
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint objectID = instanceBuffer.Instances[gID].objectID;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//check if object is visible
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool visible&nbsp;&nbsp;= IsVisible(objectID);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(visible)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//get the index of the draw to insert into
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint batchIndex = instanceBuffer.Instances[gID].batchID;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//atomic-add to +1 on the number of instances of that draw command
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint countIndex = atomicAdd(drawBuffer.Draws[batchIndex].instanceCount,1);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//write the object ID into the instance buffer that maps from gl_instanceID into ObjectID
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint instanceIndex = drawBuffer.Draws[batchIndex].firstInstance + countIndex;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finalInstanceBuffer.IDs[instanceIndex] = objectID;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 	</li>
 </ul>
@@ -23204,254 +23825,8 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 	</li>
 </ul>
 <h3
-	id="instancing" >
-    Instancing
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=Y0Ko0kvwfgA" 
-				class="external-link" 
-				target="_blank" >
-                Billboard Grass and GPU Instancing
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    &quot;Rendering millions of grass&quot;.
-				</p>
-			</li>
-			<li>
-				<p>
-                    The video is cool.
-				</p>
-			</li>
-			<li>
-				<p>
-                    We'll use a compute shader.
-				</p>
-			</li>
-			<li>
-				<p>
-                    We take the thread id of our compute shader thread. For a 300 square space, we can do 
-                    <code>position = id.xy - 150</code>
-                    &nbsp;so it's centered over the origin.
-				</p>
-			</li>
-			<li>
-				<p>
-                    As our grass is made of 3 meshes (3 billboard quads), this will result in 3 separate instancing calls.
-				</p>
-			</li>
-			<li>
-				<p>
-                    To increase the density of grasses in the square space, we can 
-                    <code>position *= (1 / density)</code>
-                    ; I'll use 
-                    <code>density = 2</code>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    For this example, I'll render 2,160,000 triangles at 523 fps.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Screen: 1289x621
-						</p>
-					</li>
-					<li>
-						<p>
-                            Setup? GTX 1660, apparently.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    To get randomness, I did 
-                    <code>pos.xz += noise()</code>
-                    &nbsp;for the position and 
-                    <code>position.y += noise()</code>
-                    &nbsp;to get a different height (higher grass will be grouped with higher grasses).
-				</p>
-				<ul>
-					<li>
-						<p>
-                            This uses a simplex noise.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    To animate, I'll just skew the top 2 vertices of the mesh in the vertex shader.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            {9:20} Explanation of what was done to randomize the intensity and frequency of grass sway movement.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Hash the instance id to get a hash id. With the hash_id, we check against a threshold to know if we perform a fast cosine or a slow cosine.
-						</p>
-					</li>
-					<li>
-						<p>
-                            The grass height changed the cosine frequency.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Etc.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    To get the grass displaced with the terrain displacement, we convert the space coordinates of our grass to uv coordinates, such as they can sample the same height map as the terrain mesh.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <img src="assets/image_20250907212336.png" width="500" >
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    I also introduced a color variance in the grass, by making the tip of the grass more yellow, to show aging of the grass. This affects higher grasses a bit more, as they are older.
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://www.youtube.com/watch?v=jw00MbIJcrk" 
-						class="external-link" 
-						target="_blank" >
-                        Continuation: Grass Mesh instead of Billboarding and GPU Culling with the Scan and Compact technique
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            The video is the continuation of the previous one, changing: noise texture for wind simulation and optimizations with frustum culling with Scan and Compact.
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    The video is cool, though it has less content than the previous one.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    It shows no implementation or formulas.
-								</p>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>
-                            Noise is used for wind movement, more sophisticated using a noise texture with oscillations ~etc, different from the randomization used in the billboarding solution.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Then, optimization is discussed. This new technique is 
-							<em>
-                                much
-							</em>
-                            &nbsp;heavier than the previous, so he uses Frustum Culling to optimize what is actually instanced.
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    This frustum culling apparently is harder to do, because it requires the Compute Buffer array to be contiguous.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    He uses: Scan and Compact.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    The array is scanned, marked for modification and a new array is created with the desired elements.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    For this, a Prefix Sum Scan is used to define which entries form the new array.
-								</p>
-								<ul>
-									<li>
-										<p>
-                                            This is not explained.
-										</p>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://www.youtube.com/watch?v=PNvlqsXdQic" 
-						class="external-link" 
-						target="_blank" >
-                        Continuation: LOD with Chunking
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            The video is quite short, only talking about the optimization below. It shows no implementation or formulas.
-						</p>
-					</li>
-					<li>
-						<p>
-                            It uses a mesh with lower poly count when the object's distance to the camera is greater than a threshold.
-						</p>
-					</li>
-					<li>
-						<p>
-                            The justification for using chunking is to help with LOD.
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    Apparently LOD would be done in chunks (?) which would reduce the need for having a second position buffer, specific to the low-poly LOD mesh.
-								</p>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>
-                            The final performance is 110fps, with 408MB of VRAM.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="formats" >
-    Formats
+	id="image-formats" >
+    Image Formats
 </h3>
 <h5
 	id="ktx2" >
@@ -23487,76 +23862,6 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 	</li>
 </ul>
 <h3
-	id="poly-count-vertex-bound" >
-    Poly Count / Vertex Bound
-</h3>
-<ul>
-	<li>
-		<p>
-            I understand as: problems with poly count.
-		</p>
-	</li>
-	<li>
-		<p>
-            <img src="assets/image_20250909101124.png" width="500" >
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    TBDR: Tile Based Deferred Renderer GPU.
-				</p>
-			</li>
-			<li>
-				<p>
-                    TBIR: Tile Based Immediate Renderer GPU.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://github.com/zeux/meshoptimizer" 
-				class="external-link" 
-				target="_blank" >
-                MeshOptimizer
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    When a GPU renders triangle meshes, various stages of the GPU pipeline have to process vertex and index data. The efficiency of these stages depends on the data you feed to them; this library provides algorithms to help optimize meshes for these stages, as well as algorithms to reduce the mesh complexity and storage overhead.
-				</p>
-			</li>
-			<li>
-				<p>
-                    The library provides a C and C++ interface for all algorithms; you can use it from C/C++ or from other languages via FFI (such as P/Invoke).
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://github.com/zeux/meshoptimizer/blob/master/gltf/README.html" 
-						class="internal-link" 
-						target="_self" >
-                        gltfack
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            gltfpack is a tool that can automatically optimize glTF files to reduce the download size and improve loading and rendering speed.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
 	id="dynamic-resolution" >
     Dynamic Resolution
 </h3>
@@ -23587,8 +23892,8 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 	</li>
 </ul>
 <h3
-	id="tiled-based" >
-    Tiled-based~
+	id="tiling-based-vrs-nanite" >
+    Tiling-based / VRS / Nanite
 </h3>
 <h5
 	id="variable-rate-shading-vrs" >
@@ -23713,6 +24018,96 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 		</p>
 	</li>
 </ul>
+<h3
+	id="software-based-rasterization" >
+    Software Based Rasterization
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://research.nvidia.com/publication/2011-08_high-performance-software-rasterization-gpus" 
+				class="external-link" 
+				target="_blank" >
+                High-Performance Software Rasterization on GPUs
+			</a>
+            &nbsp;by Laine and Karras.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    That paper describes an all-compute rendering pipeline for the traditional 3D triangle workload. The architecture calls for sorting in the middle of the pipeline, so that in the early stage of the pipeline, triangles can be processed in arbitrary order to maximally exploit parallelism, but the output render still correctly applies the triangles in order.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In 3D rendering, you can almost get away with unsorted rendering, relying on Z-buffering to decide a winning fragment, but that would result in “Z-fighting” artifacts and also cause problems for semitransparent fragments.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Goals
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Our endeavor has multiple goals. First, we want to establish a firm data point of the performance of a state-of-the-art GPU software rasterizer compared to the hardware pipeline. We maintain that only a careful experiment will reveal the performance difference, as without an actual implementation there are too many unknown costs. Second, constructing a purely software-based graphics pipeline opens the opportunity to augment it with various extensions that are impossible or infeasible to fit in the hardware pipeline (without hardware modifications, that is). For example, programmable ROP calculations, trivial non-linear rasterization (e.g., [Gascuel et al. 2008]), fragment merging [Fatahalianet al. 2010], stochastic rasterization [Akenine-M¨oller et al. 2007] with decoupled sampling [Ragan-Kelley et al. 2011], etc., could be implemented as part of the programmable pipeline. Thirdly, by identifying the hot spots in our software pipeline, we hope to illuminate future hardware that would be better suited for fully programmable graphics. The complexity and versatility of the hardware graphics pipeline does not come without costs in design and testing. In an ideal situation, just a few hardware features targeted at accelerating software-based graphics would be enough to obtain decent performance, and the remaining gap would be closed by faster time-to-market and reduced design costs.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                2D
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://raphlinus.github.io/rust/graphics/gpu/2020/06/12/sort-middle.html" 
+						class="external-link" 
+						target="_blank" >
+                        Sort-middle architecture - Raph Levien
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Not so easy to understand.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://raphlinus.github.io/rust/graphics/gpu/2020/06/13/fast-2d-rendering.html" 
+						class="external-link" 
+						target="_blank" >
+                        Fast 2D rendering - Raph Levien
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Not so easy to understand.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
 
 					</div>
 					<footer
@@ -23736,7 +24131,7 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -24081,6 +24476,30 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 						<ul>
 							<li>
 								<a
+									href="#shader-branching" >
+                                    Shader Branching
+								</a>
+							</li>
+							<li>
+								<a
+									href="#azdo-approach-zero-driver-overhead" >
+                                    AZDO (Approach Zero Driver Overhead)
+								</a>
+							</li>
+							<li>
+								<a
+									href="#instancing" >
+                                    Instancing
+								</a>
+							</li>
+							<li>
+								<a
+									href="#scene-management" >
+                                    Scene Management
+								</a>
+							</li>
+							<li>
+								<a
 									href="#culling" >
                                     Culling
 								</a>
@@ -24099,20 +24518,8 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 							</li>
 							<li>
 								<a
-									href="#instancing" >
-                                    Instancing
-								</a>
-							</li>
-							<li>
-								<a
-									href="#formats" >
-                                    Formats
-								</a>
-							</li>
-							<li>
-								<a
-									href="#poly-count-vertex-bound" >
-                                    Poly Count / Vertex Bound
+									href="#image-formats" >
+                                    Image Formats
 								</a>
 							</li>
 							<li>
@@ -24123,8 +24530,14 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 							</li>
 							<li>
 								<a
-									href="#tiled-based" >
-                                    Tiled-based~
+									href="#tiling-based-vrs-nanite" >
+                                    Tiling-based / VRS / Nanite
+								</a>
+							</li>
+							<li>
+								<a
+									href="#software-based-rasterization" >
+                                    Software Based Rasterization
 								</a>
 							</li>
 						</ul>
@@ -24133,7 +24546,7 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2024-04-13
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -2090,29 +2099,29 @@ pub fn eat_at_restaurant() {
             &nbsp;+ 
             <code>"println!({:?}, x)"</code>
 		</p>
-<pre><code class="language-rust" data-lang="rust"> #[derive(Debug)]
- struct Rectangle {
-&nbsp;&nbsp;&nbsp;&nbsp; width: u32,
-&nbsp;&nbsp;&nbsp;&nbsp; height: u32,
- }
- 
- impl Rectangle {
-&nbsp;&nbsp;&nbsp;&nbsp; fn area(&self) -&gt; u32 {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; self.width * self.height
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- fn main() {
-&nbsp;&nbsp;&nbsp;&nbsp; let rect1 = Rectangle {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 30,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 50,
-&nbsp;&nbsp;&nbsp;&nbsp; };
- 
-&nbsp;&nbsp;&nbsp;&nbsp; println!(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "The area of the rectangle is {} square pixels.",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rect1.area()
-&nbsp;&nbsp;&nbsp;&nbsp; );
- }
+<pre><code class="language-rust" data-lang="rust">#[derive(Debug)]
+struct Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;width: u32,
+&nbsp;&nbsp;&nbsp;&nbsp;height: u32,
+}
+
+impl Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;fn area(&self) -&gt; u32 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.width * self.height
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+fn main() {
+&nbsp;&nbsp;&nbsp;&nbsp;let rect1 = Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 30,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 50,
+&nbsp;&nbsp;&nbsp;&nbsp;};
+
+&nbsp;&nbsp;&nbsp;&nbsp;println!(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"The area of the rectangle is {} square pixels.",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rect1.area()
+&nbsp;&nbsp;&nbsp;&nbsp;);
+}
 </code></pre>
 	</li>
 </ul>
@@ -2471,13 +2480,13 @@ pub fn eat_at_restaurant() {
             <code>y</code>
             .
 		</p>
-<pre><code class="language-rust" data-lang="rust"> fn longest(x: &str, y: &str) -&gt; &str {
-&nbsp;&nbsp;&nbsp;&nbsp; if x.len() &gt; y.len() {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x
-&nbsp;&nbsp;&nbsp;&nbsp; } else {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-rust" data-lang="rust">fn longest(x: &str, y: &str) -&gt; &str {
+&nbsp;&nbsp;&nbsp;&nbsp;if x.len() &gt; y.len() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x
+&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 	</li>
 	<li>
@@ -2485,36 +2494,36 @@ pub fn eat_at_restaurant() {
             This tells Rust that the string slice returned from the function will live at least as long as lifetime 
             <code>'a</code>
 		</p>
-<pre><code class="language-rust" data-lang="rust"> fn longest&lt;'a&gt;(x: &'a str, y: &'a str) -&gt; &'a str {
-&nbsp;&nbsp;&nbsp;&nbsp; if x.len() &gt; y.len() {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x
-&nbsp;&nbsp;&nbsp;&nbsp; } else {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-rust" data-lang="rust">fn longest&lt;'a&gt;(x: &'a str, y: &'a str) -&gt; &'a str {
+&nbsp;&nbsp;&nbsp;&nbsp;if x.len() &gt; y.len() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x
+&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 	</li>
 	<li>
 		<p>
             Example:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> use std::fmt::Display;
- 
- fn longest_with_an_announcement&lt;'a, T&gt;(
-&nbsp;&nbsp;&nbsp;&nbsp; x: &'a str,
-&nbsp;&nbsp;&nbsp;&nbsp; y: &'a str,
-&nbsp;&nbsp;&nbsp;&nbsp; ann: T,
- ) -&gt; &'a str
- where
-&nbsp;&nbsp;&nbsp;&nbsp; T: Display,
- {
-&nbsp;&nbsp;&nbsp;&nbsp; println!("Announcement! {ann}");
-&nbsp;&nbsp;&nbsp;&nbsp; if x.len() &gt; y.len() {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x
-&nbsp;&nbsp;&nbsp;&nbsp; } else {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-rust" data-lang="rust">use std::fmt::Display;
+
+fn longest_with_an_announcement&lt;'a, T&gt;(
+&nbsp;&nbsp;&nbsp;&nbsp;x: &'a str,
+&nbsp;&nbsp;&nbsp;&nbsp;y: &'a str,
+&nbsp;&nbsp;&nbsp;&nbsp;ann: T,
+) -&gt; &'a str
+where
+&nbsp;&nbsp;&nbsp;&nbsp;T: Display,
+{
+&nbsp;&nbsp;&nbsp;&nbsp;println!("Announcement! {ann}");
+&nbsp;&nbsp;&nbsp;&nbsp;if x.len() &gt; y.len() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x
+&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 	</li>
 </ul>
@@ -2537,10 +2546,10 @@ pub fn eat_at_restaurant() {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-rust" data-lang="rust"> fn longest&lt;'a&gt;(x: &str, y: &str) -&gt; &'a str {
-&nbsp;&nbsp;&nbsp;&nbsp; let result = String::from("really long string");
-&nbsp;&nbsp;&nbsp;&nbsp; result.as_str()
- }
+<pre><code class="language-rust" data-lang="rust">fn longest&lt;'a&gt;(x: &str, y: &str) -&gt; &'a str {
+&nbsp;&nbsp;&nbsp;&nbsp;let result = String::from("really long string");
+&nbsp;&nbsp;&nbsp;&nbsp;result.as_str()
+}
 </code></pre>
 		<ul>
 			<li>
@@ -2635,10 +2644,10 @@ pub fn eat_at_restaurant() {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-rust" data-lang="rust"> algo::algo
- ::path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Path relative to the crate root, implicitly.
- self::path&nbsp;&nbsp; // Path relative to the crate root, explicitly.
- super::path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Path relative to the parent of the current module.
+<pre><code class="language-rust" data-lang="rust">algo::algo
+::path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Path relative to the crate root, implicitly.
+self::path&nbsp;&nbsp; // Path relative to the crate root, explicitly.
+super::path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Path relative to the parent of the current module.
 </code></pre>
 		<ul>
 			<li>
@@ -2748,16 +2757,16 @@ pub fn eat_at_restaurant() {
             <code>#[derive(Debug)]</code>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> #[derive(Debug)] // Compiler implements Debug
- struct Point {
-&nbsp;&nbsp;&nbsp;&nbsp; x: i32,
-&nbsp;&nbsp;&nbsp;&nbsp; y: i32,
- }
- 
- fn main() {
-&nbsp;&nbsp;&nbsp;&nbsp; let p = Point { x: 3, y: 4 };
-&nbsp;&nbsp;&nbsp;&nbsp; println!("{:?}", p); // Output: Point { x: 3, y: 4 }
- }
+<pre><code class="language-rust" data-lang="rust">#[derive(Debug)] // Compiler implements Debug
+struct Point {
+&nbsp;&nbsp;&nbsp;&nbsp;x: i32,
+&nbsp;&nbsp;&nbsp;&nbsp;y: i32,
+}
+
+fn main() {
+&nbsp;&nbsp;&nbsp;&nbsp;let p = Point { x: 3, y: 4 };
+&nbsp;&nbsp;&nbsp;&nbsp;println!("{:?}", p); // Output: Point { x: 3, y: 4 }
+}
 </code></pre>
 	</li>
 	<li>
@@ -2768,24 +2777,24 @@ pub fn eat_at_restaurant() {
             <code>#[derive(Debug)]</code>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> use std::fmt;
- 
- struct Point {
-&nbsp;&nbsp;&nbsp;&nbsp; x: i32,
-&nbsp;&nbsp;&nbsp;&nbsp; y: i32,
- }
- 
- // Manual implementation of the Debug trait
- impl fmt::Debug for Point {
-&nbsp;&nbsp;&nbsp;&nbsp; fn fmt(&self, f: &mut fmt::Formatter&lt;'_&gt;) -&gt; fmt::Result {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; write!(f, "Point {{ x: {}, y: {} }}", self.x, self.y)
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- fn main() {
-&nbsp;&nbsp;&nbsp;&nbsp; let p = Point { x: 3, y: 4 };
-&nbsp;&nbsp;&nbsp;&nbsp; println!("{:?}", p); // Output: Point { x: 3, y: 4 }
- }
+<pre><code class="language-rust" data-lang="rust">use std::fmt;
+
+struct Point {
+&nbsp;&nbsp;&nbsp;&nbsp;x: i32,
+&nbsp;&nbsp;&nbsp;&nbsp;y: i32,
+}
+
+// Manual implementation of the Debug trait
+impl fmt::Debug for Point {
+&nbsp;&nbsp;&nbsp;&nbsp;fn fmt(&self, f: &mut fmt::Formatter&lt;'_&gt;) -&gt; fmt::Result {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write!(f, "Point {{ x: {}, y: {} }}", self.x, self.y)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+fn main() {
+&nbsp;&nbsp;&nbsp;&nbsp;let p = Point { x: 3, y: 4 };
+&nbsp;&nbsp;&nbsp;&nbsp;println!("{:?}", p); // Output: Point { x: 3, y: 4 }
+}
 </code></pre>
 	</li>
 </ul>
@@ -3038,13 +3047,13 @@ pub fn eat_at_restaurant() {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> if number &lt; 10 {
-&nbsp;&nbsp;&nbsp;&nbsp; println!("algo");
- } else if number &lt; 22 {
-&nbsp;&nbsp;&nbsp;&nbsp; println!("outra coisa");
- } else {
-&nbsp;&nbsp;&nbsp;&nbsp; println!("outra coisinha");
- }
+<pre><code class="language-rust" data-lang="rust">if number &lt; 10 {
+&nbsp;&nbsp;&nbsp;&nbsp;println!("algo");
+} else if number &lt; 22 {
+&nbsp;&nbsp;&nbsp;&nbsp;println!("outra coisa");
+} else {
+&nbsp;&nbsp;&nbsp;&nbsp;println!("outra coisinha");
+}
 </code></pre>
 	</li>
 	<li>
@@ -3054,11 +3063,11 @@ pub fn eat_at_restaurant() {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let number = 3;
- 
- if number {
-&nbsp;&nbsp;&nbsp;&nbsp; println!("number was three");
- }
+<pre><code class="language-rust" data-lang="rust">let number = 3;
+
+if number {
+&nbsp;&nbsp;&nbsp;&nbsp;println!("number was three");
+}
 </code></pre>
 		<ul>
 			<li>
@@ -3155,25 +3164,25 @@ let result&nbsp;&nbsp;= loop {
                     <code>continue</code>
                     .
 				</p>
-<pre><code class="language-rust" data-lang="rust"> let mut count = 0;
- 'counting_up: loop {
-&nbsp;&nbsp;&nbsp;&nbsp; println!("count = {count}");
-&nbsp;&nbsp;&nbsp;&nbsp; let mut remaining = 10;
+<pre><code class="language-rust" data-lang="rust">let mut count = 0;
+'counting_up: loop {
+&nbsp;&nbsp;&nbsp;&nbsp;println!("count = {count}");
+&nbsp;&nbsp;&nbsp;&nbsp;let mut remaining = 10;
 
-&nbsp;&nbsp;&nbsp;&nbsp; loop {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; println!("remaining = {remaining}");
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if remaining == 9 {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if count == 2 {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break 'counting_up;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; remaining -= 1;
-&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;loop {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println!("remaining = {remaining}");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if remaining == 9 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if count == 2 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break 'counting_up;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remaining -= 1;
+&nbsp;&nbsp;&nbsp;&nbsp;}
 
-&nbsp;&nbsp;&nbsp;&nbsp; count += 1;
- }
- println!("End count = {count}");
+&nbsp;&nbsp;&nbsp;&nbsp;count += 1;
+}
+println!("End count = {count}");
 </code></pre>
 			</li>
 		</ul>
@@ -3253,8 +3262,8 @@ for number in 1..4 {
 		<p>
             You cannot change the variable's type.
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let mut spaces = "&nbsp;&nbsp; ";
- spaces = spaces.len();
+<pre><code class="language-rust" data-lang="rust">let mut spaces = "&nbsp;&nbsp; ";
+spaces = spaces.len();
 </code></pre>
 		<ul>
 			<li>
@@ -3299,16 +3308,16 @@ for number in 1..4 {
 				<p>
                     Keeps the type:
 				</p>
-<pre><code class="language-rust" data-lang="rust"> let x = 5;
- let x = x + 1;
+<pre><code class="language-rust" data-lang="rust">let x = 5;
+let x = x + 1;
 </code></pre>
 			</li>
 			<li>
 				<p>
                     Changes the type:
 				</p>
-<pre><code class="language-rust" data-lang="rust"> let spaces = "&nbsp;&nbsp; ";
- let spaces = spaces.len();
+<pre><code class="language-rust" data-lang="rust">let spaces = "&nbsp;&nbsp; ";
+let spaces = spaces.len();
 </code></pre>
 			</li>
 		</ul>
@@ -3396,7 +3405,7 @@ for number in 1..4 {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let a: u32 = "42".parse().expect("Falha!");
+<pre><code class="language-rust" data-lang="rust">let a: u32 = "42".parse().expect("Falha!");
 </code></pre>
 	</li>
 	<li>
@@ -3406,10 +3415,10 @@ for number in 1..4 {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let a = "texto";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// &str
- let b = a.to_string(); // String
+<pre><code class="language-rust" data-lang="rust">let a = "texto";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// &str
+let b = a.to_string(); // String
 </code></pre>
-<pre><code class="language-rust" data-lang="rust"> let a = String::from("texto");
+<pre><code class="language-rust" data-lang="rust">let a = String::from("texto");
 </code></pre>
 	</li>
 </ul>
@@ -3617,9 +3626,9 @@ for number in 1..4 {
             With 
             <code>format!</code>
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let s1 = String::from("hello ");
- let s2 = String::from("world");
- let s3 = format!("{}{}", s1, s2);
+<pre><code class="language-rust" data-lang="rust">let s1 = String::from("hello ");
+let s2 = String::from("world");
+let s3 = format!("{}{}", s1, s2);
 </code></pre>
 		<ul>
 			<li>
@@ -3637,9 +3646,9 @@ for number in 1..4 {
 		<p>
             With concatenation:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let s1 = String::from("hello ");
- let s2 = String::from("world");
- let s3 = s1 + &s2;&nbsp;&nbsp;// s1 is moved.
+<pre><code class="language-rust" data-lang="rust">let s1 = String::from("hello ");
+let s2 = String::from("world");
+let s3 = s1 + &s2;&nbsp;&nbsp;// s1 is moved.
 </code></pre>
 	</li>
 	<li>
@@ -3650,9 +3659,9 @@ for number in 1..4 {
             <code>.push_str</code>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let mut s = String::from("hello");
- s.push_str("bar");&nbsp;&nbsp; // Receives a string slice.
- s.push('!');&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Receives a char.
+<pre><code class="language-rust" data-lang="rust">let mut s = String::from("hello");
+s.push_str("bar");&nbsp;&nbsp; // Receives a string slice.
+s.push('!');&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Receives a char.
 </code></pre>
 	</li>
 </ul>
@@ -3692,8 +3701,8 @@ println!("x = {x} and y + 2 = {}", y + 2);
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-rust" data-lang="rust"> let text = "he said \"goodbye\" and left";
- let text = r#"he said "goodbye" and left"#;
+<pre><code class="language-rust" data-lang="rust">let text = "he said \"goodbye\" and left";
+let text = r#"he said "goodbye" and left"#;
 </code></pre>
 		<ul>
 			<li>
@@ -3717,8 +3726,8 @@ println!("x = {x} and y + 2 = {}", y + 2);
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let http_ok = b"HTTP/1.1 200 OK\r\n";
- let http_ok: &[u8; 17] = b"HTTP/1.1 200 OK\r\n";
+<pre><code class="language-rust" data-lang="rust">let http_ok = b"HTTP/1.1 200 OK\r\n";
+let http_ok: &[u8; 17] = b"HTTP/1.1 200 OK\r\n";
 </code></pre>
 		<ul>
 			<li>
@@ -3832,8 +3841,8 @@ println!("x = {x} and y + 2 = {}", y + 2);
 		<p>
             Static:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let my_string: &str = "hello world";
- let my_string: &'static str = "hello world";
+<pre><code class="language-rust" data-lang="rust">let my_string: &str = "hello world";
+let my_string: &'static str = "hello world";
 </code></pre>
 		<ul>
 			<li>
@@ -4053,24 +4062,24 @@ let my_boxed_str: Box&lt;str&gt; = my_string.into_boxed_str();
 		<p>
             Via Index:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let x: (i32, f64, u8) = (500, 6.4, 1);
+<pre><code class="language-rust" data-lang="rust">let x: (i32, f64, u8) = (500, 6.4, 1);
 
- let five_hundred = x.0;
+let five_hundred = x.0;
 
- let six_point_four = x.1;
+let six_point_four = x.1;
 
- let one = x.2;
+let one = x.2;
 </code></pre>
 	</li>
 	<li>
 		<p>
             Via Destructuring:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let tup = (500, 6.4, 1);
+<pre><code class="language-rust" data-lang="rust">let tup = (500, 6.4, 1);
 
- let (x, y, z) = tup;
+let (x, y, z) = tup;
 
- println!("The value of y is: {y}");
+println!("The value of y is: {y}");
 </code></pre>
 	</li>
 </ul>
@@ -4103,19 +4112,19 @@ let my_boxed_str: Box&lt;str&gt; = my_string.into_boxed_str();
 		<p>
             Defining values manually:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let a = [1, 2, 3, 4, 5];
- let b: [i32; 5] = [1, 2, 3, 4, 5];
-&nbsp;&nbsp;&nbsp;&nbsp; // [Type; number_of_elements]
+<pre><code class="language-rust" data-lang="rust">let a = [1, 2, 3, 4, 5];
+let b: [i32; 5] = [1, 2, 3, 4, 5];
+&nbsp;&nbsp;&nbsp;&nbsp;// [Type; number_of_elements]
 </code></pre>
 	</li>
 	<li>
 		<p>
             Creating with identical elements:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let a = [3; 5];
- 
- // Same thing.
- let b = [3, 3, 3, 3, 3];&nbsp;&nbsp;
+<pre><code class="language-rust" data-lang="rust">let a = [3; 5];
+
+// Same thing.
+let b = [3, 3, 3, 3, 3];&nbsp;&nbsp;
 </code></pre>
 	</li>
 </ul>
@@ -4194,31 +4203,31 @@ v.push(8);
 		<p>
             Without handling Out of Bounds:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let v = vec![1, 2, 3, 4, 5];
- 
- let third: &i32 = &v[2];
- println!("The third element is {third}");
+<pre><code class="language-rust" data-lang="rust">let v = vec![1, 2, 3, 4, 5];
+
+let third: &i32 = &v[2];
+println!("The third element is {third}");
 </code></pre>
 	</li>
 	<li>
 		<p>
             Handling Out of Bounds:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let third: Option&lt;&i32&gt; = v.get(2);
- match third {
-&nbsp;&nbsp;&nbsp;&nbsp; Some(third) =&gt; println!("The third element is {third}"),
-&nbsp;&nbsp;&nbsp;&nbsp; None =&gt; println!("There is no third element."),
- }
+<pre><code class="language-rust" data-lang="rust">let third: Option&lt;&i32&gt; = v.get(2);
+match third {
+&nbsp;&nbsp;&nbsp;&nbsp;Some(third) =&gt; println!("The third element is {third}"),
+&nbsp;&nbsp;&nbsp;&nbsp;None =&gt; println!("There is no third element."),
+}
 </code></pre>
 	</li>
 	<li>
 		<p>
             Getting all elements:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let v = vec![100, 32, 57];
- for i in &v {
-&nbsp;&nbsp;&nbsp;&nbsp; println!("{i}");
- }
+<pre><code class="language-rust" data-lang="rust">let v = vec![100, 32, 57];
+for i in &v {
+&nbsp;&nbsp;&nbsp;&nbsp;println!("{i}");
+}
 </code></pre>
 	</li>
 	<li>
@@ -4227,10 +4236,10 @@ v.push(8);
             <code>*</code>
             &nbsp;dereference operator.
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let mut v = vec![100, 32, 57];
- for i in &mut v {
-&nbsp;&nbsp;&nbsp;&nbsp; *i += 50;
- }
+<pre><code class="language-rust" data-lang="rust">let mut v = vec![100, 32, 57];
+for i in &mut v {
+&nbsp;&nbsp;&nbsp;&nbsp;*i += 50;
+}
 </code></pre>
 	</li>
 </ul>
@@ -4419,23 +4428,23 @@ fn main() {
 		<p>
             Example:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let mut list = vec![1, 2, 3];
- 
- println!("Before defining closure: {list:?}");
- 
- let mut borrows_mutably = || list.push(7);
- 
- borrows_mutably();
- 
- println!("After calling closure: {list:?}");
+<pre><code class="language-rust" data-lang="rust">let mut list = vec![1, 2, 3];
+
+println!("Before defining closure: {list:?}");
+
+let mut borrows_mutably = || list.push(7);
+
+borrows_mutably();
+
+println!("After calling closure: {list:?}");
 </code></pre>
 		<ul>
 			<li>
 				<p>
                     Output:
 				</p>
-<pre><code class="language-yaml" data-lang="yaml"> Before defining closure: [1, 2, 3]
- After calling closure: [1, 2, 3, 7]
+<pre><code class="language-yaml" data-lang="yaml">Before defining closure: [1, 2, 3]
+After calling closure: [1, 2, 3, 7]
 </code></pre>
 			</li>
 		</ul>
@@ -4482,13 +4491,13 @@ fn main() {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> struct Color(i32, i32, i32);
- struct Point(i32, i32, i32);
- 
- fn main() {
-&nbsp;&nbsp;&nbsp;&nbsp; let black = Color(0, 0, 0);
-&nbsp;&nbsp;&nbsp;&nbsp; let origin = Point(0, 0, 0);
- }
+<pre><code class="language-rust" data-lang="rust">struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+fn main() {
+&nbsp;&nbsp;&nbsp;&nbsp;let black = Color(0, 0, 0);
+&nbsp;&nbsp;&nbsp;&nbsp;let origin = Point(0, 0, 0);
+}
 </code></pre>
 	</li>
 </ul>
@@ -4608,17 +4617,17 @@ fn main() {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-rust" data-lang="rust"> impl Rectangle {
-&nbsp;&nbsp;&nbsp;&nbsp; fn area(&self) -&gt; u32 {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; self.width * self.height
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- impl Rectangle {
-&nbsp;&nbsp;&nbsp;&nbsp; fn can_hold(&self, other: &Rectangle) -&gt; bool {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; self.width &gt; other.width && self.height &gt; other.height
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-rust" data-lang="rust">impl Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;fn area(&self) -&gt; u32 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.width * self.height
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+impl Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;fn can_hold(&self, other: &Rectangle) -&gt; bool {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.width &gt; other.width && self.height &gt; other.height
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 	</li>
 </ul>
@@ -4634,12 +4643,12 @@ fn main() {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let user1 = User {
-&nbsp;&nbsp;&nbsp;&nbsp; active: true,
-&nbsp;&nbsp;&nbsp;&nbsp; username: String::from("someusername123"),
-&nbsp;&nbsp;&nbsp;&nbsp; email: String::from("someone@example.com"),
-&nbsp;&nbsp;&nbsp;&nbsp; sign_in_count: 1,
- };
+<pre><code class="language-rust" data-lang="rust">let user1 = User {
+&nbsp;&nbsp;&nbsp;&nbsp;active: true,
+&nbsp;&nbsp;&nbsp;&nbsp;username: String::from("someusername123"),
+&nbsp;&nbsp;&nbsp;&nbsp;email: String::from("someone@example.com"),
+&nbsp;&nbsp;&nbsp;&nbsp;sign_in_count: 1,
+};
 </code></pre>
 	</li>
 	<li>
@@ -4649,14 +4658,14 @@ fn main() {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> fn build_user(email: String, username: String) -&gt; User {
-&nbsp;&nbsp;&nbsp;&nbsp; User {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; active: true,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; username: username,&nbsp;&nbsp;// can be written just 'username'
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; email: email,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// can be written just 'email'
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sign_in_count: 1,
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-rust" data-lang="rust">fn build_user(email: String, username: String) -&gt; User {
+&nbsp;&nbsp;&nbsp;&nbsp;User {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active: true,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username: username,&nbsp;&nbsp;// can be written just 'username'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: email,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// can be written just 'email'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign_in_count: 1,
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 	</li>
 	<li>
@@ -4693,14 +4702,14 @@ fn main() {
 				</ul>
 			</li>
 		</ul>
-<pre><code class="language-rust" data-lang="rust"> impl Rectangle {
-&nbsp;&nbsp;&nbsp;&nbsp; fn square(size: u32) -&gt; Self {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Self {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: size,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: size,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-rust" data-lang="rust">impl Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;fn square(size: u32) -&gt; Self {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: size,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: size,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 		<ul>
 			<li>
@@ -4713,7 +4722,7 @@ fn main() {
                     <code>Rectangle</code>
                     .
 				</p>
-<pre><code class="language-rust" data-lang="rust"> let sq = Rectangle::square(3);
+<pre><code class="language-rust" data-lang="rust">let sq = Rectangle::square(3);
 </code></pre>
 			</li>
 		</ul>
@@ -4762,10 +4771,10 @@ fn main() {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-rust" data-lang="rust"> (&p1).distance(&p2);
+<pre><code class="language-rust" data-lang="rust">(&p1).distance(&p2);
 
- // Same thing
- p1.distance(&p2);
+// Same thing
+p1.distance(&p2);
 </code></pre>
 	</li>
 </ul>
@@ -4872,15 +4881,15 @@ impl Summary for Tweet {
 			</strong>
             : &quot;Accepts anything that implements Summary&quot;.
 		</p>
-<pre><code class="language-rust" data-lang="rust"> // Syntax sugar for the version below.
- pub fn notify(item: &impl Summary) {
-&nbsp;&nbsp;&nbsp;&nbsp; println!("Breaking news! {}", item.summarize());
- }
- 
- // Same thing, represented via a "trait bound".
- pub fn notify&lt;T: Summary&gt;(item: &T) {
-&nbsp;&nbsp;&nbsp;&nbsp; println!("Breaking news! {}", item.summarize());
- }
+<pre><code class="language-rust" data-lang="rust">// Syntax sugar for the version below.
+pub fn notify(item: &impl Summary) {
+&nbsp;&nbsp;&nbsp;&nbsp;println!("Breaking news! {}", item.summarize());
+}
+
+// Same thing, represented via a "trait bound".
+pub fn notify&lt;T: Summary&gt;(item: &T) {
+&nbsp;&nbsp;&nbsp;&nbsp;println!("Breaking news! {}", item.summarize());
+}
 </code></pre>
 	</li>
 	<li>
@@ -4890,12 +4899,12 @@ impl Summary for Tweet {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> pub fn notify(item1: &impl Summary, item2: &impl Summary) {
- }
- 
- // Same thing, but the "trait bound" infers directly that the types of 'item1' and 'item2' must be the same.
- pub fn notify&lt;T: Summary&gt;(item1: &T, item2: &T) {
- }
+<pre><code class="language-rust" data-lang="rust">pub fn notify(item1: &impl Summary, item2: &impl Summary) {
+}
+
+// Same thing, but the "trait bound" infers directly that the types of 'item1' and 'item2' must be the same.
+pub fn notify&lt;T: Summary&gt;(item1: &T, item2: &T) {
+}
 </code></pre>
 	</li>
 	<li>
@@ -4905,12 +4914,12 @@ impl Summary for Tweet {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> pub fn notify(item: &(impl Summary + Display)) {
- }
- 
- // Same thing, but using "trait bound".
- pub fn notify&lt;T: Summary + Display&gt;(item: &T) {
- }
+<pre><code class="language-rust" data-lang="rust">pub fn notify(item: &(impl Summary + Display)) {
+}
+
+// Same thing, but using "trait bound".
+pub fn notify&lt;T: Summary + Display&gt;(item: &T) {
+}
 </code></pre>
 	</li>
 	<li>
@@ -5066,12 +5075,12 @@ let loopback = IpAddr::V6(String::from("::1"));
 		<p>
             The name of each enum variant that we define also becomes a function that constructs an instance of the enum.
 		</p>
-<pre><code class="language-rust" data-lang="rust"> enum Message {
-&nbsp;&nbsp;&nbsp;&nbsp; Quit,
-&nbsp;&nbsp;&nbsp;&nbsp; Move { x: i32, y: i32 },
-&nbsp;&nbsp;&nbsp;&nbsp; Write(String),
-&nbsp;&nbsp;&nbsp;&nbsp; ChangeColor(i32, i32, i32),
- }
+<pre><code class="language-rust" data-lang="rust">enum Message {
+&nbsp;&nbsp;&nbsp;&nbsp;Quit,
+&nbsp;&nbsp;&nbsp;&nbsp;Move { x: i32, y: i32 },
+&nbsp;&nbsp;&nbsp;&nbsp;Write(String),
+&nbsp;&nbsp;&nbsp;&nbsp;ChangeColor(i32, i32, i32),
+}
 </code></pre>
 		<ul>
 			<li>
@@ -5110,14 +5119,14 @@ let loopback = IpAddr::V6(String::from("::1"));
             <code>impl</code>
             .
 		</p>
-<pre><code class="language-rust" data-lang="rust"> impl Message {
-&nbsp;&nbsp;&nbsp;&nbsp; fn call(&self) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // method body
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- let m = Message::Write(String::from("hello"));
- m.call();
+<pre><code class="language-rust" data-lang="rust">impl Message {
+&nbsp;&nbsp;&nbsp;&nbsp;fn call(&self) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// method body
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+let m = Message::Write(String::from("hello"));
+m.call();
 </code></pre>
 	</li>
 </ul>
@@ -5285,16 +5294,16 @@ println!("{:?}", opt); // Output: Some("Hello, world!")
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> fn add_last_numbers(stack: &mut Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; let a = stack.pop();
-&nbsp;&nbsp;&nbsp;&nbsp; let b = stack.pop();
- 
-&nbsp;&nbsp;&nbsp;&nbsp; match (a, b) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Some(x), Some(y)) =&gt; Some(x + y),
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _ =&gt; None,
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
+<pre><code class="language-rust" data-lang="rust">fn add_last_numbers(stack: &mut Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;let a = stack.pop();
+&nbsp;&nbsp;&nbsp;&nbsp;let b = stack.pop();
+
+&nbsp;&nbsp;&nbsp;&nbsp;match (a, b) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Some(x), Some(y)) =&gt; Some(x + y),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_ =&gt; None,
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
 </code></pre>
 	</li>
 	<li>
@@ -5305,9 +5314,9 @@ println!("{:?}", opt); // Output: Some("Hello, world!")
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> fn add_last_numbers(stack: &mut Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; Some(stack.pop()? + stack.pop()?)
- }
+<pre><code class="language-rust" data-lang="rust">fn add_last_numbers(stack: &mut Vec&lt;i32&gt;) -&gt; Option&lt;i32&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;Some(stack.pop()? + stack.pop()?)
+}
 </code></pre>
 	</li>
 </ul>
@@ -5499,26 +5508,26 @@ match version {
 			</strong>
             :
 		</p>
-<pre><code class="language-rust" data-lang="rust"> use std::fs::File;
- use std::io::{self, Read};
- 
- fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; let mut username_file = File::open("hello.txt")?;
-&nbsp;&nbsp;&nbsp;&nbsp; let mut username = String::new();
-&nbsp;&nbsp;&nbsp;&nbsp; username_file.read_to_string(&mut username)?;
-&nbsp;&nbsp;&nbsp;&nbsp; Ok(username)
- }
+<pre><code class="language-rust" data-lang="rust">use std::fs::File;
+use std::io::{self, Read};
+
+fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;let mut username_file = File::open("hello.txt")?;
+&nbsp;&nbsp;&nbsp;&nbsp;let mut username = String::new();
+&nbsp;&nbsp;&nbsp;&nbsp;username_file.read_to_string(&mut username)?;
+&nbsp;&nbsp;&nbsp;&nbsp;Ok(username)
+}
 </code></pre>
-<pre><code class="language-rust" data-lang="rust"> use std::fs::File;
- use std::io::{self, Read};
- 
- fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; let mut username = String::new();
- 
-&nbsp;&nbsp;&nbsp;&nbsp; File::open("hello.txt")?.read_to_string(&mut username)?;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; Ok(username)
- }
+<pre><code class="language-rust" data-lang="rust">use std::fs::File;
+use std::io::{self, Read};
+
+fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;let mut username = String::new();
+
+&nbsp;&nbsp;&nbsp;&nbsp;File::open("hello.txt")?.read_to_string(&mut username)?;
+
+&nbsp;&nbsp;&nbsp;&nbsp;Ok(username)
+}
 </code></pre>
 	</li>
 	<li>
@@ -5537,33 +5546,33 @@ match version {
 					</strong>
                     :
 				</p>
-<pre><code class="language-rust" data-lang="rust"> use std::fs::File;
- use std::io::prelude::*;
- use std::io;
- 
- struct Info {
-&nbsp;&nbsp;&nbsp;&nbsp; name: String,
-&nbsp;&nbsp;&nbsp;&nbsp; age: i32,
-&nbsp;&nbsp;&nbsp;&nbsp; rating: i32,
- }
- 
- fn write_info(info: &Info) -&gt; io::Result&lt;()&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; // Early return on error
-&nbsp;&nbsp;&nbsp;&nbsp; let mut file = match File::create("my_best_friends.txt") {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Err(e) =&gt; return Err(e),
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ok(f) =&gt; f,
-&nbsp;&nbsp;&nbsp;&nbsp; };
-&nbsp;&nbsp;&nbsp;&nbsp; if let Err(e) = file.write_all(format!("name: {}\n", info.name).as_bytes()) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return Err(e)
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; if let Err(e) = file.write_all(format!("age: {}\n", info.age).as_bytes()) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return Err(e)
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; if let Err(e) = file.write_all(format!("rating: {}\n", info.rating).as_bytes()) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return Err(e)
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; Ok(())
- }
+<pre><code class="language-rust" data-lang="rust">use std::fs::File;
+use std::io::prelude::*;
+use std::io;
+
+struct Info {
+&nbsp;&nbsp;&nbsp;&nbsp;name: String,
+&nbsp;&nbsp;&nbsp;&nbsp;age: i32,
+&nbsp;&nbsp;&nbsp;&nbsp;rating: i32,
+}
+
+fn write_info(info: &Info) -&gt; io::Result&lt;()&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;// Early return on error
+&nbsp;&nbsp;&nbsp;&nbsp;let mut file = match File::create("my_best_friends.txt") {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Err(e) =&gt; return Err(e),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ok(f) =&gt; f,
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;if let Err(e) = file.write_all(format!("name: {}\n", info.name).as_bytes()) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Err(e)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;if let Err(e) = file.write_all(format!("age: {}\n", info.age).as_bytes()) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Err(e)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;if let Err(e) = file.write_all(format!("rating: {}\n", info.rating).as_bytes()) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Err(e)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;Ok(())
+}
 </code></pre>
 			</li>
 			<li>
@@ -5574,24 +5583,24 @@ match version {
 					</strong>
                     :
 				</p>
-<pre><code class="language-rust" data-lang="rust"> use std::fs::File;
- use std::io::prelude::*;
- use std::io;
- 
- struct Info {
-&nbsp;&nbsp;&nbsp;&nbsp; name: String,
-&nbsp;&nbsp;&nbsp;&nbsp; age: i32,
-&nbsp;&nbsp;&nbsp;&nbsp; rating: i32,
- }
- 
- fn write_info(info: &Info) -&gt; io::Result&lt;()&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; let mut file = File::create("my_best_friends.txt")?;
-&nbsp;&nbsp;&nbsp;&nbsp; // Early return on error
-&nbsp;&nbsp;&nbsp;&nbsp; file.write_all(format!("name: {}\n", info.name).as_bytes())?;
-&nbsp;&nbsp;&nbsp;&nbsp; file.write_all(format!("age: {}\n", info.age).as_bytes())?;
-&nbsp;&nbsp;&nbsp;&nbsp; file.write_all(format!("rating: {}\n", info.rating).as_bytes())?;
-&nbsp;&nbsp;&nbsp;&nbsp; Ok(())
- }
+<pre><code class="language-rust" data-lang="rust">use std::fs::File;
+use std::io::prelude::*;
+use std::io;
+
+struct Info {
+&nbsp;&nbsp;&nbsp;&nbsp;name: String,
+&nbsp;&nbsp;&nbsp;&nbsp;age: i32,
+&nbsp;&nbsp;&nbsp;&nbsp;rating: i32,
+}
+
+fn write_info(info: &Info) -&gt; io::Result&lt;()&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;let mut file = File::create("my_best_friends.txt")?;
+&nbsp;&nbsp;&nbsp;&nbsp;// Early return on error
+&nbsp;&nbsp;&nbsp;&nbsp;file.write_all(format!("name: {}\n", info.name).as_bytes())?;
+&nbsp;&nbsp;&nbsp;&nbsp;file.write_all(format!("age: {}\n", info.age).as_bytes())?;
+&nbsp;&nbsp;&nbsp;&nbsp;file.write_all(format!("rating: {}\n", info.rating).as_bytes())?;
+&nbsp;&nbsp;&nbsp;&nbsp;Ok(())
+}
 </code></pre>
 			</li>
 		</ul>
@@ -5908,16 +5917,16 @@ match x {
             <code>_</code>
             &nbsp;symbol to guarantee that all options are covered.
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let dice_roll = 9;
- match dice_roll {
-&nbsp;&nbsp;&nbsp;&nbsp; 3 =&gt; add_fancy_hat(),
-&nbsp;&nbsp;&nbsp;&nbsp; 7 =&gt; remove_fancy_hat(),
-&nbsp;&nbsp;&nbsp;&nbsp; _ =&gt; reroll(),
- }
- 
- fn add_fancy_hat() {}
- fn remove_fancy_hat() {}
- fn reroll() {}
+<pre><code class="language-rust" data-lang="rust">let dice_roll = 9;
+match dice_roll {
+&nbsp;&nbsp;&nbsp;&nbsp;3 =&gt; add_fancy_hat(),
+&nbsp;&nbsp;&nbsp;&nbsp;7 =&gt; remove_fancy_hat(),
+&nbsp;&nbsp;&nbsp;&nbsp;_ =&gt; reroll(),
+}
+
+fn add_fancy_hat() {}
+fn remove_fancy_hat() {}
+fn reroll() {}
 </code></pre>
 	</li>
 	<li>
@@ -5930,15 +5939,15 @@ match x {
             <code>()</code>
             &nbsp;to indicate that nothing happens in a branch:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> let dice_roll = 9;
- match dice_roll {
-&nbsp;&nbsp;&nbsp;&nbsp; 3 =&gt; add_fancy_hat(),
-&nbsp;&nbsp;&nbsp;&nbsp; 7 =&gt; remove_fancy_hat(),
-&nbsp;&nbsp;&nbsp;&nbsp; _ =&gt; (),
- }
- 
- fn add_fancy_hat() {}
- fn remove_fancy_hat() {}
+<pre><code class="language-rust" data-lang="rust">let dice_roll = 9;
+match dice_roll {
+&nbsp;&nbsp;&nbsp;&nbsp;3 =&gt; add_fancy_hat(),
+&nbsp;&nbsp;&nbsp;&nbsp;7 =&gt; remove_fancy_hat(),
+&nbsp;&nbsp;&nbsp;&nbsp;_ =&gt; (),
+}
+
+fn add_fancy_hat() {}
+fn remove_fancy_hat() {}
 </code></pre>
 	</li>
 </ul>
@@ -6238,7 +6247,7 @@ if let Some(max) = config_max {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -6667,7 +6676,7 @@ if let Some(max) = config_max {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

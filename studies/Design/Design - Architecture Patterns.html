@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2024-05-02
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1319,29 +1328,29 @@ window.MathJax = {
 			</strong>
             :
 		</p>
-<pre><code class="language-js" data-lang="js"> // Components defined as types (immutable types)
- type Position = { x: number, y: number };
- type Velocity = { dx: number, dy: number };
- 
- // Entity composed of components
- type Entity = { position: Position, velocity: Velocity };
- 
- // System that updates the position of an entity
- function updatePosition(entity: Entity): Entity {
-&nbsp;&nbsp;&nbsp;&nbsp; const newPosition = {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x: entity.position.x + entity.velocity.dx,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y: entity.position.y + entity.velocity.dy
-&nbsp;&nbsp;&nbsp;&nbsp; };
-&nbsp;&nbsp;&nbsp;&nbsp; return { ...entity, position: newPosition };
- }
- 
- // Creating an entity with components
- const player: Entity = { position: { x: 0, y: 0 }, velocity: { dx: 2, dy: 3 } };
- 
- // Updating the position
- const newPlayer = updatePosition(player);
- console.log(newPlayer.position); // { x: 2, y: 3 }
- 
+<pre><code class="language-js" data-lang="js">// Components defined as types (immutable types)
+type Position = { x: number, y: number };
+type Velocity = { dx: number, dy: number };
+
+// Entity composed of components
+type Entity = { position: Position, velocity: Velocity };
+
+// System that updates the position of an entity
+function updatePosition(entity: Entity): Entity {
+&nbsp;&nbsp;&nbsp;&nbsp;const newPosition = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x: entity.position.x + entity.velocity.dx,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y: entity.position.y + entity.velocity.dy
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;return { ...entity, position: newPosition };
+}
+
+// Creating an entity with components
+const player: Entity = { position: { x: 0, y: 0 }, velocity: { dx: 2, dy: 3 } };
+
+// Updating the position
+const newPlayer = updatePosition(player);
+console.log(newPlayer.position); // { x: 2, y: 3 }
+
 </code></pre>
 	</li>
 	<li>
@@ -1351,42 +1360,42 @@ window.MathJax = {
 			</strong>
             :
 		</p>
-<pre><code class="language-js" data-lang="js"> // Defining components as classes
- class Position {
-&nbsp;&nbsp;&nbsp;&nbsp; constructor(public readonly x: number, public readonly y: number) {}
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // Method to update position
-&nbsp;&nbsp;&nbsp;&nbsp; update(dx: number, dy: number): Position {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return new Position(this.x + dx, this.y + dy);
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- class Velocity {
-&nbsp;&nbsp;&nbsp;&nbsp; constructor(public readonly dx: number, public readonly dy: number) {}
- }
- 
- // Entity composed of components (using composition)
- class Entity {
-&nbsp;&nbsp;&nbsp;&nbsp; constructor(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public readonly position: Position,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public readonly velocity: Velocity
-&nbsp;&nbsp;&nbsp;&nbsp; ) {}
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // Method to update entity position
-&nbsp;&nbsp;&nbsp;&nbsp; updatePosition(): Entity {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const newPosition = this.position.update(this.velocity.dx, this.velocity.dy);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return new Entity(newPosition, this.velocity);
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- // Creating an entity with components
- const player = new Entity(new Position(0, 0), new Velocity(2, 3));
- 
- // Updating the position
- const newPlayer = player.updatePosition();
- 
- console.log(newPlayer.position); // Position { x: 2, y: 3 }
- 
+<pre><code class="language-js" data-lang="js">// Defining components as classes
+class Position {
+&nbsp;&nbsp;&nbsp;&nbsp;constructor(public readonly x: number, public readonly y: number) {}
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Method to update position
+&nbsp;&nbsp;&nbsp;&nbsp;update(dx: number, dy: number): Position {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new Position(this.x + dx, this.y + dy);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+class Velocity {
+&nbsp;&nbsp;&nbsp;&nbsp;constructor(public readonly dx: number, public readonly dy: number) {}
+}
+
+// Entity composed of components (using composition)
+class Entity {
+&nbsp;&nbsp;&nbsp;&nbsp;constructor(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public readonly position: Position,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public readonly velocity: Velocity
+&nbsp;&nbsp;&nbsp;&nbsp;) {}
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Method to update entity position
+&nbsp;&nbsp;&nbsp;&nbsp;updatePosition(): Entity {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const newPosition = this.position.update(this.velocity.dx, this.velocity.dy);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new Entity(newPosition, this.velocity);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+// Creating an entity with components
+const player = new Entity(new Position(0, 0), new Velocity(2, 3));
+
+// Updating the position
+const newPlayer = player.updatePosition();
+
+console.log(newPlayer.position); // Position { x: 2, y: 3 }
+
 </code></pre>
 	</li>
 </ul>
@@ -1515,7 +1524,7 @@ console.log(player.getComponent("position")); // { x: 2, y: 3 }
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -1562,7 +1571,7 @@ console.log(player.getComponent("position")); // { x: 2, y: 3 }
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

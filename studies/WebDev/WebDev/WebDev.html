@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-06-23
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -2636,10 +2645,10 @@ int main() {
 			</strong>
             :
 		</p>
-<pre><code class="language-html" data-lang="html"> &lt;form action="/data" method="GET"&gt;
-&nbsp;&nbsp; &lt;input name="q"&gt;
-&nbsp;&nbsp; &lt;button type="submit"&gt;Search&lt;/button&gt;
- &lt;/form&gt;
+<pre><code class="language-html" data-lang="html">&lt;form action="/data" method="GET"&gt;
+&nbsp;&nbsp;&lt;input name="q"&gt;
+&nbsp;&nbsp;&lt;button type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;
 </code></pre>
 		<ul>
 			<li>
@@ -2679,9 +2688,9 @@ int main() {
 			</strong>
             :
 		</p>
-<pre><code class="language-js" data-lang="js"> const res = await fetch("/data?q=test");
- const html = await res.text();
- document.getElementById("result").innerHTML = html;
+<pre><code class="language-js" data-lang="js">const res = await fetch("/data?q=test");
+const html = await res.text();
+document.getElementById("result").innerHTML = html;
 </code></pre>
 		<ul>
 			<li>
@@ -2851,23 +2860,23 @@ int main() {
 				<p>
                     HTML:
 				</p>
-<pre><code class="language-html" data-lang="html"> &lt;html&gt;
-&nbsp;&nbsp;&nbsp;&nbsp; &lt;body&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;Hello&lt;/h1&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;World&lt;/p&gt;
-&nbsp;&nbsp;&nbsp;&nbsp; &lt;/body&gt;
- &lt;/html&gt;
+<pre><code class="language-html" data-lang="html">&lt;html&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;World&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 			</li>
 			<li>
 				<p>
                     Resulting DOM (simplified structure):
 				</p>
-<pre><code class="language-txt" data-lang="txt"> document
- └── html
-&nbsp;&nbsp;&nbsp;&nbsp; └── body
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── h1 (text: "Hello")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── p&nbsp;&nbsp;(text: "World")
+<pre><code class="language-txt" data-lang="txt">document
+└── html
+&nbsp;&nbsp;&nbsp;&nbsp;└── body
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── h1 (text: "Hello")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── p&nbsp;&nbsp;(text: "World")
 </code></pre>
 			</li>
 		</ul>
@@ -2887,8 +2896,8 @@ int main() {
 					</em>
                     :
 				</p>
-<pre><code class="language-js" data-lang="js"> let text = document.querySelector("h1").textContent;
- // text = "Hello"
+<pre><code class="language-js" data-lang="js">let text = document.querySelector("h1").textContent;
+// text = "Hello"
 </code></pre>
 			</li>
 			<li>
@@ -2898,7 +2907,7 @@ int main() {
 					</em>
                     :
 				</p>
-<pre><code class="language-js" data-lang="js"> document.querySelector("p").textContent = "Changed!";
+<pre><code class="language-js" data-lang="js">document.querySelector("p").textContent = "Changed!";
 </code></pre>
 			</li>
 			<li>
@@ -2908,9 +2917,9 @@ int main() {
 					</em>
                     :
 				</p>
-<pre><code class="language-js" data-lang="js"> let div = document.createElement("div");
- div.textContent = "New Div";
- document.body.appendChild(div);
+<pre><code class="language-js" data-lang="js">let div = document.createElement("div");
+div.textContent = "New Div";
+document.body.appendChild(div);
 </code></pre>
 			</li>
 		</ul>
@@ -4224,26 +4233,26 @@ var userList = templ.Component(func(users []User) templ.Component {
 			</strong>
             :
 		</p>
-<pre><code class="language-js" data-lang="js"> import React from 'react';
- 
- const App: React.FC = () =&gt; {
-&nbsp;&nbsp; return (
-&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;Hello, TypeScript with JSX!&lt;/h1&gt;
-&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
-&nbsp;&nbsp; );
- };
- 
- export default App;
+<pre><code class="language-js" data-lang="js">import React from 'react';
+
+const App: React.FC = () =&gt; {
+&nbsp;&nbsp;return (
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello, TypeScript with JSX!&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;);
+};
+
+export default App;
 </code></pre>
-<pre><code class="language-js" data-lang="js"> export default function List({ items }) {
-&nbsp;&nbsp; if (!items.length) return &lt;div&gt;No items&lt;/div&gt;;
-&nbsp;&nbsp; return (
-&nbsp;&nbsp;&nbsp;&nbsp; &lt;ul&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {items.map(item =&gt; &lt;li key={item.id}&gt;{item.title}&lt;/li&gt;)}
-&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ul&gt;
-&nbsp;&nbsp; );
- }
+<pre><code class="language-js" data-lang="js">export default function List({ items }) {
+&nbsp;&nbsp;if (!items.length) return &lt;div&gt;No items&lt;/div&gt;;
+&nbsp;&nbsp;return (
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{items.map(item =&gt; &lt;li key={item.id}&gt;{item.title}&lt;/li&gt;)}
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;);
+}
 </code></pre>
 	</li>
 </ul>
@@ -4662,7 +4671,7 @@ console.log(html);
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -4863,7 +4872,7 @@ console.log(html);
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

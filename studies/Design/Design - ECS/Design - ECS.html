@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-11
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1987,25 +1996,25 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> // Components: defined as types (immutable types)
- type Position = { x: number, y: number };
- type Velocity = { dx: number, dy: number };
- 
- // Entity: composed of components.
- type Entity = { id: number, position: Position, velocity: Velocity };
- 
- // System: to update an entity's position.
- function updatePosition(entity: Entity): Entity {
-&nbsp;&nbsp;&nbsp;&nbsp; const newPosition = {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x: entity.position.x + entity.velocity.dx,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y: entity.position.y + entity.velocity.dy
-&nbsp;&nbsp;&nbsp;&nbsp; };
-&nbsp;&nbsp;&nbsp;&nbsp; return { ...entity, position: newPosition };
- }
- 
- 
- const player: Entity = { id: 1, position: { x: 0, y: 0 }, velocity: { dx: 2, dy: 3 } };
- const newPlayer = updatePosition(player);
+<pre><code class="language-js" data-lang="js">// Components: defined as types (immutable types)
+type Position = { x: number, y: number };
+type Velocity = { dx: number, dy: number };
+
+// Entity: composed of components.
+type Entity = { id: number, position: Position, velocity: Velocity };
+
+// System: to update an entity's position.
+function updatePosition(entity: Entity): Entity {
+&nbsp;&nbsp;&nbsp;&nbsp;const newPosition = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x: entity.position.x + entity.velocity.dx,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y: entity.position.y + entity.velocity.dy
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;return { ...entity, position: newPosition };
+}
+
+
+const player: Entity = { id: 1, position: { x: 0, y: 0 }, velocity: { dx: 2, dy: 3 } };
+const newPlayer = updatePosition(player);
 </code></pre>
 	</li>
 </ul>
@@ -2289,7 +2298,7 @@ window.MathJax = {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -2348,7 +2357,7 @@ window.MathJax = {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

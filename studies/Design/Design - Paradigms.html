@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2023-10-07
 							</time>
 							<time
-								datetime="2025-11-21" >
-                                | Updated: 2025-11-21
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1571,21 +1580,21 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-c" data-lang="c"> #include &lt;stdio.h&gt;
- 
- int somar(int a, int b) {
-&nbsp;&nbsp;&nbsp;&nbsp; return a + b;
- }
- 
- int main() {
-&nbsp;&nbsp;&nbsp;&nbsp; int x = 5;
-&nbsp;&nbsp;&nbsp;&nbsp; int y = 10;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; int resultado = somar(x, y);
-&nbsp;&nbsp;&nbsp;&nbsp; printf("Resultado da soma: %d\n", resultado);
- 
-&nbsp;&nbsp;&nbsp;&nbsp; return 0;
- }
+<pre><code class="language-c" data-lang="c">#include &lt;stdio.h&gt;
+
+int somar(int a, int b) {
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b;
+}
+
+int main() {
+&nbsp;&nbsp;&nbsp;&nbsp;int x = 5;
+&nbsp;&nbsp;&nbsp;&nbsp;int y = 10;
+
+&nbsp;&nbsp;&nbsp;&nbsp;int resultado = somar(x, y);
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Resultado da soma: %d\n", resultado);
+
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+}
 </code></pre>
 		<ul>
 			<li>
@@ -1595,63 +1604,63 @@ window.MathJax = {
 					</strong>
                     :
 				</p>
-<pre><code class="language-c" data-lang="c"> #include &lt;stdio.h&gt;
- 
- typedef struct {
-&nbsp;&nbsp;&nbsp;&nbsp; char rua[100];
-&nbsp;&nbsp;&nbsp;&nbsp; char cidade[50];
-&nbsp;&nbsp;&nbsp;&nbsp; char estado[50];
- } Endereco;
- 
- typedef struct {
-&nbsp;&nbsp;&nbsp;&nbsp; char nome[50];
-&nbsp;&nbsp;&nbsp;&nbsp; int idade;
-&nbsp;&nbsp;&nbsp;&nbsp; Endereco endereco;
- } Pessoa;
- 
- void imprimir_endereco(const Endereco *e) {
-&nbsp;&nbsp;&nbsp;&nbsp; printf("Endereço: %s, %s, %s\n", e-&gt;rua, e-&gt;cidade, e-&gt;estado);
- }
- 
- void imprimir_pessoa(const Pessoa *p) {
-&nbsp;&nbsp;&nbsp;&nbsp; printf("Nome: %s, Idade: %d\n", p-&gt;nome, p-&gt;idade);
-&nbsp;&nbsp;&nbsp;&nbsp; imprimir_endereco(&p-&gt;endereco);
- }
- 
- int main() {
-&nbsp;&nbsp;&nbsp;&nbsp; Pessoa p = {"João", 30, {"Rua das Flores", "São Paulo", "SP"}};
-&nbsp;&nbsp;&nbsp;&nbsp; imprimir_pessoa(&p);
- 
-&nbsp;&nbsp;&nbsp;&nbsp; return 0;
- }
+<pre><code class="language-c" data-lang="c">#include &lt;stdio.h&gt;
+
+typedef struct {
+&nbsp;&nbsp;&nbsp;&nbsp;char rua[100];
+&nbsp;&nbsp;&nbsp;&nbsp;char cidade[50];
+&nbsp;&nbsp;&nbsp;&nbsp;char estado[50];
+} Endereco;
+
+typedef struct {
+&nbsp;&nbsp;&nbsp;&nbsp;char nome[50];
+&nbsp;&nbsp;&nbsp;&nbsp;int idade;
+&nbsp;&nbsp;&nbsp;&nbsp;Endereco endereco;
+} Pessoa;
+
+void imprimir_endereco(const Endereco *e) {
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Endereço: %s, %s, %s\n", e-&gt;rua, e-&gt;cidade, e-&gt;estado);
+}
+
+void imprimir_pessoa(const Pessoa *p) {
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Nome: %s, Idade: %d\n", p-&gt;nome, p-&gt;idade);
+&nbsp;&nbsp;&nbsp;&nbsp;imprimir_endereco(&p-&gt;endereco);
+}
+
+int main() {
+&nbsp;&nbsp;&nbsp;&nbsp;Pessoa p = {"João", 30, {"Rua das Flores", "São Paulo", "SP"}};
+&nbsp;&nbsp;&nbsp;&nbsp;imprimir_pessoa(&p);
+
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+}
 </code></pre>
-<pre><code class="language-c" data-lang="c"> #include &lt;stdio.h&gt;
- 
- typedef struct {
-&nbsp;&nbsp;&nbsp;&nbsp; char nome[50];
-&nbsp;&nbsp;&nbsp;&nbsp; int idade;
- } Pessoa;
- 
- void saudar(Pessoa *p) {
-&nbsp;&nbsp;&nbsp;&nbsp; printf("Olá, meu nome é %s e tenho %d anos.\n", p-&gt;nome, p-&gt;idade);
- }
- 
- typedef struct {
-&nbsp;&nbsp;&nbsp;&nbsp; Pessoa pessoa;
-&nbsp;&nbsp;&nbsp;&nbsp; char matricula[20];
- } Estudante;
- 
- void saudar_estudante(Estudante *e) {
-&nbsp;&nbsp;&nbsp;&nbsp; saudar(&e-&gt;pessoa);
-&nbsp;&nbsp;&nbsp;&nbsp; printf("Minha matrícula é: %s\n", e-&gt;matricula);
- }
- 
- int main() {
-&nbsp;&nbsp;&nbsp;&nbsp; Estudante e = {{"João", 20}, "12345"};
-&nbsp;&nbsp;&nbsp;&nbsp; saudar_estudante(&e);
-&nbsp;&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp; return 0;
- }
+<pre><code class="language-c" data-lang="c">#include &lt;stdio.h&gt;
+
+typedef struct {
+&nbsp;&nbsp;&nbsp;&nbsp;char nome[50];
+&nbsp;&nbsp;&nbsp;&nbsp;int idade;
+} Pessoa;
+
+void saudar(Pessoa *p) {
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Olá, meu nome é %s e tenho %d anos.\n", p-&gt;nome, p-&gt;idade);
+}
+
+typedef struct {
+&nbsp;&nbsp;&nbsp;&nbsp;Pessoa pessoa;
+&nbsp;&nbsp;&nbsp;&nbsp;char matricula[20];
+} Estudante;
+
+void saudar_estudante(Estudante *e) {
+&nbsp;&nbsp;&nbsp;&nbsp;saudar(&e-&gt;pessoa);
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Minha matrícula é: %s\n", e-&gt;matricula);
+}
+
+int main() {
+&nbsp;&nbsp;&nbsp;&nbsp;Estudante e = {{"João", 20}, "12345"};
+&nbsp;&nbsp;&nbsp;&nbsp;saudar_estudante(&e);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+}
 </code></pre>
 			</li>
 		</ul>
@@ -1721,28 +1730,28 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-rust" data-lang="rust"> struct Carro {
-&nbsp;&nbsp;&nbsp;&nbsp; modelo: String,
-&nbsp;&nbsp;&nbsp;&nbsp; ano: i32,
- }
- 
- impl Carro {
-&nbsp;&nbsp;&nbsp;&nbsp; fn novo(modelo: &str, ano: i32) -&gt; Carro {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Carro {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modelo: modelo.to_string(),
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ano,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; fn detalhes(&self) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; println!("Modelo: {}, Ano: {}", self.modelo, self.ano);
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- fn main() {
-&nbsp;&nbsp;&nbsp;&nbsp; let carro1 = Carro::novo("Fusca", 1985);
-&nbsp;&nbsp;&nbsp;&nbsp; carro1.detalhes();
- }
+<pre><code class="language-rust" data-lang="rust">struct Carro {
+&nbsp;&nbsp;&nbsp;&nbsp;modelo: String,
+&nbsp;&nbsp;&nbsp;&nbsp;ano: i32,
+}
+
+impl Carro {
+&nbsp;&nbsp;&nbsp;&nbsp;fn novo(modelo: &str, ano: i32) -&gt; Carro {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Carro {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modelo: modelo.to_string(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ano,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;fn detalhes(&self) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println!("Modelo: {}, Ano: {}", self.modelo, self.ano);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+fn main() {
+&nbsp;&nbsp;&nbsp;&nbsp;let carro1 = Carro::novo("Fusca", 1985);
+&nbsp;&nbsp;&nbsp;&nbsp;carro1.detalhes();
+}
 </code></pre>
 		<ul>
 			<li>
@@ -1752,28 +1761,28 @@ window.MathJax = {
 					</strong>
                     :
 				</p>
-<pre><code class="language-rust" data-lang="rust"> fn maior(a: i32, b: i32) -&gt; i32 {
-&nbsp;&nbsp;&nbsp;&nbsp; if a &gt; b { a } else { b }
- }
- 
- fn main() {
-&nbsp;&nbsp;&nbsp;&nbsp; let resultado = maior(10, 20);
-&nbsp;&nbsp;&nbsp;&nbsp; println!("O maior número é: {}", resultado);
- }
+<pre><code class="language-rust" data-lang="rust">fn maior(a: i32, b: i32) -&gt; i32 {
+&nbsp;&nbsp;&nbsp;&nbsp;if a &gt; b { a } else { b }
+}
+
+fn main() {
+&nbsp;&nbsp;&nbsp;&nbsp;let resultado = maior(10, 20);
+&nbsp;&nbsp;&nbsp;&nbsp;println!("O maior número é: {}", resultado);
+}
 </code></pre>
-<pre><code class="language-rust" data-lang="rust"> struct Ponto { x: i32, y: i32 }
- 
- fn distancia(p1: &Ponto, p2: &Ponto) -&gt; f64 {
-&nbsp;&nbsp;&nbsp;&nbsp; let dx = p2.x - p1.x;
-&nbsp;&nbsp;&nbsp;&nbsp; let dy = p2.y - p1.y;
-&nbsp;&nbsp;&nbsp;&nbsp; ((dx * dx + dy * dy) as f64).sqrt()
- }
- 
- fn main() {
-&nbsp;&nbsp;&nbsp;&nbsp; let p1 = Ponto { x: 3, y: 4 };
-&nbsp;&nbsp;&nbsp;&nbsp; let p2 = Ponto { x: 7, y: 1 };
-&nbsp;&nbsp;&nbsp;&nbsp; println!("Distância: {}", distancia(&p1, &p2));
- }
+<pre><code class="language-rust" data-lang="rust">struct Ponto { x: i32, y: i32 }
+
+fn distancia(p1: &Ponto, p2: &Ponto) -&gt; f64 {
+&nbsp;&nbsp;&nbsp;&nbsp;let dx = p2.x - p1.x;
+&nbsp;&nbsp;&nbsp;&nbsp;let dy = p2.y - p1.y;
+&nbsp;&nbsp;&nbsp;&nbsp;((dx * dx + dy * dy) as f64).sqrt()
+}
+
+fn main() {
+&nbsp;&nbsp;&nbsp;&nbsp;let p1 = Ponto { x: 3, y: 4 };
+&nbsp;&nbsp;&nbsp;&nbsp;let p2 = Ponto { x: 7, y: 1 };
+&nbsp;&nbsp;&nbsp;&nbsp;println!("Distância: {}", distancia(&p1, &p2));
+}
 </code></pre>
 			</li>
 		</ul>
@@ -1815,25 +1824,25 @@ window.MathJax = {
 				<p>
                     No constructors/destructors; manual init functions handle resource setup.
 				</p>
-<pre><code class="language-rust" data-lang="rust"> const std = @import("std");
- 
- const Pessoa = struct {
-&nbsp;&nbsp;&nbsp;&nbsp; nome: []const u8,
-&nbsp;&nbsp;&nbsp;&nbsp; idade: u32,
- 
-&nbsp;&nbsp;&nbsp;&nbsp; pub fn init(nome: []const u8, idade: u32) Pessoa {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return Pessoa{ .nome = nome, .idade = idade };
-&nbsp;&nbsp;&nbsp;&nbsp; },
- 
-&nbsp;&nbsp;&nbsp;&nbsp; pub fn saudar(self: *Pessoa) void {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; std.debug.print("Olá, meu nome é {} e tenho {} anos.\n", .{ self.nome, self.idade });
-&nbsp;&nbsp;&nbsp;&nbsp; },
- };
- 
- pub fn main() void {
-&nbsp;&nbsp;&nbsp;&nbsp; var pessoa = Pessoa.init("João", 30);
-&nbsp;&nbsp;&nbsp;&nbsp; pessoa.saudar();
- }
+<pre><code class="language-rust" data-lang="rust">const std = @import("std");
+
+const Pessoa = struct {
+&nbsp;&nbsp;&nbsp;&nbsp;nome: []const u8,
+&nbsp;&nbsp;&nbsp;&nbsp;idade: u32,
+
+&nbsp;&nbsp;&nbsp;&nbsp;pub fn init(nome: []const u8, idade: u32) Pessoa {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Pessoa{ .nome = nome, .idade = idade };
+&nbsp;&nbsp;&nbsp;&nbsp;},
+
+&nbsp;&nbsp;&nbsp;&nbsp;pub fn saudar(self: *Pessoa) void {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std.debug.print("Olá, meu nome é {} e tenho {} anos.\n", .{ self.nome, self.idade });
+&nbsp;&nbsp;&nbsp;&nbsp;},
+};
+
+pub fn main() void {
+&nbsp;&nbsp;&nbsp;&nbsp;var pessoa = Pessoa.init("João", 30);
+&nbsp;&nbsp;&nbsp;&nbsp;pessoa.saudar();
+}
 </code></pre>
 			</li>
 		</ul>
@@ -1853,16 +1862,16 @@ window.MathJax = {
 					</strong>
                     :
 				</p>
-<pre><code class="language-rust" data-lang="rust"> const std = @import("std");
- 
- fn somar(a: i32, b: i32) i32 {
-&nbsp;&nbsp;&nbsp;&nbsp; return a + b;
- }
- 
- pub fn main() void {
-&nbsp;&nbsp;&nbsp;&nbsp; const resultado = somar(10, 20);
-&nbsp;&nbsp;&nbsp;&nbsp; std.debug.print("A soma é: {}\n", .{resultado});
- }
+<pre><code class="language-rust" data-lang="rust">const std = @import("std");
+
+fn somar(a: i32, b: i32) i32 {
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b;
+}
+
+pub fn main() void {
+&nbsp;&nbsp;&nbsp;&nbsp;const resultado = somar(10, 20);
+&nbsp;&nbsp;&nbsp;&nbsp;std.debug.print("A soma é: {}\n", .{resultado});
+}
 </code></pre>
 			</li>
 			<li>
@@ -1872,22 +1881,22 @@ window.MathJax = {
 					</strong>
                     :
 				</p>
-<pre><code class="language-rust" data-lang="rust"> const std = @import("std");
- 
- const Falar = struct { falar: fn() void };
- const Cachorro = struct { falar: Falar, nome: []const u8 };
- const Gato = struct { falar: Falar, nome: []const u8 };
- 
- fn falar_cachorro() void { std.debug.print("Au Au!\n", .{}); }
- fn falar_gato() void { std.debug.print("Miau!\n", .{}); }
- 
- pub fn main() void {
-&nbsp;&nbsp;&nbsp;&nbsp; var cachorro = Cachorro{ .falar = Falar{ .falar = falar_cachorro }, .nome = "Rex" };
-&nbsp;&nbsp;&nbsp;&nbsp; var gato = Gato{ .falar = Falar{ .falar = falar_gato }, .nome = "Whiskers" };
- 
-&nbsp;&nbsp;&nbsp;&nbsp; cachorro.falar.falar();
-&nbsp;&nbsp;&nbsp;&nbsp; gato.falar.falar();
- }
+<pre><code class="language-rust" data-lang="rust">const std = @import("std");
+
+const Falar = struct { falar: fn() void };
+const Cachorro = struct { falar: Falar, nome: []const u8 };
+const Gato = struct { falar: Falar, nome: []const u8 };
+
+fn falar_cachorro() void { std.debug.print("Au Au!\n", .{}); }
+fn falar_gato() void { std.debug.print("Miau!\n", .{}); }
+
+pub fn main() void {
+&nbsp;&nbsp;&nbsp;&nbsp;var cachorro = Cachorro{ .falar = Falar{ .falar = falar_cachorro }, .nome = "Rex" };
+&nbsp;&nbsp;&nbsp;&nbsp;var gato = Gato{ .falar = Falar{ .falar = falar_gato }, .nome = "Whiskers" };
+
+&nbsp;&nbsp;&nbsp;&nbsp;cachorro.falar.falar();
+&nbsp;&nbsp;&nbsp;&nbsp;gato.falar.falar();
+}
 </code></pre>
 			</li>
 		</ul>
@@ -1927,14 +1936,14 @@ window.MathJax = {
 					</strong>
                     :
 				</p>
-<pre><code class="language-go" data-lang="go"> package main
- import "fmt"
- 
- func somar(a, b int) int { return a + b }
- 
- func main() {
-&nbsp;&nbsp;&nbsp;&nbsp; fmt.Println("Resultado:", somar(10, 20))
- }
+<pre><code class="language-go" data-lang="go">package main
+import "fmt"
+
+func somar(a, b int) int { return a + b }
+
+func main() {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println("Resultado:", somar(10, 20))
+}
 </code></pre>
 			</li>
 			<li>
@@ -1944,25 +1953,25 @@ window.MathJax = {
 					</strong>
                     :
 				</p>
-<pre><code class="language-go" data-lang="go"> package main
- import "fmt"
- 
- type Saudável interface { Saudar() }
- 
- type Pessoa struct { Nome string; Idade int }
- func (p *Pessoa) Saudar() { fmt.Println("Olá,", p.Nome) }
- 
- type Animal struct { Nome string }
- func (a *Animal) Saudar() { fmt.Println("Roar! Eu sou", a.Nome) }
- 
- func main() {
-&nbsp;&nbsp;&nbsp;&nbsp; var s Saudável
-&nbsp;&nbsp;&nbsp;&nbsp; pessoa := &Pessoa{"João", 30}
-&nbsp;&nbsp;&nbsp;&nbsp; animal := &Animal{"Leão"}
- 
-&nbsp;&nbsp;&nbsp;&nbsp; s = pessoa; s.Saudar()
-&nbsp;&nbsp;&nbsp;&nbsp; s = animal; s.Saudar()
- }
+<pre><code class="language-go" data-lang="go">package main
+import "fmt"
+
+type Saudável interface { Saudar() }
+
+type Pessoa struct { Nome string; Idade int }
+func (p *Pessoa) Saudar() { fmt.Println("Olá,", p.Nome) }
+
+type Animal struct { Nome string }
+func (a *Animal) Saudar() { fmt.Println("Roar! Eu sou", a.Nome) }
+
+func main() {
+&nbsp;&nbsp;&nbsp;&nbsp;var s Saudável
+&nbsp;&nbsp;&nbsp;&nbsp;pessoa := &Pessoa{"João", 30}
+&nbsp;&nbsp;&nbsp;&nbsp;animal := &Animal{"Leão"}
+
+&nbsp;&nbsp;&nbsp;&nbsp;s = pessoa; s.Saudar()
+&nbsp;&nbsp;&nbsp;&nbsp;s = animal; s.Saudar()
+}
 </code></pre>
 			</li>
 		</ul>
@@ -1997,8 +2006,8 @@ window.MathJax = {
 					</strong>
                     :
 				</p>
-<pre><code class="language-lua" data-lang="lua"> function somar(a, b) return a + b end
- print("Resultado: " .. somar(5, 10))
+<pre><code class="language-lua" data-lang="lua">function somar(a, b) return a + b end
+print("Resultado: " .. somar(5, 10))
 </code></pre>
 			</li>
 			<li>
@@ -2008,31 +2017,31 @@ window.MathJax = {
 					</strong>
                     :
 				</p>
-<pre><code class="language-lua" data-lang="lua"> Pessoa = {}; Pessoa.__index = Pessoa
- function Pessoa:new(nome, idade)
-&nbsp;&nbsp;&nbsp;&nbsp; local self = setmetatable({}, Pessoa)
-&nbsp;&nbsp;&nbsp;&nbsp; self.nome, self.idade = nome, idade
-&nbsp;&nbsp;&nbsp;&nbsp; return self
- end
- function Pessoa:saudar()
-&nbsp;&nbsp;&nbsp;&nbsp; print("Olá, meu nome é " .. self.nome .. " e tenho " .. self.idade .. " anos.")
- end
- 
- Aluno = setmetatable({}, Pessoa)
- Aluno.__index = Aluno
- function Aluno:new(nome, idade, matricula)
-&nbsp;&nbsp;&nbsp;&nbsp; local self = setmetatable(Pessoa:new(nome, idade), Aluno)
-&nbsp;&nbsp;&nbsp;&nbsp; self.matricula = matricula
-&nbsp;&nbsp;&nbsp;&nbsp; return self
- end
- function Aluno:saudar()
-&nbsp;&nbsp;&nbsp;&nbsp; print("Sou aluno " .. self.nome .. " e minha matrícula é " .. self.matricula)
- end
- 
- local pessoa1 = Pessoa:new("João", 30)
- local aluno1 = Aluno:new("Maria", 20, "12345")
- pessoa1:saudar()
- aluno1:saudar()
+<pre><code class="language-lua" data-lang="lua">Pessoa = {}; Pessoa.__index = Pessoa
+function Pessoa:new(nome, idade)
+&nbsp;&nbsp;&nbsp;&nbsp;local self = setmetatable({}, Pessoa)
+&nbsp;&nbsp;&nbsp;&nbsp;self.nome, self.idade = nome, idade
+&nbsp;&nbsp;&nbsp;&nbsp;return self
+end
+function Pessoa:saudar()
+&nbsp;&nbsp;&nbsp;&nbsp;print("Olá, meu nome é " .. self.nome .. " e tenho " .. self.idade .. " anos.")
+end
+
+Aluno = setmetatable({}, Pessoa)
+Aluno.__index = Aluno
+function Aluno:new(nome, idade, matricula)
+&nbsp;&nbsp;&nbsp;&nbsp;local self = setmetatable(Pessoa:new(nome, idade), Aluno)
+&nbsp;&nbsp;&nbsp;&nbsp;self.matricula = matricula
+&nbsp;&nbsp;&nbsp;&nbsp;return self
+end
+function Aluno:saudar()
+&nbsp;&nbsp;&nbsp;&nbsp;print("Sou aluno " .. self.nome .. " e minha matrícula é " .. self.matricula)
+end
+
+local pessoa1 = Pessoa:new("João", 30)
+local aluno1 = Aluno:new("Maria", 20, "12345")
+pessoa1:saudar()
+aluno1:saudar()
 </code></pre>
 			</li>
 		</ul>
@@ -2388,22 +2397,22 @@ window.MathJax = {
 					</strong>
                     :
 				</p>
-<pre><code class="language-js" data-lang="js"> // Class representing a 2D point
- class Point {
-&nbsp;&nbsp;&nbsp;&nbsp; constructor(public readonly x: number, public readonly y: number) {}
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // Method that returns a new Point with changed values (immutability)
-&nbsp;&nbsp;&nbsp;&nbsp; move(dx: number, dy: number): Point {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return new Point(this.x + dx, this.y + dy);
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- // Using the class immutably
- const p1 = new Point(0, 0);
- const p2 = p1.move(10, 5);
- 
- console.log(p1); // Point { x: 0, y: 0 }
- console.log(p2); // Point { x: 10, y: 5 }
+<pre><code class="language-js" data-lang="js">// Class representing a 2D point
+class Point {
+&nbsp;&nbsp;&nbsp;&nbsp;constructor(public readonly x: number, public readonly y: number) {}
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Method that returns a new Point with changed values (immutability)
+&nbsp;&nbsp;&nbsp;&nbsp;move(dx: number, dy: number): Point {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new Point(this.x + dx, this.y + dy);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+// Using the class immutably
+const p1 = new Point(0, 0);
+const p2 = p1.move(10, 5);
+
+console.log(p1); // Point { x: 0, y: 0 }
+console.log(p2); // Point { x: 10, y: 5 }
 </code></pre>
 				<ul>
 					<li>
@@ -2447,32 +2456,32 @@ window.MathJax = {
 						<p>
                             Without breaking pure functions:
 						</p>
-<pre><code class="language-js" data-lang="js"> class Calculator {
-&nbsp;&nbsp;&nbsp;&nbsp; constructor(private readonly value: number) {}
- 
-&nbsp;&nbsp;&nbsp;&nbsp; // Operations that return new instances, without altering original state
-&nbsp;&nbsp;&nbsp;&nbsp; add(x: number): Calculator {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return new Calculator(this.value + x);
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; sub(x: number): Calculator {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return new Calculator(this.value - x);
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; result(): number {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return this.value;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- // Using the class functionally (immutability)
- const c1 = new Calculator(10);
- const c2 = c1.add(5); // Does not change c1
- const c3 = c2.sub(2); // Does not change c2
- 
- console.log(c1.result()); // 10
- console.log(c2.result()); // 15
- console.log(c3.result()); // 13
- 
+<pre><code class="language-js" data-lang="js">class Calculator {
+&nbsp;&nbsp;&nbsp;&nbsp;constructor(private readonly value: number) {}
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Operations that return new instances, without altering original state
+&nbsp;&nbsp;&nbsp;&nbsp;add(x: number): Calculator {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new Calculator(this.value + x);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;sub(x: number): Calculator {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new Calculator(this.value - x);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;result(): number {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return this.value;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+// Using the class functionally (immutability)
+const c1 = new Calculator(10);
+const c2 = c1.add(5); // Does not change c1
+const c3 = c2.sub(2); // Does not change c2
+
+console.log(c1.result()); // 10
+console.log(c2.result()); // 15
+console.log(c3.result()); // 13
+
 </code></pre>
 					</li>
 					<li>
@@ -2507,32 +2516,32 @@ window.MathJax = {
 								</ul>
 							</li>
 						</ul>
-<pre><code class="language-js" data-lang="js"> class Calculator {
-&nbsp;&nbsp;&nbsp;&nbsp; private value: number;
- 
-&nbsp;&nbsp;&nbsp;&nbsp; constructor(initial: number) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.value = initial;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; add(x: number): Calculator {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.value += x;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return this; // allows chaining
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; sub(x: number): Calculator {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.value -= x;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return this;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- 
-&nbsp;&nbsp;&nbsp;&nbsp; result(): number {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return this.value;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- // Using the class for chained calculations
- const calc = new Calculator(10);
- const result = calc.add(5).sub(2).result();
- console.log(result); // 13
+<pre><code class="language-js" data-lang="js">class Calculator {
+&nbsp;&nbsp;&nbsp;&nbsp;private value: number;
+
+&nbsp;&nbsp;&nbsp;&nbsp;constructor(initial: number) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.value = initial;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;add(x: number): Calculator {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.value += x;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return this; // allows chaining
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;sub(x: number): Calculator {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.value -= x;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return this;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;result(): number {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return this.value;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+// Using the class for chained calculations
+const calc = new Calculator(10);
+const result = calc.add(5).sub(2).result();
+console.log(result); // 13
 </code></pre>
 					</li>
 				</ul>
@@ -2688,15 +2697,15 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            [2025/01/24] A public method should not return information about an internal node.
+            (2025-01-24) A public method should not return information about an internal node.
 		</p>
 		<ul>
 			<li>
 				<p>
                     Avoid this:
 				</p>
-<pre><code class="language-swift" data-lang="swift"> func get_inventario_runtime() -&gt; Array[Dictionary]:
-&nbsp;&nbsp;&nbsp;&nbsp; return _grid_slots.get_inventario_runtime()
+<pre><code class="language-swift" data-lang="swift">func get_inventario_runtime() -&gt; Array[Dictionary]:
+&nbsp;&nbsp;&nbsp;&nbsp;return _grid_slots.get_inventario_runtime()
 </code></pre>
 			</li>
 		</ul>
@@ -3279,7 +3288,7 @@ window.MathJax = {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -3338,7 +3347,7 @@ window.MathJax = {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

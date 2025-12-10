@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2024-12-22
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1454,39 +1463,39 @@ window.MathJax = {
 			</strong>
             :
 		</p>
-<pre><code class="language-js" data-lang="js"> const widgets = [
-&nbsp;&nbsp; { id: "widget1", url: "/data1" },
-&nbsp;&nbsp; { id: "widget2", url: "/data2" },
-&nbsp;&nbsp; { id: "widget3", url: "/data3" },
- ];
- 
- const status = document.getElementById("status");
- 
- let completed = 0;
- 
- widgets.forEach(w =&gt; {
-&nbsp;&nbsp; const el = document.getElementById(w.id);
-&nbsp;&nbsp; el.innerHTML = "Loading...";
- 
-&nbsp;&nbsp; fetch(w.url)
-&nbsp;&nbsp;&nbsp;&nbsp; .then(res =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!res.ok) throw new Error("Network error");
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return res.text();
-&nbsp;&nbsp;&nbsp;&nbsp; })
-&nbsp;&nbsp;&nbsp;&nbsp; .then(html =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el.innerHTML = html;
-&nbsp;&nbsp;&nbsp;&nbsp; })
-&nbsp;&nbsp;&nbsp;&nbsp; .catch(err =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el.innerHTML = "Error loading widget";
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.error(err);
-&nbsp;&nbsp;&nbsp;&nbsp; })
-&nbsp;&nbsp;&nbsp;&nbsp; .finally(() =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; completed++;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (completed === widgets.length) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status.innerHTML = "Dashboard loaded";
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; });
- });
+<pre><code class="language-js" data-lang="js">const widgets = [
+&nbsp;&nbsp;{ id: "widget1", url: "/data1" },
+&nbsp;&nbsp;{ id: "widget2", url: "/data2" },
+&nbsp;&nbsp;{ id: "widget3", url: "/data3" },
+];
+
+const status = document.getElementById("status");
+
+let completed = 0;
+
+widgets.forEach(w =&gt; {
+&nbsp;&nbsp;const el = document.getElementById(w.id);
+&nbsp;&nbsp;el.innerHTML = "Loading...";
+
+&nbsp;&nbsp;fetch(w.url)
+&nbsp;&nbsp;&nbsp;&nbsp;.then(res =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!res.ok) throw new Error("Network error");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return res.text();
+&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;.then(html =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.innerHTML = html;
+&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;.catch(err =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.innerHTML = "Error loading widget";
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error(err);
+&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;.finally(() =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;completed++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (completed === widgets.length) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status.innerHTML = "Dashboard loaded";
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;});
+});
 </code></pre>
 	</li>
 </ul>
@@ -1956,9 +1965,9 @@ render(&lt;Counter &gt;, document.getElementById('app'));
 					</strong>
                     :
 				</p>
-<pre><code class="language-js" data-lang="js"> fetch("/data")
-&nbsp;&nbsp; .then(res =&gt; res.text())
-&nbsp;&nbsp; .then(html =&gt; document.getElementById("widget").innerHTML = html);
+<pre><code class="language-js" data-lang="js">fetch("/data")
+&nbsp;&nbsp;.then(res =&gt; res.text())
+&nbsp;&nbsp;.then(html =&gt; document.getElementById("widget").innerHTML = html);
 </code></pre>
 				<ul>
 					<li>
@@ -1980,15 +1989,15 @@ render(&lt;Counter &gt;, document.getElementById('app'));
 					</strong>
                     :
 				</p>
-<pre><code class="language-js" data-lang="js"> const [data, setData] = useState(null);
- 
- useEffect(() =&gt; {
-&nbsp;&nbsp; fetch("/data")
-&nbsp;&nbsp;&nbsp;&nbsp; .then(res =&gt; res.text())
-&nbsp;&nbsp;&nbsp;&nbsp; .then(setData);
- }, []);
- 
- return &lt;div&gt;{data || "Loading..."}&lt;/div&gt;;
+<pre><code class="language-js" data-lang="js">const [data, setData] = useState(null);
+
+useEffect(() =&gt; {
+&nbsp;&nbsp;fetch("/data")
+&nbsp;&nbsp;&nbsp;&nbsp;.then(res =&gt; res.text())
+&nbsp;&nbsp;&nbsp;&nbsp;.then(setData);
+}, []);
+
+return &lt;div&gt;{data || "Loading..."}&lt;/div&gt;;
 </code></pre>
 				<ul>
 					<li>
@@ -2071,29 +2080,29 @@ root.render(&lt;Counter &gt;);
 			</strong>
             :
 		</p>
-<pre><code class="language-js" data-lang="js"> function Dashboard() {
-&nbsp;&nbsp; const [widgets, setWidgets] = React.useState([]);
-&nbsp;&nbsp; const [loaded, setLoaded] = React.useState(false);
- 
-&nbsp;&nbsp; React.useEffect(() =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; Promise.all([
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fetch("/data1").then(r =&gt; r.text()),
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fetch("/data2").then(r =&gt; r.text()),
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fetch("/data3").then(r =&gt; r.text()),
-&nbsp;&nbsp;&nbsp;&nbsp; ])
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .then(results =&gt; setWidgets(results))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .finally(() =&gt; setLoaded(true));
-&nbsp;&nbsp; }, []);
- 
-&nbsp;&nbsp; return (
-&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {widgets.map((w, i) =&gt; (
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div key={i}&gt;{w || "Loading..."}&lt;/div&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ))}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {loaded && &lt;div&gt;Dashboard loaded&lt;/div&gt;}
-&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
-&nbsp;&nbsp; );
- }
+<pre><code class="language-js" data-lang="js">function Dashboard() {
+&nbsp;&nbsp;const [widgets, setWidgets] = React.useState([]);
+&nbsp;&nbsp;const [loaded, setLoaded] = React.useState(false);
+
+&nbsp;&nbsp;React.useEffect(() =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;Promise.all([
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fetch("/data1").then(r =&gt; r.text()),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fetch("/data2").then(r =&gt; r.text()),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fetch("/data3").then(r =&gt; r.text()),
+&nbsp;&nbsp;&nbsp;&nbsp;])
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(results =&gt; setWidgets(results))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.finally(() =&gt; setLoaded(true));
+&nbsp;&nbsp;}, []);
+
+&nbsp;&nbsp;return (
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{widgets.map((w, i) =&gt; (
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div key={i}&gt;{w || "Loading..."}&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;))}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{loaded && &lt;div&gt;Dashboard loaded&lt;/div&gt;}
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;);
+}
 </code></pre>
 	</li>
 </ul>
@@ -2363,9 +2372,9 @@ export class AppModule {}
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> $.get("/data", function(html) {
-&nbsp;&nbsp; $("#result").html(html);
- });
+<pre><code class="language-js" data-lang="js">$.get("/data", function(html) {
+&nbsp;&nbsp;$("#result").html(html);
+});
 </code></pre>
 		<ul>
 			<li>
@@ -2455,38 +2464,38 @@ export class AppModule {}
 		<p>
             GET básico:
 		</p>
-<pre><code class="language-js" data-lang="js"> import express from 'npm:express';
- 
- const app = express();
- 
- app.get('/', (req: express.Request, res: express.Response) =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; res.send('Hello World!');
- });
- 
- app.listen(3000, () =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; console.log('Server is running on http://localhost:3000');
- });
+<pre><code class="language-js" data-lang="js">import express from 'npm:express';
+
+const app = express();
+
+app.get('/', (req: express.Request, res: express.Response) =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;res.send('Hello World!');
+});
+
+app.listen(3000, () =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Server is running on http://localhost:3000');
+});
 </code></pre>
 	</li>
 	<li>
 		<p>
             GET com body:
 		</p>
-<pre><code class="language-js" data-lang="js"> import express from 'npm:express';
- 
- const app = express();
- 
- app.use(express.json());
- 
- app.get('/oi', (req: express.Request, res: express.Response) =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; console.log(request.body);
-&nbsp;&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp; res.send('Hello World!');
- });
- 
- app.listen(3000, () =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; console.log('Server is running on http://localhost:3000');
- });
+<pre><code class="language-js" data-lang="js">import express from 'npm:express';
+
+const app = express();
+
+app.use(express.json());
+
+app.get('/oi', (req: express.Request, res: express.Response) =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(request.body);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;res.send('Hello World!');
+});
+
+app.listen(3000, () =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Server is running on http://localhost:3000');
+});
 </code></pre>
 	</li>
 	<li>
@@ -2506,44 +2515,44 @@ export class AppModule {}
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> import express from 'npm:express';
- 
- const app = express();
- 
- app.use(express.json());
+<pre><code class="language-js" data-lang="js">import express from 'npm:express';
 
- const api = express.Router();
- api.get('/channels', (request: express.Request, response: express.Response) =&gt; {
- });
- api.get('/users', (request: express.Request, response: express.Response) =&gt; {
- });
- api.use('/api/v9', api);
+const app = express();
 
- 
- app.listen(3000, () =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; console.log('Server is running on http://localhost:3000');
- });
+app.use(express.json());
+
+const api = express.Router();
+api.get('/channels', (request: express.Request, response: express.Response) =&gt; {
+});
+api.get('/users', (request: express.Request, response: express.Response) =&gt; {
+});
+api.use('/api/v9', api);
+
+
+app.listen(3000, () =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Server is running on http://localhost:3000');
+});
 </code></pre>
 	</li>
 	<li>
 		<p>
             GET com ID:
 		</p>
-<pre><code class="language-js" data-lang="js"> import express from 'npm:express';
- 
- const app = express();
- 
- app.use(express.json());
- 
- app.get('/produtos/:id', (request: express.Request, response: express.Response) =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; const {id} = request.params;
-&nbsp;&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp; res.send(`ID pedido: ${id}`);
- });
- 
- app.listen(3000, () =&gt; {
-&nbsp;&nbsp;&nbsp;&nbsp; console.log('Server is running on http://localhost:3000');
- });
+<pre><code class="language-js" data-lang="js">import express from 'npm:express';
+
+const app = express();
+
+app.use(express.json());
+
+app.get('/produtos/:id', (request: express.Request, response: express.Response) =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;const {id} = request.params;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;res.send(`ID pedido: ${id}`);
+});
+
+app.listen(3000, () =&gt; {
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Server is running on http://localhost:3000');
+});
 </code></pre>
 	</li>
 </ul>
@@ -2630,8 +2639,8 @@ export class AppModule {}
                 Uso do status:
 			</strong>
 		</p>
-<pre><code class="language-js" data-lang="js"> res.status(200).json(personagem);&nbsp;&nbsp;// Explicitamente define que o Status é 200.
- res.json(personagem);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Implicitamente define o Status padrão, que é 200.
+<pre><code class="language-js" data-lang="js">res.status(200).json(personagem);&nbsp;&nbsp;// Explicitamente define que o Status é 200.
+res.json(personagem);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Implicitamente define o Status padrão, que é 200.
 </code></pre>
 	</li>
 	<li>
@@ -2681,9 +2690,9 @@ export class AppModule {}
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> res.send(); // Envia uma resposta com corpo vazio e encerra
- res.send('Hello World'); // Envia uma string
- res.send({ message: 'Hello World' }); // Envia um objeto JSON
+<pre><code class="language-js" data-lang="js">res.send(); // Envia uma resposta com corpo vazio e encerra
+res.send('Hello World'); // Envia uma string
+res.send({ message: 'Hello World' }); // Envia um objeto JSON
 </code></pre>
 	</li>
 	<li>
@@ -2721,9 +2730,9 @@ export class AppModule {}
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> res.end(); // Finaliza a resposta sem enviar conteúdo
- res.end('Hello World'); // Envia a string e finaliza
- res.end(Buffer.from('Hello World')); // Envia um buffer e finaliza
+<pre><code class="language-js" data-lang="js">res.end(); // Finaliza a resposta sem enviar conteúdo
+res.end('Hello World'); // Envia a string e finaliza
+res.end(Buffer.from('Hello World')); // Envia um buffer e finaliza
 </code></pre>
 	</li>
 	<li>
@@ -2753,7 +2762,7 @@ export class AppModule {}
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> res.json(data);
+<pre><code class="language-js" data-lang="js">res.json(data);
 </code></pre>
 	</li>
 	<li>
@@ -2767,8 +2776,8 @@ export class AppModule {}
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> res.status(500).json({ message: (error as Error).message }); 
- res.send('(get_personagem) Find com erro.');&nbsp;&nbsp;// Essa linha será ignorada.
+<pre><code class="language-js" data-lang="js">res.status(500).json({ message: (error as Error).message }); 
+res.send('(get_personagem) Find com erro.');&nbsp;&nbsp;// Essa linha será ignorada.
 </code></pre>
 		<ul>
 			<li>
@@ -2777,10 +2786,10 @@ export class AppModule {}
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> res.status(500).json({ 
-&nbsp;&nbsp;&nbsp;&nbsp; message: (error as Error).message,
-&nbsp;&nbsp;&nbsp;&nbsp; log: '(get_personagem) Find com erro.'
- });
+<pre><code class="language-js" data-lang="js">res.status(500).json({ 
+&nbsp;&nbsp;&nbsp;&nbsp;message: (error as Error).message,
+&nbsp;&nbsp;&nbsp;&nbsp;log: '(get_personagem) Find com erro.'
+});
 </code></pre>
 	</li>
 	<li>
@@ -2794,9 +2803,9 @@ export class AppModule {}
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> res.status(200).send('(put_criaturas) Sucesso.\n');
+<pre><code class="language-js" data-lang="js">res.status(200).send('(put_criaturas) Sucesso.\n');
 </code></pre>
-<pre><code class="language-js" data-lang="js"> res.status(200).send(); // Responde com 200 e sem conteúdo
+<pre><code class="language-js" data-lang="js">res.status(200).send(); // Responde com 200 e sem conteúdo
 </code></pre>
 		<ul>
 			<li>
@@ -2805,7 +2814,7 @@ export class AppModule {}
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-js" data-lang="js"> res.status(200);
+<pre><code class="language-js" data-lang="js">res.status(200);
 </code></pre>
 	</li>
 </ul>
@@ -3161,7 +3170,7 @@ new_user.save()
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -3336,7 +3345,7 @@ new_user.save()
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

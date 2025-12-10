@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2024-10-19
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -2241,7 +2250,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    [2024/11/11] Dynamic spawns do not work well with my CustomMpSync script.
+                    (2024-11-11) Dynamic spawns do not work well with my CustomMpSync script.
 				</p>
 			</li>
 		</ul>
@@ -3401,21 +3410,21 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-swift" data-lang="swift"> const _certificado_x509 : X509Certificate = preload('res://certificados/X509_certificado.crt')
- const _key : CryptoKey = preload('res://certificados/X509_key.key')
- 
- func _criar_servidor_gateway() -&gt; Error:
-&nbsp;&nbsp;&nbsp;&nbsp; var peer := ENetMultiplayerPeer.new()
-&nbsp;&nbsp;&nbsp;&nbsp; var erro : Error = peer.create_server(_PORTA_GATEWAY, _CONEXOES_MAXIMAS)
-&nbsp;&nbsp;&nbsp;&nbsp; if erro:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return erro
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp; peer.get_host().dtls_server_setup(TLSOptions.server(_key, _certificado_x509))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp; get_tree().set_multiplayer(_servidor_gateway, get_path())
-&nbsp;&nbsp;&nbsp;&nbsp; _servidor_gateway.set_multiplayer_peer(peer)
- 
-&nbsp;&nbsp;&nbsp;&nbsp; return OK
+<pre><code class="language-swift" data-lang="swift">const _certificado_x509 : X509Certificate = preload('res://certificados/X509_certificado.crt')
+const _key : CryptoKey = preload('res://certificados/X509_key.key')
+
+func _criar_servidor_gateway() -&gt; Error:
+&nbsp;&nbsp;&nbsp;&nbsp;var peer := ENetMultiplayerPeer.new()
+&nbsp;&nbsp;&nbsp;&nbsp;var erro : Error = peer.create_server(_PORTA_GATEWAY, _CONEXOES_MAXIMAS)
+&nbsp;&nbsp;&nbsp;&nbsp;if erro:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return erro
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;peer.get_host().dtls_server_setup(TLSOptions.server(_key, _certificado_x509))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;get_tree().set_multiplayer(_servidor_gateway, get_path())
+&nbsp;&nbsp;&nbsp;&nbsp;_servidor_gateway.set_multiplayer_peer(peer)
+
+&nbsp;&nbsp;&nbsp;&nbsp;return OK
 </code></pre>
 		<ul>
 			<li>
@@ -3424,20 +3433,20 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-swift" data-lang="swift"> const _certificado_x509 : X509Certificate = preload('res://certificados/X509_certificado.crt')
- 
- func entrar_no_servidor_gateway() -&gt; Error:&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; var peer := ENetMultiplayerPeer.new()
-&nbsp;&nbsp;&nbsp;&nbsp; var erro := peer.create_client(_SERVER_IP_DEFAULT, _PORTA_GATEWAY)
-&nbsp;&nbsp;&nbsp;&nbsp; if erro:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return erro
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp; peer.get_host().dtls_client_setup(_SERVER_IP_DEFAULT, TLSOptions.client_unsafe(_certificado_x509))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp; get_tree().set_multiplayer(_servidor_gateway, get_path())
-&nbsp;&nbsp;&nbsp;&nbsp; _servidor_gateway.set_multiplayer_peer(peer)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp; return OK
+<pre><code class="language-swift" data-lang="swift">const _certificado_x509 : X509Certificate = preload('res://certificados/X509_certificado.crt')
+
+func entrar_no_servidor_gateway() -&gt; Error: 
+&nbsp;&nbsp;&nbsp;&nbsp;var peer := ENetMultiplayerPeer.new()
+&nbsp;&nbsp;&nbsp;&nbsp;var erro := peer.create_client(_SERVER_IP_DEFAULT, _PORTA_GATEWAY)
+&nbsp;&nbsp;&nbsp;&nbsp;if erro:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return erro
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;peer.get_host().dtls_client_setup(_SERVER_IP_DEFAULT, TLSOptions.client_unsafe(_certificado_x509))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;get_tree().set_multiplayer(_servidor_gateway, get_path())
+&nbsp;&nbsp;&nbsp;&nbsp;_servidor_gateway.set_multiplayer_peer(peer)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;return OK
 </code></pre>
 		<ul>
 			<li>
@@ -5492,20 +5501,20 @@ asyncio.get_event_loop().run_forever()
 			</a>
             .
 		</p>
-<pre><code class="language-cpp" data-lang="cpp"> switch (get_transfer_mode()) {
-&nbsp;&nbsp;&nbsp;&nbsp; case TRANSFER_MODE_UNRELIABLE: {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; packet_flags = ENET_PACKET_FLAG_UNSEQUENCED | ENET_PACKET_FLAG_UNRELIABLE_FRAGMENT;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; channel = SYSCH_UNRELIABLE;
-&nbsp;&nbsp;&nbsp;&nbsp; } break;
-&nbsp;&nbsp;&nbsp;&nbsp; case TRANSFER_MODE_UNRELIABLE_ORDERED: {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; packet_flags = ENET_PACKET_FLAG_UNRELIABLE_FRAGMENT;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; channel = SYSCH_UNRELIABLE;
-&nbsp;&nbsp;&nbsp;&nbsp; } break;
-&nbsp;&nbsp;&nbsp;&nbsp; case TRANSFER_MODE_RELIABLE: {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; packet_flags = ENET_PACKET_FLAG_RELIABLE;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; channel = SYSCH_RELIABLE;
-&nbsp;&nbsp;&nbsp;&nbsp; } break;
- }
+<pre><code class="language-cpp" data-lang="cpp">switch (get_transfer_mode()) {
+&nbsp;&nbsp;&nbsp;&nbsp;case TRANSFER_MODE_UNRELIABLE: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;packet_flags = ENET_PACKET_FLAG_UNSEQUENCED | ENET_PACKET_FLAG_UNRELIABLE_FRAGMENT;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channel = SYSCH_UNRELIABLE;
+&nbsp;&nbsp;&nbsp;&nbsp;} break;
+&nbsp;&nbsp;&nbsp;&nbsp;case TRANSFER_MODE_UNRELIABLE_ORDERED: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;packet_flags = ENET_PACKET_FLAG_UNRELIABLE_FRAGMENT;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channel = SYSCH_UNRELIABLE;
+&nbsp;&nbsp;&nbsp;&nbsp;} break;
+&nbsp;&nbsp;&nbsp;&nbsp;case TRANSFER_MODE_RELIABLE: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;packet_flags = ENET_PACKET_FLAG_RELIABLE;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channel = SYSCH_RELIABLE;
+&nbsp;&nbsp;&nbsp;&nbsp;} break;
+}
 </code></pre>
 	</li>
 </ul>
@@ -6477,7 +6486,7 @@ asyncio.get_event_loop().run_forever()
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -6674,7 +6683,7 @@ asyncio.get_event_loop().run_forever()
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

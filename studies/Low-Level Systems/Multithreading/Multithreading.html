@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-11
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -4850,7 +4859,7 @@ window.MathJax = {
 	<li>
 		<p>
             See 
-            <a href="/studies/Low-Level Systems/Multithreading/Odin.html#atomics">
+            <a href="/studies/Low-Level Systems/Odin/Odin.html#atomics">
             Odin#Atomics
             </a>
             .
@@ -5339,18 +5348,18 @@ window.MathJax = {
 		<p>
             Mutexes Protect Data, Not Functions or Threads.
 		</p>
-<pre><code class="language-odin" data-lang="odin"> textures: map[u32]Texture2D
- textures_mutex: sync.Mutex
- 
- // Thread A (locks mutex, modifies textures)
- sync.mutex_lock(&textures_mutex)&nbsp;&nbsp;// 🔒
- textures[123] = load_texture("test.png")&nbsp;&nbsp;// Protected
- sync.mutex_unlock(&textures_mutex)&nbsp;&nbsp;// 🔓
- 
- // Thread B (also needs the mutex to touch textures)
- sync.mutex_lock(&textures_mutex)&nbsp;&nbsp;// ⏳ Waits if Thread A holds the lock
- unload_texture(textures[123])
- sync.mutex_unlock(&textures_mutex)
+<pre><code class="language-odin" data-lang="odin">textures: map[u32]Texture2D
+textures_mutex: sync.Mutex
+
+// Thread A (locks mutex, modifies textures)
+sync.mutex_lock(&textures_mutex)&nbsp;&nbsp;// 🔒
+textures[123] = load_texture("test.png")&nbsp;&nbsp;// Protected
+sync.mutex_unlock(&textures_mutex)&nbsp;&nbsp;// 🔓
+
+// Thread B (also needs the mutex to touch textures)
+sync.mutex_lock(&textures_mutex)&nbsp;&nbsp;// ⏳ Waits if Thread A holds the lock
+unload_texture(textures[123])
+sync.mutex_unlock(&textures_mutex)
 </code></pre>
 		<ul>
 			<li>
@@ -5373,15 +5382,15 @@ window.MathJax = {
 		<p>
             Mutexes Are Not &quot;Global Barriers&quot;. If two threads use different mutexes, they don’t block each other:
 		</p>
-<pre><code class="language-odin" data-lang="odin"> // Thread A (uses mutex_x)
- sync.mutex_lock(&mutex_x)&nbsp;&nbsp;// 🔒
- // ... do work ...
- sync.mutex_unlock(&mutex_x)&nbsp;&nbsp;// 🔓
- 
- // Thread B (uses mutex_y)
- sync.mutex_lock(&mutex_y)&nbsp;&nbsp;// ✅ Runs in parallel (no conflict)
- // ... do work ...
- sync.mutex_unlock(&mutex_y)
+<pre><code class="language-odin" data-lang="odin">// Thread A (uses mutex_x)
+sync.mutex_lock(&mutex_x)&nbsp;&nbsp;// 🔒
+// ... do work ...
+sync.mutex_unlock(&mutex_x)&nbsp;&nbsp;// 🔓
+
+// Thread B (uses mutex_y)
+sync.mutex_lock(&mutex_y)&nbsp;&nbsp;// ✅ Runs in parallel (no conflict)
+// ... do work ...
+sync.mutex_unlock(&mutex_y)
 </code></pre>
 	</li>
 </ul>
@@ -6593,7 +6602,7 @@ void Shutdown() {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -6934,7 +6943,7 @@ void Shutdown() {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

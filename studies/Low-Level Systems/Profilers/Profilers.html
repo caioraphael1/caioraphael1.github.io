@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-11-04
 							</time>
 							<time
-								datetime="2025-11-21" >
-                                | Updated: 2025-11-21
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1379,11 +1388,82 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            I had problems with tracy with ASan, leading to 
+            I had problems with Tracy with ASan, leading to 
 			<em>
                 game
 			</em>
             &nbsp;crashes sometimes. Keep that in mind.
+		</p>
+	</li>
+</ul>
+<h3
+	id="performance" >
+    Performance
+</h3>
+<h5
+	id="zones-gaps" >
+    Zones gaps
+</h5>
+<ul>
+	<li>
+		<p>
+            I was getting 200-470ns in zone gaps.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Check https://github.com/wolfpld/tracy/issues/1212
+				</p>
+			</li>
+			<li>
+				<p>
+                    slomp (Tracy github contributor):
+                    <br>
+                    &quot;As for the &quot;Tracy achieves such small overhead (only 2.25 ns)&quot;, well, there's a lot of nuance here (with rdtsc and such), but put simply, on a modern x64 machine, an &quot;empty&quot; zone should be between 10ns to 50ns.&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    Maybe this is related to the allocation made from the 
+                    <code>___tracy_alloc_srcloc</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Makes sense. Source location information in most Tracy Zone annotations is handled at compile-time and are stored in static, read-only data blocks in the program binary, so no dynamic allocation needs to happen.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The first zone takes longer than others.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This happened for me and 'slomp'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    wolfpld (Tracy author):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Queue block allocation cost is amortized.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            While disabling the call stack, I got around 80-200ns between zones, sometimes down to 30ns. This concludes that the problem was indeed the call stack (I was using 2 before), and this could probably be further improved if not using the C API and avoiding the extra allocations. I check if it's possible to do something similar to the macro used, but in Odin, as the language doesn't offer much support for meta language :/
 		</p>
 	</li>
 </ul>
@@ -1620,6 +1700,17 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
+<h5
+	id="zones" >
+    Zones
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>tracy.ZoneNC("worker doing stuff", 0xff0000);</code>
+		</p>
+	</li>
+</ul>
 <h3
 	id="impressions" >
     Impressions
@@ -1627,7 +1718,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            [2025-11-04]
+            (2025-11-04)
 		</p>
 		<ul>
 			<li>
@@ -1791,9 +1882,9 @@ FetchContent_MakeAvailable(tracy)
 <ul>
 	<li>
 		<p>
-            [2025-11-04] I did it this way.
+            (2025-11-04) I did it this way.
 		</p>
-<pre><code class="language-sh" data-lang="sh"> git clone --recurse-submodules https://github.com/oskarnp/odin-tracy
+<pre><code class="language-sh" data-lang="sh">git clone --recurse-submodules https://github.com/oskarnp/odin-tracy
 </code></pre>
 		<ul>
 			<li>
@@ -1806,8 +1897,8 @@ FetchContent_MakeAvailable(tracy)
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-sh" data-lang="sh"> cd tracy\vcpkg
- .\install_vcpkg_dependencies.bat
+<pre><code class="language-sh" data-lang="sh">cd tracy\vcpkg
+.\install_vcpkg_dependencies.bat
 </code></pre>
 		<ul>
 			<li>
@@ -1819,8 +1910,8 @@ FetchContent_MakeAvailable(tracy)
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-sh" data-lang="sh"> cd tracy\profiler\build\win32
- msbuild Tracy.sln -t:Build -p:Configuration=Release
+<pre><code class="language-sh" data-lang="sh">cd tracy\profiler\build\win32
+msbuild Tracy.sln -t:Build -p:Configuration=Release
 </code></pre>
 		<ul>
 			<li>
@@ -1840,7 +1931,7 @@ FetchContent_MakeAvailable(tracy)
 <ul>
 	<li>
 		<p>
-            [2025-11-04] I did it this way.
+            (2025-11-04) I did it this way.
 		</p>
 	</li>
 	<li>
@@ -2049,7 +2140,7 @@ FetchContent_MakeAvailable(tracy)
 				<ul>
 					<li>
 						<p>
-                            I prefer this one, because it's visual with Raylib.
+                            I prefer this one, because it's visual with RayLib.
 						</p>
 					</li>
 				</ul>
@@ -2147,7 +2238,7 @@ FetchContent_MakeAvailable(tracy)
 	</li>
 	<li>
 		<p>
-            [2025/10/04]
+            (2025-10-04)
 		</p>
 		<ul>
 			<li>
@@ -2203,7 +2294,7 @@ FetchContent_MakeAvailable(tracy)
 	</li>
 	<li>
 		<p>
-            [2025/10/04]
+            (2025-10-04)
 		</p>
 		<ul>
 			<li>
@@ -2277,7 +2368,7 @@ FetchContent_MakeAvailable(tracy)
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -2298,6 +2389,12 @@ FetchContent_MakeAvailable(tracy)
 								<a
 									href="#notes" >
                                     Notes
+								</a>
+							</li>
+							<li>
+								<a
+									href="#performance" >
+                                    Performance
 								</a>
 							</li>
 							<li>
@@ -2368,7 +2465,7 @@ FetchContent_MakeAvailable(tracy)
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

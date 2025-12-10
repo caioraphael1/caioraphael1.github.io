@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-01-03
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1431,8 +1440,8 @@ window.MathJax = {
 		<p>
             It must be compiled as a 'dynamic C library':
 		</p>
-<pre><code class="language-toml" data-lang="toml"> [lib]
- crate-type = ["cdylib"]
+<pre><code class="language-toml" data-lang="toml">[lib]
+crate-type = ["cdylib"]
 </code></pre>
 	</li>
 </ul>
@@ -2897,14 +2906,14 @@ pub struct Foo {}
             <code>T</code>
             &nbsp;objects that are manually managed:
 		</p>
-<pre><code class="language-rust" data-lang="rust"> use godot::prelude::*;
- use godot::obj::{bounds, Bounds};
- 
- struct MyGd&lt;T&gt;
- where T: GodotClass + Bounds&lt;Memory = bounds::MemManual&gt;
- {
-&nbsp;&nbsp;&nbsp;&nbsp;inner: Gd&lt;T&gt;,
- }
+<pre><code class="language-rust" data-lang="rust">use godot::prelude::*;
+use godot::obj::{bounds, Bounds};
+
+struct MyGd&lt;T&gt;
+where T: GodotClass + Bounds&lt;Memory = bounds::MemManual&gt;
+{
+&nbsp;&nbsp; inner: Gd&lt;T&gt;,
+}
 </code></pre>
 	</li>
 </ul>
@@ -3087,7 +3096,7 @@ impl Visuals {
 <ul>
 	<li>
 		<p>
-            I stopped trying on [2025/01/24].
+            I stopped trying on (2025-01-24).
 		</p>
 	</li>
 	<li>
@@ -3784,7 +3793,7 @@ let package = Package(
 <ul>
 	<li>
 		<p>
-            [2025/01/23]
+            (2025-01-23)
 		</p>
 		<ul>
 			<li>
@@ -3796,12 +3805,12 @@ let package = Package(
 				<p>
                     Forked the SwiftGodot repository and referenced my fork within the .build folder.
 				</p>
-<pre><code class="language-swift" data-lang="swift"> dependencies: [
-&nbsp;&nbsp;&nbsp;&nbsp; .package(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name: "SwiftGodot",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path: ".build/checkouts/SwiftGodot"
-&nbsp;&nbsp;&nbsp;&nbsp; )
- ],
+<pre><code class="language-swift" data-lang="swift">dependencies: [
+&nbsp;&nbsp;&nbsp;&nbsp;.package(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: "SwiftGodot",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path: ".build/checkouts/SwiftGodot"
+&nbsp;&nbsp;&nbsp;&nbsp;)
+],
 </code></pre>
 			</li>
 			<li>
@@ -4005,55 +4014,55 @@ windows.debug.x86_64 = {"res://bin/SwiftGodot.dll" : ""}
             Automatic way:
 		</p>
 <pre><code class="language-swift" data-lang="swift">
- targets: [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .target(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // this plugin will generate a source file visible to compiler with '#initSwiftExtension(cdecl: "swift_entry_point", types: [SpinningCube.self])'
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plugins: [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .plugin(name: "EntryPointGeneratorPlugin", package: "SwiftGodot")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )
- ]
+targets: [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.target(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// this plugin will generate a source file visible to compiler with '#initSwiftExtension(cdecl: "swift_entry_point", types: [SpinningCube.self])'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plugins: [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.plugin(name: "EntryPointGeneratorPlugin", package: "SwiftGodot")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+]
 </code></pre>
 	</li>
 	<li>
 		<p>
             Simplified way:
 		</p>
-<pre><code class="language-swift" data-lang="swift"> import SwiftGodot
- 
- #initSwiftExtension(cdecl: "swift_entry_point", types: [])
+<pre><code class="language-swift" data-lang="swift">import SwiftGodot
+
+#initSwiftExtension(cdecl: "swift_entry_point", types: [])
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> import SwiftGodot
- 
- #initSwiftExtension(cdecl: "swift_entry_point", types: [SpinningCube.self])
+<pre><code class="language-swift" data-lang="swift">import SwiftGodot
+
+#initSwiftExtension(cdecl: "swift_entry_point", types: [SpinningCube.self])
 </code></pre>
 	</li>
 	<li>
 		<p>
             Extended way:
 		</p>
-<pre><code class="language-swift" data-lang="swift"> /// We register our new type when we are told that the scene is being loaded
- func setupScene (level: GDExtension.InitializationLevel) {
-&nbsp;&nbsp;&nbsp;&nbsp; if level == .scene {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; register(type: SpinningCube.self)
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- // Export our entry point to Godot:
- @_cdecl("swift_entry_point")
- public func swift_entry_point(
-&nbsp;&nbsp;&nbsp;&nbsp; interfacePtr: OpaquePointer?,
-&nbsp;&nbsp;&nbsp;&nbsp; libraryPtr: OpaquePointer?,
-&nbsp;&nbsp;&nbsp;&nbsp; extensionPtr: OpaquePointer?) -&gt; UInt8
- {
-&nbsp;&nbsp;&nbsp;&nbsp; print ("SwiftGodot Extension loaded")
-&nbsp;&nbsp;&nbsp;&nbsp; guard let interfacePtr, let libraryPtr, let extensionPtr else {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print ("Error: some parameters were not provided")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; initializeSwiftModule(interfacePtr, libraryPtr, extensionPtr, initHook: setupScene, deInitHook: { x in })
-&nbsp;&nbsp;&nbsp;&nbsp; return 1
- }
+<pre><code class="language-swift" data-lang="swift">/// We register our new type when we are told that the scene is being loaded
+func setupScene (level: GDExtension.InitializationLevel) {
+&nbsp;&nbsp;&nbsp;&nbsp;if level == .scene {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register(type: SpinningCube.self)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+// Export our entry point to Godot:
+@_cdecl("swift_entry_point")
+public func swift_entry_point(
+&nbsp;&nbsp;&nbsp;&nbsp;interfacePtr: OpaquePointer?,
+&nbsp;&nbsp;&nbsp;&nbsp;libraryPtr: OpaquePointer?,
+&nbsp;&nbsp;&nbsp;&nbsp;extensionPtr: OpaquePointer?) -&gt; UInt8
+{
+&nbsp;&nbsp;&nbsp;&nbsp;print ("SwiftGodot Extension loaded")
+&nbsp;&nbsp;&nbsp;&nbsp;guard let interfacePtr, let libraryPtr, let extensionPtr else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print ("Error: some parameters were not provided")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;initializeSwiftModule(interfacePtr, libraryPtr, extensionPtr, initHook: setupScene, deInitHook: { x in })
+&nbsp;&nbsp;&nbsp;&nbsp;return 1
+}
 </code></pre>
 	</li>
 </ul>
@@ -4102,14 +4111,14 @@ windows.debug.x86_64 = {"res://bin/SwiftGodot.dll" : ""}
 		<p>
             Example:
 		</p>
-<pre><code class="language-json" data-lang="json"> {
-&nbsp;&nbsp;&nbsp;&nbsp;"type": "lldb",
-&nbsp;&nbsp;&nbsp;&nbsp;"request": "launch",
-&nbsp;&nbsp;&nbsp;&nbsp;"name": "Launch Godot Game",
-&nbsp;&nbsp;&nbsp;&nbsp;"program": "path/to/your/Godot/executable",
-&nbsp;&nbsp;&nbsp;&nbsp;"args": ["--path", "path/to/your/game/project"],
-&nbsp;&nbsp;&nbsp;&nbsp;"cwd": "${workspaceFolder}"
- }
+<pre><code class="language-json" data-lang="json">{
+&nbsp;&nbsp; "type": "lldb",
+&nbsp;&nbsp; "request": "launch",
+&nbsp;&nbsp; "name": "Launch Godot Game",
+&nbsp;&nbsp; "program": "path/to/your/Godot/executable",
+&nbsp;&nbsp; "args": ["--path", "path/to/your/game/project"],
+&nbsp;&nbsp; "cwd": "${workspaceFolder}"
+}
 </code></pre>
 	</li>
 	<li>
@@ -4120,25 +4129,25 @@ windows.debug.x86_64 = {"res://bin/SwiftGodot.dll" : ""}
 			</em>
             :
 		</p>
-<pre><code class="language-json" data-lang="json"> {
-&nbsp;&nbsp;&nbsp;&nbsp;"version": "0.2.0",
-&nbsp;&nbsp;&nbsp;&nbsp;"configurations": [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "lldb",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"request": "launch",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Launch Godot Game",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"program": "path/to/your/Godot/executable",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"args": ["--path", "path/to/your/game/project"],
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"cwd": "${workspaceFolder}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "lldb",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"request": "attach",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Attach to PID",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pid": "${command:pickProcess}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp;]
- }
+<pre><code class="language-json" data-lang="json">{
+&nbsp;&nbsp; "version": "0.2.0",
+&nbsp;&nbsp; "configurations": [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "type": "lldb",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "request": "launch",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "name": "Launch Godot Game",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "program": "path/to/your/Godot/executable",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "args": ["--path", "path/to/your/game/project"],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "cwd": "${workspaceFolder}"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "type": "lldb",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "request": "attach",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "name": "Attach to PID",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "pid": "${command:pickProcess}"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp; ]
+}
 </code></pre>
 		<ul>
 			<li>
@@ -4620,46 +4629,46 @@ class NetworkedNode: Node {
 		<p>
             Fields and properties:
 		</p>
-<pre><code class="language-swift" data-lang="swift"> @Export
- var number: Int
- 
- 
- @Export
- var AnotherNumber { get { ... } set { ... }
+<pre><code class="language-swift" data-lang="swift">@Export
+var number: Int
+
+
+@Export
+var AnotherNumber { get { ... } set { ... }
 </code></pre>
 	</li>
 	<li>
 		<p>
             Default values:
 		</p>
-<pre><code class="language-swift" data-lang="swift"> @Export
- var number: Int = 0
- 
- 
- @Export
- var text: String? = nil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Allows for nil
- 
- 
- @Export
- var greeting = "Hello World"&nbsp;&nbsp; // Exported field specifies a default value
+<pre><code class="language-swift" data-lang="swift">@Export
+var number: Int = 0
+
+
+@Export
+var text: String? = nil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Allows for nil
+
+
+@Export
+var greeting = "Hello World"&nbsp;&nbsp; // Exported field specifies a default value
 </code></pre>
 	</li>
 	<li>
 		<p>
             Nodes:
 		</p>
-<pre><code class="language-swift" data-lang="swift"> @Export
- public var node: Node { 
-&nbsp;&nbsp;&nbsp;&nbsp; get { 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return myInternalNode
-&nbsp;&nbsp;&nbsp;&nbsp; } 
-&nbsp;&nbsp;&nbsp;&nbsp; set { 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print ("Setting the node")
-&nbsp;&nbsp;&nbsp;&nbsp; } 
- }
+<pre><code class="language-swift" data-lang="swift">@Export
+public var node: Node { 
+&nbsp;&nbsp;&nbsp;&nbsp;get { 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return myInternalNode
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;&nbsp;set { 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print ("Setting the node")
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+}
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export
- public Node Node { get; set; }
+<pre><code class="language-swift" data-lang="swift">@Export
+public Node Node { get; set; }
 </code></pre>
 		<ul>
 			<li>
@@ -4668,8 +4677,8 @@ class NetworkedNode: Node {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-swift" data-lang="swift"> @Export(.nodeType, "Camera3D")
- var camera: Camera3D? = nil
+<pre><code class="language-swift" data-lang="swift">@Export(.nodeType, "Camera3D")
+var camera: Camera3D? = nil
 </code></pre>
 		<ul>
 			<li>
@@ -4685,76 +4694,76 @@ class NetworkedNode: Node {
 		<p>
             Resources:
 		</p>
-<pre><code class="language-swift" data-lang="swift"> @Export
- var resource: Resource { get {} set {} }
+<pre><code class="language-swift" data-lang="swift">@Export
+var resource: Resource { get {} set {} }
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export
- var resource: AnimationNode
+<pre><code class="language-swift" data-lang="swift">@Export
+var resource: AnimationNode
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export
- public var resource: Resource { 
-&nbsp;&nbsp;&nbsp;&nbsp; get { 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return myInternalResource
-&nbsp;&nbsp;&nbsp;&nbsp; } 
-&nbsp;&nbsp;&nbsp;&nbsp; set { 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print ("Setting my resource")
-&nbsp;&nbsp;&nbsp;&nbsp; } 
- }
+<pre><code class="language-swift" data-lang="swift">@Export
+public var resource: Resource { 
+&nbsp;&nbsp;&nbsp;&nbsp;get { 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return myInternalResource
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;&nbsp;set { 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print ("Setting my resource")
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+}
 </code></pre>
 	</li>
 	<li>
 		<p>
             Enums:
 		</p>
-<pre><code class="language-swift" data-lang="swift"> enum MyEnum: Int, CaseIterable {
-&nbsp;&nbsp;&nbsp;&nbsp; case first
-&nbsp;&nbsp;&nbsp;&nbsp; case second
- }
- 
- 
- @Godot
- class Sample: Node {
-&nbsp;&nbsp;&nbsp;&nbsp; @Export(.enum)
-&nbsp;&nbsp;&nbsp;&nbsp; var myValue: MyEnum
- }
+<pre><code class="language-swift" data-lang="swift">enum MyEnum: Int, CaseIterable {
+&nbsp;&nbsp;&nbsp;&nbsp;case first
+&nbsp;&nbsp;&nbsp;&nbsp;case second
+}
+
+
+@Godot
+class Sample: Node {
+&nbsp;&nbsp;&nbsp;&nbsp;@Export(.enum)
+&nbsp;&nbsp;&nbsp;&nbsp;var myValue: MyEnum
+}
 </code></pre>
 	</li>
 	<li>
 		<p>
             Customizing:
 		</p>
-<pre><code class="language-swift" data-lang="swift"> @Export(.range, "0,20,")
- var number: Int = 0
+<pre><code class="language-swift" data-lang="swift">@Export(.range, "0,20,")
+var number: Int = 0
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export(.range, "-10,20,0.2")
- var number = 0
+<pre><code class="language-swift" data-lang="swift">@Export(.range, "-10,20,0.2")
+var number = 0
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export(.range, "0,100,1,or_greater,or_less")
- var number: Int = 0
+<pre><code class="language-swift" data-lang="swift">@Export(.range, "0,100,1,or_greater,or_less")
+var number: Int = 0
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export(.file)
- var GameFile: String? 
+<pre><code class="language-swift" data-lang="swift">@Export(.file)
+var GameFile: String? 
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export(.dir)
- var gameDirectory: String?
+<pre><code class="language-swift" data-lang="swift">@Export(.dir)
+var gameDirectory: String?
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export (.file, "*.txt")
- var GameFile: String?
+<pre><code class="language-swift" data-lang="swift">@Export (.file, "*.txt")
+var GameFile: String?
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export (.globalFile, "*.png")
- var toolImage: String?
+<pre><code class="language-swift" data-lang="swift">@Export (.globalFile, "*.png")
+var toolImage: String?
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export (.globalDir)
- var toolDir: String?
+<pre><code class="language-swift" data-lang="swift">@Export (.globalDir)
+var toolDir: String?
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export (.multilineText)
- var text: String?
+<pre><code class="language-swift" data-lang="swift">@Export (.multilineText)
+var text: String?
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export(.expEasing)
- public transitionSpeed: Float = 0
+<pre><code class="language-swift" data-lang="swift">@Export(.expEasing)
+public transitionSpeed: Float = 0
 </code></pre>
-<pre><code class="language-swift" data-lang="swift"> @Export(.colorNoAlpha)
- var color: Color { get {} set {} }
+<pre><code class="language-swift" data-lang="swift">@Export(.colorNoAlpha)
+var color: Color { get {} set {} }
 </code></pre>
 	</li>
 </ul>
@@ -4771,16 +4780,16 @@ class NetworkedNode: Node {
             <code>#export_group</code>
             &nbsp;(””) to break out.
 		</p>
-<pre><code class="language-swift" data-lang="swift"> #exportGroup("My Properties")
- @Export var number = 3
+<pre><code class="language-swift" data-lang="swift">#exportGroup("My Properties")
+@Export var number = 3
 </code></pre>
 	</li>
 	<li>
 		<p>
             You can also specify that only properties with a given prefix be grouped, like this:
 		</p>
-<pre><code class="language-swift" data-lang="swift"> #exportGroup("My Properties", prefix: "health")
- @Export var health_reload_speed = 3
+<pre><code class="language-swift" data-lang="swift">#exportGroup("My Properties", prefix: "health")
+@Export var health_reload_speed = 3
 </code></pre>
 	</li>
 	<li>
@@ -4789,9 +4798,9 @@ class NetworkedNode: Node {
             <code>#exportSubgroup</code>
             &nbsp;to create subgroups within a group.
 		</p>
-<pre><code class="language-swift" data-lang="swift"> #exportSubgroup("Extra Properties")
- #export var string = ""
- #export var flag = false
+<pre><code class="language-swift" data-lang="swift">#exportSubgroup("Extra Properties")
+#export var string = ""
+#export var flag = false
 </code></pre>
 	</li>
 </ul>
@@ -4854,7 +4863,7 @@ class NetworkedNode: Node {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -4947,7 +4956,7 @@ class NetworkedNode: Node {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

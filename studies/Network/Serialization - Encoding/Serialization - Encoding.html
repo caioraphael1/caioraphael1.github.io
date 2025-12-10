@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-04-10
 							</time>
 							<time
-								datetime="2025-11-21" >
-                                | Updated: 2025-11-21
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1265,8 +1274,234 @@ window.MathJax = {
     Binary
 </h3>
 <h5
+	id="cbor-concise-binary-object-representation" >
+    CBOR (Concise Binary Object Representation)
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://cbor.io/" 
+				class="external-link" 
+				target="_blank" >
+                CBOR
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.rfc-editor.org/rfc/rfc8949.html" 
+				class="external-link" 
+				target="_blank" >
+                RFC 8949
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://www.rfc-editor.org/rfc/rfc8949.html#name-tagging-of-items" 
+						class="external-link" 
+						target="_blank" >
+                        Tags
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            2013
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Why unpopular
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    CBOR emerged in niche areas (IoT, security) outside mainstream web ecosystems.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Unlike JSON (native support), CBOR relies on external libraries in most languages.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Lacks backing from major platforms compared to Protobuf, JSON, or Avro.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Binary format is not human-readable, complicating debugging.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Few official serializers, almost no widely used CLI or visual tools.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Adds complexity not always needed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                RPC
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    CBOR doesn’t implement RPC directly but can be used as a payload format within RPC systems like JSON or Protobuf.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="custom-binary-format" >
+    Custom Binary Format
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Extremely Efficient: Can optimize exactly what you need to send.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Full Control: Avoid extra bytes, sending minimal data.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Implementation &amp; Maintenance Complexity: Requires skill and time, harder to modify later.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="capn-proto" >
+    Cap’n Proto
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://capnproto.org/" 
+				class="external-link" 
+				target="_blank" >
+                Cap'n Proto
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/capnproto/capnproto" 
+				class="external-link" 
+				target="_blank" >
+                Cap'n Proto GitHub
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+            2013
+		</p>
+	</li>
+</ul>
+<h5
+	id="flatbuffers" >
+    FlatBuffers
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://flatbuffers.dev/" 
+				class="external-link" 
+				target="_blank" >
+                FlatBuffers
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+            2014, developed by Google
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Direct Access: Can read data without deserialization, boosting performance in games needing immediate data.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Compact and Fast: Produces small, fast-to-read files.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Implementation Complexity: Setup and usage can be tricky for newcomers.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
 	id="protocol-buffers-protobuf" >
-    Protocol Buffers (Protobuf)
+    <s>Protocol Buffers (Protobuf)</s>
 </h5>
 <ul>
 	<li>
@@ -1378,160 +1613,6 @@ window.MathJax = {
 	</li>
 </ul>
 <h5
-	id="cbor-concise-binary-object-representation" >
-    CBOR (Concise Binary Object Representation)
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://cbor.io/" 
-				class="external-link" 
-				target="_blank" >
-                CBOR
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://www.rfc-editor.org/rfc/rfc8949.html" 
-				class="external-link" 
-				target="_blank" >
-                RFC 8949
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://www.rfc-editor.org/rfc/rfc8949.html#name-tagging-of-items" 
-						class="external-link" 
-						target="_blank" >
-                        Tags
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            2013
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Why unpopular
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    CBOR emerged in niche areas (IoT, security) outside mainstream web ecosystems.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Unlike JSON (native support), CBOR relies on external libraries in most languages.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Lacks backing from major platforms compared to Protobuf, JSON, or Avro.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Binary format is not human-readable, complicating debugging.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Few official serializers, almost no widely used CLI or visual tools.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Adds complexity not always needed.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                RPC
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    CBOR doesn’t implement RPC directly but can be used as a payload format within RPC systems like JSON or Protobuf.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="flatbuffers" >
-    FlatBuffers
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://flatbuffers.dev/" 
-				class="external-link" 
-				target="_blank" >
-                FlatBuffers
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-            2014, developed by Google
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Advantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Direct Access: Can read data without deserialization, boosting performance in games needing immediate data.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Compact and Fast: Produces small, fast-to-read files.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Implementation Complexity: Setup and usage can be tricky for newcomers.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
 	id="messagepack" >
     MessagePack
 </h5>
@@ -1585,78 +1666,6 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-	</li>
-</ul>
-<h5
-	id="custom-binary-format" >
-    Custom Binary Format
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Advantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Extremely Efficient: Can optimize exactly what you need to send.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Full Control: Avoid extra bytes, sending minimal data.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Implementation &amp; Maintenance Complexity: Requires skill and time, harder to modify later.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="capn-proto" >
-    Cap’n Proto
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://capnproto.org/" 
-				class="external-link" 
-				target="_blank" >
-                Cap'n Proto
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://github.com/capnproto/capnproto" 
-				class="external-link" 
-				target="_blank" >
-                Cap'n Proto GitHub
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-            2013
-		</p>
 	</li>
 </ul>
 <h5
@@ -2089,7 +2098,7 @@ window.MathJax = {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -2138,7 +2147,7 @@ window.MathJax = {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

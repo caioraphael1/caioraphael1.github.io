@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-06-24
 							</time>
 							<time
-								datetime="2025-11-21" >
-                                | Updated: 2025-11-21
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1526,7 +1535,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    [2025/06/24] Cpp, Csharp, Odin, Rust, Zig.
+                    (2025-06-24) Cpp, Csharp, Odin, Rust, Zig.
 				</p>
 			</li>
 		</ul>
@@ -1689,10 +1698,10 @@ window.MathJax = {
 			</em>
             :
 		</p>
-<pre><code class="language-cpp" data-lang="cpp"> PointerCaptureMode :: enum EnumBackingType {
-&nbsp;&nbsp;&nbsp;&nbsp; Capture,
-&nbsp;&nbsp;&nbsp;&nbsp; Passthrough,
- }
+<pre><code class="language-cpp" data-lang="cpp">PointerCaptureMode :: enum EnumBackingType {
+&nbsp;&nbsp;&nbsp;&nbsp;Capture,
+&nbsp;&nbsp;&nbsp;&nbsp;Passthrough,
+}
 </code></pre>
 		<ul>
 			<li>
@@ -1769,17 +1778,17 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-odin" data-lang="odin"> my_hover_callback :: proc(etc, pointer_data, etc) {
-&nbsp;&nbsp;&nbsp;&nbsp; if pointer_data.state.PressedThisFrame {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // do something
-&nbsp;&nbsp;&nbsp;&nbsp; }
+<pre><code class="language-odin" data-lang="odin">my_hover_callback :: proc(etc, pointer_data, etc) {
+&nbsp;&nbsp;&nbsp;&nbsp;if pointer_data.state.PressedThisFrame {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// do something
+&nbsp;&nbsp;&nbsp;&nbsp;}
 
-&nbsp;&nbsp;&nbsp;&nbsp; // Or simply:
-&nbsp;&nbsp;&nbsp;&nbsp; if rl.IsMouseButtonPressed(.LEFT) || rl.IsMouseButtonPressed(.RIGHT) || rl.IsKeyPressed(.A) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // do something
-&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;// Or simply:
+&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsMouseButtonPressed(.LEFT) || rl.IsMouseButtonPressed(.RIGHT) || rl.IsKeyPressed(.A) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// do something
+&nbsp;&nbsp;&nbsp;&nbsp;}
 
- }&nbsp;&nbsp;&nbsp;&nbsp;
+}&nbsp;&nbsp; 
 </code></pre>
 		<ul>
 			<li>
@@ -1830,12 +1839,12 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            &quot;How does clay render fonts in raylib? is it a solution for font rendering?&quot;
+            &quot;How does clay render fonts in RayLib? is it a solution for font rendering?&quot;
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Nope, never. Clay with Raylib renders fonts using Raylib calls 
+                    Nope, never. Clay with RayLib renders fonts using RayLib calls 
                     <code>rl.DrawTextEx()</code>
                     , nothing else.
 				</p>
@@ -1852,16 +1861,16 @@ window.MathJax = {
 		<p>
             Main difference:
 		</p>
-<pre><code class="language-c" data-lang="c"> // C form of element macros
- // Define an element with 16px of x and y padding
- CLAY({ .id = CLAY_ID("Outer"), .layout = { .padding = CLAY_PADDING_ALL(16) } }) {
-&nbsp;&nbsp; // Child elements here
- }
+<pre><code class="language-c" data-lang="c">// C form of element macros
+// Define an element with 16px of x and y padding
+CLAY({ .id = CLAY_ID("Outer"), .layout = { .padding = CLAY_PADDING_ALL(16) } }) {
+&nbsp;&nbsp;// Child elements here
+}
 
- // Odin form of element macros
- if clay.UI()({ id = clay.ID("Outer"), layout = { padding = clay.PaddingAll(16) }}) {
-&nbsp;&nbsp;&nbsp;&nbsp; // Child elements here
- }
+// Odin form of element macros
+if clay.UI()({ id = clay.ID("Outer"), layout = { padding = clay.PaddingAll(16) }}) {
+&nbsp;&nbsp;&nbsp;&nbsp;// Child elements here
+}
 </code></pre>
 	</li>
 	<li>
@@ -1884,20 +1893,20 @@ window.MathJax = {
             <code>@deferred</code>
             , calling another function when leaving the scope:
 		</p>
-<pre><code class="language-odin" data-lang="odin"> _OpenElement :: proc() ---
- _CloseElement :: proc() ---
- _ConfigureOpenElement :: proc(config: ElementDeclaration) ---
- 
- ConfigureOpenElement :: proc(config: ElementDeclaration) -&gt; bool {
-&nbsp;&nbsp;&nbsp;&nbsp; _ConfigureOpenElement(config)
-&nbsp;&nbsp;&nbsp;&nbsp; return true
- }
- 
- @(deferred_none = _CloseElement)
- UI :: proc() -&gt; proc (config: ElementDeclaration) -&gt; bool {
-&nbsp;&nbsp;&nbsp;&nbsp; _OpenElement()
-&nbsp;&nbsp;&nbsp;&nbsp; return ConfigureOpenElement
- }
+<pre><code class="language-odin" data-lang="odin">_OpenElement :: proc() ---
+_CloseElement :: proc() ---
+_ConfigureOpenElement :: proc(config: ElementDeclaration) ---
+
+ConfigureOpenElement :: proc(config: ElementDeclaration) -&gt; bool {
+&nbsp;&nbsp;&nbsp;&nbsp;_ConfigureOpenElement(config)
+&nbsp;&nbsp;&nbsp;&nbsp;return true
+}
+
+@(deferred_none = _CloseElement)
+UI :: proc() -&gt; proc (config: ElementDeclaration) -&gt; bool {
+&nbsp;&nbsp;&nbsp;&nbsp;_OpenElement()
+&nbsp;&nbsp;&nbsp;&nbsp;return ConfigureOpenElement
+}
 </code></pre>
 	</li>
 	<li>
@@ -1910,12 +1919,12 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    [2025/06/25]
+                    (2025-06-25)
 				</p>
 				<ul>
 					<li>
 						<p>
-                            At the moment, only Raylib exists.
+                            At the moment, only RayLib exists.
 						</p>
 					</li>
 					<li>
@@ -1968,7 +1977,7 @@ if clay.UI()({ id = clay.ID("Outer"), layout = { padding = clay.PaddingAll(16) }
 					<footer
 						id="previous-next" >
 						<a
-							href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+							href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                             &nbsp;&lsaquo; Previous
 						</a>
 						<a
@@ -1986,7 +1995,7 @@ if clay.UI()({ id = clay.ID("Outer"), layout = { padding = clay.PaddingAll(16) }
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -2043,7 +2052,7 @@ if clay.UI()({ id = clay.ID("Outer"), layout = { padding = clay.PaddingAll(16) }
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

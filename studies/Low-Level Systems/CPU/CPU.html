@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-07-22
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1364,13 +1373,13 @@ window.MathJax = {
             <code>IK_Chain</code>
             :
 		</p>
-<pre><code class="language-odin" data-lang="odin"> IK_Chain :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp; joints: [dynamic]^Joint,
-&nbsp;&nbsp;&nbsp;&nbsp; bone_lengths: [dynamic]f32,
-&nbsp;&nbsp;&nbsp;&nbsp; target: eng.Transform_Node,
-&nbsp;&nbsp;&nbsp;&nbsp; is_target_moving: bool,
-&nbsp;&nbsp;&nbsp;&nbsp; placement: IK_Placement,
- }
+<pre><code class="language-odin" data-lang="odin">IK_Chain :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;joints: [dynamic]^Joint,
+&nbsp;&nbsp;&nbsp;&nbsp;bone_lengths: [dynamic]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;target: eng.Transform_Node,
+&nbsp;&nbsp;&nbsp;&nbsp;is_target_moving: bool,
+&nbsp;&nbsp;&nbsp;&nbsp;placement: IK_Placement,
+}
 </code></pre>
 	</li>
 	<li>
@@ -1493,7 +1502,7 @@ window.MathJax = {
 					</em>
                     :
 				</p>
-<pre><code class="language-odin" data-lang="odin"> chains: [100]IK_Chain
+<pre><code class="language-odin" data-lang="odin">chains: [100]IK_Chain
 </code></pre>
 				<ul>
 					<li>
@@ -1508,10 +1517,10 @@ window.MathJax = {
 								<p>
                                     Only struct metadata is contiguous. Actual data is fragmented:
 								</p>
-<pre><code class="language-txt" data-lang="txt"> [Chain0] → (heap_ptr0 → bones0)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → (heap_ptr1 → joints0)
- [Chain1] → (heap_ptr2 → bones1)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → (heap_ptr3 → joints1)
+<pre><code class="language-txt" data-lang="txt">[Chain0] → (heap_ptr0 → bones0)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ (heap_ptr1 → joints0)
+[Chain1] → (heap_ptr2 → bones1)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ (heap_ptr3 → joints1)
 </code></pre>
 							</li>
 						</ul>
@@ -1528,7 +1537,7 @@ window.MathJax = {
 								<p>
                                     All data (struct fields + bone lengths + joints) is in one contiguous memory block.
 								</p>
-<pre><code class="language-txt" data-lang="txt"> [Chain0][bones0][joints0][Chain1][bones1][joints1]...
+<pre><code class="language-txt" data-lang="txt">[Chain0][bones0][joints0][Chain1][bones1][joints1]...
 </code></pre>
 							</li>
 						</ul>
@@ -2209,7 +2218,7 @@ window.MathJax = {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -2292,7 +2301,7 @@ window.MathJax = {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

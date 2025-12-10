@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,159 +1251,17 @@ window.MathJax = {
                                 🕒 Created: 2025-08-11
 							</time>
 							<time
-								datetime="2025-11-21" >
-                                | Updated: 2025-11-21
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
 					<div
 						id="note-content" >
-<h3
-	id="where-i-stopped" >
-    Where I Stopped
-</h3>
-<h5
-	id="bar" >
-    BAR
-</h5>
-<ul>
-	<li>
-		<p>
-            Jesse:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>BAR_pcie_access_flags := vk.MemoryPropertyFlags{.DEVICE_LOCAL, .HOST_VISIBLE, .HOST_COHERENT}</code>
-                    &nbsp;I use that for my UBO buffer
-				</p>
-			</li>
-			<li>
-				<p>
-                    It's what the BAR is (and where &quot;resizable bar&quot; comes from if you've heard the term)
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Caio:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Can it be 
-                    <code>DEVICE_LOCAL</code>
-                    &nbsp;and 
-                    <code>HOST_VISIBLE</code>
-                    &nbsp;at the same time? I assumed it was exclusive. How do you update the buffer?
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Jesse:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Yes, within some limits
-				</p>
-			</li>
-			<li>
-				<p>
-                    It's what the BAR is (and where &quot;resizable bar&quot; comes from if you've heard the term)
-				</p>
-			</li>
-			<li>
-				<p>
-                    I just write through to the pointer 
-                    <code>intrinsics.mem_copy_non_overlapping(rawptr(ubo_frame_01_ptr), &per_frame_ubo, size_of(per_frame_ubo))</code>
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>ubo_frame_01_ptr</code>
-                    &nbsp;ping pongs at an offset determined by the frame index
-				</p>
-			</li>
-			<li>
-				<p>
-                    Because multiple frames can be in flight at once
-				</p>
-			</li>
-			<li>
-				<p>
-                    They need different cameras
-				</p>
-			</li>
-			<li>
-				<p>
-                    In practice this means I effectively have 2 UBOs I source from
-				</p>
-			</li>
-			<li>
-				<p>
-                    I also have two sets of positions for each mesh
-				</p>
-			</li>
-			<li>
-				<p>
-                    BAR is a small segment of CPU-addressable memory on the GPU that is also relatively high-performance read access from the GPU
-				</p>
-			</li>
-			<li>
-				<p>
-                    You want that allocation to be very small
-				</p>
-			</li>
-			<li>
-				<p>
-                    Because it's not virtualized
-				</p>
-			</li>
-			<li>
-				<p>
-                    And if multiple applications want it, they cannot share
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Lee Michael:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    I had not heard of this! My last Vulkan app actually just assumed ReBAR, and I didn't imagine that would be a downside.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Jesse:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Yeah, at least in Vulkan you can try to allocate upfront and if it fails, just use the ordinary fallback
-				</p>
-			</li>
-			<li>
-				<p>
-                    So at least it won't crash in the middle of the application runtime
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="about" >
-    About
-</h3>
+<h2
+	id="execution-building-blocks" >
+    Execution Building Blocks
+</h2>
 <ul>
 	<li>
 		<p>
@@ -1414,12 +1281,6 @@ window.MathJax = {
 			</li>
 		</ul>
 	</li>
-</ul>
-<h2
-	id="execution-building-blocks" >
-    Execution Building Blocks
-</h2>
-<ul>
 	<li>
 		<p>
             From smallest to largest.
@@ -1939,7 +1800,13 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            <img src="assets/image_20250812175721.png" width="525" >
+            <img src="assets/2025-12-10_07-35-27.png" width="600" alt="" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250812175721.png" width="600" >
             .
 		</p>
 	</li>
@@ -1955,6 +1822,10 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
+	</li>
+	<li>
+        <img src="assets/2025-12-10_07-50-28.png" width="600" alt="" >
+
 	</li>
 </ul>
 <h3
@@ -2385,93 +2256,11 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h2
-	id="memory-cpu-lt-gt-gpu" >
-    Memory: CPU &lt;-&gt; GPU
-</h2>
-<h5
+<h3
 	id="host-visible-physical-memory" >
     Host-Visible Physical Memory
-</h5>
+</h3>
 <ul>
-	<li>
-		<p>
-			<strong>
-                Discrete GPUs
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-					<strong>
-                        System RAM
-					</strong>
-                    &nbsp;allocated by the driver and 
-					<strong>
-                        mapped into the GPU’s address space
-					</strong>
-                    &nbsp;via PCIe BAR (Base Address Register).
-				</p>
-			</li>
-			<li>
-				<p>
-                    Or a 
-					<strong>
-                        special region of VRAM
-					</strong>
-                    &nbsp;that is directly mapped into CPU address space via PCIe — but this is rare for large allocations because PCIe mapping windows are small.
-				</p>
-			</li>
-			<li>
-				<p>
-                    If it’s 
-					<strong>
-                        system RAM
-					</strong>
-                    &nbsp;→ CPU reads/writes are as fast as normal RAM, but GPU access is limited by PCIe bandwidth/latency.
-				</p>
-			</li>
-			<li>
-				<p>
-                    If it’s 
-					<strong>
-                        mapped VRAM
-					</strong>
-                    &nbsp;→ GPU access is fast, but CPU writes/reads are slow compared to normal RAM (still crossing PCIe).
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Integrated GPUs / APUs
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Host-visible memory is simply 
-					<strong>
-                        normal DRAM
-					</strong>
-                    &nbsp;that both CPU and GPU share.
-				</p>
-			</li>
-			<li>
-				<p>
-                    No PCIe transfer is needed — the GPU’s memory controller directly accesses the same DIMMs as the CPU.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Performance difference between CPU and GPU access is smaller here, but they still contend for bandwidth.
-				</p>
-			</li>
-		</ul>
-	</li>
 	<li>
 		<p>
             <code>HOST_VISIBLE</code>
@@ -2501,6 +2290,473 @@ window.MathJax = {
 			<li>
 				<p>
                     Host-visible VRAM is generally slower for the GPU than purely device-local VRAM because of cacheability and controller constraints.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="properties" >
+    Properties
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>HOST_CACHED</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    CPU accesses are cached in the CPU’s cache hierarchy (good for reads, but may need explicit flush for writes).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>DEVICE_LOCAL</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Memory is physically close to the GPU (VRAM on discrete GPUs, DRAM on integrated GPUs).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="where-is-it" >
+    Where is it
+</h5>
+<ul>
+	<li>
+		<p>
+            Discrete GPU (most desktop cards)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It's on System RAM, not on GPU VRAM.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The task manager shows it as System RAM.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The CPU owns system RAM → the GPU accesses it over PCIe using DMA.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Vulkan marks this memory type as 
+                    <code>HOST_VISIBLE</code>
+                    &nbsp;because the driver can map it into the CPU’s virtual address space (
+                    <code>vkMapMemory</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is not device-local, so GPU access is slower and higher-latency than VRAM.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Discrete GPU + resizable BAR (modern systems)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Resizable BAR lets the CPU map large VRAM ranges.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Physically inside GPU VRAM.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Host-visible due to large PCIe BAR aperture.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Still slower for CPU than normal RAM but faster than old small BAR windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This creates memory types that are both host-visible and device-local on a dGPU.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Discrete GPU with a PCIe BAR that exposes VRAM (old default BAR)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Physically still VRAM on the GPU card.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The task manager reports it as GPU memory, not System RAM.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This situation appears in Vulkan as host-visible + device-local memory types.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The driver exposes this region to the CPU, so it becomes host-visible.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Often small (MBs–GBs, depending on BAR size and driver config).
+				</p>
+			</li>
+			<li>
+				<p>
+                    CPU writes are slow due to PCIe latency, even though the memory is VRAM.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Integrated GPU / APU
+		</p>
+		<ul>
+			<li>
+				<p>
+                    There is no VRAM; all GPU memory (both host-visible and device-local) is system RAM.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The task manager shows it as System RAM.
+				</p>
+			</li>
+			<li>
+				<p>
+                    CPU and GPU share DRAM via a unified memory controller.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Vulkan will expose memory types that are both DEVICE_LOCAL and HOST_VISIBLE.
+				</p>
+			</li>
+			<li>
+				<p>
+                    GPU access time can vary due to shared bandwidth or caches, but it’s still significantly faster than PCIe-based access.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="bar-base-address-register" >
+    BAR (Base Address Register)
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Discrete GPU with a PCIe BAR that exposes VRAM” (old/default BAR)
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Historically:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            GPUs expose only a small PCIe BAR window (typically 256 MB).
+						</p>
+					</li>
+					<li>
+						<p>
+                            The CPU can map only that tiny window of VRAM at once.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The driver remaps that window on demand if you try to access different VRAM ranges.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Because the window is so small, it is rarely used for general-purpose CPU access.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    So you can map VRAM, but only a tiny slice, and it’s awkward and slow for real work.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is the legacy BAR situation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                “Discrete GPU + Resizable BAR” (modern systems)
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Resizable BAR is a PCIe capability that lets the BAR window be expanded to cover the entire VRAM.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Instead of 256 MB, the CPU can directly map all VRAM.
+						</p>
+					</li>
+					<li>
+						<p>
+                            No remapping tricks.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Vulkan can expose device-local memory that is also host-visible for large allocations.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Games can stream assets more efficiently because CPU → VRAM access no longer requires the small-window workaround.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    This is the full VRAM mapping situation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Resizable BAR only changes addressability, not the speed of PCIe.
+				</p>
+			</li>
+			<li>
+				<p>
+                    GPU performance is unaffected by whether BAR is small or large.
+				</p>
+			</li>
+			<li>
+				<p>
+                    By Intel: Resizable BAR (Base Address Register) is a PCIe capability. This is a mechanism that allows the PCIe device, such as a discrete graphics card, to negotiate the BAR size to optimize system resources. Enabling this functionality can result in a performance improvement.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Discussion:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Jesse:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>BAR_pcie_access_flags := vk.MemoryPropertyFlags{.DEVICE_LOCAL, .HOST_VISIBLE, .HOST_COHERENT}</code>
+                            &nbsp;I use that for my UBO buffer
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's what the BAR is (and where &quot;resizable bar&quot; comes from if you've heard the term)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Caio:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can it be 
+                            <code>DEVICE_LOCAL</code>
+                            &nbsp;and 
+                            <code>HOST_VISIBLE</code>
+                            &nbsp;at the same time? I assumed it was exclusive. How do you update the buffer?
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Jesse:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Yes, within some limits
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's what the BAR is (and where &quot;resizable bar&quot; comes from if you've heard the term)
+						</p>
+					</li>
+					<li>
+						<p>
+                            I just write through to the pointer 
+                            <code>intrinsics.mem_copy_non_overlapping(rawptr(ubo_frame_01_ptr), &per_frame_ubo, size_of(per_frame_ubo))</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>ubo_frame_01_ptr</code>
+                            &nbsp;ping pongs at an offset determined by the frame index
+						</p>
+					</li>
+					<li>
+						<p>
+                            Because multiple frames can be in flight at once
+						</p>
+					</li>
+					<li>
+						<p>
+                            They need different cameras
+						</p>
+					</li>
+					<li>
+						<p>
+                            In practice this means I effectively have 2 UBOs I source from
+						</p>
+					</li>
+					<li>
+						<p>
+                            I also have two sets of positions for each mesh
+						</p>
+					</li>
+					<li>
+						<p>
+                            BAR is a small segment of CPU-addressable memory on the GPU that is also relatively high-performance read access from the GPU
+						</p>
+					</li>
+					<li>
+						<p>
+                            You want that allocation to be very small
+						</p>
+					</li>
+					<li>
+						<p>
+                            Because it's not virtualized
+						</p>
+					</li>
+					<li>
+						<p>
+                            And if multiple applications want it, they cannot share
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Lee Michael:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I had not heard of this! My last Vulkan app actually just assumed ReBAR, and I didn't imagine that would be a downside.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Jesse:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Yeah, at least in Vulkan you can try to allocate upfront and if it fails, just use the ordinary fallback
+						</p>
+					</li>
+					<li>
+						<p>
+                            So at least it won't crash in the middle of the application runtime
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Enabling, by Intel
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Use your system’s latest motherboard firmware supporting Resizable BAR.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Enter the system’s BIOS/UEFI firmware configuration menu by pressing the DEL key during system start up. This key may vary between each system manufacturer, please check with your system manufacturer for specific instructions as necessary.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Compatibility Support Module (CSM) or Legacy Mode must be disabled and UEFI boot mode must be Enabled.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ensure the following settings are set to Enabled (or Auto if the Enabled option is not present):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Above 4G Decoding
+						</p>
+					</li>
+					<li>
+						<p>
+                            Re-Size BAR Support
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Use the Intel® Driver and Support Assistant (Intel DSA) to confirm that Resizable BAR is enabled on your system.
 				</p>
 			</li>
 		</ul>
@@ -2570,220 +2826,6 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-	</li>
-</ul>
-<h5
-	id="properties" >
-    Properties
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>HOST_CACHED</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    CPU accesses are cached in the CPU’s cache hierarchy (good for reads, but may need explicit flush for writes).
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>DEVICE_LOCAL</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Memory is physically close to the GPU (VRAM on discrete GPUs, DRAM on integrated GPUs).
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="patterns" >
-    Patterns
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Discrete GPUs
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Allocate a 
-					<strong>
-                        host-visible
-					</strong>
-                    &nbsp;memory type (often not the fastest for GPU access) for small or frequently updated buffers.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Host-visible memory is limited and slower for GPU access.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Best practice: use it for small, dynamic data; keep heavy GPU workloads in device-local VRAM.
-				</p>
-			</li>
-			<li>
-				<p>
-                    For large transfers, use staging buffers and 
-                    <code>vkCmdCopyBuffer/Image</code>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    Or use a 
-					<strong>
-                        staging buffer
-					</strong>
-                    : CPU writes to host-visible memory, then issues a GPU copy to 
-					<strong>
-                        device-local
-					</strong>
-                    &nbsp;VRAM.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Integrated GPUs
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    GPU and CPU share the same physical DRAM.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Host-visible memory is the same physical memory the GPU uses for its “VRAM” (there’s no separate pool).
-				</p>
-			</li>
-			<li>
-				<p>
-                    Access is faster than PCIe but still slower than on-chip GPU caches.
-				</p>
-			</li>
-			<li>
-				<p>
-                    The penalty for using host-visible memory is much smaller.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Sometimes you can use the same allocation for both CPU and GPU to avoid copies.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Vulkan's 
-                    <code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code>
-                    &nbsp;and 
-                    <code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code>
-                    &nbsp;can be set together here — meaning the same allocation is optimal for both CPU and GPU access.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="examples-of-data-flow" >
-    Examples of Data Flow
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Example
-			</strong>
-            : CPU updates vertex buffer for GPU rendering
-		</p>
-		<ol>
-			<li>
-				<p>
-                    CPU maps a host-visible buffer (
-                    <code>vkMapMemory</code>
-                    ).
-				</p>
-			</li>
-			<li>
-				<p>
-                    CPU writes new vertex data.
-				</p>
-			</li>
-			<li>
-				<p>
-                    If memory is 
-					<strong>
-                        not coherent
-					</strong>
-                    &nbsp;→ call 
-                    <code>vkFlushMappedMemoryRanges</code>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    Use a pipeline barrier or proper synchronization so GPU sees the new data.
-				</p>
-			</li>
-			<li>
-				<p>
-                    GPU reads from the buffer during rendering.
-				</p>
-			</li>
-		</ol>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Example
-			</strong>
-            : GPU writes results for CPU readback
-		</p>
-		<ol>
-			<li>
-				<p>
-                    GPU writes to a host-visible buffer (e.g., compute shader output).
-				</p>
-			</li>
-			<li>
-				<p>
-                    Insert a barrier to ensure the writes are complete and visible.
-				</p>
-			</li>
-			<li>
-				<p>
-                    If memory is 
-					<strong>
-                        not coherent
-					</strong>
-                    &nbsp;→ call 
-                    <code>vkInvalidateMappedMemoryRanges</code>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    CPU reads the data via the mapped pointer.
-				</p>
-			</li>
-		</ol>
 	</li>
 </ul>
 <h2
@@ -3081,7 +3123,7 @@ window.MathJax = {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -3092,20 +3134,6 @@ window.MathJax = {
                     On this page
 				</strong>
 				<ul>
-					<ul>
-						<li>
-							<a
-								href="#where-i-stopped" >
-                                Where I Stopped
-							</a>
-						</li>
-						<li>
-							<a
-								href="#about" >
-                                About
-							</a>
-						</li>
-					</ul>
 					<li>
 						<a
 							href="#execution-building-blocks" >
@@ -3236,14 +3264,12 @@ window.MathJax = {
                                     Texture memory
 								</a>
 							</li>
-						</ul>
-					</li>
-					<li>
-						<a
-							href="#memory-cpu-lt-gt-gpu" >
-                            Memory: CPU &lt;-&gt; GPU
-						</a>
-						<ul>
+							<li>
+								<a
+									href="#host-visible-physical-memory" >
+                                    Host-Visible Physical Memory
+								</a>
+							</li>
 						</ul>
 					</li>
 					<li>
@@ -3272,7 +3298,7 @@ window.MathJax = {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

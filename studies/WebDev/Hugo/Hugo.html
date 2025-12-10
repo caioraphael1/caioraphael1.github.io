@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-10-11
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1370,7 +1379,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            [2025/10/11]
+            (2025-10-11)
 		</p>
 		<ul>
 			<li>
@@ -1491,7 +1500,7 @@ hugo server --help
 			</strong>
             :
 		</p>
-<pre><code class="language-toml" data-lang="toml"> [server]
+<pre><code class="language-toml" data-lang="toml">[server]
 </code></pre>
 	</li>
 	<li>
@@ -1833,7 +1842,7 @@ privacyenhanced = true
 				<p>
                     For:
 				</p>
-<pre><code class="language-sh" data-lang="sh"> hugo new content posts/my-first-post.md
+<pre><code class="language-sh" data-lang="sh">hugo new content posts/my-first-post.md
 </code></pre>
 			</li>
 			<li>
@@ -1901,7 +1910,7 @@ privacyenhanced = true
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-sh" data-lang="sh"> hugo new content articles/something.md
+<pre><code class="language-sh" data-lang="sh">hugo new content articles/something.md
 </code></pre>
 				<ul>
 					<li>
@@ -1912,7 +1921,7 @@ privacyenhanced = true
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-sh" data-lang="sh"> hugo new content --kind tutorials articles/something.md
+<pre><code class="language-sh" data-lang="sh">hugo new content --kind tutorials articles/something.md
 </code></pre>
 			</li>
 		</ul>
@@ -2369,7 +2378,7 @@ hugo --buildFuture&nbsp;&nbsp;&nbsp;&nbsp;# or -F
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-toml" data-lang="toml"> tags = ["tag1", "tag2", "tag3"]
+<pre><code class="language-toml" data-lang="toml">tags = ["tag1", "tag2", "tag3"]
 </code></pre>
 	</li>
 	<li>
@@ -2386,7 +2395,7 @@ hugo --buildFuture&nbsp;&nbsp;&nbsp;&nbsp;# or -F
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-toml" data-lang="toml"> categories = ["cat1"]
+<pre><code class="language-toml" data-lang="toml">categories = ["cat1"]
 </code></pre>
 	</li>
 	<li>
@@ -2884,8 +2893,8 @@ hugo --buildFuture&nbsp;&nbsp;&nbsp;&nbsp;# or -F
 			</a>
             .
 		</p>
-<pre><code class="language-go" data-lang="go"> (( .Site.Home.Permalink )) → https://example.org/docs/ 
- (( .Site.Home.RelPermalink )) → /docs/
+<pre><code class="language-go" data-lang="go">(( .Site.Home.Permalink )) → https://example.org/docs/ 
+(( .Site.Home.RelPermalink )) → /docs/
 </code></pre>
 	</li>
 	<li>
@@ -2898,9 +2907,9 @@ hugo --buildFuture&nbsp;&nbsp;&nbsp;&nbsp;# or -F
 			</a>
             .
 		</p>
-<pre><code class="language-go" data-lang="go"> (( range .Site.Pages ))
-&nbsp;&nbsp; &lt;h2&gt;&lt;a HREF="(( .RelPermalink ))"&gt;(( .LinkTitle ))&lt;/a&gt;&lt;/h2&gt;
- (( end ))
+<pre><code class="language-go" data-lang="go">(( range .Site.Pages ))
+&nbsp;&nbsp;&lt;h2&gt;&lt;a HREF="(( .RelPermalink ))"&gt;(( .LinkTitle ))&lt;/a&gt;&lt;/h2&gt;
+(( end ))
 </code></pre>
 	</li>
 	<li>
@@ -2913,24 +2922,24 @@ hugo --buildFuture&nbsp;&nbsp;&nbsp;&nbsp;# or -F
 			</a>
             .
 		</p>
-<pre><code class="language-go" data-lang="go"> // This structure
- content/
- ├── books/
- │&nbsp;&nbsp; ├── book-1.md
- │&nbsp;&nbsp; └── book-2.md
- ├── films/
- │&nbsp;&nbsp; ├── film-1.md
- │&nbsp;&nbsp; └── film-2.md
- └── _index.md
- 
- // Templated like:
- (( range .Site.Sections ))
-&nbsp;&nbsp; &lt;h2&gt;&lt;a HREF="(( .RelPermalink ))"&gt;(( .LinkTitle ))&lt;/a&gt;&lt;/h2&gt;
- (( end ))
- 
- // Renders to:
- &lt;h2&gt;&lt;a HREF="/books/"&gt;Books&lt;/a&gt;&lt;/h2&gt;
- &lt;h2&gt;&lt;a HREF="/films/"&gt;Films&lt;/a&gt;&lt;/h2&gt;
+<pre><code class="language-go" data-lang="go">// This structure
+content/
+├── books/
+│&nbsp;&nbsp; ├── book-1.md
+│&nbsp;&nbsp; └── book-2.md
+├── films/
+│&nbsp;&nbsp; ├── film-1.md
+│&nbsp;&nbsp; └── film-2.md
+└── _index.md
+
+// Templated like:
+(( range .Site.Sections ))
+&nbsp;&nbsp;&lt;h2&gt;&lt;a HREF="(( .RelPermalink ))"&gt;(( .LinkTitle ))&lt;/a&gt;&lt;/h2&gt;
+(( end ))
+
+// Renders to:
+&lt;h2&gt;&lt;a HREF="/books/"&gt;Books&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a HREF="/films/"&gt;Films&lt;/a&gt;&lt;/h2&gt;
 </code></pre>
 	</li>
 	<li>
@@ -2943,11 +2952,11 @@ hugo --buildFuture&nbsp;&nbsp;&nbsp;&nbsp;# or -F
 			</a>
             .
 		</p>
-<pre><code class="language-go" data-lang="go"> // Toml
- mainSections = ['books', 'films']
- 
- // GO
- (( .Site.MainSections )) → [books films]
+<pre><code class="language-go" data-lang="go">// Toml
+mainSections = ['books', 'films']
+
+// GO
+(( .Site.MainSections )) → [books films]
 </code></pre>
 		<ul>
 			<li>
@@ -4048,7 +4057,7 @@ hugo --buildFuture&nbsp;&nbsp;&nbsp;&nbsp;# or -F
 				</ul>
 			</li>
 		</ul>
-<pre><code class="language-go" data-lang="go"> (( partial "header" . ))
+<pre><code class="language-go" data-lang="go">(( partial "header" . ))
 </code></pre>
 		<ul>
 			<li>
@@ -4701,7 +4710,7 @@ echo "theme = 'ananke'" &gt;&gt; hugo.toml
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-sh" data-lang="sh"> hugo server --navigateToChanged
+<pre><code class="language-sh" data-lang="sh">hugo server --navigateToChanged
 </code></pre>
 			</li>
 		</ul>
@@ -4806,21 +4815,21 @@ echo "theme = 'ananke'" &gt;&gt; hugo.toml
 			</strong>
             :
 		</p>
-<pre><code class="language-txt" data-lang="txt"> public/
- ├── categories/
- │&nbsp;&nbsp; ├── index.html
- │&nbsp;&nbsp; └── index.xml&nbsp;&nbsp;&lt;-- RSS feed for this section
- ├── posts/
- │&nbsp;&nbsp; ├── my-first-post/
- │&nbsp;&nbsp; │&nbsp;&nbsp; └── index.html
- │&nbsp;&nbsp; ├── index.html
- │&nbsp;&nbsp; └── index.xml&nbsp;&nbsp;&lt;-- RSS feed for this section
- ├── tags/
- │&nbsp;&nbsp; ├── index.html
- │&nbsp;&nbsp; └── index.xml&nbsp;&nbsp;&lt;-- RSS feed for this section
- ├── index.html
- ├── index.xml&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-- RSS feed for the site
- └── sitemap.xml
+<pre><code class="language-txt" data-lang="txt">public/
+├── categories/
+│&nbsp;&nbsp; ├── index.html
+│&nbsp;&nbsp; └── index.xml&nbsp;&nbsp;&lt;-- RSS feed for this section
+├── posts/
+│&nbsp;&nbsp; ├── my-first-post/
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── index.html
+│&nbsp;&nbsp; ├── index.html
+│&nbsp;&nbsp; └── index.xml&nbsp;&nbsp;&lt;-- RSS feed for this section
+├── tags/
+│&nbsp;&nbsp; ├── index.html
+│&nbsp;&nbsp; └── index.xml&nbsp;&nbsp;&lt;-- RSS feed for this section
+├── index.html
+├── index.xml&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-- RSS feed for the site
+└── sitemap.xml
 </code></pre>
 		<ul>
 			<li>
@@ -5089,7 +5098,7 @@ echo "theme = 'ananke'" &gt;&gt; hugo.toml
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -5178,7 +5187,7 @@ echo "theme = 'ananke'" &gt;&gt; hugo.toml
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2021-11-23
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -2236,8 +2245,8 @@ translate(Vector2(0, G/2))
 			</a>
             .
 		</p>
-<pre><code class="language-gdscript" data-lang="gdscript"> var space_state : PhysicsDirectSpaceState2D = get_world_2d().get_direct_space_state()
- var query := PhysicsRayQueryParameters2D.create(Vector2(), Vector2(), masks)
+<pre><code class="language-gdscript" data-lang="gdscript">var space_state : PhysicsDirectSpaceState2D = get_world_2d().get_direct_space_state()
+var query := PhysicsRayQueryParameters2D.create(Vector2(), Vector2(), masks)
 </code></pre>
 	</li>
 </ul>
@@ -4166,7 +4175,7 @@ DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * diffuse_brdf_NL;
 			</li>
 			<li>
 				<p>
-                    [2024/10/26] I tested changing the position of the LightOccluder relative to the Sprite, testing using and not using Show Behind Parent, etc. It did not work.
+                    (2024-10-26) I tested changing the position of the LightOccluder relative to the Sprite, testing using and not using Show Behind Parent, etc. It did not work.
 				</p>
 			</li>
 		</ul>
@@ -4187,7 +4196,7 @@ DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * diffuse_brdf_NL;
 			</li>
 			<li>
 				<p>
-                    [2024/10/26] I did not understand this explanation. I have to test.
+                    (2024-10-26) I did not understand this explanation. I have to test.
 				</p>
 			</li>
 		</ul>
@@ -4869,24 +4878,24 @@ DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * diffuse_brdf_NL;
 		<ul>
 			<li>
 				<p>
-                    [BUG] Disabling a track in an animation does absolutely nothing if the animation is started from an AniTree; the track still works anyway. Observed in Godot 3.5.1, but this has happened since ~Feb/2019.
+                    (BUG) Disabling a track in an animation does absolutely nothing if the animation is started from an AniTree; the track still works anyway. Observed in Godot 3.5.1, but this has happened since ~Feb/2019.
 				</p>
 			</li>
 			<li>
 				<p>
-                    [BUG] If using an AniPlayer as its OWN SCENE, making any change to an Animation or property of the AniPlayer will not be saved or applied in the game. There are many situations where nothing fixes this bug, and if you restart Godot, all changes are lost and reverted. I believe this bug is caused by transforming an AniPlayer into a scene, since all animations inside it have their 'property path' incorrect, which can cause problems saving the scene. Therefore: avoid using AniPlayer scenes, I suppose.
+                    (BUG) If using an AniPlayer as its OWN SCENE, making any change to an Animation or property of the AniPlayer will not be saved or applied in the game. There are many situations where nothing fixes this bug, and if you restart Godot, all changes are lost and reverted. I believe this bug is caused by transforming an AniPlayer into a scene, since all animations inside it have their 'property path' incorrect, which can cause problems saving the scene. Therefore: avoid using AniPlayer scenes, I suppose.
 				</p>
 			</li>
 			<li>
 				<p>
-                    [Possible BUG] I changed settings of a {.tscn} file of an AniPlayer containing many animations, but there was a lot of inconsistency during the import of changes from VSCode to Godot, making it very frustrating to try to change this node this way. Note that ALL changes and import processes were done correctly. I tried resetting the scene, restarting the project and Godot, but there was still much frustration. In the end, if you want to make bulk changes in an AniPlayer, using the 'Copy Tracks' and 'Paste Tracks' tool may be one of the least frustrating solutions.
+                    (Possible BUG) I changed settings of a {.tscn} file of an AniPlayer containing many animations, but there was a lot of inconsistency during the import of changes from VSCode to Godot, making it very frustrating to try to change this node this way. Note that ALL changes and import processes were done correctly. I tried resetting the scene, restarting the project and Godot, but there was still much frustration. In the end, if you want to make bulk changes in an AniPlayer, using the 'Copy Tracks' and 'Paste Tracks' tool may be one of the least frustrating solutions.
 				</p>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<p>
-            [Notes: 2023/02/18] About the Player's AniPlayer animations:
+            Notes: (2023-02-18) About the Player's AniPlayer animations:
 		</p>
 		<ul>
 			<li>
@@ -5047,14 +5056,14 @@ DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * diffuse_brdf_NL;
 			</li>
 			<li>
 				<p>
-                    [BUG] If using an AniPlayer as its OWN SCENE, updating a Transition in the StateMachine does not make the game update the changes. To make the change effective, you need to make a more significant update in the AniTree, for example: create a new Transition between Segments and delete that Transition; this will make the game update and apply the changes. There are many situations where nothing fixes this bug, and if you restart Godot, all changes are lost and reverted. The same problem occurs when using a Resource for the AniTree's 'Tree Root'. Strange.
+                    (BUG) If using an AniPlayer as its OWN SCENE, updating a Transition in the StateMachine does not make the game update the changes. To make the change effective, you need to make a more significant update in the AniTree, for example: create a new Transition between Segments and delete that Transition; this will make the game update and apply the changes. There are many situations where nothing fixes this bug, and if you restart Godot, all changes are lost and reverted. The same problem occurs when using a Resource for the AniTree's 'Tree Root'. Strange.
 				</p>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<p>
-            [Notes: 2023/02/18] About the Player AniTree's BlendSpaces2D:
+            Notes: (2023-02-18) About the Player AniTree's BlendSpaces2D:
 		</p>
 		<ul>
 			<li>
@@ -5137,10 +5146,10 @@ DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * diffuse_brdf_NL;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-gdscript" data-lang="gdscript"> var aniDuracaoCooldown : String = 'parameters/DuracaoCooldown/scale'
- var aniTransicao : String = 'parameters/Transition/transition_request'
- aniTree.set(aniTransicao, 'Cooldown')
- aniTree.set(aniDuracaoCooldown, 1.0)
+<pre><code class="language-gdscript" data-lang="gdscript">var aniDuracaoCooldown : String = 'parameters/DuracaoCooldown/scale'
+var aniTransicao : String = 'parameters/Transition/transition_request'
+aniTree.set(aniTransicao, 'Cooldown')
+aniTree.set(aniDuracaoCooldown, 1.0)
 </code></pre>
 	</li>
 	<li>
@@ -6161,14 +6170,14 @@ DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * diffuse_brdf_NL;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-gdscript" data-lang="gdscript"> @rpc
- func _request_set_preview(slot_com_item_path : NodePath) -&gt; void:
-&nbsp;&nbsp;&nbsp;&nbsp; var slot_com_item : Slot = get_node(slot_com_item_path)
-&nbsp;&nbsp;&nbsp;&nbsp; if not slot_com_item:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
-&nbsp;&nbsp;&nbsp;&nbsp; var preview : ItemPreview = _PREVIEW_SCENE.instantiate()
-&nbsp;&nbsp;&nbsp;&nbsp; preview.set_textura(slot_com_item.get_item().textura, slot_com_item.get_item().tamanho)
-&nbsp;&nbsp;&nbsp;&nbsp; set_drag_preview(preview)
+<pre><code class="language-gdscript" data-lang="gdscript">@rpc
+func _request_set_preview(slot_com_item_path : NodePath) -&gt; void:
+&nbsp;&nbsp;&nbsp;&nbsp;var slot_com_item : Slot = get_node(slot_com_item_path)
+&nbsp;&nbsp;&nbsp;&nbsp;if not slot_com_item:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+&nbsp;&nbsp;&nbsp;&nbsp;var preview : ItemPreview = _PREVIEW_SCENE.instantiate()
+&nbsp;&nbsp;&nbsp;&nbsp;preview.set_textura(slot_com_item.get_item().textura, slot_com_item.get_item().tamanho)
+&nbsp;&nbsp;&nbsp;&nbsp;set_drag_preview(preview)
 </code></pre>
 	</li>
 	<li>
@@ -7676,7 +7685,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 <ul>
 	<li>
 		<p>
-            [2024/05/03] Only differences from the Default Godot 4 theme:
+            (2024-05-03) Only differences from the Default Godot 4 theme:
 		</p>
 		<ul>
 			<li>
@@ -8210,7 +8219,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 				<ul>
 					<li>
 						<p>
-                            [2024/11/07].
+                            (2024-11-07).
 						</p>
 					</li>
 					<li>
@@ -8230,7 +8239,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 					</li>
 					<li>
 						<p>
-                            [2024/11/09]
+                            (2024-11-09)
 						</p>
 					</li>
 					<li>
@@ -8499,7 +8508,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 		<ul>
 			<li>
 				<p>
-                    [2024/07/06] Did not work on 4.3-dev2.
+                    (2024-07-06) Did not work on 4.3-dev2.
 				</p>
 			</li>
 		</ul>
@@ -8553,7 +8562,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 			</li>
 			<li>
 				<p>
-                    [2024/07/06] Used version 1.0.4.
+                    (2024-07-06) Used version 1.0.4.
 				</p>
 				<ul>
 					<li>
@@ -8625,7 +8634,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 		<ul>
 			<li>
 				<p>
-                    [2024/07/06] Tested and found it unintuitive or irrelevant.
+                    (2024-07-06) Tested and found it unintuitive or irrelevant.
 				</p>
 			</li>
 		</ul>
@@ -8974,7 +8983,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 				<ul>
 					<li>
 						<p>
-                            [2024/04/20] Did not work well on 4.3.
+                            (2024-04-20) Did not work well on 4.3.
 						</p>
 					</li>
 				</ul>
@@ -9131,7 +9140,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 				<ul>
 					<li>
 						<p>
-                            [2024/09/16]
+                            (2024-09-16)
 						</p>
 					</li>
 					<li>
@@ -9192,7 +9201,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 				<ul>
 					<li>
 						<p>
-                            [2024/04/20] Had issues on 4.3, demos did not open.
+                            (2024-04-20) Had issues on 4.3, demos did not open.
 						</p>
 					</li>
 				</ul>
@@ -9346,7 +9355,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 			</li>
 			<li>
 				<p>
-                    [2025/03/01] No updates for 2 years. Tested on this 
+                    (2025-03-01) No updates for 2 years. Tested on this 
 					<a
 						href="https://github.com/godotengine/godot/commit/35cfaafda8073f700c9d2fe42a43d3d81eaaea67" 
 						class="external-link" 
@@ -9712,7 +9721,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -10197,7 +10206,7 @@ OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

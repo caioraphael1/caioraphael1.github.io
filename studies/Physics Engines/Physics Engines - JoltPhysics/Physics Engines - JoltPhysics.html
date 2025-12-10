@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-06-22
 							</time>
 							<time
-								datetime="2025-11-21" >
-                                | Updated: 2025-11-21
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1368,7 +1377,7 @@ window.MathJax = {
 	<li>
 		<p>
 			<em>
-                Can Jolt be used as a physics engine for a 2D game in raylib?
+                Can Jolt be used as a physics engine for a 2D game in RayLib?
 			</em>
 		</p>
 		<ul>
@@ -1384,7 +1393,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            raylib is a 2D/3D graphics library, often used for 2D games.
+                            RayLib is a 2D/3D graphics library, often used for 2D games.
 						</p>
 					</li>
 					<li>
@@ -1416,7 +1425,7 @@ window.MathJax = {
 	<li>
 		<p>
 			<em>
-                Should Jolt be used for a 2D game in raylib?
+                Should Jolt be used for a 2D game in RayLib?
 			</em>
 		</p>
 		<ul>
@@ -1470,7 +1479,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            Alternative 2D engines exist that integrate more naturally with raylib.
+                            Alternative 2D engines exist that integrate more naturally with RayLib.
 						</p>
 					</li>
 				</ul>
@@ -1869,13 +1878,13 @@ if (mBody-&gt;IsKinematic())
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-cpp" data-lang="cpp"> // A sphere
- BodyCreationSettings sphere_bcs(new SphereShape(2.0f), pos, Quat::sIdentity(), EMotionType::Dynamic, Layers::MOVING);
- sphere_bcs.mLinearVelocity = Vec3(20, 0, 0);
- sphere_bcs.mEnhancedInternalEdgeRemoval = enhanced_removal == 1;
- id = mBodyInterface-&gt;CreateAndAddBody(sphere_bcs, EActivation::Activate);
- SetBodyLabel(id, labels[enhanced_removal]);
- pos += RVec3(0, 0, 5.0_r);
+<pre><code class="language-cpp" data-lang="cpp">// A sphere
+BodyCreationSettings sphere_bcs(new SphereShape(2.0f), pos, Quat::sIdentity(), EMotionType::Dynamic, Layers::MOVING);
+sphere_bcs.mLinearVelocity = Vec3(20, 0, 0);
+sphere_bcs.mEnhancedInternalEdgeRemoval = enhanced_removal == 1;
+id = mBodyInterface-&gt;CreateAndAddBody(sphere_bcs, EActivation::Activate);
+SetBodyLabel(id, labels[enhanced_removal]);
+pos += RVec3(0, 0, 5.0_r);
 </code></pre>
 	</li>
 	<li>
@@ -1910,22 +1919,22 @@ if (mBody-&gt;IsKinematic())
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-cpp" data-lang="cpp"> // Settings for all frictionless boxes.
- Ref&lt;BoxShape&gt; box_shape = new BoxShape(Vec3(1.0f, 1.0f, 1.0f), cDefaultConvexRadius);
- BodyCreationSettings box_settings(box_shape, RVec3::sZero(), Quat::sIdentity(), EMotionType::Dynamic, Layers::MOVING);
- box_settings.mFriction = 0.0f;
- box_settings.mLinearDamping = 0.0f;
- box_settings.mAllowSleeping = false;
- 
- // Mesh shape
- MeshShapeSettings mesh_shape(triangles);
- mesh_shape.SetEmbedded();
- mesh_shape.mActiveEdgeCosThresholdAngle = Cos(DegreesToRadians(50.0f));
- // Mesh
- BodyCreationSettings mesh_settings(&mesh_shape, RVec3::sZero(), Quat::sIdentity(), EMotionType::Static, Layers::NON_MOVING);
-&nbsp;&nbsp;&nbsp;&nbsp; // Instead of setting mesh_shape.mActiveEdgeCosThresholdAngle you can also set: mesh_settings.mEnhancedInternalEdgeRemoval = true.
- mesh_settings.mFriction = 0.0f;
- mBodyInterface-&gt;CreateAndAddBody(mesh_settings, EActivation::DontActivate);
+<pre><code class="language-cpp" data-lang="cpp">// Settings for all frictionless boxes.
+Ref&lt;BoxShape&gt; box_shape = new BoxShape(Vec3(1.0f, 1.0f, 1.0f), cDefaultConvexRadius);
+BodyCreationSettings box_settings(box_shape, RVec3::sZero(), Quat::sIdentity(), EMotionType::Dynamic, Layers::MOVING);
+box_settings.mFriction = 0.0f;
+box_settings.mLinearDamping = 0.0f;
+box_settings.mAllowSleeping = false;
+
+// Mesh shape
+MeshShapeSettings mesh_shape(triangles);
+mesh_shape.SetEmbedded();
+mesh_shape.mActiveEdgeCosThresholdAngle = Cos(DegreesToRadians(50.0f));
+// Mesh
+BodyCreationSettings mesh_settings(&mesh_shape, RVec3::sZero(), Quat::sIdentity(), EMotionType::Static, Layers::NON_MOVING);
+&nbsp;&nbsp;&nbsp;&nbsp;// Instead of setting mesh_shape.mActiveEdgeCosThresholdAngle you can also set: mesh_settings.mEnhancedInternalEdgeRemoval = true.
+mesh_settings.mFriction = 0.0f;
+mBodyInterface-&gt;CreateAndAddBody(mesh_settings, EActivation::DontActivate);
 </code></pre>
 		<ul>
 			<li>
@@ -1938,9 +1947,9 @@ if (mBody-&gt;IsKinematic())
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-cpp" data-lang="cpp"> // Turn off regular active edge determination so that we only rely on the mEnhancedInternalEdgeRemoval flag
- mesh_settings.mActiveEdgeCosThresholdAngle = -1.0f; 
- // In the "Samples/General/Active Edges" example this is not used.
+<pre><code class="language-cpp" data-lang="cpp">// Turn off regular active edge determination so that we only rely on the mEnhancedInternalEdgeRemoval flag
+mesh_settings.mActiveEdgeCosThresholdAngle = -1.0f; 
+// In the "Samples/General/Active Edges" example this is not used.
 </code></pre>
 	</li>
 </ul>
@@ -2313,7 +2322,7 @@ OnContactRemoved:
 <ul>
 	<li>
 		<p>
-            [2025/06/22]
+            (2025-06-22)
 		</p>
 		<ul>
 			<li>
@@ -2938,13 +2947,13 @@ bcs.mAllowedDOFs = EAllowedDOFs::Plane2D;
 		<p>
             What distinguishes a soft hinge from a hard hinge is the use of spring configuration. A soft hinge uses springs:
 		</p>
-<pre><code class="language-cpp" data-lang="cpp"> hinge.mLimitsSpringSettings.mFrequency = 1.0f;
- hinge.mLimitsSpringSettings.mDamping = 0.5f;
+<pre><code class="language-cpp" data-lang="cpp">hinge.mLimitsSpringSettings.mFrequency = 1.0f;
+hinge.mLimitsSpringSettings.mDamping = 0.5f;
 </code></pre>
 	</li>
 	<li>
 		<p>
-            [2025/07/19] 
+            (2025-07-19) 
 			<strong>
                 What I used for hinge tests
 			</strong>
@@ -2987,36 +2996,36 @@ bcs.mAllowedDOFs = EAllowedDOFs::Plane2D;
 				</ul>
 			</li>
 		</ul>
-<pre><code class="language-odin" data-lang="odin"> // -&gt; In Character_User
- second_body:&nbsp;&nbsp;eng.Dynamic_Body,
- hinge: ^jolt.Hinge_Constraint,
+<pre><code class="language-odin" data-lang="odin">// -&gt; In Character_User
+second_body:&nbsp;&nbsp;eng.Dynamic_Body,
+hinge: ^jolt.Hinge_Constraint,
 
- // -&gt; At spawn
- eng.dynamic_body_create(
-&nbsp;&nbsp;&nbsp;&nbsp; dynamic_body = &personagem.second_body,
-&nbsp;&nbsp;&nbsp;&nbsp; shape = jolt.SphereShape_Create(eng.from_world_to_physics_space(3)),
-&nbsp;&nbsp;&nbsp;&nbsp; pos = {},
-&nbsp;&nbsp;&nbsp;&nbsp; layers = u32(Object_Layer.Dynamic_Body),
-&nbsp;&nbsp;&nbsp;&nbsp; child_transform = nil,
-&nbsp;&nbsp;&nbsp;&nbsp; can_rotate = true,
- )
- 
- hinge_settings: jolt.Hinge_Constraint_Settings
- jolt.HingeConstraintSettings_Init(&hinge_settings)
- 
- hinge_settings.space = .Local_To_Body_COM
- hinge_settings.point1 = { 0, 0, 0 }
- hinge_settings.point2 = { 1, 0, 0 }
- hinge_settings.hinge_axis1&nbsp;&nbsp;= { 0, 0, 1 }
- hinge_settings.hinge_axis2&nbsp;&nbsp;= { 0, 0, 1 }
- hinge_settings.normal_axis1 = { 1, 0, 0 }
- hinge_settings.normal_axis2 = { 0, 1, 0 }
- hinge_settings.limits_max = 0 * rl.DEG2RAD
- hinge_settings.limits_min = -90 * rl.DEG2RAD
- 
- personagem.hinge = jolt.HingeConstraint_Create(&hinge_settings, personagem.dynamic_body, personagem.second_body)
- // personagem.hinge = jolt.HingeConstraint_Create(&hinge_settings, personagem.second_body, personagem.dynamic_body)
- jolt.PhysicsSystem_AddConstraint(eng.physics_system, personagem.hinge)
+// -&gt; At spawn
+eng.dynamic_body_create(
+&nbsp;&nbsp;&nbsp;&nbsp;dynamic_body = &personagem.second_body,
+&nbsp;&nbsp;&nbsp;&nbsp;shape = jolt.SphereShape_Create(eng.from_world_to_physics_space(3)),
+&nbsp;&nbsp;&nbsp;&nbsp;pos = {},
+&nbsp;&nbsp;&nbsp;&nbsp;layers = u32(Object_Layer.Dynamic_Body),
+&nbsp;&nbsp;&nbsp;&nbsp;child_transform = nil,
+&nbsp;&nbsp;&nbsp;&nbsp;can_rotate = true,
+)
+
+hinge_settings: jolt.Hinge_Constraint_Settings
+jolt.HingeConstraintSettings_Init(&hinge_settings)
+
+hinge_settings.space = .Local_To_Body_COM
+hinge_settings.point1 = { 0, 0, 0 }
+hinge_settings.point2 = { 1, 0, 0 }
+hinge_settings.hinge_axis1&nbsp;&nbsp;= { 0, 0, 1 }
+hinge_settings.hinge_axis2&nbsp;&nbsp;= { 0, 0, 1 }
+hinge_settings.normal_axis1 = { 1, 0, 0 }
+hinge_settings.normal_axis2 = { 0, 1, 0 }
+hinge_settings.limits_max = 0 * rl.DEG2RAD
+hinge_settings.limits_min = -90 * rl.DEG2RAD
+
+personagem.hinge = jolt.HingeConstraint_Create(&hinge_settings, personagem.dynamic_body, personagem.second_body)
+// personagem.hinge = jolt.HingeConstraint_Create(&hinge_settings, personagem.second_body, personagem.dynamic_body)
+jolt.PhysicsSystem_AddConstraint(eng.physics_system, personagem.hinge)
 </code></pre>
 	</li>
 </ul>
@@ -3091,59 +3100,59 @@ bcs.mAllowedDOFs = EAllowedDOFs::Plane2D;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-cpp" data-lang="cpp"> // Create skeleton
- Ref&lt;Skeleton&gt; skeleton = new Skeleton;
- uint lower_body = skeleton-&gt;AddJoint("LowerBody");
- uint mid_body = skeleton-&gt;AddJoint("MidBody", lower_body);
- uint upper_body = skeleton-&gt;AddJoint("UpperBody", mid_body);
- /*uint head =*/ skeleton-&gt;AddJoint("Head", upper_body);
- uint upper_arm_l = skeleton-&gt;AddJoint("UpperArmL", upper_body);
- uint upper_arm_r = skeleton-&gt;AddJoint("UpperArmR", upper_body);
- /*uint lower_arm_l =*/ skeleton-&gt;AddJoint("LowerArmL", upper_arm_l);
- /*uint lower_arm_r =*/ skeleton-&gt;AddJoint("LowerArmR", upper_arm_r);
- uint upper_leg_l = skeleton-&gt;AddJoint("UpperLegL", lower_body);
- uint upper_leg_r = skeleton-&gt;AddJoint("UpperLegR", lower_body);
- /*uint lower_leg_l =*/ skeleton-&gt;AddJoint("LowerLegL", upper_leg_l);
- /*uint lower_leg_r =*/ skeleton-&gt;AddJoint("LowerLegR", upper_leg_r);
- 
- // ..
- // Create arrays of shapes, positions, rotations, constraint positions, twist axis, twist angle, normal angle, plane angle.
- // ..
- 
- // Create ragdoll settings
- RagdollSettings *settings = new RagdollSettings;
- settings-&gt;mSkeleton = skeleton;
- settings-&gt;mParts.resize(skeleton-&gt;GetJointCount());
- for (int p = 0; p &lt; skeleton-&gt;GetJointCount(); ++p)
- {
-&nbsp;&nbsp;&nbsp;&nbsp; RagdollSettings::Part &part = settings-&gt;mParts[p];
-&nbsp;&nbsp;&nbsp;&nbsp; part.SetShape(shapes[p]);
-&nbsp;&nbsp;&nbsp;&nbsp; part.mPosition = positions[p];
-&nbsp;&nbsp;&nbsp;&nbsp; part.mRotation = rotations[p];
-&nbsp;&nbsp;&nbsp;&nbsp; part.mMotionType = EMotionType::Dynamic;
-&nbsp;&nbsp;&nbsp;&nbsp; part.mObjectLayer = Layers::MOVING;
-&nbsp;&nbsp;&nbsp;&nbsp; // First part is the root, doesn't have a parent and doesn't have a constraint
-&nbsp;&nbsp;&nbsp;&nbsp; if (p &gt; 0)
-&nbsp;&nbsp;&nbsp;&nbsp; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SwingTwistConstraintSettings *constraint = new SwingTwistConstraintSettings;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constraint-&gt;mDrawConstraintSize = 0.1f;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constraint-&gt;mPosition1 = constraint-&gt;mPosition2 = constraint_positions[p];
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constraint-&gt;mTwistAxis1 = constraint-&gt;mTwistAxis2 = twist_axis[p];
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constraint-&gt;mPlaneAxis1 = constraint-&gt;mPlaneAxis2 = Vec3::sAxisZ();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constraint-&gt;mTwistMinAngle = -DegreesToRadians(twist_angle[p]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constraint-&gt;mTwistMaxAngle = DegreesToRadians(twist_angle[p]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constraint-&gt;mNormalHalfConeAngle = DegreesToRadians(normal_angle[p]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constraint-&gt;mPlaneHalfConeAngle = DegreesToRadians(plane_angle[p]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; part.mToParent = constraint;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
- 
- // Optional: Stabilize the inertia of the limbs
- settings-&gt;Stabilize();
- // Disable parent child collisions so that we don't get collisions between constrained bodies
- settings-&gt;DisableParentChildCollisions();
- // Calculate the map needed for GetBodyIndexToConstraintIndex()
- settings-&gt;CalculateBodyIndexToConstraintIndex();
+<pre><code class="language-cpp" data-lang="cpp">// Create skeleton
+Ref&lt;Skeleton&gt; skeleton = new Skeleton;
+uint lower_body = skeleton-&gt;AddJoint("LowerBody");
+uint mid_body = skeleton-&gt;AddJoint("MidBody", lower_body);
+uint upper_body = skeleton-&gt;AddJoint("UpperBody", mid_body);
+/*uint head =*/ skeleton-&gt;AddJoint("Head", upper_body);
+uint upper_arm_l = skeleton-&gt;AddJoint("UpperArmL", upper_body);
+uint upper_arm_r = skeleton-&gt;AddJoint("UpperArmR", upper_body);
+/*uint lower_arm_l =*/ skeleton-&gt;AddJoint("LowerArmL", upper_arm_l);
+/*uint lower_arm_r =*/ skeleton-&gt;AddJoint("LowerArmR", upper_arm_r);
+uint upper_leg_l = skeleton-&gt;AddJoint("UpperLegL", lower_body);
+uint upper_leg_r = skeleton-&gt;AddJoint("UpperLegR", lower_body);
+/*uint lower_leg_l =*/ skeleton-&gt;AddJoint("LowerLegL", upper_leg_l);
+/*uint lower_leg_r =*/ skeleton-&gt;AddJoint("LowerLegR", upper_leg_r);
+
+// ..
+// Create arrays of shapes, positions, rotations, constraint positions, twist axis, twist angle, normal angle, plane angle.
+// ..
+
+// Create ragdoll settings
+RagdollSettings *settings = new RagdollSettings;
+settings-&gt;mSkeleton = skeleton;
+settings-&gt;mParts.resize(skeleton-&gt;GetJointCount());
+for (int p = 0; p &lt; skeleton-&gt;GetJointCount(); ++p)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;RagdollSettings::Part &part = settings-&gt;mParts[p];
+&nbsp;&nbsp;&nbsp;&nbsp;part.SetShape(shapes[p]);
+&nbsp;&nbsp;&nbsp;&nbsp;part.mPosition = positions[p];
+&nbsp;&nbsp;&nbsp;&nbsp;part.mRotation = rotations[p];
+&nbsp;&nbsp;&nbsp;&nbsp;part.mMotionType = EMotionType::Dynamic;
+&nbsp;&nbsp;&nbsp;&nbsp;part.mObjectLayer = Layers::MOVING;
+&nbsp;&nbsp;&nbsp;&nbsp;// First part is the root, doesn't have a parent and doesn't have a constraint
+&nbsp;&nbsp;&nbsp;&nbsp;if (p &gt; 0)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SwingTwistConstraintSettings *constraint = new SwingTwistConstraintSettings;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constraint-&gt;mDrawConstraintSize = 0.1f;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constraint-&gt;mPosition1 = constraint-&gt;mPosition2 = constraint_positions[p];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constraint-&gt;mTwistAxis1 = constraint-&gt;mTwistAxis2 = twist_axis[p];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constraint-&gt;mPlaneAxis1 = constraint-&gt;mPlaneAxis2 = Vec3::sAxisZ();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constraint-&gt;mTwistMinAngle = -DegreesToRadians(twist_angle[p]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constraint-&gt;mTwistMaxAngle = DegreesToRadians(twist_angle[p]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constraint-&gt;mNormalHalfConeAngle = DegreesToRadians(normal_angle[p]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constraint-&gt;mPlaneHalfConeAngle = DegreesToRadians(plane_angle[p]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;part.mToParent = constraint;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+// Optional: Stabilize the inertia of the limbs
+settings-&gt;Stabilize();
+// Disable parent child collisions so that we don't get collisions between constrained bodies
+settings-&gt;DisableParentChildCollisions();
+// Calculate the map needed for GetBodyIndexToConstraintIndex()
+settings-&gt;CalculateBodyIndexToConstraintIndex();
 </code></pre>
 	</li>
 	<li>
@@ -3222,23 +3231,23 @@ bcs.mAllowedDOFs = EAllowedDOFs::Plane2D;
 				</ul>
 			</li>
 		</ul>
-<pre><code class="language-cpp" data-lang="cpp"> // -&gt; On init, after creating the ragdoll:
- mPose.SetSkeleton(mRagdollSettings-&gt;GetSkeleton());
- // Position ragdoll
- mAnimation-&gt;Sample(0.0f, mPose);
- mPose.CalculateJointMatrices();
- mRagdoll-&gt;SetPose(mPose);
+<pre><code class="language-cpp" data-lang="cpp">// -&gt; On init, after creating the ragdoll:
+mPose.SetSkeleton(mRagdollSettings-&gt;GetSkeleton());
+// Position ragdoll
+mAnimation-&gt;Sample(0.0f, mPose);
+mPose.CalculateJointMatrices();
+mRagdoll-&gt;SetPose(mPose);
 
 // -&gt; On pre_physics_update:
 // Sample previous pose and draw it (ragdoll should have achieved this position)
- mAnimation-&gt;Sample(mTime, mPose);
- mPose.CalculateJointMatrices();
- // Update time
- mTime += inParams.mDeltaTime;
- // Sample new pose
- mAnimation-&gt;Sample(mTime, mPose);
- mPose.CalculateJointMatrices();
- mRagdoll-&gt;DriveToPoseUsingKinematics(mPose, inParams.mDeltaTime);
+mAnimation-&gt;Sample(mTime, mPose);
+mPose.CalculateJointMatrices();
+// Update time
+mTime += inParams.mDeltaTime;
+// Sample new pose
+mAnimation-&gt;Sample(mTime, mPose);
+mPose.CalculateJointMatrices();
+mRagdoll-&gt;DriveToPoseUsingKinematics(mPose, inParams.mDeltaTime);
 </code></pre>
 	</li>
 	<li>
@@ -3256,26 +3265,26 @@ bcs.mAllowedDOFs = EAllowedDOFs::Plane2D;
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-cpp" data-lang="cpp"> // -&gt; On init, after creating the ragdoll:
- mPose.SetSkeleton(mRagdollSettings-&gt;GetSkeleton());
- // Position ragdoll
- mAnimation-&gt;Sample(0.0f, mPose);
- mPose.CalculateJointMatrices();
- mRagdoll-&gt;SetPose(mPose);
+<pre><code class="language-cpp" data-lang="cpp">// -&gt; On init, after creating the ragdoll:
+mPose.SetSkeleton(mRagdollSettings-&gt;GetSkeleton());
+// Position ragdoll
+mAnimation-&gt;Sample(0.0f, mPose);
+mPose.CalculateJointMatrices();
+mRagdoll-&gt;SetPose(mPose);
 
- // -&gt; On pre_physics_update:
- // Update time
- mTime += inParams.mDeltaTime;
- // Sample new pose
- mAnimation-&gt;Sample(mTime, mPose);
- // Place the root joint on the first body so that we draw the pose in the right place
- RVec3 root_offset;
- SkeletonPose::JointState &joint = mPose.GetJoint(0);
- joint.mTranslation = Vec3::sZero(); // All the translation goes into the root offset
- mRagdoll-&gt;GetRootTransform(root_offset, joint.mRotation);
- mPose.SetRootOffset(root_offset);
- mPose.CalculateJointMatrices();
- mRagdoll-&gt;DriveToPoseUsingMotors(mPose);
+// -&gt; On pre_physics_update:
+// Update time
+mTime += inParams.mDeltaTime;
+// Sample new pose
+mAnimation-&gt;Sample(mTime, mPose);
+// Place the root joint on the first body so that we draw the pose in the right place
+RVec3 root_offset;
+SkeletonPose::JointState &joint = mPose.GetJoint(0);
+joint.mTranslation = Vec3::sZero(); // All the translation goes into the root offset
+mRagdoll-&gt;GetRootTransform(root_offset, joint.mRotation);
+mPose.SetRootOffset(root_offset);
+mPose.CalculateJointMatrices();
+mRagdoll-&gt;DriveToPoseUsingMotors(mPose);
 </code></pre>
 	</li>
 	<li>
@@ -3338,7 +3347,7 @@ bcs.mAllowedDOFs = EAllowedDOFs::Plane2D;
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -3429,7 +3438,7 @@ bcs.mAllowedDOFs = EAllowedDOFs::Plane2D;
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

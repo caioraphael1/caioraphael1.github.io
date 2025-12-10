@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2023-07-15
 							</time>
 							<time
-								datetime="2025-11-21" >
-                                | Updated: 2025-11-21
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1517,7 +1526,7 @@ class Program
 		<p>
             Simplified:
 		</p>
-<pre><code class="language-csharp" data-lang="csharp"> public String car {get; private set;}
+<pre><code class="language-csharp" data-lang="csharp">public String car {get; private set;}
 </code></pre>
 		<ul>
 			<li>
@@ -1535,13 +1544,13 @@ class Program
 				<p>
                     Equivalent to doing:
 				</p>
-<pre><code class="language-csharp" data-lang="csharp"> private String _car; // Manually generated private field
+<pre><code class="language-csharp" data-lang="csharp">private String _car; // Manually generated private field
 
- public String car
- {
-&nbsp;&nbsp;&nbsp;&nbsp; get { return _car; }
-&nbsp;&nbsp;&nbsp;&nbsp; set { _car = value; }
- }
+public String car
+{
+&nbsp;&nbsp;&nbsp;&nbsp;get { return _car; }
+&nbsp;&nbsp;&nbsp;&nbsp;set { _car = value; }
+}
 </code></pre>
 			</li>
 		</ul>
@@ -1550,14 +1559,14 @@ class Program
 		<p>
             Normal:
 		</p>
-<pre><code class="language-csharp" data-lang="csharp"> public String car {
-&nbsp;&nbsp;&nbsp;&nbsp; get {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return car;
-&nbsp;&nbsp;&nbsp;&nbsp; }
-&nbsp;&nbsp;&nbsp;&nbsp; private set {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; car = value;
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-csharp" data-lang="csharp">public String car {
+&nbsp;&nbsp;&nbsp;&nbsp;get {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return car;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;private set {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;car = value;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 	</li>
 </ul>
@@ -1776,7 +1785,7 @@ public class MyScript_B : MonoBehaviour {
 	<li>
 		<p
 			class="line-emphasis" >
-            [2024/11/21] &quot;There's work right now to move CSharp to GDExtension&quot;.
+            (2024-11-21) &quot;There's work right now to move CSharp to GDExtension&quot;.
 		</p>
 	</li>
 	<li>
@@ -1876,15 +1885,15 @@ public class MyScript_B : MonoBehaviour {
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-csharp" data-lang="csharp"> public partial class MyNode2D : Node2D
- {
-&nbsp;&nbsp;&nbsp;&nbsp; public override void _Ready()
-&nbsp;&nbsp;&nbsp;&nbsp; {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Position.X = 100.0f;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // CS1612: Cannot modify the return value of 'Node2D.Position' because
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // it is not a variable.
-&nbsp;&nbsp;&nbsp;&nbsp; }
- }
+<pre><code class="language-csharp" data-lang="csharp">public partial class MyNode2D : Node2D
+{
+&nbsp;&nbsp;&nbsp;&nbsp;public override void _Ready()
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Position.X = 100.0f;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// CS1612: Cannot modify the return value of 'Node2D.Position' because
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// it is not a variable.
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
 </code></pre>
 				<ul>
 					<li>
@@ -1900,9 +1909,9 @@ public class MyScript_B : MonoBehaviour {
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-csharp" data-lang="csharp"> var newPosition = Position;
- newPosition.X = 100.0f;
- Position = newPosition;
+<pre><code class="language-csharp" data-lang="csharp">var newPosition = Position;
+newPosition.X = 100.0f;
+Position = newPosition;
 </code></pre>
 				<ul>
 					<li>
@@ -1918,7 +1927,7 @@ public class MyScript_B : MonoBehaviour {
 						</p>
 					</li>
 				</ul>
-<pre><code class="language-csharp" data-lang="csharp"> Position = Position with { X = 100.0f };
+<pre><code class="language-csharp" data-lang="csharp">Position = Position with { X = 100.0f };
 </code></pre>
 				<ul>
 					<li>
@@ -2106,7 +2115,7 @@ public class MyScript_B : MonoBehaviour {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -2187,7 +2196,7 @@ public class MyScript_B : MonoBehaviour {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

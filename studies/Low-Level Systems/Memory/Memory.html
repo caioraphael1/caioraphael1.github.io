@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.38954.css" >
+			href="/static/studies.76775.css" >
 	</head>
 	<body>
 		<aside
@@ -242,7 +242,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly - ASM.html" >
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html" >
                                 Assembly - ASM
 							</a>
 						</li>
@@ -641,7 +641,7 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Frameworks - Libraries/Raylib/RayLib.html" >
+								href="/studies/Frameworks - Libraries/RayLib/RayLib.html" >
                                 RayLib
 							</a>
 						</li>
@@ -1033,6 +1033,15 @@ window.MathJax = {
 							</a>
 						</li>
 					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Embedded Systems/Embedded Systems.html" >
+                                Embedded Systems
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details
 >
@@ -1242,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-12
 							</time>
 							<time
-								datetime="2025-11-22" >
-                                | Updated: 2025-11-22
+								datetime="2025-12-10" >
+                                | Updated: 2025-12-10
 							</time>
 						</p>
 					</header>
@@ -1311,7 +1320,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    [2025-11-14]
+                    (2025-11-14)
 				</p>
 			</li>
 			<li>
@@ -1847,8 +1856,8 @@ window.MathJax = {
 		<p>
             Before any allocation:
 		</p>
-<pre><code class="language-txt" data-lang="txt"> Chunk (4 MiB)
- [ chunk header | page0 | page1 | page2 | ... | page1023 ]
+<pre><code class="language-txt" data-lang="txt">Chunk (4 MiB)
+[ chunk header | page0 | page1 | page2 | ... | page1023 ]
 </code></pre>
 	</li>
 	<li>
@@ -1892,8 +1901,8 @@ window.MathJax = {
 				</ol>
 			</li>
 		</ul>
-<pre><code class="language-txt" data-lang="txt"> Chunk
- [ chunk header | page0: RUN(16B) [slot0=used, slot1..slot255=free] | page1 | ... ]
+<pre><code class="language-txt" data-lang="txt">Chunk
+[ chunk header | page0: RUN(16B) [slot0=used, slot1..slot255=free] | page1 | ... ]
 </code></pre>
 		<ul>
 			<li>
@@ -1932,7 +1941,7 @@ window.MathJax = {
 				</ul>
 			</li>
 		</ul>
-<pre><code class="language-txt" data-lang="txt"> page0: RUN(16B) [slot0..slot9 = used, slot10..slot255 = free]
+<pre><code class="language-txt" data-lang="txt">page0: RUN(16B) [slot0..slot9 = used, slot10..slot255 = free]
 </code></pre>
 		<ul>
 			<li>
@@ -1970,7 +1979,7 @@ window.MathJax = {
 				</ul>
 			</li>
 		</ul>
-<pre><code class="language-txt" data-lang="txt"> [ chunk header | page0: RUN(16B) [all used] | page1: RUN(16B) [slot0=used, slot1..=free] | page2 ... ]
+<pre><code class="language-txt" data-lang="txt">[ chunk header | page0: RUN(16B) [all used] | page1: RUN(16B) [slot0=used, slot1..=free] | page2 ... ]
 </code></pre>
 		<ul>
 			<li>
@@ -2025,12 +2034,12 @@ window.MathJax = {
 				</ul>
 			</li>
 		</ul>
-<pre><code class="language-txt" data-lang="txt"> [ chunk header |
-&nbsp;&nbsp; page0: RUN(16B) full |
-&nbsp;&nbsp; page1: RUN(16B) partly-used |
-&nbsp;&nbsp; page2: RUN(1KB) [blk0..blk3 some used] |
-&nbsp;&nbsp; page3: free page |
-&nbsp;&nbsp; ... ]
+<pre><code class="language-txt" data-lang="txt">[ chunk header |
+&nbsp;&nbsp;page0: RUN(16B) full |
+&nbsp;&nbsp;page1: RUN(16B) partly-used |
+&nbsp;&nbsp;page2: RUN(1KB) [blk0..blk3 some used] |
+&nbsp;&nbsp;page3: free page |
+&nbsp;&nbsp;... ]
 </code></pre>
 	</li>
 	<li>
@@ -3039,7 +3048,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    [2025-11-18]
+                    (2025-11-18)
 				</p>
 			</li>
 			<li>
@@ -3147,7 +3156,7 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-sh" data-lang="sh"> Get-Process -Id &lt;pid&gt; | Format-List Id,ProcessName,WorkingSet64,PrivateMemorySize64,VirtualMemorySize64,@{Name='Threads';Expression={$_.Threads.Count}}
+<pre><code class="language-sh" data-lang="sh">Get-Process -Id &lt;pid&gt; | Format-List Id,ProcessName,WorkingSet64,PrivateMemorySize64,VirtualMemorySize64,@{Name='Threads';Expression={$_.Threads.Count}}
 </code></pre>
 	</li>
 	<li>
@@ -3163,7 +3172,7 @@ window.MathJax = {
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-sh" data-lang="sh"> (Get-Process -Id &lt;pid&gt;).Modules | Select ModuleName,FileName,@{n='FileSizeMB';e={[math]::Round(($_.ModuleMemorySize/1MB),2)}} | Sort-Object FileSizeMB -Descending | Format-Table -AutoSize
+<pre><code class="language-sh" data-lang="sh">(Get-Process -Id &lt;pid&gt;).Modules | Select ModuleName,FileName,@{n='FileSizeMB';e={[math]::Round(($_.ModuleMemorySize/1MB),2)}} | Sort-Object FileSizeMB -Descending | Format-Table -AutoSize
 </code></pre>
 	</li>
 </ul>
@@ -4734,7 +4743,7 @@ info locals&nbsp;&nbsp;# List all local variables
 			</li>
 			<li>
 				<p>
-                    [2025/07/03]
+                    (2025-07-03)
 				</p>
 				<ul>
 					<li>
@@ -4975,14 +4984,14 @@ info locals&nbsp;&nbsp;# List all local variables
 		<p>
             Post about the subject, focusing on the tween system:
 		</p>
-<pre><code class="language-odin" data-lang="odin"> eng.tween(
-&nbsp;&nbsp;&nbsp;&nbsp; value = &some_vector_inside_an_entity,
-&nbsp;&nbsp;&nbsp;&nbsp; end = some_vector,
-&nbsp;&nbsp;&nbsp;&nbsp; duration_s = 0.1,
-&nbsp;&nbsp;&nbsp;&nbsp; on_end = proc(tween: ^eng.Tween) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // stuff
-&nbsp;&nbsp;&nbsp;&nbsp; },
- )
+<pre><code class="language-odin" data-lang="odin">eng.tween(
+&nbsp;&nbsp;&nbsp;&nbsp;value = &some_vector_inside_an_entity,
+&nbsp;&nbsp;&nbsp;&nbsp;end = some_vector,
+&nbsp;&nbsp;&nbsp;&nbsp;duration_s = 0.1,
+&nbsp;&nbsp;&nbsp;&nbsp;on_end = proc(tween: ^eng.Tween) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// stuff
+&nbsp;&nbsp;&nbsp;&nbsp;},
+)
 </code></pre>
 		<ul>
 			<li>
@@ -5397,12 +5406,12 @@ info locals&nbsp;&nbsp;# List all local variables
 										<p>
                                             <s>The tween might not destroy itself automatically, but that makes things a bit more annoying, increasing the verbosity of the tween callback to always destroy itself.</s>
 										</p>
-<pre><code class="language-odin" data-lang="odin"> proc(tween: ^Tween) {
-&nbsp;&nbsp;&nbsp;&nbsp; eng.tween_destroy(tween)
-&nbsp;&nbsp;&nbsp;&nbsp; //or
-&nbsp;&nbsp;&nbsp;&nbsp; eng.tween_destroy(tween.value)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //if using a handle.
- }
+<pre><code class="language-odin" data-lang="odin">proc(tween: ^Tween) {
+&nbsp;&nbsp;&nbsp;&nbsp;eng.tween_destroy(tween)
+&nbsp;&nbsp;&nbsp;&nbsp;//or
+&nbsp;&nbsp;&nbsp;&nbsp;eng.tween_destroy(tween.value)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//if using a handle.
+}
 </code></pre>
 										<ul>
 											<li>
@@ -6002,26 +6011,26 @@ info locals&nbsp;&nbsp;# List all local variables
 									</em>
                                     :
 								</p>
-<pre><code class="language-odin" data-lang="odin"> // tween()
- eng.tween(
-&nbsp;&nbsp;&nbsp;&nbsp; destructor = &personagem.destructor,
-&nbsp;&nbsp;&nbsp;&nbsp; value = &personagem.arm3.pos_world,
-&nbsp;&nbsp;&nbsp;&nbsp; end = arm_relative_target_trans_arm3.pos,
-&nbsp;&nbsp;&nbsp;&nbsp; duration_s = 0.1,
-&nbsp;&nbsp;&nbsp;&nbsp; custom_data = personagem,
-&nbsp;&nbsp;&nbsp;&nbsp; on_end = proc(tween: ^eng.Tween) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; personagem := cast(^Personagem_User)tween.custom_data
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; personagem.arm3.is_stepping = false
-&nbsp;&nbsp;&nbsp;&nbsp; }
- )
+<pre><code class="language-odin" data-lang="odin">// tween()
+eng.tween(
+&nbsp;&nbsp;&nbsp;&nbsp;destructor = &personagem.destructor,
+&nbsp;&nbsp;&nbsp;&nbsp;value = &personagem.arm3.pos_world,
+&nbsp;&nbsp;&nbsp;&nbsp;end = arm_relative_target_trans_arm3.pos,
+&nbsp;&nbsp;&nbsp;&nbsp;duration_s = 0.1,
+&nbsp;&nbsp;&nbsp;&nbsp;custom_data = personagem,
+&nbsp;&nbsp;&nbsp;&nbsp;on_end = proc(tween: ^eng.Tween) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;personagem := cast(^Personagem_User)tween.custom_data
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;personagem.arm3.is_stepping = false
+&nbsp;&nbsp;&nbsp;&nbsp;}
+)
 
- // Internal to tween()
- ok: bool
- tween.destructor_handle, ok = event_add_listener(destructor, wrap_procedure(tween_delete), rawptr(value))
- if !ok {
-&nbsp;&nbsp;&nbsp;&nbsp; log.errorf("%v(%v): Failed to add event listener.", loc.procedure, loc.line)
-&nbsp;&nbsp;&nbsp;&nbsp; return nil
- }
+// Internal to tween()
+ok: bool
+tween.destructor_handle, ok = event_add_listener(destructor, wrap_procedure(tween_delete), rawptr(value))
+if !ok {
+&nbsp;&nbsp;&nbsp;&nbsp;log.errorf("%v(%v): Failed to add event listener.", loc.procedure, loc.line)
+&nbsp;&nbsp;&nbsp;&nbsp;return nil
+}
 </code></pre>
 							</li>
 						</ul>
@@ -7237,20 +7246,20 @@ info locals&nbsp;&nbsp;# List all local variables
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-cpp" data-lang="cpp"> #include &lt;iostream&gt;
- 
- // Real function not yet implemented, we use a temporary stub
- int calcularImposto(float salario) {
-&nbsp;&nbsp;&nbsp;&nbsp; std::cout &lt;&lt; "[STUB] Function not yet implemented." &lt;&lt; std::endl;
-&nbsp;&nbsp;&nbsp;&nbsp; return 0; // Returns a fixed value to continue development
- }
- 
- int main() {
-&nbsp;&nbsp;&nbsp;&nbsp; float salario = 5000;
-&nbsp;&nbsp;&nbsp;&nbsp; int imposto = calcularImposto(salario);
-&nbsp;&nbsp;&nbsp;&nbsp; std::cout &lt;&lt; "Calculated tax: " &lt;&lt; imposto &lt;&lt; std::endl;
-&nbsp;&nbsp;&nbsp;&nbsp; return 0;
- }
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;iostream&gt;
+
+// Real function not yet implemented, we use a temporary stub
+int calcularImposto(float salario) {
+&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; "[STUB] Function not yet implemented." &lt;&lt; std::endl;
+&nbsp;&nbsp;&nbsp;&nbsp;return 0; // Returns a fixed value to continue development
+}
+
+int main() {
+&nbsp;&nbsp;&nbsp;&nbsp;float salario = 5000;
+&nbsp;&nbsp;&nbsp;&nbsp;int imposto = calcularImposto(salario);
+&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; "Calculated tax: " &lt;&lt; imposto &lt;&lt; std::endl;
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+}
 </code></pre>
 	</li>
 </ul>
@@ -7778,7 +7787,7 @@ int main() {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-11-22 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
 			</footer>
 		</div>
 		<aside
@@ -8079,7 +8088,7 @@ int main() {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.38954.js" >
+			src="/static/studies.76775.js" >
 		</script>
 	</body>
 </html>

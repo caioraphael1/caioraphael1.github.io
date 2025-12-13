@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.24731.css" >
+			href="/static/studies.25607.css" >
 	</head>
 	<body>
 		<aside
@@ -1799,14 +1799,14 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
+<h2
+	id="my-impressions" >
+    My Impressions
+</h2>
 <h3
-	id="impressions" >
-    Impressions
+	id="positives" >
+    Positives
 </h3>
-<h5
-	id="positive-points" >
-    Positive Points
-</h5>
 <ul>
 	<li>
 		<p
@@ -2001,10 +2001,10 @@ my_proc :: proc() {}
 		</ul>
 	</li>
 </ul>
-<h5
-	id="negative-points" >
-    Negative Points
-</h5>
+<h3
+	id="negatives" >
+    Negatives
+</h3>
 <ul>
 	<li>
 		<p>
@@ -2108,17 +2108,31 @@ my_proc :: proc() {}
 		<p>
             (2025-11-13) 
 			<strong>
-                I would prefer 
+                I don't like how 
                 <code>@(require_results)</code>
-                &nbsp;to be the default, while having something like 
-                <code>@(optional_results)</code>
+                &nbsp;is NOT the default way of handling results; I would prefer the opposite
 			</strong>
             .
 		</p>
 		<ul>
 			<li>
 				<p>
-                    I'm really not a fan of this implicitness.
+                    By default, errors can be ignored. Not good. Things like 
+                    <code>#optional_ok</code>
+                    &nbsp;and 
+                    <code>#optional_allocator_error</code>
+                    &nbsp;exists, but the main problem is actually how 
+                    <code>@(require_results)</code>
+                    &nbsp;is optional. By the default a procedure will not require the results to be handled. I wish the opposite was true: you have to opt out of required results and use something like 
+                    <code>@(optional_results)</code>
+                    ; the priorities should have been inverted.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There's also the annoyance of having to add 
+                    <code>@(require_results)</code>
+                    &nbsp;for every math function and similar, etc.
 				</p>
 			</li>
 			<li>
@@ -2129,7 +2143,7 @@ my_proc :: proc() {}
                     <code>#optional_ok</code>
                     &nbsp;or 
                     <code>#optional_allocator_error</code>
-                    &nbsp;, as well as a compiler flag, but it was denied :/
+                    &nbsp;, as well as a compiler flag. This would just be an optional flag, per file (even tho I prefer per library), but it was denied :/
 				</p>
 			</li>
 		</ul>
@@ -16792,6 +16806,18 @@ _scope_end :: proc(old_value: ^mem.Allocator, previous_value: mem.Allocator) {
 							</a>
                             &nbsp;struct around for every function call.
 						</p>
+					</li>
+					<li>
+						<p>
+                            Laytan:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    We've done a test to determine if thread local context is faster than passing it as a param and found the difference negligible.
+								</p>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</li>
@@ -31617,10 +31643,24 @@ image.load("file.png", width, height, channels, 4)
                             About
 						</a>
 						<ul>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#my-impressions" >
+                            My Impressions
+						</a>
+						<ul>
 							<li>
 								<a
-									href="#impressions" >
-                                    Impressions
+									href="#positives" >
+                                    Positives
+								</a>
+							</li>
+							<li>
+								<a
+									href="#negatives" >
+                                    Negatives
 								</a>
 							</li>
 						</ul>
@@ -32895,7 +32935,7 @@ image.load("file.png", width, height, channels, 4)
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.24731.js" >
+			src="/static/studies.25607.js" >
 		</script>
 	</body>
 </html>

@@ -434,6 +434,134 @@ pre, code {
 
 
 
+/* NAVBAR */
+    #navbar {
+        background: var(--dark-transparent);
+        border-bottom: 1px solid var(--darker);
+
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        width: 100%;
+        padding: var(--padding) var(--padding_x2);
+    }
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .navbar-logo {
+        color: transparent;
+        background: linear-gradient(45deg, #866ee7, #ea60da, #ed8f57, #fbd41d, #2cca91);
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: .5px var(--logo-border);
+
+        text-transform: uppercase;
+        font-family: var(--logo-font);
+        font-size: 1.8em;
+        letter-spacing: 3px;
+        font-weight: 800;
+
+        background-clip: text;
+        -webkit-background-clip: text;
+
+        background-position-x: -78px;
+        background-attachment: local;
+
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .navbar-logo:hover {
+        opacity: 0.8;
+    }
+
+    .navbar-links {
+        display: flex;
+        gap: var(--padding_x2);
+        align-items: center;
+    }
+
+    .navbar-link {
+        color: var(--white-small-fade);
+        text-decoration: none;
+        font-weight: 500;
+        padding: var(--padding_d2) var(--padding);
+        border-radius: var(--border-radius);
+        transition: all 0.3s ease;
+    }
+
+    .navbar-link:hover {
+        color: var(--white);
+        background: var(--dark-hover);
+    }
+
+    .navbar-link.active {
+        color: var(--white);
+        background: var(--highlight-bg);
+        color: var(--highlight-text);
+    }
+
+
+/* TOPICS GRID */
+    .topics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2em;
+        margin-top: 2em;
+        padding: 1em 0;
+    }
+
+    .topic-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2em 1.5em;
+        border-radius: var(--border-radius);
+        background: var(--dark-transparent);
+        border: 1px solid var(--darker);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .topic-card:hover {
+        background: var(--dark-hover);
+        transform: translateY(-4px);
+        border-color: var(--white-fade);
+    }
+
+    .topic-card:hover .topic-name {
+        color: var(--hyperlink-hover);
+    }
+
+    .topic-icon {
+        font-size: 3.5em;
+        margin-bottom: 0.5em;
+        line-height: 1;
+    }
+
+    .topic-name {
+        color: var(--hyperlink);
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+        transition: color 0.3s ease;
+    }
+
+    .topic-description {
+        color: var(--white-fade);
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+
 /* CENTRAL */
     #central-wrapper {
         background: var(--central-bg);
@@ -452,7 +580,9 @@ pre, code {
         width: 100%;
         min-height: 94%;
 
-        padding: 0 var(--padding_x2);
+        padding: var(--padding_x2);
+        max-width: 1400px;
+        margin: 0 auto;
 
         flex: 1 1 auto;
         align-self: center;
@@ -464,8 +594,6 @@ pre, code {
         flex-direction: column;
 
         padding-top: 5svh;
-        
-        overflow: auto;        
     }
 
     main > article > nav > button:last-child {
@@ -520,6 +648,47 @@ pre, code {
 
     #central-wrapper {
         display: none;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        gap: var(--padding);
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--padding);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: var(--padding);
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--padding);
+    }
+
+    .navbar-logo {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 1200px) {
+    .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
     }
 }
 

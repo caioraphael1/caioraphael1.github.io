@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.76775.css" >
+			href="/static/studies.24731.css" >
 	</head>
 	<body>
 		<aside
@@ -37699,8 +37699,8 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 	</li>
 </ul>
 <h5
-	id="allocation-reallocation-free" >
-    Allocation, Reallocation, Free
+	id="allocation-reallocation-free-internal-alloc-internal-free" >
+    Allocation, Reallocation, Free, Internal Alloc, Internal Free
 </h5>
 <ul>
 	<li>
@@ -37954,24 +37954,300 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 			</li>
 		</ul>
 	</li>
+	<li>
+		<p>
+            <code>pfnAllocation</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If 
+                    <code>pfnAllocation</code>
+                    &nbsp;is unable to allocate the requested memory, it must return NULL.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the allocation was successful, it must return a valid pointer to memory allocation containing at least 
+                    <code>size</code>
+                    &nbsp;bytes, and with the pointer value being a multiple of 
+                    <code>alignment</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            `pfnReallocation``
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If the reallocation was successful, 
+                    <code>pfnReallocation</code>
+                    &nbsp;must return an allocation with enough space for size bytes, and the contents of the original allocation from bytes zero to min(original size, new size) - 1 must be preserved in the returned allocation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If size is larger than the old size, the contents of the additional space are 
+					<strong>
+                        undefined
+					</strong>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If satisfying these requirements involves creating a new allocation, then the old allocation should be freed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If 
+                    <code>pOriginal</code>
+                    &nbsp;is NULL, then 
+                    <code>pfnReallocation</code>
+                    &nbsp;must behave equivalently to a call to 
+                    <code>PFN_vkAllocationFunction</code>
+                    &nbsp;with the same parameter values (without 
+                    <code>pOriginal</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    If 
+                    <code>size</code>
+                    &nbsp;is zero, then 
+                    <code>pfnReallocation</code>
+                    &nbsp;must behave equivalently to a call to 
+                    <code>PFN_vkFreeFunction</code>
+                    &nbsp;with the same 
+                    <code>pUserData</code>
+                    &nbsp;parameter value, and 
+                    <code>pMemory</code>
+                    &nbsp;equal to 
+                    <code>pOriginal</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If 
+                    <code>pOriginal</code>
+                    &nbsp;is non-NULL, the implementation must ensure that 
+                    <code>alignment</code>
+                    &nbsp;is equal to the 
+                    <code>alignment</code>
+                    &nbsp;used to originally allocate 
+                    <code>pOriginal</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If this function fails and 
+                    <code>pOriginal</code>
+                    &nbsp;is non-NULL the application must not free the old allocation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>pfnFree</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    May be 
+                    <code>NULL</code>
+                    , which the callback must handle safely.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If 
+                    <code>pMemory</code>
+                    &nbsp;is non-NULL, it must be a pointer previously allocated by 
+                    <code>pfnAllocation</code>
+                    &nbsp;or 
+                    <code>pfnReallocation</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The application should free this memory.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>pfnInternalAllocation</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Upon allocation of executable memory, 
+                    <code>pfnInternalAllocation</code>
+                    &nbsp;will be called.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is a purely informational callback.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>pfnInternalFree</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Upon freeing executable memory, 
+                    <code>pfnInternalFree</code>
+                    &nbsp;will be called.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is a purely informational callback.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            If either of 
+            <code>pfnInternalAllocation</code>
+            &nbsp;or 
+            <code>pfnInternalFree</code>
+            &nbsp;is not NULL, both must be valid callbacks
+		</p>
+	</li>
 </ul>
 <h5
-	id="internal" >
-    Internal
+	id="creating-the-allocator" >
+    Creating the allocator
 </h5>
 <ul>
 	<li>
 		<p>
-            Upon allocation of executable memory, 
-            <code>pfnInternalAllocation</code>
-            &nbsp;will be called.
+            <code>VkAllocationCallbacks</code>
+            &nbsp;are for host-side allocations the Vulkan loader/driver makes (CPU memory for driver bookkeeping, staging buffers, etc.).
 		</p>
 	</li>
 	<li>
 		<p>
-            Upon freeing executable memory, 
-            <code>pfnInternalFree</code>
-            &nbsp;will be called.
+            Using 
+            <code>malloc</code>
+            /
+            <code>free</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is common and acceptable for many apps — but you must meet Vulkan’s callback semantics (alignment, reallocation behavior, thread-safety) and consider performance.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is a normal, valid approach. It satisfies most apps and is what many people do in practice.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://stackoverflow.com/questions/36944492/vulkans-vkallocationcallbacks-implemented-with-malloc-free" 
+						class="external-link" 
+						target="_blank" >
+                        Discussion
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Caviats
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Alignment:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Vulkan allocators must return memory suitably aligned for any type the driver might need. Use posix_memalign/aligned_alloc on POSIX, _aligned_malloc on Windows, or otherwise ensure alignment. The Vulkan spec expects allocation functions to behave like platform allocators.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Reallocation semantics:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>pfnReallocation</code>
+                                    &nbsp;must implement C-like realloc semantics (grow/shrink, preserve contents if requested). If your platform realloc does not support required alignment, implement reallocation by allocating new aligned memory, copying the old contents, freeing the old pointer.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Thread-safety &amp; performance:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Drivers can call the callbacks from multiple threads. The system malloc is usually thread-safe but can have global locks and contention. For high-frequency allocation patterns, a custom pool or thread-local allocator can reduce contention and improve predictable performance.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Internal allocation tracking:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>VkAllocationCallbacks</code>
+                                    &nbsp;provide 
+                                    <code>pUserData</code>
+                                    &nbsp;so you can route allocations to a custom pool/context for tracking or to implement more efficient pooling per object type.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The GPU VkDeviceMemory allocations (the ones created with vkAllocateMemory) are a separate resource and must be managed with Vulkan APIs and counted against the appropriate memory heap
+		</p>
+	</li>
+	<li>
+		<p>
+            If you use malloc for 
+            <code>VkAllocationCallbacks</code>
+            , you are only providing host-allocator behavior for driver/loader-side allocations.
 		</p>
 	</li>
 </ul>
@@ -41886,7 +42162,7 @@ glslangValidator -V fragment_shader.frag -o frag.spv
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-13 🚀
 			</footer>
 		</div>
 		<aside
@@ -42551,7 +42827,7 @@ glslangValidator -V fragment_shader.frag -o frag.spv
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.76775.js" >
+			src="/static/studies.24731.js" >
 		</script>
 	</body>
 </html>

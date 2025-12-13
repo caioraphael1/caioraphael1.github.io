@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.76775.css" >
+			href="/static/studies.24731.css" >
 	</head>
 	<body>
 		<aside
@@ -1251,8 +1251,8 @@ window.MathJax = {
                                 🕒 Created: 2025-08-11
 							</time>
 							<time
-								datetime="2025-12-10" >
-                                | Updated: 2025-12-10
+								datetime="2025-12-11" >
+                                | Updated: 2025-12-11
 							</time>
 						</p>
 					</header>
@@ -1299,8 +1299,8 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="wave-warp" >
-    Wave / Warp
+	id="warp-wave" >
+    Warp / Wave
 </h3>
 <ul>
 	<li>
@@ -1504,8 +1504,8 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="sm-cu" >
-    SM / CU
+	id="sm-streaming-multiprocessor-cu-compute-unit" >
+    SM (Streaming Multiprocessor) / CU (Compute Unit)
 </h3>
 <ul>
 	<li>
@@ -1513,11 +1513,7 @@ window.MathJax = {
 			<strong>
                 SM
 			</strong>
-            &nbsp;= 
-			<em>
-                Streaming Multiprocessor
-			</em>
-            &nbsp;(NVIDIA terminology).
+            &nbsp;= Streaming Multiprocessor (NVIDIA terminology).
 		</p>
 	</li>
 	<li>
@@ -1525,11 +1521,7 @@ window.MathJax = {
 			<strong>
                 CU
 			</strong>
-            &nbsp;= 
-			<em>
-                Compute Unit
-			</em>
-            &nbsp;(AMD terminology).
+            &nbsp;= Compute Unit (AMD terminology).
 		</p>
 	</li>
 	<li>
@@ -1654,18 +1646,28 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="tpc-gpc-nvidia-sa-amd" >
-    TPC/GPC (NVIDIA) / SA (AMD)
+	id="tpc-gpc-texture-processing-cluster-graphics-processing-cluster-sa-shader-array" >
+    TPC/GPC (Texture Processing Cluster / Graphics Processing Cluster) / SA (Shader Array)
 </h3>
 <ul>
+	<li>
+		<p>
+            A group of SMs/CUs that may share intermediate caches or specialized hardware.
+		</p>
+	</li>
 	<li>
 		<p>
 			<strong>
                 NVIDIA
 			</strong>
-            : &quot;Texture Processing Cluster&quot; (TPC) or &quot;Graphics Processing Cluster&quot; (GPC)
+            :
 		</p>
 		<ul>
+			<li>
+				<p>
+                    &quot;Texture Processing Cluster&quot; (TPC) or &quot;Graphics Processing Cluster&quot; (GPC)
+				</p>
+			</li>
 			<li>
 				<p>
                     Groups 2–8 SMs sharing raster/tessellation units.
@@ -1678,47 +1680,22 @@ window.MathJax = {
 			<strong>
                 AMD
 			</strong>
-            : &quot;Shader Array&quot; (SA) in RDNA
+            :
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Groups 2 CUs sharing instruction cache/ray accelerators.
+                    &quot;Shader Array&quot; (SA) in RDNA
 				</p>
 			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="cluster" >
-    Cluster
-</h3>
-<ul>
-	<li>
-		<p>
-            A group of SMs/CUs that may share intermediate caches or specialized hardware.
-		</p>
-	</li>
-	<li>
-		<p>
-            NVIDIA:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Sometimes calls this a “TPC” (Texture Processing Cluster) or “GPC” (Graphics Processing Cluster) — names vary by generation.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            AMD:
-		</p>
-		<ul>
 			<li>
 				<p>
                     Uses “Shader Array” or “Workgroup Processor” as a cluster-like grouping.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Groups 2 CUs sharing instruction cache/ray accelerators.
 				</p>
 			</li>
 		</ul>
@@ -1800,15 +1777,26 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            <img src="assets/2025-12-10_07-35-27.png" width="600" alt="" >
+            <img src="assets/image_20250812175721.png" width="600" >
             .
 		</p>
 	</li>
 	<li>
+        <img src="assets/2025-12-10_07-50-28.png" width="600" >
+
+	</li>
+	<li>
 		<p>
-            <img src="assets/image_20250812175721.png" width="600" >
-            .
+            Off-chip memory:
 		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/2025-12-10_07-35-27.png" width="600" >
+                    .
+				</p>
+			</li>
+		</ul>
 	</li>
 	<li>
 		<p>
@@ -1823,14 +1811,10 @@ window.MathJax = {
 			</li>
 		</ul>
 	</li>
-	<li>
-        <img src="assets/2025-12-10_07-50-28.png" width="600" alt="" >
-
-	</li>
 </ul>
 <h3
-	id="registers" >
-    Registers
+	id="registers-on-chip-in-each-shader-core" >
+    Registers (on-chip, in each shader core)
 </h3>
 <ul>
 	<li>
@@ -1894,63 +1878,8 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="local" >
-    Local
-</h3>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Physical Location
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Off-chip in global memory.
-				</p>
-			</li>
-			<li>
-				<p>
-                    “Local” in shader languages is a per-thread address space.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Physically it may be kept in registers, spilled to on-chip memory, or spilled to device memory (global DRAM) depending on register pressure and compiler decisions. Saying it is 
-					<em>
-                        always
-					</em>
-                    &nbsp;off-chip is misleading.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Scope / Visibility
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Private to a thread, but lives in DRAM
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Is private to each thread, but it’s slower than register memory.
-		</p>
-	</li>
-</ul>
-<h3
-	id="shared-quotscratchquot" >
-    Shared (&quot;scratch&quot;)
+	id="shared-quotscratchquot-on-chip-in-each-sm-wave-cu" >
+    Shared / &quot;scratch&quot; (on-chip, in each SM/Wave/CU)
 </h3>
 <ul>
 	<li>
@@ -1995,8 +1924,49 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="l1-cache" >
-    L1 Cache
+	id="texture-memory-on-chip-specialized-hardware" >
+    Texture memory (on-chip, specialized hardware)
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Physical Location
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    On-chip, specialized hardware
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Scope / Visibility
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Optimized for spatial locality (texture) or broadcast (constant)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Is another read-only memory type ideal for physically adjacent data access. Its use can mitigate memory traffic and increase performance compared to global memory.
+		</p>
+	</li>
+</ul>
+<h3
+	id="l1-cache-on-chip-per-sm-cu" >
+    L1 Cache (on chip, per SM/CU)
 </h3>
 <ul>
 	<li>
@@ -2051,8 +2021,8 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="l2-cache" >
-    L2 Cache
+	id="l2-cache-on-chip-shader-across-gpu" >
+    L2 Cache (on-chip, shader across GPU)
 </h3>
 <ul>
 	<li>
@@ -2106,8 +2076,63 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="constant-cache" >
-    Constant Cache
+	id="local-off-chip-in-global-memory-per-thread" >
+    Local (off-chip, in global memory, per-thread)
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Physical Location
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Off-chip in global memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    “Local” in shader languages is a per-thread address space.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Physically it may be kept in registers, spilled to on-chip memory, or spilled to device memory (global DRAM) depending on register pressure and compiler decisions. Saying it is 
+					<em>
+                        always
+					</em>
+                    &nbsp;off-chip is misleading.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Scope / Visibility
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Private to a thread, but lives in DRAM
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Is private to each thread, but it’s slower than register memory.
+		</p>
+	</li>
+</ul>
+<h3
+	id="constant-cache-" >
+    Constant Cache (?)
 </h3>
 <ul>
 	<li>
@@ -2122,8 +2147,8 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="global-memory-vram-on-discrete-gpus" >
-    Global Memory (VRAM on Discrete GPUs)
+	id="global-memory-off-chip-dram-vram-on-discrete-gpus" >
+    Global Memory (off-chip DRAM, VRAM on discrete GPUs)
 </h3>
 <ul>
 	<li>
@@ -2216,47 +2241,6 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="texture-memory" >
-    Texture memory
-</h3>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Physical Location
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    On-chip, specialized hardware
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Scope / Visibility
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Optimized for spatial locality (texture) or broadcast (constant)
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Is another read-only memory type ideal for physically adjacent data access. Its use can mitigate memory traffic and increase performance compared to global memory.
-		</p>
-	</li>
-</ul>
-<h3
 	id="host-visible-physical-memory" >
     Host-Visible Physical Memory
 </h3>
@@ -2330,6 +2314,21 @@ window.MathJax = {
     Where is it
 </h5>
 <ul>
+	<li>
+		<p>
+            <code>MEMORY_PROPERTY_HOST_VISIBLE</code>
+            &nbsp;only means the CPU can map that VkDeviceMemory (i.e. vkMapMemory works). It does not guarantee where the bytes physically live.
+		</p>
+	</li>
+	<li>
+		<p>
+            To know whether that host-visible memory counts against VRAM or system RAM, check the memory heap associated with the memory type. If the memory type’s heapIndex points to a heap that has 
+            <code>MEMORY_HEAP_DEVICE_LOCAL</code>
+            , that heap is the device-local heap (what you should treat as “VRAM” for accounting). If the heap does not have 
+            <code>DEVICE_LOCAL</code>
+            , it’s system RAM (account against main memory).
+		</p>
+	</li>
 	<li>
 		<p>
             Discrete GPU (most desktop cards)
@@ -3123,7 +3122,7 @@ window.MathJax = {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-12-10 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2025-12-13 🚀
 			</footer>
 		</div>
 		<aside
@@ -3148,26 +3147,20 @@ window.MathJax = {
 							</li>
 							<li>
 								<a
-									href="#wave-warp" >
-                                    Wave / Warp
+									href="#warp-wave" >
+                                    Warp / Wave
 								</a>
 							</li>
 							<li>
 								<a
-									href="#sm-cu" >
-                                    SM / CU
+									href="#sm-streaming-multiprocessor-cu-compute-unit" >
+                                    SM (Streaming Multiprocessor) / CU (Compute Unit)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#tpc-gpc-nvidia-sa-amd" >
-                                    TPC/GPC (NVIDIA) / SA (AMD)
-								</a>
-							</li>
-							<li>
-								<a
-									href="#cluster" >
-                                    Cluster
+									href="#tpc-gpc-texture-processing-cluster-graphics-processing-cluster-sa-shader-array" >
+                                    TPC/GPC (Texture Processing Cluster / Graphics Processing Cluster) / SA (Shader Array)
 								</a>
 							</li>
 							<li>
@@ -3218,50 +3211,50 @@ window.MathJax = {
 						<ul>
 							<li>
 								<a
-									href="#registers" >
-                                    Registers
+									href="#registers-on-chip-in-each-shader-core" >
+                                    Registers (on-chip, in each shader core)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#local" >
-                                    Local
+									href="#shared-quotscratchquot-on-chip-in-each-sm-wave-cu" >
+                                    Shared / &quot;scratch&quot; (on-chip, in each SM/Wave/CU)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#shared-quotscratchquot" >
-                                    Shared (&quot;scratch&quot;)
+									href="#texture-memory-on-chip-specialized-hardware" >
+                                    Texture memory (on-chip, specialized hardware)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#l1-cache" >
-                                    L1 Cache
+									href="#l1-cache-on-chip-per-sm-cu" >
+                                    L1 Cache (on chip, per SM/CU)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#l2-cache" >
-                                    L2 Cache
+									href="#l2-cache-on-chip-shader-across-gpu" >
+                                    L2 Cache (on-chip, shader across GPU)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#constant-cache" >
-                                    Constant Cache
+									href="#local-off-chip-in-global-memory-per-thread" >
+                                    Local (off-chip, in global memory, per-thread)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#global-memory-vram-on-discrete-gpus" >
-                                    Global Memory (VRAM on Discrete GPUs)
+									href="#constant-cache-" >
+                                    Constant Cache (?)
 								</a>
 							</li>
 							<li>
 								<a
-									href="#texture-memory" >
-                                    Texture memory
+									href="#global-memory-off-chip-dram-vram-on-discrete-gpus" >
+                                    Global Memory (off-chip DRAM, VRAM on discrete GPUs)
 								</a>
 							</li>
 							<li>
@@ -3298,7 +3291,7 @@ window.MathJax = {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.76775.js" >
+			src="/static/studies.24731.js" >
 		</script>
 	</body>
 </html>

@@ -10,6 +10,17 @@ if ('IntersectionObserver' in window) {
                 if (entry.isIntersecting) {
                     if (activeLink) {
                         activeLink.classList.remove('active');
+
+                        // Scroll TOC item into view if needed
+                        const tocContainer = document.getElementById('right-sidebar');
+                        if (tocContainer && activeLink.offsetParent) {
+                            const linkRect = activeLink.getBoundingClientRect();
+                            const containerRect = tocContainer.getBoundingClientRect();
+
+                            if (linkRect.bottom > containerRect.bottom || linkRect.top < containerRect.top) {
+                                activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }
                     }
 
                     activeLink = linksById[entry.target.id];
@@ -31,9 +42,24 @@ if ('IntersectionObserver' in window) {
                 }
             }
 
-            link.addEventListener('click', function () {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href')?.slice(1);
+                if (targetId) {
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Update URL without jumping
+                        history.pushState(null, null, '#' + targetId);
+                    }
+                }
+
+                const body = document.body;
                 if (body.classList.contains('model-open')) {
-                    mainAsideCloseButton.click()
+                    const mainAsideCloseButton = document.querySelector('.main-aside-close-button');
+                    if (mainAsideCloseButton) {
+                        mainAsideCloseButton.click();
+                    }
                 }
             });
         });

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.25607.css" >
+			href="/static/studies.15101.css" >
 	</head>
 	<body>
 		<aside
@@ -251,6 +251,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Low-Level Systems/Parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Low-Level Systems/JAI.html" >
                                 JAI
 							</a>
@@ -260,14 +269,14 @@ window.MathJax = {
 				<details
 >
 					<summary>
-                        Design
+                        Design Patterns
 					</summary>
 					<ul>
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - DOD e COP/Design - DOD e COP.html" >
-                                Design - DOD e COP
+								href="/studies/Design Patterns/Data Oriented Design - COP/Data Oriented Design - COP.html" >
+                                Data Oriented Design - COP
 							</a>
 						</li>
 					</ul>
@@ -275,8 +284,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - ECS/Design - ECS.html" >
-                                Design - ECS
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design.html" >
+                                Data Oriented Design
 							</a>
 						</li>
 					</ul>
@@ -284,8 +293,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Design Patterns/Design - Design Patterns.html" >
-                                Design - Design Patterns
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS.html" >
+                                Data Oriented Design - ECS
 							</a>
 						</li>
 					</ul>
@@ -293,8 +302,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Architecture Patterns.html" >
-                                Design - Architecture Patterns
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns.html" >
+                                Other Design Patterns
 							</a>
 						</li>
 					</ul>
@@ -302,8 +311,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Concepts and Terminology.html" >
-                                Design - Concepts and Terminology
+								href="/studies/Design Patterns/Concepts and Terminology.html" >
+                                Concepts and Terminology
 							</a>
 						</li>
 					</ul>
@@ -311,8 +320,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
-                                Design - Rules of thumb - Laws - Guidelines and Principles
+								href="/studies/Design Patterns/Rules of thumb - Laws - Guidelines and Principles/Rules of thumb - Laws - Guidelines and Principles.html" >
+                                Rules of thumb - Laws - Guidelines and Principles
 							</a>
 						</li>
 					</ul>
@@ -320,8 +329,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Paradigms.html" >
-                                Design - Paradigms
+								href="/studies/Design Patterns/Paradigms.html" >
+                                Paradigms
 							</a>
 						</li>
 					</ul>
@@ -329,8 +338,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
-                                Design - Production Methodologies
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies.html" >
+                                Production Methodologies
 							</a>
 						</li>
 					</ul>
@@ -1251,8 +1260,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-28
 							</time>
 							<time
-								datetime="2025-12-13" >
-                                | Updated: 2025-12-13
+								datetime="2026-01-12" >
+                                | Updated: 2026-01-12
 							</time>
 						</p>
 					</header>
@@ -2031,24 +2040,7 @@ my_proc :: proc() {}
 						target="_blank" >
                         Context
 					</a>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    I had a discussion about this topic in this 
-					<a
-						href="https://discord.com/channels/568138951836172421/1449160534636363916" 
-						class="external-link" 
-						target="_blank" >
-                        discord thread
-					</a>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    There's also other topics about explicitness that I'd like to go through, but I think what I wrote sums it up what I bothered me today.
+                    &nbsp;for a in-depth discussion about this.
 				</p>
 			</li>
 		</ul>
@@ -2861,6 +2853,28 @@ my_struct :: struct {}
 <pre><code class="language-sh" data-lang="sh">odin run . -define:TRACY_ENABLE=true
 </code></pre>
 <ul>
+	<li>
+		<p>
+            The flags 
+			<strong>
+                require
+			</strong>
+            &nbsp;the pattern 
+            <code>value=key</code>
+            ; just using 
+            <code>-define:TRACY_ENABLE</code>
+            &nbsp;will cause a compile-time error.
+		</p>
+	</li>
+	<li>
+		<p>
+            For what I've tested, only one 
+            <code>value</code>
+            &nbsp;is accepted per 
+            <code>-define</code>
+            ; I don't think you can concatenate defines.
+		</p>
+	</li>
 	<li>
 		<p>
             Caio:
@@ -4161,6 +4175,62 @@ for character in str {
 &nbsp;&nbsp;&nbsp;&nbsp;fmt.println(character)
 }
 </code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Doesn't work
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    My expectation here was that 
+                    <code>a</code>
+                    , 
+                    <code>b</code>
+                    &nbsp;and 
+                    <code>c</code>
+                    &nbsp;would be elements from the return of 
+                    <code>test()</code>
+                    . It would be a way to iterate over multiples arrays at the same time.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">test :: proc() -&gt; ([5]f32, [5]int, [5]bool) {
+&nbsp;&nbsp;&nbsp;&nbsp;return {}, {}, {}
+}
+
+for a, b, c in test() {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+}
+
+for a, b, c in [5]f32{}, [5]int{}, [5]bool{} {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+}
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="custom-iterators" >
+    Custom Iterators
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Loop arguments via the C loop pattern
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Only works for 1 loop argument, as far as I know.
+				</p>
+			</li>
+		</ul>
 <pre><code class="language-odin" data-lang="odin">memory_block_found := false
 for block := arena.curr_block; block != nil; block = block.prev {
 &nbsp;&nbsp;&nbsp;&nbsp;if block == temp.block {
@@ -4169,6 +4239,118 @@ for block := arena.curr_block; block != nil; block = block.prev {
 &nbsp;&nbsp;&nbsp;&nbsp;}
 }
 </code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Loop arguments via the 
+                <code>in</code>
+                &nbsp;pattern
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The pattern is somewhat equivalent to 
+                    <code>for a, b, ok := intersect_next(&iterator_idx, &A, &B); ok {</code>
+                    ; this version is specific doesn't work; the 
+                    <code>in</code>
+                    &nbsp;pattern is a way to make it work. The last return value of the function must be a boolean, used to know whether to exit the loop or not.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I believe this works for any number of loop arguments.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">intersect_next :: proc(it: ^u32) -&gt; (f32, [2]f32, bool, matrix[4,2]f32, bool) {
+&nbsp;&nbsp;&nbsp;&nbsp;if it^ == 4 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0, {}, false, {}, false
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;it^ += 1
+&nbsp;&nbsp;&nbsp;&nbsp;@static v: f32
+&nbsp;&nbsp;&nbsp;&nbsp;v += 1
+&nbsp;&nbsp;&nbsp;&nbsp;return v, {}, false, {}, true
+}
+iterator_idx: u32
+for float, vec, flag, mat in intersect_next(&iterator_idx) {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("float: %v vec: %v flag: %v matrix: %v", float, vec, flag, mat)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    If removing the final 
+                    <code>bool</code>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The final type of 4-valued expression must be a boolean, got 
+                            <code>matrix[4, 2]f32</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Loop argument via indefinite loop and break
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Somewhat equivalent to the pattern above.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">for {
+&nbsp;&nbsp;&nbsp;&nbsp;v := iter(&idx) or_break
+}
+
+idx: u32
+for {
+&nbsp;&nbsp;&nbsp;&nbsp;float, vec, flag, mat := intersect_next(&idx) or_break
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("float: %v vec: %v flag: %v matrix: %v", float, vec, flag, mat)
+}
+
+for idx: u32; true; {&nbsp;&nbsp;// `for idx: u32;; {` is not allowed
+&nbsp;&nbsp;&nbsp;&nbsp;float, vec, flag, mat := intersect_next(&idx) or_break
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("float: %v vec: %v flag: %v matrix: %v", float, vec, flag, mat)
+}
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Loop arguments via out-parameters
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">for intersect_next(&iterator_idx, &_velocities, &_positions, &vel, &pos) {
+}
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Doesn't work
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">iterator_idx: u32
+for a, b, ok := intersect_next(&iterator_idx, &A, &B); ok {
+}
+</code></pre>
+	</li>
+</ul>
 <h3
 	id="switch" >
     Switch
@@ -4272,6 +4454,39 @@ case:
 			<li>
 				<p>
                     Having multiple types in a single case will mean it won't be unwrapped, as there's no one type the complier can guarantee it'll be.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="usage-of-code-code" >
+    Usage of 
+    <code>:</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The case value can include 
+                    <code>{</code>
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">a := [2]int {1, 2}
+switch a {
+case {1, 2}:
+fmt.println(a)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    You can add braces after the colon if you want, unadorned blocks are allowed anywhere a statement is.
 				</p>
 			</li>
 		</ul>
@@ -16233,6 +16448,54 @@ fatal_assert :: proc(eval: bool, loc := #caller_location, expr := #caller_expres
 <ul>
 	<li>
 		<p>
+            (2025-12-12) I highly recommend checking out this discord thread in the Odin server, where there were 270+ answers from passionate people about the topic. Many defended context, where some admitted not enjoying the experience of having to work with it. Overall, I learned a lot and changed my mind about user_ptr and user_index, but couldn’t wrap my head around the context.allocator/context.temp_allocator, as I see this as a solution to the problem of implicit allocations in the language, as well as context.logger / context.assertion_failure_proc/ context.random_generator, as I do believe they would be a better fit as thread-local or global variables. I cover some of these topics in my fork, where I’m investigating different programming and testing approaches for the designs I've proposed. You may not want to use this fork, as it contains a lot of subjective content - it’s purely exploratory.
+		</p>
+	</li>
+	<li>
+		<p>
+            This 
+			<a
+				href="https://www.gingerbill.org/article/2025/12/15/odins-most-misunderstood-feature-context" 
+				class="external-link" 
+				target="_blank" >
+                article
+			</a>
+            &nbsp;was written right after the discussion in the discord thread.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;You could argue that it is “better” to pass allocators1 around explicitly, but from my own experience in C with this exact interface (made and used well before I even made Odin), I found that I got in a very very lazy habit of not actually passing around allocators properly. This overly explicitness with a generalized interface lead to more allocation bugs than if I had used specific allocators on a per-system basis.&quot;
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>context.allocator</code>
+                            &nbsp;is used to solve a problem that his way of programming created. If the language was not designed around implicit and unsafe allocations with 
+                            <code>allocator :=</code>
+                            , then this wouldn't be necessary. If, for example, 
+                            <code>make()</code>
+                            &nbsp;
+							<strong>
+                                required
+							</strong>
+                            &nbsp;an allocator, while 
+                            <code>context.allocator</code>
+                            &nbsp;didn't exist, you wouldn't have any other choice but to use an allocator passed as an argument in the procedure.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="my-rant" >
+    My Rant
+</h5>
+<ul>
+	<li>
+		<p>
             (2025-12-12)
 		</p>
 	</li>
@@ -16824,16 +17087,16 @@ _scope_end :: proc(old_value: ^mem.Allocator, previous_value: mem.Allocator) {
 		</ul>
 	</li>
 </ul>
-<h5
+<h3
 	id="usages" >
     Usages
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
             This is the usages I could find by 
             <code>ctrl+shift+F</code>
-            &nbsp;on the whole Odin repository:
+            &nbsp;on the whole Odin repository (base, core, vendor):
 		</p>
 <pre><code class="language-odin" data-lang="odin">Context :: struct {
 &nbsp;&nbsp;&nbsp;&nbsp;allocator:              Allocator,
@@ -25682,6 +25945,24 @@ foreign {
 	</li>
 	<li>
 		<p>
+            Cool tip: you can see the order of execution in the dissasembly; it's obvious, but good to remember:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/2025-12-13_09-52-47.png" alt="" />
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Here I'm using RadDBG and placed a breakpoint at the end of main.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
             <code>@(entry_point_only)</code>
 		</p>
 		<ul>
@@ -25723,6 +26004,216 @@ foreign {
 				</p>
 			</li>
 		</ul>
+	</li>
+</ul>
+<h3
+	id="runtime-initialization-cleanup" >
+    Runtime initialization/cleanup
+</h3>
+<ul>
+	<li>
+		<p>
+            These are not strictly required for compilation, but if global variables or 
+            <code>@(init)</code>
+            /
+            <code>@(fini)</code>
+            &nbsp;blocks are used, these procedures need to be called inside the entry point.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>_startup_runtime</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>_cleanup_runtime</code>
+		</p>
+	</li>
+</ul>
+<h5
+	id="source-code" >
+    Source Code
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>src/llvm_backend.hpp:650</code>
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#define LB_STARTUP_RUNTIME_PROC_NAME&nbsp;&nbsp; "__$startup_runtime"
+#define LB_CLEANUP_RUNTIME_PROC_NAME&nbsp;&nbsp; "__$cleanup_runtime"
+#define LB_TYPE_INFO_DATA_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "__$type_info_data"
+#define LB_TYPE_INFO_TYPES_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"__$type_info_types_data"
+#define LB_TYPE_INFO_NAMES_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"__$type_info_names_data"
+#define LB_TYPE_INFO_OFFSETS_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"__$type_info_offsets_data"
+#define LB_TYPE_INFO_USINGS_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "__$type_info_usings_data"
+#define LB_TYPE_INFO_TAGS_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "__$type_info_tags_data"
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>src/llvm_backend.cpp:lb_create_startup_runtime:2120</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>src/llvm_backend.cpp:lb_generate_code:3510</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>gen-&gt;startup_runtime</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>gen-&gt;cleanup_runtime</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>src/llvm_backend.cpp:lb_generate_code:3535</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>src/llvm_backend.cpp:lb_create_main_procedure:2785</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Entry point.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>src/llvm_backend.cpp:lb_create_main_procedure:2851</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="implicit-non-constant-global_variable-initializers" >
+    Implicit non-constant global_variable initializers
+</h5>
+<ul>
+	<li>
+		<p>
+            I used the RegEx 
+            <code>^\w+ +:= +.*?\(</code>
+            &nbsp;looking for places where that happen.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I only found uses inside the 
+                    <code>core:os1</code>
+                    &nbsp;library and 
+                    <code>core:bufio/read_writer.odin</code>
+                    , but I think the last one was a typo (?).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            I used the RegEx 
+            <code>^\w+ +:: +(?!#force_no_inline|#force_inline|#type|proc|union|struct).*?\(</code>
+            , but there were a lot of results to check, so left it alone; probably doesn't make sense to check these anyway.
+		</p>
+	</li>
+</ul>
+<h5
+	id="disabling-the-code_startup_runtime-code" >
+    Disabling the 
+    <code>_startup_runtime</code>
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/odin-lang/Odin/discussions/5524" 
+				class="external-link" 
+				target="_blank" >
+                Proposal
+			</a>
+            .
+            <br>
+            (2025-12-16)
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">import os "core:os/os2"
+import "core:fmt"
+
+COMPTIME_CONST :: #config(COMPTIME_CONST, true)
+
+CONST :: "HELLO THINGS"
+
+My_Struct :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;a, b, c: int,
+&nbsp;&nbsp;&nbsp;&nbsp;d: string,
+&nbsp;&nbsp;&nbsp;&nbsp;e: []f64,
+}
+
+my_struct := My_Struct{
+&nbsp;&nbsp;&nbsp;&nbsp;a = 1,
+&nbsp;&nbsp;&nbsp;&nbsp;b = 2,
+&nbsp;&nbsp;&nbsp;&nbsp;c = 1283,
+&nbsp;&nbsp;&nbsp;&nbsp;e = { 12.4, 65.2, 86.45 },
+}
+
+my_other_struct := constructor()
+
+constructor :: proc "contextless" () -&gt; My_Struct { // The compiler requires it to be "contextless".
+&nbsp;&nbsp;&nbsp;&nbsp;context = {}
+&nbsp;&nbsp;&nbsp;&nbsp;slice := make([]f64, 5, runtime.heap_allocator())
+&nbsp;&nbsp;&nbsp;&nbsp;copy(slice, []f64{ 111, 222, 333, 444, 555 })
+&nbsp;&nbsp;&nbsp;&nbsp;return {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = 5555,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b = 99998,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c = 7766565,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e = slice,
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+
+main :: proc() {
+&nbsp;&nbsp;&nbsp;&nbsp;os.init_std_files()
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("os.args:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '%v'", os.args)
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("CONST:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '%v'", CONST)
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("COMPTIME_CONST:&nbsp;&nbsp;'%v'", COMPTIME_CONST)
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("my_struct:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '%v'", my_struct)
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("my_other_struct: '%v'", my_other_struct)
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Prints:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">os.args:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '[]'
+CONST:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'HELLO THINGS'
+COMPTIME_CONST:&nbsp;&nbsp;'true'
+my_struct:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'My_Struct{a = 1, b = 2, c = 1283, d = "", e = [12.4, 65.2, 86.45]}'
+my_other_struct: 'My_Struct{a = 0, b = 0, c = 0, d = "", e = []}'
+</code></pre>
+<ul>
+	<li>
+		<p>
+            So 
+            <code>os.args</code>
+            &nbsp;and 
+            <code>my_other_struct</code>
+            &nbsp;is not initialized.
+		</p>
 	</li>
 </ul>
 <h2
@@ -29123,6 +29614,169 @@ _Cond :: struct {
 	</li>
 </ul>
 <h2
+	id="simd" >
+    SIMD
+</h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/odin-lang/examples/tree/master/simd" 
+				class="external-link" 
+				target="_blank" >
+                Odin examples - SIMD
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/simd/" 
+				class="external-link" 
+				target="_blank" >
+                core:simd
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/builtin/#len" 
+				class="external-link" 
+				target="_blank" >
+                <code>len</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For 
+                    <code>#simd</code>
+                    &nbsp;vector: the number of elements in 
+                    <code>v</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The code idea seems to require that all elements be grouped together in a SIMD Vector (
+            <code>#simd[N]T</code>
+            ) and so intrinsics operations are performed.
+		</p>
+	</li>
+	<li>
+		<p>
+            Simd vectors are comparable.
+		</p>
+	</li>
+	<li>
+		<p>
+            Casting:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>raw_data(^#simd[$N]$E) -&gt; [^]E</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Implicit conversion:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>T -&gt; #simd[N]T</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            For Matrices:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Column-major is used in order to utilize (SIMD) vector instructions effectively on modern hardware, if possible.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Unlike normal arrays, matrices try to maximize alignment to allow for the (SIMD) vectorization properties whilst keeping zero padding (either between columns (assuming default layout) or at the end of the type).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Zero padding is a compromise for use with third-party libraries, instead of optimizing for performance. Padding between columns (assuming default layout) was not taken even if that would have allowed each column to be loaded individually into a SIMD register with the correct alignment properties.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="width" >
+    Width
+</h5>
+<ul>
+	<li>
+		<p>
+            From the Odin examples:
+		</p>
+	</li>
+	<li>
+		<p>
+            The best value for this will depend on the available SIMD instructions, and possibly the hardware itself.
+		</p>
+	</li>
+	<li>
+		<p>
+            On amd64, the default target only uses SSE4, which has 128-bit SIMD registers. This means that 
+            <code>#simd[4]f32</code>
+            &nbsp;would be the native vector size on that target--but that doesn't always give the
+            <br>
+            fastest results, as larger vectors allow for better instruction-level parallelism. For larger vectors, LLVM will automatically spread the data over multiple SIMD registers, but if the SIMD vector is too large this starts to become a detriment to performance. Try comparing the results between 4, 8, and 16.
+		</p>
+	</li>
+	<li>
+		<p>
+            You will likely see a performance boost, particularly in the f64 case, by enabling AVX, and around 97% of PCs support that (according to the October 2024 Steam hardware survey). You can enable that by building with 
+            <code>-target-features:avx</code>
+            &nbsp;(or 
+            <code>-microarch:x86-64-v3</code>
+            , for a number of CPU features available on many modern systems). However, note that doing so will cause the program to crash on systems that don't support these features!
+		</p>
+	</li>
+</ul>
+<h5
+	id="aligment" >
+    Aligment
+</h5>
+<ul>
+	<li>
+		<p>
+            SIMD registers often have an alignment of 16/32/64 bytes.
+		</p>
+	</li>
+	<li>
+		<p>
+            SIMD vectors are sensitive to alignment.
+		</p>
+	</li>
+	<li>
+		<p>
+            Using an unaligned load is simple and has a negligible cost on most modern systems.
+		</p>
+	</li>
+</ul>
+<h2
 	id="directives" >
     Directives
 </h2>
@@ -29368,6 +30022,13 @@ _Cond :: struct {
 	id="web-build" >
     Web Build
 </h2>
+<ul>
+	<li>
+		<p>
+            Karl2D has web support without needing emscripten.
+		</p>
+	</li>
+</ul>
 <h3
 	id="not-wasm" >
     Not-WASM
@@ -30537,7 +31198,7 @@ context.logger = log.create_file_logger()
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-odin" data-lang="odin">for tileset_info in mundo["defs"].(json.Object)["tilesets"].(json.Array) {
+<pre><code class="language-odin" data-lang="odin">for tileset_info in world["defs"].(json.Object)["tilesets"].(json.Array) {
 &nbsp;&nbsp;&nbsp;&nbsp;if tileset_info.(json.Object)["identifier"].(json.String) == "Internal_Icons" {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue 
 &nbsp;&nbsp;&nbsp;&nbsp;}
@@ -30553,7 +31214,7 @@ context.logger = log.create_file_logger()
 				</p>
 			</li>
 		</ul>
-<pre><code class="language-odin" data-lang="odin">for tileset_info in mundo["defs"].(json.Object)["tilesets"].(json.Array) {
+<pre><code class="language-odin" data-lang="odin">for tileset_info in world["defs"].(json.Object)["tilesets"].(json.Array) {
 &nbsp;&nbsp;&nbsp;&nbsp;tileset_info := item.(json.Object)
 &nbsp;&nbsp;&nbsp;&nbsp;if tileset_info["identifier"].(json.String) == "Internal_Icons" {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue
@@ -30576,7 +31237,7 @@ context.logger = log.create_file_logger()
 					</em>
                     :
 				</p>
-<pre><code class="language-odin" data-lang="odin">for (jsonParsed.value.object.get("defs").?.object.get("tilesets").?.array.items) |item| {
+<pre><code class="language-zig" data-lang="zig">for (jsonParsed.value.object.get("defs").?.object.get("tilesets").?.array.items) |item| {
 </code></pre>
 			</li>
 		</ul>
@@ -30599,7 +31260,7 @@ context.logger = log.create_file_logger()
 					</em>
                     :
 				</p>
-<pre><code class="language-odin" data-lang="odin">for (jsonParsed.value.object.get("defs").?.object.get("tilesets").?.array.items) |item| {
+<pre><code class="language-zig" data-lang="zig">for (jsonParsed.value.object.get("defs").?.object.get("tilesets").?.array.items) |item| {
 </code></pre>
 			</li>
 		</ul>
@@ -30632,7 +31293,7 @@ context.logger = log.create_file_logger()
 					</em>
                     :
 				</p>
-<pre><code class="language-odin" data-lang="odin">for ts in mundo.get('defs').get('tilesets'):
+<pre><code class="language-gdscript" data-lang="gdscript">for ts in world.get('defs').get('tilesets'):
 &nbsp;&nbsp;&nbsp;&nbsp;if (ts.get('identifier') == 'Internal_Icons'):
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue
 </code></pre>
@@ -30644,7 +31305,7 @@ context.logger = log.create_file_logger()
 					</em>
                     : (Using like this atm)
 				</p>
-<pre><code class="language-odin" data-lang="odin">for ts: Dictionary in (mundo.get('defs') as Dictionary).get('tilesets'):
+<pre><code class="language-gdscript" data-lang="gdscript">for ts: Dictionary in (world.get('defs') as Dictionary).get('tilesets'):
 &nbsp;&nbsp;&nbsp;&nbsp;if (ts.get('identifier') == 'Internal_Icons'):
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue
 </code></pre>
@@ -30656,7 +31317,7 @@ context.logger = log.create_file_logger()
 					</em>
                     :
 				</p>
-<pre><code class="language-odin" data-lang="odin">for ts: Dictionary in ((mundo.get('defs') as Dictionary).get('tilesets') as Array):
+<pre><code class="language-gdscript" data-lang="gdscript">for ts: Dictionary in ((world.get('defs') as Dictionary).get('tilesets') as Array):
 &nbsp;&nbsp;&nbsp;&nbsp;if ((ts.get('identifier') as String) == 'Internal_Icons'):
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue
 </code></pre>
@@ -31626,7 +32287,7 @@ image.load("file.png", width, height, channels, 4)
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-12-13 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-13 🚀
 			</footer>
 		</div>
 		<aside
@@ -32369,6 +33030,12 @@ image.load("file.png", width, height, channels, 4)
 							</li>
 							<li>
 								<a
+									href="#usages" >
+                                    Usages
+								</a>
+							</li>
+							<li>
+								<a
 									href="#context-allocator" >
                                     context.allocator
 								</a>
@@ -32659,6 +33326,12 @@ image.load("file.png", width, height, channels, 4)
                             Entry Point
 						</a>
 						<ul>
+							<li>
+								<a
+									href="#runtime-initialization-cleanup" >
+                                    Runtime initialization/cleanup
+								</a>
+							</li>
 						</ul>
 					</li>
 					<li>
@@ -32781,6 +33454,14 @@ image.load("file.png", width, height, channels, 4)
                                     Wait Group (<code>sync.Wait_Group</code>)
 								</a>
 							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#simd" >
+                            SIMD
+						</a>
+						<ul>
 						</ul>
 					</li>
 					<li>
@@ -32935,7 +33616,7 @@ image.load("file.png", width, height, channels, 4)
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.25607.js" >
+			src="/static/studies.15101.js" >
 		</script>
 	</body>
 </html>

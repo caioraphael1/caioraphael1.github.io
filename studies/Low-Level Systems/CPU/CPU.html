@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.25607.css" >
+			href="/static/studies.15101.css" >
 	</head>
 	<body>
 		<aside
@@ -251,6 +251,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Low-Level Systems/Parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Low-Level Systems/JAI.html" >
                                 JAI
 							</a>
@@ -260,14 +269,14 @@ window.MathJax = {
 				<details
 >
 					<summary>
-                        Design
+                        Design Patterns
 					</summary>
 					<ul>
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - DOD e COP/Design - DOD e COP.html" >
-                                Design - DOD e COP
+								href="/studies/Design Patterns/Data Oriented Design - COP/Data Oriented Design - COP.html" >
+                                Data Oriented Design - COP
 							</a>
 						</li>
 					</ul>
@@ -275,8 +284,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - ECS/Design - ECS.html" >
-                                Design - ECS
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design.html" >
+                                Data Oriented Design
 							</a>
 						</li>
 					</ul>
@@ -284,8 +293,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Design Patterns/Design - Design Patterns.html" >
-                                Design - Design Patterns
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS.html" >
+                                Data Oriented Design - ECS
 							</a>
 						</li>
 					</ul>
@@ -293,8 +302,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Architecture Patterns.html" >
-                                Design - Architecture Patterns
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns.html" >
+                                Other Design Patterns
 							</a>
 						</li>
 					</ul>
@@ -302,8 +311,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Concepts and Terminology.html" >
-                                Design - Concepts and Terminology
+								href="/studies/Design Patterns/Concepts and Terminology.html" >
+                                Concepts and Terminology
 							</a>
 						</li>
 					</ul>
@@ -311,8 +320,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
-                                Design - Rules of thumb - Laws - Guidelines and Principles
+								href="/studies/Design Patterns/Rules of thumb - Laws - Guidelines and Principles/Rules of thumb - Laws - Guidelines and Principles.html" >
+                                Rules of thumb - Laws - Guidelines and Principles
 							</a>
 						</li>
 					</ul>
@@ -320,8 +329,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Paradigms.html" >
-                                Design - Paradigms
+								href="/studies/Design Patterns/Paradigms.html" >
+                                Paradigms
 							</a>
 						</li>
 					</ul>
@@ -329,8 +338,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
-                                Design - Production Methodologies
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies.html" >
+                                Production Methodologies
 							</a>
 						</li>
 					</ul>
@@ -1251,59 +1260,68 @@ window.MathJax = {
                                 🕒 Created: 2025-07-22
 							</time>
 							<time
-								datetime="2025-12-13" >
-                                | Updated: 2025-12-13
+								datetime="2026-01-12" >
+                                | Updated: 2026-01-12
 							</time>
 						</p>
 					</header>
 					<div
 						id="note-content" >
-<h3
-	id="where-i-stopped" >
-    Where I Stopped
-</h3>
+<h2
+	id="concepts" >
+    Concepts
+</h2>
 <ul>
 	<li>
 		<p>
-			<input
-				type="checkbox" 
-				disabled=""
->
-            
-			<a
-				href="https://www.youtube.com/watch?v=e1cvqmXoVaI" 
-				class="external-link" 
-				target="_blank" >
-                Refterm Lecture Part 5 - Parsing with SIMD
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<input
-				type="checkbox" 
-				disabled=""
->
-            
-			<a
-				href="https://guide.handmadehero.org/chat/chat020/" 
-				class="external-link" 
-				target="_blank" >
-                Handmade Hero - Assembly Analysis and Front-end Register Clears
-			</a>
-            .
+            Latency:
 		</p>
 		<ul>
 			<li>
 				<p>
-                    <a href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero.html">
-                    Handmade Hero
-                    </a>
-                    .
+                    Is how many cycles it takes for a result of one instruction to be available for the next.
 				</p>
 			</li>
 		</ul>
+	</li>
+	<li>
+		<p>
+            Throughput:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is how often the instruction can issue.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Cold data:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Not in cache.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            You should always count cache lines, not bytes, for bandwidth computations.
+		</p>
+	</li>
+	<li>
+		<p>
+            Out Of Order execution hides latency and pipelines everything, but we can help it by disentangling dependency chains.
+		</p>
+	</li>
+	<li>
+		<p>
+            RAM is fast, but far from GPU. We can help it by laying out data for hardware prefetcher.
+		</p>
 	</li>
 </ul>
 <h2
@@ -1313,9 +1331,304 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            <img src="assets/image_20250811132922.png" width="250" >
+            Simple:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250811132922.png" width="300" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Overall:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/2026-01-05_09-16-37.png" width="400" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Skylake Block Diagram:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="https://en.wikichip.org/w/images/7/7e/skylake_block_diagram.svg" width="700" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is not a pipeline diagram, it doesn't tell us how the chip works. It just a logical flow, some rough directions.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=8VakkEFOiJc" 
+				class="external-link" 
+				target="_blank" >
+                Casey - A (Very) Simplified CPU Diagram
+			</a>
             .
 		</p>
+	</li>
+</ul>
+<h5
+	id="front-end" >
+    Front-end
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;Figure out what to run&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Instruction stream
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Assembly code.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                I$
+			</em>
+            :
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                micro ops
+			</em>
+            &nbsp;/ 
+			<em>
+                u OPs
+			</em>
+            &nbsp;/ 
+			<em>
+                μOP
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In the past, instructions were executed right away, but now they are decoded into smaller instructions: micro ops.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://uops.info/table.html" 
+						class="external-link" 
+						target="_blank" >
+                        uops.info
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=1tEqsQ55-8I" 
+						class="external-link" 
+						target="_blank" >
+                        Analysis with Compiler Explorer and UICA
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            {29:10} Show the usage of this site above.
+						</p>
+					</li>
+					<li>
+						<p>
+                            UICA (Uops Info Code Analyzer), it's a tool to get a complete analysis of how the port brake down will go for your program.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    There's also some graphs and execution traces.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;Predicted Throughput&quot;: you can use this to estimate how many cycles your loops is going to take.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Decoder
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Get the instructions from the instruction stream and decode them into micro ops.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;If we can shrink the size of our stream down, this might be a win for the act of getting the streams&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Loop cache
+			</em>
+            &nbsp;/ 
+			<em>
+                Trace cache
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Stores the result of decoding. It remembers the micro ops.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Sometimes decoding instructions can actually be the bottleneck in loops where the instructions are cheap to execute.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            All the a &quot;jump&quot; does is tell us where to get more instructions, so we don't want to send that to the backend. For that reason, the frontend also handles jmp, stack, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            The reason for having 
+			<em>
+                branch prediction
+			</em>
+            &nbsp;is so the chip doesn't halt waiting for the backend to finish just to finally know there was a branch, while the frontend was starving doing nothing. The backend is much more latent. The frontend tries to predict the branching to avoid this.
+		</p>
+	</li>
+</ul>
+<h5
+	id="back-end" >
+    Back-end
+</h5>
+<ul>
+	<li>
+		<p>
+			<em>
+                Ports
+			</em>
+            &nbsp;/ 
+			<em>
+                execution units
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Port is kind of a weird hardware term that doesn't give more intuition of what they do&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    They are things that can do work.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If you want to add things together, one or more of these ports has a &quot;adder&quot; circuit in it.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                RAT (register alias/allocation table)
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In the past, a register was a real register, it meant a real place in the chip. This is not what happens anymore. Now the register name goes into something called RAT, which will translate the names you gave (RAX, for example) to names that corresponds to &quot;slots&quot; used by a micro op instruction.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There are 16 registers in assembly (or 32 registers if you count vector registers), but there's around ~192 entries in a modern RAT, or maybe more in newer chips. The reason for that, is so it can extract the parallelism of things that are independent from each other, to optimize the pipeline. This tries to fill in a window of things we could be doing. The RAT job is to expand the instruction stream into independent dependency chains that use those slots, to decompose that 16 register stream into something much more verbose that involves much more registers than that.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Scheduler
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Only wait if the things you need are still being worked on&quot;. For that reason it has to keep track of where things are, this is what the Scheduler does.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Retirement Buffer
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The micro ops are always retired in order. It writes micro ops in as they are finished in the slot where the need to go, so they are retired in the order they came in.
+				</p>
+			</li>
+		</ul>
 	</li>
 </ul>
 <h3
@@ -1356,6 +1669,89 @@ window.MathJax = {
 		<p>
             Modern CPUs fetch memory in 64-byte cache lines and prefetch adjacent memory.
 		</p>
+	</li>
+</ul>
+<h3
+	id="problems-with-oop" >
+    Problems with OOP
+</h3>
+<ul>
+	<li>
+		<p>
+            Not cache friendly. Each 
+            <code>a-&gt;b</code>
+            &nbsp;requires 3 memory accesses. One for 
+            <code>a</code>
+            , other for the 
+            <code>vtable</code>
+            , other for 
+            <code>b</code>
+            . It would be much better if 
+            <code>a[i]</code>
+            , so only one memory access is required.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    See the talk from Sergiy Migdalskiy where he goes further into this.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Thought exercise:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A 
+                    <code>Creature</code>
+                    &nbsp;is an 
+                    <code>Entity</code>
+                    , where 
+                    <code>Entity</code>
+                    &nbsp;defines function pointers (
+                    <code>.process_physics</code>
+                    ) for specialized behavior, so a creature could call for example 
+                    <code>bat.process_physics</code>
+                    ; it's basically a method.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Problems:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Intrinsic slower performance.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Looping over an array of entities while only affecting one &quot;specialization&quot; (looping over bats) would be bad, as:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    An 
+                                    <code>Entity</code>
+                                    &nbsp;doesn't store a &quot;specialization&quot; enum, so there's no way to know which entity belongs to that specialization.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Even if 
+                                    <code>Entity</code>
+                                    &nbsp;would store an enum (or similar) to indicate the &quot;species variant&quot;, this is still not cache friendly at all, as the whole array with lots of entities that don't belong would have to be loaded into cache. Instead of getting the bats right away, it would be necessary to loop over all entities and branch out using a switch statement for the &quot;species variant&quot;; this sounds terrible for cache.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
 	</li>
 </ul>
 <h3
@@ -1742,9 +2138,95 @@ window.MathJax = {
 	</li>
 </ul>
 <h2
+	id="soa-struct-of-arrays-ecs-entity-component-system" >
+    SOA (Struct Of Arrays) / ECS (Entity Component System)
+</h2>
+<ul>
+	<li>
+		<p>
+            It tends to reduce cache misses by using SOA. This comes from the fact of not having to loop over a struct that contains a lot of unused data for said operation; SOA helps having the data organized in a way that reduces the whole chunk size that is send to the CPU; that is what reduces cache misses, as it increases the probability of the data fitting into less cache lines.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#soa-data-types" 
+				class="external-link" 
+				target="_blank" >
+                Odin - SOA Data Types
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h2
 	id="simd" >
     SIMD
 </h2>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Nsf2_Au6KxU" 
+				class="external-link" 
+				target="_blank" >
+                Sergiy Migdalskiy - Performance Optimization, SIMD and Cache
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;A rehash of Sergiy Migdalskiy GDC 2015 talk: Performance Optimization for Physics&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    He's from Valve; worked on Left4dead.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Excellent video!! Great explanation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's talked about minimizing branches, a technique for a different approach to use pointers as a way to store them in disk, SOA, SIMD.
+				</p>
+			</li>
+			<li>
+				<p>
+                    {36:10} SIMD.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Data should be independent from each other, just as any parallel operation would want.
+		</p>
+	</li>
+	<li>
+		<p>
+            <a href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero.html#ep-115-simd-basics">
+            Handmade Hero#Ep 115 - SIMD Basics
+            </a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="Odin.html#SIMD" 
+				class="internal-link" 
+				target="_self" >
+                Odin.md#SIMD
+			</a>
+            .
+		</p>
+	</li>
+</ul>
 <h3
 	id="cpu-arm" >
     CPU ARM
@@ -1753,15 +2235,17 @@ window.MathJax = {
 	id="neon" >
     NEON
 </h5>
-<p>
-	<a
-		href="https://developer.arm.com/documentation/dht0002/latest/Introducing-NEON/What-is-SIMD-/ARM-SIMD-instructions" 
-		class="external-link" 
-		target="_blank" >
-        NEON
-	</a>
-</p>
 <ul>
+	<li>
+		<p>
+			<a
+				href="https://developer.arm.com/documentation/dht0002/latest/Introducing-NEON/What-is-SIMD-/ARM-SIMD-instructions" 
+				class="external-link" 
+				target="_blank" >
+                NEON
+			</a>
+		</p>
+	</li>
 	<li>
 		<p>
 			<strong>
@@ -2218,7 +2702,7 @@ window.MathJax = {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-12-13 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-13 🚀
 			</footer>
 		</div>
 		<aside
@@ -2229,14 +2713,14 @@ window.MathJax = {
                     On this page
 				</strong>
 				<ul>
-					<ul>
-						<li>
-							<a
-								href="#where-i-stopped" >
-                                Where I Stopped
-							</a>
-						</li>
-					</ul>
+					<li>
+						<a
+							href="#concepts" >
+                            Concepts
+						</a>
+						<ul>
+						</ul>
+					</li>
 					<li>
 						<a
 							href="#physical-structure" >
@@ -2259,10 +2743,24 @@ window.MathJax = {
 						<ul>
 							<li>
 								<a
+									href="#problems-with-oop" >
+                                    Problems with OOP
+								</a>
+							</li>
+							<li>
+								<a
 									href="#performance-fixed-array-small-array-vs-dynamic-array" >
                                     Performance: Fixed Array (Small Array) vs Dynamic Array
 								</a>
 							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#soa-struct-of-arrays-ecs-entity-component-system" >
+                            SOA (Struct Of Arrays) / ECS (Entity Component System)
+						</a>
+						<ul>
 						</ul>
 					</li>
 					<li>
@@ -2301,7 +2799,7 @@ window.MathJax = {
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.25607.js" >
+			src="/static/studies.15101.js" >
 		</script>
 	</body>
 </html>

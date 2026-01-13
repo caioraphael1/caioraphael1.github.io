@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.25607.css" >
+			href="/static/studies.15101.css" >
 	</head>
 	<body>
 		<aside
@@ -251,6 +251,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Low-Level Systems/Parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Low-Level Systems/JAI.html" >
                                 JAI
 							</a>
@@ -260,14 +269,14 @@ window.MathJax = {
 				<details
 >
 					<summary>
-                        Design
+                        Design Patterns
 					</summary>
 					<ul>
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - DOD e COP/Design - DOD e COP.html" >
-                                Design - DOD e COP
+								href="/studies/Design Patterns/Data Oriented Design - COP/Data Oriented Design - COP.html" >
+                                Data Oriented Design - COP
 							</a>
 						</li>
 					</ul>
@@ -275,8 +284,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - ECS/Design - ECS.html" >
-                                Design - ECS
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design.html" >
+                                Data Oriented Design
 							</a>
 						</li>
 					</ul>
@@ -284,8 +293,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Design Patterns/Design - Design Patterns.html" >
-                                Design - Design Patterns
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS.html" >
+                                Data Oriented Design - ECS
 							</a>
 						</li>
 					</ul>
@@ -293,8 +302,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Architecture Patterns.html" >
-                                Design - Architecture Patterns
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns.html" >
+                                Other Design Patterns
 							</a>
 						</li>
 					</ul>
@@ -302,8 +311,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Concepts and Terminology.html" >
-                                Design - Concepts and Terminology
+								href="/studies/Design Patterns/Concepts and Terminology.html" >
+                                Concepts and Terminology
 							</a>
 						</li>
 					</ul>
@@ -311,8 +320,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Rules of thumb - Laws - Guidelines and Principles/Design - Rules of thumb - Laws - Guidelines and Principles.html" >
-                                Design - Rules of thumb - Laws - Guidelines and Principles
+								href="/studies/Design Patterns/Rules of thumb - Laws - Guidelines and Principles/Rules of thumb - Laws - Guidelines and Principles.html" >
+                                Rules of thumb - Laws - Guidelines and Principles
 							</a>
 						</li>
 					</ul>
@@ -320,8 +329,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Paradigms.html" >
-                                Design - Paradigms
+								href="/studies/Design Patterns/Paradigms.html" >
+                                Paradigms
 							</a>
 						</li>
 					</ul>
@@ -329,8 +338,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design/Design - Production Methodologies/Design - Production Methodologies.html" >
-                                Design - Production Methodologies
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies.html" >
+                                Production Methodologies
 							</a>
 						</li>
 					</ul>
@@ -1251,8 +1260,8 @@ window.MathJax = {
                                 🕒 Created: 2025-08-01
 							</time>
 							<time
-								datetime="2025-12-13" >
-                                | Updated: 2025-12-13
+								datetime="2025-12-20" >
+                                | Updated: 2025-12-20
 							</time>
 						</p>
 					</header>
@@ -8846,7 +8855,7 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 		<ul>
 			<li>
 				<p>
-                    To move vertex and index buffers to bindless, generally you do it by merging the meshes into really big buffers. Instead of having 1 buffer per vertex buffer and index buffer pair, you have 1 buffer for all vertex buffers in a scene. When rendering, then you use BaseVertex offsets in the drawcalls. In some engines, they remove vertex attributes from the pipelines entirely, and instead grab the vertex data from buffers in the vertex shader. Doing that makes it much easier to keep 1 big vertex buffer for all drawcalls in the engine even if they use different vertex attribute formats. It also allows some advanced unpacking/compression techniques, and it’s the main use case for Mesh Shaders.
+                    To move vertex and index buffers to bindless, generally you do it by merging the meshes into really big buffers. Instead of having 1 buffer per vertex buffer and index buffer pair, you have 1 buffer for all vertex buffers in a scene. When rendering, then you use BaseVertex offsets in the draw calls. In some engines, they remove vertex attributes from the pipelines entirely, and instead grab the vertex data from buffers in the vertex shader. Doing that makes it much easier to keep 1 big vertex buffer for all draw calls in the engine even if they use different vertex attribute formats. It also allows some advanced unpacking/compression techniques, and it’s the main use case for Mesh Shaders.
 				</p>
 			</li>
 			<li>
@@ -33572,6 +33581,23 @@ vec4 data = subpassLoad(inputAttachment);
 	</li>
 	<li>
 		<p>
+            Globals:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Camera view/proj, lights, ambient, etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I could just bind this once as well.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
             Material Data:
 		</p>
 		<ul>
@@ -33582,7 +33608,7 @@ vec4 data = subpassLoad(inputAttachment);
 			</li>
 			<li>
 				<p>
-                    Could be sent via push constants, but if I choose to go for indirect rendering (I should), then I cannot use push constants. I'd use the instance index (or similar) to index into a 
+                    I'd use the instance index (or similar) to index into a 
                     <code>[]Material_Data</code>
                     .
 				</p>
@@ -33605,142 +33631,6 @@ vec4 data = subpassLoad(inputAttachment);
 	</li>
 	<li>
 		<p>
-            Globals:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Camera view/proj, lights, ambient, etc.
-				</p>
-			</li>
-			<li>
-				<p>
-                    I could just bind this once as well.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Vertex:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Indirect vs Full bindless:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            I'm not sure. I'll use Indirect Drawing for now. ChatGPU deep search didn't give me much.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-		<ol>
-			<li>
-				<p>
-                    Indirect Drawing:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            For indirect drawing, it makes sense to just 
-                            <code>vkCmdBindIndexBuffer</code>
-                            , as I NEED the vertex shader to be called by the number of times I specified
-						</p>
-					</li>
-					<li>
-						<p>
-                            Plan: go for bindless first, drawing direct. instead of using the 
-                            <code>instanceID</code>
-                            &nbsp;or similar, I just send the draw_data index via push constants. this way, the shader will be completely finalized, but then I batch the draws via draw indirect and use the 
-                            <code>instanceID</code>
-                            &nbsp;instead of the push constants ID
-						</p>
-					</li>
-					<li>
-						<p>
-                            Indirect Drawing will be the last thing
-						</p>
-					</li>
-					<li>
-						<p>
-                            What not invert and do indirect first? I cannot do that, as the 
-                            <code>instanceID</code>
-                            &nbsp;is useless without a bindless design! I NEED to have use for the ID, as I cannot bind desc sets or push constants for each individual draw! bindless first is a MUST.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Full bindless:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Using a large index buffer: We need to bind index data. If just like the vertex data, index data is allocated in one large index buffer, we only need to bind it once using 
-                            <code>vkCmdBindIndexBuffer</code>
-                            .
-						</p>
-					</li>
-					<li>
-						<p>
-                            While Vulkan provides a first-class way to specify vertex data by calling 
-                            <code>vkCmdBindVertexBuffers</code>
-                            , having to bind vertex buffers per-draw would not work for a fully bindless design.
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    Additionally, some hardware doesn’t support vertex buffers as a first-class entity, and the driver has to emulate vertex buffer binding, which causes some CPU-side slowdowns when using 
-                                    <code>vkCmdBindVertexBuffers</code>
-                                    .
-								</p>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>
-                            In a fully bindless design, we need to assume that all vertex buffers are suballocated in one large buffer and either use per-draw vertex offsets (
-                            <code>vertexOffset</code>
-                            &nbsp;argument to 
-                            <code>vkCmdDrawIndexed</code>
-                            ) to have hardware fetch data from it, or pass an offset in this buffer to the shader with each draw call and fetch data from the buffer in the shader. Both approaches can work well, and might be more or less efficient depending on the GPU.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Mesh Shaders.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Mesh Shaders is probably what is most true to the bindless strategy, but I won't go that way yet (too soon, too new).
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    <s>Compute</s>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Maybe I could use a compute to do this for me, but then I'd lose the rasterizer.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ol>
-	</li>
-	<li>
-		<p>
             Draw Data:
 		</p>
 		<ul>
@@ -33757,7 +33647,7 @@ vec4 data = subpassLoad(inputAttachment);
 &nbsp;&nbsp;&nbsp;&nbsp;uint vertexOffset;
 &nbsp;&nbsp;&nbsp;&nbsp;uint unused0; // vec4 padding
 
-&nbsp;&nbsp;&nbsp;&nbsp;// ... extra gameplay data goes here
+&nbsp;&nbsp;&nbsp;&nbsp;// ... extra gameplay data
 };
 </code></pre>
 		<ul>
@@ -33779,28 +33669,6 @@ vec3 positionWorld = mat4x3(td.transform[0], td.transform[1], td.transform[2]) *
 MaterialData md = materialData[dd.materialIndex];
 vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSampler), uv * vec2(md.tilingX, md.tilingY));
 </code></pre>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Slots:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    tex buffer and material data buffer will be in the same set 0, or should they be 0/1?
-				</p>
-			</li>
-			<li>
-				<p>
-                    Probably every bind is on desc set 0
-				</p>
-			</li>
-			<li>
-				<p>
-                    The slots are based on frequency, but every single binding I'm talking about might just be bound once globally without problems
-				</p>
 			</li>
 		</ul>
 	</li>
@@ -33863,6 +33731,131 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 				</ul>
 			</li>
 		</ul>
+	</li>
+	<li>
+		<p>
+            Slots:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    tex buffer and material data buffer will be in the same set 0, or should they be 0/1?
+				</p>
+			</li>
+			<li>
+				<p>
+                    Probably every bind is on desc set 0
+				</p>
+			</li>
+			<li>
+				<p>
+                    The slots are based on frequency, but every single binding I'm talking about might just be bound once globally without problems
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Vertex:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Indirect vs Full bindless:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I'll use Indirect Drawing for now. ChatGPU deep search didn't give me much.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Go for bindless first with drawing direct. Instead of using the 
+                    <code>instanceID</code>
+                    &nbsp;or similar, I just send the draw_data index via push constants. this way, the shader will be completely finalized, but then I batch the draws via draw indirect and use the 
+                    <code>instanceID</code>
+                    &nbsp;instead of the push constants ID
+				</p>
+				<ul>
+					<li>
+						<p>
+                            What not invert and do indirect first? I cannot do that, as the 
+                            <code>instanceID</code>
+                            &nbsp;is useless without a bindless design! I NEED to have use for the ID, as I cannot bind desc sets or push constants for each individual draw! bindless first is a MUST.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Having to bind vertex buffers per-draw would not work for a fully bindless design.
+				</p>
+			</li>
+		</ul>
+		<ol>
+			<li>
+				<p>
+                    Indirect Drawing:
+				</p>
+			</li>
+			<li>
+				<p>
+                    Full bindless:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Using a large index buffer: We need to bind index data. If just like the vertex data, index data is allocated in one large index buffer, we only need to bind it once using 
+                            <code>vkCmdBindIndexBuffer</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Some hardware doesn’t support vertex buffers as a first-class entity, and the driver has to emulate vertex buffer binding, which causes some CPU-side slowdowns when using 
+                            <code>vkCmdBindVertexBuffers</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            In a fully bindless design, we need to assume that all vertex buffers are suballocated in one large buffer and either use per-draw vertex offsets (
+                            <code>vertexOffset</code>
+                            &nbsp;argument to 
+                            <code>vkCmdDrawIndexed</code>
+                            ) to have hardware fetch data from it, or pass an offset in this buffer to the shader with each draw call and fetch data from the buffer in the shader. Both approaches can work well, and might be more or less efficient depending on the GPU.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Mesh Shaders.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Mesh Shaders is probably what is most true to the bindless strategy, but I won't go that way yet (too soon, too new).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>Compute</s>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Maybe I could use a compute to do this for me, but then I'd lose the rasterizer.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ol>
 	</li>
 </ul>
 <h5
@@ -42162,7 +42155,7 @@ glslangValidator -V fragment_shader.frag -o frag.spv
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2025-12-13 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-13 🚀
 			</footer>
 		</div>
 		<aside
@@ -42827,7 +42820,7 @@ glslangValidator -V fragment_shader.frag -o frag.spv
 			</nav>
 		</aside>
 		<script
-			src="/static/studies.25607.js" >
+			src="/static/studies.15101.js" >
 		</script>
 	</body>
 </html>

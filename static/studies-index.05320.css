@@ -510,21 +510,41 @@ pre, code {
 /* CENTRAL FOOTER */
     #central-footer {
         display: flex;
-        margin-top: auto;
         justify-content: center;
-        padding: 25px 12px 25px 60px;
+
+        margin-top: auto;
+        padding: 25px 12px 25px 12px;
+
 
         gap: var(--padding_d2);
 
         color: var(--footer-text);
     }
 
+    @media (max-width: 768px) {
+        #central-footer {
+            flex-direction: column;
+            align-content: center;
+            text-align: center;
+        }
+    }
+
+
     #central-footer > a {
+        width: max-content;
+        padding: 0 var(--padding_d2);
+
         background: var(--highlight-bg);
         color: var(--highlight-text);
 
         border-radius: var(--border-radius);
         cursor: pointer;
-        padding: 0 var(--padding_d2);
+    }
+
+    @media (max-width: 768px) {
+        #central-footer > a {
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 

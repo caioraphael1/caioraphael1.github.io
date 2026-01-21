@@ -1,0 +1,6004 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Vulkan
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/starting.html" >
+                                Starting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/tutorials.html" >
+                                Tutorials
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/samples.html" >
+                                Samples
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/core.html" >
+                                Core
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/render-loop.html" >
+                                Render Loop
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/synchronization-and-cache-control.html" >
+                                Synchronization and Cache Control
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/command-buffers.html" >
+                                Command Buffers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/pipelines.html" >
+                                Pipelines
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Graphics Programming/Vulkan/graphics-pipeline.html" >
+                                Graphics Pipeline
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#shader-compilation" >
+                                        Shader Compilation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#input-assembly" >
+                                        Input Assembly
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#vertex-shader" >
+                                        Vertex Shader
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#tessellation-shader" >
+                                        Tessellation Shader
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#geometry-shader" >
+                                        Geometry Shader
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#rasterization" >
+                                        Rasterization
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#fragment-operations" >
+                                        Fragment Operations
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#viewport-and-scissors" >
+                                                Viewport and Scissors
+											</a>
+										</li>
+										<li>
+											<a
+												href="#multi-sampling" >
+                                                Multi-Sampling
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#fragment-shader" >
+                                        Fragment Shader
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#color-blending" >
+                                        Color Blending
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#creation" >
+                                        Creation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#managing-pipelines-and-reducing-overhead" >
+                                        Managing Pipelines and Reducing overhead
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#optimizations" >
+                                        Optimizations
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/compute-pipeline.html" >
+                                Compute Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/resources.html" >
+                                Resources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/depth.html" >
+                                Depth
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/mapping-data-to-shaders.html" >
+                                Mapping Data to Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/memory-allocation.html" >
+                                Memory Allocation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/hdr-support.html" >
+                                HDR Support
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/profiling.html" >
+                                Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/mobile.html" >
+                                Mobile
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/vr.html" >
+                                VR
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/video-decoding.html" >
+                                Video Decoding
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/spir-v.html" >
+                                SPIR-V
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Render Engineering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/apis.html" >
+                                APIs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/choosing-the-space-to-compute-lighting.html" >
+                                Choosing the Space to compute Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/bsdf-bidirectional-scattering-distribution-function.html" >
+                                BSDF (Bidirectional Scattering Distribution Function)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/material.html" >
+                                Material
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/direct-lighting.html" >
+                                Direct Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/shadows.html" >
+                                Shadows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/skybox-skydome.html" >
+                                Skybox / Skydome
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/transparency.html" >
+                                Transparency
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/global-illumination-indirect-lighting.html" >
+                                Global Illumination / Indirect Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/post-processing.html" >
+                                Post-Processing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/anti-aliasing.html" >
+                                Anti-Aliasing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/light-path-rendering-method.html" >
+                                Light Path / Rendering Method
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/optimization-techniques.html" >
+                                Optimization Techniques
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Graphics and Shaders
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/math-linear-algebra.html" >
+                                Math, Linear Algebra
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/spaces-transformations-and-graphics-pipeline.html" >
+                                Spaces, Transformations and Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/common-techniques.html" >
+                                Common Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/shaders.html" >
+                                Shaders
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GLSL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/storage-qualifiers.html" >
+                                Storage Qualifiers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/layout-qualifiers.html" >
+                                Layout Qualifiers
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/execution-building-blocks.html" >
+                                Execution Building Blocks
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/specialized-units-and-instructions.html" >
+                                Specialized units &amp; instructions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/gpu-va-virtual-address.html" >
+                                GPU VA (Virtual Address)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/tiled-gpus.html" >
+                                Tiled-GPUs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Slang
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Font Rendering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/techniques.html" >
+                                Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/text-processing-pipeline.html" >
+                                Text Processing Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/formats.html" >
+                                Formats
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/libs.html" >
+                                Libs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/fonts.html" >
+                                Fonts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        OpenGL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/OpenGL/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Graphics Pipeline
+						</h1>
+						<p>
+							<time
+								datetime="2025-08-01" >
+                                🕒 Created: 2025-08-01
+							</time>
+							<time
+								datetime="2026-01-21" >
+                                | Updated: 2026-01-21
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            The graphics pipeline is required for all common drawing operations.
+		</p>
+	</li>
+	<li>
+		<p>
+            Holds the state of the GPU needed to draw. For example: shaders, rasterization options, depth settings.
+		</p>
+	</li>
+	<li>
+		<p>
+            It describes the configurable state of the graphics card, like the viewport size and depth buffer operation and the programmable state using VkShaderModule objects.
+		</p>
+	</li>
+</ul>
+<h5
+	id="stages" >
+    Stages
+</h5>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20250730155932.png" width="600" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250730083345.png" width="218" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disabling stages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The tessellation and geometry stages can be disabled if you are just drawing simple geometry.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If you are only interested in depth values, then you can disable the fragment shader stage, which is useful for 
+					<a
+						href="https://en.wikipedia.org/wiki/Shadow_mapping" 
+						class="external-link" 
+						target="_blank" >
+                        shadow map
+					</a>
+                    &nbsp;generation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Fixed-function stages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Allow you to tweak their operations using parameters, but the way they work is predefined.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Dynamic State
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            While 
+							<em>
+                                most
+							</em>
+                            &nbsp;of the pipeline state needs to be baked into the pipeline state, a limited amount of the state can actually be changed without recreating the pipeline at draw time.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Examples are the size of the viewport, line width and blend constants.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If you want to use dynamic state and keep these properties out, then you’ll have to fill in a 
+                            <code>VkPipelineDynamicStateCreateInfo</code>
+                            &nbsp;struct.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This will cause the configuration of these values to be 
+							<strong>
+                                ignored
+							</strong>
+                            , and you will be able (and required) to specify the data at drawing time.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This results in a more flexible setup and is widespread for things like viewport and scissor state, which would result in a more complex setup when being baked into the pipeline state.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Programmable stages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Means that you can upload your own code to the graphics card to apply exactly the operations you want.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This allows you to use fragment shaders, for example, to implement anything from texturing and lighting to ray tracers. These programs run on many GPU cores simultaneously to process many objects, like vertices and fragments in parallel.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Immutability
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is almost completely immutable, so you must recreate the pipeline from scratch if you want to change shaders, bind different framebuffers or change the blend function.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The disadvantage is that you’ll have to create a number of pipelines (many VkPipeline objects) that represent all the different combinations of states you want to use in your rendering operations. However, because all the operations you’ll be doing in the pipeline are known in advance, the driver can optimize for it much better.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Runtime performance is more predictable because large state changes like switching to a different graphics pipeline are made very explicit.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Only some basic configuration, like viewport size and clear color, can be changed dynamically.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="shader-compilation" >
+    Shader Compilation
+</h3>
+<h5
+	id="shader-module" >
+    Shader Module
+</h5>
+<ul>
+	<li>
+		<p>
+            A 
+            <code>VkShaderModule</code>
+            &nbsp;is a processed shader file.
+		</p>
+	</li>
+	<li>
+		<p>
+            We create it from a pre-compiled SPIR-V file.
+		</p>
+	</li>
+	<li>
+		<p>
+            We can call 
+            <code>vkDestroyShaderModule</code>
+            &nbsp;after they are used for the graphics pipeline creation.
+		</p>
+	</li>
+</ul>
+<h3
+	id="input-assembly" >
+    Input Assembly
+</h3>
+<ul>
+	<li>
+		<p>
+            Fixed-function stage.
+		</p>
+	</li>
+	<li>
+		<p>
+            Collects the raw vertex data from the buffers you specify and may also use an index buffer to repeat certain elements without having to duplicate the vertex data itself.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>VkPipelineVertexInputStateCreateInfo</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Describes the format of the vertex data that will be passed to the vertex shader.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>pVertexBindingDescriptions</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Spacing between data and whether the data is per-vertex or per-instance (see 
+							<a
+								href="https://en.wikipedia.org/wiki/Geometry_instancing" 
+								class="external-link" 
+								target="_blank" >
+                                instancing
+							</a>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pVertexAttributeDescriptions</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Type of the attributes passed to the vertex shader, which binding to load them from and at which offset.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineInputAssemblyStateCreateInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkPipelineInputAssemblyStateCreateInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Describes two things: what kind of geometry will be drawn from the vertices and if primitive restart should be enabled.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>topology</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>PRIMITIVE_TOPOLOGY_POINT_LIST</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    points from vertices
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>PRIMITIVE_TOPOLOGY_LINE_LIST</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    line from every two vertices without reuse
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>PRIMITIVE_TOPOLOGY_LINE_STRIP</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    the end vertex of every line is used as start vertex for the next line
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>PRIMITIVE_TOPOLOGY_TRIANGLE_LIST</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    triangle from every three vertices without reuse
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    the second and third vertex of every triangle is used as first two vertices of the next triangle
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>primitiveRestartEnable</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Normally, the vertices are loaded from the vertex buffer by index in sequential order, but with an 
+							<em>
+                                element buffer
+							</em>
+                            &nbsp;you can specify the indices to use yourself.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This allows you to perform optimizations like reusing vertices.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            If you set this to 
+                            <code>TRUE</code>
+                            , then it’s possible to break up lines and triangles in the 
+                            <code>_STRIP</code>
+                            &nbsp;topology modes by using a special index of 
+                            <code>0xFFFF</code>
+                            &nbsp;or 
+                            <code>0xFFFFFFFF</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="primitive-topology" >
+    Primitive Topology
+</h5>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20250908151239.png" width="450" >
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="vertex-shader" >
+    Vertex Shader
+</h3>
+<ul>
+	<li>
+		<p>
+            Programmable stage.
+		</p>
+	</li>
+	<li>
+		<p>
+            Is run for every vertex and generally applies transformations to turn vertex positions from model space to screen space. It also passes per-vertex data down the pipeline.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>VkShaderModule</code>
+            &nbsp;objects are created from shader byte code.
+		</p>
+	</li>
+	<li>
+		<p>
+            Accesses and computes one vertex at a time.
+		</p>
+	</li>
+</ul>
+<h3
+	id="tessellation-shader" >
+    Tessellation Shader
+</h3>
+<ul>
+	<li>
+		<p>
+            Is run for every vertex and generally applies transformations to turn vertex positions from model space to screen space. It also passes per-vertex data down the pipeline.
+		</p>
+	</li>
+	<li>
+		<p>
+            You can do tessellation in the Geometry Shader, but the Tessellation Shader is more appropriate and efficient.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250912081803.png" width="500" >
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sending this amount of vertices to the Vertex Shader would be quite more expensive than generating them in the Tessellation Shader.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250912082627.png" width="450" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Tessellation Evaluation Shader.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Kinda like a Vertex Shader, after the Tessellation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.youtube.com/watch?v=OqRMNrvu6TE" 
+				class="external-link" 
+				target="_blank" >
+                Tessellation Shader
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I was too lazy to watch it all.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The inputs are complicated, etc.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Tessellation output Execution Mode
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The tessellation evaluation stage will set either 
+                    <code>Triangles</code>
+                    , 
+                    <code>Quads</code>
+                    , or 
+                    <code>Isolines</code>
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-glsl" data-lang="glsl">// Only 1 of the 3 is allowed
+layout(quads) in;
+layout(isolines) in;
+layout(triangles) in;
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="geometry-shader" >
+    Geometry Shader
+</h3>
+<ul>
+	<li>
+		<p>
+            Programmable stage.
+		</p>
+	</li>
+	<li>
+		<p>
+            It operates on 
+			<strong>
+                primitives
+			</strong>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Is run on every primitive (triangle, line, point) and can discard it or output more primitives than came in. This is similar to the tessellation shader but much more flexible.
+		</p>
+	</li>
+	<li>
+		<p>
+            However, it is used little in today’s applications because the 
+			<em>
+                performance is not that good
+			</em>
+            &nbsp;on most graphics cards except for Intel’s integrated GPUs.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Also, almost all geometry shader use cases can be replaced with a more modern Mesh shader pipeline, which like ray tracing is a wholly new pipeline solution, so it exists outside the standard graphics pipeline setup.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250912001248.png" width="450" >
+            .
+		</p>
+	</li>
+	<li>
+        <img src="assets/image_20250912001941.png" width="400" >
+
+	</li>
+	<li>
+		<p>
+            A Vertex Shader is more parallelized than a Geometry Shader.
+		</p>
+	</li>
+	<li>
+		<p>
+            A Vertex Shader computes one vertex at a time, while a geometry shader gets all the vertices 
+			<strong>
+                that compose a primitive
+			</strong>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It does 
+					<strong>
+                        not
+					</strong>
+                    &nbsp;have access to the whole mesh, just the vertices that compose the current primitive.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OpenGL Primitives
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    May be useful.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250912002205.png" width="250" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250912002244.png" width="250" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Think of the Primitive Inputs as just the amount of vertices you are sending at a time.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250912075205.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The reason for this is that you can get any primitive input and have any primitive output.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250912075909.png" width="400" >
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Use 
+                    <code>EndPrimitive()</code>
+                    &nbsp;so the line strips are separated.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250912080208.png" width="400" >
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The Vertex Shader can output data to the Geometry Shader, in the form of an array.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The Geometry Shader can output data to the Fragment Shader, in a form of an interpolated value, using barycentric coordinates.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Instancing
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250912080636.png" width="450" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    You can have many instances of a Geometry Shader, where the input is the same but the output changes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250912080739.png" width="450" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250912080803.png" width="450" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250912081145.png" width="450" >
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The smoke is a quad facing the camera (billboard).
+				</p>
+			</li>
+			<li>
+				<p>
+                    The points are converted to quads.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250912081304.png" width="450" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250912081335.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Geometry output Execution Mode
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A geometry stage will set either 
+                    <code>OutputPoints</code>
+                    , 
+                    <code>OutputLineStrip</code>
+                    , or 
+                    <code>OutputTriangleStrip</code>
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-glsl" data-lang="glsl">// Only 1 of the 3 is allowed
+layout(points) out;
+layout(line_strip) out;
+layout(triangle_strip) out;
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="rasterization" >
+    Rasterization
+</h3>
+<ul>
+	<li>
+		<p>
+            Fixed-function stage.
+		</p>
+	</li>
+	<li>
+		<p>
+            Breaks the primitives into 
+			<em>
+                fragments
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            These are the pixel elements that they fill on the framebuffer.
+		</p>
+	</li>
+	<li>
+		<p>
+            Any fragments that fall outside the screen are discarded, and the attributes outputted by the vertex shader are interpolated across the fragments.
+		</p>
+	</li>
+	<li>
+		<p>
+            Fragments that are behind other primitive fragments can also be discarded here because of depth testing.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineRasterizationStateCreateInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkPipelineRasterizationStateCreateInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>polygonMode</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>lineWidth</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the width of rasterized line segments.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The maximum line width that is supported depends on the hardware.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Any line thicker than 
+                            <code>1.0f</code>
+                            &nbsp;requires you to enable the 
+                            <code>wideLines</code>
+                            &nbsp;GPU feature.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If set to 
+                            <code>0.0f</code>
+                            , you get: 
+                            <code>lineWidth</code>
+                            &nbsp;is 0.0, but the line width state is static (
+                            <code>pCreateInfos[0].pDynamicState-&gt;pDynamicStates</code>
+                            &nbsp;does not contain 
+                            <code>DYNAMIC_STATE_LINE_WIDTH</code>
+                            ) and 
+                            <code>wideLines</code>
+                            &nbsp;feature was not enabled. The Vulkan spec states: If the pipeline requires pre-rasterization shader state, and the 
+                            <code>wideLines</code>
+                            &nbsp;feature is not enabled, and no element of the 
+                            <code>pDynamicStates</code>
+                            &nbsp;member of 
+                            <code>pDynamicState</code>
+                            &nbsp;is 
+                            <code>DYNAMIC_STATE_LINE_WIDTH</code>
+                            , the lineWidth member of pRasterizationState 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;be 1.0.
+						</p>
+					</li>
+					<li>
+						<p>
+                            So, set it to 
+                            <code>1.0f</code>
+                            &nbsp;by default.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>cullMode</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>NONE</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that no triangles are discarded
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>FRONT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that front-facing triangles are discarded
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>BACK</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that back-facing triangles are discarded
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>FRONT_AND_BACK</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that all triangles are discarded.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Following culling, fragments are produced for any triangles which have not been discarded.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>frontFace</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies the vertex order for the faces to be considered front-facing.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>COUNTER_CLOCKWISE</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that a triangle with positive area is considered front-facing.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>CLOCKWISE</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that a triangle with negative area is considered front-facing.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Any triangle which is not front-facing is back-facing, including zero-area triangles.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>rasterizerDiscardEnable</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            When enabled, primitives are discarded after they are processed by the last active shader stage in the pipeline before rasterization.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Controls whether primitives are discarded immediately before the rasterization stage. This is important because when this is set to 
+                            <code>TRUE</code>
+                            &nbsp;the rasterization hardware is not executed.
+						</p>
+					</li>
+					<li>
+						<p>
+                            There are many Validation Usage errors that will not occur if this is set to 
+                            <code>TRUE</code>
+                            &nbsp;because some topology hardware is unused and can be ignored.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Enabling this state is meant for very specific use cases. Prior to compute shaders, this was a common technique for writting geometry shader output to a buffer.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It can be used to debug/profile non-rasterization bottlenecks.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>flags</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Reserved for future use.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>depthClampEnable</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            See the Depth section for details.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>depthBiasEnable</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            See the Depth section for details.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>depthBiasConstantFactor</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            See the Depth section for details.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>depthBiasSlopeFactor</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            See the Depth section for details.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>depthBiasClamp</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            See the Depth section for details.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="polygon-mode" >
+    Polygon Mode
+</h5>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20250908152312.png" width="350" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Determines how fragments are generated for geometry.
+		</p>
+	</li>
+	<li>
+		<p>
+            These modes affect only the 
+			<em>
+                final
+			</em>
+            &nbsp;rasterization of polygons. The polygon’s vertices are shaded and the polygon is clipped and possibly culled before these modes are applied.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>FILL</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Fill the area of the polygon with fragments.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>LINE</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Polygon edges are drawn as lines
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>POINT</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Polygon vertices are drawn as points
+				</p>
+			</li>
+			<li>
+				<p>
+                    If 
+                    <code>VkPhysicalDeviceMaintenance5Properties</code>
+                    ::
+                    <code>polygonModePointSize</code>
+                    &nbsp;is 
+                    <code>TRUE</code>
+                    , the point size of the final rasterization of polygons is taken from 
+                    <code>PointSize</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Otherwise, the point size of the final rasterization of polygons is 1.0.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>FILL_RECTANGLE_NV</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specifies that polygons are rendered using polygon rasterization rules, modified to consider a sample within the primitive if the sample location is inside the axis-aligned bounding box of the triangle after projection.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Note that the barycentric weights used in attribute interpolation 
+					<strong>
+                        can
+					</strong>
+                    &nbsp;extend outside the range 
+                    <code>[0,1]</code>
+                    &nbsp;when these primitives are shaded.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Special treatment is given to a sample position on the boundary edge of the bounding box. In such a case, if two rectangles lie on either side of a common edge (with identical endpoints) on which a sample position lies, then exactly one of the triangles 
+					<strong>
+                        must
+					</strong>
+                    &nbsp;produce a fragment that covers that sample during rasterization.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Polygons rendered in 
+                    <code>FILL_RECTANGLE_NV</code>
+                    &nbsp;mode 
+					<strong>
+                        may
+					</strong>
+                    &nbsp;be clipped by the frustum or by user clip planes. If clipping is applied, the triangle is culled rather than clipped.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Area calculation and facingness are determined for 
+                    <code>FILL_RECTANGLE_NV</code>
+                    &nbsp;mode using the triangle’s vertices.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            If you have a vertex shader that has 
+            <code>PRIMITIVE_TOPOLOGY_TRIANGLE_LIST</code>
+            &nbsp;input and then during rasterization uses 
+            <code>POLYGON_MODE_LINE</code>
+            , the effective topology is the Line 
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/drawing.html#drawing-primitive-topology-class" 
+				class="external-link" 
+				target="_blank" >
+                Topology Class
+			</a>
+            &nbsp;at that time. This means something like 
+            <code>lineWidth</code>
+            &nbsp;would be applied when filling in the polygon with 
+            <code>POLYGON_MODE_LINE</code>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="fragment-operations" >
+    Fragment Operations
+</h3>
+<h5
+	id="order" >
+    Order
+</h5>
+<ol>
+	<li>
+		<p>
+            Discard rectangles test
+		</p>
+	</li>
+	<li>
+		<p>
+            Scissor test
+		</p>
+	</li>
+	<li>
+		<p>
+            Exclusive scissor test
+		</p>
+	</li>
+	<li>
+		<p>
+            Sample mask test
+		</p>
+	</li>
+	<li>
+		<p>
+            Certain Fragment shading operations:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sample Mask Accesses
+				</p>
+			</li>
+			<li>
+				<p>
+                    Tile Image Reads
+				</p>
+			</li>
+			<li>
+				<p>
+                    Depth Replacement
+				</p>
+			</li>
+			<li>
+				<p>
+                    Stencil Reference Replacement
+				</p>
+			</li>
+			<li>
+				<p>
+                    Interlocked Operations
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Multisample coverage
+		</p>
+	</li>
+	<li>
+		<p>
+            Depth bounds test
+		</p>
+	</li>
+	<li>
+		<p>
+            Stencil test
+		</p>
+	</li>
+	<li>
+		<p>
+            Depth test
+		</p>
+	</li>
+	<li>
+		<p>
+            Representative fragment test
+		</p>
+	</li>
+	<li>
+		<p>
+            Sample counting
+		</p>
+	</li>
+	<li>
+		<p>
+            Coverage to color
+		</p>
+	</li>
+	<li>
+		<p>
+            Coverage reduction
+		</p>
+	</li>
+	<li>
+		<p>
+            Coverage modulation
+		</p>
+	</li>
+</ol>
+<h5
+	id="early-per-fragment-tests" >
+    Early Per-Fragment Tests
+</h5>
+<ul>
+	<li>
+		<p>
+            OpenGL 4.6:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Once fragments are produced by rasterization, a number of per-fragment operations are performed prior to fragment shader execution. If a fragment is discarded during any of these operations, it will not be processed by any subsequent Stage, including fragment shader execution.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Three fragment operations are performed, and a further three are optionally performed on each fragment, in the following order:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            the pixel ownership test (see section 14.9.1);
+						</p>
+					</li>
+					<li>
+						<p>
+                            the scissor test (see section 14.9.2);
+						</p>
+					</li>
+					<li>
+						<p>
+                            multisample fragment operations (see section 14.9.3);
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If early per-fragment operations are enabled, these tests are also performed:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            the stencil test (see section 17.3.3);
+						</p>
+					</li>
+					<li>
+						<p>
+                            the depth buffer test (see section 17.3.4);
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The depth buffer test discards the incoming fragment if a depth comparison fails. The comparison is enabled or disabled with the generic Enable and Disable commands using target DEPTH_TEST. When disabled, the depth comparison and subsequent possible updates to the depth buffer value are bypassed and the fragment is passed to the next operation. The stencil value, however, is modified as indicated below as if the depth buffer test passed. If enabled, the comparison takes place and the depth buffer and stencil value may subsequently be modified.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            occlusion query sample counting (see section 17.3.5)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Early fragment tests, as an optimization, exist to prevent unnecessary executions of the Fragment Shader. If a fragment will be discarded based on the Depth Test (due perhaps to being behind other geometry), it saves performance to avoid executing the fragment shader. There is specialized hardware that makes this particularly efficient in many GPUs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The most effective way to use early depth test hardware is to run a depth-only pre-processing pass. This means to render all available geometry, using minimal shaders and a rendering pipeline that only writes to the depth buffer. The Vertex Shader should do nothing more than transform positions, and the Fragment Shader does not even need to exist.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This provides the best performance gain if the fragment shader is expensive, or if you intend to use multiple passes across the geometry.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Limitations
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The Spec states that these operations happen after fragment processing. However, a specification only defines apparent behavior, so the implementation is only required to behave &quot;as if&quot; it happened afterwards.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Therefore, an implementation is free to apply early fragment tests if the Fragment Shader being used does not do anything that would impact the results of those tests. So if a fragment shader writes to glFragDepth, thus changing the fragment's depth value, then early testing cannot take place, since the test must use the new computed value.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Do recall that if a fragment shader writes to gl_FragDepth, even conditionally, it must write to it at least once on all codepaths.
+						</p>
+					</li>
+					<li>
+						<p>
+                            There can be other hardware-based limitations as well. For example, some hardware will not execute an early depth test if the (deprecated) alpha test is active, as these use the same hardware on that platform. Because this is a hardware-based optimization, OpenGL has no direct controls that will tell you if early depth testing will happen.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Similarly, if the fragment shader discards the fragment with the discard keyword, this will almost always turn off early depth tests on some hardware. Note that even 
+							<em>
+                                conditional
+							</em>
+                            &nbsp;use of discard will mean that the FS will turn off early depth tests.
+						</p>
+					</li>
+					<li>
+						<p>
+                            All of the above limitations apply only to early testing as an optimization. They do not apply to anything below.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    More recent hardware can force early depth tests, using a special fragment shader layout qualifier:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>layout(early_fragment_tests)</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Vulkan:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Specifying is a way of the application programmer providing a promise to the implementation that it is algorithmically safe to kill the fragments, so you explicitly allow the change in application-visible behavior.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Specifying this will make per-fragment tests be performed before fragment shader execution. If this is not declared, per-fragment tests will be performed after fragment shader execution. Only one fragment shader (compilation unit) need declare this, though more than one can. If at least one declares this, then it is enabled.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    OpenGL 4.6:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            An explicit control is provided to allow fragment shaders to enable early fragment tests. If the fragment shader specifies the 
+                                            <code>early_fragment_tests</code>
+                                            &nbsp;layout qualifier, the per-fragment tests will be performed prior to fragment shader execution. Otherwise, they will be performed after fragment shader execution.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            This will also perform early stencil tests.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            There is a caveat with this. This feature 
+											<em>
+                                                cannot
+											</em>
+                                            &nbsp;be used to violate the sanctity of the depth test. When this is activated, any writes to 
+                                            <code>gl_FragDepth</code>
+                                            &nbsp;will be 
+											<em>
+                                                ignored
+											</em>
+                                            . The value written to the depth buffer will be exactly what was tested 
+											<em>
+                                                against
+											</em>
+                                            &nbsp;the depth buffer: the fragment's depth computed through rasterization.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            This feature exists to ensure proper behavior when using 
+											<a
+												href="https://wikis.khronos.org/opengl/Image_Load_Store" 
+												class="external-link" 
+												target="_blank" >
+                                                Image Load Store
+											</a>
+                                            &nbsp;or other 
+											<a
+												href="https://wikis.khronos.org/opengl/Incoherent_Memory_Access" 
+												class="external-link" 
+												target="_blank" >
+                                                incoherent memory writing
+											</a>
+                                            . Without turning this on, fragments that fail the depth test would still perform their Image Load/Store operations, since the fragment shader that performed those operations successfully executed. However, with early fragment tests, those tests were run before the fragment shader. So this ensures that image load/store operations will only happen on fragments that pass the depth test.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Enabling this feature has consequences for 
+											<a
+												href="https://wikis.khronos.org/opengl/Fragment_Discarding" 
+												class="external-link" 
+												target="_blank" >
+                                                the results of a discarded fragment.
+											</a>
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="viewport-and-scissors" >
+    Viewport and Scissors
+</h4>
+<ul>
+	<li>
+		<p>
+            A viewport basically describes the region of the framebuffer that the output will be rendered to.
+		</p>
+	</li>
+	<li>
+		<p>
+            Viewports define the transformation from the image to the framebuffer, scissor rectangles define in which region pixels will actually be stored. The rasterizer will discard any pixels outside the scissored rectangles. They function like a filter rather than a transformation.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The difference is illustrated below.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250730113603.png" width="475" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Note that the left scissored rectangle is just one of the many possibilities that would result in that image, as long as it’s larger than the viewport.
+				</p>
+			</li>
+			<li>
+				<p>
+                    So if we wanted to draw to the entire framebuffer, we would specify a scissor rectangle that covers it entirely:
+				</p>
+<pre><code class="language-cpp" data-lang="cpp">vk::Rect2D{ vk::Offset2D{ 0, 0 }, swapChainExtent }
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Parameters
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This will almost always be the rectangle 
+                    <code>(0, 0)</code>
+                    , 
+                    <code>(width, height)</code>
+                    &nbsp;and in this tutorial that will also be the case.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Remember that the size of the Swapchain and its images may differ from the 
+                            <code>WIDTH</code>
+                            &nbsp;and 
+                            <code>HEIGHT</code>
+                            &nbsp;of the window.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The Swapchain images will be used as framebuffers later on, so we should stick to their size.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The 
+                    <code>minDepth</code>
+                    &nbsp;and 
+                    <code>maxDepth</code>
+                    &nbsp;values specify the range of depth values to use for the framebuffer. These values must be within the 
+                    <code>[0.0f, 1.0f]</code>
+                    &nbsp;range, but 
+                    <code>minDepth</code>
+                    &nbsp;may be higher than 
+                    <code>maxDepth</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If you aren’t doing anything special, then you should stick to the standard values of 
+                            <code>0.0f</code>
+                            &nbsp;and 
+                            <code>1.0f</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                As a Dynamic State or Static State
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Viewport(s) and scissor rectangle(s) can either be specified as a static part of the pipeline or as a dynamic state set in the command buffer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Independent of how you set them, it’s possible to use multiple viewports and scissor rectangles on some graphics cards, so the structure members reference an array of them. Using multiple requires enabling a GPU feature (see logical device creation).
+				</p>
+			</li>
+			<li>
+				<p>
+                    It’s often convenient to make viewport and scissor state dynamic as it gives you a lot more flexibility.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        With dynamic state
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It’s even possible to specify different viewports and or scissor rectangles within a single command buffer.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This is widespread and all implementations can handle this dynamic state 
+							<em>
+                                without
+							</em>
+                            &nbsp;a performance penalty.
+						</p>
+					</li>
+					<li>
+						<p>
+                            When opting for dynamic viewport(s) and scissor rectangle(s), you need to enable the respective dynamic states for the pipeline:
+						</p>
+<pre><code class="language-cpp" data-lang="cpp">std::vector dynamicStates = {
+&nbsp;&nbsp;&nbsp;&nbsp;vk::DynamicState::eViewport,
+&nbsp;&nbsp;&nbsp;&nbsp;vk::DynamicState::eScissor
+};
+vk::PipelineDynamicStateCreateInfo dynamicState({}, dynamicStates.size(), dynamicStates.data());
+</code></pre>
+					</li>
+					<li>
+						<p>
+                            And then you only need to specify their count at pipeline creation time:
+						</p>
+<pre><code class="language-cpp" data-lang="cpp">vk::PipelineViewportStateCreateInfo viewportState({}, 1, {}, 1);
+</code></pre>
+					</li>
+					<li>
+						<p>
+                            The actual viewport(s) and scissor rectangle(s) will then later be set up at drawing time.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>
+					<em>
+                        Without dynamic state
+					</em>
+                    </s>:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The viewport and scissor rectangle need to be set in the pipeline using the 
+                            <code>VkPipelineViewportStateCreateInfo</code>
+                            &nbsp;struct. This makes the viewport and scissor rectangle for this pipeline immutable. Any changes required to these values would require a new pipeline to be created with the new values.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        What should you use?
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            USE DYNAMIC. There's 
+							<strong>
+                                no
+							</strong>
+                            &nbsp;performance penalty.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Supported since launch.
+						</p>
+					</li>
+					<li>
+						<p>
+                            LunarG:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <img src="assets/image_20250731211321.png" width="350" >
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="multi-sampling" >
+    Multi-Sampling
+</h4>
+<h5
+	id="setup" >
+    Setup
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineMultisampleStateCreateInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkPipelineMultisampleStateCreateInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>rasterizationSamples</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If the bound pipeline was created without a 
+                            <code>VkAttachmentSampleCountInfoAMD</code>
+                            &nbsp;or 
+                            <code>VkAttachmentSampleCountInfoNV</code>
+                            &nbsp;structure, and the 
+                            <code>multisampledRenderToSingleSampled</code>
+                            &nbsp;feature is not enabled, and the current render pass instance was begun with 
+                            <code>vkCmdBeginRendering</code>
+                            &nbsp;with a 
+                            <code>VkRenderingInfo:colorAttachmentCount</code>
+                            &nbsp;parameter greater than 0, then each element of the 
+                            <code>VkRenderingInfo:pColorAttachments</code>
+                            &nbsp;array with a 
+                            <code>imageView</code>
+                            &nbsp;not equal to 
+                            <code>NULL_HANDLE</code>
+                            &nbsp;must have been created with a sample count equal to the value of 
+                            <code>rasterizationSamples</code>
+                            &nbsp;for the bound graphics pipeline.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Is a 
+							<a
+								href="https://docs.vulkan.org/spec/latest/chapters/limits.html#VkSampleCountFlagBits" 
+								class="external-link" 
+								target="_blank" >
+                                VkSampleCountFlagBits
+							</a>
+                            &nbsp;value specifying the number of samples used in rasterization. This value is ignored for the purposes of setting the number of samples used in rasterization if the pipeline is created with the 
+                            <code>DYNAMIC_STATE_RASTERIZATION_SAMPLES_EXT</code>
+                            &nbsp;dynamic state set, but if 
+                            <code>DYNAMIC_STATE_SAMPLE_MASK_EXT</code>
+                            &nbsp;dynamic state is not set, it is still used to define the size of the 
+                            <code>pSampleMask</code>
+                            &nbsp;array as described below.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>sampleShadingEnable</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                can
+							</strong>
+                            &nbsp;be used to enable 
+							<a
+								href="https://docs.vulkan.org/spec/latest/chapters/primsrast.html#primsrast-sampleshading" 
+								class="external-link" 
+								target="_blank" >
+                                Sample Shading
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>minSampleShading</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a minimum fraction of sample shading if 
+                            <code>sampleShadingEnable</code>
+                            &nbsp;is 
+                            <code>TRUE</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pSampleMask</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of 
+                            <code>VkSampleMask</code>
+                            &nbsp;values used in the 
+							<a
+								href="https://docs.vulkan.org/spec/latest/chapters/fragops.html#fragops-samplemask" 
+								class="external-link" 
+								target="_blank" >
+                                sample mask test
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>alphaToCoverageEnable</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Controls whether a temporary coverage value is generated based on the alpha component of the fragment’s first color output as specified in the 
+							<a
+								href="https://docs.vulkan.org/spec/latest/chapters/fragops.html#fragops-covg" 
+								class="external-link" 
+								target="_blank" >
+                                Multisample Coverage
+							</a>
+                            &nbsp;section.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>alphaToOneEnable</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Controls whether the alpha component of the fragment’s first color output is replaced with one as described in 
+							<a
+								href="https://docs.vulkan.org/spec/latest/chapters/fragops.html#fragops-covg" 
+								class="external-link" 
+								target="_blank" >
+                                Multisample Coverage
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>flags</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Reserved for future use.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="resolving" >
+    Resolving
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkRenderingAttachmentInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkRenderingAttachmentInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>resolveMode</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkResolveModeFlagBits.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkResolveModeFlagBits
+							</a>
+                            &nbsp;value defining how data written to 
+                            <code>imageView</code>
+                            &nbsp;will be resolved into 
+                            <code>resolveImageView</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            If 
+                            <code>resolveMode</code>
+                            &nbsp;is not 
+                            <code>RESOLVE_MODE_NONE</code>
+                            , and 
+                            <code>resolveImageView</code>
+                            &nbsp;is not 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/NULL_HANDLE.html" 
+								class="external-link" 
+								target="_blank" >
+                                NULL_HANDLE
+							</a>
+                            , a render pass multisample resolve operation is defined for the attachment subresource.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>RESOLVE_MODE_NONE</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that no resolve operation is done.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>RESOLVE_MODE_SAMPLE_ZERO</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that result of the resolve operation is equal to the value of sample 0.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>RESOLVE_MODE_AVERAGE</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that result of the resolve operation is the average of the sample values.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>RESOLVE_MODE_MIN</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that result of the resolve operation is the minimum of the sample values.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>RESOLVE_MODE_MAX</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that result of the resolve operation is the maximum of the sample values.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_ANDROID</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that rather than a multisample resolve, a single sampled color attachment will be downsampled into a Y′CBCR format image specified by an external Android format. Unlike other resolve modes, implementations can resolve multiple times during rendering, or even bypass writing to the color attachment altogether, as long as the final value is resolved to the resolve attachment. Values in the G, B, and R channels of the color attachment will be written to the Y, CB, and CR channels of the external format image, respectively. Chroma values are calculated as if sampling with a linear filter from the color attachment at full rate, at the location the chroma values sit according to 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#VkPhysicalDeviceExternalFormatResolvePropertiesANDROID" 
+										class="external-link" 
+										target="_blank" >
+                                        VkPhysicalDeviceExternalFormatResolvePropertiesANDROID
+									</a>
+                                    ::
+                                    <code>externalFormatResolveChromaOffsetX</code>
+                                    , 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#VkPhysicalDeviceExternalFormatResolvePropertiesANDROID" 
+										class="external-link" 
+										target="_blank" >
+                                        VkPhysicalDeviceExternalFormatResolvePropertiesANDROID
+									</a>
+                                    ::
+                                    <code>externalFormatResolveChromaOffsetY</code>
+                                    , and the chroma sample rate of the resolved image.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    No range compression or Y′CBCR model conversion is performed by 
+                                    <code>RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_ANDROID</code>
+                                    ; applications have to do these conversions themselves. Value outputs are expected to match those that would be read through a 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#textures-sampler-YCbCr-conversion-modelconversion" 
+										class="external-link" 
+										target="_blank" >
+                                        Y′CBCR sampler using 
+                                        <code>SAMPLER_YCBCR_MODEL_CONVERSION_RGB_IDENTITY</code>
+									</a>
+                                    . The color space that the values should be in is defined by the platform and is not exposed via Vulkan.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>resolveImageView</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is an image view used to write resolved data at the end of rendering.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>resolveImageLayout</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the layout that 
+                            <code>resolveImageView</code>
+                            &nbsp;will be in during rendering.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If 
+                            <code>imageView</code>
+                            &nbsp;is not 
+                            <code>NULL_HANDLE</code>
+                            &nbsp;and 
+                            <code>resolveMode</code>
+                            &nbsp;is not 
+                            <code>RESOLVE_MODE_NONE</code>
+                            , 
+                            <code>resolveImageLayout</code>
+                            &nbsp;must not be 
+                            <code>IMAGE_LAYOUT_UNDEFINED</code>
+                            , 
+                            <code>IMAGE_LAYOUT_DEPTH_STENCIL_READ_ONLY_OPTIMAL</code>
+                            , 
+                            <code>IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL</code>
+                            , 
+                            <code>IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL</code>
+                            , 
+                            <code>IMAGE_LAYOUT_ZERO_INITIALIZED_EXT</code>
+                            , 
+                            <code>IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</code>
+                            , or 
+                            <code>IMAGE_LAYOUT_PREINITIALIZED</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            From Multisample, to Singlesample.
+		</p>
+	</li>
+	<li>
+		<p>
+            Combine sample values from a single pixel in a multisample attachment and store the result to the corresponding pixel in a single sample attachment.
+		</p>
+	</li>
+	<li>
+		<p>
+            Multisample resolve operations for attachments execute in the 
+            <code>PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT</code>
+            &nbsp;pipeline stage. A final resolve operation for all pixels in the render area happens-after any recorded command which writes a pixel via the multisample attachment to be resolved or an explicit alias of it in the subpass that it is specified.
+		</p>
+	</li>
+	<li>
+		<p>
+            Any single sample attachment specified for use in a multisample resolve operation 
+			<strong>
+                may
+			</strong>
+            &nbsp;have its contents modified at any point once rendering begins for the render pass instance.
+		</p>
+	</li>
+	<li>
+		<p>
+            Reads from the multisample attachment can be synchronized with 
+            <code>ACCESS_COLOR_ATTACHMENT_READ</code>
+            . Access to the single sample attachment can be synchronized with 
+            <code>ACCESS_COLOR_ATTACHMENT_READ</code>
+            &nbsp;and 
+            <code>COLOR_ATTACHMENT_WRITE</code>
+            . These pipeline stage and access types are used whether the attachments are color or depth/stencil attachments.
+		</p>
+	</li>
+	<li>
+		<p>
+            When using render pass objects, a subpass dependency specified with the above pipeline stages and access flags will ensure synchronization with multisample resolve operations for any attachments that were last accessed by that subpass. This allows later subpasses to read resolved values as input attachments.
+		</p>
+	</li>
+	<li>
+		<p>
+            Resolve operations only update values within the defined render area for the render pass instance. However, any writes performed by a resolve operation (as defined by its access masks) to a given attachment 
+			<strong>
+                may
+			</strong>
+            &nbsp;read and write back any memory locations within the image subresource bound for that attachment. For depth/stencil images, if 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#limits-separateDepthStencilAttachmentAccess" 
+				class="external-link" 
+				target="_blank" >
+                <code>separateDepthStencilAttachmentAccess</code>
+			</a>
+            &nbsp;is 
+            <code>FALSE</code>
+            , writes to one aspect 
+			<strong>
+                may
+			</strong>
+            &nbsp;also result in read-modify-write operations for the other aspect. If the subresource is bound to an attachment with 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#renderpass-feedbackloop" 
+				class="external-link" 
+				target="_blank" >
+                feedback loop enabled
+			</a>
+            , implementations 
+			<strong>
+                must
+			</strong>
+            &nbsp;not access pixels outside of the render area.
+		</p>
+	</li>
+	<li>
+		<p>
+            As entire subresources could be accessed by multisample resolve operations, applications cannot safely access values outside of the render area via aliased resources during a render pass instance when a multisample resolve operation is performed.
+		</p>
+	</li>
+	<li>
+		<p>
+            If 
+            <code>RESOLVE_MODE_AVERAGE</code>
+            &nbsp;is used, and the source format is a floating-point or normalized type, the sample values for each pixel are resolved with implementation-defined numerical precision.
+		</p>
+	</li>
+	<li>
+		<p>
+            If the 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#formats-numericformat" 
+				class="external-link" 
+				target="_blank" >
+                numeric format
+			</a>
+            &nbsp;of the resolve attachment uses sRGB encoding, the implementation 
+			<strong>
+                should
+			</strong>
+            &nbsp;convert samples from nonlinear to linear before averaging samples as described in the “sRGB EOTF” section of the 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#data-format" 
+				class="external-link" 
+				target="_blank" >
+                Khronos Data Format Specification
+			</a>
+            . In this case, the implementation 
+			<strong>
+                must
+			</strong>
+            &nbsp;convert the linear averaged value to nonlinear before writing the resolved result to resolve attachment.
+		</p>
+	</li>
+	<li>
+		<p>
+            The resolve mode and store operation are independent; it is valid to write both resolved and unresolved values, and equally valid to discard the unresolved values while writing the resolved ones.
+		</p>
+	</li>
+</ul>
+<h5
+	id="multisampling-anti-aliasing-msaa" >
+    Multisampling Anti-Aliasing (MSAA)
+</h5>
+<ul>
+	<li>
+		<p>
+            Using only one sample per pixel which is equivalent to no multisampling.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Maximum supported
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can be extracted from 
+                    <code>VkPhysicalDeviceProperties</code>
+                    &nbsp;associated with our selected physical device.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The highest sample count that Color Image and Depth Image (Buffer) will be the maximum we can support.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                What to Multisample
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The render target.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If using a depth image, it should also be multisampled.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Limitations
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The multisampled image should only have one mip level.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This is enforced by the Vulkan specification in case of images with more than one sample per pixel.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Multi-sampled images cannot be presented directly.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This requirement does not apply to the depth buffer, since it won’t be presented at any point.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                DOs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Use 4x MSAA if possible; it’s not expensive and provides good image quality improvements.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use 
+                    <code>loadOp = LOAD_OP_CLEAR</code>
+                    &nbsp;or 
+                    <code>loadOp = LOAD_OP_DONT_CARE</code>
+                    &nbsp;for multisampled images.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use 
+                    <code>storeOp = STORE_OP_DONT_CARE</code>
+                    &nbsp;for multisampled images.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use 
+                    <code>LAZILY_ALLOCATED</code>
+                    &nbsp;memory to back the allocated multisampled images; they do not need to be persisted into main memory and therefore do not need physical backing storage.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use 
+                    <code>pResolveAttachments</code>
+                    &nbsp;in a subpass to automatically resolve a multisampled color buffer into a single-sampled color buffer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use 
+					<a
+						href="http://khronos.org/registry/vulkan/specs/1.2-khr-extensions/html/chap40.html#KHR_depth_stencil_resolve" 
+						class="external-link" 
+						target="_blank" >
+                        <code>KHR_depth_stencil_resolve</code>
+					</a>
+                    &nbsp;in a subpass to automatically resolve a multisampled depth buffer into a single-sampled depth buffer. Typically this is only useful if the depth buffer is going to be used further, in most cases it is transient and does not need to be resolved.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Avoid
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Avoid using 
+                    <code>vkCmdResolveImage()</code>
+                    ; this has a significant negative impact on bandwidth and performance.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Avoid using 
+                    <code>loadOp = LOAD_OP_LOAD</code>
+                    &nbsp;for multisampled image attachments.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Avoid using 
+                    <code>storeOp = STORE_OP_STORE</code>
+                    &nbsp;for multisampled image attachments.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Avoid using more than 4x MSAA without checking performance.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Impact
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Failing to get an inline resolve can result in substantially higher memory bandwidth and reduced performance.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Manually writing and resolving a 4x MSAA 1080p surface at 60 FPS requires 3.9GB/s of memory bandwidth compared to just 500MB/s when using an inline resolve.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Sample Shading
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    There are certain limitations of our current MSAA implementation which may impact the quality of the output image in more detailed scenes. For example, we're currently not solving potential problems caused by shader aliasing, i.e. MSAA only smoothens out the edges of geometry but not the interior filling. This may lead to a situation when you get a smooth polygon rendered on screen but the applied texture will still look aliased if it contains high contrasting colors. One way to approach this problem is to enable 
+					<a
+						href="https://www.khronos.org/registry/vulkan/specs/1.3-extensions/html/chap27.html#primsrast-sampleshading" 
+						class="external-link" 
+						target="_blank" >
+                        Sample Shading
+					</a>
+                    &nbsp;which will improve the image quality even further, though at an additional performance cost:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-c" data-lang="c">void createLogicalDevice() {
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;deviceFeatures.sampleRateShading = TRUE; // enable sample shading feature for the device
+&nbsp;&nbsp;&nbsp;&nbsp;...
+}
+
+void createGraphicsPipeline() {
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;multisampling.sampleShadingEnable = TRUE; // enable sample shading in the pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;multisampling.minSampleShading = .2f; // min fraction for sample shading; closer to one is smoother
+&nbsp;&nbsp;&nbsp;&nbsp;...
+}
+</code></pre>
+		<p>
+            <img src="assets/image_20250907201921.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Performance Tests
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    (2025-09-07)
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Done anyway, very approximate.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    MSAAx8 = 900 fps
+				</p>
+			</li>
+			<li>
+				<p>
+                    MSAAx4 = 1250fps
+				</p>
+			</li>
+			<li>
+				<p>
+                    MSAAx2 = 1550fps
+				</p>
+			</li>
+			<li>
+				<p>
+                    MSAA off = 2100fps
+				</p>
+			</li>
+			<li>
+				<p>
+                    As samples increase, frame time increases approximately by factors 1.35 (x2), 1.68 (x4) and 2.33 (x8) compared to the case without MSAA — this is consistent with substantial per-sample cost increase, but 
+					<strong>
+                        is not
+					</strong>
+                    &nbsp;strictly linear with the number of samples (e.g.: x4 is not exactly 4× nor x8 exactly 8×).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="fragment-shader" >
+    Fragment Shader
+</h3>
+<ul>
+	<li>
+		<p>
+            Programmable stage.
+		</p>
+	</li>
+	<li>
+		<p>
+            Is invoked for every fragment that survives and determines which framebuffer(s) the fragments are written to and with which color and depth values. It can do this using the interpolated data from the vertex shader, which can include things like texture coordinates and normals for lighting.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>VkShaderModule</code>
+            &nbsp;objects are created from shader byte code.
+		</p>
+	</li>
+</ul>
+<h3
+	id="color-blending" >
+    Color Blending
+</h3>
+<ul>
+	<li>
+		<p>
+            Fixed-function stage.
+		</p>
+	</li>
+	<li>
+		<p>
+            Controls how the GPU combines the fragment shader’s output with what is already in the framebuffer.
+		</p>
+	</li>
+	<li>
+		<p>
+            Applies operations to mix different fragments that map to the same pixel in the framebuffer. Fragments can simply overwrite each other, add up or be mixed based upon transparency.
+		</p>
+	</li>
+	<li>
+		<p>
+            After a fragment shader has returned a color, it needs to be combined with the color that is already in the framebuffer.
+		</p>
+	</li>
+	<li>
+		<p>
+            This transformation is known as color blending, and there are two ways to do it:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Mix the old and new value to produce a final color
+				</p>
+			</li>
+			<li>
+				<p>
+                    Combine the old and new value using a bitwise operation
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If enabled blending in the pipeline, it will blend the frag shader result with the render_target previous visual.
+				</p>
+			</li>
+			<li>
+				<p>
+                    So if the frag result has alpha &lt; 1.0, it will blend the clear color with the frag shader result, giving it a &quot;transparent visual&quot; against the clear color.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineColorBlendAttachmentState.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkPipelineColorBlendAttachmentState</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Contains the configuration per attached framebuffer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This per-framebuffer struct allows you to configure the first way of color blending:
+				</p>
+<pre><code class="language-c" data-lang="c">// Pseudo-code
+if (blendEnable) {
+&nbsp;&nbsp;&nbsp;&nbsp;finalColor.rgb = (srcColorBlendFactor * newColor.rgb) &lt;colorBlendOp&gt; (dstColorBlendFactor * oldColor.rgb);
+&nbsp;&nbsp;&nbsp;&nbsp;finalColor.a = (srcAlphaBlendFactor * newColor.a) &lt;alphaBlendOp&gt; (dstAlphaBlendFactor * oldColor.a);
+} else {
+&nbsp;&nbsp;&nbsp;&nbsp;finalColor = newColor;
+}
+
+finalColor = finalColor & colorWriteMask;
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    The most common way to use color blending is to implement alpha blending, where we want the new color to be blended with the old color based on its opacity.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The 
+                            <code>finalColor</code>
+                            &nbsp;should then be computed as follows:
+						</p>
+<pre><code class="language-c" data-lang="c">finalColor.rgb = newAlpha * newColor + (1 - newAlpha) * oldColor;
+finalColor.a = newAlpha.a;
+</code></pre>
+					</li>
+					<li>
+						<p>
+                            This can be achieved with the following parameters:
+						</p>
+<pre><code class="language-cpp" data-lang="cpp">colorBlendAttachment.blendEnable = vk::True;
+colorBlendAttachment.srcColorBlendFactor = vk::BlendFactor::eSrcAlpha;
+colorBlendAttachment.dstColorBlendFactor = vk::BlendFactor::eOneMinusSrcAlpha;
+colorBlendAttachment.colorBlendOp = vk::BlendOp::eAdd;
+colorBlendAttachment.srcAlphaBlendFactor = vk::BlendFactor::eOne;
+colorBlendAttachment.dstAlphaBlendFactor = vk::BlendFactor::eZero;
+colorBlendAttachment.alphaBlendOp = vk::BlendOp::eAdd;
+</code></pre>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>blendEnable</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If set to 
+                            <code>FALSE</code>
+                            , then the new color from the fragment shader is passed through unmodified. Otherwise, the two mixing operations are performed to compute a new color.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The resulting color is AND’d with the 
+                            <code>colorWriteMask</code>
+                            &nbsp;to determine which channels are actually passed through.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineColorBlendStateCreateInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkPipelineColorBlendStateCreateInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Contains the 
+					<em>
+                        global
+					</em>
+                    &nbsp;color blending settings.
+				</p>
+			</li>
+			<li>
+				<p>
+                    References the array of structures for all the framebuffers and allows you to set blend constants that you can use as blend factors in the aforementioned calculations.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>attachmentCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the number of 
+                            <code>VkPipelineColorBlendAttachmentState</code>
+                            &nbsp;elements in 
+                            <code>pAttachments</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            It is ignored if the pipeline is created with 
+                            <code>DYNAMIC_STATE_COLOR_BLEND_ENABLET</code>
+                            , 
+                            <code>DYNAMIC_STATE_COLOR_BLEND_EQUATION_EXT</code>
+                            , and 
+                            <code>DYNAMIC_STATE_COLOR_WRITE_MASK_EXT</code>
+                            &nbsp;dynamic states set, and either 
+                            <code>DYNAMIC_STATE_COLOR_BLEND_ADVANCED_EXT</code>
+                            &nbsp;set or the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#features-advancedBlendCoherentOperations" 
+								class="external-link" 
+								target="_blank" >
+                                advancedBlendCoherentOperations
+							</a>
+                            &nbsp;feature is not enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pAttachments</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of 
+                            <code>VkPipelineColorBlendAttachmentState</code>
+                            &nbsp;structures defining blend state for each color attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It is ignored if the pipeline is created with 
+                            <code>DYNAMIC_STATE_COLOR_BLEND_ENABLET</code>
+                            , 
+                            <code>DYNAMIC_STATE_COLOR_BLEND_EQUATION_EXT</code>
+                            , and 
+                            <code>DYNAMIC_STATE_COLOR_WRITE_MASK_EXT</code>
+                            &nbsp;dynamic states set, and either 
+                            <code>DYNAMIC_STATE_COLOR_BLEND_ADVANCED_EXT</code>
+                            &nbsp;set or the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#features-advancedBlendCoherentOperations" 
+								class="external-link" 
+								target="_blank" >
+                                advancedBlendCoherentOperations
+							</a>
+                            &nbsp;feature is not enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>logicOpEnable</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Controls whether to apply 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#framebuffer-logicop" 
+								class="external-link" 
+								target="_blank" >
+                                Logical Operations
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>logicOp</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Selects which logical operation to apply.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If you want to use the second method of blending (a bitwise combination), then you should set 
+                            <code>logicOpEnable</code>
+                            &nbsp;to 
+                            <code>TRUE</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Note that this will automatically disable the first method, as if you had set 
+                                    <code>blendEnable</code>
+                                    &nbsp;to 
+                                    <code>FALSE</code>
+                                    &nbsp;for every attached framebuffer.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>colorWriteMask</code>
+                            &nbsp;will also be used in this mode to determine which channels in the framebuffer will actually be affected.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If disabled both modes, the fragment colors will be written to the framebuffer unmodified.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>blendConstants</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of four values used as the R, G, B, and A components of the blend constant that are used in blending, depending on the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#framebuffer-blendfactors" 
+								class="external-link" 
+								target="_blank" >
+                                blend factor
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>flags</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="creation" >
+    Creation
+</h3>
+<h5
+	id="setup" >
+    Setup
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkGraphicsPipelineCreateInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkGraphicsPipelineCreateInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>flags</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>DISABLE_OPTIMIZATION</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies that the created pipeline will not be optimized.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Using this flag 
+									<strong>
+                                        may
+									</strong>
+                                    &nbsp;reduce the time taken to create the pipeline.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>renderPass</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is set to 
+                            <code>nullptr</code>
+                            &nbsp;because we’re using dynamic rendering instead of a traditional render pass.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>basePipelineHandle</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>basePipelineIndex</code>
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Graphics Pipelines Inheritance
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Vulkan allows you to create a new graphics pipeline by deriving from an existing pipeline.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The idea of pipeline derivatives is that it is less expensive to set up pipelines when they have much functionality in common with an existing pipeline and switching between pipelines from the same parent can also be done quicker.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You can either specify the handle of an existing pipeline with 
+                            <code>basePipelineHandle</code>
+                            &nbsp;or reference another pipeline that is about to be created by index with 
+                            <code>basePipelineIndex</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            These values are only used if the 
+                            <code>VPIPELINE_CREATE_DERIVATIVE</code>
+                            &nbsp;flag is also specified in the 
+                            <code>flags</code>
+                            &nbsp;field of 
+                            <code>VkGraphicsPipelineCreateInfo</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCreateGraphicsPipelines.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkCreateGraphicsPipelines()</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>device</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the logical device that creates the graphics pipelines.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pipelineCache</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is either 
+                            <code>NULL_HANDLE</code>
+                            , indicating that pipeline caching is disabled, or to enable caching, the handle of a valid 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineCache.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkPipelineCache
+							</a>
+                            &nbsp;object. The implementation 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;not access this object outside of the duration of this command.
+						</p>
+					</li>
+					<li>
+						<p>
+                            A pipeline cache can be used to store and reuse data relevant to pipeline creation across multiple calls to 
+                            <code>vkCreateGraphicsPipelines</code>
+                            &nbsp;and even across program executions if the cache is stored to a file. This makes it possible to significantly speed up pipeline creation at a later time.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>createInfoCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the length of the 
+                            <code>pCreateInfos</code>
+                            &nbsp;and 
+                            <code>pPipelines</code>
+                            &nbsp;arrays.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pCreateInfos</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkGraphicsPipelineCreateInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkGraphicsPipelineCreateInfo
+							</a>
+                            &nbsp;structures.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pAllocator</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Controls host memory allocation as described in the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#memory-allocation" 
+								class="external-link" 
+								target="_blank" >
+                                Memory Allocation
+							</a>
+                            &nbsp;chapter.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pPipelines</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipeline.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkPipeline
+							</a>
+                            &nbsp;handles in which the resulting graphics pipeline objects are returned.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="dynamic-rendering-extra-steps" >
+    Dynamic Rendering Extra Steps
+</h5>
+<ul>
+	<li>
+		<p>
+            Changes to the 
+            <code>vkGraphicsPipelineCreateInfo</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The 
+                    <code>vkGraphicsPipelineCreateInfo</code>
+                    &nbsp;must be created without a 
+                    <code>VkRenderPass</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The 
+                    <code>VkPipelineRenderingCreateInfo</code>
+                    &nbsp;must be included in the 
+                    <code>pNext</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If a graphics pipeline is created with a valid 
+                            <code>VkRenderPass</code>
+                            , the parameters of the 
+                            <code>VkPipelineRenderingCreateInfo</code>
+                            &nbsp;are ignored.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineRenderingCreateInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkPipelineRenderingCreateInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>colorAttachmentCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the number of entries in 
+                            <code>pColorAttachmentFormats</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pColorAttachmentFormats</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of 
+                            <code>VkFormat</code>
+                            &nbsp;values defining the format of color attachments used in this pipeline.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>depthAttachmentFormat</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a 
+                            <code>VkFormat</code>
+                            &nbsp;value defining the format of the depth attachment used in this pipeline.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>stencilAttachmentFormat</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a 
+                            <code>VkFormat</code>
+                            &nbsp;value defining the format of the stencil attachment used in this pipeline.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>viewMask</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a bitfield of view indices describing which views are active during rendering.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;match 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkRenderingInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkRenderingInfo.viewMask
+							</a>
+                            &nbsp;when rendering.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    As defined in 
+                                    <code>VkRenderingInfo</code>
+                                    :
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Is a bitfield of view indices describing which views are active during rendering, when it is not 
+                                            <code>0</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+                                            If 
+                                            <code>viewMask</code>
+                                            &nbsp;is not 
+                                            <code>0</code>
+                                            , multiview is enabled.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Formats
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If 
+                            <code>depthAttachmentFormat</code>
+                            , 
+                            <code>stencilAttachmentFormat</code>
+                            , or any element of 
+                            <code>pColorAttachmentFormats</code>
+                            &nbsp;is 
+                            <code>UNDEFINED</code>
+                            , it indicates that the corresponding attachment is unused within the render pass.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Valid formats indicate that an attachment 
+							<strong>
+                                can
+							</strong>
+                            &nbsp;be used - but it is still valid to set the attachment to 
+                            <code>NULL</code>
+                            &nbsp;when beginning rendering.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="managing-pipelines-and-reducing-overhead" >
+    Managing Pipelines and Reducing overhead
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://devblogs.nvidia.com/vulkan-dos-donts/" 
+				class="external-link" 
+				target="_blank" >
+                Tips and Tricks: Vulkan Dos and Don’ts
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Use pipeline cache.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use specialization constants.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This may cause a possible decrease in the number of instructions and registers used by the shader.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Specialization constants can also be used instead of offline shader permutations to minimize the amount of bytecode that needs to be shipped with an application.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Switching pipelines:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Avoid frequently switching between pipelines that use different sets of pipeline stages.
+						</p>
+					</li>
+					<li>
+						<p
+							class="line-emphasis" >
+                            Minimize the number of 
+                            <code>vkCmdBindPipeline</code>
+                            &nbsp;calls, each call has significant CPU cost and GPU cost.
+						</p>
+						<ul>
+							<li>
+								<p
+									class="line-emphasis" >
+                                    Consider 
+									<em>
+                                        sorting
+									</em>
+                                    &nbsp;of drawcalls and/or using a low number of dynamic states.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Switching on/off the tessellation, geometry, task and mesh shaders is an expensive operation.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Draw calls:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Group draw calls, taking into account what kinds of shaders they use.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h6
+	id="the-problem" >
+    The Problem
+</h6>
+<ul>
+	<li>
+		<p>
+            Immutable Pipelines.
+		</p>
+	</li>
+	<li>
+		<p>
+            Each combination of inputs require a dedicated pipeline.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shader, topology, blend mode, vertex layout, cull mode, etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    So if we want to do things like toggle depth-testing on and off, we will need 2 pipelines.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Causes a combinatorial explosion of variants.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    10.000's of pipelines for shipping titles.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Building pipelines is a very expensive operation, and we want to minimize the number of pipelines used as its critical for performance.
+		</p>
+	</li>
+</ul>
+<h6
+	id="my-decisions" >
+    My decisions
+</h6>
+<ul>
+	<li>
+		<p>
+            (2025-08-10)
+		</p>
+	</li>
+	<li>
+		<p>
+            Dynamic State is a must.
+		</p>
+	</li>
+	<li>
+		<p>
+            The use of Shader Object still seems new and may introduce some extra complexity in certain cases.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I don't know about mobile support.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The use of Graphics Pipeline Libraries sounds interesting, but at the same time it seems limiting in some moments, for Geometry and Tessellation Shaders.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I don't know about mobile support.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Overall, I believe that refactoring a game object to use Shader Object or Graphics Pipeline Libraries sounds &quot;simple&quot;, since it's more about how the pipeline is constructed than how one interacts with shaders or descriptor sets. In other words, it seems like an okay decision to make in the future.
+		</p>
+	</li>
+	<li>
+		<p>
+            Considering the low support, and the fact that I don't have so many pipelines in mind that actually make these solutions necessary, I prefer to use graphics pipelines manually, in the &quot;default&quot; way.
+		</p>
+	</li>
+	<li>
+		<p>
+            Regardless, I believe that using Shader Object or Graphics Pipeline 
+			<em>
+                does not
+			</em>
+            &nbsp;remove the need to worry about pipeline caching or precautions to avoid switching the pipeline binding all the time.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Correct. Extensions change how pipelines are created/linked but do not remove the performance considerations around pipeline creation, pipeline cache usage, or minimizing pipeline re-binding at draw time. Vendors and platform docs recommend pipeline caches, pre-creation, and minimizing pipeline binds.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            What I will do, therefore: caching and sorting of pipelines based on similarity. I will worry more about binding the pipeline in command buffers and their descriptor sets, than the process of facilitating the creation of new pipelines.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This plan aligns with widely recommended practical strategies: use pipeline caches (persist to disk where possible), sort and batch by pipeline/descriptor similarity, and create pipelines asynchronously (background threads) to avoid stutter. These practices address the main runtime pain points regardless of whether you later adopt shader-object or pipeline-library extensions.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Your current decisions are internally consistent and align with common, pragmatic industry practice: prefer stable/default graphics pipelines with pipeline caching, sorting, and background creation as the primary strategy, while keeping code organized so you can adopt 
+                    <code>EXT_shader_object</code>
+                    &nbsp;or 
+                    <code>EXT_graphics_pipeline_library</code>
+                    &nbsp;later if/when device support and measured benefits justify the switch.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="mutability-with-codevkdynamicstate-code" >
+    Mutability with 
+    <code>VkDynamicState</code>
+</h5>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            Implemented.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's a 
+			<em>
+                must
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Not everything has to be immutable.
+		</p>
+	</li>
+	<li>
+		<p>
+            Set desired state while recording command buffers.
+		</p>
+	</li>
+	<li>
+		<p>
+            Over 70 states can be dynamic.
+		</p>
+	</li>
+	<li>
+		<p>
+            If we don't use this, we would need to create new pipelines if we wanted to change the resolution of our rendering.
+		</p>
+	</li>
+</ul>
+<h5
+	id="no-pipelines-with-codeext_shader_object-code" >
+    No pipelines, with 
+    <code>EXT_shader_object</code>
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/features/latest/features/proposals/EXT_shader_object.html" 
+				class="external-link" 
+				target="_blank" >
+                EXT_shader_object
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/samples/latest/samples/extensions/shader_object/README.html#_overview" 
+				class="external-link" 
+				target="_blank" >
+                Sample
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.khronos.org/blog/you-can-use-vulkan-without-pipelines-today" 
+				class="external-link" 
+				target="_blank" >
+                Article
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Support
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://vulkan.gpuinfo.org/displayextensiondetail.php?extension=EXT_shader_object" 
+						class="external-link" 
+						target="_blank" >
+                        Coverage
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    (2025-09-08) 11.29%.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            33.8% Windows.
+						</p>
+					</li>
+					<li>
+						<p>
+                            26.3% Linux.
+						</p>
+					</li>
+					<li>
+						<p>
+                            0% Android.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://youtu.be/vQPN3I040Cs?si=lLHBYbfTle9RHQSx&t=452" 
+				class="external-link" 
+				target="_blank" >
+                Shader Object and implementation in Odin {7:30 -&gt; 11:56}
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Questions
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I don't know where 
+                            <code>pColorAttachmentFormats</code>
+                            &nbsp;and 
+                            <code>depthAttachmentFormat</code>
+                            &nbsp;are specified.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    I don't know if it's even necessary to specify them anywhere.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The words 
+                                    <code>attachment</code>
+                                    &nbsp;or 
+                                    <code>format</code>
+                                    &nbsp;do not appear anywhere in the sample or in the spec of the extension.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">&nbsp;&nbsp;&nbsp;&nbsp;pipeline_rendering_create_info := vk.PipelineRenderingCreateInfo{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = .PIPELINE_RENDERING_CREATE_INFO,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorAttachmentCount&nbsp;&nbsp;&nbsp;&nbsp;= 1,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pColorAttachmentFormats = format,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;depthAttachmentFormat&nbsp;&nbsp; = .D24_UNORM_S8_UINT,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stencilAttachmentFormat = {},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viewMask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 0,
+&nbsp;&nbsp;&nbsp;&nbsp;}
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/nadako/hello-vulkan-odin/blob/master/src/main.odin" 
+						class="external-link" 
+						target="_blank" >
+                        Code
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">create_shaders :: proc() {
+&nbsp;&nbsp;&nbsp;&nbsp;push_constant_ranges := []vk.PushConstantRange {&nbsp;&nbsp;&nbsp;&nbsp;// Pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stageFlags = {.VERTEX, .FRAGMENT},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size = 128,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;/*
+&nbsp;&nbsp;&nbsp;&nbsp;This is not used in the Shader Object.
+&nbsp;&nbsp;&nbsp;&nbsp;The only place that needs this in its code, is when making the call `vk.CmdPushConstants(cmd, g.pipeline_layout, {.VERTEX, .FRAGMENT}, 0, size_of(push), &push)`.
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;pipeline_layout_ci := vk.PipelineLayoutCreateInfo {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sType = .PIPELINE_LAYOUT_CREATE_INFO,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// flags                  = {},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// setLayoutCount         = 1,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// pSetLayouts            = {},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pushConstantRangeCount = u32(len(push_constant_ranges)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pPushConstantRanges = raw_data(push_constant_ranges),
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;check(vk.CreatePipelineLayout(g.device, &pipeline_layout_ci, nil, &g.pipeline_layout))&nbsp;&nbsp;// Pipeline
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;vert_code := load_file("shaders/shader.vert.spv", context.temp_allocator)&nbsp;&nbsp;// Shader_Info
+&nbsp;&nbsp;&nbsp;&nbsp;frag_code := load_file("shaders/shader.frag.spv", context.temp_allocator)&nbsp;&nbsp;// Shader_Info
+&nbsp;&nbsp;&nbsp;&nbsp;shader_cis := [2]vk.ShaderCreateInfoEXT {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sType = .SHADER_CREATE_INFO_EXT,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;codeType = .SPIRV,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;codeSize = len(vert_code),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pCode = raw_data(vert_code),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pName = "main",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stage = {.VERTEX},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nextStage = {.FRAGMENT},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flags = {.LINK_STAGE},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// setLayoutCount:         u32,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    // pSetLayouts:            [^]DescriptorSetLayout,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pushConstantRangeCount = u32(len(push_constant_ranges)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pPushConstantRanges = raw_data(push_constant_ranges),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// pSpecializationInfo:    ^SpecializationInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sType = .SHADER_CREATE_INFO_EXT,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;codeType = .SPIRV,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;codeSize = len(frag_code),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pCode = raw_data(frag_code),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pName = "main",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stage = {.FRAGMENT},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// nextStage:              ShaderStageFlags,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flags = {.LINK_STAGE},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// setLayoutCount:         u32,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    // pSetLayouts:            [^]DescriptorSetLayout,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pushConstantRangeCount = u32(len(push_constant_ranges)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pPushConstantRanges = raw_data(push_constant_ranges),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// pSpecializationInfo:    ^SpecializationInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;check(vk.CreateShadersEXT(g.device, 2, raw_data(&shader_cis), nil, raw_data(&g.shaders)))
+}
+
+destroy_shaders :: proc() {
+&nbsp;&nbsp;&nbsp;&nbsp;vk.DestroyPipelineLayout(g.device, g.pipeline_layout, nil)
+&nbsp;&nbsp;&nbsp;&nbsp;for shader in g.shaders do vk.DestroyShaderEXT(g.device, shader, nil)
+}
+
+render :: proc(cmd: vk.CommandBuffer) {
+&nbsp;&nbsp;&nbsp;&nbsp;shader_stages := [2]vk.ShaderStageFlags { {.VERTEX}, {.FRAGMENT} }
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdBindShadersEXT(cmd, 2, raw_data(&shader_stages), raw_data(&g.shaders))
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetVertexInputEXT(cmd, 0, nil, 0, nil) // Shader_Info: vk.VertexInputBindingDescription, vk.VertexInputAttributeDescription.
+
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetViewportWithCount(cmd, 1, &vk.Viewport {&nbsp;&nbsp;// Dynamic
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width = f32(g.swapchain.width),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height = f32(g.swapchain.height),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minDepth = 0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxDepth = 1,
+&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetScissorWithCount(cmd, 1, &vk.Rect2D {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extent = {width = g.swapchain.width, height = g.swapchain.height}&nbsp;&nbsp;// Dynamic
+&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetRasterizerDiscardEnable(cmd, false) // Pipeline
+
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetPrimitiveTopology(cmd, .TRIANGLE_LIST)&nbsp;&nbsp;// Pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetPrimitiveRestartEnable(cmd, false)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pipeline
+
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetRasterizationSamplesEXT(cmd, {._1})&nbsp;&nbsp;&nbsp;&nbsp; // Pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;sample_mask := vk.SampleMask(1)
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetSampleMaskEXT(cmd, {._1}, &sample_mask) // Pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetAlphaToCoverageEnableEXT(cmd, false)&nbsp;&nbsp;&nbsp;&nbsp;// Pipeline
+
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetPolygonModeEXT(cmd, .FILL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetCullMode(cmd, {})&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetFrontFace(cmd, .COUNTER_CLOCKWISE)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pipeline
+
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetDepthTestEnable(cmd, false)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetDepthWriteEnable(cmd, false)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetDepthBiasEnable(cmd, false)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Pipeline
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetStencilTestEnable(cmd, false)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Pipeline
+
+&nbsp;&nbsp;&nbsp;&nbsp;b32_false := b32(false)
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetColorBlendEnableEXT(cmd, 0, 1, &b32_false) // Pipeline
+
+&nbsp;&nbsp;&nbsp;&nbsp;color_mask := vk.ColorComponentFlags { .R, .G, .B, .A }
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdSetColorWriteMaskEXT(cmd, 0, 1, &color_mask)&nbsp;&nbsp;// Pipeline
+
+&nbsp;&nbsp;&nbsp;&nbsp;Push :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: [3]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;push := Push { color = { 0, 0.5, 0 } }
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdPushConstants(cmd, g.pipeline_layout, {.VERTEX, .FRAGMENT}, 0, size_of(push), &push)
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// vk.CmdBindDescriptorSets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Dynamic
+
+&nbsp;&nbsp;&nbsp;&nbsp;vk.CmdDraw(cmd, 3, 1, 0, 0)
+}
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Ditch pipelines entirely.
+		</p>
+	</li>
+	<li>
+		<p>
+            Bind compiled shader stages.
+		</p>
+	</li>
+	<li>
+		<p>
+            It was created primarily for the Nintendo Switch, to reduce the performance gap between Vulkan and NVN (the Switch's native API), which doesn't even have the concept of pipeline state objects and map almost 1:1 to how Nvidia hardware works.
+		</p>
+	</li>
+	<li>
+		<p>
+            If you want to use Shader Objects, the reason should be &quot;I find it much easier to use/maintain&quot;. Because once you grow you'll encounter friction as the extension is meant for porting old engines, and goes against new features.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Support
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Hard to recommend, as for limited support.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Currently only available on AMD &amp; Nvidia.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It provides an emulation layer, which make them usable on any device not natively supporting them. but you need to provide the dll file for the layer along with the application.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Shaders
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This extension introduces a new object type 
+                    <code>VkShaderEXT</code>
+                    &nbsp;which represents a single compiled shader stage. 
+                    <code>VkShaderEXT</code>
+                    &nbsp;objects may be created either independently or linked with other 
+                    <code>VkShaderEXT</code>
+                    &nbsp;objects created at the same time. To create 
+                    <code>VkShaderEXT</code>
+                    &nbsp;objects, applications call 
+                    <code>vkCreateShadersEXT()</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    This function compiles the source code for one or more shader stages into 
+                    <code>VkShaderEXT</code>
+                    &nbsp;objects.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Optional Linking
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Whenever 
+                            <code>createInfoCount</code>
+                            &nbsp;is greater than one, the shaders being created may optionally be linked together. Linking allows the implementation to perform cross-stage optimizations based on a promise by the application that the linked shaders will always be used together.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Though a set of linked shaders may perform anywhere between the same to substantially better than equivalent unlinked shaders, this tradeoff is left to the application and linking is never mandatory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            To specify that shaders should be linked, include the 
+                            <code>SHADER_CREATE_LINK_STAGE_EXT</code>
+                            &nbsp;flag in each of the 
+                            <code>VkShaderCreateInfoEXT</code>
+                            &nbsp;structures passed to 
+                            <code>vkCreateShadersEXT()</code>
+                            . The presence or absence of 
+                            <code>SHADER_CREATE_LINK_STAGE_EXT</code>
+                            &nbsp;must match across all 
+                            <code>VkShaderCreateInfoEXT</code>
+                            &nbsp;structures passed to a single 
+                            <code>vkCreateShadersEXT()</code>
+                            &nbsp;call: i.e., if any member of 
+                            <code>pCreateInfos</code>
+                            &nbsp;includes 
+                            <code>SHADER_CREATE_LINK_STAGE_EXT</code>
+                            &nbsp;then all other members must include it too. 
+                            <code>SHADER_CREATE_LINK_STAGE_EXT</code>
+                            &nbsp;is ignored if 
+                            <code>createInfoCount</code>
+                            &nbsp;is one, and a shader created this way is considered unlinked.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The stage of the shader being compiled is specified by 
+                    <code>stage</code>
+                    . Applications must also specify which stage types will be allowed to immediately follow the shader being created. For example, a vertex shader might specify a 
+                    <code>nextStage</code>
+                    &nbsp;value of 
+                    <code>SHADER_STAGE_FRAGMENT</code>
+                    &nbsp;to indicate that the vertex shader being created will always be followed by a fragment shader (and never a geometry or tessellation shader). Applications that do not know this information at shader creation time or need the same shader to be compatible with multiple subsequent stages can specify a mask that includes as many valid next stages as they wish. For example, a vertex shader can specify a 
+                    <code>nextStage</code>
+                    &nbsp;mask of 
+                    <code>SHADER_STAGE_GEOMETRY | SHADER_STAGE_FRAGMENT</code>
+                    &nbsp;to indicate that the next stage could be either a geometry shader or fragment shader (but not a tessellation shader).
+				</p>
+			</li>
+			<li>
+				<p>
+                    etc, see the 
+					<a
+						href="https://docs.vulkan.org/features/latest/features/proposals/EXT_shader_object.html#_shaders" 
+						class="external-link" 
+						target="_blank" >
+                        spec
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="reducing-compilation-overhead-with-codeext_graphics_pipeline_libraries-code" >
+    Reducing compilation overhead, with 
+    <code>EXT_graphics_pipeline_libraries</code>
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/features/latest/features/proposals/EXT_graphics_pipeline_library.html" 
+				class="external-link" 
+				target="_blank" >
+                EXT_graphics_pipeline_library
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/samples/latest/samples/extensions/graphics_pipeline_library/README.html" 
+				class="external-link" 
+				target="_blank" >
+                Sample
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Support
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Release: (2022-06-03).
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://vulkan.gpuinfo.org/displayextensiondetail.php?extension=EXT_graphics_pipeline_library" 
+						class="external-link" 
+						target="_blank" >
+                        Coverage
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    (2025-09-08) 18.7% coverage.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            40.7% Windows.
+						</p>
+					</li>
+					<li>
+						<p>
+                            40.6% Linux.
+						</p>
+					</li>
+					<li>
+						<p>
+                            4.88% Android.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.khronos.org/blog/reducing-draw-time-hitching-with-vk-ext-graphics-pipeline-library" 
+				class="external-link" 
+				target="_blank" >
+                Extra info
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I've read until the Dynamic State header.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Allows separate compilation of different parts of the graphics pipeline. With this it’s now possible to split up the monolithic pipeline creation into different steps and re-use common parts shared across different pipelines.
+		</p>
+	</li>
+	<li>
+		<p>
+            Compared to monolithic pipeline state, this results in faster pipeline creation times, making this extension a good fit for applications and games that do a lot of pipeline creation at runtime.
+		</p>
+	</li>
+	<li>
+		<p>
+            Libraries are partial pipeline objects which cannot be bound directly; they are linked together to form a final executable pipeline.
+		</p>
+	</li>
+	<li>
+		<p>
+            Encourages reuse of compilation work and reduces startup/runtime stutter for games with many similar pipelines.
+		</p>
+	</li>
+	<li>
+		<p>
+            Because libraries are precompiled partial pipelines, linking is generally cheaper than compiling whole pipelines from scratch.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Individual pipelines stages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The monolithic pipeline state has been split into distinct parts that can be compiled independently.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Vertex Input Interface
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Contains the information that would normally be provided to the full pipeline state object by VkPipelineVertexInputStateCreateInfo and VkPipelineInputAssemblyStateCreateInfo.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;For our engine, this information is not known until draw time, so a pipeline for this stage is still hashed and created at draw time.&quot;
+						</p>
+					</li>
+					<li>
+						<p>
+                            This stage has no shader code and thus the driver can create it quickly and there are also a fairly small number of these objects.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Pre-Rasterization Shaders
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Contains vertex, tessellation, and geometry shader stages along with the state associated with 
+							<a
+								href="https://www.khronos.org/registry/vulkan/specs/1.2-extensions/man/html/VkPipelineViewportStateCreateInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkPipelineViewportStateCreateInfo
+							</a>
+                            , 
+							<a
+								href="https://www.khronos.org/registry/vulkan/specs/1.2-extensions/man/html/VkPipelineRasterizationStateCreateInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkPipelineRasterizationStateCreateInfo
+							</a>
+                            , 
+							<a
+								href="https://www.khronos.org/registry/vulkan/specs/1.2-extensions/man/html/VkPipelineTessellationStateCreateInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkPipelineTessellationStateCreateInfo
+							</a>
+                            , and 
+							<a
+								href="https://www.khronos.org/registry/vulkan/specs/1.2-extensions/man/html/VkRenderPass.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkRenderPass
+							</a>
+                            &nbsp;(or dynamic rendering).
+						</p>
+					</li>
+					<li>
+						<p>
+                            The only information you actually need to create the pre-rasterization shader is the SPIR-V code and pipeline layout.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Fragment Shader
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Contains the fragment shader along with the state in VkPipelineDepthStencilStateCreateInfo and VkRenderPass (or dynamic rendering - although in that case only the viewMask is required).
+						</p>
+					</li>
+					<li>
+						<p>
+                            If combined with dynamic rendering you can create the fragment shader pipeline with only the SPIR-V and the pipeline layout.
+                            <br>
+                            This allows the driver to do the heavy lifting of lowering to hardware instructions for the pre-rasterization and fragment shaders with very little information.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Fragment Output Interface
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Contains the VkPipelineColorBlendStateCreateInfo, VkPipelineMultisampleStateCreateInfo, and VkRenderPass (or dynamic rendering)
+						</p>
+					</li>
+					<li>
+						<p>
+                            Like with the Vertex Input Interface, this stage requires information that we don’t know until draw time, so this state is also hashed and the Fragment Output Interface pipeline is created at draw time.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It is expected to be very quick to create and also relatively small in number.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Final link
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    With all four individual pipeline library stages created, an application can perform a final link to a full pipeline. This final link is expected to be extremely fast - the driver will have done the shader compilation for the individual stages and thus the link can be performed at draw time at a reasonable cost.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is where the big benefit of the extension comes in: we’ve pre-created all of our pre-rasterization and fragment shaders, hashed the small number of vertex input/fragment output interfaces, and can on-demand create a fast linked pipeline library at draw time, thus avoiding a dreaded hitch.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            If shader compilation stutter is your concern, this extension is the way to go. This extension lets you create partially-constructed PSOs (Pipeline State Objects) (e.g. one for Vertex another for Pixel Shader), and then combine them to generate the final PSO. This allows splitting the huge monolithic block into smaller monolithic blocks that are easier to handle and design around, making the API more D3D11-like (D3D11 has monolithic Rasterizer State blocks and Blend State blocks).
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Creating pipeline libraries
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Creating a pipeline library (part) is similar to creating a pipeline, with the difference that you only need to specify the properties required for that specific pipeline state.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            E.g. for the vertex input interface you only specify input assembly and vertex input state, which is all required to define the interfaces to a vertex shader.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">VkGraphicsPipelineLibraryCreateInfoEXT library_info{};
+library_info.sType = STRUCTURE_TYPE_GRAPHICS_PIPELINE_LIBRARY_CREATE_INFO_EXT;
+library_info.flags = GRAPHICS_PIPELINE_LIBRARY_VERTEX_INPUT_INTERFACE_EXT;
+
+VkPipelineInputAssemblyStateCreateInfo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input_assembly_state&nbsp;&nbsp;= vkb::initializers::pipeline_input_assembly_state_create_info(PRIMITIVE_TOPOLOGY_TRIANGLE_LIST, 0, FALSE);
+VkPipelineVertexInputStateCreateInfo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vertex_input_state&nbsp;&nbsp;&nbsp;&nbsp;= vkb::initializers::pipeline_vertex_input_state_create_info();
+std::vector&lt;VkVertexInputBindingDescription&gt; vertex_input_bindings = {
+&nbsp;&nbsp;&nbsp;&nbsp;vkb::initializers::vertex_input_binding_description(0, sizeof(Vertex), VERTEX_INPUT_RATE_VERTEX),
+};
+std::vector&lt;VkVertexInputAttributeDescription&gt; vertex_input_attributes = {
+&nbsp;&nbsp;&nbsp;&nbsp;vkb::initializers::vertex_input_attribute_description(0, 0, FORMAT_R32G32B32_SFLOAT, 0),
+&nbsp;&nbsp;&nbsp;&nbsp;vkb::initializers::vertex_input_attribute_description(0, 1, FORMAT_R32G32B32_SFLOAT, sizeof(float) * 3),
+&nbsp;&nbsp;&nbsp;&nbsp;vkb::initializers::vertex_input_attribute_description(0, 2, FORMAT_R32G32_SFLOAT, sizeof(float) * 6),
+};
+vertex_input_state.vertexBindingDescriptionCount&nbsp;&nbsp; = static_cast&lt;uint32_t&gt;(vertex_input_bindings.size());
+vertex_input_state.pVertexBindingDescriptions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= vertex_input_bindings.data();
+vertex_input_state.vertexAttributeDescriptionCount = static_cast&lt;uint32_t&gt;(vertex_input_attributes.size());
+vertex_input_state.pVertexAttributeDescriptions&nbsp;&nbsp;&nbsp;&nbsp;= vertex_input_attributes.data();
+
+VkGraphicsPipelineCreateInfo pipeline_library_create_info{};
+pipeline_library_create_info.sType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+pipeline_library_create_info.flags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = PIPELINE_CREATE_LIBRARY_KHR | PIPELINE_CREATE_RETAIN_LINK_TIME_OPTIMIZATION_INFO_EXT;
+pipeline_library_create_info.sType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+pipeline_library_create_info.pNext&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = &library_info;
+pipeline_library_create_info.pInputAssemblyState = &input_assembly_state;
+pipeline_library_create_info.pVertexInputState&nbsp;&nbsp; = &vertex_input_state;
+
+vkCreateGraphicsPipelines(get_device().get_handle(), pipeline_cache, 1, &pipeline_library_create_info, nullptr, &pipeline_library.vertex_input_interface);
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Deprecating shader modules
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    With this extension, creating shader modules with 
+                    <code>vkCreateShaderModule</code>
+                    &nbsp;has been deprecated and you can instead just pass the shader module create info via 
+                    <code>pNext</code>
+                    &nbsp;into your pipeline shader stage create info. This change bypasses a useless copy and is recommended.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You can see this in the pre-rasterization and fragment shader library setup parts of the sample below.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">VkShaderModuleCreateInfo shader_module_create_info{};
+shader_module_create_info.sType&nbsp;&nbsp;&nbsp;&nbsp;= STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+shader_module_create_info.codeSize = static_cast&lt;uint32_t&gt;(spirv.size()) * sizeof(uint32_t);
+shader_module_create_info.pCode&nbsp;&nbsp;&nbsp;&nbsp;= spirv.data();
+
+VkPipelineShaderStageCreateInfo shader_Stage_create_info{};
+shader_Stage_create_info.sType = STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+// Chain the shader module create info
+shader_Stage_create_info.pNext = &shader_module_create_info;
+shader_Stage_create_info.stage = SHADER_STAGE_VERTEX;
+shader_Stage_create_info.pName = "main";
+
+VkGraphicsPipelineCreateInfo pipeline_library_create_info{};
+pipeline_library_create_info.stageCount = 1;
+pipeline_library_create_info.pStages&nbsp;&nbsp;&nbsp;&nbsp;= &shader_Stage_create_info;
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Linking executables
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Once all pipeline (library) parts have been created, the pipeline executable can be linked together from them:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::vector&lt;VkPipeline&gt; libraries = {
+&nbsp;&nbsp;&nbsp;&nbsp;pipeline_library.vertex_input_interface,
+&nbsp;&nbsp;&nbsp;&nbsp;pipeline_library.pre_rasterization_shaders,
+&nbsp;&nbsp;&nbsp;&nbsp;fragment_shader,
+&nbsp;&nbsp;&nbsp;&nbsp;pipeline_library.fragment_output_interface
+};
+
+// Link the library parts into a graphics pipeline
+VkPipelineLibraryCreateInfoKHR linking_info{};
+linking_info.sType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= STRUCTURE_TYPE_PIPELINE_LIBRARY_CREATE_INFO_KHR;
+linking_info.libraryCount = static_cast&lt;uint32_t&gt;(libraries.size());
+linking_info.pLibraries&nbsp;&nbsp; = libraries.data();
+
+VkGraphicsPipelineCreateInfo executable_pipeline_create_info{};
+executable_pipeline_create_info.sType = STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+executable_pipeline_create_info.pNext = &linking_info;
+executable_pipeline_create_info.flags = PIPELINE_CREATE_LINK_TIME_OPTIMIZATION_EXT;
+
+VkPipeline executable = NULL_HANDLE;
+vkCreateGraphicsPipelines(get_device().get_handle(), thread_pipeline_cache, 1, &executable_pipeline_create_info, nullptr, &executable);
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    This will result in the pipeline state object to be used at draw time.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A note on 
+                    <code>PIPELINE_CREATE_LINK_TIME_OPTIMIZATION_EXT</code>
+                    : This is an optimization flag. If specified, implementations are allowed to do additional optimization passes. This may increase build times but can in turn result in lower runtime costs.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Independent Descriptor Sets
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Imagine a situation where the vertex and fragment stage accesses two different descriptor sets.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-glsl" data-lang="glsl">// Vertex Shader
+layout(set = 0) UBO_X;
+
+// Fragment Shader
+layout(set = 1) UBO_Y;
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Normally when compiling a pipeline, both stages are together and internally a driver will reserve 2 separate descriptor slots for 
+                    <code>UBO_X</code>
+                    &nbsp;and 
+                    <code>UBO_Y</code>
+                    . When using graphics pipeline libraries, the driver will see the fragment shader only uses a single descriptor set. It might internally map it to 
+                    <code>set 0</code>
+                    , but when linking the two libraries, there will be a collision. The 
+                    <code>PIPELINE_LAYOUT_CREATE_INDEPENDENT_SETS_EXT</code>
+                    &nbsp;flag ensures the driver will be able to handle this case and not have any collisions. There are some extra constraints when using this flag, but the Validation Layers will detect them for you.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=o1cdo3d2FQk" 
+				class="external-link" 
+				target="_blank" >
+                Explanation
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250810112555.png" width="350" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250810112706.png" width="350" >
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Same number of pipelines, but acquired through reuse, instead of recompilation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Think of the link step as additive, instead of multiplicative.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250810112848.png" width="350" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250810112905.png" width="350" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Considerations
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            At the time it was said there would be an impact on CPU.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It was unknown whether it was compatible with mobile or not.
+						</p>
+					</li>
+					<li>
+						<p>
+                            No libraries were made for Geometry and Tessellation Shaders, as they are difficult.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="one-pipeline-per-shader-variant" >
+    ~One pipeline per shader variant
+</h5>
+<ul>
+	<li>
+		<p>
+            It is the cause of the problem listed above.
+		</p>
+	</li>
+	<li>
+		<p>
+            Causes a combinatorial explosion of variants.
+		</p>
+	</li>
+</ul>
+<h5
+	id="single-pipeline-branch-inside-shader-material-id-push-constant" >
+    <s>Single pipeline, branch inside shader (material ID / push constant)</s>
+</h5>
+<ul>
+	<li>
+		<p>
+            No way, seems horrible.
+		</p>
+	</li>
+</ul>
+<h3
+	id="optimizations" >
+    Optimizations
+</h3>
+<h5
+	id="pipeline-cache-with-codevkpipelinecache-code" >
+    Pipeline Cache, with 
+    <code>VkPipelineCache</code>
+</h5>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://github.com/KhronosGroup/Vulkan-Samples/blob/main/samples/performance/pipeline_cache/README.adoc#vulkan-pipeline-cache" 
+				class="external-link" 
+				target="_blank" >
+                Pipeline cache sample
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/guide/latest/pipeline_cache.html" 
+				class="external-link" 
+				target="_blank" >
+                Pipeline Cache
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/pipelines.html#pipelines-cache" 
+				class="external-link" 
+				target="_blank" >
+                Pipeline Cache
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It allows the driver to reuse previously computed pipeline artifacts across pipeline creations (and you can persist cache data between runs).
+		</p>
+	</li>
+	<li>
+		<p>
+            Avoids repeating expensive 
+			<em>
+                driver
+			</em>
+            &nbsp;work; shortens startup time by reusing previously compiled artifacts.
+		</p>
+	</li>
+	<li>
+		<p>
+            Creating a Vulkan pipeline requires compiling 
+            <code>VkShaderModule</code>
+            &nbsp;internally. This will have a significant increase in frame time if performed at runtime. To reduce this time, you can provide a previously initialised 
+            <code>VkPipelineCache</code>
+            &nbsp;object when calling the 
+            <code>vkCreateGraphicsPipelines</code>
+            &nbsp;or 
+            <code>vkCreateComputePipelines</code>
+            &nbsp;functions. This object behaves like a cache container which stores the pipeline internal representation for reuse. In order to benefit from using a 
+            <code>VkPipelineCache</code>
+            &nbsp;object, the data recorded during pipeline creation needs to be saved to disk and reused between application runs.
+		</p>
+	</li>
+	<li>
+		<p>
+            Vulkan allows an application to obtain the binary data of a 
+            <code>VkPipelineCache</code>
+            &nbsp;object and save it to a file on disk before terminating the application. This operation can be achieved using two calls to the 
+            <code>vkGetPipelineCacheData</code>
+            &nbsp;function to obtain the size and 
+            <code>VkPipelineCache</code>
+            &nbsp;object’s binary data. In the next application run, the 
+            <code>VkPipelineCache</code>
+            &nbsp;can be initialised with the previous run’s data. This will allow the 
+            <code>vkCreateGraphicsPipelines</code>
+            &nbsp;or 
+            <code>vkCreateComputePipelines</code>
+            &nbsp;functions to reuse the baked state and avoid repeating costly operations such as shader compilation.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                How to use it
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Create one 
+                    <code>VkPipelineCache</code>
+                    &nbsp;for related pipeline creation operations (often one per device).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Pass it into 
+                    <code>vkCreateGraphicsPipelines</code>
+                    &nbsp;for every create call.
+				</p>
+			</li>
+			<li>
+				<p>
+                    On exit (or periodically) call 
+                    <code>vkGetPipelineCacheData</code>
+                    &nbsp;and write to disk; on startup feed that blob into 
+                    <code>vkCreatePipelineCache</code>
+                    &nbsp;to prepopulate the cache.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>KHR_pipeline_binary</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>VkPipelineCache</code>
+                    &nbsp;objects were designed to enable a Vulkan driver to reuse blobs of state or shader code between different pipelines. Originally, the idea was that the driver would know best which parts of state could be reused, and applications only needed to manage storage and threading, simplifying developer code.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Over time however, 
+                    <code>VkPipelineCache</code>
+                    &nbsp;objects proved to be too opaque, prompting the Vulkan Working Group to release a number of extensions to provide more application control over them. The current capabilities of 
+                    <code>VkPipelineCache</code>
+                    &nbsp;objects satisfies many applications, but has shortcomings in more advanced use cases.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Previous difficulties
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The 
+                            <code>VkPipelineCache</code>
+                            &nbsp;API provides no control over the lifetime of the binary objects that it contains. An application wanting to implement an LRU cache, for example, has a hard time using 
+                            <code>VkPipelineCache</code>
+                            &nbsp;objects.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Some applications maintain a cache of VkPipeline objects. The VkPipelineCache API makes it impossible to efficiently associate the cached binary objects within a VkPipelineCache object with the application’s own cache entries.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    What’s more, most drivers maintain an internal cache of pipeline-derived binary objects. In some cases, it would be beneficial for the application to directly interact with that internal cache, especially on some specialized platforms.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The new 
+                    <code>KHR_pipeline_binary</code>
+                    &nbsp;extension introduces a clean new approach that provides applications with access to binary blobs and the information necessary for optimal caching, while smoothly integrating with the application’s own caching mechanisms.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It’s worth noting that the 
+					<a
+						href="https://www.khronos.org/blog/you-can-use-vulkan-without-pipelines-today" 
+						class="external-link" 
+						target="_blank" >
+                        <code>EXT_shader_object</code>
+					</a>
+                    &nbsp;extension already includes analogous functionality to 
+                    <code>KHR_pipeline_binary</code>
+                    . The two extensions were worked on concurrently to provide a universally available solution, including devices where the 
+                    <code>EXT_shader_object</code>
+                    &nbsp;extension cannot yet be supported.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Applications that do not need the advanced functionality of the new KHR_pipeline_binary extension can continue to use VkPipelineCache objects for their simplicity and optimized implementation. But developers that are not satisfied with the VkPipelineCache API should read on to learn more about this powerful new approach.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.khronos.org/blog/bringing-explicit-pipeline-caching-control-to-vulkan?utm_source=chatgpt.com" 
+						class="external-link" 
+						target="_blank" >
+                        Article
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Read up to 'Caching With KHR_pipeline_binary'.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="optimizing-the-shader-with-codekhr_buffer_device_address-code" >
+    Optimizing the Shader with 
+    <code>KHR_buffer_device_address</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            See 
+            <a href="/studies/Graphics Programming/Vulkan/Vulkan.html#physical-storage-buffer-khr_buffer_device_address">
+            Vulkan#Physical Storage Buffer (KHR_buffer_device_address)
+            </a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Support
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="pipeline-derivatives" >
+    <s>Pipeline derivatives</s>
+</h5>
+<ul>
+	<li>
+		<p>
+            A creation mechanism to tell the driver that one pipeline is a parent and others are children (derivatives).
+		</p>
+	</li>
+	<li>
+		<p>
+            The driver may avoid redoing expensive compile/link steps and reuse intermediate data from the parent, reducing creation time.
+		</p>
+	</li>
+	<li>
+		<p>
+            The intent is faster creation of children by reusing work/data from the parent.
+		</p>
+	</li>
+	<li>
+		<p>
+            The pipeline creation API provides no way to tell it what state will change. The idea being that, since the implementation can see the parent's state, and it can see what you ask of the child's state, it can tell what's different.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Is it worth it?
+			</strong>
+            &nbsp;NO.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        TLDR
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            No vendor is actually recommending the use of pipeline derivatives, except maybe to speed up pipeline creation.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://devblogs.nvidia.com/vulkan-dos-donts/" 
+						class="external-link" 
+						target="_blank" >
+                        Tips and Tricks: Vulkan Dos and Don’ts
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Don’t expect speedup from Pipeline Derivatives.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://developer.samsung.com/game/usage" 
+						class="external-link" 
+						target="_blank" >
+                        Vulkan Usage Recommendations
+					</a>
+                    , Samsung
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Pipeline derivatives let applications express &quot;child&quot; pipelines as incremental state changes from a similar &quot;parent&quot;; on some architectures, this can reduce the cost of switching between similar states.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Many mobile GPUs gain performance primarily through pipeline caches, so pipeline derivatives often provide 
+							<strong>
+                                no
+							</strong>
+                            &nbsp;benefit to portable mobile applications.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Recommendations:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Create pipelines early in application execution. Avoid pipeline creation at draw time.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Use a 
+									<em>
+                                        single pipeline cache
+									</em>
+                                    &nbsp;for all pipeline creation.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Write the pipeline cache to a file between application runs.
+								</p>
+							</li>
+							<li>
+								<p>
+									<em>
+                                        Avoid pipeline derivatives.
+									</em>
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/ARM-software/vulkan_best_practice_for_mobile_developers/blob/master/samples/performance/pipeline_cache/pipeline_cache_tutorial.html" 
+						class="internal-link" 
+						target="_self" >
+                        Vulkan Best Practice for Mobile Developers - Pipeline Management
+					</a>
+                    , Arm Software, Jul 11, 2019
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Don't create pipelines at draw time without a pipeline cache (introduces performance stutters).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Don't use pipeline derivatives as they are not supported.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/LunarG/VulkanSamples/blob/master/API-Samples/pipeline_derivative/pipeline_derivative.cpp" 
+						class="external-link" 
+						target="_blank" >
+                        Vulkan Samples, LunarG - API-Samples/pipeline_derivative/pipeline_derivative.cpp
+					</a>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This sample creates pipeline derivative and draws with it. Pipeline derivatives should allow for faster creation of pipelines.
+						</p>
+					</li>
+					<li>
+						<p>
+                            In this sample, we'll create the default pipeline, but then modify it slightly and create a derivative.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The derivative will be used to render a simple cube. We may later find that the pipeline is too simple to show any speedup, or that replacing the fragment shader is too expensive, so this sample can be updated then.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Typical use case
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Many pipelines that differ only by a few fields (e.g., different specializations or small state changes).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                How to use
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Create a base pipeline with 
+                    <code>PIPELINE_CREATE_ALLOW_DERIVATIVES</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    For similar pipelines (small shader or state differences), create child pipelines with 
+                    <code>PIPELINE_CREATE_DERIVATIVE</code>
+                    &nbsp;and set 
+                    <code>basePipelineHandle</code>
+                    &nbsp;or 
+                    <code>basePipelineIndex</code>
+                    &nbsp;pointing to the base.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                How it affects the pipeline workflow
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can materially reduce pipeline creation cost when many similar pipelines are needed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Useful at runtime if you must create many variants quickly.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Still creates separate pipeline objects (state memory + driver bookkeeping).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Not guaranteed to be implemented with identical performance gains on all drivers; behavior is driver-dependent.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

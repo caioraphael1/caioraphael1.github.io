@@ -1,0 +1,1532 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Terminal
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Terminal/my-windows-setup.html" >
+                                My Windows setup
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Terminal/terminal-emulators.html" >
+                                Terminal Emulators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Terminal/Terminal/tools.html" >
+                                Tools
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#multiplexer" >
+                                        Multiplexer
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#improvements" >
+                                        Improvements
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#tuis" >
+                                        TUIs
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#wsl-windows-subsystem-for-linux" >
+                                        WSL (Windows Subsystem for Linux)
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Terminal/terminal-file-manager.html" >
+                                Terminal File Manager
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Shells
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Shells/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Shells/no-shell.html" >
+                                No Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Shells/shells.html" >
+                                Shells
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Tools
+						</h1>
+						<p>
+							<time
+								datetime="2025-02-17" >
+                                🕒 Created: 2025-02-17
+							</time>
+							<time
+								datetime="2026-01-21" >
+                                | Updated: 2026-01-21
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="multiplexer" >
+    Multiplexer
+</h3>
+<h5
+	id="tmux-terminal-multiplexer" >
+    TMux (Terminal Multiplexer)
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ~Windows (no native support).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    MacOS.
+				</p>
+			</li>
+			<li>
+				<p>
+                    BSDs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Solaris.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=DzNmUNvnB04" 
+				class="external-link" 
+				target="_blank" >
+                Explanation
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=U-omALWIBos" 
+				class="external-link" 
+				target="_blank" >
+                TMux with NeoVim
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Haven’t watched the video.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            A powerful tool allowing management of multiple terminal sessions in a single window.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Sessions
+			</strong>
+            : A group of terminals that can persist even after closing the terminal.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Windows
+			</strong>
+            : Within a session, you can open multiple windows.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Panes
+			</strong>
+            : Each window can be split into multiple panes.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=qyV_hOtMdwg" 
+				class="external-link" 
+				target="_blank" >
+                Weird interaction between TMux and Nvim
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Allows use of 
+                    <code>c-[hjkl]</code>
+                    &nbsp;to navigate BETWEEN Tmux and Nvim windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Kind of weird but seems functional.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Has the Nvim part and the TMux part. There are 2 plugins.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="zellij" >
+    Zellij
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/zellij-org/zellij" 
+				class="external-link" 
+				target="_blank" >
+                Zellij
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://zellij.dev/" 
+				class="external-link" 
+				target="_blank" >
+                Zellij
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Kc6ZuIIG3i8" 
+				class="external-link" 
+				target="_blank" >
+                About
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows (experimental).
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Runs directly in Windows terminal without WSL.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>scoop install zellij</code>
+                            &nbsp;or 
+                            <code>choco install zellij</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Note that some features may not be fully stable on Windows. If you need a fully stable terminal multiplexer on Windows, using TMux via WSL may be better.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Impression:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Nah. No real attempt to make this work on Windows, nor is it advertised as such.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    MacOS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Alternative to TMux.
+		</p>
+	</li>
+</ul>
+<h3
+	id="improvements" >
+    Improvements
+</h3>
+<h5
+	id="delta" >
+    Delta
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/dandavison/delta" 
+				class="external-link" 
+				target="_blank" >
+                Delta
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://dandavison.github.io/delta/installation.html" 
+						class="external-link" 
+						target="_blank" >
+                        Install
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=mmqDYw9C30I" 
+				class="external-link" 
+				target="_blank" >
+                Delta demo
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Better git diffs
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    macOS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Installation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://dandavison.github.io/delta/installation.html" 
+						class="external-link" 
+						target="_blank" >
+                        Link
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Impressions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I would use LazyGit or any other tool.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="zoxide" >
+    ~zoxide
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                About
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>cd</code>
+                    &nbsp;improvement.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/ajeetdsouza/zoxide" 
+						class="external-link" 
+						target="_blank" >
+                        Zoxide
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>z</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/nanotee/zoxide.vim" 
+						class="external-link" 
+						target="_blank" >
+                        Zoxide.vim
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    macOS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Installation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>winget install ajeetdsouza.</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                After testing
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Kind of disappointing, no way to see which places were actually visited, or autocomplete, etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Doesn’t provide a good workflow compared to Yazi or Telescope in Nvim.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="eza" >
+    ~eza
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                About
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>ls</code>
+                    &nbsp;improvement
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/eza-community/eza" 
+						class="external-link" 
+						target="_blank" >
+                        Eza
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://youtu.be/LnZdaNfQ86o?si=P9GMc1LYe_qNdtWZ&t=570" 
+						class="external-link" 
+						target="_blank" >
+                        Eza demo
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://marcopeluso.com/posts/level-up-your-macos-terminal-with-wezterm-starship-and-eza/#installing-eza" 
+								class="external-link" 
+								target="_blank" >
+                                Article
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    macOS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Installation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/eza-community/eza/blob/main/INSTALL.html" 
+						class="internal-link" 
+						target="_self" >
+                        Install.md
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>winget install eza-community.eza</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Had to put all aliases in 
+                    <code>C:\Users\caior\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                After testing
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Icons are nice and definitely an improvement over default 
+                    <code>ls</code>
+                    , but still never feels like a real filesystem navigation tool.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Visually cool, but that’s it. No proper workflow.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Update: Broot makes Eza completely obsolete.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="fzf" >
+    ~fzf
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                About
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Calls the fuzzy finder.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>ctrl t</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>**</code>
+                            &nbsp;+ 
+                            <code>Tab</code>
+                            &nbsp;in line.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    In interface, 
+                    <code>ctrl {hjkl}</code>
+                    &nbsp;can navigate results.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=mmqDYw9C30I" 
+						class="external-link" 
+						target="_blank" >
+                        fzf demo
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Also installed via homebrew:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    fd
+								</p>
+							</li>
+							<li>
+								<p>
+                                    fzf-git
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Configs go in 
+                            <code>zshrc.toml</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    macOS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Installation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>winget install fzf</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Windows considerations
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>fd</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            find dir
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>ff</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            find file
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Even though Windows comes before fzf, possibly breaking the search, I see this done in many places, same code for Linux.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>find . -name *.css -o -name *.js | fzf</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>find * -type d | fzf</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    UTF-8 on Windows is weird.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                After testing
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Good, but I didn’t find a nice workflow yet.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Weird to start with 
+                    <code>f desktop</code>
+                    , then open interface, then find a file, then press enter, then 
+                    <code>nvim .</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    ALSO, 
+                    <code>fzf</code>
+                    &nbsp;in terminal relies on 
+                    <code>f</code>
+                    , 
+                    <code>fd</code>
+                    , 
+                    <code>ff</code>
+                    , which freezes terminal while OS searches before giving results to fzf.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Update: Broot makes Eza completely obsolete.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="bat" >
+    ~bat
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                About
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>cat</code>
+                    &nbsp;improvement.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=mmqDYw9C30I" 
+						class="external-link" 
+						target="_blank" >
+                        bat demo
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Syntax highlighting in output.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allows changing highlight theme.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    macOS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Installation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Win
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+							<strong>
+                                Requirements
+							</strong>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads" 
+										class="external-link" 
+										target="_blank" >
+                                        Visual C++ Redistributable
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+									<a
+										href="https://github.com/sharkdp/bat#using-bat-on-windows" 
+										class="external-link" 
+										target="_blank" >
+                                        Annoyances
+									</a>
+                                    .
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Found them annoying.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>winget install sharkdp.bat</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Impressions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Cool, but not sure I’d use this feature frequently.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Seems like a huge workflow. Can’t think of a case to do 
+                    <code>cat</code>
+                    &nbsp;on something.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="tlrc" >
+    <s>tlrc</s>
+</h5>
+<ul>
+	<li>
+		<p>
+            Rust version of tldr
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                About
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/tldr-pages/tlrc" 
+						class="external-link" 
+						target="_blank" >
+                        tlrc
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Better terminal documentation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Installation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>winget install tldr-pages.tlrc</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Impressions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Useful sometimes, but not even 1% game changer.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="thefuck" >
+    <s>TheFuck</s>
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                About
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/nvbn/thefuck" 
+						class="external-link" 
+						target="_blank" >
+                        the-fuck
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Fixes previous command errors by typing 
+                    <code>fuck</code>
+                    &nbsp;in terminal.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Written in Python.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    macOS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Impressions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Feels like &quot;whatever&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="tldr" >
+    <s>tldr</s>
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                About
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/tldr-pages/tldr" 
+						class="external-link" 
+						target="_blank" >
+                        tldr
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://tldr.inbrowser.app/pages/common/cat" 
+						class="external-link" 
+						target="_blank" >
+                        tldr in browser
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Better terminal documentation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    macOS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Installation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>npm install -g tldr</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Impressions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Was super laggy.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use the Rust version.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="tuis" >
+    TUIs
+</h3>
+<ul>
+	<li>
+		<p>
+            Terminal User Interfaces.
+		</p>
+	</li>
+</ul>
+<h5
+	id="lazygit" >
+    LazyGit
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="lazydocker" >
+    LazyDocker
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="wsl-windows-subsystem-for-linux" >
+    WSL (Windows Subsystem for Linux)
+</h3>
+<ul>
+	<li>
+		<p>
+            Allows running Linux distributions inside Windows without a VM.
+		</p>
+	</li>
+	<li>
+		<p>
+            Supports 
+			<strong>
+                Bash, Zsh, Fish, and any other Linux shell
+			</strong>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Useful for developers needing a Linux environment on Windows.
+		</p>
+	</li>
+	<li>
+		<p>
+            To install WSL and a distribution like Ubuntu:
+		</p>
+<pre><code class="language-sh" data-lang="sh">wsl --install
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Then, open Ubuntu in the Start menu.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

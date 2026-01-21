@@ -1,0 +1,1574 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Git
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/cli-commands.html" >
+                                CLI Commands
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/etc.html" >
+                                Etc
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/gitignore.html" >
+                                Gitignore
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/security.html" >
+                                Security
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/gitattributes.html" >
+                                Gitattributes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/providers.html" >
+                                Providers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Etc/Git/gitclients.html" >
+                                GitClients
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#terminal-based" >
+                                        Terminal-based
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#guis" >
+                                        GUIs
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        RegEx
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/regex.html" >
+                                Regex
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Licenses
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/licenses.html" >
+                                Licenses
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            GitClients
+						</h1>
+						<p>
+							<time
+								datetime="2022-11-26" >
+                                🕒 Created: 2022-11-26
+							</time>
+							<time
+								datetime="2026-01-21" >
+                                | Updated: 2026-01-21
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="terminal-based" >
+    Terminal-based
+</h3>
+<h5
+	id="lazygit" >
+    LazyGit
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/jesseduffield/lazygit" 
+				class="external-link" 
+				target="_blank" >
+                LazyGit
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            For Windows, Linux and Mac.
+		</p>
+	</li>
+	<li>
+		<p>
+            Completely text-based.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/jesseduffield/lazygit/blob/master/docs/Config.html" 
+				class="internal-link" 
+				target="_self" >
+                Configs
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.html" 
+				class="internal-link" 
+				target="_self" >
+                CustomPagers
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/dandavison/delta" 
+						class="external-link" 
+						target="_blank" >
+                        Delta
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://dandavison.github.io/delta/installation.html" 
+								class="external-link" 
+								target="_blank" >
+                                Install
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Support 
+					<strong>
+                        does not extend to Windows users
+					</strong>
+                    , because we're using a package which doesn't have Windows support.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                After testing
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Cool cool.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="magit" >
+    <s>Magit</s>
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://magit.vc/" 
+				class="external-link" 
+				target="_blank" >
+                Magit
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            For Windows, Linux and Mac.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's an Emacs plugin. Completely text-based, purely terminal.
+		</p>
+	</li>
+</ul>
+<h5
+	id="cong" >
+    <s>Cong</s>
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="http://cong.tools/" 
+				class="external-link" 
+				target="_blank" >
+                Cong
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            For Windows.
+		</p>
+	</li>
+	<li>
+		<p>
+            Couldn't find any videos about it.
+		</p>
+	</li>
+	<li>
+		<p>
+            Visual is kinda ~terminal/hacker, semi-terminal client.
+		</p>
+	</li>
+	<li>
+		<p>
+            Not friendly. No graph visualization.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                When testing
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Opened but showed a gray screen.
+				</p>
+			</li>
+			<li>
+				<p>
+                    From issues it seems to have many basic problematic things.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="gitcola" >
+    <s>GitCola</s>
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://git-cola.github.io/" 
+				class="external-link" 
+				target="_blank" >
+                GitCola
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            For Windows, Linux and Mac.
+		</p>
+	</li>
+	<li>
+		<p>
+            Looks simplistic, somewhat terminal-oriented.
+		</p>
+	</li>
+	<li>
+		<p>
+            Couldn't find videos about it.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                When testing
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    UI looked very dated and visually terrible. Kinda bait.
+				</p>
+			</li>
+			<li>
+				<p>
+                    (2025-05-27)
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Very very bad.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="guis" >
+    GUIs
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://git-scm.com/downloads/guis" 
+				class="external-link" 
+				target="_blank" >
+                List of GUIs
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            ~
+			<a
+				href="https://sourcegit-scm.github.io/" 
+				class="external-link" 
+				target="_blank" >
+                SourceGit
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Couldn't find videos about it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Open Source.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Lots of features and very straightforward.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Didn't like the interface; unnecessarily dense.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's an app I might keep in the background for occasional complex tasks.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Not my default app choice; complicated.
+						</p>
+					</li>
+					<li>
+						<p>
+                            (2025-05-27)
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Crashed, I had to pull the PC plug.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    etc.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    App is very unpleasant to use.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            ~
+			<a
+				href="https://rela.dev/" 
+				class="external-link" 
+				target="_blank" >
+                RelaGit
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/relagit/relagit/issues/23" 
+						class="external-link" 
+						target="_blank" >
+                        Issue
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Couldn't find videos about it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Open Source.
+				</p>
+			</li>
+			<li>
+				<p>
+                    App is in beta.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Layout very similar to GitHubDesktop. Feels like an improved version, but didn't convince me due to install issues and smaller project trust.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            No installer, just a folder with files.
+						</p>
+					</li>
+					<li>
+						<p>
+                            (2024-06-15) Downloading and opening the app didn't work; it simply didn't open despite dependencies installed. There's an Issue about this.
+						</p>
+					</li>
+					<li>
+						<p>
+                            (2024-06-15) Build attempt:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Need Node.js (v18+) and pnpm.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>iwr https://get.pnpm.io/install.ps1 -useb | iex</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Installed Node.js, didn't change defaults.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Restarted terminal.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>git clone https://github.com/relagit/relagit relagit</code>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>cd relagit</code>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>pnpm i</code>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>pnpm build</code>
+                                    &nbsp;(failed here).
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://gitbutler.com/" 
+				class="external-link" 
+				target="_blank" >
+                GitButler
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Huge marketing; very annoying.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Beta.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Open Source.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Idea: &quot;Virtual Branches&quot;.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;You don’t need to switch branches if you can work on several simultaneously. Fix your bug while you work on your feature.&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;Virtual branches are derived from the working directory, not the other way around...&quot;
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Felt buggy and clunky.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Old/new interface, incomplete.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://desktop.github.com/" 
+				class="external-link" 
+				target="_blank" >
+                GitHubDesktop
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Viewing commits of another branch switches you to that branch, which I HATE; causes file corruption and confusion if not careful.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    That's why I uninstalled the app.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            No decent way to handle merge conflicts.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.gitkraken.com/" 
+				class="external-link" 
+				target="_blank" >
+                GitKraken
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Pretty cool. Liked the graph visualization.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Technically usable for free but with many limitations: 
+					<a
+						href="https://www.gitkraken.com/pricing" 
+						class="external-link" 
+						target="_blank" >
+                        Pricing
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    7-day trial for full version.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Highly recommended as one of the best Git GUIs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Interface felt idiotic with tutorials and unnecessary stuff, reminded me of VSCode.
+						</p>
+					</li>
+					<li>
+						<p>
+                            After the 7-day trial, got message &quot;The free plan does not support opening private or self-hosted repositories. Upgrade to open this repository&quot;, so I had to close the RPG Darkwood repo I had open.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://gitbreeze.dev/" 
+				class="external-link" 
+				target="_blank" >
+                GitBreeze
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    No videos found.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Some features locked behind &quot;premium&quot;: 
+					<a
+						href="https://gitbreeze.dev/pricing" 
+						class="external-link" 
+						target="_blank" >
+                        Pricing
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The colored dots likely represent 'New', 'Changed' and 'Removed'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Site didn't impress me.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Has an 'AI Analysis' for commits, which I consider garbage.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Interface ugly and bland.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Not a fan.
+						</p>
+					</li>
+					<li>
+						<p>
+                            30-day free trial then limited free version — inconsistent.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://gitfiend.com/" 
+				class="external-link" 
+				target="_blank" >
+                GitFiend
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I couldn't find any video about it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Seems to have been in beta for several years. Sounds stagnant in development.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I found the visual a bit washed out and not very pleasant to the eyes. Tab transitions are unnecessary and a bit laggy.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It auto-stages changes, which I like.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Has a design similar to GitHub Desktop, but with a history that has a light graph.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I didn't like it that much, but I didn't hate it either.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The app has zero customization and configuration.
+						</p>
+					</li>
+					<li>
+						<p>
+                            There is no intuitive interface for performing merges. It's awkward and very ambiguous just like GitHub Desktop.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I didn't find any real advantage that would make me want to use this app over the generic/poor (but more reliable) GitHub Desktop.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://github.com/gitahead/gitahead" 
+				class="external-link" 
+				target="_blank" >
+                GitAhead
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    No longer in active development.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Open Source.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I didn't like the UI at all. It reminds me of SourceTree's UI, being ultra dated / trying to be modern. It doesn't look good, it reminds me of Office stuff.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Simply didn't like the app.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.sourcetreeapp.com/" 
+				class="external-link" 
+				target="_blank" >
+                Sourcetree
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's from the company that made Bitbucket. ~Seems like it can sometimes show ads.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The interface is not very pretty. Feels a bit dated.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=adJXt0bN1Ak" 
+						class="external-link" 
+						target="_blank" >
+                        Using Sourcetree with GitHub
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            While trying to install, I immediately ran into a Bitbucket ad. Didn't like it.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The interface is very Office-like and ugly, cluttered. Not pleasant.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Didn't like it.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.anchorpoint.app/pricing" 
+				class="external-link" 
+				target="_blank" >
+                Anchorpoint
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's free for GitHub. For other platforms it is paid monthly. Some features are locked: 
+					<a
+						href="https://www.anchorpoint.app/pricing" 
+						class="external-link" 
+						target="_blank" >
+                        Pricing
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Marketed as &quot;Git for non-programmers&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *About:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It's officially an 'Asset manager' with git capabilities.
+						</p>
+					</li>
+					<li>
+						<p>
+							<a
+								href="https://www.youtube.com/watch?v=yrpOQ4CWfrk" 
+								class="external-link" 
+								target="_blank" >
+                                Using Anchorpoint, GitHub and Godot together
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I found the interface a bit weird and odd. It tries to create a new 'workflow', but I found it more confusing than normal git.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It didn't feel plug-and-play. It's simply confusing and doesn't seem like 'git'. Pretty strange.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I tried downloading the app a second time. It's simply very bad, don't be fooled by the video about 'Anchor, GitHub and Godot'. The app is buggy, irresponsible, confusing. It's on free-trial.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's a heavy and unnecessary app. Nothing simple. Nothing practical.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Don't use it.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://glint.info/en/" 
+				class="external-link" 
+				target="_blank" >
+                Glint
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Upgrade to Premium for bonus features: 
+					<a
+						href="https://glint.info/en/features" 
+						class="external-link" 
+						target="_blank" >
+                        Features
+					</a>
+                    &quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Couldn't find any video about it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Didn't like the layout much. I felt it occupies more space than it should, showing too much information at once.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The main history view left me confused. Didn't like it.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Does not auto-stage changes.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The Discard Changes button is huge and next to the Stage option; that gives me a lot of discomfort.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Also, I dislike the locked features (aka tab limits).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://gitnuro.com/" 
+				class="external-link" 
+				target="_blank" >
+                Gitnuro
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Couldn't find any video about it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Found the layout unpleasant to the eyes and uninteresting. Reminded me of SourceTree's design; very boring.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Although the interface is minimalist, I found it confusing. Couldn't find the merge option.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Has an interface very similar to Glint, but Glint is better.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Does not auto-stage changes, which I find a bit annoying.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://github.com/Murmele/Gittyup" 
+				class="external-link" 
+				target="_blank" >
+                GittyUp
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Couldn't find any video about it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Open Source.
+				</p>
+			</li>
+			<li>
+				<p>
+                    *When testing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Found the interface quite ugly, dated and confusing.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Preferred to use GitHub Desktop.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://gitextensions.github.io/" 
+				class="external-link" 
+				target="_blank" >
+                GitExtensions
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Has a very old-looking visual.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://github.com/gdevic/GitForce" 
+				class="external-link" 
+				target="_blank" >
+                GitForce
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows and Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ultra old, wow.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.sublimemerge.com/" 
+				class="external-link" 
+				target="_blank" >
+                SublimeMerge
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Can be evaluated for free, but inevitably you need to buy the license. The license only covers 3 years of updates.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://fork.dev/" 
+				class="external-link" 
+				target="_blank" >
+                Fork
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Trial period, followed by a one-time purchase (for 1 person and 3 machines).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://tortoisegit.org/" 
+				class="external-link" 
+				target="_blank" >
+                TortoiseGit
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's basically a terminal wrapper.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's very ugly.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.git-tower.com/windows" 
+				class="external-link" 
+				target="_blank" >
+                GitTower
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    30-day trial period, followed by an annual subscription.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.syntevo.com/smartgit/" 
+				class="external-link" 
+				target="_blank" >
+                SmartGit
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For Windows, Linux and Mac.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's free, but you need to buy a license for commercial use: 
+					<a
+						href="http://blog.syntevo.com/smartgit/2022/10/19/non-commercial-licensing-changes-for-smartgit-22-1.html" 
+						class="external-link" 
+						target="_blank" >
+                        app definition
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Found the app terribly ugly.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

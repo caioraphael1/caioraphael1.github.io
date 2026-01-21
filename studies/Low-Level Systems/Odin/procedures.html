@@ -1,0 +1,1838 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Odin
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/my-impressions.html" >
+                                My Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/installation.html" >
+                                Installation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/compile-time-stuff.html" >
+                                Compile-time Stuff
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/package-system.html" >
+                                Package System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/lsp-ols-odin-language-server.html" >
+                                LSP (OLS - Odin Language Server)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/control-flow-if-when-switch-for-defer.html" >
+                                Control Flow (if, when, switch, for, defer)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Low-Level Systems/Odin/procedures.html" >
+                                Procedures
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#calling-conventions" >
+                                        Calling Conventions
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#variadic-arguments" >
+                                        Variadic Arguments
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#multiple-returns" >
+                                        Multiple returns
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#closures-they-dont-exist" >
+                                        Closures (They don't exist)
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#procedure-groups-explicit-overload" >
+                                        Procedure Groups (explicit overload)
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#generics" >
+                                        Generics
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#force-parameters-to-be-compile-time-constants" >
+                                        Force parameters to be compile-time constants
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#deferred" >
+                                        Deferred
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/any.html" >
+                                any
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/primitive-types.html" >
+                                Primitive Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/math-types.html" >
+                                Math Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/rune.html" >
+                                Rune
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/maps-hash-maps.html" >
+                                Maps (Hash Maps)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/struct.html" >
+                                Struct
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/union.html" >
+                                Union
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/bit-sets.html" >
+                                Bit Sets
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/interfaces-methods-vtables.html" >
+                                Interfaces / Methods / VTables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/error-handling.html" >
+                                Error Handling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/context.html" >
+                                Context
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/memory-address.html" >
+                                Memory: Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/memory-allocators.html" >
+                                Memory: Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/memory-operations.html" >
+                                Memory: Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/entry-point.html" >
+                                Entry Point
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/multi-threading.html" >
+                                Multi-Threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/directives.html" >
+                                Directives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/ffi-foreign-function-interface-bindings.html" >
+                                FFI (Foreign Function Interface) / Bindings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/web-build.html" >
+                                Web Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/file-system-process-cli-shell.html" >
+                                File System / Process / CLI / Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/useful-packages.html" >
+                                Useful Packages
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Memory
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/virtual-memory.html" >
+                                Virtual Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/os-memory-on-windows.html" >
+                                OS: Memory on Windows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/memory-alignment.html" >
+                                Memory Alignment
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/address.html" >
+                                Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/allocators.html" >
+                                Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/tools-memory-analysis.html" >
+                                Tools: Memory Analysis
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/handles-instead-of-pointers.html" >
+                                Handles instead of Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/ownership-strategies-destruction-strategies.html" >
+                                Ownership Strategies / Destruction Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/strategies-for-handling-short-lived-memory.html" >
+                                Strategies for handling short lived memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/garbage-collection.html" >
+                                Garbage Collection
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/initialization.html" >
+                                Initialization
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        CPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/physical-structure.html" >
+                                Physical Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/soa-struct-of-arrays-ecs-entity-component-system.html" >
+                                SOA (Struct Of Arrays) / ECS (Entity Component System)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Multithreading
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/core-concepts.html" >
+                                Core Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/thread.html" >
+                                Thread
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/implementation-detail.html" >
+                                Implementation Detail
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/synchronization-primitives.html" >
+                                Synchronization Primitives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/double-buffering.html" >
+                                Double-Buffering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/networking-strategies.html" >
+                                Networking Strategies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Handmade Hero
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Handmade Hero/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Profilers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/tracy.html" >
+                                Tracy
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/spall.html" >
+                                Spall
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/nvidia-nsight-graphics-gpu-trace.html" >
+                                Nvidia Nsight Graphics - GPU Trace
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/amd-gpu-profiler-amd-rgp.html" >
+                                AMD GPU Profiler (AMD RGP)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/intel-gpa.html" >
+                                Intel GPA
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/nsight-systems.html" >
+                                <s>Nsight Systems</s>
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        C
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/c-standard.html" >
+                                C Standard
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/c-standard-library-libc.html" >
+                                C Standard Library (libc)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/loops.html" >
+                                Loops
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/structs.html" >
+                                Structs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/pointers.html" >
+                                Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/preprocessors.html" >
+                                Preprocessors
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/undefined-behavior.html" >
+                                Undefined Behavior
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/gamedev.html" >
+                                GameDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/windows-c-api.html" >
+                                WIndows C API
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Build Systems - Compilation - Linking
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/compilation-process.html" >
+                                Compilation Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/compilers.html" >
+                                Compilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/build-tools.html" >
+                                Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/meta-build-tools.html" >
+                                Meta Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/extra-annoying-things-on-windows.html" >
+                                Extra: Annoying things on Windows
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Debuggers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/file-types.html" >
+                                File Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/rad-debbuger.html" >
+                                RAD Debbuger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/gdb-gnu-debugger.html" >
+                                GDB (GNU Debugger)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/lldb.html" >
+                                LLDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/vscode.html" >
+                                VSCode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/visual-studio-debugger.html" >
+                                Visual Studio Debugger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/others.html" >
+                                Others
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Assembly - ASM
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/assembly.html" >
+                                Assembly
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/notes.html" >
+                                Notes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/reverse-engineering.html" >
+                                Reverse Engineering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Parsing
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/lexer.html" >
+                                Lexer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        JAI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/impressions.html" >
+                                Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/build.html" >
+                                Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/types.html" >
+                                Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/meta-programming.html" >
+                                Meta programming
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/control-flow.html" >
+                                Control flow
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Procedures
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-28" >
+                                🕒 Created: 2025-03-28
+							</time>
+							<time
+								datetime="2026-01-20" >
+                                | Updated: 2026-01-20
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<em>
+                Procedure
+			</em>
+            &nbsp;used to be the common term as opposed to a function or subroutine. A function is a mathematical entity that has no side effects. A subroutine is something that has side effects but does not return anything.
+		</p>
+	</li>
+	<li>
+		<p>
+            A procedure is a superset of functions and subroutines. A procedure may or may not return something. A procedure may or may not have side effects.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">multiply :: proc(x: int, y: int) -&gt; int {
+&nbsp;&nbsp;&nbsp;&nbsp;return x * y
+}
+fmt.println(multiply(137, 432))
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">multiply :: proc(x, y: int) -&gt; int {
+&nbsp;&nbsp;&nbsp;&nbsp;return x * y
+}
+fmt.println(multiply(137, 432))
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Everything in Odin is passed by value, rather than by reference.
+		</p>
+	</li>
+	<li>
+		<p>
+            All procedure parameters in Odin are immutable values.
+		</p>
+	</li>
+	<li>
+		<p>
+            Passing a pointer value makes a copy of the pointer, not the data it points to.
+		</p>
+	</li>
+	<li>
+		<p>
+            Slices, dynamic arrays, and maps behave like pointers in this case (Internally they are structures that contain values, which include pointers, and the “structure” is passed by value).
+		</p>
+	</li>
+</ul>
+<h3
+	id="calling-conventions" >
+    Calling Conventions
+</h3>
+<ul>
+	<li>
+		<p>
+            Procedure types are only compatible with the procedures that have the same calling convention and parameter types.
+		</p>
+	</li>
+</ul>
+<h5
+	id="odin" >
+    odin
+</h5>
+<ul>
+	<li>
+		<p>
+            By default, Odin procedures use the 
+            <code>"odin"</code>
+            &nbsp;calling convention.
+		</p>
+	</li>
+	<li>
+		<p>
+            This calling convention is the same as C, however it differs in a couple of ways:
+		</p>
+		<ul>
+			<li>
+				<p
+					class="line-emphasis" >
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    It promotes values to a pointer if that’s more efficient on the target system
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Where would this be more efficient?
+						</p>
+					</li>
+					<li>
+						<p>
+                            It passes all parameters larger than 
+                            <code>16 bytes</code>
+                            &nbsp;by reference.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The promotion is enabled by the fact that all parameters are immutable in Odin, and its rules are consistent for a given type and platform and can be relied on since they are part of the calling convention.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Passing a pointer value makes a copy of the pointer, not the data it points to. Slices, dynamic arrays, and maps have no special considerations here; they are normal structures with pointer fields, and are passed as such. Their elements will not be copied.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Note: This is subject to change.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        It includes a pointer to the current context as an implicit additional argument
+					</strong>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="contextless" >
+    contextless
+</h5>
+<ul>
+	<li>
+		<p>
+            Same as 
+            <code>odin</code>
+            &nbsp;but without the implicit 
+            <code>context</code>
+            &nbsp;pointer.
+		</p>
+	</li>
+</ul>
+<h5
+	id="stdcall-std" >
+    stdcall / std
+</h5>
+<ul>
+	<li>
+		<p>
+            This is the 
+            <code>stdcall</code>
+            &nbsp;convention as specified by Microsoft.
+		</p>
+	</li>
+</ul>
+<h5
+	id="c-cdecl" >
+    c / cdecl
+</h5>
+<ul>
+	<li>
+		<p>
+            This is the default calling convention generated of a procedure in C.
+		</p>
+	</li>
+	<li>
+		<p>
+            If it's within a 
+            <code>foreign</code>
+            &nbsp;block, the default calling conventions is 
+            <code>cdecl</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="fastcall-fast" >
+    fastcall / fast
+</h5>
+<ul>
+	<li>
+		<p>
+            This is a compiler dependent calling convention.
+		</p>
+	</li>
+</ul>
+<h5
+	id="none" >
+    none
+</h5>
+<ul>
+	<li>
+		<p>
+            This is a compiler dependent calling convention which will do nothing to parameters.
+		</p>
+	</li>
+</ul>
+<h3
+	id="variadic-arguments" >
+    Variadic Arguments
+</h3>
+<ul>
+	<li>
+		<p>
+            Ginger Bill: &quot;It's just a slice allocated on the stack.&quot;
+		</p>
+<pre><code class="language-odin" data-lang="odin">foo :: proc(x: ..int) {} 
+
+// Calling
+foo(1, 2, 3)
+
+// is the same as
+temp_array := [3]int{1, 2, 3} 
+temp_slice := temp_array[:] 
+foo(..temp_slice)
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Procedures can be variadic, taking a varying number of arguments:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">sum :: proc(nums: ..int) -&gt; (result: int) {
+&nbsp;&nbsp;&nbsp;&nbsp;for n in nums {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += n
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return
+}
+fmt.println(sum())&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 0
+fmt.println(sum(1, 2))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 3
+fmt.println(sum(1, 2, 3, 4, 5)) // 15
+
+odds := []int{1, 3, 5}
+fmt.println(sum(..odds))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 9, passing a slice as varargs
+</code></pre>
+<h3
+	id="multiple-returns" >
+    Multiple returns
+</h3>
+<pre><code class="language-odin" data-lang="odin">swap :: proc(x, y: int) -&gt; (int, int) {
+&nbsp;&nbsp;&nbsp;&nbsp;return y, x
+}
+a, b := swap(1, 2)
+fmt.println(a, b) // 2 1
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Implicitly
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">end_msg_as_bytes, err_end := cbor.marshal_into_bytes(end_msg)
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Explicitly
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">end_msg_as_bytes: []byte
+err_end: cbor.MarshalError
+end_msg_as_bytes, err_end = cbor.marshal_into_bytes(end_msg)
+
+// or
+packet_as_bytes: []byte; err_packet: cbor.Marshal_Error
+</code></pre>
+	</li>
+</ul>
+<p>
+        packet_as_bytes, err_packet = cbor.marshal_into_bytes(packet[:])
+    <br>
+    ```
+</p>
+<h3
+	id="closures-they-dont-exist" >
+    Closures (They don't exist)
+</h3>
+<ul>
+	<li>
+		<p>
+            Does not have closures, only Lambdas.
+		</p>
+	</li>
+	<li>
+		<p>
+            Odin only has non-capturing lambda procedures.
+		</p>
+	</li>
+	<li>
+		<p>
+            For closures to work correctly would require a form of automatic memory management which will never be implemented into Odin.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">foo :: proc() {
+&nbsp;&nbsp;&nbsp;&nbsp;y: int
+&nbsp;&nbsp;&nbsp;&nbsp;x := proc() -&gt; int {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// `y` is not available in this scope as it is in a different stack frame
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 123
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+<h3
+	id="procedure-groups-explicit-overload" >
+    Procedure Groups (explicit overload)
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#explicit-procedure-overloading" 
+				class="external-link" 
+				target="_blank" >
+                Explicit Procedure Overloading
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    if I have a struct that inherits another struct with 
+                    <code>using</code>
+                    , and then I make a procedure group, where the first procedure accepts the original struct, and the second accepts the struct that inherits the first struct, what would happen? This &quot;higher level&quot; struct would call which of these procedures? Does it depend on the order the procedures are stored in the procedure group, or something like that? Casting has been the weirdest thing for me.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The order of the procs in the proc group isn't used to decide which to call, the compiler &quot;scores&quot; each candidate to decide which one is the best fit for a given call. As best I can tell it 
+					<em>
+                        does
+					</em>
+                    &nbsp;appear that the compiler accounts for subtypes when doing this, so it should consistently call the proc closest to the base type https://github.com/odin-lang/Odin/blob/090cac62f9cc30f759cba086298b4bdb8c7c62b3/src/check_expr.cpp#L829.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Odin:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In retrospect it sounds a bit weird that odin checks for subtyping in cases of proc groups, but it can't be done directly. In a way, overloading itself sounds weird with no RTTI. Is it just because of the c++ part of odin? We were talking about options for downcasting, but maybe a proc group could also be an option while not having to store any extra data in the struct? I have no idea, it just sounds odd going back to proc groups after the limitations we were talking about. I wonder what would be cheaper, letting a proc group handle the polymorphism, or using a union subtype polymorphism as discussed
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Jesse:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Nothing to do with the language choice for the compiler.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's a compile time switch basically. A better designed 
+                    <code>_Generic</code>
+                    &nbsp;macro from C.
+				</p>
+			</li>
+			<li>
+				<p>
+                    They act on type information available at compile time. There's nothing runtime about proc groups.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="generics" >
+    Generics
+</h3>
+<ul>
+	<li>
+		<p>
+            Use of 
+            <code>$T</code>
+            &nbsp;in 
+			<strong>
+                parameter type
+			</strong>
+            &nbsp;of the procedure.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#parametric-polymorphism" 
+				class="external-link" 
+				target="_blank" >
+                Parametric Polymorphism
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=3X2IzOfzepA" 
+				class="external-link" 
+				target="_blank" >
+                Parametric Polymorphism
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Fun facts
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Parapoly doesn't support default values.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>[]$MEMBER</code>
+                            &nbsp;can't have a default value, for example.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Specialization
+			</em>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">array: $T/[dynamic]$E
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    <code>T</code>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Type of the entire array.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>E</code>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Type of the element inside the array.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="force-parameters-to-be-compile-time-constants" >
+    Force parameters to be compile-time constants
+</h3>
+<ul>
+	<li>
+		<p>
+            Use of 
+            <code>$T</code>
+            &nbsp;in 
+			<strong>
+                parameter name
+			</strong>
+            &nbsp;of the procedure.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">my_new :: proc($T: typeid) -&gt; ^T {
+&nbsp;&nbsp;&nbsp;&nbsp;return (^T)(alloc(size_of(T), align_of(T)))
+}
+
+ptr := my_new(int)
+</code></pre>
+<h3
+	id="deferred" >
+    Deferred
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>@(deferred_in=&lt;proc&gt;)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    will receive the same parameters as the called proc
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>@(deferred_out=&lt;proc&gt;)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    will receive the result of the called proc.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>@(deferred_in_out=&lt;proc&gt;)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    will receive both
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>@(deferred_none=&lt;proc&gt;)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    will receive no parameters.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="return-from-a-deferred-procedure" >
+    Return from a deferred procedure
+</h5>
+<ul>
+	<li>
+		<p>
+            what happens if I have a 
+            <code>@(deferred_none=end) begin :: proc() -&gt; bool</code>
+            &nbsp;and a 
+            <code>end :: proc() -&gt; bool</code>
+            , and I call 
+            <code>result := begin()</code>
+            ? How does the return of deferred procedures work? Would 
+            <code>result</code>
+            &nbsp;hold the value of 
+            <code>begin</code>
+            &nbsp;or something else?
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>result</code>
+                    &nbsp;will hold the return value from 
+                    <code>begin</code>
+                    , the return value of 
+                    <code>end</code>
+                    &nbsp;will be silently dropped when it runs
+				</p>
+			</li>
+			<li>
+				<p>
+                    It'd be equivalent to
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">result := begin()
+defer end()
+</code></pre>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

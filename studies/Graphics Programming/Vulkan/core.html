@@ -1,0 +1,1980 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Vulkan
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/starting.html" >
+                                Starting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/tutorials.html" >
+                                Tutorials
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/samples.html" >
+                                Samples
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Graphics Programming/Vulkan/core.html" >
+                                Core
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#instance-extensions" >
+                                        Instance / Extensions
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#debugging" >
+                                        Debugging
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#window-surface-glfw" >
+                                        Window / Surface / GLFW
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#physical-device-logical-device" >
+                                        Physical Device / Logical Device
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/render-loop.html" >
+                                Render Loop
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/synchronization-and-cache-control.html" >
+                                Synchronization and Cache Control
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/command-buffers.html" >
+                                Command Buffers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/pipelines.html" >
+                                Pipelines
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/graphics-pipeline.html" >
+                                Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/compute-pipeline.html" >
+                                Compute Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/resources.html" >
+                                Resources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/depth.html" >
+                                Depth
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/mapping-data-to-shaders.html" >
+                                Mapping Data to Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/memory-allocation.html" >
+                                Memory Allocation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/hdr-support.html" >
+                                HDR Support
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/profiling.html" >
+                                Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/mobile.html" >
+                                Mobile
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/vr.html" >
+                                VR
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/video-decoding.html" >
+                                Video Decoding
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/spir-v.html" >
+                                SPIR-V
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Render Engineering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/apis.html" >
+                                APIs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/choosing-the-space-to-compute-lighting.html" >
+                                Choosing the Space to compute Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/bsdf-bidirectional-scattering-distribution-function.html" >
+                                BSDF (Bidirectional Scattering Distribution Function)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/material.html" >
+                                Material
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/direct-lighting.html" >
+                                Direct Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/shadows.html" >
+                                Shadows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/skybox-skydome.html" >
+                                Skybox / Skydome
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/transparency.html" >
+                                Transparency
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/global-illumination-indirect-lighting.html" >
+                                Global Illumination / Indirect Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/post-processing.html" >
+                                Post-Processing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/anti-aliasing.html" >
+                                Anti-Aliasing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/light-path-rendering-method.html" >
+                                Light Path / Rendering Method
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/optimization-techniques.html" >
+                                Optimization Techniques
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Graphics and Shaders
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/math-linear-algebra.html" >
+                                Math, Linear Algebra
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/spaces-transformations-and-graphics-pipeline.html" >
+                                Spaces, Transformations and Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/common-techniques.html" >
+                                Common Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/shaders.html" >
+                                Shaders
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GLSL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/storage-qualifiers.html" >
+                                Storage Qualifiers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/layout-qualifiers.html" >
+                                Layout Qualifiers
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/execution-building-blocks.html" >
+                                Execution Building Blocks
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/specialized-units-and-instructions.html" >
+                                Specialized units &amp; instructions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/gpu-va-virtual-address.html" >
+                                GPU VA (Virtual Address)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/tiled-gpus.html" >
+                                Tiled-GPUs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Slang
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Font Rendering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/techniques.html" >
+                                Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/text-processing-pipeline.html" >
+                                Text Processing Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/formats.html" >
+                                Formats
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/libs.html" >
+                                Libs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/fonts.html" >
+                                Fonts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        OpenGL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/OpenGL/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Core
+						</h1>
+						<p>
+							<time
+								datetime="2025-08-01" >
+                                🕒 Created: 2025-08-01
+							</time>
+							<time
+								datetime="2026-01-21" >
+                                | Updated: 2026-01-21
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="instance-extensions" >
+    Instance / Extensions
+</h3>
+<h5
+	id="instance" >
+    Instance
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>VkInstance</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The Vulkan context, used to access drivers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The instance is the connection between your application and the Vulkan library.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkApplicationInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkApplicationInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Optional, but it may provide some useful information to the driver to optimize our specific application.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkInstanceCreateInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkInstanceCreateInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Tells the Vulkan driver which global extensions and validation layers we want to use.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="instance-level-extensions" >
+    Instance Level Extensions
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>vkEnumerateInstanceExtensionProperties()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Retrieve a list of supported extensions before creating an instance.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Each 
+                    <code>VkExtensionProperties</code>
+                    &nbsp;struct contains the name and version of an extension.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="debugging" >
+    Debugging
+</h3>
+<h5
+	id="validation-layers" >
+    Validation Layers
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/guide/latest/layers.html" 
+				class="external-link" 
+				target="_blank" >
+                Layers
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Vulkan is designed for high performance and low driver overhead, therefore, it will include very limited error checking and debugging capabilities by default.
+		</p>
+	</li>
+	<li>
+		<p>
+            The driver will often 
+			<strong>
+                crash
+			</strong>
+            &nbsp;instead of returning an error code if you do something wrong, or worse, it will appear to work on your graphics card and completely 
+			<strong>
+                fail
+			</strong>
+            &nbsp;on others.
+		</p>
+	</li>
+	<li>
+		<p>
+            Vulkan allows you to enable extensive checks through a feature known as 
+			<em>
+                validation layers
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Validation layers are pieces of code that can be inserted between the API and the graphics driver to do things like running extra checks on function parameters and tracking memory management problems.
+		</p>
+	</li>
+	<li>
+		<p>
+            The nice thing is that you can enable them during development and then completely disable them when releasing your application for zero overhead. Anyone can write their own validation layers, but the Vulkan SDK by LunarG provides a standard set of validation layers. You also need to register a callback function to receive debug messages from the layers.
+		</p>
+	</li>
+	<li>
+		<p>
+            Because Vulkan is so explicit about every operation and the validation layers are so extensive, it can actually be a lot 
+			<em>
+                easier
+			</em>
+            &nbsp;to find out why your screen is black compared to OpenGL and Direct3D!
+		</p>
+	</li>
+	<li>
+		<p>
+            Common operations in validation layers are:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Checking the values of parameters against the specification to detect misuse
+				</p>
+			</li>
+			<li>
+				<p>
+                    Tracking the creation and destruction of objects to find resource leaks
+				</p>
+			</li>
+			<li>
+				<p>
+                    Checking thread safety by tracking the threads that calls originate from
+				</p>
+			</li>
+			<li>
+				<p>
+                    Logging every call and its parameters to the standard output
+				</p>
+			</li>
+			<li>
+				<p>
+                    Tracing Vulkan calls for profiling and replaying
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            There were formerly two different types of validation layers in Vulkan: 
+			<em>
+                instance
+			</em>
+            &nbsp;and 
+			<em>
+                device
+			</em>
+            &nbsp;specific.
+		</p>
+	</li>
+	<li>
+		<p>
+            The idea was that instance layers would only check calls related to global Vulkan objects like instances, and device-specific layers would only check calls related to a specific GPU.
+		</p>
+	</li>
+	<li>
+		<p>
+            Device-specific layers have now been 
+			<strong>
+                deprecated
+			</strong>
+            , which means that instance validation layers apply to all Vulkan calls.
+		</p>
+	</li>
+	<li>
+		<p>
+            We don’t really need to check for the existence of this extension because it should be implied by the availability of the validation layers.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkEnumerateInstanceLayerProperties</code>
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                RenderDoc
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Do not run validation at the same time as RenderDoc, otherwise you'll also be validating RenderDoc.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Vulkan Configurator
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Overwrites the normal Layer setup.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Implicitly loads layers.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        How to use
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            RIGHT-CLICK.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Performance
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Ensure validation layers and debug callbacks are off for performance runs. Use pipeline cache objects to avoid repeated pipeline creation cost.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I notice how each 'push', 'descriptor set bind', 'vertex bind', 'indices bind' and 'draw' were a lot slower with validations on.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="message-callback" >
+    Message Callback
+</h5>
+<ul>
+	<li>
+		<p>
+            The validation layers will print debug messages to the standard output by default, but we can also handle them ourselves by providing an explicit callback in our program.
+		</p>
+	</li>
+	<li>
+		<p>
+            This will also allow you to decide which kind of messages you would like to see.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>messageSeverity</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>messageType</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>pfnUserCallback</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>messageSeverity</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_EXT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Diagnostic message
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>DEBUG_UTILS_MESSAGE_SEVERITY_INFO_EXT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Informational message like the creation of a resource
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_EXT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Message about behavior that is not necessarily an error, but very likely a bug in your application
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_EXT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Message about behavior that is invalid and may cause crashes.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>messageType</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>DEBUG_UTILS_MESSAGE_TYPE_GENERAL_EXT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Some event has happened that is unrelated to the specification or performance
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_EXT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Something has happened that violates the specification or indicates a possible mistake
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_EXT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Potential non-optimal use of Vulkan
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pCallbackData</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Refers to a 
+                            <code>VkDebugUtilsMessengerCallbackDataEXT</code>
+                            &nbsp;struct containing the details of the message itself, with the most important members being:
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>pMessage</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The debug message as a null-terminated string
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>pObjects</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Array of Vulkan object handles related to the message
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>objectCount</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Number of objects in the array
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pUserData</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Contains a pointer specified during the setup of the callback and allows you to pass your own data to it.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="debug-utils-codevk_ext_debug_utils-code" >
+    Debug Utils (
+    <code>VK_EXT_debug_utils</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/samples/latest/samples/extensions/debug_utils/README.html" 
+				class="external-link" 
+				target="_blank" >
+                Sample
+			</a>
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">must(
+&nbsp;&nbsp;&nbsp;&nbsp;vk.SetDebugUtilsObjectNameEXT(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dev,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&vk.DebugUtilsObjectNameInfoEXT {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sType = .DEBUG_UTILS_OBJECT_NAME_INFO_EXT,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objectType = obj,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objectHandle = handle,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pObjectName = strings.clone_to_cstring(name, context.temp_allocator),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;),
+)
+</code></pre>
+<h3
+	id="window-surface-glfw" >
+    Window / Surface / GLFW
+</h3>
+<h5
+	id="window" >
+    Window
+</h5>
+<ul>
+	<li>
+		<p>
+            The Vulkan API itself is completely platform-agnostic, which is why we need to use the standardized WSI (Window System Interface) extension to interact with the window manager.
+		</p>
+	</li>
+	<li>
+		<p>
+            Windows can be created with the native platform APIs or libraries like 
+			<a
+				href="https://www.glfw.org/" 
+				class="external-link" 
+				target="_blank" >
+                GLFW
+			</a>
+            &nbsp;and 
+			<a
+				href="https://www.libsdl.org/" 
+				class="external-link" 
+				target="_blank" >
+                SDL
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Some platforms allow you to render directly to a display without interacting with any window manager through the 
+            <code>KHR_display</code>
+            &nbsp;and 
+            <code>KHR_display_swapchain</code>
+            &nbsp;extensions.
+		</p>
+	</li>
+	<li>
+		<p>
+            These allow you to create a surface that represents the entire screen and could be used to implement your own window manager, for example.
+		</p>
+	</li>
+</ul>
+<h5
+	id="glfw" >
+    GLFW
+</h5>
+<ul>
+	<li>
+		<p
+			class="line-emphasis" >
+            
+			<a
+				href="https://www.glfw.org/docs/latest/topics.html" 
+				class="external-link" 
+				target="_blank" >
+                GLFW Reference
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The very first call in 
+            <code>initWindow</code>
+            &nbsp;should be 
+            <code>glfwInit()</code>
+            , which initializes the GLFW library. Because GLFW was originally designed to create an OpenGL context, we need to tell it to not create an OpenGL context with a later call:
+		</p>
+	</li>
+	<li>
+		<p>
+            Because handling resized windows takes special care that we’ll look into later, disable it for now with another window hint call:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+</code></pre>
+<ul>
+	<li>
+		<p>
+            All that’s left now is creating the actual window. Add a 
+            <code>GLFWwindow* window;</code>
+            &nbsp;private class member to store a reference to it and initialize the window with:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
+</code></pre>
+<ul>
+	<li>
+		<p>
+            The first three parameters specify the width, height and title of the window. The fourth parameter allows you to optionally specify a monitor to open the window on, and the last parameter is only relevant to OpenGL.
+		</p>
+	</li>
+	<li>
+		<p>
+            Init:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">void initWindow() {
+&nbsp;&nbsp;&nbsp;&nbsp;glfwInit();
+
+&nbsp;&nbsp;&nbsp;&nbsp;glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+&nbsp;&nbsp;&nbsp;&nbsp;glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+
+&nbsp;&nbsp;&nbsp;&nbsp;window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Main loop:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-c" data-lang="c">void mainLoop() {
+&nbsp;&nbsp;&nbsp;&nbsp;while (!glfwWindowShouldClose(window)) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glfwPollEvents();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Destroy:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-c" data-lang="c">void cleanup() {
+&nbsp;&nbsp;&nbsp;&nbsp;glfwDestroyWindow(window);
+
+&nbsp;&nbsp;&nbsp;&nbsp;glfwTerminate();
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Blocking the Thread
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://www.glfw.org/docs/3.3/group__window.html#ga37bd57223967b4211d60ca1a0bf3c832" 
+						class="external-link" 
+						target="_blank" >
+                        glfw.PollEvents
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.glfw.org/docs/3.3/group__window.html#ga1c5c7eb889c33c7f4d10dd35b327654e" 
+						class="external-link" 
+						target="_blank" >
+                        glfw.SetWindowRefreshCallback
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/glfw/glfw/pull/1426" 
+						class="external-link" 
+						target="_blank" >
+                        PR to improve this
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="surface" >
+    Surface
+</h5>
+<ul>
+	<li>
+		<p>
+            A 
+            <code>VkSurfaceKHR</code>
+            &nbsp;is an opaque handle representing a platform-specific presentation target (for example, a window on Windows, an X11 window on Linux, or a UIView on iOS). It is created directly from the Vulkan instance together with a native window handle. Conceptually, a surface is:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Instance-level: it lives above any physical or logical device.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Window abstraction: it wraps the OS window or drawable so that Vulkan knows where to submit images for display.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Device-agnostic: you can create a surface before choosing which GPU you will use.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Once created, the surface is used by a chosen physical device to query presentation support, formats and capabilities, and then by the logical device to build a Swapchain.
+		</p>
+	</li>
+	<li>
+		<p>
+            A surface itself is not intrinsically tied to any particular physical or logical device, because:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Creation: you call 
+                    <code>vkCreateSurfaceKHR(instance, …)</code>
+                    &nbsp;without involving a 
+                    <code>VkPhysicalDevice</code>
+                    &nbsp;or 
+                    <code>VkDevice</code>
+                    &nbsp;handle.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Lifetime: it exists even before you pick or create a device, and you destroy it with 
+                    <code>vkDestroySurfaceKHR(instance, surface, …)</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Lifetime
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The surface is tied to the GLFW window's lifecycle.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It 
+					<em>
+                        does not change
+					</em>
+                    &nbsp;when the window is resized, minimized, or restored.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The same surface handle remains valid until you destroy it (e.g., when closing the window).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Window surfaces are part of the larger topic of render targets and presentation&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="http://vulkan2.gpuinfo.org/listsurfaceformats.php?platform=windows" 
+				class="external-link" 
+				target="_blank" >
+                Surface Formats
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="extensions" >
+    Extensions
+</h5>
+<ul>
+	<li>
+		<p>
+            To establish the connection between Vulkan and the window system to present results to the screen, we need to use the WSI (Window System Integration) extensions.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>KHR_surface</code>
+            &nbsp;exposes a 
+            <code>VkSurfaceKHR</code>
+            &nbsp;object that represents an abstract type of surface to present rendered images to.
+		</p>
+	</li>
+	<li>
+		<p>
+            The surface in our program will be backed by the window that we’ve already opened with GLFW.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>KHR_surface</code>
+            &nbsp;extension is an instance level extension, and we’ve actually already enabled it, because it’s included in the list returned by 
+            <code>glfwGetRequiredInstanceExtensions</code>
+            . The list also includes some other WSI extensions that we’ll use in the next couple of chapters.
+		</p>
+	</li>
+	<li>
+		<p>
+            The window surface needs to be created right 
+			<strong>
+                after
+			</strong>
+            &nbsp;the instance creation, because it can actually influence the physical device selection.
+		</p>
+	</li>
+	<li>
+		<p>
+            It should also be noted that window surfaces are an entirely optional component in Vulkan if you just need off-screen rendering.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Vulkan allows you to do that without hacks like creating an invisible window (necessary for OpenGL).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Vulkan also allows you to remotely render from a non-presenting GPU or remotely over the internet, or run compute acceleration for AI without a render or presentation target.
+		</p>
+	</li>
+	<li>
+		<p>
+            Although the 
+            <code>VkSurfaceKHR</code>
+            &nbsp;object and its usage is platform-agnostic, its creation isn’t because it depends on window system details. For example, it needs the 
+            <code>HWND</code>
+            &nbsp;and 
+            <code>HMODULE</code>
+            &nbsp;handles on Windows. Therefore, there is a platform-specific addition to the extension, which on Windows is called 
+            <code>KHR_win32_surface</code>
+            &nbsp;and is also automatically included in the list from 
+            <code>glfwGetRequiredInstanceExtensions</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            GLFW actually has 
+            <code>glfwCreateWindowSurface</code>
+            &nbsp;that handles the platform differences for us.
+		</p>
+	</li>
+</ul>
+<h5
+	id="blocking-the-thread" >
+    Blocking the thread
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://stackoverflow.com/questions/45880238/how-to-draw-while-resizing-glfw-window" 
+				class="external-link" 
+				target="_blank" >
+                Difficulties due to GLFW
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            A callback 
+            <code>glfw.SetWindowRefreshCallback</code>
+            &nbsp;allows the swapchain to be recreated while resizing.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    See [[#Swapchain Recreation]].
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="physical-device-logical-device" >
+    Physical Device / Logical Device
+</h3>
+<h5
+	id="physical-device" >
+    Physical Device
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>VkPhysicalDevice</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            A GPU. Used to query physical GPU details, like features, capabilities, memory size, etc.
+		</p>
+	</li>
+</ul>
+<h5
+	id="device-level-extensions" >
+    Device Level Extensions
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://vulkan.gpuinfo.org/" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan Hardware Database
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="queue-families" >
+    Queue Families
+</h5>
+<ul>
+	<li>
+		<p>
+            Most operations performed with Vulkan, like draw commands and memory operations, are asynchronously executed by submitting them to a 
+            <code>VkQueue</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Queues are allocated from queue families, where each queue family supports a specific set of operations in its queues.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For example, there could be separate queue families for graphics, compute and memory transfer operations.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The availability of queue families could also be used as a distinguishing factor in physical device selection.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It is possible for a device with Vulkan support to not offer any graphics functionality; however, all graphics cards with Vulkan support today will generally support all queue operations that we’re interested in.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            We need to check which queue families are supported by the device and which one of these supports the commands that we want to use.
+		</p>
+	</li>
+</ul>
+<h5
+	id="presentation-support" >
+    Presentation support
+</h5>
+<ul>
+	<li>
+		<p>
+            Although the Vulkan implementation may support window system integration, that does not mean that every device in the system supports it. Therefore, we need to extend 
+            <code>createLogicalDevice</code>
+            &nbsp;to ensure that a device can present images to the surface we created.
+		</p>
+	</li>
+	<li>
+		<p>
+            Since the presentation is a queue-specific feature, the problem is actually about finding a queue family that supports presenting to the surface we created.
+		</p>
+	</li>
+	<li>
+		<p>
+            It’s actually possible that the queue families supporting 
+			<strong>
+                drawing
+			</strong>
+            &nbsp;commands and the queue families supporting 
+			<strong>
+                presentation
+			</strong>
+            &nbsp;do 
+			<em>
+                not
+			</em>
+            &nbsp;overlap.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It’s very likely that these end up being the same queue family after all, but throughout the program we will treat them as if they were separate queues for a uniform approach.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Nevertheless, you could add logic to explicitly prefer a physical device that supports drawing and presentation in the same queue for 
+					<em>
+                        improved
+					</em>
+                    &nbsp;performance.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Therefore, we have to take into account that there could be a distinct presentation queue.
+		</p>
+	</li>
+	<li>
+		<p>
+            We’ll look for a queue family that has the capability of presenting to our window surface. The function to check for that is 
+            <code>vkGetPhysicalDeviceSurfaceSupportKHR</code>
+            , which takes the physical device, queue family index and surface as parameters.
+		</p>
+	</li>
+	<li>
+		<p>
+            It should be noted that the availability of a presentation queue, as we checked in the previous chapter, implies that the Swapchain extension must be supported. However, the extension does have to be 
+			<em>
+                explicitly
+			</em>
+            &nbsp;enabled.
+		</p>
+	</li>
+	<li>
+		<p>
+            Not all graphics cards are capable of presenting images directly to a screen for various reasons, for example, because they are designed for servers and don’t have any display outputs. Secondly, since image presentation is heavily tied into the window system and the surfaces associated with windows, it is not part of the Vulkan core. You have to enable the 
+            <code>KHR_swapchain</code>
+            &nbsp;device extension after querying for its support.
+		</p>
+	</li>
+</ul>
+<h5
+	id="surface-capabilities" >
+    Surface Capabilities
+</h5>
+<ul>
+	<li>
+		<p>
+            The extents can change when resizing and you should requery the surface properties. Note that if it says the current extent is 
+            <code>{UINT32_MAX, UINT32_MAX}</code>
+            &nbsp;(happens on some platforms) then you'll need to ask the windowing system for an appropriate new size (but I don't know GLFW well enough to know if 
+            <code>GetFramebufferSize</code>
+            &nbsp;is the right function for that purpose)
+		</p>
+	</li>
+</ul>
+<h5
+	id="logical-device" >
+    Logical Device
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>VkDevice</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            The “logical” GPU context that you actually execute things on.
+		</p>
+	</li>
+	<li>
+		<p>
+            Where you describe more specifically which VkPhysicalDeviceFeatures you will be using, like multi viewport rendering and 64-bit floats.
+		</p>
+	</li>
+	<li>
+		<p>
+            You also need to specify which queue families you would like to use.
+		</p>
+	</li>
+</ul>
+<h5
+	id="queues" >
+    Queues
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/guide/latest/queues.html" 
+				class="external-link" 
+				target="_blank" >
+                Queues
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>VkQueue</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Execution “port” for commands.
+				</p>
+			</li>
+			<li>
+				<p>
+                    GPUs will have a set of queues with different properties.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Some allow only graphics commands, others only allow memory commands, etc.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Command buffers are executed by submitting them into a queue, which will copy the rendering commands onto the GPU for execution.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The queues are automatically created along with the logical device, but we don’t have a handle to interface with them yet.
+		</p>
+	</li>
+	<li>
+		<p>
+            Device queues are implicitly cleaned up when the device is destroyed.
+		</p>
+	</li>
+	<li>
+		<p>
+            We can use the 
+            <code>vkGetDeviceQueue</code>
+            &nbsp;function to retrieve queue handles for each queue family. The parameters are the logical device, queue family, queue index and a pointer to the variable to store the queue handle in. Because we’re only creating a single queue from this family, we’ll simply use index 
+            <code>0</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Vulkan Guide:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It is common to see engines using 3 queue families:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            One for drawing the frame, other for async compute, and other for data transfer.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    In this tutorial, we use a single queue that will run all our commands for simplicity.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="multi-queue" >
+    Multi-queue
+</h5>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20250731212143.png" width="425" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Some hardware only has one queue.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

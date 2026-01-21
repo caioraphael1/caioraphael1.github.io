@@ -1,0 +1,1413 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Git
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Etc/Git/cli-commands.html" >
+                                CLI Commands
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#logging" >
+                                        Logging
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#submodules" >
+                                        Submodules
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/etc.html" >
+                                Etc
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/gitignore.html" >
+                                Gitignore
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/security.html" >
+                                Security
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/gitattributes.html" >
+                                Gitattributes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/providers.html" >
+                                Providers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/Git/gitclients.html" >
+                                GitClients
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        RegEx
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/regex.html" >
+                                Regex
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Licenses
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/licenses.html" >
+                                Licenses
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            CLI Commands
+						</h1>
+						<p>
+							<time
+								datetime="2022-11-26" >
+                                🕒 Created: 2022-11-26
+							</time>
+							<time
+								datetime="2026-01-21" >
+                                | Updated: 2026-01-21
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://git-scm.com/doc" 
+				class="external-link" 
+				target="_blank" >
+                Documentation
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>git --version</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shows the git version.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git \_generic_command -h</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shows the help/tutorials for the given command; e.g.: git clean -h.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git init</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Initializes a git repository. If the directory doesn't have a 
+                    <code>.git</code>
+                    &nbsp;folder, it is created with files inside.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git remote add origin https://github.com/YOUR_USER/YOUR_REPO.git</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Add the remote repository to your local project.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git remote -v</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Check if the remote repository was added correctly.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git clone</code>
+            <br>
+            <code>git clone https://github.com/username/repo.git</code>
+            <br>
+            <code>git clone https://github.com/username/repo.git my-custom-folder</code>
+            <br>
+            <code>git clone git@github.com:username/repo.git</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>git ls-a</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shows all git files.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git ls-tree \_COMMIT_ID (or) \_HEAD~\_number_of_commits_to_go_back</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shows the content in a 'tree' format of the given commit; if no commit is given, the current one is used.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git add \_file_name (or) \_abbreviations_for_multiple_files</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Adds the changes of the file(s) to the staging area.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git rm \_file_name</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Removes the file from the local directory and the staging area.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git commit -m "\_title"</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>git commit -m "\_title" -m "\_description"</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Commits the changes that were in the staging area. The -m option is used to set the &quot;_title&quot; message for the commit.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Adds an extra description in addition to the initial &quot;_title&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>revert</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Creates a new commit that reverses the changes of the previous commit.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's pretty safe.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p
+			class="line-emphasis" >
+            
+            <code>git reset</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Moves HEAD &quot;back&quot;, basically doing an UNDO of everything new that was done.
+				</p>
+			</li>
+			<li>
+				<p>
+                    (2024-10-19) I used 
+                    <code>git reset</code>
+                    . It worked nicely. The commit is undone and the commit's changes are placed in the Changes tab to be committed again or discarded.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Types of 'reset':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>git reset</code>
+                            &nbsp;== 
+                            <code>git reset HEAD</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>git reset HEAD^</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>HEAD^</code>
+                                    &nbsp;means &quot;the parent commit&quot; of the commit HEAD is pointing to (the commit before the most recent).
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20241019182413.png" width="" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>restore</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Restores the file to a previous version.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There are other options with 
+                    <code>git restore -h</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>git restore \=\=source\=\_COMMIT_ID (or) \_HEAD~\_number_of_commits_to_go_back \_file_name</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>amend</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Combines the previous commit with the staged modifications.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Usually used only to change the commit message/description.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I tried to use this when there were file changes, and it resulted in creating a new branch, with a merge back to the current branch with the changes. It was kind of weird and not &quot;clean&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>cherry-pick</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used to move individual commits between branches, commonly used to fix the mistake of committing to the wrong branch.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://youtu.be/qsTthZi23VE?t=430" 
+						class="external-link" 
+						target="_blank" >
+                        Explanation and demo
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>reflog</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Reverts a commit or branch that was deleted, by going back in time.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://youtu.be/qsTthZi23VE?t=730" 
+						class="external-link" 
+						target="_blank" >
+                        reflog
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git show \_COMMIT_ID (or) \_HEAD~\_number_of_commits_to_go_back</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shows the given commit.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git status</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Gives information about commits and the staging area.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>git status -s</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Gives the information in a shortened form; short format.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="logging" >
+    Logging
+</h3>
+<h5
+	id="navigate" >
+    Navigate
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Scroll:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>Space</code>
+                    &nbsp;→ next page
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>b</code>
+                    &nbsp;→ previous page
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>Enter</code>
+                    &nbsp;→ next line
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>y</code>
+                    &nbsp;→ previous line
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Search:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>/pattern</code>
+                    &nbsp;→ search forward
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>?pattern</code>
+                    &nbsp;→ search backward
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>n</code>
+                    &nbsp;→ repeat search forward
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>N</code>
+                    &nbsp;→ repeat search backward
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Go to start/end:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>g</code>
+                    &nbsp;→ start of file
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>G</code>
+                    &nbsp;→ end of file
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Exit:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>q</code>
+                    &nbsp;→ quit 
+                    <code>less</code>
+                    &nbsp;and return to shell
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="git-log" >
+    Git Log
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>git log</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Ex:
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>git log --follow -p -m "--pretty=format:COMMIT: %ad HASH: %h" --word-diff -U0 --date=short&nbsp;&nbsp;--&nbsp;&nbsp;"path.md"</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Shows the change logs.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>git log --oneline</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shows the logs in a compact form.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Filter options can be by 'date', 'message', 'author', 'file' or 'branch'.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>--follow</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Continue listing the history of a file beyond renames (works only for a single file).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>--pretty-format</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%H</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            commit hash
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%h</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            abbreviated commit hash
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%T</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            tree hash
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%t</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            abbreviated tree hash
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%P</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            parent hashes
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%p</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            abbreviated parent hashes
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%an</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author name
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%aN</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author name (respecting .mailmap, see 
+							<a
+								href="https://git-scm.com/docs/git-shortlog" 
+								class="external-link" 
+								target="_blank" >
+                                git-shortlog
+							</a>
+                            &nbsp;or 
+							<a
+								href="https://git-scm.com/docs/git-blame" 
+								class="external-link" 
+								target="_blank" >
+                                git-blame
+							</a>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%ae</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author email
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%aE</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author email (respecting .mailmap, see 
+							<a
+								href="https://git-scm.com/docs/git-shortlog" 
+								class="external-link" 
+								target="_blank" >
+                                git-shortlog
+							</a>
+                            &nbsp;or 
+							<a
+								href="https://git-scm.com/docs/git-blame" 
+								class="external-link" 
+								target="_blank" >
+                                git-blame
+							</a>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%al</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author email local-part (the part before the 
+                            <code>@</code>
+                            &nbsp;sign)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%aL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author local-part (see 
+                            <code>%al</code>
+                            ) respecting .mailmap, see 
+							<a
+								href="https://git-scm.com/docs/git-shortlog" 
+								class="external-link" 
+								target="_blank" >
+                                git-shortlog
+							</a>
+                            &nbsp;or 
+							<a
+								href="https://git-scm.com/docs/git-blame" 
+								class="external-link" 
+								target="_blank" >
+                                git-blame
+							</a>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%ad</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author date (format respects --date= option)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%aD</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author date, RFC2822 style
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%ar</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author date, relative
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%at</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author date, UNIX timestamp
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%ai</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author date, ISO 8601-like format
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%aI</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author date, strict ISO 8601 format
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%as</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author date, short format (
+                            <code>YYYY-MM-DD</code>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%ah</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            author date, human style (like the 
+                            <code>--date=human</code>
+                            &nbsp;option of 
+							<a
+								href="https://git-scm.com/docs/git-rev-list" 
+								class="external-link" 
+								target="_blank" >
+                                git-rev-list
+							</a>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cn</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer name
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cN</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer name (respecting .mailmap, see 
+							<a
+								href="https://git-scm.com/docs/git-shortlog" 
+								class="external-link" 
+								target="_blank" >
+                                git-shortlog
+							</a>
+                            &nbsp;or 
+							<a
+								href="https://git-scm.com/docs/git-blame" 
+								class="external-link" 
+								target="_blank" >
+                                git-blame
+							</a>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%ce</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer email
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cE</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer email (respecting .mailmap, see 
+							<a
+								href="https://git-scm.com/docs/git-shortlog" 
+								class="external-link" 
+								target="_blank" >
+                                git-shortlog
+							</a>
+                            &nbsp;or 
+							<a
+								href="https://git-scm.com/docs/git-blame" 
+								class="external-link" 
+								target="_blank" >
+                                git-blame
+							</a>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cl</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer email local-part (the part before the 
+                            <code>@</code>
+                            &nbsp;sign)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer local-part (see 
+                            <code>%cl</code>
+                            ) respecting .mailmap, see 
+							<a
+								href="https://git-scm.com/docs/git-shortlog" 
+								class="external-link" 
+								target="_blank" >
+                                git-shortlog
+							</a>
+                            &nbsp;or 
+							<a
+								href="https://git-scm.com/docs/git-blame" 
+								class="external-link" 
+								target="_blank" >
+                                git-blame
+							</a>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cd</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer date (format respects --date= option)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cD</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer date, RFC2822 style
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cr</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer date, relative
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%ct</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer date, UNIX timestamp
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%ci</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer date, ISO 8601-like format
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cI</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer date, strict ISO 8601 format
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%cs</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer date, short format (
+                            <code>YYYY-MM-DD</code>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%ch</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            committer date, human style (like the 
+                            <code>--date=human</code>
+                            &nbsp;option of 
+							<a
+								href="https://git-scm.com/docs/git-rev-list" 
+								class="external-link" 
+								target="_blank" >
+                                git-rev-list
+							</a>
+                            )
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%d</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            ref names, like the --decorate option of 
+							<a
+								href="https://git-scm.com/docs/git-log" 
+								class="external-link" 
+								target="_blank" >
+                                git-log
+							</a>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%D</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            ref names without the &quot; (&quot;, &quot;)&quot; wrapping.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>git blame</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For line-level attributions.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="submodules" >
+    Submodules
+</h3>
+<ul>
+	<li>
+		<p>
+            Based on having a git repository inside another git repository.
+		</p>
+	</li>
+	<li>
+		<p>
+            The submodule files are in the local directory, but are not part of the main repository, therefore not part of the main repo's version control.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://youtu.be/qsTthZi23VE?t=730" 
+				class="external-link" 
+				target="_blank" >
+                SubModules
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The video explains how to fetch submodules of an existing repository when cloning, since they are not downloaded automatically:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Run 
+                            <code>git clone --recursive-submodules _repo_url_</code>
+                            &nbsp;when cloning.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Or run 
+                            <code>git submodule update --init --recursive</code>
+                            &nbsp;after cloning.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule" 
+				class="external-link" 
+				target="_blank" >
+                Removing submodules
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

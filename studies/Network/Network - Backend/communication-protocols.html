@@ -1,0 +1,889 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Network - Backend
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/network-architecture.html" >
+                                Network Architecture
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/bottlenecks.html" >
+                                Bottlenecks
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/godot-high-level-multiplayer.html" >
+                                Godot High-level Multiplayer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/security-and-authentication.html" >
+                                Security and Authentication
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Network/Network - Backend/communication-protocols.html" >
+                                Communication Protocols
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#rpc-remote-procedure-calls" >
+                                        RPC (Remote Procedure Calls)
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#http" >
+                                        HTTP
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#websockets" >
+                                        WebSockets
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#in-godot" >
+                                                In Godot
+											</a>
+										</li>
+										<li>
+											<a
+												href="#in-python" >
+                                                In Python
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#ftp-file-transfer-protocol" >
+                                        FTP (File Transfer Protocol)
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/communication-protocols-low-level.html" >
+                                Communication Protocols: Low-level
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/communication-protocols-udp-networking-libraries.html" >
+                                Communication Protocols: UDP Networking Libraries
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network - Low Level e Etc
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/where-i-stopped.html" >
+                                Where I stopped
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/hardware.html" >
+                                Hardware
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/connections-and-settings.html" >
+                                Connections and Settings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/server.html" >
+                                Server
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/security-protocols.html" >
+                                Security Protocols
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/api-application-program-interface.html" >
+                                API (Application Program Interface)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/vpn-proxy.html" >
+                                VPN / Proxy
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network - Netcode
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Netcode/netcode.html" >
+                                Netcode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Netcode/full-synchronization-with-input-lag.html" >
+                                Full Synchronization with Input Lag
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Netcode/lag-compensation.html" >
+                                Lag Compensation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Netcode/correcting-wrong-states-or-predictions.html" >
+                                Correcting Wrong States (or Predictions)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network - HTTP
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/structure.html" >
+                                Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/restful-representational-state-transfer-rest-api.html" >
+                                RESTful (Representational State Transfer) / REST API
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/implementation.html" >
+                                Implementation
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Encryption
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/hashing.html" >
+                                Hashing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/security-tests-requirements-etc.html" >
+                                Security Tests / Requirements / Etc
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Security
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/inspect-site.html" >
+                                Inspect Site
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Serialization - Encoding
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Serialization - Encoding/serialization.html" >
+                                Serialization
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Serialization - Encoding/encoding.html" >
+                                Encoding
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        SSH
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/ssh.html" >
+                                SSH
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Communication Protocols
+						</h1>
+						<p>
+							<time
+								datetime="2024-10-19" >
+                                🕒 Created: 2024-10-19
+							</time>
+							<time
+								datetime="2026-01-21" >
+                                | Updated: 2026-01-21
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="rpc-remote-procedure-calls" >
+    RPC (Remote Procedure Calls)
+</h3>
+<ul>
+	<li>
+		<p>
+            RPC is a protocol that allows a program to execute functions on another computer or remote server as if it were calling a local function. It abstracts the complexity of network communication, making it appear as though the program is calling an internal function, when in fact the function resides on another system.
+		</p>
+	</li>
+</ul>
+<h5
+	id="grpc-google-rpc" >
+    gRPC (Google RPC)
+</h5>
+<ul>
+	<li>
+		<p>
+            Uses 
+			<strong>
+                Protobuf
+			</strong>
+            &nbsp;(Protocol Buffers) for data serialization and 
+			<strong>
+                HTTP/2
+			</strong>
+            &nbsp;for transport.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Structure
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each gRPC message starts with a 5-byte length field.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The first byte is used to store a flag, while the next 4 bytes represent the total message size.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    HTTP/2 divides communication into frames.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Each frame carries a payload size, and the frames are used to transport the actual message, being reassembled at the destination to reconstruct the original message.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Widely used in distributed systems and microservices.
+		</p>
+	</li>
+</ul>
+<h5
+	id="json-rpc" >
+    JSON-RPC
+</h5>
+<ul>
+	<li>
+		<p>
+            An RPC protocol that uses the JSON format for requests and responses, generally used for web systems.
+		</p>
+	</li>
+</ul>
+<h5
+	id="xml-rpc" >
+    XML-RPC
+</h5>
+<ul>
+	<li>
+		<p>
+            Similar to JSON-RPC but uses XML to structure requests and responses.
+		</p>
+	</li>
+</ul>
+<h3
+	id="http" >
+    HTTP
+</h3>
+<ul>
+	<li>
+		<p>
+            <a href="/studies/Network/Network - HTTP/Network - HTTP.html">
+            Network - HTTP
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="websockets" >
+    WebSockets
+</h3>
+<ul>
+	<li>
+		<p>
+            WebSockets are a communication protocol that allows a 
+			<em>
+                bidirectional
+			</em>
+            , 
+			<em>
+                real-time
+			</em>
+            &nbsp;connection between a client (usually a browser) and a server.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If these two features are not needed, HTTP may be better due to its simplicity.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Unlike HTTP, which is based on a 
+			<em>
+                request/response
+			</em>
+            &nbsp;model (the client makes a request and the server responds), the WebSocket maintains an open and persistent connection between client and server, allowing both to send and receive data at any time.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It is based on signals/events.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            It still uses a 
+			<em>
+                TCP
+			</em>
+            &nbsp;connection, which is good for reliability but not for latency, so it is not ideal for real-time applications like VoIP and fast-paced games.
+		</p>
+	</li>
+</ul>
+<h5
+	id="usage-examples" >
+    Usage Examples
+</h5>
+<ul>
+	<li>
+		<p>
+            Real-time chats.
+		</p>
+	</li>
+	<li>
+		<p>
+            Multiplayer games.
+		</p>
+	</li>
+	<li>
+		<p>
+            Financial trading applications.
+		</p>
+	</li>
+</ul>
+<h5
+	id="address-uri" >
+    Address (URI)
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                <code>ws://</code>
+			</strong>
+            &nbsp;(Unsecured WebSocket):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The standard, unencrypted WebSocket protocol.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used for communication on local networks or when security is not a priority, such as in development environments or internal networks.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Works similarly to 
+                    <code>http://</code>
+                    , without encryption or a security layer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                <code>wss://</code>
+			</strong>
+            &nbsp;(Secure WebSocket):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The secure version of WebSocket, where communication is encrypted using TLS (Transport Layer Security), the same security mechanism used by 
+                    <code>https://</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used when security is important, such as in production environments where sensitive data is transmitted.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ensures that communication is protected against interception and attacks (such as man-in-the-middle attacks).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="explanations" >
+    Explanations
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=fG4dkrlaZAA" 
+				class="external-link" 
+				target="_blank" >
+                WebSockets vs REST (HTTP)
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    WebSockets are discussed only at the end of the video. Most of the video criticizes the HTTP method.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="in-godot" >
+    In Godot
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/networking/websocket.html" 
+				class="external-link" 
+				target="_blank" >
+                WebSockets
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=YrgZaYpfUlM" 
+				class="external-link" 
+				target="_blank" >
+                Using WebSockets to Turn an Android into a Controller
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The example basically follows Godot's documentation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Two different projects are used, one to run the game and another to control the game from Android.
+				</p>
+			</li>
+			<li>
+				<p>
+                    On Android, the App acts as a controller for the game running on the PC.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The Android device uses the accelerometer to control a ship on the PC.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Communication is done via sending and receiving packets, without 
+                    <code>@rpc</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="in-python" >
+    In Python
+</h4>
+<h5
+	id="requirements" >
+    Requirements
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>pip install websockets</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Use of 'asyncio'.
+		</p>
+	</li>
+</ul>
+<h5
+	id="example" >
+    Example
+</h5>
+<pre><code class="language-python" data-lang="python">import asyncio
+import websockets
+
+async def echo(websocket, path):
+&nbsp;&nbsp;&nbsp;&nbsp;async for message in websocket:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"Received message: {message}")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Echo the message back to the client
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await websocket.send(f"Echo: {message}")
+
+start_server = websockets.serve(echo, "0.0.0.0", &lt;port&gt;)
+
+asyncio.get_event_loop().run_until_complete(start_server)
+asyncio.get_event_loop().run_forever()
+
+</code></pre>
+<ul>
+	<li>
+		<p>
+            About asynchrony:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        <code>asyncio</code>
+					</strong>
+                    &nbsp;is Python's standard library for asynchronous programming.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Using asynchronous functions is essential for creating responsive, efficient, and scalable applications, especially in environments where I/O and network communication are common. They allow cleaner, easier-to-maintain code and optimize system resource usage. If you are developing an application involving operations that may take time, using asynchronous functions is a good practice.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="ftp-file-transfer-protocol" >
+    FTP (File Transfer Protocol)
+</h3>
+<ul>
+	<li>
+		<p>
+            Communication protocol used to transfer files between a client and a server over a network.
+		</p>
+	</li>
+	<li>
+		<p>
+            Not secure by default (uses plaintext), but can be combined with SSL/TLS (FTPS) to add security.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

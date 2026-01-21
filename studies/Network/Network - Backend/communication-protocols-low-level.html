@@ -1,0 +1,1813 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Network - Backend
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/network-architecture.html" >
+                                Network Architecture
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/bottlenecks.html" >
+                                Bottlenecks
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/godot-high-level-multiplayer.html" >
+                                Godot High-level Multiplayer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/security-and-authentication.html" >
+                                Security and Authentication
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/communication-protocols.html" >
+                                Communication Protocols
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Network/Network - Backend/communication-protocols-low-level.html" >
+                                Communication Protocols: Low-level
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#tcp-transmission-control-protocol" >
+                                        TCP (Transmission Control Protocol)
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#paid-tcp-services" >
+                                                Paid TCP Services
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#udp-user-datagram-protocol" >
+                                        UDP (User Datagram Protocol)
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#paid-udp-services" >
+                                                Paid UDP Services
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Backend/communication-protocols-udp-networking-libraries.html" >
+                                Communication Protocols: UDP Networking Libraries
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network - Low Level e Etc
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/where-i-stopped.html" >
+                                Where I stopped
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/hardware.html" >
+                                Hardware
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/connections-and-settings.html" >
+                                Connections and Settings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/server.html" >
+                                Server
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/security-protocols.html" >
+                                Security Protocols
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/api-application-program-interface.html" >
+                                API (Application Program Interface)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Low Level e Etc/vpn-proxy.html" >
+                                VPN / Proxy
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network - Netcode
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Netcode/netcode.html" >
+                                Netcode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Netcode/full-synchronization-with-input-lag.html" >
+                                Full Synchronization with Input Lag
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Netcode/lag-compensation.html" >
+                                Lag Compensation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - Netcode/correcting-wrong-states-or-predictions.html" >
+                                Correcting Wrong States (or Predictions)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Network - HTTP
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/structure.html" >
+                                Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/restful-representational-state-transfer-rest-api.html" >
+                                RESTful (Representational State Transfer) / REST API
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Network - HTTP/implementation.html" >
+                                Implementation
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Encryption
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/hashing.html" >
+                                Hashing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/security-tests-requirements-etc.html" >
+                                Security Tests / Requirements / Etc
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Security
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/inspect-site.html" >
+                                Inspect Site
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Serialization - Encoding
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Serialization - Encoding/serialization.html" >
+                                Serialization
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/Serialization - Encoding/encoding.html" >
+                                Encoding
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        SSH
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Network/ssh.html" >
+                                SSH
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Communication Protocols: Low-level
+						</h1>
+						<p>
+							<time
+								datetime="2024-10-19" >
+                                🕒 Created: 2024-10-19
+							</time>
+							<time
+								datetime="2026-01-21" >
+                                | Updated: 2026-01-21
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://protohackers.com/problems" 
+				class="external-link" 
+				target="_blank" >
+                Proto Hackers
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Exercises for server development.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="sockets" >
+    Sockets
+</h5>
+<ul>
+	<li>
+		<p>
+            Each socket = one endpoint of a single connection.
+		</p>
+	</li>
+</ul>
+<h5
+	id="socket-ids-file-descriptors-fd" >
+    Socket IDs (File Descriptors) (fd)
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                File descriptor
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The term file descriptor comes from Unix and Unix-like operating systems, and it’s deeply rooted in how these systems abstract I/O.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In Unix philosophy, &quot;everything is a file&quot;.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Disk files
+						</p>
+					</li>
+					<li>
+						<p>
+                            Pipes
+						</p>
+					</li>
+					<li>
+						<p>
+                            Devices
+						</p>
+					</li>
+					<li>
+						<p>
+                            Sockets
+						</p>
+					</li>
+					<li>
+						<p>
+                            Terminals
+						</p>
+					</li>
+					<li>
+						<p>
+                            Etc.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    So:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            When you open a file → you get a file descriptor.
+						</p>
+					</li>
+					<li>
+						<p>
+                            When you open a socket → you also get a file descriptor.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    They’re both handled through the same I/O API: 
+                    <code>read()</code>
+                    , 
+                    <code>write()</code>
+                    , 
+                    <code>close()</code>
+                    , etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This abstraction is why sockets use file descriptors — they’re just &quot;special files&quot; from the OS’s point of view.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Usage
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The socket ID is used by your program to interact with the OS-managed socket.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The OS routes TCP packets based on the socket's internal connection tuple, not your program directly.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>Local Socket A: 127.0.0.1:6060&nbsp;&nbsp;</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>Local Socket B: 127.0.0.1:50543&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;&nbsp;&nbsp;&nbsp;&nbsp; 127.0.0.1:6061 </code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The OS&nbsp;&nbsp;stores and manages the mapping between:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Socket ID
+						</p>
+					</li>
+					<li>
+						<p>
+                            The internal state of that connection
+						</p>
+					</li>
+					<li>
+						<p>
+                            File/socket types, flags, permissions, etc.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    You can think of the socket ID&nbsp;&nbsp;as an index or key into a kernel-managed table of open resources, much like a hashmap, though it's typically implemented as a simple indexed array inside the OS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            You can safely have one listening socket on 
+            <code>6060</code>
+            &nbsp;and one connected socket to 
+            <code>6061</code>
+            &nbsp;in the same program.
+		</p>
+	</li>
+</ul>
+<h3
+	id="tcp-transmission-control-protocol" >
+    TCP (Transmission Control Protocol)
+</h3>
+<ul>
+	<li>
+		<p>
+            A reliable communication protocol that guarantees the delivery of data packets between two devices.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is part of the 
+			<em>
+                TCP/IP
+			</em>
+            &nbsp;suite and is used by many protocols such as HTTP, HTTPS, FTP, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;TCP ensures packets will always arrive reliably and in order, but latency is generally higher due to error correction. It's also quite a complex protocol because it understands what a &quot;connection&quot; is, and optimizes for goals that often don't suit applications like multiplayer games. Packets are buffered to be sent in larger batches, trading less per-packet overhead for higher latency. This can be useful for things like HTTP, but generally not for games. Some of this can be configured and disabled (e.g. by disabling &quot;Nagle's algorithm&quot; for the TCP connection).&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="protocol" >
+    Protocol
+</h5>
+<ul>
+	<li>
+		<p>
+            SYN -&gt; SYN ACK -&gt; ACK.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20241121112657.png" width="475" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            TCP packets do not contain a reliable sender ID that can be verified directly.
+		</p>
+	</li>
+</ul>
+<h5
+	id="closing-codeclose-code" >
+    Closing (
+    <code>close</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                What it does
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The socket's file descriptor (e.g., 
+                    <code>sockfd</code>
+                    ) is marked as available for reuse.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Decrements the reference count for the socket.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Sockets may have multiple references (e.g., via 
+                            <code>dup()</code>
+                            , 
+                            <code>fork()</code>
+                            , or threading).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Resources are only freed (e.g., memory, kernel structures) when the reference count reaches zero.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    It initiates connection teardown (sends 
+                    <code>FIN</code>
+                    &nbsp;if it’s the last reference).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The integer value representing the descriptor can now be reassigned by future 
+            <code>socket()</code>
+            , 
+            <code>open()</code>
+            , or similar calls.
+		</p>
+	</li>
+	<li>
+		<p>
+            The client cannot close the connection to the server; it's impossible. Reasons:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The client doesn't have the server socket available to it.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The client has no way to reference the server’s socket.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    While TCP connections are bidirectional (peer-to-peer), socket descriptors are local to each process.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The client and server communicate via IP:Port pairs, but their socket file descriptors (
+                            <code>sockfd</code>
+                            ) are private.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The kernel enforces this separation for security and stability.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Even if the client sends malicious packets (e.g., a spoofed 
+                    <code>RST</code>
+                    ), the server’s OS will handle it at the TCP layer, not the application socket layer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The 
+			<em>
+                only way
+			</em>
+            &nbsp;the server’s socket closes is if:
+		</p>
+		<ol>
+			<li>
+				<p>
+                    The server explicitly calls 
+                    <code>close()</code>
+                    &nbsp;on its socket.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The server process crashes (kernel cleans up resources).
+				</p>
+			</li>
+			<li>
+				<p>
+                    The OS terminates the process (e.g., 
+                    <code>kill -9</code>
+                    ).
+				</p>
+			</li>
+		</ol>
+	</li>
+</ul>
+<h5
+	id="shutdown-codeshutdown-code" >
+    Shutdown (
+    <code>shutdown</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                What it does
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Forces a partial or full closure of communication in a specified direction.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Does not free the socket descriptor (still needs 
+                    <code>close()</code>
+                    &nbsp;later).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Immediately affects the TCP connection state (sends 
+                    <code>FIN</code>
+                    &nbsp;or 
+                    <code>RST</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="connection" >
+    Connection
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Server
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    listen
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Puts the socket into passive mode, indicating it will accept connections.
+						</p>
+					</li>
+					<li>
+						<p>
+                            “I am ready to accept TCP connections.”
+						</p>
+					</li>
+					<li>
+						<p>
+                            Necessary before: 
+                            <code>accept</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Relevant only for TCP (stream) sockets, not UDP.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Internally does a bind
+							</em>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    bind
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Associates the socket with a local address (IP + port).
+						</p>
+					</li>
+					<li>
+						<p>
+                            “I want to use this IP:port for this socket.”
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    accept
+				</p>
+				<ul>
+					<li>
+						<p>
+                            In 
+							<strong>
+                                Odin
+							</strong>
+                            , the 
+                            <code>accept()</code>
+                            &nbsp;call on a TCP socket is blocking by default, meaning execution halts until a client tries to connect to the socket.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Blocks until a client does 
+                                    <code>dial()</code>
+                                    &nbsp;to that address/port.
+								</p>
+							</li>
+							<li>
+								<p>
+									<em>
+                                        Non-blocking mode
+									</em>
+                                    :
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            You need to configure the socket with system flags, usually requiring a direct OS syscall (not abstracted by default in 
+                                            <code>core:net</code>
+                                            ).
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Alternatively, use 
+                                            <code>select</code>
+                                            , 
+                                            <code>poll</code>
+                                            , or threads/coroutines to handle multiple connections concurrently.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Client
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    dial
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Establishes an active connection with a remote server.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Connects to an IP + port that is listening.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="security" >
+    Security
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Sender identification
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The remote IP and port can be read with 
+                    <code>conn.RemoteAddr()</code>
+                    , but:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This can be 
+							<strong>
+                                forged in MITM attacks
+							</strong>
+                            &nbsp;if no encryption is present.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Even with IP/port, 
+							<strong>
+                                identity is not guaranteed
+							</strong>
+                            &nbsp;(e.g., NAT, spoofing, etc.).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    In Godot:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The peer_id is sent along with the packet.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This would be extremely insecure if it weren’t for a 
+							<em>
+                                supposed
+							</em>
+                            &nbsp;verification between the sender peer_id and its address upon receiving a packet.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If the peer_id and address do not match the stored value in a hashmap, it is an attempted forgery.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            This is completely insecure if the peer_id and address are forged simultaneously, in a spoofing attack.
+						</p>
+					</li>
+					<li>
+						<p>
+                            In this case, encryption is required.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                &quot;Double listen&quot;
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;If a legitimate server is doing 
+                    <code>listen</code>
+                    &nbsp;on an IP:port, is it possible for another computer (a remote attacker) to also 
+                    <code>listen</code>
+                    &nbsp;on the same IP:port to intercept connections?&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    Routers/Internet/DNS/etc will forward packets only to the host that has the corresponding public IP.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Example
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The legitimate server is at 
+                            <code>192.168.1.100:8080</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            An attacker on another host (e.g., 
+                            <code>192.168.1.250</code>
+                            ) tries to 
+                            <code>listen</code>
+                            &nbsp;also on 
+                            <code>0.0.0.0:8080</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Result:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The attacker only receives connections sent to its own local IP.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Connections sent to the legitimate server IP still go to 192.168.1.100, as IP routing determines.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Cases where the attack may work
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Involve network manipulation.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                ARP spoofing / ARP poisoning (LAN)
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The attacker impersonates the &quot;server IP&quot; on the local network.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    If successful, LAN clients may redirect packets to them.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    They can then 
+                                    <code>listen</code>
+                                    &nbsp;and receive connections destined for the legitimate IP.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                DNS spoofing
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The attacker tricks the client into thinking 
+                                    <code>api.myserver.com</code>
+                                    &nbsp;resolves to the attacker’s IP.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The client then connects to the attacker.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This attack depends on name resolution control, not 
+                                    <code>listen</code>
+                                    &nbsp;directly.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                BGP hijacking (Internet level)
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Much rarer and more complex.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The attacker announces false routes on the Internet backbone, intercepting traffic to the server’s IP.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Applicable only in highly sophisticated attacks.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="head-of-line-blocking" >
+    Head-of-line Blocking
+</h5>
+<ul>
+	<li>
+		<p>
+            TCP ensures packets arrive 
+			<strong>
+                in order
+			</strong>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            If a packet is lost, all subsequent packets must wait for retransmission before delivery to the application. This creates a bottleneck, as correctly received packets get &quot;stuck&quot; until the lost packet is received.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You send 3 packets: 
+					<strong>
+                        P1
+					</strong>
+                    , 
+					<strong>
+                        P2
+					</strong>
+                    , 
+					<strong>
+                        P3
+					</strong>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The receiver gets 
+					<strong>
+                        P1
+					</strong>
+                    &nbsp;and 
+					<strong>
+                        P3
+					</strong>
+                    , but 
+					<strong>
+                        P2
+					</strong>
+                    &nbsp;is lost.
+				</p>
+			</li>
+			<li>
+				<p>
+                    TCP waits for retransmission of 
+					<strong>
+                        P2
+					</strong>
+                    &nbsp;before releasing 
+					<strong>
+                        P3
+					</strong>
+                    &nbsp;to the application.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Result: 
+					<strong>
+                        Unnecessary delay
+					</strong>
+                    , because 
+					<strong>
+                        P3
+					</strong>
+                    &nbsp;could have been processed earlier.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            This blocking is one reason TCP can be slow for games and other low-latency applications.
+		</p>
+	</li>
+</ul>
+<h4
+	id="paid-tcp-services" >
+    Paid TCP Services
+</h4>
+<h5
+	id="redis" >
+    Redis
+</h5>
+<ul>
+	<li>
+		<p>
+            Redis is an in-memory storage system, often used as a cache or fast database to improve application performance, including multiplayer games. It is not a low-latency networking engine by itself, but can be used to coordinate game state data, server synchronization, and maintain real-time state variables.
+		</p>
+	</li>
+	<li>
+		<p>
+            Redis is an in-memory database that primarily uses the 
+			<strong>
+                TCP
+			</strong>
+            &nbsp;protocol for communication. It is designed for fast access and data caching, but is not a network transport solution for UDP. In network scenarios, Redis is usually combined with other technologies that handle UDP transport, but Redis itself is not a UDP transporter.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Very fast and ideal for temporary storage and quick access to data that needs to be shared in real time.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Redis offers replication, persistence, and clustering features, aiding scalability.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Does not provide a complete network solution, mostly used as support in networking and game server setups.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Working with Redis requires a network structure to consume the data (e.g., 
+					<em>
+                        Photon
+					</em>
+                    , 
+					<em>
+                        KCP
+					</em>
+                    , or others).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pricing Model
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Redis is free and open-source under the BSD license for on-premise use.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Paid versions (like 
+					<a
+						href="https://redis.io/pricing/#monthly" 
+						class="external-link" 
+						target="_blank" >
+                        Redis Enterprise
+					</a>
+                    ) offer extra features, advanced scalability, and cloud support.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Real-time games and applications needing fast cache and data sharing across multiple server instances.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="udp-user-datagram-protocol" >
+    UDP (User Datagram Protocol)
+</h3>
+<ul>
+	<li>
+		<p>
+            Communication protocol that sends data packets without establishing a reliable connection, making it faster but less secure than TCP.
+		</p>
+	</li>
+	<li>
+		<p>
+            Used in applications where speed is more important than reliability, such as video streaming or online gaming.
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;UDP is a simpler protocol, which only sends packets (and has no concept of a &quot;connection&quot;). No error correction makes it pretty quick (low latency), but packets may be lost along the way or received in the wrong order. Added to that, the MTU (maximum packet size) for UDP is generally low (only a few hundred bytes), so transmitting larger packets means splitting them, reorganizing them and retrying if a part fails.&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="closing-codeclose-code" >
+    Closing (
+    <code>close</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                What it does
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No connection teardown occurs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The local port is released, and kernel buffers are cleared.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="paid-udp-services" >
+    Paid UDP Services
+</h4>
+<h5
+	id="photon-realtime" >
+    Photon Realtime
+</h5>
+<ul>
+	<li>
+		<p>
+            Photon is a cloud networking solution designed specifically for game development. It supports UDP communication with tools tailored for games and real-time synchronization.
+		</p>
+	</li>
+	<li>
+		<p>
+            Photon Realtime is designed for multiplayer games focusing on low latency and scalability, primarily using UDP. It also supports TCP in some cases, but UDP is the common protocol due to its efficiency in gaming networks.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Scalable and optimized for online games, with integrated cloud infrastructure, reducing setup and maintenance overhead.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Costs increase with scale, as it follows a usage-based model. Customization is more limited.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Multiplayer games needing a ready-to-use, highly scalable solution.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Paid service based on subscriptions and volume of users/connections.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pricing Model
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Offers free basic plans with limitations and paid plans as needed.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="photon-quantum" >
+    Photon Quantum
+</h5>
+<ul>
+	<li>
+		<p>
+            Photon Quantum is a network solution based on a deterministic engine, specifically for multiplayer games with advanced physics, such as fighting games and simulators. Instead of sending continuous state packets, Quantum sends user inputs, keeping physics synchronized for all players.
+		</p>
+	</li>
+	<li>
+		<p>
+            Photon Quantum uses UDP for network communication, essential for low latency and high performance in games requiring precise synchronization, particularly in deterministic physics games where response time is critical. Quantum is optimized to ensure input data is transmitted quickly with minimal delay.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Designed for highly synchronized games, Quantum handles games where state consistency is critical. Supports rollback and reconciliation, ideal for high-precision, delay-sensitive games.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can be complex to implement for games without deterministic physics or synchronization needs. Paid solution with costs scaling with player count.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pricing Model
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Photon Quantum is paid, with subscription and usage-based pricing. Free plans for testing and prototyping exist but with limitations.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Multiplayer games with advanced physics and precision mechanics, like fighting games or simulations where all players must share the same game state.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="photon-server" >
+    Photon Server
+</h5>
+<ul>
+	<li>
+		<p>
+            Photon Server is a self-hosted solution for multiplayer game development. Unlike Photon Realtime (cloud service), Photon Server lets developers host their own server, reducing costs and offering greater control.
+		</p>
+	</li>
+	<li>
+		<p>
+            Photon Server supports 
+			<strong>
+                UDP
+			</strong>
+            &nbsp;and 
+			<strong>
+                TCP
+			</strong>
+            . UDP is ideal for multiplayer games requiring rapid, frequent updates, such as FPS and MOBA games. Photon Server lets developers choose the protocol depending on game needs, with UDP being the low-latency choice.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Advantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Provides flexibility and scalability, allowing developers to control infrastructure and adapt it to game requirements. Ideal for developers preferring on-premise solutions for long-term cost reduction and network control.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Disadvantages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Requires server setup and maintenance, which can be complex for developers without server infrastructure experience. Less scalable than a managed cloud solution.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pricing Model
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Photon Server offers a free license for up to 100 CCU (concurrent users), ideal for development and prototyping. Beyond that, paid licenses are required, scaled by user count.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ideal Scenarios
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Multiplayer games where developers want more control over infrastructure, especially useful for companies avoiding recurring cloud service costs.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

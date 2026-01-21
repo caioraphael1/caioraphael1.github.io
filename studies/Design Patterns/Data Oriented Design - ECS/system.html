@@ -1,0 +1,1902 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Data Oriented Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/criticisms-of-oop.html" >
+                                Criticisms of OOP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/dod-data-oriented-design.html" >
+                                DOD (Data-Oriented Design)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/philosophies.html" >
+                                Philosophies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Data Oriented Design - ECS
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/discussion.html" >
+                                Discussion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/entity.html" >
+                                Entity
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/component.html" >
+                                Component
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/system.html" >
+                                System
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#with-sparse-sets" >
+                                        With Sparse Sets
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#with-archetypes" >
+                                        With Archetypes
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/design-n-greatern-relationship-differentiating-data-stable-handles-for-dealing-with-references-to-data-when-the-backing-storage-changes-add-remove-move-resize.html" >
+                                Design: N-&gt;N relationship, differentiating data, stable handles for dealing with references to data when the backing storage changes (add/remove/move/resize)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/discarded-ideas.html" >
+                                Discarded Ideas
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Data Oriented Design - COP
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - COP/cop-compression-oriented-programming-mega-struct.html" >
+                                COP (Compression-Oriented Programming) / Mega-Struct
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Other Design Patterns
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/behavioral-patterns.html" >
+                                Behavioral Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/creational-patterns.html" >
+                                Creational Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/structural-patterns.html" >
+                                Structural Patterns
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Concepts and Terminology
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/terminology.html" >
+                                Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Rules of thumb - Laws - Guidelines and Principles
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Rules of thumb - Laws - Guidelines and Principles/rules-of-thumb.html" >
+                                Rules of Thumb
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Paradigms
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/procedural.html" >
+                                Procedural
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/functional.html" >
+                                Functional
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/oop-object-oriented-programming.html" >
+                                OOP (Object-Oriented Programming)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Production Methodologies
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/design-process.html" >
+                                Design Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/apps.html" >
+                                Apps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/software-testing.html" >
+                                Software Testing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/methodologies.html" >
+                                Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            System
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-11" >
+                                🕒 Created: 2025-03-11
+							</time>
+							<time
+								datetime="2026-01-20" >
+                                | Updated: 2026-01-20
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            A normal function.
+		</p>
+	</li>
+	<li>
+		<p>
+            Is logic or a process that operates on one or more components of entities to modify their states or perform some operation.
+		</p>
+	</li>
+</ul>
+<h3
+	id="with-sparse-sets" >
+    With Sparse Sets
+</h3>
+<h5
+	id="intersection-into-an-array-of-entity" >
+    Intersection into an array of Entity
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;give me all entities that have both Name and Person component&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Pros
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Contiguous index buffer → easy to split into chunks for parallel workers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Great for data-local processing (pull components by index into tight loops).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Enables SIMD easily because you can iterate contiguous component arrays by index with known bounds.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allows simple scheduling (divide vec into ranges, spawn jobs, no shared iterator state).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Good throughput when query result is large or will be iterated multiple times.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Cons
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Upfront cost to compute intersection (time) and memory for the vector.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allocation overhead unless you reuse buffers or reserve capacity.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the query result is small or you only need first few matches, cost may be wasted.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Giving windows for optimization
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Avoiding re-queries
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The entities rarely change, and so the query is mostly the the same every frame, but all the query is repeated every frame.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Solution
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Store the query upfront, re-querying on modification to the stored Components for that query, via a dirty flag.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Parallelization
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Threads:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Doesn't sound good, as the threads wouldn't be able to sleep, causing high cpu consumption.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Without an iterator:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Use a 
+                                            <code>parallel_for</code>
+                                            , dividing the work into batches, sent to different threads; classic usage.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    With an iterator:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Trick. The next operator is only gathered after the first one is finished, as it's a sequential operation.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            A 
+                                            <code>pseudo-parallel_for</code>
+                                            &nbsp;could be used, as a way to divide the work between threads; a 
+                                            <code>parallel_iterator</code>
+                                            , so to speak.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    The problem with this solution is that differently from the 
+                                                    <code>parallel_for</code>
+                                                    , who divides the work in a homogenous way, the 
+                                                    <code>parallel_iterator</code>
+                                                    &nbsp;would divide not the 
+													<em>
+                                                        result
+													</em>
+                                                    , but the 
+													<em>
+                                                        source
+													</em>
+                                                    &nbsp;of the iterator (the 
+                                                    <code>.data</code>
+                                                    &nbsp;array), which means that some threads might have more work to do if the results of the iterator are heterogenous across the source.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            SIMD operations.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The code idea seems to require that all elements be grouped together in a SIMD Vector (
+                                    <code>#simd[N]T</code>
+                                    ) and so intrinsics operations are performed.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Seems quite inconvenient.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    I'm not that worried about SIMD, as this seems a bit advanced and maybe too specific, meanwhile there's always the option to send this to the GPU, which is probably better than SIMD anyway.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Without an iterator:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    With an iterator:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            GPU Compute:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The data would have to previously exist in GPU memory, or be copied to it before the compute.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    If the data were to be sent to the GPU, ideally this data should be pretty small to avoid being bandwidth bound.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    One way would be to have the whole ECS on GPU.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Without an iterator:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    With an iterator:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Solution
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Focus on a full packed loop, instead of getting the next 
+                                    <code>.data</code>
+                                    &nbsp;via an iterator.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Other optimization ideas
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Iterate the smallest component’s dense array and use sparse lookups for other components.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="iterator" >
+    Iterator
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;iterate over every Name component for entities that also have a Person component&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Pros
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Low memory overhead, no allocation when you only consume a subset or stream.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Lower latency to obtain first match(s).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Useful for low-cardinality queries or queries that short-circuit early.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Cons
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Harder to parallelize unless the iterator supports splitting.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Potentially worse cache behavior because membership checks may bounce between sparse maps.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Harder to vectorize because you don’t have fixed contiguous ranges to operate on.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Iterator state may create contention if shared between threads.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Makes any type of parallelization harder (SIMD, threads or GPU Compute).
+		</p>
+	</li>
+	<li>
+		<p>
+            I will consider this only if its API/Safety benefits are so large that it out-weights the lack of optimization options.
+		</p>
+	</li>
+	<li>
+		<p>
+            Ideally, I'd prefer a different option because of that.
+		</p>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://github.com/odin-engine/ode_ecs" 
+				class="external-link" 
+				target="_blank" >
+                ode_ecs
+			</a>
+            </s>.
+		</p>
+<pre><code class="language-odin" data-lang="odin">view: ecs.View
+ecs.view_init(&view, &my_ecs, {&ais, &positions})
+
+it: ecs.Iterator
+ecs.iterator_init(&it, &view)
+for ecs.iterator_next(&it) {
+&nbsp;&nbsp;&nbsp;&nbsp;eid = ecs.get_entity(&it)
+&nbsp;&nbsp;&nbsp;&nbsp;pos1 = ecs.get_component(&positions, &it)
+&nbsp;&nbsp;&nbsp;&nbsp;ai = ecs.get_component(&ais, &it)
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.println("Iterating over view: ", eid, pos1, ai)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    I don't love the pattern. The programmer still have to type the name of the component twice: once on 
+                    <code>view_init</code>
+                    &nbsp;and again when inside the loop.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            In Rust:
+		</p>
+<pre><code class="language-rust" data-lang="rust">for (pos, vel) in (&positions, &velocities).join() {
+&nbsp;&nbsp;&nbsp;&nbsp;pos.x += vel.x
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    <code>.join()</code>
+                    &nbsp;here is just a method from some class. There's nothing special here; I believe it's somewhat equivalent to the Odin version.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="ideas" >
+    Ideas
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Small overview for solving the problems
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The existence of 
+                    <code>_query_result: [COMPONENT_MAX_ENTITIES]Entity_ID</code>
+                    &nbsp;is quite ugly.
+				</p>
+				<ul>
+					<li>
+						<p>
+							<em>
+                                Solution
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Store the data inside a struct, instead of storing in global scope.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Fetching 
+                    <code>component.sparse[entity]</code>
+                    &nbsp;twice.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This can have its ups and downs:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Having to fetch again the 
+                                    <code>.sparse</code>
+                                    &nbsp;array means that the operation is usually safer, as there's window for error handling in case of the entity not being found inside that array.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Tho, having to handle this possibility of error is annoying from the API standpoint, also if you consider that if the query is still valid, the entity 
+									<em>
+                                        is
+									</em>
+                                    &nbsp;still be valid, so re-fetching the data through the 
+                                    <code>.sparse</code>
+                                    &nbsp;array just introduces an unnecessary error handling.
+								</p>
+							</li>
+							<li>
+								<p>
+									<em>
+                                        So, when is it safe to avoid double fetching and storing the 
+                                        <code>dense_idx</code>
+                                        &nbsp;right away?
+									</em>
+                                    &nbsp;Only if you can ensure that the query is still valid. For that, it's only safe to store the 
+                                    <code>dense_idx</code>
+                                    &nbsp;if:
+								</p>
+								<ol>
+									<li>
+										<p>
+                                            The query is constructed every frame.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            The query is constructed upfront, but with usage of dirty flags to invalidate the query and re-query when necessary.
+										</p>
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Solution
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Store the 
+                                    <code>[]dense_idx</code>
+                                    , instead of storing the 
+                                    <code>Entity_ID</code>
+                                    .
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Basically an &quot;Archetype&quot; as the result of a query, with the option to only change only when any of its components are dirty.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The programmer has to type the name of the component twice.
+				</p>
+				<ul>
+					<li>
+						<p>
+							<em>
+                                Solution
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Store a pointer to the component inside a struct, so it can be referenced later.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+			<strong>
+                Idea 10: Return many 
+                <code>[]^T</code>
+                &nbsp;arrays
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">@(require_results)
+intersect2 :: proc(
+&nbsp;&nbsp;&nbsp;&nbsp;c0: ^Component($T0),
+&nbsp;&nbsp;&nbsp;&nbsp;c1: ^Component($T1),
+&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; (
+&nbsp;&nbsp;&nbsp;&nbsp;sa0: [COMPONENT_MAX_ENTITIES]^T0,
+&nbsp;&nbsp;&nbsp;&nbsp;sa1: [COMPONENT_MAX_ENTITIES]^T1,
+&nbsp;&nbsp;&nbsp;&nbsp;idx: int,
+&nbsp;&nbsp;&nbsp;&nbsp;) {
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;for entity, d0 in c0.dense {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1 := c1.sparse[entity].? or_continue
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa0[idx] = &c0.data[d0]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa1[idx] = &c1.data[d1]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;idx += 1
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;return
+}
+
+@(require_results)
+intersect3 :: proc(
+&nbsp;&nbsp;&nbsp;&nbsp;c0: ^Component($T0),
+&nbsp;&nbsp;&nbsp;&nbsp;c1: ^Component($T1),
+&nbsp;&nbsp;&nbsp;&nbsp;c2: ^Component($T2),
+&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; (
+&nbsp;&nbsp;&nbsp;&nbsp;sa0: [COMPONENT_MAX_ENTITIES]^T0,
+&nbsp;&nbsp;&nbsp;&nbsp;sa1: [COMPONENT_MAX_ENTITIES]^T1,
+&nbsp;&nbsp;&nbsp;&nbsp;sa2: [COMPONENT_MAX_ENTITIES]^T2,
+&nbsp;&nbsp;&nbsp;&nbsp;idx: int,
+&nbsp;&nbsp;&nbsp;&nbsp;) {
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;for entity, d0 in c0.dense {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1 := c1.sparse[entity].? or_continue
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d2 := c2.sparse[entity].? or_continue
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa0[idx] = &c0.data[d0]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa1[idx] = &c1.data[d1]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa2[idx] = &c2.data[d2]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;idx += 1
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;return
+}
+
+intersect :: proc{
+&nbsp;&nbsp;&nbsp;&nbsp;intersect2,
+&nbsp;&nbsp;&nbsp;&nbsp;intersect3
+}
+
+intersect :: proc{
+&nbsp;&nbsp;&nbsp;&nbsp;intersect2,
+&nbsp;&nbsp;&nbsp;&nbsp;intersect3
+}
+
+{
+&nbsp;&nbsp;&nbsp;&nbsp;health_bars, healths, size := ecs.intersect(&_health_bars, &_healths)
+&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;size {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_health_bar(cmd, health_bars[i], healths[i]^)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+{
+&nbsp;&nbsp;&nbsp;&nbsp;dyn_bodies, mov_dirs, velocities_max, velocities_max_base, healths, size := ecs.intersect(&_dynamic_bodies, &_movement_directions, &_velocities_max, &_velocities_max_base, &_healths)
+&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;size {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movement_direction_via_input_and_network_and_debug(dyn_bodies[i]^, mov_dirs[i], velocities_max[i], velocities_max_base[i]^, healths[i], 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&_game.character_net, _game.fixed_cycle_physics.tick_count)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Explicit and direct.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Wastes memory for having to store some extra arrays; the memory is not 
+							<em>
+                                that
+							</em>
+                            &nbsp;big of a deal, as it's on the stack and the size is 
+                            <code>uintptr * COMPONENT_MAX_ENTITIES</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            I'm not sure how I feel about having an array of pointers. How does the CPU cache compare to just having an array of indices? Also, the safety can be a little bit more annoying if I intent to store the query result with caching and dirty flags.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's a lot of things to type from the API user side...
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+			<strong>
+                Idea 4: Iterator with or without static idx
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">@(private="file") _iter_idx: u32
+
+intersect2_next:: proc(
+&nbsp;&nbsp;&nbsp;&nbsp;c0: ^Component($T0),
+&nbsp;&nbsp;&nbsp;&nbsp;c1: ^Component($T1),
+&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; (
+&nbsp;&nbsp;&nbsp;&nbsp;t0:&nbsp;&nbsp;&nbsp;&nbsp;^T0,
+&nbsp;&nbsp;&nbsp;&nbsp;t1:&nbsp;&nbsp;&nbsp;&nbsp;^T1,
+&nbsp;&nbsp;&nbsp;&nbsp;found: bool,
+&nbsp;&nbsp;&nbsp;&nbsp;) {
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;/* 
+&nbsp;&nbsp;&nbsp;&nbsp;The last element in the `.dense` slice was a match, now the last iteration should be false.
+&nbsp;&nbsp;&nbsp;&nbsp;This is a valid behavior.
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;if _iter_idx &gt;= u32(len(c0.dense) - 1) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_iter_idx = 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;for entity, d0 in c0.dense[_iter_idx:] {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_iter_idx += 1
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1 := c1.sparse[entity].? or_continue
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t0&nbsp;&nbsp;&nbsp;&nbsp;= &c0.data[d0]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t1&nbsp;&nbsp;&nbsp;&nbsp;= &c1.data[d1]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;found = true
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;/*
+&nbsp;&nbsp;&nbsp;&nbsp;Looped over the whole `.dense` slice and didn't find a match; reset the _iter_idx. 
+&nbsp;&nbsp;&nbsp;&nbsp;This is a valid behavior.
+&nbsp;&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;_iter_idx = 0
+&nbsp;&nbsp;&nbsp;&nbsp;return
+}
+
+for dyn_bodies, mov_dirs, velocities_max, velocities_max_base, healths in ecs.intersect_next(&_dynamic_bodies, &_movement_directions, &_velocities_max, &_velocities_max_base, &_healths) {
+&nbsp;&nbsp;&nbsp;&nbsp;movement_direction_via_input_and_network_and_debug(dyn_bodies^, mov_dirs, velocities_max, velocities_max_base^, healths, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&_game.character_net, _game.fixed_cycle_physics.tick_count)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    See the Odin note for an explanation on this pattern.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Parallelization?
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Just use an option different from iterators; this is not a good option for parallelization.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Idea 9: Query and Execute
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">query_and_execute :: proc(
+&nbsp;&nbsp;&nbsp;&nbsp;$FN: $F, 
+&nbsp;&nbsp;&nbsp;&nbsp;c0: ^Component($T0),
+&nbsp;&nbsp;&nbsp;&nbsp;c1: ^Component($T1),
+&nbsp;&nbsp;&nbsp;&nbsp;c2: ^Component($T2) = nil,
+&nbsp;&nbsp;&nbsp;&nbsp;c3: ^Component($T3) = nil,
+&nbsp;&nbsp;&nbsp;&nbsp;c4: ^Component($T4) = nil,
+&nbsp;&nbsp;&nbsp;&nbsp;c5: ^Component($T5) = nil,
+&nbsp;&nbsp;&nbsp;&nbsp;c6: ^Component($T6) = nil,
+&nbsp;&nbsp;&nbsp;&nbsp;) 
+&nbsp;&nbsp;&nbsp;&nbsp;where
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intrinsics.type_proc_parameter_count(F) &gt;= 2
+&nbsp;&nbsp;&nbsp;&nbsp;{
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Doesn't allow caching with dirty flags, but that's ok; Not a big deal.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+							<strong>
+                                -&gt;
+							</strong>
+                            &nbsp;Procedures like 
+                            <code>draw_health_bar :: proc(cmd: rd.Command_Buffer, health_bar: ^Health_Bar, health: Health) {</code>
+                            &nbsp;are a problem, as they receive the result of a component, BUT also receive random data (in this case: 
+                            <code>cmd</code>
+                            ). This creates a much more complicated API, which I didn't went too much into.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The components should be constant for better comp-time checks, but they can't; this is not a big deal, but makes the comp-time error be more confusing.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    &quot;Constant parameters cannot have a default value&quot;.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;Cannot determine polymorphic type from parameter: 'untyped nil' to '^Component($T)'&quot;.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;'c3' of type '^Component($T)' has no field 'sparse'&quot;.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Idea 6: A Query stores many 
+                <code>[]dense_idx</code>
+                &nbsp;arrays
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">Query3_Idea6 :: struct($A, $B, $C: typeid) {
+&nbsp;&nbsp;&nbsp;&nbsp;ca:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^Component(A),
+&nbsp;&nbsp;&nbsp;&nbsp;cb:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^Component(B),
+&nbsp;&nbsp;&nbsp;&nbsp;cc:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^Component(C),
+
+&nbsp;&nbsp;&nbsp;&nbsp;dense_a:&nbsp;&nbsp;sa.Small_Array(COMPONENT_MAX_ENTITIES, u32),
+&nbsp;&nbsp;&nbsp;&nbsp;dense_b:&nbsp;&nbsp;sa.Small_Array(COMPONENT_MAX_ENTITIES, u32),
+&nbsp;&nbsp;&nbsp;&nbsp;dense_c:&nbsp;&nbsp;sa.Small_Array(COMPONENT_MAX_ENTITIES, u32),
+&nbsp;&nbsp;&nbsp;&nbsp;len:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int,
+
+&nbsp;&nbsp;&nbsp;&nbsp;iter_idx: u32,
+}
+
+@(require_results)
+query3_via_intersect_id6 :: proc(ca: ^Component($A), cb: ^Component($B), cc: ^Component($C)) -&gt; (query: Query3_Idea6(A, B, C)) {
+&nbsp;&nbsp;&nbsp;&nbsp;query.ca = ca
+&nbsp;&nbsp;&nbsp;&nbsp;query.cb = cb
+&nbsp;&nbsp;&nbsp;&nbsp;query.cc = cc
+
+&nbsp;&nbsp;&nbsp;&nbsp;for entity, dense_a in ca.dense {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dense_b, ok_cb := cb.sparse[entity].?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if !ok_cb do continue
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dense_c, ok_cc := cc.sparse[entity].?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if !ok_cc do continue
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa.append(&query.dense_a, u32(dense_a))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa.append(&query.dense_b, dense_b)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa.append(&query.dense_c, dense_c)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;query.len = sa.len(query.dense_a)
+
+&nbsp;&nbsp;&nbsp;&nbsp;return
+}
+
+query := query3_via_intersect_id6(&_dynamic_bodies, &_velocities_max, &_movement_directions)
+
+for i in 0..&lt;query.len {
+&nbsp;&nbsp;&nbsp;&nbsp;dynamic_body_velocity_with_movement_direction(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&query.ca.data[query.dense_a.data[i]], // dense_a.data here is so I get the actual thing inside the Small_Array.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query.cb.data[query.dense_b.data[i]],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query.cc.data[query.dense_c.data[i]],
+&nbsp;&nbsp;&nbsp;&nbsp;)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    This can be used as an iterator, for example; this was for an old code, but the principle is the same:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">query3_next:: proc(q: ^Query3($A, $B, $C)) -&gt; (A, B, C, bool) {
+&nbsp;&nbsp;&nbsp;&nbsp;if q.idx == len(q.queried_data_indices[0]) - 1 do return
+&nbsp;&nbsp;&nbsp;&nbsp;q.idx += 1
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;return
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&q.ca.dense[q.queried_data_indices[0][q.idx]],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&q.cb.dense[q.queried_data_indices[1][q.idx]],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&q.cc.dense[q.queried_data_indices[2][q.idx]], 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true
+}
+
+for dynamic_body, vel_max, mov_direction in query3_next(&query) {
+&nbsp;&nbsp;&nbsp;&nbsp;dynamic_body_velocity_with_movement_direction(dynamic_body, vel_max, mov_direction)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            More memory waste than Idea 1, as every Query has many 
+                            <code>[]dense_idx</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<strong>
+                Idea 8: A Query stores a 
+                <code>[]Entity_ID</code>
+                &nbsp;array
+			</strong>
+            </s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Pattern 
+                    <code>query3_intersect :: proc(ca: Component($A), cb: Component($B), cc: Component($C)) -&gt; Query(A, B, C) {</code>
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">Query3_Idea8 :: struct($A, $B, $C: typeid) {
+&nbsp;&nbsp;&nbsp;&nbsp;ca:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^Component(A),
+&nbsp;&nbsp;&nbsp;&nbsp;cb:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^Component(B),
+&nbsp;&nbsp;&nbsp;&nbsp;cc:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^Component(C),
+&nbsp;&nbsp;&nbsp;&nbsp;entities: sa.Small_Array(COMPONENT_MAX_ENTITIES, Entity_ID),
+
+&nbsp;&nbsp;&nbsp;&nbsp;iter_idx: u32,
+}
+
+@(require_results)
+query3_via_intersect_id8 :: proc(ca: ^Component($A), cb: ^Component($B), cc: ^Component($C)) -&gt; (query: Query3_Idea8(A, B, C)) {
+&nbsp;&nbsp;&nbsp;&nbsp;query.ca = ca
+&nbsp;&nbsp;&nbsp;&nbsp;query.cb = cb
+&nbsp;&nbsp;&nbsp;&nbsp;query.cc = cc
+
+&nbsp;&nbsp;&nbsp;&nbsp;for entity in ca.dense {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if cb.sparse[entity] == nil || cc.sparse[entity] == nil do continue
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa.append(&query.entities, entity)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return
+}
+
+query := query3_via_intersect_id8(_dynamic_bodies, _velocities_max, _movement_directions)
+
+for entity in sa.slice(&query.entities) {
+&nbsp;&nbsp;&nbsp;&nbsp;dynamic_body_velocity_with_movement_direction(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component_get(query.ca, entity),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component_get(query.cb, entity)^,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component_get(query.cc, entity)^,
+&nbsp;&nbsp;&nbsp;&nbsp;)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Same extra memory from Idea 1.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The 
+                    <code>[]Entity_ID</code>
+                    &nbsp;is a stack allocated array.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Advantages
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The query can be made upfront, caching the results with dirty flags.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Fetches 
+                            <code>component.sparse[entity]</code>
+                            &nbsp;twice.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Confusing API.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<strong>
+                Idea 1: Array of Entity with a global 
+                <code>_query_result</code>
+			</strong>
+            </s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Pattern 
+                    <code>intersect2 :: proc(ca: Component($T), cb: Component($W)) -&gt; []Entity_ID {</code>
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">_query_result: [COMPONENT_MAX_ENTITIES]Entity_ID
+
+@(require_results)
+intersect3 :: proc(ca: Component($A), cb: Component($B), cc: Component($C)) -&gt; []Entity_ID {
+&nbsp;&nbsp;&nbsp;&nbsp;idx := 0
+&nbsp;&nbsp;&nbsp;&nbsp;for entity in ca.dense {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if cb.sparse[entity] == nil || cc.sparse[entity] == nil do continue
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_query_result[idx] = entity
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;idx += 1
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return _query_result[:idx]
+}
+
+for entity in intersect3(_dynamic_bodies, _velocities_max, _movement_directions) {
+&nbsp;&nbsp;&nbsp;&nbsp;dynamic_body_velocity_with_movement_direction(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component_get(&_dynamic_bodies,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entity),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component_get(&_velocities_max,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entity)^,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component_get(&_movement_directions, entity)^,
+&nbsp;&nbsp;&nbsp;&nbsp;)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Advantages
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            No extra struct. Every thing is just a call to intersect.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This by it self can be an issue, as the query doesn't support caching upfront.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The existence of 
+                            <code>_query_result: [COMPONENT_MAX_ENTITIES]Entity_ID</code>
+                            &nbsp;is quite ugly.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Fetches 
+                            <code>component.sparse[entity]</code>
+                            &nbsp;twice.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The programmer has to type the name of the component twice.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<strong>
+                Idea 2: Many 
+                <code>[]dense_idx</code>
+                &nbsp;arrays, using stack arrays from the global scope
+			</strong>
+            </s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Pattern 
+                    <code>intersect2 :: proc(ca: Component($T), cb: Component($W)) -&gt; (r1, r2: []u32) {</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Sort-of an extension from Idea 1.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">dyn_body_indices, vel_max_indices, mov_indices := intersect3(_dynamic_bodies, _velocities_max, _movement_directions)
+for i in 0..&lt;len(dyn_body_indices) {
+&nbsp;&nbsp;&nbsp;&nbsp;dynamic_body_velocity_with_movement_direction(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_dynamic_bodies.dense[dyn_body_indices[i]],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_velocities_max.dense[vel_max_indices[i]]^,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_movement_directions.dense[mov_indices[i]]^,
+&nbsp;&nbsp;&nbsp;&nbsp;)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Avoids fetching 
+                    <code>component.sparse[entity]</code>
+                    &nbsp;twice.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            ~There has to be lots of different arrays to store each one of 
+                            <code>dyn_body_indices, vel_max_indices, mov_indices</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            The programmer has to type the name of the component twice.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<strong>
+                Idea 8: Each 
+                <code>Component(T)</code>
+                &nbsp;has a array of 
+                <code>query_result</code>
+                &nbsp;array of ^T
+			</strong>
+            </s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Pattern 
+                    <code>intersect2 :: proc(ca: Component($T), cb: Component($W)) -&gt; (count: int) {</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    The query 
+                    <code>intersect2</code>
+                    &nbsp;function returns a length to be used inside the for loop.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">component_get_query :: #force_inline proc(component: Component($T), idx: int) -&gt; ^T {
+&nbsp;&nbsp;&nbsp;&nbsp;return component.query_result[idx]
+}
+for i in 0..&lt;intersect3(_dynamic_bodies, _velocities_max, _movement_directions) {
+&nbsp;&nbsp;&nbsp;&nbsp;dynamic_body_velocity_with_movement_direction(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component_get_query(_dynamic_bodies,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component_get_query(_velocities_max,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i)^,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component_get_query(_movement_directions, i)^,
+&nbsp;&nbsp;&nbsp;&nbsp;)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            When comparing to Idea 4, it comes down to what's lighter, as the ideas are basically the same.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Idea 4 seems better, as a 
+                                    <code>u32</code>
+                                    &nbsp;is lighter than a 
+                                    <code>uintptr</code>
+                                    &nbsp;(size of 
+                                    <code>int</code>
+                                    /
+                                    <code>uint</code>
+                                    ).
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<strong>
+                Idea 3: Many arrays of 
+                <code>T</code>
+			</strong>
+            </s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Pattern 
+                    <code>intersect2 :: proc(ca: Component($T), cb: Component($W)) -&gt; (r1: []T, r2: []W) {</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The array being 
+                            <code>[]T</code>
+                            &nbsp;doesn't make sense, as I want a pointer to the element, but doing so would give me a pointer to a copy of the element.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's necessary that the array be defined as 
+                            <code>[]^T</code>
+                            &nbsp;(same as Idea 6) or 
+                            <code>[]u32</code>
+                            &nbsp;(indices to 
+                            <code>.data</code>
+                            , which is exactly the same as Idea 4).
+						</p>
+					</li>
+					<li>
+						<p>
+                            The generic nature of 
+                            <code>T</code>
+                            &nbsp;and 
+                            <code>W</code>
+                            &nbsp;makes this quite difficult.
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    Make a 
+                                    <code>Component</code>
+                                    &nbsp;be generic enough so it doesn't need 
+                                    <code>T</code>
+                                    &nbsp;or 
+                                    <code>W</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <s>The returns are allocated</s>.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Seems very bad for performance.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<strong>
+                Idea 5: Each 
+                <code>Component(T)</code>
+                &nbsp;has a array of query_result array of 
+                <code>T</code>
+			</strong>
+            </s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The array being 
+                            <code>[]T</code>
+                            &nbsp;doesn't make sense, as I want a pointer to the element, but doing so would give me a pointer to a copy of the element.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's necessary that the array be defined as 
+                            <code>[]^T</code>
+                            &nbsp;(same as Idea 6) or 
+                            <code>[]u32</code>
+                            &nbsp;(indices to 
+                            <code>.data</code>
+                            , which is exactly the same as Idea 4).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="with-archetypes" >
+    With Archetypes
+</h3>
+<pre><code class="language-c" data-lang="c">void movement_system(float dt) {
+&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; a_pv.count; i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a_pv.pos[i].x += a_pv.vel[i].vx * dt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a_pv.pos[i].y += a_pv.vel[i].vy * dt;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; a_pvh.count; i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a_pvh.pos[i].x += a_pvh.vel[i].vx * dt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a_pvh.pos[i].y += a_pvh.vel[i].vy * dt;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            No 
+            <code>has_component</code>
+            &nbsp;checks.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

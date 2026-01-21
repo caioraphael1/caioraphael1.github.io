@@ -1,0 +1,913 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Linux
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Linux/where-i-stopped.html" >
+                                Where I Stopped
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Linux/compatibilities.html" >
+                                Compatibilities
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Linux/executables.html" >
+                                Executables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Linux/utils.html" >
+                                Utils
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Linux/distributions.html" >
+                                Distributions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Linux/desktop-environments-de.html" >
+                                Desktop Environments (DE)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Linux/tiling-window-managers-wm.html" >
+                                Tiling Window Managers (WM)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Linux/inside-linux.html" >
+                                Inside Linux
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Windows
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Windows/windows.html" >
+                                Windows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Windows/symlink.html" >
+                                Symlink
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Windows/stupid-things.html" >
+                                Stupid Things
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Windows/visual-customization.html" >
+                                Visual Customization
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Windows/hyper-v-and-vm.html" >
+                                Hyper-V and VM
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Steam
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Steam/financial-success.html" >
+                                Financial success
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Steam/exporting-godot-to-steam.html" >
+                                Exporting Godot to Steam
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Android
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Android/sdks-and-compilation.html" >
+                                SDKs and Compilation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/Android/exporting-godot-to-android.html" >
+                                Exporting Godot to Android
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Platforms/Android/exporting-to-the-google-play-store.html" >
+                                Exporting to the Google Play Store
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#app-signing" >
+                                        App signing
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#google-play-store" >
+                                        Google Play Store
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#google-play-services" >
+                                        Google Play Services
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#firebase" >
+                                        Firebase
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#in-app-purchases" >
+                                        In-app purchases
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        iOS
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/iOS/exporting-to-ios.html" >
+                                Exporting to iOS
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Platforms/iOS/exporting-godot-to-ios.html" >
+                                Exporting Godot to iOS
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Exporting to the Google Play Store
+						</h1>
+						<p>
+							<time
+								datetime="2024-10-18" >
+                                🕒 Created: 2024-10-18
+							</time>
+							<time
+								datetime="2025-12-13" >
+                                | Updated: 2025-12-13
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="app-signing" >
+    App signing
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://developer.android.com/studio/publish/app-signing" 
+				class="external-link" 
+				target="_blank" >
+                App signing
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="keystore-and-keys" >
+    Keystore and Keys
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Keystore
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The secure place (or service) where keys are stored and managed, protecting them against theft or misuse.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Key
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The cryptographic key itself, which can be used for operations like encryption and signing.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="types-of-keys" >
+    Types of Keys
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Key
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Upload Key
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The upload key is used only to sign the APK before uploading it to Google Play. After upload, Google replaces that signature with the official signature managed by Google's signing service using the real 
+							<strong>
+                                signing key
+							</strong>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Therefore, the upload key is an intermediate key to ensure the security of the upload process and maintain the integrity of the app.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the upload key is compromised or lost, the developer can request a new upload key from Google without losing access to the app or the ability to update it.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Signing Key
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Usually generated by Google.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The signing key is the cryptographic key used to sign the final APK (Android application package) that will be installed on users' devices.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The digital signature with the signing key ensures that the app code has not been modified since it was signed. It confirms the developer's identity, as each signing key is unique.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This key is essential and must be kept secure, since any update to the app will also need to be signed with the same key.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the signing key is lost, you will no longer be able to update the app published on the Play Store.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Debug Key
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The debug key is automatically generated by Android Studio (or the build tools) when you build an app in debug mode.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is stored in a default keystore location, usually:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            For Windows: 
+                            <code>C:\Users\&lt;username&gt;\.android\debug.keystore</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            For macOS/Linux: 
+                            <code>/home/&lt;username&gt;/.android/debug.keystore</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The debug key has a fixed alias (
+                    <code>androiddebugkey</code>
+                    ) and a default password (
+                    <code>android</code>
+                    &nbsp;for both the keystore and the key).
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This 
+							<em>
+                                always
+							</em>
+                            &nbsp;happens.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Its validity is short (usually 365 days).
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is used only during development and testing and cannot be used to distribute apps on the Google Play Store.
+				</p>
+			</li>
+			<li>
+				<p>
+                    An APK signed with the debug key cannot be published on the Play Store.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Can I manually generate a debug key?&quot;
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If you want to manually generate a debug key, you can create a key with the same characteristics as a debug key, such as alias, password and validity, using the 
+                            <code>keytool</code>
+                            &nbsp;command. However, it is important to remember that even if you generate a key with those characteristics, it will not be considered an &quot;official debug key&quot; used automatically by Android Studio to build debug-mode apps.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It is possible to identify whether a key is an official debug key or a manually generated key with the same characteristics. This can be done by analyzing some information of the key, such as alias, location, passwords and issuer.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Even if the key is not an official debug key, it will not be accepted by the Play Store due to its set of characteristics similar to an official Debug Key.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="generating-a-keystore" >
+    Generating a Keystore
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>keytool -v -genkey -keystore mygame.jks -alias mygame -keyalg RSA -validity 10000</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            This generates a Key that can be either an 
+			<em>
+                Upload Key
+			</em>
+            &nbsp;or a 
+			<em>
+                Signing Key
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+        <img src="assets/image_20241018161122.png" width="850" >
+&nbsp;&nbsp;- This is a screenshot from a video, btw.
+
+	</li>
+</ul>
+<h5
+	id="signing-extensions" >
+    Signing extensions
+</h5>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20241018203252.png" width="" >
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="-apk-idsig" >
+    .apk.idsig
+</h5>
+<ul>
+	<li>
+		<p>
+            The 
+			<strong>
+                <code>.apk.idsig</code>
+			</strong>
+            &nbsp;file contains digital signing information required to validate and verify the APK's integrity on the Android system.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is generated automatically by Godot and is part of the APK export and signing process.
+		</p>
+	</li>
+	<li>
+		<p>
+            You do not need to manipulate it directly. The Android system uses it internally when installing the APK to ensure that the signature is valid.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+			<strong>
+                <code>.apk.idsig</code>
+			</strong>
+            &nbsp;file is not generated when exporting an 
+            <code>.aab</code>
+            &nbsp;(Android App Bundle). The 
+            <code>.idsig</code>
+            &nbsp;is specifically associated with the 
+			<strong>
+                APK
+			</strong>
+            &nbsp;format, which is the directly installable package on Android devices. The 
+			<strong>
+                <code>.aab</code>
+			</strong>
+            , on the other hand, follows a different signing and packaging process.
+		</p>
+	</li>
+	<li>
+		<p>
+            Renaming the file and removing the 
+            <code>.apk</code>
+            &nbsp;prefix from the 
+            <code>.apk.idsig</code>
+            &nbsp;would likely cause problems** during the APK signature verification on the Android system. This happens because the installation and verification process for APKs in Android depends on a specific file structure and naming conventions that tie the digital signature to its corresponding APK.
+		</p>
+	</li>
+</ul>
+<h5
+	id="fingerprints" >
+    Fingerprints
+</h5>
+<ul>
+	<li>
+		<p>
+            The 
+			<strong>
+                certificate fingerprint
+			</strong>
+            &nbsp;is a short and unique representation of a certificate that is often requested by API providers alongside the package name to register an app to use their service. The MD5, SHA-1 and SHA-256 fingerprints of the upload and app signing certificates can be found on the app signing page of the Play Console. Other fingerprints can also be computed by downloading the original certificate (
+            <code>.der</code>
+            ) from the same page.
+		</p>
+	</li>
+</ul>
+<h5
+	id="considerations" >
+    Considerations
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                App upgrade:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When the system is installing an update to an app, it compares the certificate(s) in the new version with those in the existing version. The system allows the update if the certificates match. If you sign the new version with a different certificate, you must assign a different package name to the app—in this case, the user installs the new version as a completely new app.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Code/data sharing through permissions:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Android provides signature-based permissions enforcement, so that an app can expose functionality to another app that is signed with a specified certificate. By signing multiple APKs with the same certificate and using signature-based permissions checks, your apps can share code and data in a secure manner.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I have no idea about this.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="google-play-store" >
+    Google Play Store
+</h3>
+<h5
+	id="developer-account" >
+    Developer Account
+</h5>
+<ul>
+	<li>
+		<p>
+            A one-time fee of 25 USD is charged.
+		</p>
+	</li>
+	<li>
+		<p>
+            (2024-10-18) I paid the 25 USD fee (?? BRL) and submitted my ID and proof of address for verification.
+		</p>
+	</li>
+</ul>
+<h5
+	id="fees" >
+    Fees
+</h5>
+<ul>
+	<li>
+		<p>
+            If your app is paid or if you have in-app purchases, Google takes a percentage of each sale.
+		</p>
+	</li>
+	<li>
+		<p>
+            The standard commission is:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    15% for the first US$1 million in annual revenue per developer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    30% for annual revenue above US$1 million.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            This applies to paid apps and to purchases made within free apps (such as subscriptions or virtual items).
+		</p>
+	</li>
+</ul>
+<h5
+	id="-aab-vs-apk" >
+    .aab vs .apk
+</h5>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20241018194019.png" width="" >
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="google-play-services" >
+    Google Play Services
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=YaG1O5kDsho" 
+				class="external-link" 
+				target="_blank" >
+                Terrible tutorial about the subject
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It explains at the end of the video how to save the game using Google Play Services.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Uses Gradle, but does not say anything useful about it.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="firebase" >
+    Firebase
+</h3>
+<ul>
+	<li>
+		<p>
+            API, authentication, analytics.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is free as long as you have fewer than 10,000 users per month.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=-ybnJ8CXScQ" 
+				class="external-link" 
+				target="_blank" >
+                Explanation of Firebase in Godot
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="in-app-purchases" >
+    In-app purchases
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/platform/android/android_in_app_purchases.html" 
+				class="external-link" 
+				target="_blank" >
+                Explanation about In-app Purchases
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://developer.android.com/google/play/billing?hl=pt-br" 
+				class="external-link" 
+				target="_blank" >
+                Google Play Billing system
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

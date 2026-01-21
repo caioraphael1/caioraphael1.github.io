@@ -1,0 +1,2658 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Odin
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/my-impressions.html" >
+                                My Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/installation.html" >
+                                Installation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/compile-time-stuff.html" >
+                                Compile-time Stuff
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/package-system.html" >
+                                Package System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/lsp-ols-odin-language-server.html" >
+                                LSP (OLS - Odin Language Server)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/control-flow-if-when-switch-for-defer.html" >
+                                Control Flow (if, when, switch, for, defer)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/procedures.html" >
+                                Procedures
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/any.html" >
+                                any
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/primitive-types.html" >
+                                Primitive Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/math-types.html" >
+                                Math Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/rune.html" >
+                                Rune
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/maps-hash-maps.html" >
+                                Maps (Hash Maps)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/struct.html" >
+                                Struct
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/union.html" >
+                                Union
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/bit-sets.html" >
+                                Bit Sets
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/interfaces-methods-vtables.html" >
+                                Interfaces / Methods / VTables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/error-handling.html" >
+                                Error Handling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/context.html" >
+                                Context
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/memory-address.html" >
+                                Memory: Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/memory-allocators.html" >
+                                Memory: Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/memory-operations.html" >
+                                Memory: Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/entry-point.html" >
+                                Entry Point
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/multi-threading.html" >
+                                Multi-Threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/directives.html" >
+                                Directives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/ffi-foreign-function-interface-bindings.html" >
+                                FFI (Foreign Function Interface) / Bindings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/web-build.html" >
+                                Web Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/file-system-process-cli-shell.html" >
+                                File System / Process / CLI / Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/useful-packages.html" >
+                                Useful Packages
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Memory
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/virtual-memory.html" >
+                                Virtual Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/os-memory-on-windows.html" >
+                                OS: Memory on Windows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/memory-alignment.html" >
+                                Memory Alignment
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/address.html" >
+                                Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/allocators.html" >
+                                Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/tools-memory-analysis.html" >
+                                Tools: Memory Analysis
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/handles-instead-of-pointers.html" >
+                                Handles instead of Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Low-Level Systems/Memory/ownership-strategies-destruction-strategies.html" >
+                                Ownership Strategies / Destruction Strategies
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#motivation" >
+                                        Motivation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#ideas" >
+                                        Ideas
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#improvements-applied" >
+                                        Improvements Applied
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/strategies-for-handling-short-lived-memory.html" >
+                                Strategies for handling short lived memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/garbage-collection.html" >
+                                Garbage Collection
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/initialization.html" >
+                                Initialization
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        CPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/physical-structure.html" >
+                                Physical Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/soa-struct-of-arrays-ecs-entity-component-system.html" >
+                                SOA (Struct Of Arrays) / ECS (Entity Component System)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Multithreading
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/core-concepts.html" >
+                                Core Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/thread.html" >
+                                Thread
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/implementation-detail.html" >
+                                Implementation Detail
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/synchronization-primitives.html" >
+                                Synchronization Primitives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/double-buffering.html" >
+                                Double-Buffering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/networking-strategies.html" >
+                                Networking Strategies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Handmade Hero
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Handmade Hero/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Profilers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/tracy.html" >
+                                Tracy
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/spall.html" >
+                                Spall
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/nvidia-nsight-graphics-gpu-trace.html" >
+                                Nvidia Nsight Graphics - GPU Trace
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/amd-gpu-profiler-amd-rgp.html" >
+                                AMD GPU Profiler (AMD RGP)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/intel-gpa.html" >
+                                Intel GPA
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/nsight-systems.html" >
+                                <s>Nsight Systems</s>
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        C
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/c-standard.html" >
+                                C Standard
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/c-standard-library-libc.html" >
+                                C Standard Library (libc)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/loops.html" >
+                                Loops
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/structs.html" >
+                                Structs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/pointers.html" >
+                                Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/preprocessors.html" >
+                                Preprocessors
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/undefined-behavior.html" >
+                                Undefined Behavior
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/gamedev.html" >
+                                GameDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/windows-c-api.html" >
+                                WIndows C API
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Build Systems - Compilation - Linking
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/compilation-process.html" >
+                                Compilation Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/compilers.html" >
+                                Compilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/build-tools.html" >
+                                Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/meta-build-tools.html" >
+                                Meta Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/extra-annoying-things-on-windows.html" >
+                                Extra: Annoying things on Windows
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Debuggers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/file-types.html" >
+                                File Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/rad-debbuger.html" >
+                                RAD Debbuger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/gdb-gnu-debugger.html" >
+                                GDB (GNU Debugger)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/lldb.html" >
+                                LLDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/vscode.html" >
+                                VSCode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/visual-studio-debugger.html" >
+                                Visual Studio Debugger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/others.html" >
+                                Others
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Assembly - ASM
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/assembly.html" >
+                                Assembly
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/notes.html" >
+                                Notes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/reverse-engineering.html" >
+                                Reverse Engineering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Parsing
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/lexer.html" >
+                                Lexer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        JAI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/impressions.html" >
+                                Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/build.html" >
+                                Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/types.html" >
+                                Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/meta-programming.html" >
+                                Meta programming
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/control-flow.html" >
+                                Control flow
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Ownership Strategies / Destruction Strategies
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-12" >
+                                🕒 Created: 2025-03-12
+							</time>
+							<time
+								datetime="2025-12-13" >
+                                | Updated: 2025-12-13
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            &quot;Ownership determines destruction strategy. The stronger the ownership, the simpler the destruction should be.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            The entity always owns the Object. Necessarily the Object should die when the entity dies.
+		</p>
+	</li>
+</ul>
+<h3
+	id="motivation" >
+    Motivation
+</h3>
+<h5
+	id="disclaimer" >
+    Disclaimer
+</h5>
+<ul>
+	<li>
+		<p>
+            This analysis I'm making below is from a challenge I was facing in my Odin engine.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's more of a sketch of what was going on in my head at the time. Some things probably doesn't make much sense, unless in the proper context.
+		</p>
+	</li>
+</ul>
+<h5
+	id="back-to-the-analysis" >
+    Back to the analysis
+</h5>
+<ul>
+	<li>
+		<p>
+            Annoying places that led me to think about the subject:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    bodies
+				</p>
+			</li>
+			<li>
+				<p>
+                    layers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    tweens.
+				</p>
+			</li>
+			<li>
+				<p>
+                    ~timers
+				</p>
+				<ul>
+					<li>
+						<p>
+                            if I rework the system.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    world init / world deinit is very easy to forget.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The 'struct-based lifetime aggregation' system helped a lot with this.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Post about the subject, focusing on the tween system:
+		</p>
+<pre><code class="language-odin" data-lang="odin">eng.tween(
+&nbsp;&nbsp;&nbsp;&nbsp;value = &some_vector_inside_an_entity,
+&nbsp;&nbsp;&nbsp;&nbsp;end = some_vector,
+&nbsp;&nbsp;&nbsp;&nbsp;duration_s = 0.1,
+&nbsp;&nbsp;&nbsp;&nbsp;on_end = proc(tween: ^eng.Tween) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// stuff
+&nbsp;&nbsp;&nbsp;&nbsp;},
+)
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    This is how I call a tween. The only thing it needs to do for this tween to work is call 
+                    <code>eng.tween_system_init()</code>
+                    &nbsp;at the beginning of the game, 
+                    <code>eng.tween_system_deinit()</code>
+                    &nbsp;at the end of it, and poll 
+                    <code>eng.tween_system_update(dt)</code>
+                    &nbsp;every frame for the 
+                    <code>tween_system</code>
+                    &nbsp;to process every tween stored when calling 
+                    <code>eng.tween(..)</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    When a tween ends processing, it gets removed automatically by the 
+                    <code>eng.tween_system_update(dt)</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The problem is kind of obvious: if the entity dies, the tween has a reference to a pointer inside the entity and the system crashes; UAF.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I came up with 5 major ideas to solve this problem, but I'm not really happy with them, or I don't know if they are good practice:
+				</p>
+				<ul>
+					<li>
+						<p>
+							<strong>
+                                1 -
+							</strong>
+                            &nbsp;The entity stores the tween or a handle to the tween, so when the entity dies, I can manually ask to remove the tween and everything is ok.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                2 -
+							</strong>
+                            &nbsp;The tween doesn't store a pointer to some information in the entity, but a handle to it.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                3 -
+							</strong>
+                            &nbsp;The 
+                            <code>tween_system</code>
+                            &nbsp;doesn't exist. The entity has a tween stored, and MANUALLY calls a new function called 
+                            <code>tween_process(&the_entity_tween)</code>
+                            &nbsp;every frame of the entity 
+                            <code>update</code>
+                            . The tween doesn't need to be destroyed, as it doesn't own the value pointer. The existence of the tween is tightly linked to the existence of the entity. Just stop calling 
+                            <code>tween_update</code>
+                            &nbsp;and you won't have a UAF.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                4 -
+							</strong>
+                            &nbsp;The entity doesn't care about the existence of the tween and can die in peace. The tween knows when the entity died and removes &quot;bad tweens&quot; and never tries to access freed memory. This could be done through:
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                4.1 -
+							</strong>
+                            &nbsp;The entity has a &quot;pointer to lifetime handle&quot; inside of it. When calling the tween, it passes this handle as an argument for the tween. Every time an object stores this handle, its internal counter goes up by 1. When the entity dies, it changes the handle state to 
+                            <code>dead = true</code>
+                            &nbsp;and subtracts 1 from the counter. The 
+                            <code>eng.tween_system_update(dt)</code>
+                            &nbsp;checks if the handle is 
+                            <code>dead</code>
+                            &nbsp;or not; if so, it frees the &quot;bad tween&quot; and subtracts 1 from the counter. You got the idea. The counter only serves as a way to analyze the memory on game deinit.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                4.2 -
+							</strong>
+                            &nbsp;The entity has an &quot;event struct&quot;. When calling the tween, it passes a pointer to the event so the tween can register a function pointer to be called when the event is emitted; the content inside this function pointer would be the destructor for the tween. When the entity dies, it calls something like 
+                            <code>event_emit(the_entity_destructor_event)</code>
+                            , and every system that subscribed to it will be destroyed. This kinda reminds me a bit of RAII.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    My thoughts on each strategy:
+				</p>
+				<ul>
+					<li>
+						<p>
+							<strong>
+                                1, 2 and 3:
+							</strong>
+                            &nbsp;3 is clearly the best in terms of safety, but the problem with all 3 is that it makes the entity aware of the existence of a tween. The tween needs to know how many tweens will be used at the same time beforehand, or use an array that will need to be destructed. This makes the API look less pleasing. So many systems could use a tween and it sucks that it would be just a simple plug-n-play. I wish I could call 
+                            <code>tween(..)</code>
+                            &nbsp;and be done with it; let the 
+                            <code>tween_system</code>
+                            &nbsp;handle the rest.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                4.1 and 4.2:
+							</strong>
+                            &nbsp;They both sound a bit cheesy. The tween SHOULD die as the entity dies, as it has a pointer to it, but this strategy throws the responsibility to a 3rd party (a lifetime handle or event emitter) to manage the problem. This introduces a level of abstraction that I'm not too fond of.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Finally, if I were to choose, I'd go for the 
+					<strong>
+                        4.2
+					</strong>
+                    &nbsp;to clean the API, or go back to 
+                    <code>3</code>
+                    , if it ends up not being a good idea.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="ideas" >
+    Ideas
+</h3>
+<ol>
+	<li>
+		<p>
+			<strong>
+                The object is stored internally in the Entity
+			</strong>
+            :
+		</p>
+		<ol>
+			<li>
+				<p>
+					<strong>
+                        The Object doesn't have to worry about being destroyed, since no one outside the Entity references it
+					</strong>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Access is intrinsically tied to the lifetime.
+						</p>
+					</li>
+					<li>
+						<p>
+                            'Stateless' seems to be a word that defines this strategy.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Examples where I use this
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Timer system.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Need to advance time manually via 
+                                            <code>timer_is_finished</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+                                            In that case, I would do 
+                                            <code>en.tween_update(^Tween, dt)</code>
+                                            .
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    The dt is optional, like in the Timer case.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                For a Tween
+							</em>
+                            :
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    The entity has a Tween_System
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Basically to have an array instead of unitary values.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Use a single update.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    The entity has multiple Tweens
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Requires that I know the maximum number of concurrent tweens I will have at any moment.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ol>
+						<ul>
+							<li>
+								<p>
+                                    The Tween can still have on_enter and on_end functions, no problem.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    A Tween can be torn down and rebuilt however you want, so when a tween finishes I can create another tween immediately afterwards using the same Tween.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The Tween never needs to be destroyed. It doesn't own anything.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        The Object must be destroyed manually during the Entity's destruction
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            When the Entity is destroyed, it calls the destruction of the Objects it owns.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Problems
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Compared to &quot;The Object doesn't have to worry about being destroyed, since no one outside the Entity references it&quot;:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            forgetting to update: no big deal.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            forgetting to destroy: memory leak and UAF.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            So this technique is less safe.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Examples where I use this
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Bodies / Body Wrappers system.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This system makes sense, since a Body 
+											<strong>
+                                                needs
+											</strong>
+                                            &nbsp;to be destroyed in Jolt anyway, so a destructor call is inevitable.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                For a Tween
+							</em>
+                            :
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    The entity has a Tween_System
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Basically to have an array instead of unitary values.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Use a single update.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    The entity has multiple Tweens
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Requires that I know the maximum number of concurrent tweens I will have at any moment.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ol>
+						<ul>
+							<li>
+								<p>
+                                    <code>eng.tween</code>
+                                    &nbsp;returns a handle to the tween.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This can be annoying for chaining tweens, having to always have a place to store the tween data.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            In this case, I could implement a system where tween chaining happens without the need for on_end, via use of 
+                                            <code>eng.tween_chain</code>
+                                            , something like that.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    The tween update is done automatically via 
+                                    <code>eng.tween_update(dt)</code>
+                                    , called directly by the Game Loop, each desired frame.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Considering that a tween destroys itself automatically when finished, it can be weird to call the destruction of something that's already been destroyed.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            <s>The tween might not destroy itself automatically, but that makes things a bit more annoying, increasing the verbosity of the tween callback to always destroy itself.</s>
+										</p>
+<pre><code class="language-odin" data-lang="odin">proc(tween: ^Tween) {
+&nbsp;&nbsp;&nbsp;&nbsp;eng.tween_destroy(tween)
+&nbsp;&nbsp;&nbsp;&nbsp;//or
+&nbsp;&nbsp;&nbsp;&nbsp;eng.tween_destroy(tween.value)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//if using a handle.
+}
+</code></pre>
+										<ul>
+											<li>
+												<p>
+                                                    This changes NOTHING. Explicitly destroying the tween in the callback still requires me to destroy it when destroying the entity. Nothing changes.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Use of handles
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The tween doesn't store a pointer to some information in the entity, but a handle to the information.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This means that the entity must have the handle stored, so when the entity dies, the handle is correctly removed.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The tween system then tries to tween the data, but when attempting to 
+                            <code>get</code>
+                            &nbsp;the information inside the handle, it realizes the handle is now dead and deletes the tween.
+						</p>
+					</li>
+					<li>
+						<p>
+                            When calling the tween:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    We need to pass the handle for the data, instead of the data; so no new argument is added.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    We 
+									<em>
+                                        maybe
+									</em>
+                                    &nbsp;need to pass the handle_map related to the handle.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            An alternative is to use a global handle_map.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Disadvantages
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    I have to store a handle for every pointer I want to tween, which means duplicating the data.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            I would have a value and a pointer to this value, wrapped around a handle.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            That's really weird.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Another option would be to store the data somewhere else and just have the handle around for the entity, but this could be even weirder.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    A handle_map for 
+                                    <code>rawptr</code>
+                                    &nbsp;could be an annoyance for generic procedures, such as the tween_system.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                About the handle map
+							</em>
+                            :
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    The handle_map has the same (or higher) lifetime as the tween system.
+								</p>
+								<ol>
+									<li>
+										<p>
+                                            The handle_map is implicit, without having to pass it around:
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    This means that a generic handle_map would have to be used, storing 
+                                                    <code>rawptr</code>
+                                                    .
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            This could be an annoyance for the Tween system, as I wouldn't have many ways of checking if the data for the 
+                                                            <code>value</code>
+                                                            &nbsp;and 
+                                                            <code>end</code>
+                                                            &nbsp;is compatible with each other.
+														</p>
+													</li>
+													<li>
+														<p>
+                                                            Overall, it's a bit annoying for generics.
+														</p>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<ol>
+											<li>
+												<p>
+                                                    The handle_map is part of the game.
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            ok.
+														</p>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<p>
+                                                    <s>The handle_map is global</s>.
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            I don't think anything outside the game would want to tween something.
+														</p>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<p>
+                                                    <s>The handle_map is part of the scene</s>.
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            When exiting the scene, the handle_map is cleared.
+														</p>
+													</li>
+													<li>
+														<p>
+                                                            If the handle_map used by the tween_system is 
+															<em>
+                                                                exclusively
+															</em>
+                                                            &nbsp;the handle_map of the current scene, that means that we can't tween something during a scene change, as this means that the whole tween_system would be cleared on a scene deinit.
+														</p>
+													</li>
+												</ul>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<p>
+                                            <s>The handle_map is explicit, having to pass it around</s>:
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    This increases the argument for calling a tween by one, and also makes the tween store the handle_map, besides the handle.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    The handle_map could be more specific, but this is not an advantage necessarily, as:
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            Most of the data processed by the tween is different from each other; could be a f32, Vec2, int, etc.
+														</p>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<p>
+                                                    I don't see this strategy having any real advantage.
+												</p>
+											</li>
+										</ul>
+										<ol>
+											<li>
+												<p>
+                                                    The handle_map is part of the scene.
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            This would make the most sense, as the only reason for having an explicit handle_map is to have many options for handle_maps.
+														</p>
+													</li>
+												</ul>
+											</li>
+										</ol>
+									</li>
+								</ol>
+							</li>
+							<li>
+								<p>
+                                    <s>The entity has a handle_map</s>.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            If the entity dies, the handle_map dies as well, crashing the whole system and making the use of the handle pointless.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Advantages
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The entity doesn't need to store any tween. We can have any amount of tweens, without any problems.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Disadvantages
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Forgetting to 
+                                    <code>remove</code>
+                                    &nbsp;the handle will cause a UAF, as the tween system will be able to access the data that the handle represents.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>
+					<strong>
+                        Game State
+					</strong>
+                    </s>:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Carrying around a 
+                            <code>Game_State</code>
+                            &nbsp;object which stores all game data so deleting any resource goes through a single place.&quot;
+						</p>
+					</li>
+					<li>
+						<p>
+                            The Game State stores the tweens and the entities.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The entity is destroyed through the Game State 
+                            <code>game_state_del_entity(gs: ^Game_State, ent: Entity_Id)</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Which will also delete all data associated with that entity.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    It can remove its tween because it has access to 
+                                    <code>gs</code>
+                                    ; the entity needs to have an indicator of which tween belongs to the entity either way.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            My thinking:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    &quot;The entity doesn't own anything&quot;
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Idk if this is true. When the entity dies some other piece of data MUST die as well.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            It's a different way to think of ownership. The entity doesn't really own the tween, but the tween must die with the entity; so who owns the data? I mean, I can't say it doesn't have an owner, as that would imply that something like the GameState owns the tween, which isn't true as only destroying the data when deinitializing the Game State would cause a UAF.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Seems like the entity and tween are tied together, but if you look the other way around, if a tween dies that doesn't imply that an entity should die.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            The entity clearly has a higher hierarchy than the tween when it comes to ownership, so I can safely say that the tween belongs to the entity.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            So, with that in mind, what justifies the tween being out of the entity? What good does it bring to the destruction of the tween?
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Sameness:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The entity needs to have a handle for the tween stored or the whole tween itself.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Storing only a handle could be a little more problematic if the tween is not killed once the entity dies; but yet, that depends on how the fetch for the tweens is made in the 
+                                                    <code>game_state_tweens :: proc(gs: Game_State) -&gt; []Tween</code>
+                                                    .
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Possible advantages:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Forgetting to clean up a tween will not cause a UAF, as the entity stored the tween and will take the tween with it when dying.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    This could cause a memory leak if the tween allocates memory in heap and we forget to clean it up, but it will not cause a crash.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    THO, this is only possible due to the system being stateless.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    This is also true for other strategies that store the tween inside the entity.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Possible disadvantages:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Same disadvantages of other strategies that have to store the tween or a handle to the tween in the entity:
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    I need to know how many tweens I'll have upfront.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    The call for a tween could be problematic. If I call a new tween using the same tween_handle or the same tween, while the tween is being used for some other tweening, then this could fail somehow; I would have to overwrite what I asked the tween to do, or just fail the call altogether and say it couldn't be made; this is terrible as it introduces error handling in a simple system.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Being stateless means that every frame is 
+											<em>
+                                                necessary
+											</em>
+                                            &nbsp;to fetch all tweens from everywhere in the system, to finally update each one of them.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    This is a problem when you consider that a tween could be anywhere, not only inside entities.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    It could be a mess to look up these tweens.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Finally:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The entity still needs to store a reference to the tween, while also the entity needs to know upfront how many tweens it will use, etc.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Even though your strategy could be used, it falls within the realm of the strategies 
+									<strong>
+                                        1
+									</strong>
+                                    &nbsp;and 
+									<strong>
+                                        3
+									</strong>
+                                    . I'm looking for a way that the entity doesn't care about the tweening. The tween could live in a general global space, being created freely, BUT still having its lifetime tied to the lifetime of a pointer the tween holds.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Some people tried to defend the strategy, but I still thought it was garbage and it doesn't deserve to be considered. It doesn't solve anything, keeps the problems of having to store the tweens internally and complicates the whole memory system a lot.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</li>
+	<li>
+		<p>
+            <s>
+			<strong>
+                The Object is stored in a global system
+			</strong>
+            </s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Problems
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            ANY pointer is a problematic pointer, since the lifetime of the pointer will always be shorter than the lifetime of the tween system. This requires extra ways to destroy the tween before the pointer stored inside the tween is used.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<ol>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    
+					<strong>
+                        Use of Events to destroy Objects
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The main characteristic of this system is that the destructor can be defined right when creating the Object, so you know 
+							<em>
+                                when
+							</em>
+                            &nbsp;it will be destroyed; that is, when the event is emitted.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                For tweens
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+									<em>
+                                        Why I stopped using this for tweens
+									</em>
+                                    :
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            I had big lifetime problems across the whole game in the past, but after removing global variables this problem was greatly reduced, diminishing the arguments in favor of using events.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            An internal system greatly reduces the complexity of the problem, making it much easier to read and understand what's happening.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            The existence of a destructor for a tween is strange. The tween destroys itself on completion, causing the &quot;destructor&quot; 
+											<strong>
+                                                not to be called in 99% of cases
+											</strong>
+                                            . In the vast majority of cases, event listeners were registered in the destructor and unregistered without ever being used.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    The destructor was just an anti-crash system; its purpose was only to handle an exception where tweens still existed while the pointer of their custom_data no longer existed.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+									<em>
+                                        After doing
+									</em>
+                                    :
+								</p>
+<pre><code class="language-odin" data-lang="odin">// tween()
+eng.tween(
+&nbsp;&nbsp;&nbsp;&nbsp;destructor = &personagem.destructor,
+&nbsp;&nbsp;&nbsp;&nbsp;value = &personagem.arm3.pos_world,
+&nbsp;&nbsp;&nbsp;&nbsp;end = arm_relative_target_trans_arm3.pos,
+&nbsp;&nbsp;&nbsp;&nbsp;duration_s = 0.1,
+&nbsp;&nbsp;&nbsp;&nbsp;custom_data = personagem,
+&nbsp;&nbsp;&nbsp;&nbsp;on_end = proc(tween: ^eng.Tween) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;personagem := cast(^Personagem_User)tween.custom_data
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;personagem.arm3.is_stepping = false
+&nbsp;&nbsp;&nbsp;&nbsp;}
+)
+
+// Internal to tween()
+ok: bool
+tween.destructor_handle, ok = event_add_listener(destructor, wrap_procedure(tween_delete), rawptr(value))
+if !ok {
+&nbsp;&nbsp;&nbsp;&nbsp;log.errorf("%v(%v): Failed to add event listener.", loc.procedure, loc.line)
+&nbsp;&nbsp;&nbsp;&nbsp;return nil
+}
+</code></pre>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Use of an external Lifetimes Manager system
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Use a Lifetime_Handle as an indicator if the entity was destroyed.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Each of the individual object systems checks that Lifetime_Handle and will destroy the Object if it notices that the handle was marked as 
+                            <code>dead</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            The check must be done in a loop; normally in the object's system loop.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This means it is intrinsically a 
+							<em>
+                                polling
+							</em>
+                            &nbsp;system.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Problems
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If the polling is not done, then the entity will never be destroyed.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This is a problem that happens every time the game closes: the Lifetime_Handle is marked as dead, but no final polling is done to destroy the objects.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            This can cause memory leaks.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Although the Lifetime_Handles system can clean up the memory of each indicated thing, this system doesn't have enough information about how the destruction of each element should be performed. Besides, of course, that would be a pain to implement.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</li>
+</ol>
+<h3
+	id="improvements-applied" >
+    Improvements Applied
+</h3>
+<h5
+	id="stage-1-clarity-in-the-definition-of-lifetimes" >
+    Stage 1: Clarity in the definition of lifetimes
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;Grouped element thinking and systems (n+1)&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;struct-based lifetime aggregation&quot;.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It was the solution I used.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Ideally I don't want to have any data stored in the global scope, except if .
+		</p>
+	</li>
+	<li>
+		<p>
+            All data should belong to a struct that represents its lifetime.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                What does this help with?
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It gets closer to n+1
+				</p>
+			</li>
+			<li>
+				<p>
+                    Helps not to forget about initializations and deinitalizations.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Makes some lifetimes explicit, making it harder to make UAF mistakes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Makes it much easier to use arena allocators for those objects with the same lifetime.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I think it also makes explicit what has a 1-frame lifetime, for use in the temp allocator or another custom arena allocator.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This can be very useful when dealing with a low-level render API.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Overall: it seems to be an improvement in code clarity and quality.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Does this help the tween/external systems in any way?
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I don't think so.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The storage of the data is done using another allocator, regardless.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The data stored in the system cannot use the same allocator as the entity, since the system should not die when the entity dies.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Post-change impressions
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The system helps to visualize improper access problems, that's all.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In a nutshell, it's a way to stay aware of grouped lifetimes, it's &quot;grouped thinking&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Therefore it's ok, even if it might not be the 
+					<em>
+                        best
+					</em>
+                    &nbsp;way to visualize/handle the problem.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="stage-2-purity-of-functions-via-removal-of-global-variables-and-global-structs" >
+    Stage 2: Purity of functions, via removal of global variables and global structs
+</h5>
+<ul>
+	<li>
+		<p>
+            The answer about lifetimes lies in the absence of global variables or global structs.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Why I came up with this idea
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When the lifetime of something ends, I wanted it to be impossible to access it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This reminded me of Scopes, which do exactly that.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Notable improvements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Multithreading is safer.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The net_connections thread doesn't have access to the game thread's content, since the game is on the worker_game stack.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This is the only big advantage in the separation between 
+                            <code>global</code>
+                            &nbsp;and 
+                            <code>game</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    There's also a gain in function purity, of course.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    If the game didn't have one dedicated network thread, then 
+                                    <code>game</code>
+                                    &nbsp;would be 
+									<em>
+                                        basically
+									</em>
+                                    &nbsp;a 
+                                    <code>global</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Even if 
+                                    <code>game</code>
+                                    &nbsp;is a global variable (like in the crypted core) I would still pass the variable as a function parameter (for sure), for purity, helping to clarify what the function uses.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    I liked the solution for RPCs and Jobs, surprisingly.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The only thing done is passing the game as an extra arg in the context, via 
+                            <code>context.user_ptr</code>
+                            ; that's it.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Simple, easy to understand, without requiring changes to the RPC or Job code.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If it weren't for that, I would have to pass the game as a procedure arg, having to modify the RPC and Job code accordingly.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

@@ -1,0 +1,3938 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.35154.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Vulkan
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/starting.html" >
+                                Starting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/tutorials.html" >
+                                Tutorials
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/samples.html" >
+                                Samples
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/core.html" >
+                                Core
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/render-loop.html" >
+                                Render Loop
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/synchronization-and-cache-control.html" >
+                                Synchronization and Cache Control
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/command-buffers.html" >
+                                Command Buffers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/pipelines.html" >
+                                Pipelines
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/graphics-pipeline.html" >
+                                Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/compute-pipeline.html" >
+                                Compute Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Graphics Programming/Vulkan/resources.html" >
+                                Resources
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#buffers" >
+                                        Buffers
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#images" >
+                                        Images
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/depth.html" >
+                                Depth
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/mapping-data-to-shaders.html" >
+                                Mapping Data to Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/memory-allocation.html" >
+                                Memory Allocation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/hdr-support.html" >
+                                HDR Support
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/profiling.html" >
+                                Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/mobile.html" >
+                                Mobile
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/vr.html" >
+                                VR
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/video-decoding.html" >
+                                Video Decoding
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/spir-v.html" >
+                                SPIR-V
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Render Engineering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/apis.html" >
+                                APIs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/choosing-the-space-to-compute-lighting.html" >
+                                Choosing the Space to compute Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/bsdf-bidirectional-scattering-distribution-function.html" >
+                                BSDF (Bidirectional Scattering Distribution Function)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/material.html" >
+                                Material
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/direct-lighting.html" >
+                                Direct Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/shadows.html" >
+                                Shadows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/skybox-skydome.html" >
+                                Skybox / Skydome
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/transparency.html" >
+                                Transparency
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/global-illumination-indirect-lighting.html" >
+                                Global Illumination / Indirect Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/post-processing.html" >
+                                Post-Processing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/anti-aliasing.html" >
+                                Anti-Aliasing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/light-path-rendering-method.html" >
+                                Light Path / Rendering Method
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/optimization-techniques.html" >
+                                Optimization Techniques
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Graphics and Shaders
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/math-linear-algebra.html" >
+                                Math, Linear Algebra
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/spaces-transformations-and-graphics-pipeline.html" >
+                                Spaces, Transformations and Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/common-techniques.html" >
+                                Common Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/shaders.html" >
+                                Shaders
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GLSL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/storage-qualifiers.html" >
+                                Storage Qualifiers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/layout-qualifiers.html" >
+                                Layout Qualifiers
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/execution-building-blocks.html" >
+                                Execution Building Blocks
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/specialized-units-and-instructions.html" >
+                                Specialized units &amp; instructions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/gpu-va-virtual-address.html" >
+                                GPU VA (Virtual Address)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/tiled-gpus.html" >
+                                Tiled-GPUs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Slang
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Font Rendering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/techniques.html" >
+                                Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/text-processing-pipeline.html" >
+                                Text Processing Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/formats.html" >
+                                Formats
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/libs.html" >
+                                Libs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/fonts.html" >
+                                Fonts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        OpenGL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/OpenGL/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Resources
+						</h1>
+						<p>
+							<time
+								datetime="2025-08-01" >
+                                🕒 Created: 2025-08-01
+							</time>
+							<time
+								datetime="2026-01-21" >
+                                | Updated: 2026-01-21
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            Resources are views of memory with associated formatting and dimensionality.
+		</p>
+	</li>
+	<li>
+		<p>
+            Nvidia: Make sure to always use the minimum set of resource usage flags. Redundant flags may trigger redundant flushes and stalls in barriers and slow down your app unnecessarily.
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/resources.html" 
+				class="external-link" 
+				target="_blank" >
+                Resource Creation
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="primary-resources" >
+    Primary resources
+</h5>
+<ul>
+	<li>
+		<p>
+            Buffers.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Provide access to raw arrays of bytes
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Images.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Can
+					</em>
+                    &nbsp;be multidimensional and 
+					<em>
+                        may
+					</em>
+                    &nbsp;have associated metadata.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Tensors.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Can
+					</em>
+                    &nbsp;be multidimensional, contain format information like images and 
+					<em>
+                        may
+					</em>
+                    &nbsp;have associated metadata.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Samplers.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used to sample from images at certain coordinates, producing interpolated color values.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/resources.html#resources-micromaps" 
+				class="external-link" 
+				target="_blank" >
+                Micromaps
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Uses buffers as the backing store for opaque data structures.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/resources.html#resources-acceleration-structures" 
+				class="external-link" 
+				target="_blank" >
+                Acceleration Structures
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Uses buffers as the backing store for opaque data structures.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used for realtime raytracing.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="buffers" >
+    Buffers
+</h3>
+<ul>
+	<li>
+		<p>
+            Buffers in Vulkan are regions of memory used for storing arbitrary data that can be read by the graphics card.
+		</p>
+	</li>
+	<li>
+		<p>
+            They are essentially unformatted arrays of bytes.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Types of Buffers
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Unformatted array
+					</em>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Uniform Buffer
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It remains uniform during the execution of a command (like a draw call).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Only load operations (read only).
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    &quot;Read&quot; == &quot;Load&quot;.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This allows the GPU to cache them efficiently.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Loaded into L2, and further, into a L1 cache.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Storage Buffers
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allow Load and Store operations.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Supports atomic operations.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Data can be loaded from GPU memory into L2-&gt;L1 caches, but can also store data from shaders into memory.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Texel Buffers
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uniform Texel Buffer.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Storage Texel Buffer.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Formatted view.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Dynamic Buffers
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Dynamic Uniform Buffer.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Dynamic Texel Buffer.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    etc.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Queues
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Just like the images in the Swapchain, buffers can also be owned by a specific queue family or be shared between multiple at the same time.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The buffer will only be used from the graphics queue, so we can stick to exclusive access.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="create" >
+    Create
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.khronos.org/registry/vulkan/specs/1.0/man/html/vkCreateBuffer.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkCreateBuffer()</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>VkBuffer</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            A chunk of GPU visible memory
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VkBufferCreateInfo</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>size</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifies the size of the buffer in bytes. Calculating the byte size of the vertex data is straightforward with 
+                                    <code>sizeof</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>usage</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Indicates for which purposes the data in the buffer is going to be used.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    It is possible to specify multiple purposes using a bitwise or.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>flags</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is used to configure sparse buffer memory, which is not relevant right now. We'll leave it at the default value of 
+                                    <code>0</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>sharingMode</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specifying the sharing mode of the buffer when it will be accessed by multiple queue families.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The buffer will only be used from the graphics queue, so we can stick to exclusive access.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    NVIDIA:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            <code>VkSharingMode</code>
+                                            &nbsp;is ignored by the driver, so 
+                                            <code>SHARING_MODE_CONCURRENT</code>
+                                            &nbsp;incurs no overhead relative to 
+                                            <code>SHARING_MODE_EXCLUSIVE</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>SHARING_MODE_EXCLUSIVE</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Specifies that access to any range or image subresource of the object will be exclusive to a single queue family at a time.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>SHARING_MODE_CONCURRENT</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Specifies that concurrent access to any range or image subresource of the object from multiple queue families is supported.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="copy" >
+    Copy
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Minimum Alignment
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceLimits.html" 
+						class="external-link" 
+						target="_blank" >
+                        <code>VkPhysicalDeviceLimits</code>
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>optimalBufferCopyOffsetAlignment</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the optimal buffer offset alignment in bytes for 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdCopyBufferToImage2.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCmdCopyBufferToImage2
+									</a>
+                                    , 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdCopyBufferToImage.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCmdCopyBufferToImage
+									</a>
+                                    , 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdCopyImageToBuffer2.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCmdCopyImageToBuffer2
+									</a>
+                                    , and 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdCopyImageToBuffer.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCmdCopyImageToBuffer
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This value is also the optimal host memory offset alignment in bytes for 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCopyMemoryToImage.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCopyMemoryToImage
+									</a>
+                                    &nbsp;and 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCopyImageToMemory.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCopyImageToMemory
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The per texel alignment requirements are enforced, but applications 
+									<strong>
+                                        should
+									</strong>
+                                    &nbsp;use the optimal alignment for optimal performance and power use.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The value 
+									<strong>
+                                        must
+									</strong>
+                                    &nbsp;be a power of two.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>optimalBufferCopyRowPitchAlignment</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the optimal buffer row pitch alignment in bytes for 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdCopyBufferToImage2.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCmdCopyBufferToImage2
+									</a>
+                                    , 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdCopyBufferToImage.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCmdCopyBufferToImage
+									</a>
+                                    , 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdCopyImageToBuffer2.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCmdCopyImageToBuffer2
+									</a>
+                                    , and 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdCopyImageToBuffer.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCmdCopyImageToBuffer
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This value is also the optimal host memory row pitch alignment in bytes for 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCopyMemoryToImage.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCopyMemoryToImage
+									</a>
+                                    &nbsp;and 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCopyImageToMemory.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkCopyImageToMemory
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Row pitch is the number of bytes between texels with the same X coordinate in adjacent rows (Y coordinates differ by one). The per texel alignment requirements are enforced, but applications 
+									<strong>
+                                        should
+									</strong>
+                                    &nbsp;use the optimal alignment for optimal performance and power use.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The value 
+									<strong>
+                                        must
+									</strong>
+                                    &nbsp;be a power of two.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="images" >
+    Images
+</h3>
+<ul>
+	<li>
+		<p>
+            Images contain format information. Can be multidimensional and may have associated metadata.
+		</p>
+	</li>
+	<li>
+		<p>
+            An Image, unlike a Buffer, is almost always used within a View.
+		</p>
+	</li>
+	<li>
+		<p>
+            A texture you can write to and read from.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkImage.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkImage</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Stored as
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250909135026.png" width="300" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="create" >
+    Create
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkImageCreateInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkImageCreateInfo</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>ImageType</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>extent</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies the dimensions of the image, basically how many texels there are on each axis.
+						</p>
+					</li>
+					<li>
+						<p>
+                            That’s why 
+                            <code>extent.depth</code>
+                            &nbsp;must be 
+                            <code>1</code>
+                            &nbsp;instead of 
+                            <code>0</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>format</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>tiling</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>initialLayout</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can 
+							<strong>
+                                only
+							</strong>
+                            &nbsp;be one of these 3:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>UNDEFINED</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Not usable by the GPU and the very first transition will discard the texels.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>PREINITIALIZED</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Not usable by the GPU, but the first transition will preserve the texels.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>ZERO_INITIALIZED_EXT</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Only if 
+											<a
+												href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#features-zeroInitializeDeviceMemory" 
+												class="external-link" 
+												target="_blank" >
+                                                zeroInitializeDeviceMemory
+											</a>
+                                            &nbsp;feature is enabled.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            There are a few situations where it is necessary for the texels to be preserved during the first transition.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    One example would be if you wanted to use an image as a staging image in combination with the 
+                                    <code>TILING_LINEAR</code>
+                                    &nbsp;layout. In that case, you’d want to upload the texel data to it and then transition the image to be a transfer source without losing the data.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            However, we usually don't need this property and can use 
+                            <code>UNDEFINED</code>
+                            , as we can transition the image to be a transfer destination and then copy texel data to it from a buffer object.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>usage</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>samples</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            For multisampling.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Only relevant for images that will be used as attachments.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The default for non-multisampled images is one sample.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>mipLevels</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            For mipmapping.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>flags</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Related to sparse images.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Sparse images are images where only certain regions are actually backed by memory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If you were using a 3D texture for a voxel terrain, for example, then you could use this to avoid allocating memory to store large volumes of &quot;air&quot; values.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>sharingMode</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies the sharing mode of the image when it will be accessed by multiple queue families.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>queueFamilyIndexCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the number of entries in the 
+                            <code>pQueueFamilyIndices</code>
+                            &nbsp;array.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pQueueFamilyIndices</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of queue families that will access this image. It is ignored if 
+                            <code>sharingMode</code>
+                            &nbsp;is not 
+                            <code>SHARING_MODE_CONCURRENT</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="types" >
+    Types
+</h5>
+<ul>
+	<li>
+		<p>
+            Tells Vulkan with what kind of coordinate system the texels in the image are going to be addressed.
+		</p>
+	</li>
+	<li>
+		<p>
+            1D images
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can be used to store an array of data or a gradient.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            2D images
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Are mainly used for textures.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            3D images
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can be used to store voxel volumes, for example.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="usages" >
+    Usages
+</h5>
+<ul>
+	<li>
+		<p>
+			<em>
+                Storage Image
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Load and Store.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Similar to a Storage Buffer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Sampled Image
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Only load operations (read only).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Similar to Uniform Buffers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The coordinates are between 0.0 and 1.0.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If a coordinate doesn't match exactly a pixel, then the result is an interpolation between the neighbouring pixels.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Input Attachment
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Only load operations (read only).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Within a renderpass.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Framebuffer-local.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Access to single coordinate only.
+						</p>
+					</li>
+					<li>
+						<p>
+                            No access to other coordinates in that image.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="formats" >
+    Formats
+</h5>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/formats.html" 
+				class="external-link" 
+				target="_blank" >
+                Formats
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/formats.html#formats-compatibility-classes" 
+				class="external-link" 
+				target="_blank" >
+                Compatible Formats
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/formats.html#formats-numericformat" 
+				class="external-link" 
+				target="_blank" >
+                Numeric Format
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>R8G8B8_SRGB</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Channels stored as 0–255.
+				</p>
+			</li>
+			<li>
+				<p>
+                    After conversion, the values are in the 0-1 floating-point range.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Interpreted using the sRGB nonlinear transfer function (gamma correction).
+				</p>
+			</li>
+			<li>
+				<p>
+                    When sampled, values are converted to linear color space in the shader automatically.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>R8G8B8_UNORM</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each 8-bit channel is an 
+					<em>
+                        unsigned
+					</em>
+                    &nbsp;normalized integer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Storage range: 0–255.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Interpreted as floating-point in the shader:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            0 → 0.0
+						</p>
+					</li>
+					<li>
+						<p>
+                            255 → 1.0
+						</p>
+					</li>
+					<li>
+						<p>
+                            Linear mapping between.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>R8G8B8_SNORM</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each 8-bit channel is a 
+					<em>
+                        signed
+					</em>
+                    &nbsp;normalized integer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Storage range: –128 to +127.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Interpreted as floating-point in the shader:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            –128 → –1.0
+						</p>
+					</li>
+					<li>
+						<p>
+                            +127 → +1.0
+						</p>
+					</li>
+					<li>
+						<p>
+                            Linear mapping between.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="tiling" >
+    Tiling
+</h5>
+<ul>
+	<li>
+		<p>
+            Nvidia: Always use 
+            <code>TILING_OPTIMAL</code>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>TILING_LINEAR</code>
+                    &nbsp;is not optimal. Use a staging buffer and 
+                    <code>vkCmdCopyBufferToImage()</code>
+                    &nbsp;to update images on the device.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Unlike the layout of an image, the tiling mode 
+			<strong>
+                cannot
+			</strong>
+            &nbsp;be changed at a later time.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>TILING_OPTIMAL</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The layout is opaque/driver-chosen.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Is described as an implementation-dependent (opaque) arrangement that the driver/GPU may reorder/tile texels for efficient access; it is the intended layout for GPU use.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        When to use
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Image is used as a framebuffer attachment, sampled texture, or otherwise heavily used by the GPU (most rendering targets).
+						</p>
+					</li>
+					<li>
+						<p>
+                            You want the GPU/driver to choose a layout that maximizes memory locality and bandwidth for rendering.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You will perform GPU-side post-processing / tonemapping / sampling / blits before presentation.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>TILING_LINEAR</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The layout is row-major/predictable.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Lays out texels in row-major order (with row padding possible) and is the layout for which 
+                    <code>vkGetImageSubresourceLayout</code>
+                    &nbsp;returns meaningful offsets for host access; that is the mechanism used when an application needs direct CPU mapping/reading of image memory.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            However, in practice applications usually do GPU render → copy to a host-visible staging buffer/image rather than render directly into a linear-host-visible image.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    LINEAR tiling does have functional and performance limitations (fewer supported formats/usages and worse GPU access patterns), which is why it’s rarely used for main rendering; typical use cases are CPU upload/download, debugging, or very small offscreen images. It is not only theoretically usable for CPU readback, but that is the primary practical use. You must query format/usage support for linear tiling because many formats or usages are unsupported in LINEAR.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        When to use
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            You explicitly need to map the image memory from the CPU (direct host read/write) and the driver reports support for the requested format/usage in linear tiling.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Use cases: readback for screenshots/debugging, direct CPU uploads for small resources, or special interop scenarios where a row-major layout is required.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                GPU OPTIMAL to Host-Visible
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://vulkan-tutorial.com/Texture_mapping/Images" 
+						class="external-link" 
+						target="_blank" >
+                        Strategy applied for 'creating a texture from file'
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If you want to be able to directly access texels in the memory of the image, then you must use 
+                            <code>TILING_LINEAR</code>
+                            . We will be using a staging buffer instead of a staging image, so this won't be necessary. We will be using 
+                            <code>TILING_OPTIMAL</code>
+                            &nbsp;for efficient access from the shader.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        TLDR
+					</em>
+                    : 
+                    <code>OPTIMAL</code>
+                    &nbsp;+ explicit transfer to a host-visible staging resource when needed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Create your render target as 
+                    <code>OPTIMAL</code>
+                    &nbsp;and allocate 
+                    <code>DEVICE_LOCAL</code>
+                    &nbsp;memory (fast GPU local). After rendering, 
+					<strong>
+                        copy
+					</strong>
+                    &nbsp;or 
+					<strong>
+                        blit
+					</strong>
+                    &nbsp;the image to a host-visible staging resource (either a buffer via 
+                    <code>vkCmdCopyImageToBuffer</code>
+                    &nbsp;or a LINEAR image) and map that staging resource for CPU access. This avoids depending on limited linear support and keeps the GPU path fast.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="layouts" >
+    Layouts
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>GENERAL</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Supports all types of device access, unless specified otherwise.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the 
+                    <code>unifiedImageLayouts</code>
+                    &nbsp;feature is enabled, the 
+                    <code>GENERAL</code>
+                    &nbsp;image layout 
+					<strong>
+                        may
+					</strong>
+                    &nbsp;be used in place of the other layouts where allowed with no loss of performance.
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR.html" 
+								class="external-link" 
+								target="_blank" >
+                                <code>VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR</code>
+							</a>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Can be included in the 
+                                    <code>pNext</code>
+                                    &nbsp;chain of the 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceFeatures2.html" 
+										class="external-link" 
+										target="_blank" >
+                                        <code>VkPhysicalDeviceFeatures2</code>
+									</a>
+                                    &nbsp;structure passed to 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkGetPhysicalDeviceFeatures2.html" 
+										class="external-link" 
+										target="_blank" >
+                                        <code>vkGetPhysicalDeviceFeatures2</code>
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>KHR_unified_image_layouts</code>
+                                    .
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This extension significantly simplifies synchronization in Vulkan by removing the need for image layout transitions in most cases. In particular, it guarantees that using the 
+                                            <code>GENERAL</code>
+                                            &nbsp;layout everywhere possible is just as efficient as using the other layouts.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            In the interest of simplifying synchronization in Vulkan, this extension removes image layouts altogether as much as possible. As such, this extension is fairly simple.
+										</p>
+									</li>
+									<li>
+										<p>
+											<a
+												href="https://github.com/KhronosGroup/Vulkan-Docs/blob/main/proposals/KHR_unified_image_layouts.adoc" 
+												class="external-link" 
+												target="_blank" >
+                                                Proposal
+											</a>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+											<a
+												href="https://www.khronos.org/blog/so-long-image-layouts-simplifying-vulkan-synchronisation" 
+												class="external-link" 
+												target="_blank" >
+                                                Article
+											</a>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Interacts with
+											</em>
+                                            :
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    VERSION_1_3
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    EXT_attachment_feedback_loop_layout
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    KHR_dynamic_rendering
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Support
+											</em>
+                                            :
+										</p>
+										<ul>
+											<li>
+												<p>
+													<a
+														href="https://vulkan.gpuinfo.org/displayextensiondetail.php?extension=KHR_unified_image_layouts" 
+														class="external-link" 
+														target="_blank" >
+                                                        KHR_unified_image_layouts
+													</a>
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>unifiedImageLayouts</code>
+                                    &nbsp;(boolean)
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Specifies whether usage of 
+                                            <code>GENERAL</code>
+                                            , where valid, incurs no loss in efficiency.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Additionally, it indicates whether it 
+											<strong>
+                                                can
+											</strong>
+                                            &nbsp;be used in place of 
+                                            <code>ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>unifiedImageLayoutsVideo</code>
+                                    &nbsp;(boolean)
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Specifies whether 
+                                            <code>GENERAL</code>
+                                            &nbsp;can be used in place of any of the following image layouts with no loss in efficiency.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            <code>VIDEO_DECODE_DST</code>
+										</p>
+									</li>
+									<li>
+										<p>
+                                            <code>VIDEO_DECODE_SRC</code>
+										</p>
+									</li>
+									<li>
+										<p>
+                                            <code>VIDEO_DECODE_DPB</code>
+										</p>
+									</li>
+									<li>
+										<p>
+                                            <code>VIDEO_ENCODE_DST</code>
+										</p>
+									</li>
+									<li>
+										<p>
+                                            <code>VIDEO_ENCODE_SRC</code>
+										</p>
+									</li>
+									<li>
+										<p>
+                                            <code>VIDEO_ENCODE_DPB</code>
+										</p>
+									</li>
+									<li>
+										<p>
+                                            <code>VIDEO_ENCODE_QUANTIZATION_MAP</code>
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    It can be a useful catch-all image layout, but there are situations where a dedicated image layout must be used instead. For example:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>PRESENT_SRC</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>SHARED_PRESENT</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>VIDEO_DECODE_SRC</code>
+                            , 
+                            <code>VIDEO_DECODE_DST</code>
+                            , and 
+                            <code>VIDEO_DECODE_DPB</code>
+                            &nbsp;without the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#features-unifiedImageLayoutsVideo" 
+								class="external-link" 
+								target="_blank" >
+                                <code>unifiedImageLayoutsVideo</code>
+							</a>
+                            &nbsp;feature.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>VIDEO_ENCODE_SRC</code>
+                            , 
+                            <code>VIDEO_ENCODE_DST</code>
+                            , and 
+                            <code>VIDEO_ENCODE_DPB</code>
+                            &nbsp;without the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#features-unifiedImageLayoutsVideo" 
+								class="external-link" 
+								target="_blank" >
+                                <code>unifiedImageLayoutsVideo</code>
+							</a>
+                            &nbsp;feature.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>VIDEO_ENCODE_QUANTIZATION_MAP</code>
+                            &nbsp;without the 
+                            <code>unifiedImageLayoutsVideo</code>
+                            &nbsp;feature.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    While 
+                    <code>GENERAL</code>
+                    &nbsp;suggests that all types of device access are possible, it does not mean that all patterns of memory accesses are safe in all situations.
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#common-render-pass-data-races" 
+								class="external-link" 
+								target="_blank" >
+                                Common Render Pass Data Races
+							</a>
+                            &nbsp;outlines some situations where data races are unavoidable. For example, when a subresource is used as both an attachment and a sampled image (i.e., not an input attachment), 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#renderpass-feedbackloop" 
+								class="external-link" 
+								target="_blank" >
+                                enabling feedback loop
+							</a>
+                            &nbsp;adds extra guarantees which 
+                            <code>GENERAL</code>
+                            &nbsp;alone does not.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Only in 
+                <code>initialLayout</code>
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>UNDEFINED</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies that the layout is unknown.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout 
+							<strong>
+                                can
+							</strong>
+                            &nbsp;be used as the 
+                            <code>initialLayout</code>
+                            &nbsp;member of 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkImageCreateInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkImageCreateInfo
+							</a>
+                            .&nbsp;&nbsp;Image memory 
+							<strong>
+                                cannot
+							</strong>
+                            &nbsp;be transitioned into this layout.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout 
+							<strong>
+                                can
+							</strong>
+                            &nbsp;be used in place of the current image layout in a layout transition, but doing so will cause the contents of the image’s memory to be undefined.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>
+                    <code>PREINITIALIZED</code>
+                    </s>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies that an image’s memory is in a defined layout and 
+							<strong>
+                                can
+							</strong>
+                            &nbsp;be populated by data, but that it has not yet been initialized by the driver.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout 
+							<strong>
+                                can
+							</strong>
+                            &nbsp;be used as the 
+                            <code>initialLayout</code>
+                            &nbsp;member of 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkImageCreateInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkImageCreateInfo
+							</a>
+                            .&nbsp;&nbsp;Image memory 
+							<strong>
+                                cannot
+							</strong>
+                            &nbsp;be transitioned into this layout.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is intended to be used as the initial layout for an image whose contents are written by the host, and hence the data 
+							<strong>
+                                can
+							</strong>
+                            &nbsp;be written to memory immediately, without first executing a layout transition.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Currently, 
+                            <code>PREINITIALIZED</code>
+                            &nbsp;is only useful with 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#glossary-linear-resource" 
+								class="external-link" 
+								target="_blank" >
+                                linear
+							</a>
+                            &nbsp;images because there is not a standard layout defined for 
+                            <code>TILING_OPTIMAL</code>
+                            &nbsp;images.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>
+                    <code>ZERO_INITIALIZED_EXT</code>
+                    </s>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies that an image’s memory is in a defined layout and is zeroed, but that it has not yet been initialized by the driver.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout 
+							<strong>
+                                can
+							</strong>
+                            &nbsp;be used as the 
+                            <code>initialLayout</code>
+                            &nbsp;member of 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkImageCreateInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkImageCreateInfo
+							</a>
+                            . Image memory 
+							<strong>
+                                cannot
+							</strong>
+                            &nbsp;be transitioned into this layout.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is intended to be used as the initial layout for an image whose contents are already zeroed, either from being explicitly set to zero by an application or from being allocated with 
+                            <code>MEMORY_ALLOCATE_ZERO_INITIALIZE_EXT</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Only if 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#features-zeroInitializeDeviceMemory" 
+								class="external-link" 
+								target="_blank" >
+                                zeroInitializeDeviceMemory
+							</a>
+                            &nbsp;feature is enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Transfer
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>TRANSFER_SRC_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as a source image of a transfer command (see the definition of 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#synchronization-pipeline-stages-transfer" 
+								class="external-link" 
+								target="_blank" >
+                                <code>PIPELINE_STAGE_TRANSFER</code>
+							</a>
+                            ).
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid 
+							<em>
+                                only
+							</em>
+                            &nbsp;for image subresources of images created with the 
+                            <code>USAGE_TRANSFER_SRC</code>
+                            &nbsp;usage bit enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>TRANSFER_DST_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as a destination image of a transfer command.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid only for image subresources of images created with the 
+                            <code>USAGE_TRANSFER_DST</code>
+                            &nbsp;usage bit enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Present
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>PRESENT_SRC</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used for presenting a presentable image for display.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>SHARED_PRESENT</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is valid only for shared presentable images, and 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;be used for any usage the image supports.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Read
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>READ_ONLY_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout allowing read only access as an attachment, or in shaders as a sampled image, combined image/sampler, or input attachment.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>DEPTH_READ_ONLY_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout for the depth aspect of a depth/stencil format image allowing read-only access as a depth attachment or in shaders as a sampled image, combined image/sampler, or input attachment.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>STENCIL_READ_ONLY_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout for the stencil aspect of a depth/stencil format image allowing read-only access as a stencil attachment or in shaders as a sampled image, combined image/sampler, or input attachment.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>DEPTH_STENCIL_READ_ONLY_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout for 
+							<em>
+                                both
+							</em>
+                            &nbsp;the depth and stencil aspects of a depth/stencil format image allowing read only access as a depth/stencil attachment or in shaders as a sampled image, combined image/sampler, or input attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It is equivalent to 
+                            <code>DEPTH_READ_ONLY_OPTIMAL</code>
+                            &nbsp;and 
+                            <code>STENCIL_READ_ONLY_OPTIMAL</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>SHADER_READ_ONLY_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout allowing read-only access in a shader as a sampled image, combined image/sampler, or input attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid 
+							<em>
+                                only
+							</em>
+                            &nbsp;for image subresources of images created with the 
+                            <code>USAGE_SAMPLED</code>
+                            &nbsp;or 
+                            <code>USAGE_INPUT_ATTACHMENT</code>
+                            &nbsp;usage bits enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Attachments
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>ATTACHMENT_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout that 
+							<em>
+                                must
+							</em>
+                            &nbsp;only be used with attachment accesses in the graphics pipeline.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>COLOR_ATTACHMENT_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as a color or resolve attachment in a 
+                            <code>VkFramebuffer</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid only for image subresources of images created with the 
+                            <code>COLOR_ATTACHMENT</code>
+                            &nbsp;usage bit enabled.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Nvidia: Use 
+                            <code>COLOR_ATTACHMENT_OPTIMAL</code>
+                            &nbsp;image layout for color attachments.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>DEPTH_ATTACHMENT_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout for the depth aspect of a depth/stencil format image allowing read and write access as a depth attachment.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>STENCIL_ATTACHMENT_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout for the stencil aspect of a depth/stencil format image allowing read and write access as a stencil attachment.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>DEPTH_STENCIL_ATTACHMENT_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout for 
+							<em>
+                                both
+							</em>
+                            &nbsp;the depth and stencil aspects of a depth/stencil format image allowing read and write access as a depth/stencil attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Equivalent to 
+                            <code>DEPTH_ATTACHMENT_OPTIMAL</code>
+                            &nbsp;and 
+                            <code>STENCIL_ATTACHMENT_OPTIMAL</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as either a color attachment or depth/stencil attachment and/or read-only access in a shader as a sampled image, combined image/sampler, or input attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid 
+							<em>
+                                only
+							</em>
+                            &nbsp;for image subresources of images created with the 
+                            <code>USAGE_ATTACHMENT_FEEDBACK_LOOP</code>
+                            &nbsp;usage bit enabled and either the 
+                            <code>USAGE_COLOR_ATTACHMENT</code>
+                            &nbsp;or 
+                            <code>USAGE_DEPTH_STENCIL_ATTACHMENT</code>
+                            &nbsp;and either the 
+                            <code>USAGE_INPUT_ATTACHMENT</code>
+                            &nbsp;or 
+                            <code>USAGE_SAMPLED</code>
+                            &nbsp;usage bits enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>LAYOUT_RENDERING_LOCAL_READ</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as either a storage image, or a color or depth/stencil attachment and an input attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid 
+							<em>
+                                only
+							</em>
+                            &nbsp;for image subresources of images created with either 
+                            <code>USAGE_STORAGE</code>
+                            , or both 
+                            <code>USAGE_INPUT_ATTACHMENT</code>
+                            &nbsp;and either of 
+                            <code>USAGE_COLOR_ATTACHMENT</code>
+                            &nbsp;or 
+                            <code>USAGE_DEPTH_STENCIL_ATTACHMENT</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Attachment Fragment Shading Rate
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>FRAGMENT_SHADING_RATE_ATTACHMENT_OPTIMAL</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    It 
+									<strong>
+                                        must
+									</strong>
+                                    &nbsp;only be used as a 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#primsrast-fragment-shading-rate-attachment" 
+										class="external-link" 
+										target="_blank" >
+                                        fragment shading rate attachment
+									</a>
+                                    &nbsp;or 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#primsrast-shading-rate-image" 
+										class="external-link" 
+										target="_blank" >
+                                        shading rate image
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This layout is valid 
+									<em>
+                                        only
+									</em>
+                                    &nbsp;for image subresources of images created with the 
+                                    <code>USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT</code>
+                                    &nbsp;usage bit enabled.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Fragment Density Map
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>FRAGMENT_DENSITY_MAP_OPTIMAL_EXT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    It 
+									<strong>
+                                        must
+									</strong>
+                                    &nbsp;only be used as a fragment density map attachment in a 
+                                    <code>VkRenderPass</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This layout is valid 
+									<em>
+                                        only
+									</em>
+                                    &nbsp;for image subresources of images created with the 
+                                    <code>USAGE_FRAGMENT_DENSITY_MAP</code>
+                                    &nbsp;usage bit enabled.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Read / Attachment
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout for depth/stencil format images allowing read and write access to the stencil aspect as a stencil attachment, and read only access to the depth aspect as a depth attachment or in shaders as a sampled image, combined image/sampler, or input attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Equivalent to 
+                            <code>DEPTH_READ_ONLY_OPTIMAL</code>
+                            &nbsp;and 
+                            <code>STENCIL_ATTACHMENT_OPTIMAL</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a layout for depth/stencil format images allowing read and write access to the depth aspect as a depth attachment, and read only access to the stencil aspect as a stencil attachment or in shaders as a sampled image, combined image/sampler, or input attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Equivalent to 
+                            <code>DEPTH_ATTACHMENT_OPTIMAL</code>
+                            &nbsp;and 
+                            <code>STENCIL_READ_ONLY_OPTIMAL</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Video
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>VIDEO_DECODE_DST</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#decode-output-picture" 
+								class="external-link" 
+								target="_blank" >
+                                decode output picture
+							</a>
+                            &nbsp;in a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#video-decode-operations" 
+								class="external-link" 
+								target="_blank" >
+                                video decode operation
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid 
+							<em>
+                                only
+							</em>
+                            &nbsp;for image subresources of images created with the 
+                            <code>VIDEO_DECODE_DST</code>
+                            &nbsp;usage bit enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VIDEO_DECODE_SRC</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Reserved for future use.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VIDEO_DECODE_DPB</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as an output 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#reconstructed-picture" 
+								class="external-link" 
+								target="_blank" >
+                                reconstructed picture
+							</a>
+                            &nbsp;or an input 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#reference-picture" 
+								class="external-link" 
+								target="_blank" >
+                                reference picture
+							</a>
+                            &nbsp;in a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#video-decode-operations" 
+								class="external-link" 
+								target="_blank" >
+                                video decode operation
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid 
+							<em>
+                                only
+							</em>
+                            &nbsp;for image subresources of images created with the 
+                            <code>USAGE_VIDEO_DECODE_DPB</code>
+                            &nbsp;usage bit enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VIDEO_ENCODE_DST</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Reserved for future use.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VIDEO_ENCODE_SRC</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as an 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#encode-input-picture" 
+								class="external-link" 
+								target="_blank" >
+                                encode input picture
+							</a>
+                            &nbsp;in a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#video-encode-operations" 
+								class="external-link" 
+								target="_blank" >
+                                video encode operation
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid 
+							<em>
+                                only
+							</em>
+                            &nbsp;for image subresources of images created with the 
+                            <code>USAGE_VIDEO_ENCODE_SRC</code>
+                            &nbsp;usage bit enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VIDEO_ENCODE_DPB</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as an output 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#reconstructed-picture" 
+								class="external-link" 
+								target="_blank" >
+                                reconstructed picture
+							</a>
+                            &nbsp;or an input 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#reference-picture" 
+								class="external-link" 
+								target="_blank" >
+                                reference picture
+							</a>
+                            &nbsp;in a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#video-encode-operations" 
+								class="external-link" 
+								target="_blank" >
+                                video encode operation
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid 
+							<em>
+                                only
+							</em>
+                            &nbsp;for image subresources of images created with the 
+                            <code>USAGE_VIDEO_ENCODE_DPB</code>
+                            &nbsp;usage bit enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VIDEO_ENCODE_QUANTIZATION_MAP</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;only be used as a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#encode-quantization-map" 
+								class="external-link" 
+								target="_blank" >
+                                quantization map
+							</a>
+                            &nbsp;in a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#video-encode-operations" 
+								class="external-link" 
+								target="_blank" >
+                                video encode operation
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            This layout is valid 
+							<em>
+                                only
+							</em>
+                            &nbsp;for image subresources of images created with the 
+                            <code>VIDEO_ENCODE_QUANTIZATION_DELTA_MAP</code>
+                            &nbsp;or 
+                            <code>VIDEO_ENCODE_EMPHASIS_MAP</code>
+                            &nbsp;usage bit enabled.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>TENSOR_ALIASING_ARM</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specifies the layout that an image created with 
+                    <code>TILING_OPTIMAL</code>
+                    &nbsp;
+					<strong>
+                        must
+					</strong>
+                    &nbsp;be in for it and a tensor bound to the same aliased range of memory to consistently interpret the data in memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    See 
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#resources-memory-aliasing" 
+						class="external-link" 
+						target="_blank" >
+                        https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#resources-memory-aliasing
+					</a>
+                    &nbsp;for a complete set of rules for tensor/image aliasing.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This layout is valid 
+					<em>
+                        only
+					</em>
+                    &nbsp;for image subresources of images created with 
+                    <code>USAGE_TENSOR_ALIASING</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="image-views" >
+    Image Views
+</h5>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/resources.html#resources-image-views" 
+				class="external-link" 
+				target="_blank" >
+                Image Views
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            An image view references a specific part of an image to be used.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>VkImageViewCreateInfo</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>viewType</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allows you to treat images as 1D textures, 2D textures, 3D textures and cube maps.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>format</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>components</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allows you to swizzle the color channels around. For example, you can map all of the channels to the red channel for a monochrome texture. You can also map constant values of 
+                            <code>0</code>
+                            &nbsp;and 
+                            <code>1</code>
+                            &nbsp;to a channel. In our case we'll stick to the default mapping.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>subresourceRange</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Describes what the image's purpose is and which part of the image should be accessed. Our images will be used as color targets without any mipmapping levels or multiple layers.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If you were working on a stereographic 3D application, then you would create a Swapchain with multiple layers. You could then create multiple image views for each image representing the views for the left and right eyes by accessing different layers.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="copy-blit-copy-image-to-image" >
+    Copy: Blit (Copy image to image)
+</h5>
+<ul>
+	<li>
+		<p>
+            Transfer a rectangular region of pixel data from one image to another.
+		</p>
+	</li>
+	<li>
+		<p>
+            Unlike a raw copy (
+            <code>vkCmdCopyImage</code>
+            ), a blit can perform scaling and apply filtering (
+            <code>FILTER_LINEAR</code>
+            &nbsp;or 
+            <code>FILTER_NEAREST</code>
+            ), which is consistent with the historical meaning of bit block transfer with optional transformations.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Name
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Comes from 
+					<em>
+                        bit block transfer
+					</em>
+                    &nbsp;(sometimes shortened to blt_).
+				</p>
+			</li>
+			<li>
+				<p>
+                    It was introduced in the 1970s in the context of 2D graphics systems, particularly at Xerox PARC.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The idea was to copy rectangular 
+					<strong>
+                        blocks of bits (pixels)
+					</strong>
+                    &nbsp;from one place in memory to another, often with operations like scaling, masking, or raster operations.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdBlitImage2.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkCmdBlitImage2</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>commandBuffer</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>pBlitImageInfo</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkBlitImageInfo2.html" 
+								class="external-link" 
+								target="_blank" >
+                                <code>VkBlitImageInfo2</code>
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>srcImage</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the source image.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>srcImageLayout</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the layout of the source image subresources for the blit.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>dstImage</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the destination image.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>dstImageLayout</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the layout of the destination image subresources for the blit.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>regionCount</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the number of regions to blit.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>pRegions</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkImageBlit2.html" 
+										class="external-link" 
+										target="_blank" >
+                                        <code>VkImageBlit2</code>
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Defines source and destination subresources, offsets, and extents.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Can define multiple regions in a single blit call.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    For each element of the 
+                                    <code>pRegions</code>
+                                    &nbsp;array, a blit operation is performed for the specified source and destination regions.
+								</p>
+							</li>
+							<li>
+								<p>
+									<strong>
+                                        Offset
+									</strong>
+                                    :
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The offset entries specify two corners of the rectangular/box region to blit (one corner and the opposite corner).
+										</p>
+									</li>
+									<li>
+										<p>
+                                            You normally set 
+                                            <code>offsets[0]</code>
+                                            &nbsp;to the region origin (frequently 
+                                            <code>{0,0,0}</code>
+                                            ) and 
+                                            <code>offsets[1]</code>
+                                            &nbsp;to the region end (
+                                            <code>{width, height, depth}</code>
+                                            ), i.e. the bounds.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            If left unspecified, that produces the common 
+                                            <code>{0,0,0} -&gt; {w,h,1}</code>
+                                            &nbsp;box.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            The Vulkan spec requires both offsets be provided and documents constraints on them (e.g. for 2D images 
+                                            <code>z</code>
+                                            &nbsp;must be 0/1).
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>srcSubresource</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Is the subresource to blit from.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>srcOffsets</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Is a pointer to an array of two 
+											<a
+												href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkOffset3D.html" 
+												class="external-link" 
+												target="_blank" >
+                                                VkOffset3D
+											</a>
+                                            &nbsp;structures specifying the bounds of the source region within 
+                                            <code>srcSubresource</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>dstSubresource</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Is the subresource to blit into.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>dstOffsets</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Is a pointer to an array of two 
+											<a
+												href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkOffset3D.html" 
+												class="external-link" 
+												target="_blank" >
+                                                VkOffset3D
+											</a>
+                                            &nbsp;structures specifying the bounds of the destination region within 
+                                            <code>dstSubresource</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>filter</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is a 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkFilter.html" 
+										class="external-link" 
+										target="_blank" >
+                                        VkFilter
+									</a>
+                                    &nbsp;specifying the filter to apply if the blits require scaling.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Determines how pixels are sampled if scaling occurs.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>FILTER_NEAREST</code>
+                                    &nbsp;for nearest-neighbor scaling.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>FILTER_LINEAR</code>
+                                    &nbsp;for linear interpolation.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Their layouts must be valid for transfer operations (
+                            <code>TRANSFER_SRC_OPTIMAL</code>
+                            &nbsp;and 
+                            <code>TRANSFER_DST_OPTIMAL</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Restrictions
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Blit operations are supported only if the format and the physical device support 
+                    <code>FORMAT_FEATURE_BLIT_SRC</code>
+                    &nbsp;and 
+                    <code>FORMAT_FEATURE_BLIT_DST</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Some formats (like depth/stencil) do not support blitting.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Multisampled images cannot be used directly as source or destination.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="compression" >
+    Compression
+</h5>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/samples/latest/samples/performance/image_compression_control/README.html" 
+				class="external-link" 
+				target="_blank" >
+                Sample - Image Compression Control
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://github.com/KhronosGroup/Vulkan-Samples/tree/main/samples/performance/texture_compression_comparison" 
+				class="external-link" 
+				target="_blank" >
+                Sample - Texture Compression Comparison
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.35154.js" >
+		</script>
+	</body>
+</html>

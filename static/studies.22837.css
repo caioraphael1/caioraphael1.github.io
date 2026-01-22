@@ -91,9 +91,10 @@ pre, code {
   display: none;
 }
 :root {
-    --padding: 12px;
-    --padding_d2: 6px;
-    --padding_x2: 24px;
+    --padding:    16px;
+    --padding_x2: 32px;
+    --padding_d2:  8px;
+
     --border-radius: 4px;
 
     /* Primary */
@@ -339,11 +340,13 @@ pre, code {
         position: sticky;
         top: 0;
         height: 100dvh;
+        min-height: 100vh;
 
         min-width: 15dvw;
         width: 20dvw;
 
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     /* Logo */
@@ -550,135 +553,6 @@ pre, code {
     }
 
 
-/* RIGHT SIDEBAR */
-    #right-sidebar {
-        background: var(--right-sidebar-bg);
-
-        /* Sticky */
-        position: sticky;
-        top: 0;
-        height: 100svh;
-
-        min-width: 12dvw;
-        width: 15dvw;
-
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-    :root {
-        --padding: 16px;
-        --padding_d2: 8px;
-        --padding_x2: 32px;
-    }
-
-    #right-sidebar > nav {
-        border-left: 1px solid var(--right-sidebar-border);
-        /* margin: 0 var(--padding); */
-        height: 100%;
-    }
-
-    /* On This Page title */
-    #right-sidebar > nav > strong {
-        color: var(--right-sidebar-text-top);
-
-        display: flex;
-        padding: 30px 18px;
-        font-weight: bold;
-        font-size: large;
-    }
-
-    /* Container holding all table of contents */
-    #right-sidebar > nav > ul {
-        border-left: 1px solid var(--right-sidebar-border-details);
-
-        margin: 0 24px;
-        /* height: 100%; */
-    }
-
-    /* MORE_IMPORTANT Headers */
-    #right-sidebar > nav > ul > li > a {
-        color: var(--right-sidebar-h2);
-    }
-
-    #table-of-contents > nav > ul > li > a:hover:not(.active) {
-        background: var(--right-sidebar-hover-bg);
-        color: var(--right-sidebar-hover-h2);
-
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-    }
-
-    /* LESS_IMPORTANT Headers */
-    #table-of-contents a {
-        color: var(--right-sidebar-h3);
-
-        display: inline-block;
-        cursor: pointer;
-        padding: var(--padding_d2);
-    }
-
-    #table-of-contents a:hover:not(.active) {
-        background: var(--right-sidebar-hover-bg);
-        color: var(--right-sidebar-hover-h3);
-
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-    }
-
-    #table-of-contents ul a::before {
-        background: var(--right-sidebar-bg);
-        border: 1px solid var(--right-sidebar-border-details);
-        content: '';
-        display: inline-block;
-        position: relative;
-        left: -14px;
-        width: 11px;
-        height: 11px;
-        border-radius: 50%;
-    }
-    /* Circle with svg */
-    /* #table-of-contents ul a::before{
-        content: '';
-        display:inline-block;
-        width:12px;
-        height:12px;
-        background: var(--right-sidebar-bg);
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><circle cx='6' cy='6' r='5.5' fill='none' stroke='%23ffffff' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-        background-size: 12px 12px;
-        background-repeat: no-repeat;
-        transform: translate(-14.5px, 0px);
-    } */
-
-    #table-of-contents a.active {
-        background: var(--highlight-bg);
-
-        color: var(--highlight-text);
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-    }
-
-    #table-of-contents ul a.active::before {
-        background: var(--right-sidebar-bg);
-    }
-
-    #table-of-contents ul ul {
-        border-left: 1px solid var(--right-sidebar-border-details);
-
-        margin-left: calc(var(--padding) * 1.75);
-    }
-
-    /* Strike-through */
-    #table-of-contents del, #table-of-contents s {
-        /* font-weight: lighter; */
-        /* color: red; */
-        
-        text-decoration-line: line-through;
-        text-decoration-color: var(--table-strikethrough);
-        text-decoration-thickness: 2px;
-        /* text-decoration-style: dotted; */
-    }
-
 
 /* CENTRAL */
     #central-wrapper {
@@ -689,6 +563,8 @@ pre, code {
         flex: auto;
 
         width: 73%;
+
+        overflow: auto;
     }
 
     #central-wrapper > .icon-home {
@@ -710,7 +586,7 @@ pre, code {
         width: 100%;
         min-height: 94%;
 
-        padding: 0 var(--padding_x2);
+        padding: 0 32px;
 
         flex: 1 1 auto;
         align-self: center;
@@ -727,9 +603,7 @@ pre, code {
         flex: 1;
         flex-direction: column;
 
-        padding-top: var(--padding_x2);
-        
-        overflow: auto;        
+        padding-top: 32px;  
     }
 
     main > article > nav > button:last-child {
@@ -740,7 +614,7 @@ pre, code {
     /* CONTENT > NOTE > TITLE */
 
     main > article > header {
-        padding: var(--padding_x2) var(--padding_x2) var(--padding);
+        padding: 32px 32px 16px;
     }
 
 
@@ -759,7 +633,7 @@ pre, code {
         grid-template-columns: 1fr 1fr;
 
         padding: 35px 24px 15px 24px;
-        row-gap: var(--padding);
+        row-gap: 16px;
     }
 
     #previous-next > a {
@@ -768,8 +642,8 @@ pre, code {
         border: 1px solid var(--prev-next-border);
         
         display: flex;
-        padding: var(--padding);
-        gap: calc(var(--padding) / 4);
+        padding: 16px;
+        gap: 4px;
         border-radius: var(--border-radius);
         cursor: pointer;
         width: 35%;
@@ -799,7 +673,7 @@ pre, code {
 
         padding: 25px 12px 25px 12px;
 
-        gap: var(--padding_d2);
+        gap: 32px;
     }
 
     #central-footer > a {
@@ -808,7 +682,7 @@ pre, code {
 
         border-radius: var(--border-radius);
         cursor: pointer;
-        padding: 0 var(--padding_d2);
+        padding: 0 8px;
     }
 
 
@@ -842,10 +716,10 @@ main > article > header > h1 {
 /* NOTE SUBTITLE */
 
 main > article > header > p {
-	color: var(--note-subtitle);
+    color: var(--note-subtitle);
 
-	font-size: 0.9em;
-	padding-top: 8px;
+    font-size: 0.9em;
+    padding-top: 8px;
 }
 
 
@@ -1043,31 +917,31 @@ For now, I'll use a different symbol and remove these previous attempts.
 
 
 #note-content li::before {
-	content: "•";
+    content: "•";
 
-	position: absolute;
-	left: -0.7em;
-	top: -0.1em;
-	
+    position: absolute;
+    left: -0.7em;
+    top: -0.1em;
+    
     font-size: x-large;
-	font-weight: bold;
+    font-weight: bold;
 }
 
 #note-content li li::before {
-	content: "◦";  /* Unicode 25E6 */
-	top: -0.025em;
-	left: -0.6em;
+    content: "◦";  /* Unicode 25E6 */
+    top: -0.025em;
+    left: -0.6em;
 }
 
 
 /* INPUT (Checkbox) */
 
 input {
-	width: 16px;
-	height: 16px;
-	border: 2px solid var(--checkbox-border);
-	border-radius: 3px;
-	position: relative;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--checkbox-border);
+    border-radius: 3px;
+    position: relative;
 }
 
 input[type="checkbox"] {

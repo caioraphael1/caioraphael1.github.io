@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.85839.css" >
+			href="/static/studies.22837.css" >
 	</head>
 	<body>
 		<aside
@@ -83,8 +83,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design Patterns/Data Oriented Design/criticisms-of-oop.html" >
-                                Criticisms of OOP
+								href="/studies/Design Patterns/Data Oriented Design/about.html" >
+                                About
 							</a>
 						</li>
 					</ul>
@@ -92,8 +92,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design Patterns/Data Oriented Design/dod-data-oriented-design.html" >
-                                DOD (Data-Oriented Design)
+								href="/studies/Design Patterns/Data Oriented Design/criticisms-of-oop.html" >
+                                Criticisms of OOP
 							</a>
 						</li>
 					</ul>
@@ -124,11 +124,42 @@ window.MathJax = {
 					<ul>
 						<li>
 							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
 								class="active" 
 								href="/studies/Design Patterns/Data Oriented Design - ECS/sources.html" >
                                 Sources
 							</a>
 							<ul>
+								<li>
+									<a
+										href="#bitsquid-engine-building-a-data-oriented-entity-system" >
+                                        Bitsquid Engine - Building a Data-Oriented Entity System
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#mach-engine-lets-build-ecs-in-zig" >
+                                        <s>Mach Engine - Let's Build ECS in Zig</s>
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#bevy-engine-ecs" >
+                                        <s>Bevy Engine - ECS</s>
+									</a>
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -172,8 +203,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design Patterns/Data Oriented Design - ECS/discarded-ideas.html" >
-                                Discarded Ideas
+								href="/studies/Design Patterns/Data Oriented Design - ECS/design-discarded-ideas.html" >
+                                Design: Discarded Ideas
 							</a>
 						</li>
 					</ul>
@@ -202,8 +233,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design Patterns/Other Design Patterns/about.html" >
-                                About
+								href="/studies/Design Patterns/Other Design Patterns/definition.html" >
+                                Definition
 							</a>
 						</li>
 					</ul>
@@ -392,8 +423,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-11
 							</time>
 							<time
-								datetime="2026-01-20" >
-                                | Updated: 2026-01-20
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
 							</time>
 						</p>
 					</header>
@@ -424,10 +455,10 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
-<h5
+<h3
 	id="bitsquid-engine-building-a-data-oriented-entity-system" >
     Bitsquid Engine - Building a Data-Oriented Entity System
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -791,10 +822,10 @@ Array&lt;unsigned&gt; _map;
 </code></pre>
 	</li>
 </ul>
-<h5
+<h3
 	id="mach-engine-lets-build-ecs-in-zig" >
     <s>Mach Engine - Let's Build ECS in Zig</s>
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -964,10 +995,10 @@ test "ecs" {
 &nbsp;&nbsp;&nbsp;&nbsp;try world.setComponent(player, "Name", "joe"); // update Name component
 }
 </code></pre>
-<h5
+<h3
 	id="bevy-engine-ecs" >
     <s>Bevy Engine - ECS</s>
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -1000,205 +1031,6 @@ test "ecs" {
 		</p>
 	</li>
 </ul>
-<h5
-	id="godot-why-isnt-ecs-based" >
-    Godot - Why isn't ECS-based?
-</h5>
-<ul>
-	<li>
-		<p>
-            TLDR:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    &quot;Godot as an engine tries to take the burden of 
-					<em>
-                        processing
-					</em>
-                    &nbsp;away from the user, and instead places the focus on 
-					<em>
-                        deciding
-					</em>
-                    &nbsp;what to do in case of an event. This ensures users have to optimize 
-					<em>
-                        less
-					</em>
-                    &nbsp;in order to write much of the game code, and is part of the vision Godot conveys about what should constitute an 
-					<em>
-                        easy to use game engine
-					</em>
-                    &quot;.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine/" 
-				class="external-link" 
-				target="_blank" >
-                Why isn't Godot an ECS-based game engine?
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            ECS is a design pattern commonly used in video games (although not very common in the rest of the software industry) which consists of having a base Entity (a container object) and Components that can be added upon it. Components provide data and the means to interact with the whole world. Finally, Systems work independently and act on every similar component.
-		</p>
-	</li>
-	<li>
-		<p>
-            This design became common in game engines and libraries in the early 2010s. The main appeal (besides architecture) is that component data can be placed in contiguous memory, improving cache access.
-		</p>
-	</li>
-	<li>
-		<p>
-            This is a common form of 
-			<a
-				href="https://en.wikipedia.org/wiki/Data-oriented_design" 
-				class="external-link" 
-				target="_blank" >
-                data-oriented
-			</a>
-            &nbsp;optimization.
-		</p>
-	</li>
-	<li>
-		<p>
-            Architecturally, ECS aims to replace 
-			<a
-				href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)" 
-				class="external-link" 
-				target="_blank" >
-                inheritance
-			</a>
-            , by favoring composition, similar to how 
-			<em>
-                interfaces
-			</em>
-            &nbsp;or 
-			<em>
-                multiple inheritance
-			</em>
-            &nbsp;works in OOP.
-		</p>
-	</li>
-	<li>
-		<p>
-            The key advantage in ECS is that components are 
-			<em>
-                dynamic
-			</em>
-            &nbsp;(can be added or removed at runtime).
-		</p>
-	</li>
-	<li>
-		<p>
-            Godot does composition at a higher level than in a traditional ECS.
-		</p>
-	</li>
-	<li>
-		<p>
-            One of the biggest advantages of ECS is the Systems (data-oriented) part, which allows running through a lot of similar components' data organized in linear memory.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    This brings huge performance improvements over the way Godot works with nodes.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Most (if not all) technologies that utilize ECS do it at the core engine level, by serving as the base architecture and building everything else (physics, rendering, audio, etc.) over it.
-		</p>
-	</li>
-	<li>
-		<p>
-            Godot instead keeps those subsystems separate and isolated (and they fit inside of 
-			<a
-				href="https://godotengine.org/article/why-does-godot-use-servers-and-rids" 
-				class="external-link" 
-				target="_blank" >
-				<em>
-                    Servers
-				</em>
-			</a>
-            ).
-		</p>
-		<ul>
-			<li>
-				<p>
-                    I find this makes code simpler and easier to maintain and optimize.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            To put it simply, nodes are just interfaces to the actual data being processed inside servers, while in ECS the actual entities are what gets processed by the systems.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    As I understood it: Nodes seem to create a layer of abstraction over Systems, because they are very low-level.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            In other words, Godot as an engine tries to take the burden of 
-			<em>
-                processing
-			</em>
-            &nbsp;away from the user, and instead places the focus on 
-			<em>
-                deciding
-			</em>
-            &nbsp;what to do in case of an event. This ensures users have to optimize 
-			<em>
-                less
-			</em>
-            &nbsp;in order to write much of the game code, and is part of the vision Godot conveys about what should constitute an 
-			<em>
-                easy to use game engine
-			</em>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            These are generally games that need to process game logic on dozens of thousands of objects, where data-oriented optimizations become necessary, as the amount of pages moved into CPU cache increases by several orders of magnitude, severely affecting performance (and battery usage on mobile devices).
-		</p>
-		<ul>
-			<li>
-				<p>
-                    City builders (lots of things going on).
-				</p>
-			</li>
-			<li>
-				<p>
-                    Sandboxes (lots of tiny things need processing every frame).
-				</p>
-			</li>
-			<li>
-				<p>
-                    Some strategy games (while not the majority, some can use thousands or tens of thousands of units at the same time).
-				</p>
-			</li>
-			<li>
-				<p>
-                    Other AAA games with lots of content going on.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
 
 					</div>
 					<footer
@@ -1218,7 +1050,7 @@ test "ecs" {
 			</footer>
 		</div>
 		<script
-			src="/static/studies.85839.js" >
+			src="/static/studies.22837.js" >
 		</script>
 	</body>
 </html>

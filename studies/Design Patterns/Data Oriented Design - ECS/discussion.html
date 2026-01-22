@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.85839.css" >
+			href="/static/studies.22837.css" >
 	</head>
 	<body>
 		<aside
@@ -83,8 +83,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design Patterns/Data Oriented Design/criticisms-of-oop.html" >
-                                Criticisms of OOP
+								href="/studies/Design Patterns/Data Oriented Design/about.html" >
+                                About
 							</a>
 						</li>
 					</ul>
@@ -92,8 +92,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design Patterns/Data Oriented Design/dod-data-oriented-design.html" >
-                                DOD (Data-Oriented Design)
+								href="/studies/Design Patterns/Data Oriented Design/criticisms-of-oop.html" >
+                                Criticisms of OOP
 							</a>
 						</li>
 					</ul>
@@ -120,14 +120,6 @@ window.MathJax = {
                                 Discussion
 							</a>
 							<ul>
-								<li>
-									<a
-										href="#critiques" >
-                                        Critiques
-									</a>
-									<ul>
-									</ul>
-								</li>
 								<li>
 									<a
 										href="#philosophy" >
@@ -205,6 +197,15 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
 								href="/studies/Design Patterns/Data Oriented Design - ECS/sources.html" >
                                 Sources
 							</a>
@@ -250,8 +251,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design Patterns/Data Oriented Design - ECS/discarded-ideas.html" >
-                                Discarded Ideas
+								href="/studies/Design Patterns/Data Oriented Design - ECS/design-discarded-ideas.html" >
+                                Design: Discarded Ideas
 							</a>
 						</li>
 					</ul>
@@ -280,8 +281,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Design Patterns/Other Design Patterns/about.html" >
-                                About
+								href="/studies/Design Patterns/Other Design Patterns/definition.html" >
+                                Definition
 							</a>
 						</li>
 					</ul>
@@ -470,8 +471,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-11
 							</time>
 							<time
-								datetime="2026-01-20" >
-                                | Updated: 2026-01-20
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
 							</time>
 						</p>
 					</header>
@@ -502,175 +503,6 @@ window.MathJax = {
 			<li>
 				<p>
                     I stopped at &quot;Searching&quot; (node7); I haven't read it yet.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="critiques" >
-    Critiques
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=UolgW-Ff4bA" 
-				class="external-link" 
-				target="_blank" >
-                Ryan Fleury - Mega-Struct as an alternative to ECS
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=VWC9RT5u8gQ" 
-				class="external-link" 
-				target="_blank" >
-                Jonathan Blow - Mega-Struct as an alternative to ECS
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            What I've heard:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Performance:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Unnecessary:
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    Entity update is usually a very miniscule thing in the frame, and if you separate the world into chunks, the goes down even harder.
-								</p>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>
-                            Particles:
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    It's usually a complete separate thing than entities.
-								</p>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Flexibility:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            If you put everything an entity might possibly have into a mega-struct (CoP), you get the flexibility.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Use a big table of flags, explicitly turn on/off paths of execution.
-						</p>
-					</li>
-					<li>
-						<p>
-                            &quot;streams of execution, instead of streams of data&quot;.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Don't think of &quot;doors&quot;, &quot;levers&quot;, &quot;guns&quot;, etc; do put things inside this mental model, just think of paths of execution.
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    ECS already does that by default, but his suggestion is do that while using a mega-struct, thinking in terms of paths of execution.
-								</p>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            (2026-01-12) Caio
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Performance.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Indeed not an actual concern by looking at Tracy; most of the frame is spent doing other things.
-						</p>
-					</li>
-					<li>
-						<p>
-                            And indeed, many games will not hit the entity count where having an ECS model makes a difference.
-						</p>
-					</li>
-					<li>
-						<p>
-                            It's sure good having the option for easy optimization with parallelism/SIMD, but if you are trying to be efficient with your time, probably entity updates will not be this first thing in your code you'll be optimizing.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Tho, simply just having a dense packed array with your data in it, simple gives you the benefit of faster code due to less cache misses &quot;basically for free&quot;; sure you have to interact with the component system and there's a little bit of wasted memory, but I don't think both of these compare to how wasteful and convoluted a Mega-struct can be. My point is: coding like the processor want us to code and thus making performant code being the base line is sure great.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Flexibility:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            I disagree. After working with Mega-struct for some months, I see a lot of annoying things happening for having an insane branched-out code: having to manage a lot of different states and code paths, separating behavior based on some enums, or simply holding to SO MUCH DATA that will 
-							<strong>
-                                never
-							</strong>
-                            &nbsp;be used by that specific entity at any point during the whole game. All of this creates a lot of operational error, literally me just doing wrong things just by how convoluted the branched out code can be; forgetting to initialize vital structs, forgetting to turn on some behavior or turn off other behavior, etc. As there's a lot of different paths of execution, is not trivial to change the behavior of one entity. Adding new behavior or data in a specific can be quite demotivated, as now you have to go through a gigantic file, going through the scope of a bunch of things and have to constantly think whether you forgot to set up something inside that big pool of random code. One way to think about these issues is by considering how similar having to manage so many branches and states is to a State Machine; if you have worked with a complex State Machine before, you know how easily things can get out of hand and how maintenance complexity grows.
-						</p>
-					</li>
-					<li>
-						<p>
-                            I'm currently implementing ECS in my engine, and I laugh at how easily it was to make the main character behave like an NPC: I commented 1 line that added a specific input move component, and added 1 line to add an AI move component, that's it.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    In conclusion, having the option for easy optimization is sure great but probably not very useful in most common games, but when it comes to flexibility I don't think a Mega-struct beats the clarity and peace of mind an ECS code brings.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Obviously, Mega-struct is the 
-					<strong>
-                        absolute
-					</strong>
-                    &nbsp;winner when comparing with OOP; I just thought I mentioned.
 				</p>
 			</li>
 		</ul>
@@ -1126,7 +958,7 @@ window.MathJax = {
 			</footer>
 		</div>
 		<script
-			src="/static/studies.85839.js" >
+			src="/static/studies.22837.js" >
 		</script>
 	</body>
 </html>

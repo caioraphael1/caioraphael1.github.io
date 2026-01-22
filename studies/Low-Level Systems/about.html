@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.85839.css" >
+			href="/static/studies.22837.css" >
 	</head>
 	<body>
 		<aside
@@ -723,25 +723,17 @@ window.MathJax = {
 					</ul>
 				</details>
 				<details
-					open="">
+>
 					<summary>
                         C
 					</summary>
 					<ul>
 						<li>
 							<a
-								class="active" 
-								href="/studies/Low-Level Systems/about.html" >
-                                About
+								class="" 
+								href="/studies/Low-Level Systems/basic.html" >
+                                Basic
 							</a>
-							<ul>
-								<li>
-									<a
-										href="#libraries" >
-                                        Libraries
-									</a>
-								</li>
-							</ul>
 						</li>
 					</ul>
 					<ul>
@@ -1009,15 +1001,6 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly/assembly.html" >
-                                Assembly
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
 								href="/studies/Low-Level Systems/Assembly/notes.html" >
                                 Notes
 							</a>
@@ -1027,8 +1010,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly/reverse-engineering.html" >
-                                Reverse Engineering
+								href="/studies/Low-Level Systems/Assembly/operations.html" >
+                                Operations
 							</a>
 						</li>
 					</ul>
@@ -1036,8 +1019,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Assembly/operations.html" >
-                                Operations
+								href="/studies/Low-Level Systems/Assembly/reverse-engineering.html" >
+                                Reverse Engineering
 							</a>
 						</li>
 					</ul>
@@ -1076,17 +1059,33 @@ window.MathJax = {
 					</ul>
 				</details>
 				<details
->
+					open="">
 					<summary>
                         JAI
 					</summary>
 					<ul>
 						<li>
 							<a
-								class="" 
-								href="/studies/Low-Level Systems/impressions.html" >
-                                Impressions
+								class="active" 
+								href="/studies/Low-Level Systems/about.html" >
+                                About
 							</a>
+							<ul>
+								<li>
+									<a
+										href="#example" >
+                                        Example
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#impressions" >
+                                        Impressions
+									</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 					<ul>
@@ -1156,376 +1155,228 @@ window.MathJax = {
 						</h1>
 						<p>
 							<time
-								datetime="2024-04-13" >
-                                🕒 Created: 2024-04-13
+								datetime="2025-01-18" >
+                                🕒 Created: 2025-01-18
 							</time>
 							<time
-								datetime="2025-12-14" >
-                                | Updated: 2025-12-14
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
 							</time>
 						</p>
 					</header>
 					<div
 						id="note-content" >
-<ul>
-	<li>
-		<p>
-			<input
-				type="checkbox" 
-				disabled=""
->
-            
-			<a
-				href="https://www.youtube.com/watch?v=laU6XzZX_KQ&list=PLdG1SnrYXH0FBgnRqrcqKGwtptyp4lXlP" 
-				class="external-link" 
-				target="_blank" >
-                Bill Sky - The Computer Guy (Playlist)
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Haven't seen it yet, but I think I like the guy.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="beginning" >
-    Beginning
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=rJrd2QMVbGM" 
-				class="external-link" 
-				target="_blank" >
-                Nice explanation with Teej
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Starts with the basics, like 
-                    <code>int main() { return 0; }</code>
-                    .
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="tips" >
-    Tips
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=9UIIMBqq1D4" 
-				class="external-link" 
-				target="_blank" >
-                Tips for C
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    C Versions.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            He uses C99.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Compiler Flags.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Unity Build.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Debugger.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Recurring segfault problems can only really be debugged with a debugger. It's very hard to debug a segfault with prints, and the segfault error given is usually terrible and not descriptive.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    ASan.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Address Sanitizer.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Accessing memory out of scope causes a Segfault, but accessing memory within the scope of something else in the code can cause memory corruption.
-						</p>
-					</li>
-					<li>
-						<p>
-                            For this reason, ASan is used to check if access is within the array bounds, etc.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Arrays and Strings.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            He creates his own arrays and strings using structs, so he can implement his own &quot;boundary checks&quot;, etc.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Indexes and Pointers.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Suggestion: store the index of an object instead of a pointer to the object.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Apparently, this helps with array resizing, etc.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Arenas.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Related to Lifetime.
-						</p>
-					</li>
-					<li>
-						<p>
-                            &quot;Arena = One Lifetime&quot;.
-						</p>
-					</li>
-					<li>
-						<p>
-                            It's where you store all data that has the same lifetime.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="includes" >
-    Includes
-</h5>
-<ul>
-	<li>
-		<p>
-            Unity Build.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    A way to handle 
-                    <code>#includes</code>
-                    &nbsp;and avoid duplicate includes.
-				</p>
-			</li>
-			<li>
-				<p>
-                    I found it interesting; I saw it being used in Zig too.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>#pragma once</code>
-            &nbsp;in 
-            <code>.h</code>
-            &nbsp;files.
-		</p>
-	</li>
-</ul>
 <h3
-	id="libraries" >
-    Libraries
+	id="example" >
+    Example
 </h3>
 <ul>
 	<li>
 		<p>
 			<a
-				href="https://github.com/gingerBill/gb/tree/master" 
+				href="https://github.com/karl-zylinski/learning-jai-by-making-a-game/blob/master/main.jai" 
 				class="external-link" 
 				target="_blank" >
-                gb library
+                Example
 			</a>
             .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">// imports without aliasing
+#import "Basic";
+#import "GL";
+#import "Math";
+#import "Window_Creation";
+
+// imports with aliasing
+Input :: #import "Input";
+Simp&nbsp;&nbsp;:: #import "Simp";
+Windows :: #import "Windows";
+
+// comment
+
+main :: () {
+&nbsp;&nbsp;&nbsp;&nbsp;run := true;
+&nbsp;&nbsp;&nbsp;&nbsp;player_pos := Vector2.{40, 40};
+
+&nbsp;&nbsp;&nbsp;&nbsp;prev_time := seconds_since_init();
+
+&nbsp;&nbsp;&nbsp;&nbsp;while run {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur_time := seconds_since_init();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dt := cast(float)(cur_time - prev_time);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prev_time = cur_time;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for Input.events_this_frame {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if it.type == .QUIT {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run = false;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SPEED :: 200;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if it.type == {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case .KEYBOARD;&nbsp;&nbsp;// very weird to use ; here.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if it.key_pressed && it.key_code == #char "A" {&nbsp;&nbsp;// so much indentation.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player_pos.x -= SPEED * dt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if it.key_pressed && it.key_code == #char "D" {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player_pos.x += SPEED * dt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+<h3
+	id="impressions" >
+    Impressions
+</h3>
+<ul>
+	<li>
+		<p>
+            (2025-08-04)
+		</p>
+	</li>
+	<li>
+		<p>
+            Closed beta.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Bad aspects of syntax
+			</strong>
+            :
 		</p>
 		<ul>
 			<li>
 				<p>
-                    A helper library by Ginger Bill, to group everything together.
+                    The need for 
+                    <code>;</code>
+                    &nbsp;is a bit annoying, maybe.
 				</p>
 			</li>
 			<li>
 				<p>
-                    (2025-07-03) On a quick glance, I found it very useful, as it resembles Odin types.
+                    <code>#char</code>
+                    &nbsp;looks ugly, but maybe I didn’t understand its purpose correctly.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I don’t like 
+                    <code>pos := Vector2.{40, 40};</code>
+                    , the need for 
+                    <code>.</code>
+                    &nbsp;is strange.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The way pointers are used is odd, doing deref with 
+                    <code>something.*</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Not necessarily bad, maybe, but it feels like you’re accessing it as a property of the variable.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Okay aspects of syntax
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>a: [..]int</code>
+                    &nbsp;is better than 
+                    <code>[dynamic]</code>
+                    &nbsp;in Odin, I think, maybe.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I don’t fully understand how it works, but the existence of default values for structs and enums is nice.
 				</p>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<p>
-			<a
-				href="https://github.com/nothings/stb" 
-				class="external-link" 
-				target="_blank" >
-                stb
-			</a>
-            .
+            Feels like just another layer of abstractions over how things work, without clarity in programming.
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Single-file public domain libraries for C/C++.
+                    Aliases in imports are not mandatory.
 				</p>
 			</li>
 			<li>
 				<p>
-                    Created by Sean Barrett.
-				</p>
-			</li>
-			<li>
-				<p>
-                    ~
-					<a
-						href="https://www.youtube.com/watch?v=eAhWIO1Ra6M" 
-						class="external-link" 
-						target="_blank" >
-                        Advice for Writing Small Programs in C
-					</a>
-                    .
+                    Strange libraries that don’t expose the core of how things work.
 				</p>
 				<ul>
 					<li>
 						<p>
-							<em>
-                                Quotes
-							</em>
-                            :
+                            &quot;Simp&quot; used to create windows.
 						</p>
-						<ul>
-							<li>
-								<p>
-                                    The C std library is terrible.
-								</p>
-								<ul>
-									<li>
-										<p>
-                                            Some APIs are not designed very well.
-										</p>
-									</li>
-									<li>
-										<p>
-                                            <code>strcopy</code>
-                                            &nbsp;is notoriously bad.
-										</p>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<p>
-                                    I needed a way to systematically reuse code.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    JAI is quite interesting.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    He worked on 
-									<a
-										href="https://www.google.com/search?q=thief+the+dark+project&client=firefox-b-d&sca_esv=d16c61d435099b34&sxsrf=AE3TifPvV5dO1hB7TnRfECaMuK2nnQFRkg%3A1751563902958&ei=fr5maPOiOoLR1sQP2c720A0&ved=0ahUKEwjz2fKBnKGOAxWCqJUCHVmnHdoQ4dUDCBA&uact=5&oq=thief+the+dark+project&gs_lp=Egxnd3Mtd2l6LXNlcnAiFnRoaWVmIHRoZSBkYXJrIHByb2plY3QyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyDRAAGIAEGLADGEMYigUyDRAAGIAEGLADGEMYigUyDhAAGLADGOQCGNYE2AEBMg4QABiwAxjkAhjWBNgBATIOEAAYsAMY5AIY1gTYAQEyExAuGIAEGLADGEMYyAMYigXYAQEyFhAuGIAEGLADGEMY1AIYyAMYigXYAQEyFhAuGIAEGLADGEMY1AIYyAMYigXYAQEyFhAuGIAEGLADGEMY1AIYyAMYigXYAQFI0gNQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAJgCAaACCpgDAIgGAZAGEboGBggBEAEYCZIHATGgBwCyBwC4BwDCBwMzLTHIBwg&sclient=gws-wiz-serp" 
-										class="external-link" 
-										target="_blank" >
-                                        Thief
-									</a>
-                                    , creating the render engine.
-								</p>
-								<ul>
-									<li>
-										<p>
-                                            Thief is known for having good programming; use of 'fat structs'.
-										</p>
-									</li>
-									<li>
-										<p>
-                                            It was the first time ECS was used; the entity is just an ID for a lookup table.
-										</p>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<p>
-                                    OOP is a waste of time.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    Spend your time writing useful code, not doing other things. Aka, minimize overhead.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    Many libraries are written only for big projects.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    He disagrees with Casey on some things, but agrees quite a bit on others.
-								</p>
-							</li>
-						</ul>
 					</li>
 					<li>
 						<p>
-                            Overall, the video is mostly irrelevant; the only &quot;relevant&quot; things are the quotes I put.
+                            &quot;Input&quot; for inputs.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Etc.
 						</p>
 					</li>
 				</ul>
+			</li>
+			<li>
+				<p>
+                    Still, it feels redundant. There are already libraries that do exactly what these do, like GLFW, etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Doesn’t seem to solve any problem.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            I don’t have many opinions on meta-language.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Overall
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Feels unprepared and maybe unpolished.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Tho, I have some expectations about the language, so who knows, in the future the language might be ok.
+				</p>
 			</li>
 		</ul>
 	</li>
@@ -1549,7 +1400,7 @@ window.MathJax = {
 			</footer>
 		</div>
 		<script
-			src="/static/studies.85839.js" >
+			src="/static/studies.22837.js" >
 		</script>
 	</body>
 </html>

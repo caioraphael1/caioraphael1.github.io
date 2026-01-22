@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.36380.css" >
+			href="/static/studies.85839.css" >
 	</head>
 	<body>
 		<aside
@@ -83,17 +83,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Graphics Programming/Vulkan/starting.html" >
-                                Starting
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Graphics Programming/Vulkan/tutorials.html" >
-                                Tutorials
+								href="/studies/Graphics Programming/Vulkan/basic.html" >
+                                Basic
 							</a>
 						</li>
 					</ul>
@@ -277,26 +268,65 @@ window.MathJax = {
 					<ul>
 						<li>
 							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/graphics-apis.html" >
+                                Graphics APIs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
 								class="active" 
-								href="/studies/Graphics Programming/Render Engineering/apis.html" >
-                                APIs
+								href="/studies/Graphics Programming/Render Engineering/shader-languages.html" >
+                                Shader Languages
 							</a>
 							<ul>
 								<li>
 									<a
-										href="#graphics-apis" >
-                                        Graphics APIs
+										href="#spir-v" >
+                                        SPIR-V
 									</a>
 									<ul>
 									</ul>
 								</li>
 								<li>
 									<a
-										href="#shader-languages" >
-                                        Shader Languages
+										href="#glsl-opengl-shader-language" >
+                                        GLSL (OpenGL Shader Language)
 									</a>
 									<ul>
 									</ul>
+								</li>
+								<li>
+									<a
+										href="#slang" >
+                                        Slang
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#wgsl-webgpu" >
+                                        WGSL (WebGPU)
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#hlsl-high-level-shader-language" >
+                                        ~HLSL (High-level Shader Language)
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#msl-metal-shading-language" >
+                                        <s>MSL (Metal Shading Language)</s>
+									</a>
 								</li>
 							</ul>
 						</li>
@@ -379,6 +409,33 @@ window.MathJax = {
 								class="" 
 								href="/studies/Graphics Programming/Render Engineering/global-illumination-indirect-lighting.html" >
                                 Global Illumination / Indirect Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/global-illumination-solutions.html" >
+                                Global Illumination - Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/global-illumination-discarded-solutions.html" >
+                                Global Illumination - Discarded Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/lightmaps.html" >
+                                Lightmaps
 							</a>
 						</li>
 					</ul>
@@ -475,15 +532,6 @@ window.MathJax = {
 					<summary>
                         GLSL
 					</summary>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Graphics Programming/GLSL/about.html" >
-                                About
-							</a>
-						</li>
-					</ul>
 					<ul>
 						<li>
 							<a
@@ -697,7 +745,7 @@ window.MathJax = {
 					id="note-article" >
 					<header>
 						<h1>
-                            APIs
+                            Shader Languages
 						</h1>
 						<p>
 							<time
@@ -705,881 +753,17 @@ window.MathJax = {
                                 🕒 Created: 2025-07-03
 							</time>
 							<time
-								datetime="2025-12-14" >
-                                | Updated: 2025-12-14
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
 							</time>
 						</p>
 					</header>
 					<div
 						id="note-content" >
 <h3
-	id="graphics-apis" >
-    Graphics APIs
-</h3>
-<h5
-	id="vulkan" >
-    Vulkan
-</h5>
-<ul>
-	<li>
-		<p>
-            <a href="/studies/Graphics Programming/Vulkan/Vulkan.html">
-            Vulkan
-            </a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            Open Source Open Standard.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Type:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Low-level graphics API
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Platforms:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Windows, Linux, Android.
-				</p>
-			</li>
-			<li>
-				<p>
-                    No native support for Web, needs WebAssembly.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Backend:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Vulkan
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Focus:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    High-performance games, advanced 3D graphics
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Advantages:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Cross-platform (Windows, Linux, Android)
-				</p>
-			</li>
-			<li>
-				<p>
-                    Better performance than OpenGL due to control over the GPU
-				</p>
-			</li>
-			<li>
-				<p>
-                    Better management of multiple threads and parallel rendering
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Complex and difficult to program (similar to DX12).
-				</p>
-			</li>
-			<li>
-				<p>
-                    Requires more code and manual memory management
-				</p>
-			</li>
-			<li>
-				<p>
-                    More recent support on some platforms (e.g., on macOS, only via layers like MoltenVK)
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="webgpu" >
-    WebGPU
-</h5>
-<ul>
-	<li>
-		<p>
-            WebGPU is an open standard created by the W3C to offer GPU-accelerated graphics and computation within browsers.
-		</p>
-	</li>
-	<li>
-		<p>
-            It is designed to replace WebGL, offering a more modern and efficient API based on Vulkan, Metal, and DirectX 12.
-		</p>
-	</li>
-	<li>
-		<p>
-            Currently, it is being implemented natively in Chrome, Edge, and Firefox.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Platforms
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Web.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Only in browsers compatible with WebGPU.
-						</p>
-					</li>
-					<li>
-						<p>
-                            It is not an independent library, but a standard that browsers implement.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Who maintains it
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    The W3C, in collaboration with major companies like Google, Mozilla, Microsoft, and Apple.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                wgpu
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Open-source MIT.
-				</p>
-			</li>
-			<li>
-				<p>
-                    It is a native implementation of the WebGPU standard, designed to work both in the browser and in desktop applications.
-				</p>
-			</li>
-			<li>
-				<p>
-                    It serves as a cross-platform wrapper that can use different graphics APIs depending on the operating system.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Therefore, although WebGPU is a standard for the Web, wgpu is an implementation of that standard that can also run natively outside of browsers.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Written in Rust, C/C++, etc.
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>
-                        Type:
-					</strong>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Mid-level graphics API
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<strong>
-                        Platforms:
-					</strong>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Windows, Linux, macOS.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Web, via WebGPU.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<strong>
-                        Supported Backends:
-					</strong>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Vulkan, DX12, Metal, OpenGL (selected automatically)
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<strong>
-                        Focus:
-					</strong>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Cross-platform, WebGPU, ease of use (Rust, C/C++)
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<strong>
-                        Advantages:
-					</strong>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Cross-platform and compatible with WebGPU
-						</p>
-					</li>
-					<li>
-						<p>
-                            Easier to use than Vulkan/DX12
-						</p>
-					</li>
-					<li>
-						<p>
-                            Memory safety and stability
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<strong>
-                        Disadvantages:
-					</strong>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Less control over GPU optimizations
-						</p>
-					</li>
-					<li>
-						<p>
-                            Still in development, fewer tools than Vulkan/DX12
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                wgpu vs WebGPU
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    If you are developing for the Web, you will use WebGPU directly.
-				</p>
-			</li>
-			<li>
-				<p>
-                    If you want to use WebGPU also in native apps, wgpu is the right choice, as it allows running the same code both in the browser and on desktops.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                wgpu vs Vulkan
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <img src="assets/image_20250309131745.png" width="450" >
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    <img src="assets/image_20250309131804.png" width="450" >
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    <img src="assets/image_20250309131817.png" width="450" >
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    <img src="assets/image_20250309131835.png" width="450" >
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    <img src="assets/image_20250309131847.png" width="450" >
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    <img src="assets/image_20250309131913.png" width="450" >
-                    .
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="opengl" >
-    <s>OpenGL</s>
-</h5>
-<ul>
-	<li>
-		<p>
-            <a href="/studies/Graphics Programming/OpenGL/OpenGL.html">
-            OpenGL
-            </a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            Open Source Open Standard.
-		</p>
-	</li>
-	<li>
-		<p>
-            OpenGL itself has not been officially &quot;deprecated&quot; globally, but it is 
-			<strong>
-                obsolete
-			</strong>
-            &nbsp;in many contexts and being replaced by more modern APIs, such as Vulkan.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    ES 3.x versions are still used on mobile, but Vulkan is the future.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Type:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Mid-level graphics API
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Platforms:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Windows, Linux, macOS.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Support for Web via WebGL.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Backend:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    OpenGL
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Focus:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    3D graphics for games, graphics engines, scientific applications
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Advantages:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Cross-platform and widely supported
-				</p>
-			</li>
-			<li>
-				<p>
-                    Easy to use compared to DX12/Vulkan
-				</p>
-			</li>
-			<li>
-				<p>
-                    Good documentation and strong community
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Old API, not optimized for modern GPUs
-				</p>
-			</li>
-			<li>
-				<p>
-                    Less control over memory and graphics pipeline
-				</p>
-			</li>
-			<li>
-				<p>
-                    Limited support on macOS (Apple uses Metal)
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="webgl" >
-    <s>WebGL</s>
-</h5>
-<ul>
-	<li>
-		<p>
-            Open Source Open Standard.
-		</p>
-	</li>
-	<li>
-		<p>
-            It is based on OpenGL ES 2.0, which is a simplified version of OpenGL for mobile and embedded devices.
-		</p>
-	</li>
-	<li>
-		<p>
-            WebGPU is the official successor to WebGL.
-		</p>
-	</li>
-	<li>
-		<p>
-            WebGL is still functional, but it is not recommended for new projects.
-		</p>
-	</li>
-	<li>
-		<p>
-            (2025-03-09) There is no official date for removal from browsers.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Type:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    High-level graphics API
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Platforms:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Web
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Backend:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Based on OpenGL ES 2.0
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Focus:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    3D rendering on the web
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Advantages:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Works directly in the browser, without the need for plugins
-				</p>
-			</li>
-			<li>
-				<p>
-                    Easy to learn and integrate into web applications
-				</p>
-			</li>
-			<li>
-				<p>
-                    Wide support, compatible with almost all browsers
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Based on OpenGL ES 2.0, older and less efficient technology
-				</p>
-			</li>
-			<li>
-				<p>
-                    No native support for modern features like Ray Tracing and Compute Shaders
-				</p>
-			</li>
-			<li>
-				<p>
-                    May have lower performance than WebGPU
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="directx-12" >
-    <s>DirectX 12</s>
-</h5>
-<ul>
-	<li>
-		<p>
-            Closed-source, from Microsoft.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Type:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Low-level graphics API.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Platforms:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Windows and Xbox
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Backend:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Direct3D 12
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Focus:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    AAA games, high-performance applications
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Advantages:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Direct control over the GPU
-				</p>
-			</li>
-			<li>
-				<p>
-                    Support for Ray Tracing via DXR
-				</p>
-			</li>
-			<li>
-				<p>
-                    Advanced Microsoft tools (PIX, RenderDoc)
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages:
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Only for Windows and Xbox
-				</p>
-			</li>
-			<li>
-				<p>
-                    High complexity, requires manual memory management and synchronization.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="metal" >
-    <s>Metal</s>
-</h5>
-<ul>
-	<li>
-		<p>
-            Closed-source, from Apple.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Low level and high performance
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Reduces CPU overhead, allowing better use of the GPU.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Support for parallel computation
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Includes an API for general computation on the GPU (similar to CUDA or OpenCL).
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Platforms
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Exclusive to the Apple ecosystem.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Apple discontinued official support for OpenGL and encourages the use of Metal.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Support for Ray Tracing
-			</strong>
-            &nbsp;(since Metal 3).
-		</p>
-	</li>
-</ul>
-<h3
-	id="shader-languages" >
-    Shader Languages
-</h3>
-<h5
 	id="spir-v" >
     SPIR-V
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -1590,10 +774,10 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
+<h3
 	id="glsl-opengl-shader-language" >
     GLSL (OpenGL Shader Language)
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -1604,10 +788,10 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
+<h3
 	id="slang" >
     Slang
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -1618,10 +802,10 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
+<h3
 	id="wgsl-webgpu" >
     WGSL (WebGPU)
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -1651,10 +835,10 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
+<h3
 	id="hlsl-high-level-shader-language" >
     ~HLSL (High-level Shader Language)
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -2054,10 +1238,10 @@ float4 PS_main(PSInput input) : SV_TARGET {
 		</ul>
 	</li>
 </ul>
-<h5
+<h3
 	id="msl-metal-shading-language" >
     <s>MSL (Metal Shading Language)</s>
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -2129,11 +1313,11 @@ fragment float4 fragment_main(VertexOut in [[stage_in]]) {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-22 🚀
 			</footer>
 		</div>
 		<script
-			src="/static/studies.36380.js" >
+			src="/static/studies.85839.js" >
 		</script>
 	</body>
 </html>

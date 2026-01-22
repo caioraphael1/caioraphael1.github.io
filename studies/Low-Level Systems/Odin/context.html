@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.36380.css" >
+			href="/static/studies.85839.css" >
 	</head>
 	<body>
 		<aside
@@ -83,8 +83,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Odin/about.html" >
-                                About
+								href="/studies/Low-Level Systems/Odin/overview.html" >
+                                Overview
 							</a>
 						</li>
 					</ul>
@@ -200,8 +200,26 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Odin/math-types.html" >
-                                Math Types
+								href="/studies/Low-Level Systems/Odin/matrix.html" >
+                                Matrix
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/quaternion.html" >
+                                Quaternion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/complex.html" >
+                                Complex
 							</a>
 						</li>
 					</ul>
@@ -300,6 +318,12 @@ window.MathJax = {
                                         Critiques
 									</a>
 									<ul>
+										<li>
+											<a
+												href="#my-rant" >
+                                                My Rant
+											</a>
+										</li>
 									</ul>
 								</li>
 								<li>
@@ -1182,8 +1206,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-28
 							</time>
 							<time
-								datetime="2026-01-20" >
-                                | Updated: 2026-01-20
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
 							</time>
 						</p>
 					</header>
@@ -1233,8 +1257,44 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            (2025-12-12) I highly recommend checking out this discord thread in the Odin server, where there were 270+ answers from passionate people about the topic. Many defended context, where some admitted not enjoying the experience of having to work with it. Overall, I learned a lot and changed my mind about user_ptr and user_index, but couldn’t wrap my head around the context.allocator/context.temp_allocator, as I see this as a solution to the problem of implicit allocations in the language, as well as context.logger / context.assertion_failure_proc/ context.random_generator, as I do believe they would be a better fit as thread-local or global variables. I cover some of these topics in my fork, where I’m investigating different programming and testing approaches for the designs I've proposed. You may not want to use this fork, as it contains a lot of subjective content - it’s purely exploratory.
+            (2025-12-12) I highly recommend checking out this discord thread in the Odin server, where there were 270+ answers from passionate people about the topic.
 		</p>
+	</li>
+	<li>
+		<p>
+            Many defended context, where some admitted not enjoying the experience of having to work with it. Overall, I learned a lot and changed my mind about 
+            <code>user_ptr</code>
+            &nbsp;and user_index, but couldn’t wrap my head around the 
+            <code>context.allocator</code>
+            /
+            <code>context.temp_allocator</code>
+            , as I see this as a solution to the problem of implicit allocations in the language, as well as 
+            <code>context.logger</code>
+            &nbsp;/ 
+            <code>context.assertion_failure_proc</code>
+            &nbsp;/ 
+            <code>context.random_generator</code>
+            , as I do believe they would be a better fit as thread-local or global variables.
+		</p>
+	</li>
+	<li>
+		<p>
+            One day after having this discussion (2025-12-13) I decided to create my 
+			<a
+				href="https://github.com/caioraphael1/Odin/tree/master" 
+				class="external-link" 
+				target="_blank" >
+                own fork
+			</a>
+            &nbsp;of Odin and experiment with different design choices. The README.md of the repo goes on explaining the changes I made to the language and what the target of this fork is; it's very exploratory. I cover a lot of the discussed topics in my fork, testing approaches for the designs I've proposed.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    (2026-01-22) Quite update: I'm very much enjoying working with my fork, no complains so far, I feel much more confident with the language.
+				</p>
+			</li>
+		</ul>
 	</li>
 	<li>
 		<p>
@@ -1250,7 +1310,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    &quot;You could argue that it is “better” to pass allocators1 around explicitly, but from my own experience in C with this exact interface (made and used well before I even made Odin), I found that I got in a very very lazy habit of not actually passing around allocators properly. This overly explicitness with a generalized interface lead to more allocation bugs than if I had used specific allocators on a per-system basis.&quot;
+                    &quot;You could argue that it is “better” to pass allocators around explicitly, but from my own experience in C with this exact interface (made and used well before I even made Odin), I found that I got in a very very lazy habit of not actually passing around allocators properly. This overly explicitness with a generalized interface lead to more allocation bugs than if I had used specific allocators on a per-system basis.&quot;
 				</p>
 				<ul>
 					<li>
@@ -1274,10 +1334,10 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
-<h5
+<h4
 	id="my-rant" >
     My Rant
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -2115,11 +2175,11 @@ _create :: proc(procedure: Thread_Proc, priority: Thread_Priority) -&gt; ^Thread
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-22 🚀
 			</footer>
 		</div>
 		<script
-			src="/static/studies.36380.js" >
+			src="/static/studies.85839.js" >
 		</script>
 	</body>
 </html>

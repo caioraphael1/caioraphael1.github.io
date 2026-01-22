@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.36380.css" >
+			href="/static/studies.85839.css" >
 	</head>
 	<body>
 		<aside
@@ -83,8 +83,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Odin/about.html" >
-                                About
+								href="/studies/Low-Level Systems/Odin/overview.html" >
+                                Overview
 							</a>
 						</li>
 					</ul>
@@ -200,8 +200,26 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Odin/math-types.html" >
-                                Math Types
+								href="/studies/Low-Level Systems/Odin/matrix.html" >
+                                Matrix
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/quaternion.html" >
+                                Quaternion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/complex.html" >
+                                Complex
 							</a>
 						</li>
 					</ul>
@@ -283,14 +301,48 @@ window.MathJax = {
 									<ul>
 										<li>
 											<a
-												href="#small-array" >
-                                                Small Array
+												href="#creation-and-assigning" >
+                                                Creation and Assigning
 											</a>
 										</li>
 										<li>
 											<a
-												href="#enumerated-arrays-codeenumint-code" >
-                                                Enumerated Arrays (<code>[enum]int</code>)
+												href="#iterate" >
+                                                Iterate
+											</a>
+										</li>
+										<li>
+											<a
+												href="#copy" >
+                                                Copy
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#fixed-arrays-small-array" >
+                                        Fixed Arrays - Small Array
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#fixed-arrays-enumerated-arrays-codeenumint-code" >
+                                        Fixed Arrays - Enumerated Arrays (<code>[enum]int</code>)
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#create" >
+                                                Create
+											</a>
+										</li>
+										<li>
+											<a
+												href="#access" >
+                                                Access
 											</a>
 										</li>
 									</ul>
@@ -301,6 +353,36 @@ window.MathJax = {
                                         Slices (<code>[]T</code>)
 									</a>
 									<ul>
+										<li>
+											<a
+												href="#creation" >
+                                                Creation
+											</a>
+										</li>
+										<li>
+											<a
+												href="#batch-assignment" >
+                                                Batch assignment
+											</a>
+										</li>
+										<li>
+											<a
+												href="#destruction" >
+                                                Destruction
+											</a>
+										</li>
+										<li>
+											<a
+												href="#access-range" >
+                                                Access range
+											</a>
+										</li>
+										<li>
+											<a
+												href="#memory" >
+                                                Memory
+											</a>
+										</li>
 									</ul>
 								</li>
 								<li>
@@ -309,14 +391,74 @@ window.MathJax = {
                                         Dynamic Arrays (<code>[dynamic]T</code>)
 									</a>
 									<ul>
+										<li>
+											<a
+												href="#creation" >
+                                                Creation
+											</a>
+										</li>
+										<li>
+											<a
+												href="#destruction" >
+                                                Destruction
+											</a>
+										</li>
+										<li>
+											<a
+												href="#clear" >
+                                                Clear
+											</a>
+										</li>
+										<li>
+											<a
+												href="#appending" >
+                                                Appending
+											</a>
+										</li>
+										<li>
+											<a
+												href="#iterate" >
+                                                Iterate
+											</a>
+										</li>
+										<li>
+											<a
+												href="#memory" >
+                                                Memory
+											</a>
+										</li>
 									</ul>
 								</li>
 								<li>
 									<a
-										href="#multi-pointer-codet-code" >
-                                        Multi-pointer (<code>[^]T</code>)
+										href="#multi-pointer-c-arrays-codet-code" >
+                                        Multi-pointer (C Arrays) (<code>[^]T</code>)
 									</a>
 									<ul>
+										<li>
+											<a
+												href="#operations" >
+                                                Operations
+											</a>
+										</li>
+										<li>
+											<a
+												href="#re-allocating" >
+                                                Re-allocating
+											</a>
+										</li>
+										<li>
+											<a
+												href="#raw_data" >
+                                                raw_data()
+											</a>
+										</li>
+										<li>
+											<a
+												href="#discussion" >
+                                                Discussion
+											</a>
+										</li>
 									</ul>
 								</li>
 							</ul>
@@ -1188,8 +1330,8 @@ window.MathJax = {
                                 🕒 Created: 2025-03-28
 							</time>
 							<time
-								datetime="2026-01-20" >
-                                | Updated: 2026-01-20
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
 							</time>
 						</p>
 					</header>
@@ -1505,10 +1647,10 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
-<h5
+<h4
 	id="creation-and-assigning" >
     Creation and Assigning
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">some_ints: [7]int
 </code></pre>
 <pre><code class="language-odin" data-lang="odin">// With inferred size.
@@ -1535,10 +1677,10 @@ for i in 0..=4 {
 &nbsp;&nbsp;&nbsp;&nbsp;fmt.println(x[i])
 }
 </code></pre>
-<h5
+<h4
 	id="iterate" >
     Iterate
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">for element in some_ints {
 &nbsp;&nbsp;&nbsp;&nbsp;
 }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -1551,10 +1693,10 @@ for i in 0..=4 {
 &nbsp;&nbsp;&nbsp;&nbsp;element *= 2
 }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 </code></pre>
-<h5
+<h4
 	id="copy" >
     Copy
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">some_ints: [3]f32 = {1, 2, 3}
 some_ints2 := some_ints
 </code></pre>
@@ -1570,10 +1712,10 @@ some_ints2 := some_ints
 		</p>
 	</li>
 </ul>
-<h4
-	id="small-array" >
-    Small Array
-</h4>
+<h3
+	id="fixed-arrays-small-array" >
+    Fixed Arrays - Small Array
+</h3>
 <ul>
 	<li>
 		<p>
@@ -1609,12 +1751,12 @@ some_ints2 := some_ints
 		</p>
 	</li>
 </ul>
-<h4
-	id="enumerated-arrays-codeenumint-code" >
-    Enumerated Arrays (
+<h3
+	id="fixed-arrays-enumerated-arrays-codeenumint-code" >
+    Fixed Arrays - Enumerated Arrays (
     <code>[enum]int</code>
     )
-</h4>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -1627,10 +1769,10 @@ some_ints2 := some_ints
 		</p>
 	</li>
 </ul>
-<h5
+<h4
 	id="create" >
     Create
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">// Enum
 Nice_People :: enum {
 &nbsp;&nbsp;&nbsp;&nbsp;Bob,
@@ -1653,10 +1795,10 @@ nice_rating := #partial [Nice_People]int {
 &nbsp;&nbsp;&nbsp;&nbsp;.Klucke = 7,
 }
 </code></pre>
-<h5
+<h4
 	id="access" >
     Access
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">bob_niceness := nice_rating[.Bob]
 </code></pre>
 <h3
@@ -1711,10 +1853,10 @@ nice_rating := #partial [Nice_People]int {
 		</p>
 	</li>
 </ul>
-<h5
+<h4
 	id="creation" >
     Creation
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -1799,10 +1941,10 @@ byte_slice :: #force_inline proc "contextless" (data: rawptr, len: int) -&gt; []
 </code></pre>
 	</li>
 </ul>
-<h5
+<h4
 	id="batch-assignment" >
     Batch assignment
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -1856,10 +1998,10 @@ copy(a, []int{ 10, 20, 30, 40 })
 		</ul>
 	</li>
 </ul>
-<h5
+<h4
 	id="destruction" >
     Destruction
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -1890,10 +2032,10 @@ delete(b)
 a := make([]int, context.allocator)
 delete(a)
 </code></pre>
-<h5
+<h4
 	id="access-range" >
     Access range
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">// Everything
 a[:]
 
@@ -1903,10 +2045,10 @@ a[3:]
 // From start to idx 5
 a[:5]
 </code></pre>
-<h5
+<h4
 	id="memory" >
     Memory
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -2034,10 +2176,10 @@ some_ints3 := make([]int)
 		</p>
 	</li>
 </ul>
-<h5
+<h4
 	id="creation" >
     Creation
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">// Without make
 dyn_arr: [dynamic]int
 
@@ -2050,22 +2192,22 @@ b: bytes.Buffer
 bytes.buffer_init_allocator(&b, 0, 2048) // len 0, cap 2048
 bytes.buffer_write_string(&b, "my string")
 </code></pre>
-<h5
+<h4
 	id="destruction" >
     Destruction
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">delete(dyn_array)
 </code></pre>
-<h5
+<h4
 	id="clear" >
     Clear
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">clear(&dyn_array)
 </code></pre>
-<h5
+<h4
 	id="appending" >
     Appending
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -2349,10 +2491,10 @@ append(&y, ..x[:]) // append a slice
 		</ul>
 	</li>
 </ul>
-<h5
+<h4
 	id="iterate" >
     Iterate
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">for element in dyn_array {
 }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 </code></pre>
@@ -2363,10 +2505,10 @@ append(&y, ..x[:]) // append a slice
 &nbsp;&nbsp;&nbsp;&nbsp;element *= 2
 }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 </code></pre>
-<h5
+<h4
 	id="memory" >
     Memory
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -2656,8 +2798,8 @@ dyn_array2 := dyn_array
 	</li>
 </ul>
 <h3
-	id="multi-pointer-codet-code" >
-    Multi-pointer (
+	id="multi-pointer-c-arrays-codet-code" >
+    Multi-pointer (C Arrays) (
     <code>[^]T</code>
     )
 </h3>
@@ -2767,10 +2909,10 @@ dyn_array2 := dyn_array
 		</ul>
 	</li>
 </ul>
-<h5
+<h4
 	id="operations" >
     Operations
-</h5>
+</h4>
 <pre><code class="language-odin" data-lang="odin">x: [^]T = ...
 
 x[i]&nbsp;&nbsp; -&gt; T
@@ -2779,10 +2921,10 @@ x[i:]&nbsp;&nbsp;-&gt; [^]T
 x[:n]&nbsp;&nbsp;-&gt; []T
 x[i:n] -&gt; []T
 </code></pre>
-<h5
+<h4
 	id="re-allocating" >
     Re-allocating
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -2838,10 +2980,10 @@ image_pixels = image_data[:size]
 		</ul>
 	</li>
 </ul>
-<h5
+<h4
 	id="raw_data" >
     raw_data()
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -2875,10 +3017,10 @@ fmt.println(a)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &lt;nil&gt;
 a = raw_data(b[:]) 
 fmt.println(a, a[1]) // 0x7FFCBE9FE688 20
 </code></pre>
-<h5
+<h4
 	id="discussion" >
     Discussion
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -3013,11 +3155,11 @@ vk.GetPhysicalDeviceProperties2(device, &physical_device_properties)
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-22 🚀
 			</footer>
 		</div>
 		<script
-			src="/static/studies.36380.js" >
+			src="/static/studies.85839.js" >
 		</script>
 	</body>
 </html>

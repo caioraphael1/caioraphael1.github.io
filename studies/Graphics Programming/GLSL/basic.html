@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.36380.css" >
+			href="/static/studies.85839.css" >
 	</head>
 	<body>
 		<aside
@@ -83,17 +83,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Graphics Programming/Vulkan/starting.html" >
-                                Starting
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Graphics Programming/Vulkan/tutorials.html" >
-                                Tutorials
+								href="/studies/Graphics Programming/Vulkan/basic.html" >
+                                Basic
 							</a>
 						</li>
 					</ul>
@@ -278,8 +269,17 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Graphics Programming/Render Engineering/apis.html" >
-                                APIs
+								href="/studies/Graphics Programming/Render Engineering/graphics-apis.html" >
+                                Graphics APIs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/shader-languages.html" >
+                                Shader Languages
 							</a>
 						</li>
 					</ul>
@@ -361,6 +361,33 @@ window.MathJax = {
 								class="" 
 								href="/studies/Graphics Programming/Render Engineering/global-illumination-indirect-lighting.html" >
                                 Global Illumination / Indirect Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/global-illumination-solutions.html" >
+                                Global Illumination - Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/global-illumination-discarded-solutions.html" >
+                                Global Illumination - Discarded Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/lightmaps.html" >
+                                Lightmaps
 							</a>
 						</li>
 					</ul>
@@ -460,20 +487,67 @@ window.MathJax = {
 					<ul>
 						<li>
 							<a
-								class="" 
-								href="/studies/Graphics Programming/GLSL/about.html" >
-                                About
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
 								class="active" 
 								href="/studies/Graphics Programming/GLSL/basic.html" >
                                 Basic
 							</a>
 							<ul>
+								<li>
+									<a
+										href="#where-i-stopped" >
+                                        Where I Stopped
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#cheat-sheet" >
+                                        Cheat Sheet
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#formats" >
+                                        Formats
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#constant-data" >
+                                        Constant Data
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#varying-types" >
+                                        Varying Types
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#uniform-types" >
+                                        Uniform Types
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#basic-syntax" >
+                                        Basic Syntax
+									</a>
+									<ul>
+									</ul>
+								</li>
 								<li>
 									<a
 										href="#preprocessors" >
@@ -727,13 +801,493 @@ window.MathJax = {
                                 🕒 Created: 2025-07-28
 							</time>
 							<time
-								datetime="2026-01-21" >
-                                | Updated: 2026-01-21
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
 							</time>
 						</p>
 					</header>
 					<div
 						id="note-content" >
+<ul>
+	<li>
+		<p>
+            There are a lot of texts here that need to be revised and properly rewritten.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" 
+				class="external-link" 
+				target="_blank" >
+                GLSL
+			</a>
+            &nbsp;(OpenGL Shader Language).
+		</p>
+	</li>
+	<li>
+		<p>
+            Open standard (Khronos Group).
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Works with
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    OpenGL.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Vulkan.
+				</p>
+			</li>
+			<li>
+				<p>
+                    WebGL.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                How Vulkan uses it
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It's the most common shader language used for Vulkan.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's human-readable, widely supported, and tools like 
+                    <code>glslangValidator</code>
+                    &nbsp;convert it to SPIR-V easily.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Compiling GLSL to SPIR-V:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The output is a binary SPIR-V files (
+                            <code>vert.spv</code>
+                            , 
+                            <code>frag.spv</code>
+                            ) fed to Vulkan at runtime.
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-sh" data-lang="sh">glslangValidator -V shader.vert -o vert.spv
+glslangValidator -V shader.frag -o frag.spv
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="where-i-stopped" >
+    Where I Stopped
+</h3>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/glsl/latest/index.html" 
+				class="external-link" 
+				target="_blank" >
+                GLSL Spec in Vulkan
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            Learn more about 
+            <a href="/studies/Graphics Programming/GLSL/GLSL.html#storage-qualifiers">
+            GLSL#Storage Qualifiers
+            </a>
+            , etc.
+		</p>
+	</li>
+</ul>
+<h3
+	id="cheat-sheet" >
+    Cheat Sheet
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                <code>gl_Position</code>
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is always in 
+					<strong>
+                        clip space
+					</strong>
+                    &nbsp;(homogeneous coordinates before perspective divide).
+				</p>
+			</li>
+			<li>
+				<p>
+                    After the GPU does the perspective divide (
+                    <code>gl_Position.xyz / gl_Position.w</code>
+                    ), you get 
+					<strong>
+                        Normalized Device Coordinates (NDC)
+					</strong>
+                    &nbsp;in the range 
+                    <code>[-1, 1]</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The viewport transform then maps NDC into 
+					<strong>
+                        window coordinates
+					</strong>
+                    &nbsp;(pixels on screen).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Model Space -&gt; World Space -&gt; View Space
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-glsl" data-lang="glsl">vec4 vertex_pos_world_space = model.model_matrix * vec4(vertex_pos, 1.0);
+vec4 vertex_pos_view_space  = globals.view * vertex_pos_world_space;
+gl_Position  = globals.proj * vertex_pos_view_space;
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                SCREEN UV
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-glsl" data-lang="glsl">vec2 screen_uv = gl_FragCoord.xy / vec2(viewport_size);
+
+// Godot
+vec2 screen_uv = gl_FragCoord.xy * screen_pixel_size;
+</code></pre>
+<pre><code class="language-glsl" data-lang="glsl">vec2 viewport_resolution = vec2(1920, 1080);
+vec2 screen_space_uv = gl_FragCoord.xy / viewport_resolution.xy;
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <img src="assets/glsl_-_screen_uv.excalidraw" width="260" alt="<excalidraw_not_loaded>" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Vertex Light
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-glsl" data-lang="glsl">#ifdef LIGHT_VERTEX_USED
+vec3 light_vertex = vertex;
+</code></pre>
+<h5
+	id="enums" >
+    Enums
+</h5>
+<pre><code class="language-glsl" data-lang="glsl">#define GLOW_MODE_ADD 0
+#define GLOW_MODE_SCREEN 1
+#define GLOW_MODE_SOFTLIGHT 2
+#define GLOW_MODE_REPLACE 3
+#define GLOW_MODE_MIX 4
+
+if (params.glow_mode == GLOW_MODE_ADD) {
+</code></pre>
+<h5
+	id="bitmasks" >
+    Bitmasks
+</h5>
+<pre><code class="language-glsl" data-lang="glsl">#define FLAG_USE_BCS (1 &lt;&lt; 0)
+#define FLAG_USE_GLOW (1 &lt;&lt; 1)
+#define FLAG_USE_AUTO_EXPOSURE (1 &lt;&lt; 2)
+#define FLAG_USE_COLOR_CORRECTION (1 &lt;&lt; 3)
+#define FLAG_USE_FXAA (1 &lt;&lt; 4)
+#define FLAG_USE_DEBANDING (1 &lt;&lt; 5)
+#define FLAG_CONVERT_TO_SRGB (1 &lt;&lt; 6)
+
+if (bool(params.flags & FLAG_USE_BCS)) {
+&nbsp;&nbsp;&nbsp;&nbsp;color.rgb = apply_bcs(color.rgb, params.bcs);
+}
+</code></pre>
+<h3
+	id="formats" >
+    Formats
+</h3>
+<ul>
+	<li>
+		<p>
+            every format that does not end in 
+            <code>_u/s norm</code>
+            , 
+            <code>_u/s scaled</code>
+            , or 
+            <code>_*float/int</code>
+            &nbsp;are storing non-linear colors
+		</p>
+	</li>
+	<li>
+		<p>
+            reads and writes through the texture interface 
+			<em>
+                will
+			</em>
+            &nbsp;have conversion to and from linear done for you
+		</p>
+	</li>
+	<li>
+		<p>
+            A raw memory access, e.g. through a buffer or a copy, does not.
+		</p>
+	</li>
+	<li>
+		<p>
+            So, if the 
+            <code>uniform sampler2D</code>
+            &nbsp;is SRGB, I will read it as linear inside the shader? Also, if the color attachment is SRGB, the output will be converted from linear to srgb?
+		</p>
+		<ul>
+			<li>
+				<p>
+                    only if you are accessing it through the texture/image interface, yes.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="constant-data" >
+    Constant Data
+</h3>
+<ul>
+	<li>
+		<p>
+            This data can be anything we want it to be, for instance it can be used for things such as calculating where an object should be placed inside our world, or computing the overall brightness of an object based on the lights in the scene.
+		</p>
+	</li>
+	<li>
+		<p>
+            The data remains 
+			<em>
+                constant
+			</em>
+            &nbsp;across every shader invocation of a draw call.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It differs from other data (e.g. input vertex data) in this sense.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The data can be 
+			<strong>
+                shared
+			</strong>
+            &nbsp;between shader stages, as we know it isn’t going to be changed throughout the runtime of a single draw call in a render pipeline.
+		</p>
+	</li>
+	<li>
+		<p>
+            Constant data is implemented in shader code by using global variables.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Global variables
+			</strong>
+            &nbsp;have the following format: 
+            <code>&lt;layout&gt; &lt;storage&gt; &lt;type&gt; &lt;variable_name&gt;</code>
+            .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-glsl" data-lang="glsl">layout(location = 0) in vec4 position;
+
+layout(set = 0, binding = 0) uniform Data
+{
+&nbsp;&nbsp;&nbsp;&nbsp;mat4 model;
+} data;
+
+layout(location = 0) out vec4 o_pos;
+</code></pre>
+<h3
+	id="varying-types" >
+    Varying Types
+</h3>
+<ul>
+	<li>
+		<p>
+            The global variables that use inputs (
+            <code>in</code>
+            ) and outputs (
+            <code>out</code>
+            ) are values that 
+			<em>
+                may vary
+			</em>
+            &nbsp;from one shader invocation to the next, therefore they 
+			<strong>
+                shouldn’t
+			</strong>
+            &nbsp;be used for constant data.
+		</p>
+	</li>
+	<li>
+		<p>
+            They require a 
+            <code>layout location</code>
+            &nbsp;which is used to identify a particular input/output.
+		</p>
+	</li>
+	<li>
+		<p>
+            They have slightly different rules for what they do depending on the shader stage, and have slightly different restrictions on the types of data it can represent. However, generally their use is to feed values from one stage to the next (e.g. from vertex shader to fragment shader).
+		</p>
+	</li>
+</ul>
+<h3
+	id="uniform-types" >
+    Uniform Types
+</h3>
+<ul>
+	<li>
+		<p>
+            Uniform types are global variables that have either the 
+            <code>uniform</code>
+            &nbsp;or 
+            <code>buffer</code>
+            &nbsp;storage type, these are 
+			<em>
+                uniform buffer objects
+			</em>
+            &nbsp;and 
+			<em>
+                shader storage buffer objects
+			</em>
+            &nbsp;respectively. They describe data which remains constant across an entire draw call, meaning that the values stay the same across the different shader stages and shader invocations.
+		</p>
+	</li>
+	<li>
+		<p>
+            These values use a 
+            <code>layout binding</code>
+            &nbsp;and, when working with multiple 
+            <code>VkDescriptorSet</code>
+            s, we will also give it a 
+            <code>layout set</code>
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Uniform buffer objects (UBOs)
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Are the more commonly used of the two. They are 
+					<em>
+                        read-only
+					</em>
+                    &nbsp;buffers, so trying to edit them in shader code will result in a compile-time error.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Shader storage buffer objects (SSBOs)
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Are like special types of uniform buffer objects, denoted by the storage type 
+                    <code>buffer</code>
+                    . Unlike UBOs they can be written to, meaning the values 
+					<em>
+                        can
+					</em>
+                    &nbsp;be changed in the shaders so therefore they don’t always represent data that is constant.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Having said this, depending on the implementation, they generally can hold a lot more data as opposed to UBOs.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            To check how much data we can store in uniform buffers and storage buffers, you can query the physical device for its 
+                            <code>VkPhysicalDeviceLimits</code>
+                            &nbsp;and check the values 
+                            <code>maxUniformBufferRange</code>
+                            &nbsp;and 
+                            <code>maxStorageBufferRange</code>
+                            &nbsp;respectively.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="basic-syntax" >
+    Basic Syntax
+</h3>
 <h5
 	id="comments" >
     Comments
@@ -1349,437 +1903,395 @@ defined ( identifier )
 	id="floating-point-opaque-types" >
     Floating-Point Opaque Types
 </h5>
-<p>
-    |Type|Meaning|
+<p
+	class="table" >
+    | Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Meaning&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |---|---|
+    |----------------------------------------------------------------|-----------------------------------------------------------------------|
     <br>
-    |
+    | 
 	<strong>
         sampler1D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         texture1D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         image1D
 	</strong>
-    |a handle for accessing a 1D texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a 1D texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler1DShadow
 	</strong>
-    |a handle for accessing a 1D depth texture with comparison|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a 1D depth texture with comparison&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler1DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         texture1DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         image1DArray
 	</strong>
-    |a handle for accessing a 1D array texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a 1D array texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler1DArrayShadow
 	</strong>
-    |a handle for accessing a 1D array depth texture with comparison|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a 1D array depth texture with comparison&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler2D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         texture2D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         image2D
 	</strong>
-    |a handle for accessing a 2D texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a 2D texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler2DShadow
 	</strong>
-    |a handle for accessing a 2D depth texture with comparison|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a 2D depth texture with comparison&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler2DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         texture2DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         image2DArray
 	</strong>
-    |a handle for accessing a 2D array texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a 2D array texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler2DArrayShadow
 	</strong>
-    |a handle for accessing a 2D array depth texture with comparison|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a 2D array depth texture with comparison&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler2DMS
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         texture2DMS
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         image2DMS
 	</strong>
-    |a handle for accessing a 2D multisample texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a 2D multisample texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler2DMSArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         texture2DMSArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         image2DMSArray
 	</strong>
-    |a handle for accessing a 2D multisample array texture|
+    &nbsp;| a handle for accessing a 2D multisample array texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         sampler2DRect
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         texture2DRect
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         image2DRect
 	</strong>
-    |a handle for accessing a rectangle texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a rectangle texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
     <br>
-    |
+    | 
 	<strong>
         sampler2DRectShadow
 	</strong>
-    |a handle for accessing a rectangle texture with comparison|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a rectangle texture with comparison&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
     <br>
-    |
+    | 
 	<strong>
         sampler3D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         texture3D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         image3D
 	</strong>
-    |a handle for accessing a 3D texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a 3D texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         samplerCube
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         textureCube
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         imageCube
 	</strong>
-    |a handle for accessing a cube mapped texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a cube mapped texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
     <br>
-    |
+    | 
 	<strong>
         samplerCubeShadow
 	</strong>
-    |a handle for accessing a cube map depth texture with comparison|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a cube map depth texture with comparison&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         samplerCubeArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         textureCubeArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         imageCubeArray
 	</strong>
-    |a handle for accessing a cube map array texture|
+    &nbsp;| a handle for accessing a cube map array texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         samplerCubeArrayShadow
 	</strong>
-    |a handle for accessing a cube map array depth texture with comparison|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a cube map array depth texture with comparison |
     <br>
-    |
+    | 
 	<strong>
         samplerBuffer
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         textureBuffer
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         imageBuffer
 	</strong>
-    |a handle for accessing a buffer texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing a buffer texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         subpassInput
 	</strong>
-    |a handle for accessing a floating-point subpass input|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a floating-point subpass input&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         subpassInputMS
 	</strong>
-    |a handle for accessing a multi-sampled floating-point subpass input|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a multi-sampled floating-point subpass input&nbsp;&nbsp; |
 </p>
 <h5
 	id="signed-integer-opaque-types" >
     Signed Integer Opaque Types
 </h5>
-<p>
-    |Type|Meaning|
+<p
+	class="table" >
+    | Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Meaning&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
     <br>
-    |---|---|
+    |-------------------------------------------------------------------|----------------------------------------------------------------|
     <br>
-    |
+    | 
 	<strong>
         isampler1D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itexture1D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimage1D
 	</strong>
-    |a handle for accessing an integer 1D texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing an integer 1D texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         isampler1DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itexture1DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimage1DArray
 	</strong>
-    |a handle for accessing an integer 1D array texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing an integer 1D array texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         isampler2D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itexture2D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimage2D
 	</strong>
-    |a handle for accessing an integer 2D texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing an integer 2D texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         isampler2DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itexture2DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimage2DArray
 	</strong>
-    |a handle for accessing an integer 2D array texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing an integer 2D array texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         isampler2DMS
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itexture2DMS
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimage2DMS
 	</strong>
-    |a handle for accessing an integer 2D multisample texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing an integer 2D multisample texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         isampler2DMSArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itexture2DMSArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimage2DMSArray
 	</strong>
-    |a handle for accessing an integer 2D multisample array texture|
+    &nbsp;| a handle for accessing an integer 2D multisample array texture |
     <br>
-    |
+    | 
 	<strong>
         isampler2DRect
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itexture2DRect
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimage2DRect
 	</strong>
-    |a handle for accessing an integer 2D rectangle texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing an integer 2D rectangle texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         isampler3D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itexture3D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimage3D
 	</strong>
-    |a handle for accessing an integer 3D texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing an integer 3D texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         isamplerCube
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itextureCube
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimageCube
 	</strong>
-    |a handle for accessing an integer cube mapped texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing an integer cube mapped texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
     <br>
-    |
+    | 
 	<strong>
         isamplerCubeArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itextureCubeArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimageCubeArray
 	</strong>
-    |a handle for accessing an integer cube map array texture|
+    &nbsp;| a handle for accessing an integer cube map array texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         isamplerBuffer
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         itextureBuffer
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         iimageBuffer
 	</strong>
-    |a handle for accessing an integer buffer texture|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | a handle for accessing an integer buffer texture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    |
+    | 
 	<strong>
         isubpassInput
 	</strong>
-    |a handle for accessing an integer subpass input|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing an integer subpass input&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
     <br>
-    |
+    | 
 	<strong>
         isubpassInputMS
 	</strong>
-    |a handle for accessing a multi-sampled integer subpass input|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a multi-sampled integer subpass input&nbsp;&nbsp; |
 </p>
 <h5
 	id="unsigned-integer-opaque-types" >
@@ -1787,21 +2299,19 @@ defined ( identifier )
 </h5>
 <p
 	class="table" >
-    | Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Meaning&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+    | Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Meaning&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    | ------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+    |-------------------------------------------------------------------|-------------------------------------------------------------------------|
     <br>
     | 
 	<strong>
         usampler1D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utexture1D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimage1D
 	</strong>
@@ -1812,12 +2322,10 @@ defined ( identifier )
         usampler1DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utexture1DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimage1DArray
 	</strong>
@@ -1828,12 +2336,10 @@ defined ( identifier )
         usampler2D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utexture2D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimage2D
 	</strong>
@@ -1844,12 +2350,10 @@ defined ( identifier )
         usampler2DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utexture2DArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimage2DArray
 	</strong>
@@ -1860,12 +2364,10 @@ defined ( identifier )
         usampler2DMS
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utexture2DMS
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimage2DMS
 	</strong>
@@ -1876,12 +2378,10 @@ defined ( identifier )
         usampler2DMSArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utexture2DMSArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimage2DMSArray
 	</strong>
@@ -1892,12 +2392,10 @@ defined ( identifier )
         usampler2DRect
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utexture2DRect
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimage2DRect
 	</strong>
@@ -1908,12 +2406,10 @@ defined ( identifier )
         usampler3D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utexture3D
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimage3D
 	</strong>
@@ -1924,12 +2420,10 @@ defined ( identifier )
         usamplerCube
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utextureCube
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimageCube
 	</strong>
@@ -1940,12 +2434,10 @@ defined ( identifier )
         usamplerCubeArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utextureCubeArray
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimageCubeArray
 	</strong>
@@ -1956,12 +2448,10 @@ defined ( identifier )
         usamplerBuffer
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         utextureBuffer
 	</strong>
     &nbsp; 
-    <br>
 	<strong>
         uimageBuffer
 	</strong>
@@ -1971,19 +2461,19 @@ defined ( identifier )
 	<strong>
         atomic_uint
 	</strong>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing an unsigned integer atomic counter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing an unsigned integer atomic counter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
     | 
 	<strong>
         usubpassInput
 	</strong>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing an unsigned-integer subpass input&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing an unsigned-integer subpass input&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
     <br>
     | 
 	<strong>
         usubpassInputMS
 	</strong>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a multi-sampled unsigned-integer subpass input&nbsp;&nbsp; |
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| a handle for accessing a multi-sampled unsigned-integer subpass input&nbsp;&nbsp; |
 </p>
 <h5
 	id="sampler-opaque-types" >
@@ -1993,7 +2483,7 @@ defined ( identifier )
 	class="table" >
     | Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Meaning&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
     <br>
-    | ----------------- | ------------------------------------------------------------------------------------- |
+    |-------------------|---------------------------------------------------------------------------------------|
     <br>
     | 
 	<strong>
@@ -2566,11 +3056,11 @@ struct T {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-22 🚀
 			</footer>
 		</div>
 		<script
-			src="/static/studies.36380.js" >
+			src="/static/studies.85839.js" >
 		</script>
 	</body>
 </html>

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.36380.css" >
+			href="/static/studies.85839.css" >
 	</head>
 	<body>
 		<aside
@@ -83,8 +83,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Low-Level Systems/Odin/about.html" >
-                                About
+								href="/studies/Low-Level Systems/Odin/overview.html" >
+                                Overview
 							</a>
 						</li>
 					</ul>
@@ -199,34 +199,50 @@ window.MathJax = {
 					<ul>
 						<li>
 							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/matrix.html" >
+                                Matrix
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/quaternion.html" >
+                                Quaternion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
 								class="active" 
-								href="/studies/Low-Level Systems/Odin/math-types.html" >
-                                Math Types
+								href="/studies/Low-Level Systems/Odin/complex.html" >
+                                Complex
 							</a>
 							<ul>
 								<li>
 									<a
-										href="#matrix" >
-                                        Matrix
+										href="#type" >
+                                        type
 									</a>
 									<ul>
 									</ul>
 								</li>
 								<li>
 									<a
-										href="#quaternion" >
-                                        Quaternion
+										href="#interpretation" >
+                                        Interpretation
 									</a>
 									<ul>
 									</ul>
 								</li>
 								<li>
 									<a
-										href="#complex" >
-                                        Complex
+										href="#procedures" >
+                                        Procedures
 									</a>
-									<ul>
-									</ul>
 								</li>
 							</ul>
 						</li>
@@ -1152,7 +1168,7 @@ window.MathJax = {
 					id="note-article" >
 					<header>
 						<h1>
-                            Math Types
+                            Complex
 						</h1>
 						<p>
 							<time
@@ -1160,1052 +1176,17 @@ window.MathJax = {
                                 🕒 Created: 2025-03-28
 							</time>
 							<time
-								datetime="2026-01-20" >
-                                | Updated: 2026-01-20
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
 							</time>
 						</p>
 					</header>
 					<div
 						id="note-content" >
 <h3
-	id="matrix" >
-    Matrix
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://odin-lang.org/docs/overview/#matrix-type" 
-				class="external-link" 
-				target="_blank" >
-                Matrix
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="creation" >
-    Creation
-</h5>
-<pre><code class="language-odin" data-lang="odin">m: matrix[2, 3]f32
-
-m = matrix[2, 3]f32{
-&nbsp;&nbsp;&nbsp;&nbsp;1, 9, -13,
-&nbsp;&nbsp;&nbsp;&nbsp;20, 5, -6,
-}
-</code></pre>
-<h5
-	id="layout" >
-    Layout
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://odin-lang.org/docs/overview/#technical-information-of-matrix-types" 
-				class="external-link" 
-				target="_blank" >
-                <code>#row_major</code>
-                &nbsp;explanation
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="clarification" >
-    Clarification
-</h5>
-<ul>
-	<li>
-		<p>
-            Rows and Columns begin at 0.
-		</p>
-	</li>
-	<li>
-		<p>
-            &quot;column 1&quot; means the 2nd column.
-		</p>
-	</li>
-	<li>
-		<p>
-            Same as an array.
-		</p>
-	</li>
-</ul>
-<h5
-	id="representation-codex-y-code" >
-    Representation 
-    <code>[x, y]</code>
-</h5>
-<ul>
-	<li>
-		<p>
-            The representation 
-            <code>m[x, y]</code>
-            &nbsp;is always the same regardless of the layout (column-major vs row-major).
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">// row 1, column 2
-elem := m[1, 2] 
-</code></pre>
-<h5
-	id="representation-codex-code" >
-    Representation 
-    <code>[x]</code>
-</h5>
-<ul>
-	<li>
-		<p>
-            Will return an array of the values in that column/row, 
-			<strong>
-                whichever is major
-			</strong>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            For column-major (default):
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">// column 1
-elem := m[1]
-</code></pre>
-<ul>
-	<li>
-		<p>
-            For row-major (with 
-            <code>#row_major</code>
-            ):
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">// row 1
-elem := m[1]
-</code></pre>
-<h5
-	id="representation-codexy-code" >
-    Representation 
-    <code>[x][y]</code>
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>m[x][y]</code>
-            &nbsp;is just 
-            <code>m[x]</code>
-            &nbsp;and then indexing the 
-            <code>y</code>
-            th value in the array. If the layout of 
-            <code>m[x]</code>
-            &nbsp;changes, so does this; in other words, this representation is affected by the layout.
-		</p>
-	</li>
-	<li>
-		<p>
-            For column-major (default):
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">// column 1, row 2
-elem := m[1][2] 
-</code></pre>
-<ul>
-	<li>
-		<p>
-            For row-major (with 
-            <code>#row_major</code>
-            ):
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">// row 1, column 2
-elem := m[1][2] 
-</code></pre>
-<h5
-	id="operations" >
-    Operations
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>matrix4_perspective</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Clip Space Z Range:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>[-1 to +1]</code>
-                            , just like OpenGL.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Clip Space Y:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Y Up, just like OpenGL (Vulkan is Y Down).
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Handedness:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            If 
-                            <code>flip_z_axis</code>
-                            &nbsp;is 
-                            <code>true</code>
-                            :
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    Right-handed coordinate system (camera forward is -Z).
-								</p>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>
-                            If 
-                            <code>flip_z_axis</code>
-                            &nbsp;is 
-                            <code>false</code>
-                            :
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    Left-handed coordinate system (camera forward is +Z).
-                                    <br>
-                                    ``
-								</p>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="quaternion" >
-    Quaternion
-</h3>
-<h5
 	id="type" >
     type
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/base/builtin/#quaternion64" 
-				class="external-link" 
-				target="_blank" >
-                <code>quaternion</code>
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Is the set of all complex numbers with 
-                    <code>f16</code>
-                    /
-                    <code>f32</code>
-                    /
-                    <code>f64</code>
-                    &nbsp;real and imaginary (
-                    <code>i</code>
-                    , 
-                    <code>j</code>
-                    , &amp; 
-                    <code>k</code>
-                    ) parts.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://pkg.odin-lang.org/base/runtime/#Raw_Quaternion128" 
-				class="external-link" 
-				target="_blank" >
-                <code>Raw_Quaternion</code>
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">quaternion64 quaternion128 quaternion256
-</code></pre>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://odin-lang.org/docs/overview/#implicit-type-conversions" 
-				class="external-link" 
-				target="_blank" >
-                Type Conversion
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>fN</code>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&gt; 
-                    <code>quaternion4N</code>
-                    &nbsp;(e.g. 
-                    <code>f32</code>
-                    &nbsp;-&gt; 
-                    <code>quaternion128</code>
-                    )
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>complex2N</code>
-                    &nbsp;-&gt; 
-                    <code>quaternion4N</code>
-                    &nbsp;(e.g. 
-                    <code>complex64</code>
-                    &nbsp;-&gt; 
-                    <code>quaternion128</code>
-                    )
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="interpretation" >
-    Interpretation
-</h5>
-<ul>
-	<li>
-		<p>
-            &quot;It's a bit odd that the value is an operation. It's just a very 
-			<em>
-                mathematical
-			</em>
-            &nbsp;approach to it. It's basically an extension of how complex numbers are written mathematically, e.g., 
-            <code>1 + 2i</code>
-            &quot;.
-		</p>
-	</li>
-	<li>
-		<p>
-            &quot;It's more just syntax sugar for setting its fields, I think&quot;.
-		</p>
-	</li>
-</ul>
-<pre><code class="language-odin" data-lang="odin">rot: quaternion128 = quaternion(x=0, y=0, z=0, w=1)&nbsp;&nbsp;// arguments must be named, to avoid ambiguity
-
-rot: quaternion128 = 1 + 0i + 0j + 0k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// this is valid.
-</code></pre>
-<ul>
-	<li>
-		<p>
-            <code>rot: quaternion128 = 1</code>
-            , same as 
-            <code>1 + 0i + 0j + 0k</code>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    This is the identity quaternion.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>rot: quaternion128 = 0</code>
-            , same as 
-            <code>0 + 0i + 0j + 0k</code>
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="procedures" >
-    Procedures
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Quaternion from X
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/base/builtin/#quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(real, imag, jmag, kmag: Float) -&gt; (Quaternion_Type)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_from_scalar" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_from_scalar</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(f: f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_from_matrix3" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_from_matrix3</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(m: matrix[3, 3]f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_from_matrix4" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_from_matrix4</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(m: matrix[4, 4]f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#to_quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>to_quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>quaternion_from_matrix...</code>
-                            .
-						</p>
-					</li>
-					<li>
-						<p>
-                            <code>quaternion_from_scalar...</code>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Quaternion from angle
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_angle_axis" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_angle_axis</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(angle_radians: f32, axis: [3]f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Using 
-                    <code>quaternion_angle_axis</code>
-                    , specifying the axis automatically:
-				</p>
-				<ul>
-					<li>
-						<p>
-							<a
-								href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_from_euler_angle_x" 
-								class="external-link" 
-								target="_blank" >
-                                <code>quaternion_from_euler_angle_x</code>
-							</a>
-                            .
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    <code>(angle: f32) -&gt; (quaternion128)</code>
-								</p>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>
-							<a
-								href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_from_euler_angle_y" 
-								class="external-link" 
-								target="_blank" >
-                                <code>quaternion_from_euler_angle_y</code>
-							</a>
-                            .
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    <code>(angle: f32) -&gt; (quaternion128)</code>
-								</p>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>
-							<a
-								href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_from_euler_angle_z" 
-								class="external-link" 
-								target="_blank" >
-                                <code>quaternion_from_euler_angle_z</code>
-							</a>
-                            .
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    <code>(angle: f32) -&gt; (quaternion128)</code>
-								</p>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    Using 
-                    <code>quaternion_from_euler_angle_x/y/z</code>
-                    , specifying the operation order:
-				</p>
-				<ul>
-					<li>
-						<p>
-							<a
-								href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_from_euler_angles" 
-								class="external-link" 
-								target="_blank" >
-                                <code>quaternion_from_euler_angles</code>
-							</a>
-                            .
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    <code>(t1, t2, t3: f32, order: Euler_Angle_Order) -&gt; (quaternion128)</code>
-								</p>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_from_pitch_yaw_roll" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_from_pitch_yaw_roll</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(pitch, yaw, roll: f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-					<li>
-						<p>
-                            Interestingly, does not use any of the above procedures.
-						</p>
-					</li>
-					<li>
-						<p>
-                            <img src="assets/image_20250828142707.png" width="325" >
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Quaternion from vectors3
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_from_forward_and_up" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_from_forward_and_up</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(forward, up: [3]f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_look_at" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_look_at</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(eye, centre: [3]f32, up: [3]f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_between_two_vector3" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_between_two_vector3</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(from, to: [3]f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Quaternion to quaternion
-			</strong>
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_mul_vector3" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_mul_vector3</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(q: quaternion128, v: [3]f32) -&gt; ([3]f32)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_nlerp" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_nlerp</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(a, b: quaternion128, t: f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_slerp" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_slerp</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(x, y: quaternion128, t: f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#quaternion_squad" 
-						class="external-link" 
-						target="_blank" >
-                        <code>quaternion_squad</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(q1, q2, s1, s2: quaternion128, h: f32) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#normalize" 
-						class="external-link" 
-						target="_blank" >
-                        <code>normalize</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(quaternion128) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#normalize0" 
-						class="external-link" 
-						target="_blank" >
-                        <code>normalize0</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(quaternion128) -&gt; (quaternion128)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                X from quaternion
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/base/builtin/#real" 
-						class="external-link" 
-						target="_blank" >
-                        <code>real</code>
-					</a>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/base/builtin/#imag" 
-						class="external-link" 
-						target="_blank" >
-                        <code>imag</code>
-					</a>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/base/builtin/#jmag" 
-						class="external-link" 
-						target="_blank" >
-                        <code>jmag</code>
-					</a>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/base/builtin/#kmag" 
-						class="external-link" 
-						target="_blank" >
-                        <code>kmag</code>
-					</a>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/base/builtin/#conj" 
-						class="external-link" 
-						target="_blank" >
-                        <code>conj</code>
-					</a>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#angle_from_quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>angle_from_quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(q: quaternion128) -&gt; (f32)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#angle_axis_from_quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>angle_axis_from_quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(q: quaternion128) -&gt; (angle: f32, axis: [3]f32)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#euler_angles_from_quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>euler_angles_from_quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(m: quaternion128, order: Euler_Angle_Order) -&gt; (t1, t2, t3: f32)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#axis_from_quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>axis_from_quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(q: quaternion128) -&gt; ([3]f32)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#pitch_yaw_roll_from_quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>pitch_yaw_roll_from_quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(q: quaternion128) -&gt; (pitch, yaw, roll: f32)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#pitch_from_quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>pitch_from_quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(q: quaternion128) -&gt; (f32)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#yaw_from_quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>yaw_from_quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(q: quaternion128) -&gt; (f32)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<a
-						href="https://pkg.odin-lang.org/core/math/linalg/#roll_from_quaternion" 
-						class="external-link" 
-						target="_blank" >
-                        <code>roll_from_quaternion</code>
-					</a>
-                    .
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <code>(q: quaternion128) -&gt; (f32)</code>
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="complex" >
-    Complex
 </h3>
-<h5
-	id="type" >
-    type
-</h5>
 <ul>
 	<li>
 		<p>
@@ -2221,10 +1202,10 @@ rot: quaternion128 = 1 + 0i + 0j + 0k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 </ul>
 <pre><code class="language-odin" data-lang="odin">complex32 complex64 complex128
 </code></pre>
-<h5
+<h3
 	id="interpretation" >
     Interpretation
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -2238,10 +1219,10 @@ rot: quaternion128 = 1 + 0i + 0j + 0k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 		</p>
 	</li>
 </ul>
-<h5
+<h3
 	id="procedures" >
     Procedures
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -2302,11 +1283,11 @@ rot: quaternion128 = 1 + 0i + 0j + 0k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2026-01-21 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-22 🚀
 			</footer>
 		</div>
 		<script
-			src="/static/studies.36380.js" >
+			src="/static/studies.85839.js" >
 		</script>
 	</body>
 </html>

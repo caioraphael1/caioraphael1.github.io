@@ -1,0 +1,1736 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Terminal
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Terminal/Terminal-my-windows-setup.html" >
+                                My Windows setup
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Terminal/Terminal-terminal-emulators.html" >
+                                Terminal Emulators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Terminal/Terminal-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Terminal/Terminal-terminal-file-manager.html" >
+                                Terminal File Manager
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Shells
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Shells/Shells-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Terminal/Shells/Shells-no-shell.html" >
+                                No Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Terminal/Shells/Shells-shells.html" >
+                                Shells
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#commands-from-tools" >
+                                        Commands from tools
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#cmd-exe" >
+                                        cmd.exe
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#powershell" >
+                                        PowerShell
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#nushell" >
+                                        NuShell
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#starship" >
+                                        Starship
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#bash-bourne-again-shell" >
+                                        Bash (Bourne Again Shell)
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#zsh-z-shell" >
+                                        Zsh (Z Shell)
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#fish-friendly-interactive-shell" >
+                                        Fish (Friendly Interactive Shell)
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#gitbash" >
+                                        <s>GitBash</s>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Shells
+						</h1>
+						<p>
+							<time
+								datetime="2025-02-17" >
+                                🕒 Created: 2025-02-17
+							</time>
+							<time
+								datetime="2026-01-21" >
+                                | Updated: 2026-01-21
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="commands-from-tools" >
+    Commands from tools
+</h3>
+<h5
+	id="help" >
+    Help
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                tldr
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>tldr</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="view-directory-contents" >
+    View Directory Contents
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                eza
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>l</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>l2</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>l3</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>lr</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>ll</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="search" >
+    Search
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                fzf
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>fd</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            find dir
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>ff</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            find file
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="change-directory" >
+    Change Directory
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                zoxide
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>z</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="cmd-exe" >
+    cmd.exe
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Default on macOS since 2019.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Older Windows shell, present since Windows NT.
+		</p>
+	</li>
+	<li>
+		<p>
+            Limited compared to PowerShell, no support for advanced scripts.
+		</p>
+	</li>
+</ul>
+<h5
+	id="tokens" >
+    Tokens
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>|</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Byte-stream pipe.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Stdout of left goes to stdin of right.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The shell creates an anonymous pipe and sets child std handles.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+            <code>|&gt;</code>
+            </s>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Not a thing.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Redirect stdout to a file (overwrite).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>2&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Redirects stderr.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&gt;&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Appends.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>||</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Run RHS only if LHS exit code != 0 (failure).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&&</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Run RHS only if LHS exit code == 0 (success).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+            <code>;</code>
+            </s>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Not a thing.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Treated as a literal character unless quoted or part of a command argument.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Command separator. Runs next command unconditionally.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="commands" >
+    Commands
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>help</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>cls</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Clears the terminal
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>cd</code>
+            &nbsp;/ 
+            <code>chdir</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Change Directory
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>dir</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    See contents of directory (
+                    <code>ls</code>
+                    &nbsp;equivalent).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>cat &lt;file&gt;</code>
+            &nbsp;/ 
+            <code>type &lt;file&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sees the content of the file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>mkdir &lt;dir&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Create directory
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>del &lt;file&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove files.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>copy NUL &lt;file&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Create empty file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>rmdir /s /q &lt;dir&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove directory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I'm not sure about the flags.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>move &lt;from&gt; &lt;to&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Move file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>copy &lt;from&gt; &lt;to&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Copy file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>rename &lt;old&gt; &lt;new&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Rename file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>find &lt;text&gt; &lt;file&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Find in file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>start &lt;file&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Opens IN Explorer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>explorer</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Opens THE Explorer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>systeminfo</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    System information.
+				</p>
+			</li>
+			<li>
+				<p>
+                    CPU-Z and GPU-Z are better.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Doesn't show much.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>ipconfig</code>
+		</p>
+	</li>
+</ul>
+<h3
+	id="powershell" >
+    PowerShell
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Replaces Command Prompt as Microsoft’s official tool.
+		</p>
+	</li>
+	<li>
+		<p>
+            Based on .NET, supports 
+			<strong>
+                objects
+			</strong>
+            &nbsp;instead of just text.
+		</p>
+	</li>
+	<li>
+		<p>
+            Can run traditional Windows commands (
+            <code>dir</code>
+            , 
+            <code>ipconfig</code>
+            ) and advanced scripts (
+            <code>.ps1</code>
+            ).
+		</p>
+	</li>
+</ul>
+<h5
+	id="configuration" >
+    Configuration
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>$PROFILE</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shows the desired path for the configuration file.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="tokens" >
+    Tokens
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>|</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Object pipeline. Cmdlets pass .NET objects (not raw bytes). When external programs are involved PowerShell passes text through std streams.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>|&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Forward-pipe operator in PowerShell 7+. It passes the left-hand value as the first argument to the right-hand command or script block.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Different from 
+                    <code>|</code>
+                    &nbsp;which is an object pipeline.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Redirect stdout to a file (overwrite).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>2&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Redirects stderr.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&gt;&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Appends.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>||</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Conditional OR in PowerShell 7+, running RHS if LHS failed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&&</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Conditional AND in PowerShell 7+, running RHS if LHS sucess.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Command separator.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Example: 
+                    <code>Get-Process; Get-Service</code>
+                    &nbsp;runs both commands sequentially.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Call operator, used to invoke a command, script, or scriptblock stored in a variable or string.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Example: 
+                    <code>& 'C:\script.ps1'</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="commands" >
+    Commands
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>help</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>cls</code>
+            &nbsp;/ 
+            <code>clear</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Clears the terminal
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>ls</code>
+            &nbsp;/ 
+            <code>gci</code>
+            &nbsp;(
+            <code>Get-ChildItem</code>
+            ) / 
+            <code>dir</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    See contents of directory.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>cd</code>
+            &nbsp;/ 
+            <code>chdir</code>
+            &nbsp;/ 
+            <code>sl</code>
+            &nbsp;(
+            <code>Set-Location</code>
+            )
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Change Directory
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>mkdir</code>
+            &nbsp;/ 
+            <code>ni</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Create directory
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the file doesn't exist, it creates it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Does not update the modification date of an existing file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>del</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove files or directories
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>cat</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sees the content of the file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>start</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Opens IN Explorer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>explorer</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Opens THE Explorer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>systeminfo</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    System information.
+				</p>
+			</li>
+			<li>
+				<p>
+                    CPU-Z and GPU-Z are better.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Doesn't show much.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>ipconfig</code>
+		</p>
+	</li>
+</ul>
+<h3
+	id="nushell" >
+    NuShell
+</h3>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.nushell.sh/" 
+				class="external-link" 
+				target="_blank" >
+                NuShell
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It was recommended to me.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Crossplatform, Rust.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="starship" >
+    Starship
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    MacOS.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Default on macOS since 2019.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Features
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Written in Rust.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Supposedly better than Zsh.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Impressions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Cross-platform is nice.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Nice customization.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Nice.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Cool.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="bash-bourne-again-shell" >
+    Bash (Bourne Again Shell)
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ~Windows (no native support)
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Default in most Linux distributions.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    MacOS.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Supports scripts, variables, loops, and customization via 
+            <code>~/.bashrc</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            To check if using Bash:
+		</p>
+<pre><code class="language-sh" data-lang="sh">echo $SHELL
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    If output is 
+                    <code>/bin/bash</code>
+                    , you are using Bash.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="commands" >
+    Commands
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>man</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    [man]ual in Linux.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>ls</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    See contents of directory.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>cat</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    See contents of file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>cls</code>
+            &nbsp;/ 
+            <code>clear</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>cd</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Change directory.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>pwd</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shows current directory.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>touch</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If the file doesn't exist, it creates it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the file already exists, it updates the modification date without altering the content.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>rm &lt;file&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>mkdir &lt;dir&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Make directory.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>rm -r &lt;dir&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove directory.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>cp &lt;from&gt; &lt;to&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Copy file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>mv &lt;old&gt; &lt;new&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Rename file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>grep &lt;text&gt; &lt;file&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Find in file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>ps</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Show processes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>kill &lt;PID&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Kill a process.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="zsh-z-shell" >
+    Zsh (Z Shell)
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=ud7YxC33Z3w" 
+				class="external-link" 
+				target="_blank" >
+                Zsh config
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ~Windows (no native support)
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    MacOS.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Default on macOS since 2019.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            More powerful than Bash.
+		</p>
+	</li>
+	<li>
+		<p>
+            Advanced autocompletion and command suggestions.
+		</p>
+	</li>
+	<li>
+		<p>
+            Better support for 
+			<strong>
+                plugins and themes
+			</strong>
+            , with frameworks like 
+			<strong>
+                Oh My Zsh
+			</strong>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Supports advanced globbing (
+            <code>**/*.txt</code>
+            &nbsp;finds all 
+            <code>.txt</code>
+            &nbsp;files in subfolders).
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Install on Linux
+			</strong>
+            :
+		</p>
+<pre><code class="language-sh" data-lang="sh">sudo apt install zsh&nbsp;&nbsp;&nbsp;&nbsp; # Debian/Ubuntu
+sudo pacman -S zsh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Arch Linux
+sudo dnf install zsh&nbsp;&nbsp;&nbsp;&nbsp; # Fedora
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Make default:
+				</p>
+<pre><code class="language-sh" data-lang="sh">chsh -s $(which zsh)
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="themes" >
+    Themes
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/romkatv/powerlevel10k" 
+				class="external-link" 
+				target="_blank" >
+                PowerLevel10k
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="fish-friendly-interactive-shell" >
+    Fish (Friendly Interactive Shell)
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                OSs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ~Windows (no native support).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Linux
+				</p>
+			</li>
+			<li>
+				<p>
+                    macOS
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Extremely easy to use and interactive.
+		</p>
+	</li>
+	<li>
+		<p>
+            Automatic command suggestions with history.
+		</p>
+	</li>
+	<li>
+		<p>
+            Syntax more intuitive than Bash/Zsh.
+		</p>
+	</li>
+	<li>
+		<p>
+            Incompatible with Bash scripts, may cause issues for advanced users.
+		</p>
+	</li>
+	<li>
+		<p>
+            To install:
+		</p>
+<pre><code class="language-sh" data-lang="sh">sudo apt install fish&nbsp;&nbsp;&nbsp;&nbsp; # Debian/Ubuntu
+sudo pacman -S fish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Arch Linux
+sudo dnf install fish&nbsp;&nbsp;&nbsp;&nbsp; # Fedora
+</code></pre>
+	</li>
+	<li>
+		<p>
+            To test:
+		</p>
+<pre><code class="language-sh" data-lang="sh">fish
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="gitbash" >
+    <s>GitBash</s>
+</h3>
+<ul>
+	<li>
+		<p>
+            Based on MinGW.
+		</p>
+	</li>
+	<li>
+		<p>
+            Comes with 'Git for Windows', allowing use of Unix commands (
+            <code>ls</code>
+            , 
+            <code>grep</code>
+            , 
+            <code>vim</code>
+            ).
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1078 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Game AI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-utility-ai-fuzzy-logic.html" >
+                                Utility AI / Fuzzy Logic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-fsm-finite-state-machines-or-hsfm-hierarchical-state-machines.html" >
+                                FSM (Finite State Machines) or HSFM (Hierarchical State Machines)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-behavior-trees.html" >
+                                Behavior Trees
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-htn-hierarchical-task-network.html" >
+                                HTN (Hierarchical Task Network)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-goap-goal-oriented-action-planning.html" >
+                                GOAP (Goal-Oriented Action Planning)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-hgn-hierarchical-goal-network.html" >
+                                HGN (Hierarchical Goal Network)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-strips-stanford-research-institute-problem-solver.html" >
+                                STRIPS (Stanford Research Institute Problem Solver)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-rule-based-ai.html" >
+                                Rule-based AI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-evaluations.html" >
+                                Evaluations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Procedural Animation
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Procedural Animation/Procedural Animation-references-and-examples.html" >
+                                References and Examples
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Game Development/Procedural Animation/Procedural Animation-inverse-kinematics.html" >
+                                Inverse Kinematics
+							</a>
+							<ul>
+								<li>
+									<ul>
+										<li>
+											<a
+												href="#ik-with-foot-placement" >
+                                                IK with Foot Placement
+											</a>
+										</li>
+										<li>
+											<a
+												href="#physics-engines" >
+                                                Physics Engines
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#fabrik-forward-and-backwards-reaching-inverse-kinematics" >
+                                        FABRIK (Forward And Backwards Reaching Inverse Kinematics)
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#chained-constraint" >
+                                                Chained Constraint
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#two-joint-ik-two-bone-ik-triangulation" >
+                                        Two-Joint IK / Two-Bone IK / Triangulation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#math" >
+                                        Math
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#ccd-cyclic-coordinate-descent" >
+                                        <s>CCD (Cyclic Coordinate Descent)</s>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Procedural Animation/Procedural Animation-procedural-animation-with-soft-body.html" >
+                                Procedural Animation with Soft Body
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Game Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game Design/Game Design-game-design.html" >
+                                Game Design
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Level Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Level Design-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Level Design-workflows.html" >
+                                Workflows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Level Design-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Level Design-analyses.html" >
+                                Analyses
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Scanning Algorithms
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Scanning Algorithms-scanning-algorithms.html" >
+                                Scanning Algorithms
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Inverse Kinematics
+						</h1>
+						<p>
+							<time
+								datetime="2024-05-17" >
+                                🕒 Created: 2024-05-17
+							</time>
+							<time
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h4
+	id="ik-with-foot-placement" >
+    IK with Foot Placement
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=e6Gjhr1IP6w" 
+				class="external-link" 
+				target="_blank" >
+                Explanation
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=I7BRv5wjeZg" 
+				class="external-link" 
+				target="_blank" >
+                IK with Foot Placement
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Very interesting.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It also talks about using Bird-oid path finding, which is 
+					<strong>
+                        impressive
+					</strong>
+                    , removing the need to make pathfinding algorithms.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <a href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero.html#chat-7-inverse-kinematics">
+            Handmade Hero#Chat 7 - Inverse Kinematics
+            </a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        TLDR
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            He does not show any equations or discuss any specific technique.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The video is basically to demonstrate the nature and difficulty of the problem.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="physics-engines" >
+    Physics Engines
+</h4>
+<ul>
+	<li>
+		<p>
+            Box2D and Jolt Physics are both rigid-body physics engines that simulate dynamic behavior using constraints and impulses. Neither has native support for inverse kinematics (IK), which typically requires solving joint positions/angles to reach a target.
+		</p>
+	</li>
+	<li>
+		<p>
+            However, you can implement IK logic on top of these engines by manually controlling joint angles and positions before feeding them to the simulation, or using constraints in a controlled way.
+		</p>
+	</li>
+</ul>
+<h3
+	id="fabrik-forward-and-backwards-reaching-inverse-kinematics" >
+    FABRIK (Forward And Backwards Reaching Inverse Kinematics)
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                How it Works:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A two-pass iterative method that moves joints forward and backward to reach the target.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Forward pass: Stretches the chain from the root toward the target.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Backward pass: Contracts it back from the target to the root.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Repeats until the end-effector is close enough.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pros:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Fast &amp; simple (no Jacobians or heavy math).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Works well with constraints (joint limits, obstacles).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Natural-looking motion (good for animation).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Cons:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Not as precise for orientation control.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Can struggle with highly constrained systems.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Used in:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Games (Unity's IK solvers), animation tools.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Visual behavior
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Produces smooth, natural arcs (like a human arm reaching).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Tends to avoid extreme joint angles.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=NfuO66wsuRg" 
+				class="external-link" 
+				target="_blank" >
+                FABRIK demo and implementation
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I believe it uses distances, purely approximating one point to another until it is close enough.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I'm not certain about this, I haven't watched the entire video.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250718081922.png" width="425" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250718081958.png" width="425" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250718081711.png" width="425" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Ihp6tOCYHug" 
+				class="external-link" 
+				target="_blank" >
+                FABRIK demo
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It uses vectors, inverting the vector and repositioning it at each step.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://github.com/TheComet/ik" 
+				class="external-link" 
+				target="_blank" >
+                the-comet/ik
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The lib has tons of scripts.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-c" data-lang="c">#include &lt;ik/ik.h&gt;
+
+int main()
+{
+&nbsp;&nbsp;&nbsp;&nbsp;/* Create a solver using the FABRIK algorithm */
+&nbsp;&nbsp;&nbsp;&nbsp;struct ik_solver_t* solver = ik.solver.create(IK_FABRIK);
+
+&nbsp;&nbsp;&nbsp;&nbsp;/* Create a simple 3-bone structure */
+&nbsp;&nbsp;&nbsp;&nbsp;struct ik_node_t* root = solver-&gt;node-&gt;create(0);
+&nbsp;&nbsp;&nbsp;&nbsp;struct ik_node_t* child1 = solver-&gt;node-&gt;create_child(1, root);
+&nbsp;&nbsp;&nbsp;&nbsp;struct ik_node_t* child2 = solver-&gt;node-&gt;create_child(2, child1);
+&nbsp;&nbsp;&nbsp;&nbsp;struct ik_node_t* child3 = solver-&gt;node-&gt;create_child(3, child2);
+
+&nbsp;&nbsp;&nbsp;&nbsp;/* Set node positions in local space so they form a straight line in the Y direction*/
+&nbsp;&nbsp;&nbsp;&nbsp;child1-&gt;position = ik.vec3.vec3(0, 10, 0);
+&nbsp;&nbsp;&nbsp;&nbsp;child2-&gt;position = ik.vec3.vec3(0, 10, 0);
+&nbsp;&nbsp;&nbsp;&nbsp;child3-&gt;position = ik.vec3.vec3(0, 10, 0);
+
+&nbsp;&nbsp;&nbsp;&nbsp;/* Attach an effector at the end */
+&nbsp;&nbsp;&nbsp;&nbsp;struct ik_effector_t* eff = solver-&gt;effector-&gt;create();
+&nbsp;&nbsp;&nbsp;&nbsp;solver-&gt;effector-&gt;attach(eff, child3);
+
+&nbsp;&nbsp;&nbsp;&nbsp;/* set the target position of the effector to be somewhere within range */
+&nbsp;&nbsp;&nbsp;&nbsp;eff-&gt;target_position = ik.vec3.vec3(2, -3, 5);
+
+&nbsp;&nbsp;&nbsp;&nbsp;/* We want to calculate rotations as well as positions */
+&nbsp;&nbsp;&nbsp;&nbsp;solver-&gt;flags |= IK_ENABLE_TARGET_ROTATIONS;
+
+&nbsp;&nbsp;&nbsp;&nbsp;/* Assign our tree to the solver, rebuild data and calculate solution */
+&nbsp;&nbsp;&nbsp;&nbsp;ik.solver.set_tree(solver, root);
+&nbsp;&nbsp;&nbsp;&nbsp;ik.solver.rebuild_data(solver);
+&nbsp;&nbsp;&nbsp;&nbsp;ik.solver.solve(solver);
+}
+</code></pre>
+	</li>
+</ul>
+<h4
+	id="chained-constraint" >
+    Chained Constraint
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=wFqSKHLb0lo" 
+				class="external-link" 
+				target="_blank" >
+                Slugs and Fish
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Very cool video.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I like the strategy used to draw the creature's outline.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=qlfh_rv6khY" 
+				class="external-link" 
+				target="_blank" >
+                Slugs and Fish
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It does exactly the same thing as the video above, but it is more &quot;cult&quot; / &quot;classical music&quot; / &quot;3blue1brown&quot; and less explanatory.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;parametric equations 
+                            <code>8^P</code>
+                            &quot;
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The method used to draw is the same as the video above, but the style became more GREY.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="two-joint-ik-two-bone-ik-triangulation" >
+    Two-Joint IK / Two-Bone IK / Triangulation
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.theorangeduck.com/page/simple-two-joint" 
+				class="external-link" 
+				target="_blank" >
+                Explanation
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=iR3Qxtv1VQw" 
+				class="external-link" 
+				target="_blank" >
+                Using isosceles triangles
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250716165025.png" width="350" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                How it Works:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Treats a two-joint chain (like an elbow/knee) as a triangle.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Uses the law of cosines to compute angles.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Adjusts the middle joint to reach the target.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pros:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Blazing fast (perfect for real-time use).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Stable &amp; predictable (no iteration needed).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Cons:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Only works for 2-joint chains (e.g., a knee or elbow).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Used in:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Game character limbs (Unity’s &quot;Two-Bone IK&quot;).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="math" >
+    Math
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=SGF3sE2fe_k" 
+				class="external-link" 
+				target="_blank" >
+                Quick video explaining ~something
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="ccd-cyclic-coordinate-descent" >
+    <s>CCD (Cyclic Coordinate Descent)</s>
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=GUF3Qr9C7eY" 
+				class="external-link" 
+				target="_blank" >
+                Demo and explanation
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                How it Works:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Iteratively adjusts one joint at a time, starting from the end-effector and moving backward.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Each joint rotates to point the end-effector toward the target.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Repeats until the end-effector is close enough.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pros
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Simple &amp; efficient (no matrix math).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Works well for chains with few joints.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Cons
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can produce unnatural twisting (since it solves joints one by one).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Slower for long chains (many iterations needed).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Used in
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Early game IK, simple robotic arms.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Visual Behavior
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can look &quot;robotic&quot; or mechanical (joints may twist unnaturally).
+				</p>
+			</li>
+			<li>
+				<p>
+                    May over-rotate joints in long chains.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Comparing to FABRIK
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Constraints
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            FABRIK is better for constrained systems (e.g., human limbs).
+						</p>
+					</li>
+					<li>
+						<p>
+                            CCD is harder to limit joint angles (since it works in rotations).&nbsp;&nbsp;Can break constraints if not carefully tuned.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Performance
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            FABRIK is generally faster, especially for long chains.
+						</p>
+					</li>
+					<li>
+						<p>
+                            CCD is slower for long chains (needs more iterations).&nbsp;&nbsp;Can oscillate near the target (takes time to settle).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Implementation
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            CCD is simpler to code, but FABRIK is more polished.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    FABRIK is the better choice for most cases (games, animation, robotics).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use CCD if you need a quick and dirty solution.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

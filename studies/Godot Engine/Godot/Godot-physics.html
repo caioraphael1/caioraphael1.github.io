@@ -1,0 +1,1222 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Godot
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-info.html" >
+                                Info
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-game-style.html" >
+                                Game Style
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-nodes.html" >
+                                Nodes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-geometry.html" >
+                                Geometry
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Godot Engine/Godot/Godot-physics.html" >
+                                Physics
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#physics-process-delta-time" >
+                                        Physics Process, Delta Time
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#raycast" >
+                                        Raycast
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#area2d" >
+                                        Area2D
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#skeleton-bones-joints" >
+                                        Skeleton, Bones, Joints
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#soft-body" >
+                                        Soft-Body
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#demos" >
+                                        Demos
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-render.html" >
+                                Render
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-render-illumination.html" >
+                                Render: Illumination
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-animation.html" >
+                                Animation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-navigation.html" >
+                                Navigation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-audio.html" >
+                                Audio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-ui.html" >
+                                UI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-input.html" >
+                                Input
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-godot-high-level-multiplayer.html" >
+                                Godot High-level Multiplayer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-data-management.html" >
+                                Data Management
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-importing.html" >
+                                Importing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-exporting.html" >
+                                Exporting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-multi-threading.html" >
+                                Multi-threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-file-system-project-settings.html" >
+                                File System / Project Settings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-editor.html" >
+                                Editor
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-godot-shader-language.html" >
+                                Godot Shader Language
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-optimization-and-profiling.html" >
+                                Optimization and Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-addons.html" >
+                                Addons
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-external-integrations.html" >
+                                External Integrations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - GDScript
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-print-strings-and-debug.html" >
+                                Print, Strings and Debug
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-functions.html" >
+                                Functions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-signals.html" >
+                                Signals
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-classes.html" >
+                                Classes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-annotations.html" >
+                                Annotations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-static-variables.html" >
+                                Static Variables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-execution.html" >
+                                Execution
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-limitations.html" >
+                                Limitations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - GDExtensions
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-gdextension.html" >
+                                GDExtension
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-rust-gdext.html" >
+                                Rust (Gdext)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-swift-godot-swift.html" >
+                                Swift (Godot Swift)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - Source Code
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - Source Code-source-code.html" >
+                                Source Code
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Physics
+						</h1>
+						<p>
+							<time
+								datetime="2021-11-23" >
+                                🕒 Created: 2021-11-23
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="physics-process-delta-time" >
+    Physics Process, Delta Time
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=obGMhUvq5pg" 
+				class="external-link" 
+				target="_blank" >
+                PhysicsEngines: Explanation and DeltaTime
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="raycast" >
+    Raycast
+</h3>
+<ul>
+	<li>
+		<p>
+            Can be done using the Raycast Node or via 
+            <code>.intersect_ray</code>
+            &nbsp;of the 'PhysicsServer' / 'PhysicsDirectSpaceState2D'.
+		</p>
+	</li>
+	<li>
+		<p>
+            Calculations are only performed inside the 'physical frame', so use the 
+            <code>_physics_process()</code>
+            &nbsp;function to access their information.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=1sKQwRzyLR0" 
+				class="external-link" 
+				target="_blank" >
+                Raycast: When and how to use it
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Ge0RiUx_NzU" 
+				class="external-link" 
+				target="_blank" >
+                Physics: Move_and_slide_with_snap + Sync to Physics
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/4.3/tutorials/physics/ray-casting.html" 
+				class="external-link" 
+				target="_blank" >
+                Raycast: Using Raycast via the PhysicsDirectSpaceState
+			</a>
+            .
+		</p>
+<pre><code class="language-gdscript" data-lang="gdscript">var space_state : PhysicsDirectSpaceState2D = get_world_2d().get_direct_space_state()
+var query := PhysicsRayQueryParameters2D.create(Vector2(), Vector2(), masks)
+</code></pre>
+	</li>
+</ul>
+<p>
+	<a
+		href="https://www.youtube.com/watch?v=Ln7nv-Y2tf4" 
+		class="external-link" 
+		target="_blank" >
+        Raycast: Climbing Stairs in a 2D Platformer
+	</a>
+    .
+</p>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=lNADi7kTDJ4" 
+				class="external-link" 
+				target="_blank" >
+                Enemy visibility with Raycast and PhysicsServer
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="area2d" >
+    Area2D
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Layer
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Which shirts the node wears&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In other words, the Area uses this if it needs to be &quot;seen&quot; by another Area.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Mask
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Which shirts the node sees&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In other words, the Area uses this to identify which Areas it wants to &quot;see&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Monitoring
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Roughly: If set to 'true', it will allow boolean 'true' Masks to be activated. If set to 'false', it will disable all the node's Masks.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Monitorable
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Roughly: If set to 'true', it will allow boolean 'true' Layers to be activated. If set to 'false', it will disable all the node's Layers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example:
+			</strong>
+            &nbsp;If Area_A and Area_B are intersecting while both areas are listening for entry and exit signals from the other area:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If Area_A quickly toggles its 'Layer':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Perception of Area_A: It will not perceive anything.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Perception of Area_B: It will stop detecting Area_A and then detect Area_A again. In other words, it will interpret it as an &quot;enter&quot; and &quot;exit&quot; of Area_A.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If Area_A quickly toggles its 'Mask':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Perception of Area_A: It will stop detecting Area_B and then detect Area_B again. In other words, it will interpret it as an &quot;enter&quot; and &quot;exit&quot; of Area_B.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Perception of Area_B: It will not perceive anything.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If Area_A quickly toggles 'Monitoring':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Perception of Area_A: It will stop detecting Area_B and then detect Area_B again. In other words, it will interpret it as an &quot;enter&quot; and &quot;exit&quot; of Area_B.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Perception of Area_B: It will stop detecting Area_A and then detect Area_A again. In other words, it will interpret it as an &quot;enter&quot; and &quot;exit&quot; of Area_A.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If Area_A quickly toggles 'Monitorable':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Perception of Area_A: It will not perceive anything.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Perception of Area_B: It will not perceive anything.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If Area_B quickly toggles its 'Layer':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Perception of Area_A: It will stop detecting Area_B and then detect Area_B again. In other words, it will interpret it as an &quot;enter&quot; and &quot;exit&quot; of Area_B.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Perception of Area_B: It will not perceive anything.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If Area_B quickly toggles its 'Mask':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Perception of Area_A: It will not perceive anything.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Perception of Area_B: It will stop detecting Area_A and then detect Area_A again. In other words, it will interpret it as an &quot;enter&quot; and &quot;exit&quot; of Area_A.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If Area_B quickly toggles 'Monitoring':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Perception of Area_A: It will stop detecting Area_B and then detect Area_B again. In other words, it will interpret it as an &quot;enter&quot; and &quot;exit&quot; of Area_B.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Perception of Area_B: It will stop detecting Area_A and then detect Area_A again. In other words, it will interpret it as an &quot;enter&quot; and &quot;exit&quot; of Area_A.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If Area_B quickly toggles 'Monitorable':
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Perception of Area_A: It will not perceive anything.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Perception of Area_B: It will not perceive anything.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            'area_shape' and 'body_shape' signals:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    These signals are useful in cases where the Area2D has multiple collision shapes, for example an enemy with many contact points spread across its body.
+				</p>
+			</li>
+			<li>
+				<p>
+                    These signals will return: the RID (Resource ID), the Area2D itself, 'area_shape_index' and 'local_shape_index'. All this information is used to better detect which shape was collided within the Area2D.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="skeleton-bones-joints" >
+    Skeleton, Bones, Joints
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/4.3/tutorials/animation/2d_skeletons.html" 
+				class="external-link" 
+				target="_blank" >
+                Using Skeleton2D with Polygon2D to create deformations in sprites
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/animation/cutout_animation.html" 
+				class="external-link" 
+				target="_blank" >
+                Creating a Rig without Skeleton2D or Bone2D, only using the Create Bone option of Sprite2D
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It is a very strange technique.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I much prefer using Skeleton2D and Polygon2D, because it is much more visual.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Apparently it supports IK, but that seems very odd to me. I did not like the technique.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=fq0hR2tIsRk" 
+				class="external-link" 
+				target="_blank" >
+                Using a 'Bone' as Root Motion to create a more realistic &quot;physical&quot; animation
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The video is absolutely longer than it should be. For most of the time he is doing things unrelated to the topic, like creating character controllers and camera controllers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    From what was shown in the video, a character's walk speed can be &quot;synchronized&quot; with the walking animation, giving the impression of a more realistic / physical animation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This should be set first in Blender, perhaps using an addon that creates a useful Bone to be used as root motion.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Apparently, setting up a 'root bone' in Blender is important so the character does not become 'wabbly' inside Godot.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="ik" >
+    IK
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=GQLL7laFqQY" 
+				class="external-link" 
+				target="_blank" >
+                Forward Kinematics and Inverse Kinematics in 2D
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    [Godot 4.3] IK is inside Skeleton2D, in the Modifications section.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=xSP1pqGsWXo" 
+				class="external-link" 
+				target="_blank" >
+                Inverse Kinematics with SkeletonIK3D
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=vvhCHDD9FMQ" 
+				class="external-link" 
+				target="_blank" >
+                Improving Inverse Kinematics using the 'Souperior Skeleton Modifications' addon
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Motivation for using the addon:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            When flipping the character using Skeleton2D's Skeleton Modifications, the constraints did not respect that flip and produced an undesired result.
+						</p>
+					</li>
+					<li>
+						<p>
+                            IK for &quot;UpperBody&quot; and &quot;LowerBody&quot; in a more simplified way.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {0:58 -&gt; 8:50}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Conversion from the previous method to the new method is done, only to solve the IK problems when flipping the character.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {13:20 -&gt; 14:40}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Demonstration of the character flip after the change.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The rest of the video is skippable.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="springarm" >
+    SpringArm
+</h5>
+<ul>
+	<li>
+		<p>
+            Moves all child Nodes into the region corresponding to the SpringArm, regardless of where they are. One way to imagine the SpringArm is as a &quot;train track&quot;, where its children are the &quot;trains&quot; and they can only move along the track. The advantage of the SpringArm is collision detection with the node's Shape, so it adapts to collisions and moves all its children &quot;forward&quot; from the collision, i.e., moves them closer to the SpringArm origin.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    About the Shape: I don't know how it works, because the Shape is not visible to me.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="ragdoll" >
+    Ragdoll
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=0MHY2TDeMLM" 
+				class="external-link" 
+				target="_blank" >
+                Ragdoll in 3D
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="soft-body" >
+    Soft-Body
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=xxLJjCpI58M" 
+				class="external-link" 
+				target="_blank" >
+                Simulating cloth
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="demos" >
+    Demos
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=IOe1aGY6hXA" 
+				class="external-link" 
+				target="_blank" >
+                Jump simple and customizable
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=rOA8i_clm1Y" 
+				class="external-link" 
+				target="_blank" >
+                Create a land vehicle
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=7axJJYont6Y" 
+				class="external-link" 
+				target="_blank" >
+                Vehicle movement with snap on terrain
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=a0gxFMdhR7w" 
+				class="external-link" 
+				target="_blank" >
+                CharacterBody interacting with ramps
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=WhwSKyGjQq0" 
+				class="external-link" 
+				target="_blank" >
+                Create a racing car
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=RsrwmAme_WA" 
+				class="external-link" 
+				target="_blank" >
+                Create a simple airplane
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=8oywBn_bLeU" 
+				class="external-link" 
+				target="_blank" >
+                Create a spaceship
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=1MO8DtnxSQs" 
+				class="external-link" 
+				target="_blank" >
+                Create invincibility frames
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=sWUGxkbh2fg" 
+				class="external-link" 
+				target="_blank" >
+                Create Projectiles and Explosive Projectiles
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

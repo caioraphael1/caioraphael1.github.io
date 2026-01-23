@@ -1,0 +1,1232 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Godot
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-info.html" >
+                                Info
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-game-style.html" >
+                                Game Style
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-nodes.html" >
+                                Nodes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-geometry.html" >
+                                Geometry
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-physics.html" >
+                                Physics
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-render.html" >
+                                Render
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-render-illumination.html" >
+                                Render: Illumination
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-animation.html" >
+                                Animation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-navigation.html" >
+                                Navigation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-audio.html" >
+                                Audio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-ui.html" >
+                                UI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-input.html" >
+                                Input
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Godot Engine/Godot/Godot-godot-high-level-multiplayer.html" >
+                                Godot High-level Multiplayer
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#limitations-of-godots-enet-implementation" >
+                                        Limitations of Godot's ENet Implementation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#high-level-api" >
+                                        High-level API
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#synchronization" >
+                                        Synchronization
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-data-management.html" >
+                                Data Management
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-importing.html" >
+                                Importing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-exporting.html" >
+                                Exporting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-multi-threading.html" >
+                                Multi-threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-file-system-project-settings.html" >
+                                File System / Project Settings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-editor.html" >
+                                Editor
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-godot-shader-language.html" >
+                                Godot Shader Language
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-optimization-and-profiling.html" >
+                                Optimization and Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-addons.html" >
+                                Addons
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-external-integrations.html" >
+                                External Integrations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - GDScript
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-print-strings-and-debug.html" >
+                                Print, Strings and Debug
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-functions.html" >
+                                Functions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-signals.html" >
+                                Signals
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-classes.html" >
+                                Classes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-annotations.html" >
+                                Annotations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-static-variables.html" >
+                                Static Variables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-execution.html" >
+                                Execution
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-limitations.html" >
+                                Limitations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - GDExtensions
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-gdextension.html" >
+                                GDExtension
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-rust-gdext.html" >
+                                Rust (Gdext)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-swift-godot-swift.html" >
+                                Swift (Godot Swift)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - Source Code
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - Source Code-source-code.html" >
+                                Source Code
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Godot High-level Multiplayer
+						</h1>
+						<p>
+							<time
+								datetime="2021-11-23" >
+                                🕒 Created: 2021-11-23
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html" 
+				class="external-link" 
+				target="_blank" >
+                High-level Multiplayer
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://godotengine.org/article/multiplayer-in-godot-4-0-scene-replication/" 
+				class="external-link" 
+				target="_blank" >
+                Using MultiplayerSpawner and MultiplayerSynchronizer
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot's high-level multiplayer API only uses UDP, so you must forward the port in UDP and TCP.
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot's high-level multiplayer API uses a modified ENet version.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=e0JLO_5UgQo" 
+				class="external-link" 
+				target="_blank" >
+                Multiplayer with ENetMultiplayerPeer, RTC Calls, and Multiplayer Synchronizer
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    {50:00 -&gt; 1:00:30}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Using Multiplayer Synchronizer with Interpolation to optimize packet sending.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {1:00:30 -&gt; 1:15:20}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Explanation for making a launcher just &quot;server&quot; and a poor explanation of creating a dedicated server.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>game.exe --server --headless</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="limitations-of-godots-enet-implementation" >
+    Limitations of Godot's ENet Implementation
+</h3>
+<ul>
+	<li>
+		<p>
+            Although ENet is an excellent low-level multiplayer networking library, Godot implements 
+			<em>
+                ENetMultiplayerPeer
+			</em>
+            &nbsp;in a simplified way, which may not be the best choice for large-scale games like 
+			<strong>
+                MMOs
+			</strong>
+            &nbsp;due to lack of flexibility in network control, scalability, and customization.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Lack of clustering and load distribution support
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ENetMultiplayerPeer does not have built-in resources for load balancing between servers or for dynamic player partitioning.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Network systems for MMOs usually use a distributed network structure so high-density player areas don’t overload a single server. This is not natively supported in ENet.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Persistence and Global State
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    MMOs generally require maintaining a persistent global state (world information, inventory, player progression, etc.). While ENet provides reliable and ordered communication, it doesn’t handle persistence or state replication.
+				</p>
+			</li>
+			<li>
+				<p>
+                    For MMOs, it is common to use a network structure that interacts with databases and robust caching systems. Custom solutions for this kind of persistence are not native to ENet.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Security and Moderation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ENet offers little native security against common attacks on MMO servers, such as DDoS or packet manipulation. Protocols developed for MMOs typically implement robust authentication, encryption, and attack mitigation mechanisms, often with additional support for cheat detection.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="high-level-api" >
+    High-level API
+</h3>
+<h5
+	id="multiplayerapi" >
+    MultiplayerAPI
+</h5>
+<ul>
+	<li>
+		<p>
+            Abstract implementation. Cannot be instantiated.
+		</p>
+	</li>
+</ul>
+<h5
+	id="scenemultiplayer" >
+    SceneMultiplayer
+</h5>
+<ul>
+	<li>
+		<p>
+            Concrete implementation of MultiplayerAPI, can be instantiated.
+		</p>
+	</li>
+</ul>
+<h5
+	id="multiplayerapiextended" >
+    MultiplayerAPIExtended
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>get_tree().set_multiplayer(MultiplayerExtended.new())</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The pathing is not passed, since I want to override the default multiplayer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    By doing this, 
+                    <code>multiplayer == _game_server == get_tree().get_multiplayer()</code>
+                    &nbsp;for ANY node in the game.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This is valid even for nodes that spawned later.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    This can be done in 
+                    <code>_enter_tree()</code>
+                    , 
+                    <code>_ready()</code>
+                    , or elsewhere, but prefer 
+                    <code>_enter_tree()</code>
+                    , since the earlier the better.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Using MultiplayerAPIExtension causes 
+            <code>multiplayer.get_remote_sender_id()</code>
+            &nbsp;to not work.
+		</p>
+	</li>
+</ul>
+<h3
+	id="synchronization" >
+    Synchronization
+</h3>
+<h5
+	id="authority" >
+    Authority
+</h5>
+<ul>
+	<li>
+		<p>
+            Authority cannot be set in 
+            <code>_ready()</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="multiplayersynchronizer" >
+    MultiplayerSynchronizer
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Serialization
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Also serializes automatically&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Synchronization of spawned objects
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If MpSync misses the first sync rotation in the scene, it will not receive further signals.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Changing visibility to PubliclyVisible outside of 
+                    <code>_ready()</code>
+                    &nbsp;does nothing, you must use 
+                    <code>set_visibility(peer_id)</code>
+                    &nbsp;or a visibility_filter to apply visibility changes.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="multiplayerspawner" >
+    MultiplayerSpawner
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Synchronization of spawned objects
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Spawned objects will copy everything defined between 
+                    <code>.instantiate()</code>
+                    &nbsp;and 
+                    <code>add_child()</code>
+                    . After 
+                    <code>add_child()</code>
+                    , no more copying occurs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If a client logs into the server after something has been spawned by MpSpawner, the new client will also get these spawns, even if they were not present at the time of the spawn on the Server.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Only use 
+                    <code>_death.rpc()</code>
+                    &nbsp;if you are not using MpSpawner, since MpSpawner WANTS to despawn all instances of the instantiated scene.
+				</p>
+			</li>
+			<li>
+				<p>
+                    (2024-11-11) Dynamic spawns do not work well with my CustomMpSync script.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="rpc-remote-procedure-calls" >
+    RPC (Remote Procedure Calls)
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;request / fetch -&gt; receive / retrieve.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            Functions callable on other peers.
+		</p>
+	</li>
+	<li>
+		<p>
+            RPC or MultiplayerSynchronizer for inputs?
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Via MultiplayerSynchronizer:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>input_jump = Input.get_action_strength(&'jump')</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Serialization
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;If I pass a parameter to an RPC call, is it automatically serialized before sending it to the other peers?&quot;
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Serialization and deserialization is automatic.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Cannot send
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Objects.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Includes Nodes and Resources.
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://youtu.be/bLs4w4qVU5E?si=5eGneqUdv12ASdGl&t=266" 
+										class="external-link" 
+										target="_blank" >
+                                        Demonstration of what 'not serialize' looks like
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;Is there a reason for RPC calls to not serialize objects (nodes and resources)? Seems to be a way to serialize the object, so I wonder why it isn't used for RPC calls.&quot;
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Objects in Godot have been designed with the ability to contain their own scripts if needed.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Which unfortunately means that if an RPC could carry an object, it could also carry a custom malicious script that would run 
+                                            <code>_init</code>
+                                            &nbsp;automatically on the other PC and basically turn Godot into a trojan.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Also, if you try to send an object, it will convert it to an object ID, which is meaningless on the other PC.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Callables.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Other peers only receive 
+							<em>
+                                null
+							</em>
+                            &nbsp;in place of the Callable.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Errors
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When calling an RPC on the Server, but the Client does not have the node:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The Server has node authority; i.e., authority was not changed.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Quirks
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Same Node Path:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            For a remote call to be successful, the sending and receiving node need to have the same 
+                            <code>NodePath</code>
+                            , which means they must have the same name.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If an RPC resides in a script attached to 
+                                    <code>/root/Main/Node1</code>
+                                    , then it must reside in precisely the same path and node on both the client script and the server script.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            When using 
+                            <code>add_child()</code>
+                            &nbsp;for nodes expected to use RPCs, set the argument 
+                            <code>force_readable_name</code>
+                            &nbsp;to 
+                            <code>true</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Declaration on Server and Client for dedicated servers:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If a function is annotated with 
+                            <code>@rpc</code>
+                            &nbsp;on the client script (resp. server script), then this function must also be declared on the server script (resp. client script). Both RPCs must have the same signature which is evaluated with a checksum of 
+							<em>
+                                all RPCs
+							</em>
+                            . All RPCs in a script are checked at once, and all RPCs must be declared on both client and server scripts, 
+							<em>
+                                even functions that are currently not in use
+							</em>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Points ok
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Calling the RPC in the case of a Dedicated Server can be done with either 
+                    <code>callable.rpc_id(peer_id)</code>
+                    &nbsp;or 
+                    <code>rpc_id(peer_id, &'callable_name')</code>
+                    . The first option is better and safer as it does not involve strings.
+				</p>
+			</li>
+			<li>
+				<p>
+                    (I think this is false) Function arguments can be different.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Function arguments are not checked for matching between server and client code (example: 
+                            <code>func sendstuff():</code>
+                            &nbsp;and 
+                            <code>func sendstuff(arg1, arg2):</code>
+                            &nbsp;
+							<em>
+                                will pass
+							</em>
+                            &nbsp;signature matching).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Peer id
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;The one calling the function is peer 0 and ALWAYS exists, otherwise they could not call the function to begin with. Peer ids are dependent on the perspective of the client.&nbsp;&nbsp;If you have client A and client B connected to each other. Client A will see client B as peer 1 and vice versa. And each of those will see themselves as peer 0.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="others" >
+    Others
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=TwVT3Qx9xEM" 
+				class="external-link" 
+				target="_blank" >
+                Synchronizing the game clock
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The method used to calculate latency is unnecessary, as ENetMultiplayerPeer already provides these statistics.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="ensuring-connection" >
+    Ensuring Connection
+</h5>
+<ul>
+	<li>
+		<p>
+            Port-forwarding
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If you're hosting a server on your own machine and want non-LAN clients to connect to it, you'll probably have to forward the server port on your router. This is required to make your server reachable from the Internet since most residential connections use NAT.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://icanhazip.com/" 
+						class="external-link" 
+						target="_blank" >
+                        My Public IP
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Android
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When exporting to Android, make sure to enable the 
+                    <code>INTERNET</code>
+                    &nbsp;permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="channels" >
+    Channels
+</h5>
+<ul>
+	<li>
+		<p>
+            For example, game chat messages and some core gameplay messages should all be sent reliably, but a gameplay message should not wait for a chat message to be acknowledged. This can be achieved by using different channels.
+		</p>
+	</li>
+	<li>
+		<p>
+            Modern networking protocols support channels, which are separate streams within the connection. This allows for multiple packet streams that do not interfere with each other.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

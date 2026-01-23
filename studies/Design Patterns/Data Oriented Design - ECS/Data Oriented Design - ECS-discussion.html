@@ -1,0 +1,964 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Data Oriented Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-criticisms-of-oop.html" >
+                                Criticisms of OOP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-philosophies.html" >
+                                Philosophies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Data Oriented Design - ECS
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-discussion.html" >
+                                Discussion
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#philosophy" >
+                                        Philosophy
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#relational-databases" >
+                                        Relational Databases
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#stream-processing-no-global-memory" >
+                                        Stream Processing (no global memory)
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#ownership" >
+                                        Ownership
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#existential-processing" >
+                                        Existential processing
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#enums" >
+                                        Enums
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#polymorphism" >
+                                        Polymorphism
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#events" >
+                                        Events
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#soa" >
+                                        SOA
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-entity.html" >
+                                Entity
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-component.html" >
+                                Component
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-system.html" >
+                                System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-n-greatern-relationship.html" >
+                                Design: N-&gt;N relationship
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-discarded-ideas.html" >
+                                Design: Discarded Ideas
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Data Oriented Design - COP
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - COP/Data Oriented Design - COP-cop-compression-oriented-programming-mega-struct.html" >
+                                COP (Compression-Oriented Programming) / Mega-Struct
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Other Design Patterns
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-definition.html" >
+                                Definition
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-behavioral-patterns.html" >
+                                Behavioral Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-creational-patterns.html" >
+                                Creational Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-structural-patterns.html" >
+                                Structural Patterns
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Concepts and Terminology
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-terminology.html" >
+                                Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Rules of thumb - Laws - Guidelines and Principles
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Rules of thumb - Laws - Guidelines and Principles/Rules of thumb - Laws - Guidelines and Principles-rules-of-thumb.html" >
+                                Rules of Thumb
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Paradigms
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-procedural.html" >
+                                Procedural
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-functional.html" >
+                                Functional
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-oop-object-oriented-programming.html" >
+                                OOP (Object-Oriented Programming)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Production Methodologies
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-design-process.html" >
+                                Design Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-apps.html" >
+                                Apps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-software-testing.html" >
+                                Software Testing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-methodologies.html" >
+                                Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Discussion
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-11" >
+                                🕒 Created: 2025-03-11
+							</time>
+							<time
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.dataorienteddesign.com/dodbook/node1.html" 
+				class="external-link" 
+				target="_blank" >
+                Data Oriented Design
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Very very interesting read.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There's quite a lot of yapping about things that don't quite correlate to the problem, but even so, it's a great read.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I stopped at &quot;Searching&quot; (node7); I haven't read it yet.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="philosophy" >
+    Philosophy
+</h3>
+<ul>
+	<li>
+        <img src="assets/2026-01-07_13-45-11.png" width="400" >
+
+	</li>
+	<li>
+		<p>
+            This example class includes many of the types of things found in games, where the codebase has grown organically. It's common for the Player class to have lots of helper functions to make writing game code easier. Helper functions typically consider the Player as an instance in itself, from data in save through to rendering on screen. It's not unusual for the Player class to touch nearly every aspect of a game, as the human player is the target of the code in the first place, the Player class is going to reference nearly everything too.
+		</p>
+	</li>
+	<li>
+		<p>
+            AI characters will have similarly gnarly looking classes if they are generalized rather than specialized. Specializing AI was more commonplace when games needed to fit in smaller machines, but now, because the Player class has to interact with many of them over the course of the game, they tend to be unified into one type just like the player, if not the same as the player, to help simplify the code that allows them to interact. As of writing, the way in which AI is differentiated is mostly by data, with behavior trees taking the main stage for driving how AI thinks about its world. Behavior trees are another concept subject to various interpretations, so some forms are data-oriented design friendly, and others are not.
+		</p>
+	</li>
+	<li>
+		<p>
+            A recurring theme in articles and post-mortems from people moving from object-oriented hierarchies of gameplay classes to a component based approach is the transitional states of turning their classes into containers of smaller objects, an approach often called composition. This transitional form takes an existing class and finds the boundaries between concepts internal to the class and attempts to refactor them out into new classes which can be owned or pointed to by the original class. From our monolithic player class, we can see there are lots of things that are not directly related, but that does not mean they are not linked together.
+		</p>
+	</li>
+	<li>
+		<p>
+            Object-oriented hierarchies are is-a relationships, and components and composition oriented designs are traditionally thought of as has-a relationships. Moving from one to the other can be thought of as delegating responsibility or moving away from being locked into what you are, but having a looser role and keeping the specialization until further down the tree. Composition clears up most of the common cases of diamond inheritance issues, as capabilities of the classes are added by accretion as much as they are added by overriding.
+		</p>
+	</li>
+	<li>
+		<p>
+            The first move we need to make will be to take related pieces of our monolithic class and move them into their own classes, along the lines of composing, changing the class from owning all the data and the actions that modify the data into having instances which contain data and delegating actions down into those specialized structures where possible. We move the data out into separate structures so they can be more easily combined into new classes later. We will initially only separate by categories we perceive as being the boundaries between systems. For example, we separate rendering from controller input, from gameplay details such as inventory, and we split out animation from all.
+		</p>
+	</li>
+	<li>
+		<p>
+            Taking a look at the results of splitting the player class up, such as in listing [*], it's possible to make some initial assessments of how this may turn out. We can see how a first pass of building a class out of smaller classes can help organize the data into distinct, purpose oriented collections, but we can also see the reason why a class ends up being a tangled mess. When you think about the needs of each of the pieces, what their data requirements are, the coupling can become evident. The rendering functions need access to the player's position as well as the model, and the gameplay functions such as Shoot(Vec target) need access to the inventory as well as setting animations and dealing damage. Taking damage will need access to the animations and health. Things are already seeming more difficult to handle than expected, but what's really happening here is that it's becoming clear that code needs to cut across different pieces of data. With just this first pass, we can start to see that functionality and data don't belong together.
+		</p>
+	</li>
+	<li>
+		<p>
+            In this first step, we made the player class a container for the components. Currently, the player has the components, and the player class has to be instantiated to make a player exist. To allow for the cleanest separation into components in the most reusable way, it's worth attempting to move components into being managed by managers, and not handled or updated by their entities. In doing this, there will also be a benefit of cache locality when we're iterating over multiple entities doing related tasks when we move them away from their owners.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                This is where it gets a bit philosophical
+			</strong>
+            . Each system has an idea of the data it needs in order to function, and even though they will overlap, they will not share all data. Consider what it is that a serialization system needs to know about a character. It is unlikely to care about the current state of the animation system, but it will care about inventory. The rendering system will care about position and animation, but won't care about the current amount of ammo. The UI rendering code won't even care about where the player is, but will care about inventory and their health and damage. This difference of interest is at the heart of why 
+			<strong>
+                putting all the data in one class isn't a good long-term solution
+			</strong>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The functionality of a class, or an object, comes from how the internal state is interpreted, and how the changes to state over time are interpreted too. 
+			<strong>
+                The relationship between facts is part of the problem domain and could be called meaning, but the facts are only raw data
+			</strong>
+            . This separation of fact from meaning is not possible with an object-oriented approach, which is why every time a fact acquires a new meaning, the meaning has to be implemented as part of the class containing the fact. Dissolving the class, extracting the facts and keeping them as separate components, has given us the chance to move away from classes that instill permanent meaning at the expense of occasionally having to look up facts via less direct methods. Rather than store all the possibly associated data by meaning, we choose to only add meaning when necessary. We add meaning when it is part of the immediate problem we are trying to solve.
+		</p>
+	</li>
+</ul>
+<h3
+	id="relational-databases" >
+    Relational Databases
+</h3>
+<ul>
+	<li>
+		<p>
+            You certainly don't have to move your data to a database style to do data-oriented design, but there are many places where you will wish you had a simple array to work with.
+		</p>
+	</li>
+	<li>
+		<p>
+            Edgar F. Codd proposed the relational model to handle the current and future needs of agents interacting with data. He proposed a solution to structuring data for insert, update, delete, and query operations. His proposal claimed to reduce the need to maintain a deep understanding of how the data was laid out to use it well. His proposal also claimed to reduce the likelihood of introducing internal inconsistencies. He introduced the fundamental terms of normalization we use to this day in a systematic approach to reducing the most complex of interconnected state information to linear lists of unique independent tuples.
+		</p>
+	</li>
+	<li>
+		<p>
+            What we see here as we normalize our data is a tendency to split data by dependency. Looking at many third party engines and APIs, you can see some parallels with the results of these normalization. It's unlikely that the people involved in the design and evolution of these engines took their data and applied database normalization techniques,&nbsp;&nbsp;but sometimes the separations between object and components of objects can be obvious enough that you don't need a formal technique in order to realize some positive structural changes.
+		</p>
+	</li>
+	<li>
+		<p>
+            In some games, the entity object is not just an object that can be anything, but is instead a specific subset of the types of entity involved in the game. For example, in one game there might be a class for the player character, and one for each major type of enemy character, and another for vehicles. The player may have different attributes to other entities, such as lacking AI controls, or having player controls, or having regenerating health, or having ammo. This object-oriented approach puts a line, invisible to the user, but intrusive to the developer, between classes of object and their instances. It is intrusive because when classes touch, they have to adapt to each other. When they don't reside in the same hierarchy, they have to work through abstraction layers to message each other. The amount of code required to bridge these gaps can be small, but they always introduce complexity.
+		</p>
+	</li>
+	<li>
+		<p>
+            When developing software, this usually manifests as time spent writing out templated code that can operate on multiple classes rather than refactoring the classes involved into more discrete components. This could be considered wasted time as the likelihood of other operations needing to operate on all the objects is greater than zero,&nbsp;&nbsp;and the effort to refactor into components is usually similar to the effort to create a working templated operation.
+		</p>
+	</li>
+	<li>
+		<p>
+            Without classes to define boundaries, the table-based approach levels the playing field for data to be manipulated together. In all cases on our journey through normalizing the level data, we have made it so changes to the design require fewer changes to the data, and made it so data changes are less likely to cause the state to become inconsistent. In many cases, it would seem we have added complexity when it wasn't necessary, and that's up to experimentation and experience to help you decide how far to go.
+		</p>
+	</li>
+	<li>
+		<p>
+            We saw that sometimes adding new features required nothing more than adding a new table, or a new column to an existing table. That's a non-intrusive modification if you are using a database style of storage, but a significant change if you're adding a new member to a class.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-01-06_08-14-51.png" width="450" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-01-06_08-18-46.png" width="450" >
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="what-should-be-a-column-what-should-be-a-component" >
+    What should be a column / What should be a component
+</h5>
+<ul>
+	<li>
+		<p>
+            It's not about the TYPE of the data, but how this data is PROCESSED.
+		</p>
+	</li>
+	<li>
+		<p>
+            The granularity can be rooted in considering the data from the perspective of human perception.
+		</p>
+	</li>
+	<li>
+		<p>
+            We use 
+			<strong>
+                meaningful boundary
+			</strong>
+            &nbsp;that gives us the our definition of atomicity for software developed for humans.
+		</p>
+	</li>
+	<li>
+		<p>
+            Try to stay at the level of nouns, the nameable pieces.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Examples
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Grouping 
+                    <code>timer.Timer</code>
+                    &nbsp;might make sense, as all timers are processed the same, by just calling 
+                    <code>timer.update(&t)</code>
+                    &nbsp;on it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Grouping 
+                    <code>rd.Sprite</code>
+                    &nbsp;might not make sense, as one sprite might not be &quot;processed&quot; with another sprite; in this case processed could mean changing it's position or drawing (the draw order can vary if applying Y-Sort).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Grouping 
+                    <code>f32</code>
+                    &nbsp;doesn't make sense, as the data is 
+					<em>
+                        so
+					</em>
+                    &nbsp;generic that doesn't tell us anything about how it should be processed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A whole song can be an atom, but so is a single tick sound of a clock. A whole page of text is an atom, but so is the player's gamer-tag.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Adding sounds, textures, and meshes to this seems quite natural once you realize all these things are resources which if cut into smaller pieces begin to lose what it is that makes them what they are.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Half of a sentence is a lot less useful than a whole one, and loses integrity by disassociation. A slice of a sentence is clearly not reusable in any meaningful way with another random slice of a different sentence.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Think of raw assets (sounds, textures, vertex buffers, etc.) as primitives, much like the integers, floating point numbers, strings and boolean values.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="operations" >
+    Operations
+</h5>
+<ul>
+	<li>
+		<p>
+            When you use objects, you call methods on them, so how do you unlock a door in this table-based approach? Actions are always going to be insert, delete, or updates. These were clearly specified in Edgar F. Codd's works, and they are all you need to manipulate a relational model.
+		</p>
+	</li>
+	<li>
+		<p>
+            In a real database, finding what mesh to load, or whether a door is locked would normally require a join between tables. A real database would also attempt to optimize the join by changing the sequence of operations until it had made the smallest possible expected workload. We can do better than that because we can take absolute charge of how we look at and request data from our tables. To find out if a door is locked, we don't need to join tables, we know we can look up into the locked doors table directly. Just because the data is laid out like a database, doesn't mean we have to use a query language to access it.
+		</p>
+	</li>
+	<li>
+		<p>
+            When it comes to operations that change state, it's best to try to stick to the kind of operation you would normally find in a DBMS, as doing unexpected operations brings unexpected state complexity. For example, imagine you have a table of doors that are open, and a table of doors that are closed. Moving a door from one table might be considered wasteful, so you may consider changing the representation to a single table, but with all closed doors at one end, and all open at the other. By having both tables represented as a single table, and having the isClosed attribute defined implicitly by a cut-off point in the array, such as in listing [*], leads to the table being somewhat ordered. This type of memory optimization comes at a price. Introducing order into a table makes the whole table inherently less parallelizable to operations, so beware the additional complexity introduced by making changes like this, and document them well.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-01-07_08-44-54.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Unlocking a door can be a delete. A door is locked because there is an entry in the LockedDoors table that matches the Door you are interested in. Unlocking a door is a delete if door matches, and you have the right key.
+		</p>
+	</li>
+	<li>
+		<p>
+            The player inventory would be a table with just PickupIDs. This is the idea that &quot;the primary key is also the data&quot; mentioned much earlier. If the player enters a room and picks up a Pickup, then the entry matching the room is deleted while the inventory is updated to include the new PickupID.
+		</p>
+	</li>
+	<li>
+		<p>
+            Databases have the concept of triggers, where operations on a table can cause cascades of further operations. In the case of picking up a key, we would want a trigger on insert into the inventory that joins the new PickupID with the LockedDoors table. For each matching row, delete it, and now the door is unlocked.
+		</p>
+	</li>
+</ul>
+<h3
+	id="stream-processing-no-global-memory" >
+    Stream Processing (no global memory)
+</h3>
+<ul>
+	<li>
+		<p>
+            Stream processing means to process data without writing to variables external to the process. This means not allowing things like global accumulators, or accessing global memory not set as a source for the process. This ensures the processes or transforms are trivially parallelizable.
+		</p>
+	</li>
+	<li>
+		<p>
+            When you prepare a primitive render for a graphics card, you set up constants such as the transform matrix, the texture binding, any lighting values, or which shader you want to run. When you come to run the shader, each vertex and pixel may have its own scratchpad of local variables, but they never write to globals or refer to a global scratchpad. The concept of shared memory in general purpose GPU code, such as CUDA and OpenCL, allows the use of a kind of managed cache. None of the GPGPU techniques offer access to global memory, and thus maintain a clear separation of domains and continue to guarantee no side-effects caused by any kernels being run outside of their own sandboxed shared memory. By enforcing this lack of side-effects, we can guarantee trivial parallelism because the order of operations are assured to be irrelevant. If a shader was allowed to write to globals, there would be locking, or it would become an inherently serial operation. Neither of these are good for massive core count devices like graphics cards, so that has been a self imposed limit and an important factor in their design. Adding shared memory to the mix starts to inject some potential locking into the process, and hence is explicitly only used when writing compute shaders.
+		</p>
+	</li>
+	<li>
+		<p>
+            Doing all processing this way, without globals / global scratchpads, gives you the rigidity of intention to highly parallelize your processing and make it easier to think about the system, inspect it, debug it, and extend it or interrupt it to hook in new features. If you know the order doesn't matter, it's very easy to rerun any tests or transforms that have caused bad state.
+		</p>
+	</li>
+</ul>
+<h3
+	id="ownership" >
+    Ownership
+</h3>
+<ul>
+	<li>
+		<p>
+            Where once we would have an object instance for an area in a game, and we would interrogate it for exits that take us to other areas, now we look into a structure that only contains links between areas, and filter by the area we are in. This reversal of ownership can be a massive benefit in debugging, but can sometimes appear backward when all you want to do is find out what exits are available to get out of an area.
+		</p>
+	</li>
+</ul>
+<h3
+	id="existential-processing" >
+    Existential processing
+</h3>
+<ul>
+	<li>
+		<p>
+            Attempts to provide a way to remove unnecessary querying about whether or not to process your data. In most software, there are checks for NULL and queries to make sure the objects are in a valid state before work is started. What if you could always guarantee your pointers were not null? What if you were able to trust that your objects were in a valid state, and should always be processed?
+		</p>
+	</li>
+	<li>
+		<p>
+            If you use existential processing techniques, your classes defined by the tables they belong to, then you can switch between tables at runtime.
+		</p>
+	</li>
+</ul>
+<h3
+	id="enums" >
+    Enums
+</h3>
+<ul>
+	<li>
+		<p>
+            The reason why you would put an enum in table form, is to reduce control flow impact. Given this, it's when we aren't using the enumerations to control instruction flow that it's fine to leave them alone. Another possibility is when the value of the enum changes with great frequency, as moving objects from table to table has a cost too.
+		</p>
+	</li>
+	<li>
+		<p>
+            Enumerations are used to define sets of states. We could have had a state variable for the regenerating entity, one that had 
+            <code>in_full_health</code>
+            , 
+            <code>is_hurt</code>
+            , 
+            <code>is_dead</code>
+            &nbsp;as its three states. We could have had a team index variable for the avoidance entity enumerating all the available teams. Instead, we used tables to provide all the information we needed, as there were only two teams. Any enum can be emulated with a variety of tables. All you need is one table per enumerable value. Setting the enumeration is an insert into a table or a migration from one table to another.
+		</p>
+	</li>
+	<li>
+		<p>
+            When using tables to replace enums, some things become more difficult: finding out the value of an enum in an entity is difficult as it requires checking all the tables which represent that state for the entity. However, the main reason for getting the value is either to do an operation based on an external state or to find out if an entity is in the right state to be considered for an operation. This is disallowed and unnecessary for the most part, as firstly, accessing external state is not valid in a pure function, and secondly, any dependent data should already be part of the table element.
+		</p>
+	</li>
+	<li>
+		<p>
+            If the enum is a state or type enum previously handled by a switch or virtual call, then we don't need to look up the value, instead, we change the way we think about the problem. The solution is to run transforms taking the content of each of the switch cases or virtual methods as the operation to apply to the appropriate table, the table corresponding to the original enumeration value.
+		</p>
+	</li>
+	<li>
+		<p>
+            If the enum is instead used to determine whether or not an entity can be operated upon, such as for reasons of compatibility, then consider an auxiliary table to represent being in a compatible state. If you're thinking about the case where you have an entity as the result of a query and need to know if it is in a certain state before deciding to commit some changes,&nbsp;&nbsp;consider that the compatibility you seek could have been part of the criteria for generating the output table in the first place, or a second filtering operation could be committed to create a table in the right form.
+		</p>
+	</li>
+	<li>
+		<p>
+            Examples of enumerations that make sense are keybindings, enumerations of colors, or good names for small finite sets of values. Functions that return enums, such as collision responses (none, penetrating, through). Any kind of enumeration which is actually a lookup into data of another form is good, where the enum is being used to rationalize the access to those larger or harder to remember data tables. There is also a benefit to some enums in that they will help you trap unhandled cases in switches, and to some extent, they are a self-documenting feature in most languages.
+		</p>
+	</li>
+</ul>
+<h3
+	id="polymorphism" >
+    Polymorphism
+</h3>
+<ul>
+	<li>
+		<p>
+            Let's consider now how we implement polymorphism. We know we don't have to use a virtual table pointer; we could use an enum as a type variable. That variable, the member of the structure that defines at runtime what that structure should be capable of and how it is meant to react. That variable will be used to direct the choice of functions called when methods are called on the object.
+		</p>
+	</li>
+	<li>
+		<p>
+            When your type is defined by a member type variable, it's usual to implement virtual functions as switches based on that type, or as an array of functions. If we want to allow for runtime loaded libraries, then we would need a system to update which functions are called. The humble switch is unable to accommodate this, but the array of functions could be modified at runtime.
+		</p>
+	</li>
+	<li>
+		<p>
+            We have a solution, but it's not elegant, or efficient. The data is still in charge of the instructions, and we suffer the same instruction cache misses and branch mispredictions as whenever a virtual function is unexpected. However, when we don't really use enums,&nbsp;&nbsp;but instead tables that represent each possible value of an enum,&nbsp;&nbsp;it is still possible to keep compatible with dynamic library loading the same as with pointer based polymorphism, but we also gain the efficiency of a data-flow processing approach to processing heterogeneous types.
+		</p>
+	</li>
+	<li>
+		<p>
+            For each class, instead of a class declaration, we have a factory that produces the correct selection of table insert calls. Instead of a polymorphic method call, we utilize existential processing. Our elements in tables allow the characteristics of the class to be implicit. Creating your classes with factories can easily be extended by runtime loaded libraries. Registering a new factory should be simple as long as there is a data-driven factory method. The processing of the tables and their update() functions would also be added to the main loop.
+		</p>
+	</li>
+	<li>
+		<p>
+            If you create your classes by composition, and you allow the state to change by inserting and removing from tables, then you also allow yourself access to dynamic runtime polymorphism. This is a feature normally only available when dynamically responding via a switch.
+		</p>
+	</li>
+	<li>
+		<p>
+            Polymorphism is the ability for an instance in a program to react to a common entry point in different ways due only to the nature of the instance. In C++, compile-time polymorphism can be implemented through templates and overloading. Runtime polymorphism is the ability for a class to provide a different implementation for a common base operation with the class type unknown at compile-time. C++ handles this through virtual tables, calling the right function at runtime based on the type hidden in the virtual table pointer at the start of the memory pointed to by the this pointer. Dynamic runtime polymorphism is when a class can react to a common call signature in different ways based on its type, but its type can change at runtime. C++ doesn't implement this explicitly, but if a class allows the use of an internal state variable or variables, it can provide differing reactions based on the state as well as the core language runtime virtual table lookup. Other languages which define their classes more fluidly,&nbsp;&nbsp;such as Python, allow each instance to update how it responds to messages, but most of these languages have very poor general performance as the dispatch mechanism has been built on top of dynamic lookup.
+		</p>
+	</li>
+</ul>
+<h3
+	id="events" >
+    Events
+</h3>
+<ul>
+	<li>
+		<p>
+            Using your existence in a table as the registration technique makes this simpler than before and lets you register and de-register with great pace. Subscription becomes an insert, and unsubscribing a delete. It's possible to have global tables for subscribing to global events. It would also be possible to have named tables. Named tables would allow a subscriber to subscribe to events before the publisher exists.
+		</p>
+	</li>
+</ul>
+<h3
+	id="soa" >
+    SOA
+</h3>
+<ul>
+	<li>
+		<p>
+            It is okay to keep hot and cold data side by side in an SoA object as data is pulled into the cache by necessity rather than by accidental physical location.
+		</p>
+	</li>
+	<li>
+		<p>
+            Database technology was here first. In DBMS terms, it's called column-oriented databases and they provide better throughput for data processing over traditional row-oriented relational databases simply because irrelevant data is not loaded when doing column aggregations or filtering.
+		</p>
+	</li>
+	<li>
+		<p>
+            For getting the &quot;average age of a population&quot;:
+		</p>
+		<ul>
+			<li>
+                <img src="assets/2026-01-04_17-41-27.png" width="250" >
+
+			</li>
+			<li>
+                <img src="assets/2026-01-04_17-42-03.png" width="250" >
+
+			</li>
+		</ul>
+	</li>
+	<li>
+        <img src="assets/2026-01-04_17-40-22.png" width="250" >
+
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#soa-data-types" 
+				class="external-link" 
+				target="_blank" >
+                Odin - SOA Data Types
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

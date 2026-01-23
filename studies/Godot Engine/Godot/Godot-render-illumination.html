@@ -1,0 +1,1416 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Godot
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-info.html" >
+                                Info
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-game-style.html" >
+                                Game Style
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-nodes.html" >
+                                Nodes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-geometry.html" >
+                                Geometry
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-physics.html" >
+                                Physics
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-render.html" >
+                                Render
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Godot Engine/Godot/Godot-render-illumination.html" >
+                                Render: Illumination
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#world-environment" >
+                                        World Environment
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#global-illumination" >
+                                        Global Illumination
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#light-equation" >
+                                        Light Equation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#light2d" >
+                                        Light2D
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#light3d" >
+                                        Light3D
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#shadows" >
+                                        Shadows
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-animation.html" >
+                                Animation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-navigation.html" >
+                                Navigation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-audio.html" >
+                                Audio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-ui.html" >
+                                UI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-input.html" >
+                                Input
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-godot-high-level-multiplayer.html" >
+                                Godot High-level Multiplayer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-data-management.html" >
+                                Data Management
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-importing.html" >
+                                Importing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-exporting.html" >
+                                Exporting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-multi-threading.html" >
+                                Multi-threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-file-system-project-settings.html" >
+                                File System / Project Settings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-editor.html" >
+                                Editor
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-godot-shader-language.html" >
+                                Godot Shader Language
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-optimization-and-profiling.html" >
+                                Optimization and Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-addons.html" >
+                                Addons
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-external-integrations.html" >
+                                External Integrations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - GDScript
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-print-strings-and-debug.html" >
+                                Print, Strings and Debug
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-functions.html" >
+                                Functions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-signals.html" >
+                                Signals
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-classes.html" >
+                                Classes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-annotations.html" >
+                                Annotations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-static-variables.html" >
+                                Static Variables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-execution.html" >
+                                Execution
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-limitations.html" >
+                                Limitations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - GDExtensions
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-gdextension.html" >
+                                GDExtension
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-rust-gdext.html" >
+                                Rust (Gdext)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-swift-godot-swift.html" >
+                                Swift (Godot Swift)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - Source Code
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - Source Code-source-code.html" >
+                                Source Code
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Render: Illumination
+						</h1>
+						<p>
+							<time
+								datetime="2021-11-23" >
+                                🕒 Created: 2021-11-23
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/3d/physical_light_and_camera_units.html" 
+				class="external-link" 
+				target="_blank" >
+                Lighting: Physical Light Units
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/3d/lights_and_shadows.html" 
+				class="external-link" 
+				target="_blank" >
+                Lighting: Lighting and Shadows in 3D
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=XaJ58TxKTTc&list=PL4QJmtZWf50kvAZap4Xd0JhVEgo9lxdZL&index=13" 
+				class="external-link" 
+				target="_blank" >
+                Lighting: Shader and Multiply Tips
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="world-environment" >
+    World Environment
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/3d/environment_and_post_processing.html" 
+				class="external-link" 
+				target="_blank" >
+                WorldEnvironment: Environment and Post-processing
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/4.0/tutorials/3d/high_dynamic_range.html" 
+				class="external-link" 
+				target="_blank" >
+                WorldEnvironment: Brief explanation about HDR
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=8kwnCxK8Vc8" 
+				class="external-link" 
+				target="_blank" >
+                WorldEnvironment: 3D Lighting Setup
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In Godot 4 it is no longer possible to change the color of the 'Projected Shadow' in 'DirectionalLight'.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Ab9uXIeoKUU" 
+				class="external-link" 
+				target="_blank" >
+                WorldEnvironment: Explanations about SSAO, SSR, Glow, DoF
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Lighting Setup: WorldEnvironment + DirectionalLight
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sky:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            'PanoramaSkyMaterial':
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    As objects are lit by the Sky indiscriminately, having a dark 'ground' to symbolize the floor is useful to make the underside of objects darker. However, if the character reaches a very high altitude, they may be able to see the ground on the horizon. If that happens, the HDRI can be edited in Photoshop, requiring some adjustment in 'AmbientLight' to counterbalance the loss of contrast in shadows.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            'ProceduralSkyMaterial':
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    'Sun':
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The 'DirectionalLight3D' node controls the Sun's 'latitude' and 'longitude' by its rotation angle in the scene.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            'AngleMax':
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Affects the size of all Suns in the scene.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Increasing the Sun size can affect the brightness of objects in the scene.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    ToneMap:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Transformation from 'linear colorspace' to 'sRGB colorspace'&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Exposure:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Affects everything in the world and the Sky itself, mostly affecting the bright parts, that is, it does not affect shadows that much. However, it is mostly used to calibrate the level of detail and brightness of the Sky.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            White:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Affects a bit of the entire exposure, but mostly the 'upper end of the exposure range'.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Ambient Light:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Considered as the &quot;Fill Light&quot; or &quot;secondary light&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Can be used to calibrate the color of 'Projected Shadows and Self-shadows' and everything else, mostly affecting the shadows, without affecting the Sky.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Color:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Color of the light.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Energy:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Affects the 'energy' of the light, making the 'Projected Shadows and Self-shadows' weaker or stronger.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Sky Contribution:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Percentage of the 'Sky' contribution to the 'AmbientLight'.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Reducing 'Sky Contribution' makes the AmbientLight's light stand out, so if the slider is zeroed, the 'Sky' will have no contribution.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    DirectionalLight:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            ~Considered the &quot;primary light&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Can be used to calibrate the color of everything except the shadows, without affecting the Sky; this implies using 'Ambient Light' to calibrate only the shadows while the 'DirectionalLight' handles the rest.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Care should be taken with the amount of color put into the DirectionalLight, since it easily becomes oversaturated.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It is useful to align the DirectionalLight direction with the &quot;sun&quot; direction in the Sky.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="global-illumination" >
+    Global Illumination
+</h3>
+<ul>
+	<li>
+		<p>
+            *Note:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    There is a folder in [Attachments/Global Illumination] with comparison photos.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=ogtDKlTnnqo" 
+				class="external-link" 
+				target="_blank" >
+                DirectionalLight3D: Explanations
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/3d/global_illumination/introduction_to_global_illumination.html" 
+				class="external-link" 
+				target="_blank" >
+                Global Illumination: Introduction and technique comparison
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/3d/global_illumination/using_lightmap_gi.html" 
+				class="external-link" 
+				target="_blank" >
+                Global Illumination: LightmapGI
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You must select the meshes and create a UV2 for each; if not done, the mesh will be ignored in the bake, receiving no light or shadow.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The docs explain the following options:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Mark the 'Light Baking -&gt; Static Lightmaps' option when importing the Mesh; Godot recommends this.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            [4.3-dev5] This does nothing for an Inherited Scene...
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    'Unwrap UV2 for Lightmap/AO' when selecting the Mesh.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Via Blender, by generating an extra UV; Godot does not recommend this.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Note: do not ignore 
+                            <code>.unwrap_cache</code>
+                            &nbsp;files in git.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Does not update at runtime, as it is completely static.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Does not bake reflections, so LightmapGI is usually used together with ReflectionProbe for better quality.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Has fewer light bleeding issues compared to VoxelGI and SDFGI.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is the oldest and slowest baking technique but gives the best quality and performance if the scene is fully static.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Also, both options provide the best mobile and old PC compatibility.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The difference between Medium and High is extremely subtle, almost imperceptible.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/3d/global_illumination/reflection_probes.html" 
+				class="external-link" 
+				target="_blank" >
+                Global Illumination: ReflectionProbe
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Gives a very good effect. Works well when combined with LightmapGI.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;To get reasonably accurate reflections, you should generally have one ReflectionProbe node per room (sometimes more for large rooms).&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;This essentially acts as local ambient lighting.&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    Can be real-time if 'Update Mode -&gt; Always' is enabled.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/3d/global_illumination/using_voxel_gi.html" 
+				class="external-link" 
+				target="_blank" >
+                Global Illumination: VoxelGI
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Only bakes Indirect Light, meaning it does not produce Light or Shadow.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Did not work on 'plane' meshes, so I had to convert the 'plane' into a 'box'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The options inside Data were useful to calibrate the final result.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In general, I did not like the result much, but adjusting Subdivisions and Propagation helped. Still, LightmapGI + Reflection Probes were superior.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/3d/global_illumination/using_sdfgi.html" 
+				class="external-link" 
+				target="_blank" >
+                Global Illumination: SDFGI
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.godotengine.org/en/stable/tutorials/3d/global_illumination/faking_global_illumination.html" 
+				class="external-link" 
+				target="_blank" >
+                Global Illumination: Creating a Fake Global Illumination
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Based on duplicating the light, rotating it, and reducing its &quot;strength&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Can be done with DirectionalLight or OmniLight.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I tested it with DirectionalLight and it looked good.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Only makes sense if not using another GI technique.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="light-equation" >
+    Light Equation
+</h3>
+<pre><code class="language-glsl" data-lang="glsl">shader_type spatial;
+
+void light() {
+&nbsp;&nbsp;&nbsp;&nbsp;// light we wish to accumulate
+&nbsp;&nbsp;&nbsp;&nbsp;DIFFUSE_LIGHT += ALBEDO * ATTENUATION * LIGHT_COLOR * max(dot(LIGHT,NORMAL), 0.0);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// assign the result
+&nbsp;&nbsp;&nbsp;&nbsp;SPECULAR_LIGHT = round(DIFFUSE_LIGHT*16.0 - 0.5)/16.0; // posterizes the final color
+&nbsp;&nbsp;&nbsp;&nbsp;//SPECULAR_LIGHT = DIFFUSE_LIGHT; // do nothing to the result
+
+&nbsp;&nbsp;&nbsp;&nbsp;// cancel all contribution of the diffuse_light variable
+&nbsp;&nbsp;&nbsp;&nbsp;SPECULAR_LIGHT -= ALBEDO * DIFFUSE_LIGHT;
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Diffuse Lambert:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This is just my interpretation at the time.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-glsl" data-lang="glsl">float NdotL = min(1.0, dot(NORMAL, LIGHT));
+float cNdotL = max(NdotL, 0.0);
+float diffuse_brdf_NL = cNdotL / PI; // For 'lambert'
+DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * diffuse_brdf_NL;
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/godotengine/godot/blob/4.4/servers/rendering/renderer_rd/shaders/scene_forward_lights_inc.glsl" 
+				class="external-link" 
+				target="_blank" >
+                Source Code - DiffuseLight 4.4
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://godotshaders.com/shader/notes-on-the-light-function/" 
+				class="external-link" 
+				target="_blank" >
+                Notes on the light function
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="light2d" >
+    Light2D
+</h3>
+<ul>
+	<li>
+		<p>
+            About Z_Index and Layer:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    As far as I understand, the light and the shadow generated by Light2D and LightOccluder2D do not care about Z_Index, only Layer and Mask. This suggests that both are not &quot;objects&quot;, but rather &quot;Areas&quot; or &quot;Drawings&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    However, both can interact with CanvasLayer, despite not interacting with Z_Index within the Canvas.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            '
+			<strong>
+                Range
+			</strong>
+            &nbsp;ItemCull_Mask':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The &quot;Range&quot; mask determines which layer receives light.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            '
+			<strong>
+                Shadow
+			</strong>
+            &nbsp;ItemCull_Mask':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The &quot;Shadow&quot; mask determines which layer receives shadow.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="light3d" >
+    Light3D
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;'Light3D/Cull Mask' is the layers which the light affects, 'VisualInstance/Layers' affects which cameras can see this light.&quot;
+		</p>
+	</li>
+</ul>
+<h3
+	id="shadows" >
+    Shadows
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=4-DffHmFaPY" 
+				class="external-link" 
+				target="_blank" >
+                Lighting: How to make shadows (behind the Sprite) in 2D (4.x)
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=JfBZfnkg1uM" 
+				class="external-link" 
+				target="_blank" >
+                Lighting: How to make shadows (behind the Sprite) in 2D (3.x)
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=j_FMsL_ru1w" 
+				class="external-link" 
+				target="_blank" >
+                Lighting: Light2D and Day&amp;Night Cycle (bad solution for self-shadowing)
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Me0IbXJQbPc" 
+				class="external-link" 
+				target="_blank" >
+                Lighting: Examples of Light and Shadow + Normal Maps with Laigter
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=X7t9zUw71O8" 
+				class="external-link" 
+				target="_blank" >
+                Lighting: Show an object only in Light; tips to create shadows using tilemap
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The video is very nice and simple.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Light Only is used to show the enemy only in shadows.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A generic tilemap with occluder is used to quickly generate shadows; this is very cool and useful.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="lightoccluder2d" >
+    LightOccluder2D
+</h5>
+<ul>
+	<li>
+		<p>
+            'Closed':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I don't see any use in changing this; I did not find an effect that benefits from this property.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            'Cull Mode':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    'Clockwise', 'CounterClockwise'. If you are making a Platformer2D or FullTopDown2D style game, 'Cull Mode' can be very useful to make shadows that interact correctly with the object.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            'SDF Collision':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;If enabled, the occluder will be part of a real-time generated 'signed distance field' that can be used in custom shaders. When not using custom shaders that read from this SDF, enabling this makes no visual difference and has no performance cost, so this is enabled by default for convenience.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            'OccluderLight_Mask':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;This is used in tandem with PointLight2D and DirectionalLight2D's 'Shadow &gt; Item Cull Mask' property to control which objects cast shadows for each light. This can be used to prevent specific objects from casting shadows.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="making-shadows-appear-behind-the-sprite" >
+    Making Shadows appear behind the Sprite
+</h5>
+<ul>
+	<li>
+		<p>
+            Godot documentation (Does not work):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    LightOccluder2Ds follows the usual 2D drawing order. This is important for 2D lighting, as this is how you control whether the occluder should occlude the sprite itself or not.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the LightOccluder2D node is a 'sibling' of the sprite, the occluder will occlude the sprite itself if it's placed 'below' the sprite in the scene tree. If the LightOccluder2D node is a 'child' of the sprite, the occluder will occlude the sprite itself if 'Show Behind Parent' is disabled on the LightOccluder2D node (which is the default).
+				</p>
+			</li>
+			<li>
+				<p>
+                    (2024-10-26) I tested changing the position of the LightOccluder relative to the Sprite, testing using and not using Show Behind Parent, etc. It did not work.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Solution I use:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Separate the '
+                    <code>Light_Masks</code>
+                    ' and '
+                    <code>ItemCull_Masks</code>
+                    ' to be different for the Shadows and for the object's lighting, causing the Shadow not to be &quot;drawn&quot; in front of the sprite.
+				</p>
+			</li>
+			<li>
+				<p>
+                    (2024-10-26) I did not understand this explanation. I have to test.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="occluderinstance3d" >
+    OccluderInstance3D
+</h5>
+<ul>
+	<li>
+		<p>
+            An 
+            <code>Occluder</code>
+            'of opaque objects of sibling Nodes can be created by clicking 'Bake Occluder', or an Occluder can be created manually.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>Occluder</code>
+            &nbsp;will only work if 
+            <code>OcclusionCulling</code>
+            &nbsp;is enabled in ProjectSettings.
+		</p>
+	</li>
+	<li>
+		<p>
+            ~When enabled, the Occluder will block the visualization of the object under certain conditions. The effect reminded me of Minecraft chunk loading.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

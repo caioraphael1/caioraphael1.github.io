@@ -1,0 +1,1678 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Data Oriented Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-criticisms-of-oop.html" >
+                                Criticisms of OOP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-philosophies.html" >
+                                Philosophies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Data Oriented Design - ECS
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-discussion.html" >
+                                Discussion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-entity.html" >
+                                Entity
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-component.html" >
+                                Component
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-system.html" >
+                                System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-n-greatern-relationship.html" >
+                                Design: N-&gt;N relationship
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#adding-one-extra-indirection" >
+                                        Adding one extra indirection
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#ss-greater-t" >
+                                                SS -&gt; T
+											</a>
+										</li>
+										<li>
+											<a
+												href="#ss-greater-ss-greater-t" >
+                                                SS -&gt; SS -&gt; T
+											</a>
+										</li>
+										<li>
+											<a
+												href="#ss-greater-hm-greater-t-" >
+                                                <s>SS -&gt; HM -&gt; T </s>
+											</a>
+										</li>
+										<li>
+											<a
+												href="#hm-greater-ss-greater-t" >
+                                                <s>HM -&gt; SS -&gt; T</s>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-discarded-ideas.html" >
+                                Design: Discarded Ideas
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Data Oriented Design - COP
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - COP/Data Oriented Design - COP-cop-compression-oriented-programming-mega-struct.html" >
+                                COP (Compression-Oriented Programming) / Mega-Struct
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Other Design Patterns
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-definition.html" >
+                                Definition
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-behavioral-patterns.html" >
+                                Behavioral Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-creational-patterns.html" >
+                                Creational Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-structural-patterns.html" >
+                                Structural Patterns
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Concepts and Terminology
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-terminology.html" >
+                                Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Rules of thumb - Laws - Guidelines and Principles
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Rules of thumb - Laws - Guidelines and Principles/Rules of thumb - Laws - Guidelines and Principles-rules-of-thumb.html" >
+                                Rules of Thumb
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Paradigms
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-procedural.html" >
+                                Procedural
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-functional.html" >
+                                Functional
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-oop-object-oriented-programming.html" >
+                                OOP (Object-Oriented Programming)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Production Methodologies
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-design-process.html" >
+                                Design Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-apps.html" >
+                                Apps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-software-testing.html" >
+                                Software Testing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-methodologies.html" >
+                                Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Design: N-&gt;N relationship
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-11" >
+                                🕒 Created: 2025-03-11
+							</time>
+							<time
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p
+			class="line-emphasis" >
+            It's all about differentiating data and stable handles for dealing with references to data when the backing storage changes (add/remove/move/resize)
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Important Notes
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Think in terms of storage structures (Sparse Sets), not in terms of ECS semantics.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Don't store pointers to data inside those data structures, as the data can be corrupted on add/remove/move/resize.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Stable handles&quot;
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Ways to resolve this
+							</em>
+                            :
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    Make that moving things inside this array doesn't corrupt the data:
+								</p>
+								<ol>
+									<li>
+										<p>
+                                            The data is not stored inside this array, but a different array that doesn't move.
+										</p>
+										<ol>
+											<li>
+												<p>
+													<input
+														type="checkbox" 
+														disabled=""
+														checked="">
+                                                    
+                                                    <code>Handle_Map</code>
+                                                    .
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            Uses a 
+                                                            <code>Handle</code>
+                                                            &nbsp;to get the data.
+														</p>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<p>
+                                                    <s>Simple Array</s>.
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            Just uses an index to get the data.
+														</p>
+													</li>
+													<li>
+														<p>
+                                                            No generational tracking.
+														</p>
+													</li>
+												</ul>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<p>
+                                            The data is not stored inside this array, but on a data struct where the &quot;key&quot; is always valid regardless of the elements of the backing array move.
+										</p>
+										<ol>
+											<li>
+												<p>
+													<input
+														type="checkbox" 
+														disabled=""
+														checked="">
+                                                    Sparse Set (id -&gt; T).
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            A generational system can be implemented.
+														</p>
+													</li>
+													<li>
+														<p>
+                                                            Differently from a handle map, it enforces data packing at the cost of more memory usage for the 
+                                                            <code>.sparse</code>
+                                                            &nbsp;and 
+                                                            <code>.dense</code>
+                                                            &nbsp;arrays.
+														</p>
+													</li>
+													<li>
+														<p>
+                                                            This doesn't enforce the concept of Entity or ECS. It's just a storage structure, just like a 
+                                                            <code>Handle_Map</code>
+                                                            .
+														</p>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<p>
+                                                    <s>Sparse Set (Component: Entity -&gt; T)</s>.
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            A generational system can be implemented.
+														</p>
+													</li>
+													<li>
+														<p>
+                                                            Using an entity as the key is tricky in some cases, as it makes the design too involved into ECS and the whole concept of &quot;entity&quot;.
+														</p>
+													</li>
+													<li>
+														<p>
+                                                            Enforcing the concept of &quot;entity&quot; when it doesn't actually fit, it's just weird.
+														</p>
+													</li>
+												</ul>
+												<ol>
+													<li>
+														<p>
+                                                            <s>The 
+                                                            <code>Body</code>
+                                                            &nbsp;is an entity that 
+                                                            <code>sparse.add(&_transforms, entity_body, spatial.Transform2_Node{})</code>
+                                                            </s>
+														</p>
+														<ul>
+															<li>
+																<p>
+                                                                    Makes the design too involved with the concept of components, making the 
+                                                                    <code>Body</code>
+                                                                    &nbsp;to be an entity. This can be weird as there's now a question of extra lifetime handling, etc.
+																</p>
+															</li>
+															<li>
+																<p>
+                                                                    In a way, this creates extra complexity in the ECS design.
+																</p>
+															</li>
+														</ul>
+													</li>
+													<li>
+														<p>
+                                                            The 
+                                                            <code>Body</code>
+                                                            &nbsp;holds into an entity id to fetch the 
+                                                            <code>Transform2_Node</code>
+														</p>
+														<ul>
+															<li>
+																<p>
+                                                                    This basically means that the 
+                                                                    <code>Body</code>
+                                                                    &nbsp;will hold to the &quot;key&quot; for the 
+                                                                    <code>Transform2_Node</code>
+                                                                    , but this is made in a way that the body seems to be holding into an entity inside of it, which is really weird. The &quot;&quot;entity_transform&quot;&quot; is not actually an entity semantically, but only a key to a transform storage structure.
+																</p>
+															</li>
+															<li>
+																<p>
+                                                                    In the end, it makes more sense to simply use a 
+                                                                    <code>Sparse Set (id -&gt; T)</code>
+                                                                    &nbsp;as it doesn't make the design so confusing.
+																</p>
+															</li>
+														</ul>
+													</li>
+												</ol>
+											</li>
+										</ol>
+									</li>
+								</ol>
+							</li>
+							<li>
+								<p>
+                                    <s>Make the content not be stored inside an array</s>.
+                                    <br>
+                                    This goes against the ECS/DoD design.
+								</p>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            If all data is stored sequentially in a data struct, I need an access key to get a specific entry, otherwise I'd have to iterate over the data struct to find a match.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    array: index
+				</p>
+			</li>
+			<li>
+				<p>
+                    sparse set: entity
+				</p>
+			</li>
+			<li>
+				<p>
+                    map: key
+				</p>
+			</li>
+			<li>
+				<p>
+                    handle_map: handle
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Not using ECS had the advantage of the &quot;object type&quot; that had the timer indicate the &quot;timer type&quot;, for example: a timer inside an AI component is understandably an AI timer; a timer inside a hitbox is considered a Hitbox Timer. Now with ECS I lost this hint. I need a way to improve these queries.
+		</p>
+	</li>
+	<li>
+		<p>
+            Major diferences between 
+            <code>Handle_Map</code>
+            &nbsp;and 
+            <code>Sparse_Set</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The 
+                    <code>Handle_Map</code>
+                    &nbsp;requires the 
+                    <code>Handle</code>
+                    &nbsp;to be stored.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The 
+                    <code>Sparse_Set</code>
+                    &nbsp;doesn't require the 
+                    <code>entity_key</code>
+                    &nbsp;to be stored, as it stored this 
+                    <code>entity_key</code>
+                    &nbsp;within itself.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It could go as far as:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If it's directly stored: can be both 
+                            <code>Handle_Map</code>
+                            &nbsp;or 
+                            <code>Sparse_Set</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            If it's not directly stored: is a 
+                            <code>Sparse_Set</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="adding-one-extra-indirection" >
+    Adding one extra indirection
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;Sparse Set to Sparse Set&quot; / &quot;Handle to Handle&quot; / &quot;Pointer to Pointer&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            One way to think of it is a 
+            <code>sparse.Sparse_Set(^T)</code>
+            , as there's an extra indirection in the sparse set.
+		</p>
+	</li>
+</ul>
+<h4
+	id="ss-greater-t" >
+    SS -&gt; T
+</h4>
+<ul>
+	<li>
+		<p>
+            The main ECS design is &quot;SS -&gt; T&quot;, where SS is a Sparse Set and T is the data.
+            <br>
+            | 
+            <code>sparse.Key</code>
+            &nbsp;(
+            <code>Entity</code>
+            ) | 
+            <code>T</code>
+            &nbsp;(
+            <code>Sprite</code>
+            ) |
+            <br>
+            |-------------------------|----------------|
+            <br>
+            | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | sprite1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | sprite2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | sprite3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Remove
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Remove 
+                    <code>Entity</code>
+                    &nbsp;from 
+                    <code>SS(Sprite)</code>
+                    &quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Remove 
+                    <code>sparse.Key</code>
+                    &nbsp;from 
+                    <code>SS(T)</code>
+                    &quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            This brings a lot of problems if you want a N:N relationship, etc.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For example, one system my want to act on 
+                    <code>sprite2</code>
+                    &nbsp;in specific, but using &quot;SS -&gt; T&quot; doesn't give any information that could help differentiate 
+                    <code>sprite2</code>
+                    &nbsp;from the other sprites.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Adding an extra level of indirection helps with that, as a SS could hold into 
+                    <code>sparse.key</code>
+                    &nbsp;for 
+                    <code>sprite2</code>
+                    &nbsp;and I could use that to filter the data.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="ss-greater-ss-greater-t" >
+    SS -&gt; SS -&gt; T
+</h4>
+<ul>
+	<li>
+		<p>
+            One way I like to think of this strategy is:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The inner SS is what holds the raw data, requiring a key to access the data.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The outer SS holds a key to a key (akin to a pointer to a pointer), grouping keys based on specialization criteria.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Interpretation: Extra level of indirection
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Mapping Table (
+                    <code>Entity</code>
+                    &nbsp;-&gt; 
+                    <code>Sprite_Key</code>
+                    )
+				</p>
+				<ul>
+					<li>
+						<p>
+							<em>
+                                Primary Key
+							</em>
+                            :
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    Composite PK (
+                                    <code>Entity</code>
+                                    , 
+                                    <code>Sprite_Key</code>
+                                    ) — each row is an association/ membership row; this is the usual pattern for an association table, and it allows multiple rows and prevents duplicate identical associations; recommended default.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <s>If you insist each 
+                                    <code>Sprite_Key</code>
+                                    &nbsp;appears at most once in the mapping, then 
+                                    <code>Sprite_Key</code>
+                                    &nbsp;can be declared unique in the mapping table (making it effectively the PK there). This choice changes cardinality.</s>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This is not the case, as different 
+                                            <code>Entity</code>
+                                            &nbsp;can have the same 
+                                            <code>Sprite</code>
+                                            , sharing the resource.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Foreign Key
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>Sprite_Key</code>
+                                    &nbsp;is a foreign key that references the 
+                                    <code>Sprite_Key</code>
+                                    &nbsp;primary key in the &quot;Sprite Table&quot;.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>Entity</code>
+                                    &nbsp;is a foreign key that references the entity identity (the &quot;Entity Table&quot;, if exists).
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Cardinality
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    1:N - one 
+                                    <code>Entity</code>
+                                    &nbsp;maps to many 
+                                    <code>Sprite_Key</code>
+                                    &nbsp;rows.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    N:N - if multiple 
+                                    <code>Entity</code>
+                                    &nbsp;may reference the same 
+                                    <code>Sprite_Key</code>
+                                    .
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The &quot;Mapping Table&quot; is then a true association/join table.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    The composed relationship 
+                                    <code>Entity</code>
+                                    &nbsp;→ 
+                                    <code>Sprite</code>
+                                    &nbsp;(through the mapping) is (1:N) (one 
+                                    <code>Entity</code>
+                                    &nbsp;has many 
+                                    <code>Sprite</code>
+                                    s).
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Whether a particular mapping behaves like 1:1, 1:N, N:1 or N:N is determined by additional uniqueness constraints you choose to add on Entity or Sprite_Key.
+                                    <br>
+                                    | 
+                                    <code>sparse.Key</code>
+                                    &nbsp;(
+                                    <code>Entity</code>
+                                    ) | 
+                                    <code>sparse.Key</code>
+                                    &nbsp;(
+                                    <code>Sprite_Key</code>
+                                    ) |
+                                    <br>
+                                    |-------------------------|-----------------------------|
+                                    <br>
+                                    | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+                                    <br>
+                                    | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+                                    <br>
+                                    | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Sprite Table (
+                    <code>Sprite_Key</code>
+                    &nbsp;-&gt; 
+                    <code>T</code>
+                    )
+				</p>
+				<ul>
+					<li>
+						<p>
+							<em>
+                                Primary Key
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>Sprite_Key</code>
+                                    ; each slot id uniquely identifies one sprite row.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Foreign Key
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    No FK.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Cardinality
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    1:1 - each 
+                                    <code>Sprite_Key</code>
+                                    &nbsp;maps to exactly one Sprite.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Typically 1:1: Slots.slot_id is the PK and Sprites.slot_id is a PK/FK pointing to Slots. Each slot holds exactly one dense row (or points to it).
+						</p>
+					</li>
+					<li>
+						<p>
+                            You can make Sprites shared by multiple slots if you change the model (e.g., multiple slot_ids referencing a single sprite_data_id): that would be N:1 from Slot to Sprite (slots referencing a shared immutable resource).
+                            <br>
+                            | 
+                            <code>sparse.Key</code>
+                            &nbsp;(
+                            <code>Sprite_Key</code>
+                            ) | 
+                            <code>T</code>
+                            &nbsp;(
+                            <code>Sprite</code>
+                            ) |
+                            <br>
+                            |-----------------------------|----------------|
+                            <br>
+                            | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | sprite1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+                            <br>
+                            | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | sprite2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+                            <br>
+                            | 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | sprite3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Remove
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Remove 
+                            <code>Entity</code>
+                            &nbsp;from 
+                            <code>SS(Sprite_Key)</code>
+                            &nbsp;and 
+                            <code>Sprite_Key</code>
+                            &nbsp;from 
+                            <code>SS(Sprite)</code>
+                            &quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;Remove 
+                            <code>sparse.Key</code>
+                            &nbsp;from 
+                            <code>SS(sparse.Key)</code>
+                            &nbsp;and 
+                            <code>sparse.Key</code>
+                            &nbsp;from 
+                            <code>SS(T)</code>
+                            &quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Interpretation: Hierarchical Structure
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sprite is an &quot;Entity&quot;, in this scenario.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Children Table (
+                    <code>Entity</code>
+                    &nbsp;-&gt; 
+                    <code>Sprite_Entity</code>
+                    )
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Could be interpreted as table of &quot;children of 
+                            <code>Entity</code>
+                            &quot;.
+                            <br>
+                            | 
+                            <code>sparse.Key</code>
+                            &nbsp;(
+                            <code>Entity</code>
+                            ) | 
+                            <code>sparse.Key</code>
+                            &nbsp;(
+                            <code>Sprite_Entity</code>
+                            ) |
+                            <br>
+                            |-------------------------|-----------------------------|
+                            <br>
+                            | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+                            <br>
+                            | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+                            <br>
+                            | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Sprite Entity Table (
+                    <code>Sprite_Entity</code>
+                    &nbsp;-&gt; 
+                    <code>T</code>
+                    )
+                    <br>
+                    | 
+                    <code>sparse.Key</code>
+                    &nbsp;(
+                    <code>Sprite_Entity</code>
+                    ) | 
+                    <code>T</code>
+                    &nbsp;(
+                    <code>Sprite</code>
+                    ) |
+                    <br>
+                    |--------------------------------|----------------|
+                    <br>
+                    | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| sprite1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+                    <br>
+                    | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| sprite2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+                    <br>
+                    | 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| sprite3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Remove
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Remove 
+                            <code>Entity</code>
+                            &nbsp;from 
+                            <code>SS(Sprite_Entity)</code>
+                            &nbsp;and 
+                            <code>Sprite_Entity</code>
+                            &nbsp;from 
+                            <code>SS(Sprite)</code>
+                            &quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;Remove 
+                            <code>sparse.Key</code>
+                            &nbsp;from 
+                            <code>SS(sparse.Key)</code>
+                            &nbsp;and 
+                            <code>sparse.Key</code>
+                            &nbsp;from 
+                            <code>SS(T)</code>
+                            &quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Discussion
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Funny enough, a hierarchical structure like this has the exact same layout as the strategy shown just above.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Discussion with ChatGPT
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It is exactly the same pattern as a normalized SQL schema: one table (Sprite_Key) of stable keys/slots and a separate table of actual data (Sprite). Entities reference keys (foreign keys); keys point to rows of Sprite.
+				</p>
+			</li>
+			<li>
+				<p>
+                    That indirection gives you stable handles that survive reallocation/moves of the dense backing store, and it gives you a place to put per-key metadata (generation, refcount, tags, indices) so references remain valid or can be detected stale.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Referential integrity is enforced by generation checks and by explicit refcount or cascade-delete semantics.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use single-level (Entity -&gt; index into dense T) when:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            There is one owner per data row.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You don't need stable external references to rows.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You can avoid moving rows (or you accept updating entity-&gt;index on swap).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Use two-level when:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            You need stable handles that persist across moves/resizes.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Multiple owners or external references must remain valid.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You want to store metadata per-slot (generation, tags, refcount) separate from data.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You want to model shared resources (textures, meshes) and have many lightweight references.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The 
+                    <code>SS -&gt; SS -&gt; T</code>
+                    &nbsp;pattern with a small slot/meta table and a dense data array is the pragmatic, normalized approach that gives stable external references, safe lifetime semantics (via generation) and the flexibility to group/filter/share data.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If you need absolute highest throughput for iteration and you never need external stable handles, the simpler SS -&gt; T (entity-&gt;index) is slightly faster, but it complicates external references and reuse handling.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Discussion with ChatGPT on N:N
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    N:N join/association tables are standard for modelling many-to-many relationships. They’re expected and correct when multiple owners reference the same target and vice-versa.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Table size grows with number of associations; queries that join through the mapping require index lookups or scans; indexes (on entity and sprite_key) are required for efficient lookups in both directions.
+				</p>
+			</li>
+			<li>
+				<p>
+                    N:N gets a bad reputation because it introduces an extra layer of indirection and operational cost (joins, indexes, churn), and because beginners sometimes model multivalued attributes directly instead of normalizing. It’s not inherently wrong — it’s the correct, normalized representation for many real relationships — but it does demand deliberate engineering for performance and lifecycle.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Canonical ways to break down and manage N:N in SQL:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Normalize with a junction (association) table.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    That is the standard decomposition: represent the many-to-many as two 1:N relationships with an explicit mapping table. (In your ECS this is already the Mapping table.) This is the correct, normalized model.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    A mapping (junction/association) table is a dedicated table whose only job is to record pairs (or tuples) that link rows from two other tables.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Conceptually it turns a many-to-many relationship into two one-to-many relationships: 'A → mapping' and 'mapping → B'.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    In your ECS terms: the mapping table holds pairs (
+                                    <code>Entity</code>
+                                    , 
+                                    <code>Sprite_Key</code>
+                                    ); each row says “this entity has (or references) this sprite slot.”
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Why use it (the normalization reason):
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            It avoids embedding multiple values in a single column (no lists in one field).
+										</p>
+									</li>
+									<li>
+										<p>
+                                            It prevents duplication of the sprite rows while allowing many entities to share the same sprite slot.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            It makes the relationship explicit and enforces integrity via keys and constraints, so you don’t get orphaned or inconsistent references.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Caio: The whole point is that if I were to do &quot;
+                                    <code>Entity</code>
+                                    &nbsp;-&gt; 
+                                    <code>Sprite</code>
+                                    &quot; directly, while I want to preserve a N:N relationship, I would have duplicated sprites which is not acceptable.
+								</p>
+								<ul>
+									<li>
+										<p>
+											<strong>
+                                                Yes. In a situation like this you have two choices
+											</strong>
+                                            :
+										</p>
+										<ol>
+											<li>
+												<p>
+                                                    Duplicate the sprite data for every entity that needs it (store by-value on the entity).
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            Consequences: more memory, slower writes when you want to change the sprite globally, and risk of inconsistent copies if you forget to update every duplicate.
+														</p>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<p>
+													<strong>
+                                                        Introduce indirection so entities point to a single canonical sprite record instead of embedding the data
+													</strong>
+                                                    :
+												</p>
+												<ul>
+													<li>
+														<p>
+															<strong>
+                                                                That indirection is precisely what the mapping (junction) table or slot/handle layer provides
+															</strong>
+                                                            .
+														</p>
+													</li>
+												</ul>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<p>
+                                            Caio: Cool =)
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Add constraints.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Promote the association to a first-class entity.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Instead of treating the mapping row as “just a pair”, give it its own identity and metadata (a slot row). That lets you store lifecycle fields (generation, refcount, timestamps) on the association and treat changes atomically.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    For ECS, this enables sharing component instances or resources across entities (many entities → same slot) and allowing entities to hold multiple component instances of that type (the mapping table holds many rows per entity). Useful for shared meshes, shared sprite resources, decals, or when an entity can legitimately have multiple components of the same type.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="ss-greater-hm-greater-t-" >
+    <s>SS -&gt; HM -&gt; T </s>
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>Sparse_Set</code>
+            &nbsp;to a 
+            <code>Handle</code>
+            &nbsp;to a 
+            <code>Handle_Map</code>
+            .
+            <br>
+			<strong>
+                Problems
+			</strong>
+            :
+            <br>
+            The data 
+            <code>T</code>
+            &nbsp;is not packed, as 
+            <code>HM</code>
+            &nbsp;purposely doesn't pack the data to avoid breaking the handles.
+            <br>
+            This defeats a bit of the performance improvements with ECS.
+            <br>
+			<strong>
+                Layout
+			</strong>
+            :
+            <br>
+            <code>Handle_Map</code>
+            :
+            <br>
+            Stores the data.
+            <br>
+            <code>hm.Handle_Map(T, Handle_To_T, SIZE)</code>
+            <br>
+            <code>Handle</code>
+            :
+            <br>
+            Access to the data.
+            <br>
+            <code>Sparse_Set</code>
+            <br>
+            Storage of the Handle.
+            <br>
+            <code>sparse.Sparse_Set(Handle_To_T)</code>
+            <br>
+			<strong>
+                Usages as a 
+                <code>Handle</code>
+			</strong>
+            :
+            <br>
+            <code>Damage_Indicator</code>
+            :
+            <br>
+            <code>odin Damage_Indicator :: struct { sprite: rd.Sprite_Handle, timer:&nbsp;&nbsp;timer.Timer_Handle, } </code>
+            <br>
+            <code>AI_State_Machine</code>
+            :
+            <br>
+            <code>odin AI_State_Machine :: struct { timer_ptr:&nbsp;&nbsp;timer.Timer_Handle, is_stopped: bool, } </code>
+            <br>
+			<strong>
+                Usages as a 
+                <code>Sparse_Set</code>
+                &nbsp;to a 
+                <code>Handle</code>
+			</strong>
+            :
+            <br>
+            Projectile:
+            <br>
+            <code>odin _projectiles_trans: sparse.Sparse_Set(spatial.Transform2_Node_Handle) </code>
+            <br>
+            <code>Sprite</code>
+            :
+            <br>
+            <code>odin _sprites_bouncy: sparse.Sparse_Set(rd.Sprite_Handle) </code>
+            <br>
+            <code>Sprite</code>
+            &nbsp;is stored inside a 
+            <code>Handle_Map</code>
+            .
+            <br>
+            The 
+            <code>sprite_component</code>
+            &nbsp;is a Sparse Set for 
+            <code>Sprite_Handle</code>
+            s.
+		</p>
+	</li>
+</ul>
+<h4
+	id="hm-greater-ss-greater-t" >
+    <s>HM -&gt; SS -&gt; T</s>
+</h4>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Problems
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In this case the concept of an &quot;entity&quot; with SS doesn't exist anymore and you only work with handles to HM.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This can be bad, as some &quot;sparse sets&quot;/&quot;components&quot; might not care for this extra indirection level.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This simply goes against the main design. &quot;If you have SS -&gt; T, the entity is a 
+                            <code>sparse.Key</code>
+                            , but if you have an extra indirection, the entity becomes a 
+                            <code>hm.Handle</code>
+                            &quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

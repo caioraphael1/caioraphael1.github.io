@@ -1,0 +1,2048 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Vulkan
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-samples.html" >
+                                Samples
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-core.html" >
+                                Core
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-render-loop.html" >
+                                Render Loop
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-synchronization-and-cache-control.html" >
+                                Synchronization and Cache Control
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-command-buffers.html" >
+                                Command Buffers
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#command-pools" >
+                                        Command Pools
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#command-buffer" >
+                                        Command Buffer
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#command-buffer-recording" >
+                                        Command Buffer Recording
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#pre-recording" >
+                                        Pre-recording
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#multi-threading-recording" >
+                                        Multi-threading Recording
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-pipelines.html" >
+                                Pipelines
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-graphics-pipeline.html" >
+                                Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-compute-pipeline.html" >
+                                Compute Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-resources.html" >
+                                Resources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-depth.html" >
+                                Depth
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-mapping-data-to-shaders.html" >
+                                Mapping Data to Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-memory-allocation.html" >
+                                Memory Allocation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-hdr-support.html" >
+                                HDR Support
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-profiling.html" >
+                                Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-mobile.html" >
+                                Mobile
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-vr.html" >
+                                VR
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-video-decoding.html" >
+                                Video Decoding
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-spir-v.html" >
+                                SPIR-V
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Render Engineering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-graphics-apis.html" >
+                                Graphics APIs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-shader-languages.html" >
+                                Shader Languages
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-choosing-the-space-to-compute-lighting.html" >
+                                Choosing the Space to compute Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-bsdf-bidirectional-scattering-distribution-function.html" >
+                                BSDF (Bidirectional Scattering Distribution Function)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-material.html" >
+                                Material
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-direct-lighting.html" >
+                                Direct Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-shadows.html" >
+                                Shadows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-skybox-skydome.html" >
+                                Skybox / Skydome
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-transparency.html" >
+                                Transparency
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-indirect-lighting.html" >
+                                Global Illumination / Indirect Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-solutions.html" >
+                                Global Illumination - Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-discarded-solutions.html" >
+                                Global Illumination - Discarded Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-lightmaps.html" >
+                                Lightmaps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-post-processing.html" >
+                                Post-Processing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-anti-aliasing.html" >
+                                Anti-Aliasing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-light-path-rendering-method.html" >
+                                Light Path / Rendering Method
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-optimization-techniques.html" >
+                                Optimization Techniques
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Graphics and Shaders
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-math-linear-algebra.html" >
+                                Math, Linear Algebra
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-spaces-transformations-and-graphics-pipeline.html" >
+                                Spaces, Transformations and Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-common-techniques.html" >
+                                Common Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-shaders.html" >
+                                Shaders
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GLSL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-storage-qualifiers.html" >
+                                Storage Qualifiers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-layout-qualifiers.html" >
+                                Layout Qualifiers
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-execution-building-blocks.html" >
+                                Execution Building Blocks
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-specialized-units-and-instructions.html" >
+                                Specialized units &amp; instructions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-gpu-va-virtual-address.html" >
+                                GPU VA (Virtual Address)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-tiled-gpus.html" >
+                                Tiled-GPUs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Slang
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Slang-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Font Rendering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-techniques.html" >
+                                Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-text-processing-pipeline.html" >
+                                Text Processing Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-formats.html" >
+                                Formats
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-libs.html" >
+                                Libs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-fonts.html" >
+                                Fonts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        OpenGL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/OpenGL/OpenGL-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Command Buffers
+						</h1>
+						<p>
+							<time
+								datetime="2025-08-01" >
+                                🕒 Created: 2025-08-01
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            Commands in Vulkan, like drawing operations and memory transfers, are not executed directly using function calls. You have to record all the operations you want to perform in command buffer objects.
+		</p>
+	</li>
+	<li>
+		<p>
+            The advantage of this is that when we are ready to tell Vulkan what we want to do, all the commands are submitted together. Vulkan can more efficiently process the commands since all of them are available together.
+		</p>
+	</li>
+	<li>
+		<p>
+            In addition, this allows command recording to happen in 
+			<em>
+                multiple threads
+			</em>
+            &nbsp;if so desired.
+		</p>
+	</li>
+</ul>
+<h3
+	id="command-pools" >
+    Command Pools
+</h3>
+<ul>
+	<li>
+		<p>
+            Create and allocate Command Buffers.
+		</p>
+	</li>
+	<li>
+		<p>
+            Command pools are opaque objects that command buffer memory is allocated from, and which allow the implementation to amortize the cost of resource creation across multiple command buffers.
+		</p>
+	</li>
+</ul>
+<h5
+	id="creation" >
+    Creation
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCreateCommandPool.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkCreateCommandPool()</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>device</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the logical device that creates the command pool.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pAllocator</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Controls host memory allocation as described in the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#memory-allocation" 
+								class="external-link" 
+								target="_blank" >
+                                Memory Allocation
+							</a>
+                            &nbsp;chapter.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pCommandPool</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandPool.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkCommandPool
+							</a>
+                            &nbsp;handle in which the created pool is returned.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pCreateInfo</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandPoolCreateInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                <code>VkCommandPoolCreateInfo</code>
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>queueFamilyIndex</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Designates a queue family as described in section 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#devsandqueues-queueprops" 
+										class="external-link" 
+										target="_blank" >
+                                        Queue Family Properties
+									</a>
+                                    . All command buffers allocated from this command pool 
+									<strong>
+                                        must
+									</strong>
+                                    &nbsp;be submitted on queues from the same queue family.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Command buffers are executed by submitting them on one of the device queues (graphics and presentation queues, for example).
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Each command pool can only allocate command buffers that are submitted on a single type of queue.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>flags</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is a bitmask indicating usage behavior for the pool and command buffers allocated from it.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>COMMAND_POOL_CREATE_TRANSIENT</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Hint that command buffers are rerecorded with new commands very often (may change memory allocation behavior)
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Allow command buffers to be rerecorded individually, without this flag they all have to be reset together
+										</p>
+									</li>
+									<li>
+										<p>
+                                            If we record a command buffer every frame, we want to be able to reset and rerecord over it, thus, this flag should be enabled so a command buffer can be reset individually.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>COMMAND_POOL_CREATE_PROTECTED</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Specifies that command buffers allocated from the pool are protected command buffers.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="management" >
+    Management
+</h5>
+<ul>
+	<li>
+		<p>
+            Manages the memory that is used to store the buffers and command buffers are allocated from them.
+		</p>
+	</li>
+	<li>
+		<p>
+            Destroying a Command Pool, destroys the Command Buffers associated.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Reset the whole Command Pool
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkResetCommandPool.html" 
+						class="external-link" 
+						target="_blank" >
+                        <code>vkResetCommandPool</code>
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Resetting a command pool recycles all of the resources from all of the command buffers allocated from the command pool back to the command pool. All command buffers that have been allocated from the command pool are put in the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+								class="external-link" 
+								target="_blank" >
+                                initial state
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Any primary command buffer allocated from another 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandPool.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkCommandPool
+							</a>
+                            &nbsp;that is in the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+								class="external-link" 
+								target="_blank" >
+                                recording or executable state
+							</a>
+                            &nbsp;and has a secondary command buffer allocated from 
+                            <code>commandPool</code>
+                            &nbsp;recorded into it, becomes 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+								class="external-link" 
+								target="_blank" >
+                                invalid
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Free individual Command Buffers
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkFreeCommandBuffers.html" 
+						class="external-link" 
+						target="_blank" >
+                        <code>vkFreeCommandBuffers()</code>
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>device</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the logical device that owns the command pool.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>commandPool</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the command pool from which the command buffers were allocated.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>commandBufferCount</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the length of the 
+                                    <code>pCommandBuffers</code>
+                                    &nbsp;array.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>pCommandBuffers</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is a pointer to an array of handles of command buffers to free.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Any primary command buffer that is in the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+								class="external-link" 
+								target="_blank" >
+                                recording or executable state
+							</a>
+                            &nbsp;and has any element of 
+                            <code>pCommandBuffers</code>
+                            &nbsp;recorded into it, becomes 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+								class="external-link" 
+								target="_blank" >
+                                invalid
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="command-buffer" >
+    Command Buffer
+</h3>
+<h5
+	id="creation-allocation" >
+    Creation / Allocation
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandBuffer.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkCommandBuffer</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Encodes GPU commands.
+				</p>
+			</li>
+			<li>
+				<p>
+                    All execution that is performed on the GPU itself (not in the driver) has to be encoded in a command buffer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkAllocateCommandBuffers.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkAllocateCommandBuffers()</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>pAllocateInfo</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandBufferAllocateInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                <code>VkCommandBufferAllocateInfo</code>
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>commandPool</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the command pool from which the command buffers are allocated.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>level</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandBufferLevel.html" 
+										class="external-link" 
+										target="_blank" >
+                                        <code>VkCommandBufferLevel</code>
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Specifies if the allocated command buffers are primary or secondary command buffers.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    `COMMAND_BUFFER_LEVEL_PRIMARY
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Command Buffer Primary.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    `COMMAND_BUFFER_LEVEL_SECONDARY
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Command Buffer Secondary.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>commandBufferCount</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the number of command buffers to allocate from the pool.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pCommandBuffers</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of Command Buffer handles in which the resulting command buffer objects are returned. The array 
+							<em>
+                                must
+							</em>
+                            &nbsp;be at least the length specified by the 
+                            <code>commandBufferCount</code>
+                            &nbsp;member of 
+                            <code>pAllocateInfo</code>
+                            . Each allocated command buffer begins in the initial state.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="lifecycle" >
+    Lifecycle
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#commandbuffers-lifecycle" 
+				class="external-link" 
+				target="_blank" >
+                Lifecycle
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250731200744.png" width="450" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Reset an single Command Buffer
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Once a command buffer has been submitted, it’s still “alive”, and being consumed by the GPU, at this point it is NOT safe to reset the command buffer yet. You need to make sure that the GPU has finished executing all of the commands from that command buffer until you can reset and reuse it.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkResetCommandBuffer.html" 
+						class="external-link" 
+						target="_blank" >
+                        <code>vkResetCommandBuffer()</code>
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>commandBuffer</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the command buffer to reset. The command buffer 
+									<strong>
+                                        can
+									</strong>
+                                    &nbsp;be in any state other than 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+										class="external-link" 
+										target="_blank" >
+                                        pending
+									</a>
+                                    , and is moved into the 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+										class="external-link" 
+										target="_blank" >
+                                        initial state
+									</a>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>flags</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is a bitmask of 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandBufferResetFlagBits.html" 
+										class="external-link" 
+										target="_blank" >
+                                        VkCommandBufferResetFlagBits
+									</a>
+                                    &nbsp;controlling the reset operation.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Any primary command buffer that is in the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+								class="external-link" 
+								target="_blank" >
+                                recording or executable state
+							</a>
+                            &nbsp;and has 
+                            <code>commandBuffer</code>
+                            &nbsp;recorded into it, becomes 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+								class="external-link" 
+								target="_blank" >
+                                invalid
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            After a command buffer is reset, any objects or memory specified by commands recorded into the command buffer 
+							<strong>
+                                must
+							</strong>
+                            &nbsp;no longer be accessed when the command buffer is accessed by the implementation.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If the command buffer was already recorded once, then a call to it will implicitly reset it.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="levels" >
+    Levels
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Primary
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Only these can be submitted to queues for execution.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Cannot be called from other command buffers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Secondary
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Cannot be submitted directly, but can be called from primary command buffers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;We won’t make use of the secondary command buffer functionality here, but you can imagine that it’s helpful to reuse common operations from primary command buffers.&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdExecuteCommands.html" 
+						class="external-link" 
+						target="_blank" >
+                        <code>vkCmdExecuteCommands()</code>
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            A primary command buffer would use this to execute a secondary command buffer.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Re-recording
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If a secondary moves to the invalid state or the initial state, then all primary buffers it is recorded in move to the invalid state. A primary moving to any other state does not affect the state of a secondary recorded in it.
+						</p>
+					</li>
+					<li>
+						<p>
+                            So, when a secondary command is re-recorded, the primary becomes invalid.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Eve: &quot;It is not capturing a reference to a command buffer, it is going through and copying all the commands in the command buffer into itself.&quot;
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="command-types" >
+    Command Types
+</h5>
+<ul>
+	<li>
+		<p>
+            Action-Type, State-Type, Sync-Type.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250731202609.png" width="500" >
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="command-buffer-recording" >
+    Command Buffer Recording
+</h3>
+<ul>
+	<li>
+		<p>
+            Writes the commands we want to execute into a command buffer.
+		</p>
+	</li>
+	<li>
+		<p>
+            It’s not possible to append commands to a buffer at a later time.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkBeginCommandBuffer.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkBeginCommandBuffer()</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>commandBuffer</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the handle of the command buffer which is to be put in the recording state.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pBeginInfo</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandBufferBeginInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                <code>VkCommandBufferBeginInfo</code>
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Specifies some details about the usage of this specific command buffer.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>flags</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandBufferUsageFlagBits.html" 
+										class="external-link" 
+										target="_blank" >
+                                        <code>VkCommandBufferUsageFlagBits</code>
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Specifies how we’re going to use the command buffer.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The command buffer will be rerecorded right after executing it once.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>COMMAND_BUFFER_USAGE_RENDER_PASS_CONTINUE</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This is a secondary command buffer that will be entirely within a single render pass.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The command buffer can be resubmitted while it is also already pending execution.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    None of these flags are applicable for us right now.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>pInheritanceInfo</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkCommandBufferInheritanceInfo.html" 
+										class="external-link" 
+										target="_blank" >
+                                        <code>VkCommandBufferInheritanceInfo</code>
+									</a>
+                                    .
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            If the command buffer is a secondary command buffer, then the 
+                                            <code>VkCommandBufferInheritanceInfo</code>
+                                            &nbsp;structure defines any state that will be inherited from the primary command buffer:
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Used if 
+                                    <code>commandBuffer</code>
+                                    &nbsp;is a secondary command buffer. If this is a primary command buffer, then this value is ignored.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    It specifies which state to inherit from the calling primary command buffers.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkEndCommandBuffer.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkEndCommandBuffer()</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The command buffer 
+					<strong>
+                        must
+					</strong>
+                    &nbsp;have been in the 
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+						class="external-link" 
+						target="_blank" >
+                        recording state
+					</a>
+                    , and, if successful, is moved to the 
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+						class="external-link" 
+						target="_blank" >
+                        executable state
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If there was an error during recording, the application will be notified by an unsuccessful return code returned by 
+                    <code>vkEndCommandBuffer</code>
+                    , and the command buffer will be moved to the 
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#commandbuffers-lifecycle" 
+						class="external-link" 
+						target="_blank" >
+                        invalid state
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="pre-recording" >
+    Pre-recording
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;Many early Vulkan tutorials and documents recommended writing a command buffer once and re-using it wherever possible. In practice however re-use rarely has the advertized performance benefit while incurring a non-trivial development burden due to the complexity of implementation. While it may appear counterintuitive, as re-using computed data is a common optimization, managing a scene with objects being added and removed as well as techniques such as frustum culling which vary the draw calls issued on a per frame basis make reusing command buffers a serious design challenge. It requires a caching scheme to manage command buffers and maintaining state for determining if and when re-recording becomes necessary. Instead, prefer to re-record fresh command buffers every frame. If performance is a problem, recording can be multithreaded as well as using secondary command buffers for non-variable draw calls, like post processing.&quot;
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://docs.vulkan.org/guide/latest/common_pitfalls.html#_recording_command_buffers" 
+						class="external-link" 
+						target="_blank" >
+                        Source
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="multi-threading-recording" >
+    Multi-threading Recording
+</h3>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/samples/latest/samples/performance/command_buffer_usage/README.html#_secondary_command_buffers" 
+				class="external-link" 
+				target="_blank" >
+                Usage of secondary command buffers for Vulkan Multithreaded Recording
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://vkguide.dev/docs/extra-chapter/multithreading/#multithreading-vulkan" 
+				class="external-link" 
+				target="_blank" >
+                Usage of secondary command buffers for Vulkan Multithreaded Recording
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    There's a example code section.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                External synchronization
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A type of synchronization 
+					<strong>
+                        required
+					</strong>
+                    &nbsp;of the application, where parameters defined to be externally synchronized 
+					<strong>
+                        must
+					</strong>
+                    &nbsp;not be used simultaneously in multiple threads.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Internal Synchronization
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A type of synchronization 
+					<strong>
+                        required
+					</strong>
+                    &nbsp;of the implementation, where parameters not defined to be externally synchronized 
+					<strong>
+                        may
+					</strong>
+                    &nbsp;require internal mutexing to avoid multithreaded race conditions.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Any object parameters that are not labeled as externally synchronized are either not mutated by the command or are internally synchronized.
+		</p>
+	</li>
+	<li>
+		<p>
+            Additionally, certain objects related to a command’s parameters (e.g. command pools and descriptor pools) 
+			<strong>
+                may
+			</strong>
+            &nbsp;be affected by a command, and 
+			<strong>
+                must
+			</strong>
+            &nbsp;also be externally synchronized.
+		</p>
+	</li>
+</ul>
+<h5
+	id="queues" >
+    Queues
+</h5>
+<ul>
+	<li>
+		<p>
+            Only a single thread can be submitting to a given queue at any time. If you want multiple threads doing 
+            <code>VkQueueSubmit</code>
+            , then you need to create multiple queues.
+		</p>
+	</li>
+	<li>
+		<p>
+            As the number of queues can be as low as 1 in some devices, what engines tend to do for this is to do something similar to the pipeline compile thread or the OpenGL api call thread, and have a thread dedicated to just doing 
+            <code>VkQueueSubmit</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            As 
+            <code>VkQueueSubmit</code>
+            &nbsp;is a very expensive operation, this can bring a very nice speedup as the time spent executing that call is done in a second thread and the main logic of the engine doesn’t have to stop.
+		</p>
+	</li>
+	<li>
+		<p>
+            Data upload is another section that is very often multithreaded. In here, you have a dedicated IO thread that will load assets to disk, and said IO thread will have its own queue and command allocators, hopefully a transfer queue. This way it is possible to upload assets at a speed completely separated from the main frame loop, so if it takes half a second to upload a set of big textures, you don’t have a hitch. To do that, you need to create a transfer or async-compute queue (if available), and dedicate that one to the loader thread. Once you have that, it’s similar to what was commented on the pipeline compiler thread, and you have an IO thread that communicates through a parallel queue with the main simulation loop to upload data in an asynchronous way. Once a transfer has been uploaded, and checked that it has finished with a Fence, then the IO thread can send the info to the main loop, and then the engine can connect the new textures or models into the renderer.
+		</p>
+	</li>
+</ul>
+<h5
+	id="command-pools" >
+    Command Pools
+</h5>
+<ul>
+	<li>
+		<p>
+            When you record command buffers, their command pools can only be used from one thread at a time. While you can create multiple command buffers from a command pool, you cant fill those commands from multiple threads. If you want to record command buffers from multiple threads, then you will need more command pools, one per thread.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Secondary Command Buffers
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Vulkan command buffers have a system for primary and secondary command buffers. The primary buffers are the ones that open and close RenderPasses, and can get directly submitted to a queue. Secondary command buffers are used as “child” command buffers that execute as part of a primary one.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Their main purpose is multithreading.
+					</em>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Secondary command buffers cant be submitted into a queue on their own.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Command Pools are a system to allow recording command buffers across multiple threads.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    They enable different threads to use different allocators, without internal synchronization on each use.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            A single command pool must be 
+			<em>
+                externally synchronized
+			</em>
+            ; it must not be accessed simultaneously from multiple threads.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    That includes use via recording commands on any command buffers allocated from the pool, as well as operations that allocate, free, and reset command buffers or the pool itself.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            If you want multithreaded command recording, you need more 
+            <code>VkCommandPool</code>
+            &nbsp;objects. By using a separate command pool in each host-thread the application can create multiple command buffers in parallel without any costly locks.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For that reason, we will pair a command buffer with its command allocator.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            You can allocate as many 
+            <code>VkCommandBuffer</code>
+            &nbsp;as you want from a given pool, but you can only record commands from one thread at a time.
+		</p>
+	</li>
+	<li>
+		<p>
+            Command buffers can be recorded on multiple threads while having a relatively light thread handle the submissions.
+		</p>
+	</li>
+	<li>
+		<p>
+            If two commands access the same object or memory and at least one of the commands declares the object to be externally synchronized, then the caller 
+			<strong>
+                must
+			</strong>
+            &nbsp;guarantee not only that the commands do not execute simultaneously, but also that the two commands are separated by an appropriate memory barrier (if needed).
+		</p>
+	</li>
+	<li>
+		<p>
+            Similarly, if a Vulkan command accesses a non-const memory parameter and the application also accesses that memory, or if the application writes to that memory and the command accesses it as a const memory parameter, the application 
+			<strong>
+                must
+			</strong>
+            &nbsp;ensure the accesses are properly synchronized with a memory barrier if needed.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory barriers are particularly relevant for hosts based on the ARM CPU architecture, which is more weakly ordered than many developers are accustomed to from x86/x64 programming. Fortunately, most higher-level synchronization primitives (like the pthread library) perform memory barriers as a part of mutual exclusion, so mutexing Vulkan objects via these primitives will have the desired effect.
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

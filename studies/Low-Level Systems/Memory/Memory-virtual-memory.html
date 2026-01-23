@@ -1,0 +1,2221 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Odin
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-overview.html" >
+                                Overview
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-my-impressions.html" >
+                                My Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-installation.html" >
+                                Installation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-compile-time-stuff.html" >
+                                Compile-time Stuff
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-package-system.html" >
+                                Package System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-lsp-ols-odin-language-server.html" >
+                                LSP (OLS - Odin Language Server)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-control-flow-if-when-switch-for-defer.html" >
+                                Control Flow (if, when, switch, for, defer)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-procedures.html" >
+                                Procedures
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-any.html" >
+                                any
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-primitive-types.html" >
+                                Primitive Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-matrix.html" >
+                                Matrix
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-quaternion.html" >
+                                Quaternion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-complex.html" >
+                                Complex
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-rune.html" >
+                                Rune
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-maps-hash-maps.html" >
+                                Maps (Hash Maps)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-struct.html" >
+                                Struct
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-union.html" >
+                                Union
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-bit-sets.html" >
+                                Bit Sets
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-interfaces-methods-vtables.html" >
+                                Interfaces / Methods / VTables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-error-handling.html" >
+                                Error Handling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-context.html" >
+                                Context
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-address.html" >
+                                Memory: Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-allocators.html" >
+                                Memory: Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-operations.html" >
+                                Memory: Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-entry-point.html" >
+                                Entry Point
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-multi-threading.html" >
+                                Multi-Threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-directives.html" >
+                                Directives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-ffi-foreign-function-interface-bindings.html" >
+                                FFI (Foreign Function Interface) / Bindings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-web-build.html" >
+                                Web Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-file-system-process-cli-shell.html" >
+                                File System / Process / CLI / Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-useful-packages.html" >
+                                Useful Packages
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Memory
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Low-Level Systems/Memory/Memory-virtual-memory.html" >
+                                Virtual Memory
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#os-pages" >
+                                        OS Pages
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#chunk" >
+                                        Chunk
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#virtual-memory-mapping" >
+                                        Virtual Memory Mapping
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#process" >
+                                        Process
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-os-memory-on-windows.html" >
+                                OS: Memory on Windows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-memory-alignment.html" >
+                                Memory Alignment
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-address.html" >
+                                Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-allocators.html" >
+                                Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-tools-memory-analysis.html" >
+                                Tools: Memory Analysis
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-handles-instead-of-pointers.html" >
+                                Handles instead of Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-ownership-strategies-destruction-strategies.html" >
+                                Ownership Strategies / Destruction Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-strategies-for-handling-short-lived-memory.html" >
+                                Strategies for handling short lived memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-garbage-collection.html" >
+                                Garbage Collection
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-initialization.html" >
+                                Initialization
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        CPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-physical-structure.html" >
+                                Physical Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-soa-struct-of-arrays-ecs-entity-component-system.html" >
+                                SOA (Struct Of Arrays) / ECS (Entity Component System)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Multithreading
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-core-concepts.html" >
+                                Core Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-thread.html" >
+                                Thread
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-implementation-detail.html" >
+                                Implementation Detail
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-synchronization-primitives.html" >
+                                Synchronization Primitives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-double-buffering.html" >
+                                Double-Buffering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-networking-strategies.html" >
+                                Networking Strategies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Handmade Hero
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Profilers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-tracy.html" >
+                                Tracy
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-spall.html" >
+                                Spall
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nvidia-nsight-graphics-gpu-trace.html" >
+                                Nvidia Nsight Graphics - GPU Trace
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-amd-gpu-profiler-amd-rgp.html" >
+                                AMD GPU Profiler (AMD RGP)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-intel-gpa.html" >
+                                Intel GPA
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nsight-systems.html" >
+                                <s>Nsight Systems</s>
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        C
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard.html" >
+                                C Standard
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard-library-libc.html" >
+                                C Standard Library (libc)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-loops.html" >
+                                Loops
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-structs.html" >
+                                Structs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-pointers.html" >
+                                Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-preprocessors.html" >
+                                Preprocessors
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-undefined-behavior.html" >
+                                Undefined Behavior
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-gamedev.html" >
+                                GameDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-windows-c-api.html" >
+                                WIndows C API
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Build Systems - Compilation - Linking
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilation-process.html" >
+                                Compilation Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilers.html" >
+                                Compilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-build-tools.html" >
+                                Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-meta-build-tools.html" >
+                                Meta Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-extra-annoying-things-on-windows.html" >
+                                Extra: Annoying things on Windows
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Debuggers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-file-types.html" >
+                                File Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-rad-debbuger.html" >
+                                RAD Debbuger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-gdb-gnu-debugger.html" >
+                                GDB (GNU Debugger)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-lldb.html" >
+                                LLDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-vscode.html" >
+                                VSCode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-visual-studio-debugger.html" >
+                                Visual Studio Debugger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-others.html" >
+                                Others
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Assembly - ASM
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-notes.html" >
+                                Notes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-reverse-engineering.html" >
+                                Reverse Engineering
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Parsing
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-lexer.html" >
+                                Lexer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        JAI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-build.html" >
+                                Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-types.html" >
+                                Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-meta-programming.html" >
+                                Meta programming
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-control-flow.html" >
+                                Control flow
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Virtual Memory
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-12" >
+                                🕒 Created: 2025-03-12
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            Modern operating systems virtualize memory on a per-process basis. This means that the addresses used within your program/process are specific to that program/process only.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory is no longer this dualistic model of 
+			<em>
+                the stack
+			</em>
+            &nbsp;and 
+			<em>
+                the heap
+			</em>
+            &nbsp;but rather a monistic model where everything is virtual memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            Some of that virtual address space is reserved for procedure stack frames, some of it is reserved for things required by the operating system, and the rest we can use for whatever we want.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory is virtually-mapped and linear, and you can split that linear memory space into sections.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;A process view of memory&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Virtual memory is &quot;merely&quot; the way the OS exposes memory to user-space applications. It is not how most allocators work.
+		</p>
+	</li>
+	<li>
+		<p>
+            For the most part, one can simplify the concept of virtual memory down to &quot;I ask the OS for a block of memory that is a number of pages in size&quot;, where a &quot;page&quot; is defined by the OS. Modern systems often have it as 4096 bytes. You'll say you want 8 pages, and the OS gives you a pointer to the first byte in a 
+            <code>8*4096</code>
+            &nbsp;byte block to use. You can also do things like set whether each page is readable, writable, executable, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            And, as you alluded to initially, each page can be resident or not. So to say, actually backed by physical memory, or only theoretically set up for access however you've not touched it yet.
+		</p>
+	</li>
+	<li>
+		<p>
+            My current understanding:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    (2025-11-14)
+				</p>
+			</li>
+			<li>
+				<p>
+                    when calling 
+                    <code>new()</code>
+                    &nbsp;or 
+                    <code>make()</code>
+                    &nbsp;with the default heap allocator (
+                    <code>context.allocator</code>
+                    ), Odin internally calls 
+                    <code>malloc</code>
+                    /
+                    <code>calloc</code>
+                    &nbsp;(at least on Unix) which internally calls 
+                    <code>mmap</code>
+                    &nbsp;to reserve a chunk of virtual memory (4MiB (is it maybe 4KB?) in x86_64), which is only physically allocated when touching the memory on read/write (in Odin I assume this is done immediately as for ZII). A 
+                    <code>new(int)</code>
+                    &nbsp;is allocated inside a free slot list inside a run inside the chunk; apparently something like 16B for an 
+                    <code>int</code>
+                    &nbsp;(this sounds weird to me as it can lead to 8B of waste in a 64bit system).
+				</p>
+			</li>
+			<li>
+				<p>
+                    For heap-allocated arenas in Odin, it seems like you need to create a buffer using a heap allocator before you can use the arena, which was confusing to me at first, but it makes sense now. I just see them now as a &quot;managed slice of bytes in memory&quot; inside the allocated region from the heap allocator.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Pasted%20image%2020251112092912.png" width="378" alt="" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The program still assumes the memory is continuous.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Pasted%20image%2020251113085433.png" width="395" alt="" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=dFIqNZ8VbRY" 
+				class="external-link" 
+				target="_blank" >
+                Excelent talk by JF Bastien
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The whole video is really cool.
+				</p>
+			</li>
+			<li>
+				<p>
+                    {28:30} He starts talking about Virtual Memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112142739.png" width="613" alt="" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112142808.png" width="620" alt="" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112142831.png" width="584" alt="" >
+                    ..
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112141125.png" width="571" alt="" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112141416.png" width="570" alt="" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Caches make all this thing described work.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/Pasted%20image%2020251112142053.png" width="561" alt="" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=QyYoj9pkwCs" 
+				class="external-link" 
+				target="_blank" >
+                Motivations for Virtual Memory - Chris Kanich
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.youtube.com/watch?v=sGHYRr31BPE" 
+				class="external-link" 
+				target="_blank" >
+                The magic of the page fault: understanding demand paging of virtual memory in linux
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.youtube.com/watch?v=hd8bYx7QCS0" 
+				class="external-link" 
+				target="_blank" >
+                Page tables for your page tables: understanding how multi level page tables work
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.youtube.com/watch?v=ccWRlNP1UsY" 
+				class="external-link" 
+				target="_blank" >
+                Demystifying Page Tables
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.youtube.com/watch?v=8hVLcyBkSXY" 
+				class="external-link" 
+				target="_blank" >
+                Virtual Memory, mmap, Shared Memory, Copy On Write, creating a new process via Fork, Exec - Chris Kanich
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I haven't see the whole video. The content seemed distant to what I need right now.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="initial-content" >
+    Initial content
+</h5>
+<ul>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Even when allocator gets a mapped virtual range from the kernel, actual physical pages are usually allocated only when you touch them (page fault on first write/read). So 
+                    <code>mmap</code>
+                    /
+                    <code>sbrk</code>
+                    &nbsp;creates virtual address space; the kernel populates physical pages on demand. Physical memory for those pages is usually committed lazily; when the process first touches a page, the kernel allocates a physical frame and updates the page tables.&quot; Or from the spec of 
+                    <code>malloc</code>
+                    : Allocates 
+                    <code>size</code>
+                    &nbsp;bytes and returns a pointer to the allocated memory. 
+					<strong>
+                        The memory is not initialized
+					</strong>
+                    . If 
+                    <code>size</code>
+                    &nbsp;is 0, then 
+                    <code>malloc()</code>
+                    &nbsp;returns a unique pointer value that can later be successfully passed to 
+                    <code>free()</code>
+                    . So what I got from both is that a page just has garbage at first, and doesn't actually have anything physical to it, just a virtual reservation of memory, but when writing to memory the OS would actually physically allocate that memory. So when I said &quot;the act of Odin zeroing the memory would interact with the OS&quot; I was referring to making the OS physically allocate the memory right away, not &quot;lazily&quot;, if that makes sense.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Not initialized&quot; is like Odin's 
+            <code>---</code>
+            . It will be garbage. &quot;Committing lazily&quot; is about what I said before about being assigned to physical memory vs merely being set up for use.
+		</p>
+	</li>
+	<li>
+		<p>
+            To be committed is to be resident is to be assigned to physical memory
+		</p>
+	</li>
+	<li>
+		<p>
+            but only use a few megs
+		</p>
+	</li>
+	<li>
+		<p>
+            why provide all of it
+		</p>
+	</li>
+	<li>
+		<p>
+            Some OSes (linux being a good example) allows overcommit
+		</p>
+	</li>
+	<li>
+		<p>
+            requesting memory from the OS is &quot;the OS promises to give you the memory when you actually use it&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            (nb: depends on the OS/configuration/etc)
+		</p>
+	</li>
+	<li>
+		<p>
+            Despite the fact that &quot;being committed&quot; means &quot;assigned to physical memory&quot;, does that in fact mean that once you tell the OS to make some memory committed, that it will immediately appear in the task manager as taking up your RAM? You should create your own alloc and see what happens.
+		</p>
+	</li>
+</ul>
+<h3
+	id="os-pages" >
+    OS Pages
+</h3>
+<ul>
+	<li>
+		<p>
+            The page is the fundamental unit of virtual memory managed by the operating system and the CPU’s MMU (Memory Management Unit).
+		</p>
+	</li>
+	<li>
+		<p>
+            The kernel can only map, protect, or page-in/page-out whole pages. There’s no such thing as “half a page” to the MMU.
+		</p>
+	</li>
+	<li>
+		<p>
+            Pages are what the OS maps between virtual addresses (what your process sees) and physical memory (RAM).
+		</p>
+	</li>
+	<li>
+		<p>
+            When a process calls 
+            <code>mmap()</code>
+            &nbsp;or 
+            <code>sbrk()</code>
+            , the OS reserves a region of virtual address space measured in pages. Physical memory for those pages is usually committed lazily — when the process first touches a page, the kernel allocates a physical frame and updates the page tables.
+		</p>
+	</li>
+</ul>
+<h5
+	id="typical-size" >
+    Typical size
+</h5>
+<ul>
+	<li>
+		<p>
+            CPU/kernel page size is usually 4 KiB on x86_64 — that’s the granularity the MMU uses.
+		</p>
+	</li>
+</ul>
+<h3
+	id="chunk" >
+    Chunk
+</h3>
+<ul>
+	<li>
+		<p>
+            Pool of memory for suballocations.
+		</p>
+	</li>
+	<li>
+		<p>
+            A chunk is made up of many OS pages.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's an allocator-internal bookkeeping unit — a larger contiguous region of virtual memory (often multiple pages) that the allocator manages.
+		</p>
+	</li>
+	<li>
+		<p>
+            It helps reduce syscall overhead. The allocator calls 
+            <code>mmap</code>
+            /
+            <code>sbrk</code>
+            &nbsp;once to get a big chunk, then fulfills thousands of small allocations (1 B–1 KiB) from that memory by splitting it into bins or slabs.
+		</p>
+	</li>
+	<li>
+		<p>
+            The allocator requests a contiguous virtual region (a chunk) and the OS provides that region in page-sized units.
+		</p>
+	</li>
+	<li>
+		<p>
+            The allocator only maps or expands its arena in chunk-sized (or threshold-driven) increments.
+		</p>
+	</li>
+</ul>
+<h5
+	id="typical-size" >
+    Typical size
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>glibc malloc</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Variable, based on 
+                    <code>brk</code>
+                    &nbsp;or 
+                    <code>mmap</code>
+                    &nbsp;thresholds.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>jemalloc</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Often 4 MiB per chunk.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>tcmalloc</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Often 2 MiB per span.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Btw: 4 MiB chunk = 1024 OS pages.
+		</p>
+	</li>
+</ul>
+<h5
+	id="size-class" >
+    Size class
+</h5>
+<ul>
+	<li>
+		<p>
+            Allocator rounds requested sizes up to a small set of sizes (e.g. 8, 16, 24, …, 1024, then larger classes).
+		</p>
+	</li>
+	<li>
+		<p>
+            Allocators round requested sizes up to a 
+			<em>
+                size class
+			</em>
+            &nbsp;for alignment and bookkeeping simplicity.
+		</p>
+	</li>
+	<li>
+		<p>
+            Typical rules on 64-bit systems:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Minimum alignment/slot is often 
+					<strong>
+                        8 or 16 bytes
+					</strong>
+                    &nbsp;(16 is common on x86_64 for SIMD/alignment safety).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Sizes are rounded up into a small table of classes (e.g. 8,16,24,32,… or 16,32,48,64,… depending on allocator).
+				</p>
+			</li>
+			<li>
+				<p>
+                    A run is created for a size class (e.g. 16 B slots); a page (4 KiB) then contains 
+                    <code>4096 / 16 = 256</code>
+                    &nbsp;slots.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Implication:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each 
+                    <code>int</code>
+                    &nbsp;allocation carries 
+					<em>
+                        internal fragmentation
+					</em>
+                    &nbsp;(unused bytes inside the slot). An 
+                    <code>int</code>
+                    &nbsp;is 4B, but uses a 16 B slot, that’s 12 B wasted per allocation (in-slot waste).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="run-span" >
+    Run / span
+</h5>
+<ul>
+	<li>
+		<p>
+            A contiguous subrange of pages inside a chunk that the allocator uses for a particular size class.
+		</p>
+	</li>
+	<li>
+		<p>
+            One or more whole pages inside a chunk that the allocator dedicates to a single 
+			<em>
+                size class
+			</em>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="bins-free-lists" >
+    Bins / free lists
+</h5>
+<ul>
+	<li>
+		<p>
+            Per-size-class pools of free blocks ready to be returned for 
+            <code>malloc</code>
+            &nbsp;without splitting.
+		</p>
+	</li>
+</ul>
+<h5
+	id="slot-block-object" >
+    Slot / block / object
+</h5>
+<ul>
+	<li>
+		<p>
+            An individual allocation returned to the program (one slot inside a run).
+		</p>
+	</li>
+	<li>
+		<p>
+            They are the small pieces inside a run.
+		</p>
+	</li>
+</ul>
+<h5
+	id="illustration-chatgpt" >
+    Illustration (ChatGPT)
+</h5>
+<ul>
+	<li>
+		<p>
+            Before any allocation:
+		</p>
+<pre><code class="language-txt" data-lang="txt">Chunk (4 MiB)
+[ chunk header | page0 | page1 | page2 | ... | page1023 ]
+</code></pre>
+	</li>
+	<li>
+		<p>
+            First allocation: 
+            <code>new int</code>
+            &nbsp;(4B → rounded to 16B)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Allocator path:
+				</p>
+				<ol>
+					<li>
+						<p>
+                            Translate request size → size-class 16 B.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Look for an existing run for 16 B with free slots.
+						</p>
+					</li>
+					<li>
+						<p>
+                            None yet in any chunk/arena, so allocator 
+							<strong>
+                                converts one page
+							</strong>
+                            &nbsp;from the chunk into a run for the 16 B class. (This means the allocator marks page0 as a run and initializes its free-slot data: bitmap or free-list.)
+						</p>
+					</li>
+					<li>
+						<p>
+                            Allocate the first slot (slot 0) from that run and return pointer 
+                            <code>p = base_of_page0 + 0</code>
+                            .
+						</p>
+					</li>
+				</ol>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt">Chunk
+[ chunk header | page0: RUN(16B) [slot0=used, slot1..slot255=free] | page1 | ... ]
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Physical pages: if allocator zeroes the returned memory (language runtime 
+                    <code>new</code>
+                    &nbsp;semantics), writing to the slot causes a page-fault and kernel provides a physical frame for page0. If allocator does not touch payload, that page may still be unbacked until first write.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Next few allocations: more small 
+            <code>new()</code>
+            &nbsp;calls:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each further 
+                    <code>new(…)</code>
+                    &nbsp;of size ≤16 B:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Pop next free slot from page0’s free-list (slot1, slot2, ...).
+						</p>
+					</li>
+					<li>
+						<p>
+                            No syscalls; purely allocator metadata ops (possibly lock-free if per-thread).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt">page0: RUN(16B) [slot0..slot9 = used, slot10..slot255 = free]
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Physical pages: once the program touches each used slot, page0's single physical frame services all those slots.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Run exhaustion: allocate the 257th small object
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When page0’s 256 slots are all consumed:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allocator sees the run is full.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It selects another free page inside the chunk (page1) and converts it into a new run for the 16 B size-class.
+						</p>
+					</li>
+					<li>
+						<p>
+                            page1 gets initialized with its own free-list/bitmap; allocation returns page1 slot0.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt">[ chunk header | page0: RUN(16B) [all used] | page1: RUN(16B) [slot0=used, slot1..=free] | page2 ... ]
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Still no new 
+                    <code>mmap</code>
+                    &nbsp;syscall — allocator used pages already reserved inside the chunk. If the chunk had no free pages left for runs, allocator would 
+                    <code>mmap</code>
+                    &nbsp;a new chunk.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Mixed-size allocations appear later:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Suppose you then 
+                    <code>malloc(1 KiB)</code>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allocator maps that request to a larger size-class (say 1024 B).
+						</p>
+					</li>
+					<li>
+						<p>
+                            It will allocate from a run/span dedicated to that class. If none exists:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    It may grab one or more pages inside the same chunk and create a span for 1 KiB blocks. Example: one page can hold 
+                                    <code>4096 / 1024 = 4</code>
+                                    &nbsp;blocks.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            If the large request exceeds the allocator’s “large” threshold it may instead call 
+                            <code>mmap</code>
+                            &nbsp;and give the caller an independent mapping (outside chunk).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt">[ chunk header |
+&nbsp;&nbsp;page0: RUN(16B) full |
+&nbsp;&nbsp;page1: RUN(16B) partly-used |
+&nbsp;&nbsp;page2: RUN(1KB) [blk0..blk3 some used] |
+&nbsp;&nbsp;page3: free page |
+&nbsp;&nbsp;... ]
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Freeing behavior
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Freeing a 16 B slot: allocator marks the slot free (pushes to free-list or clears bitmap). The page remains a run page. Usually the allocator 
+					<strong>
+                        does not
+					</strong>
+                    &nbsp;
+                    <code>munmap</code>
+                    &nbsp;a single partially-used page.
+				</p>
+			</li>
+			<li>
+				<p>
+                    When an entire run/span (one or more pages) becomes fully unused, allocator heuristics may decide to:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            keep it for reuse (common), or
+						</p>
+					</li>
+					<li>
+						<p>
+                            coalesce and 
+                            <code>munmap</code>
+                            &nbsp;the pages to return virtual address space (or release them to a central pool). This is allocator-specific.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="virtual-memory-mapping" >
+    Virtual Memory Mapping
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=XV5sRaSVtXQ" 
+				class="external-link" 
+				target="_blank" >
+                mmap and brk example
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=m7E9piHcfr4" 
+				class="external-link" 
+				target="_blank" >
+                using mmap to read and write a file
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=rPV6b8BUwxM" 
+				class="external-link" 
+				target="_blank" >
+                using mmap to share memory between processes
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="mmap" >
+    mmap
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>mmap(..)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            Tells the OS to allow read/write to a file/device as if it were in memory with byte 0 at a given address.
+		</p>
+	</li>
+	<li>
+		<p>
+            Even when allocator gets a mapped virtual range from the kernel, actual physical pages are usually allocated only when you touch them (page fault on first write/read). So 
+            <code>mmap</code>
+            /
+            <code>sbrk</code>
+            &nbsp;creates virtual address space; the kernel populates physical pages on demand.
+		</p>
+	</li>
+	<li>
+		<p>
+            It does 
+			<strong>
+                not
+			</strong>
+            &nbsp;magically remember or manage allocator chunks — the allocator (e.g. 
+            <code>malloc</code>
+            , jemalloc, tcmalloc) is what 
+			<em>
+                tracks
+			</em>
+            &nbsp;chunks and decides when to call 
+            <code>mmap</code>
+            &nbsp;or 
+            <code>munmap</code>
+            . 
+            <code>mmap</code>
+            &nbsp;simply asks the kernel to reserve/map a virtual-address region; the kernel records that region in its VM structures and returns the address. The allocator then sub-allocates from that region without further syscalls until it needs more space (or decides to return space).
+		</p>
+	</li>
+</ul>
+<h5
+	id="brk" >
+    brk
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>brk(..)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            shrink with 
+            <code>brk</code>
+            &nbsp;can be used as &quot;unmap&quot;.
+		</p>
+	</li>
+</ul>
+<h5
+	id="sbrk" >
+    sbrk
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>sbrk(..)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            Asks the OS to expand/contract the size of the valid memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;You get multiples of page size, one way or the other&quot;.
+		</p>
+	</li>
+</ul>
+<h5
+	id="munmap" >
+    munmap
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>munmap</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            Free pages, unmap.
+		</p>
+	</li>
+</ul>
+<h3
+	id="process" >
+    Process
+</h3>
+<ol>
+	<li>
+		<p>
+            Your allocator (
+            <code>malloc</code>
+            ) decides it needs more virtual address space (its internal chunks/arenas are exhausted).
+		</p>
+	</li>
+	<li>
+		<p>
+            The allocator issues a syscall (
+            <code>mmap</code>
+            &nbsp;or sometimes 
+            <code>sbrk</code>
+            /
+            <code>brk</code>
+            ) requesting a contiguous virtual region of some size (an allocator-chosen chunk, e.g. 4 MiB).
+		</p>
+	</li>
+	<li>
+		<p>
+            The kernel creates a VMA (e.g. 
+            <code>vm_area_struct</code>
+            &nbsp;on Linux) covering that range and returns the base address to the allocator. No physical pages are necessarily assigned yet — only virtual address space is reserved.
+		</p>
+	</li>
+	<li>
+		<p>
+            The allocator records that new region in its own metadata (free lists, bitmaps, arena/chunk tables) and hands out pointers for subsequent 
+            <code>malloc</code>
+            /
+            <code>new</code>
+            &nbsp;requests from that region — no further 
+            <code>mmap</code>
+            &nbsp;needed while that region has free space.
+		</p>
+	</li>
+	<li>
+		<p>
+            When the program first accesses pages inside the region the CPU triggers page faults and the kernel assigns physical frames (demand paging).
+		</p>
+	</li>
+	<li>
+		<p>
+            If the allocator later frees enough whole pages or decides it no longer needs the region, it may call 
+            <code>munmap</code>
+            &nbsp;(or shrink with 
+            <code>brk</code>
+            ) to return the virtual range to the kernel.
+		</p>
+	</li>
+</ol>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

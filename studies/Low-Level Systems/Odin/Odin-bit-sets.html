@@ -1,0 +1,1609 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Odin
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-overview.html" >
+                                Overview
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-my-impressions.html" >
+                                My Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-installation.html" >
+                                Installation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-compile-time-stuff.html" >
+                                Compile-time Stuff
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-package-system.html" >
+                                Package System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-lsp-ols-odin-language-server.html" >
+                                LSP (OLS - Odin Language Server)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-control-flow-if-when-switch-for-defer.html" >
+                                Control Flow (if, when, switch, for, defer)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-procedures.html" >
+                                Procedures
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-any.html" >
+                                any
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-primitive-types.html" >
+                                Primitive Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-matrix.html" >
+                                Matrix
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-quaternion.html" >
+                                Quaternion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-complex.html" >
+                                Complex
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-rune.html" >
+                                Rune
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-maps-hash-maps.html" >
+                                Maps (Hash Maps)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-struct.html" >
+                                Struct
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-union.html" >
+                                Union
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Low-Level Systems/Odin/Odin-bit-sets.html" >
+                                Bit Sets
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#creation" >
+                                        Creation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#underlying-type" >
+                                        Underlying type
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#evaluation" >
+                                        Evaluation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#operations" >
+                                        Operations
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#discussions" >
+                                        Discussions
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-interfaces-methods-vtables.html" >
+                                Interfaces / Methods / VTables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-error-handling.html" >
+                                Error Handling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-context.html" >
+                                Context
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-address.html" >
+                                Memory: Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-allocators.html" >
+                                Memory: Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-operations.html" >
+                                Memory: Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-entry-point.html" >
+                                Entry Point
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-multi-threading.html" >
+                                Multi-Threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-directives.html" >
+                                Directives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-ffi-foreign-function-interface-bindings.html" >
+                                FFI (Foreign Function Interface) / Bindings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-web-build.html" >
+                                Web Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-file-system-process-cli-shell.html" >
+                                File System / Process / CLI / Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-useful-packages.html" >
+                                Useful Packages
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Memory
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-virtual-memory.html" >
+                                Virtual Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-os-memory-on-windows.html" >
+                                OS: Memory on Windows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-memory-alignment.html" >
+                                Memory Alignment
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-address.html" >
+                                Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-allocators.html" >
+                                Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-tools-memory-analysis.html" >
+                                Tools: Memory Analysis
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-handles-instead-of-pointers.html" >
+                                Handles instead of Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-ownership-strategies-destruction-strategies.html" >
+                                Ownership Strategies / Destruction Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-strategies-for-handling-short-lived-memory.html" >
+                                Strategies for handling short lived memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-garbage-collection.html" >
+                                Garbage Collection
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-initialization.html" >
+                                Initialization
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        CPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-physical-structure.html" >
+                                Physical Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-soa-struct-of-arrays-ecs-entity-component-system.html" >
+                                SOA (Struct Of Arrays) / ECS (Entity Component System)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Multithreading
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-core-concepts.html" >
+                                Core Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-thread.html" >
+                                Thread
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-implementation-detail.html" >
+                                Implementation Detail
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-synchronization-primitives.html" >
+                                Synchronization Primitives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-double-buffering.html" >
+                                Double-Buffering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-networking-strategies.html" >
+                                Networking Strategies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Handmade Hero
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Profilers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-tracy.html" >
+                                Tracy
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-spall.html" >
+                                Spall
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nvidia-nsight-graphics-gpu-trace.html" >
+                                Nvidia Nsight Graphics - GPU Trace
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-amd-gpu-profiler-amd-rgp.html" >
+                                AMD GPU Profiler (AMD RGP)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-intel-gpa.html" >
+                                Intel GPA
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nsight-systems.html" >
+                                <s>Nsight Systems</s>
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        C
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard.html" >
+                                C Standard
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard-library-libc.html" >
+                                C Standard Library (libc)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-loops.html" >
+                                Loops
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-structs.html" >
+                                Structs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-pointers.html" >
+                                Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-preprocessors.html" >
+                                Preprocessors
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-undefined-behavior.html" >
+                                Undefined Behavior
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-gamedev.html" >
+                                GameDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-windows-c-api.html" >
+                                WIndows C API
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Build Systems - Compilation - Linking
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilation-process.html" >
+                                Compilation Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilers.html" >
+                                Compilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-build-tools.html" >
+                                Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-meta-build-tools.html" >
+                                Meta Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-extra-annoying-things-on-windows.html" >
+                                Extra: Annoying things on Windows
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Debuggers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-file-types.html" >
+                                File Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-rad-debbuger.html" >
+                                RAD Debbuger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-gdb-gnu-debugger.html" >
+                                GDB (GNU Debugger)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-lldb.html" >
+                                LLDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-vscode.html" >
+                                VSCode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-visual-studio-debugger.html" >
+                                Visual Studio Debugger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-others.html" >
+                                Others
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Assembly - ASM
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-notes.html" >
+                                Notes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-reverse-engineering.html" >
+                                Reverse Engineering
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Parsing
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-lexer.html" >
+                                Lexer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        JAI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-build.html" >
+                                Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-types.html" >
+                                Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-meta-programming.html" >
+                                Meta programming
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-control-flow.html" >
+                                Control flow
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Bit Sets
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-28" >
+                                🕒 Created: 2025-03-28
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            <code>bit_set[_bitset_type_; _backing_type_]</code>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#bit-sets" 
+				class="external-link" 
+				target="_blank" >
+                Bit Sets
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="creation" >
+    Creation
+</h3>
+<pre><code class="language-odin" data-lang="odin">Direction :: enum{North, East, South, West}
+
+Direction_Set :: bit_set[Direction]
+
+Char_set :: bit_set['A'..='Z']
+
+Int_Set :: bit_set[0..&lt;10] // bit_set[0..=9]
+
+u32_set: bit_set[u32(0)..&lt;32]
+&nbsp;&nbsp;&nbsp;&nbsp;// If you don't use u32(0), the range created will be `int`, even though the backing type is `u32`.
+&nbsp;&nbsp;&nbsp;&nbsp;// Weird.
+</code></pre>
+<h3
+	id="underlying-type" >
+    Underlying type
+</h3>
+<ul>
+	<li>
+		<p>
+            If a bit set requires a specific size, the underlying integer type can be specified:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">Char_Set :: bit_set['A'..='Z'; u64]
+#assert(size_of(Char_Set) == size_of(u64))
+</code></pre>
+<ul>
+	<li>
+		<p>
+            The underlying type is not the same thing as the type of the bitset:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">unique_sets: bit_set[u32(0)..&lt;32]
+&nbsp;&nbsp;&nbsp;&nbsp;// This is a u32 bit_set
+
+unique_sets: bit_set[0..&lt;32; u32]
+&nbsp;&nbsp;&nbsp;&nbsp;// This is an int bit_set, with u32 as backing type
+&nbsp;&nbsp;&nbsp;&nbsp;// Weird.
+
+unique_sets: bit_set[u32(0)..&lt;32; u32]
+&nbsp;&nbsp;&nbsp;&nbsp;// This is a u32 bit_set, with u32 as backing type
+</code></pre>
+<h3
+	id="evaluation" >
+    Evaluation
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Bit Set vs Elements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>e in A</code>
+                    &nbsp;- set membership (A contains element e)
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>e not_in A</code>
+                    &nbsp;- not set membership (A does not contain element e)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Bit Set vs Bit Set
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>A + B</code>
+                    &nbsp;- union of two sets (equivalent to 
+                    <code>A | B</code>
+                    )
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A - B</code>
+                    &nbsp;- difference of two sets (A without B’s elements) (equivalent to 
+                    <code>A &~ B</code>
+                    )
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A & B</code>
+                    &nbsp;- intersection of two sets
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A | B</code>
+                    &nbsp;- union of two sets (equivalent to 
+                    <code>A + B</code>
+                    )
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A &~ B</code>
+                    &nbsp;- difference of two sets (A without B’s elements) (equivalent to 
+                    <code>A - B</code>
+                    )
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A ~ B</code>
+                    &nbsp;- symmetric difference (Elements that are in A and B but not both)
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A == B</code>
+                    &nbsp;- set equality
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A != B</code>
+                    &nbsp;- set inequality
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A &lt;= B</code>
+                    &nbsp;- subset relation (A is a subset of B or equal to B)
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A &lt; B</code>
+                    &nbsp;- strict subset relation (A is a proper subset of B)
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A &gt;= B</code>
+                    &nbsp;- superset relation (A is a superset of B or equal to B)
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>A &gt; B</code>
+                    &nbsp;- strict superset relation (A is a proper superset of B)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/builtin/#card" 
+				class="external-link" 
+				target="_blank" >
+                <code>card</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>card(bit_set)</code>
+                    &nbsp;returns how many 
+                    <code>1</code>
+                    s there are in the 
+                    <code>bit_set</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Cardinality = popcount = number of 1s.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ex:
+				</p>
+<pre><code class="language-odin" data-lang="odin">unique_sets: bit_set[u32(0)..&lt;32; u32]
+for ubo in glsl_reflect.ubos {
+&nbsp;&nbsp;&nbsp;&nbsp;unique_sets += { ubo.set }
+}
+for tex in glsl_reflect.textures {
+&nbsp;&nbsp;&nbsp;&nbsp;unique_sets += { tex.set }
+}
+set_layouts = make([]Shaders_Set_Layout, card(unique_sets), allocator)
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="operations" >
+    Operations
+</h3>
+<ul>
+	<li>
+		<p>
+            Union of 
+            <code>.WINDOW_RESIZABLE</code>
+            &nbsp;and 
+            <code>.WINDOW_ALWAYS_RUN</code>
+            .
+		</p>
+<pre><code class="language-odin" data-lang="odin">rl.SetWindowState({ .WINDOW_RESIZABLE, .WINDOW_ALWAYS_RUN })
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Toggle flag:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>~=</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="discussions" >
+    Discussions
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                TLDR
+			</strong>
+            : &quot;Bitset 0 means 'activate the first bit&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For this bitset below, if I set 
+                    <code>my_flags = {}</code>
+                    , would that mean it's the same as setting 
+                    <code>my_flags = { .INDIRECT_COMMAND_READ }</code>
+                    ?
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">AccessFlags2 :: distinct bit_set[AccessFlag2; Flags64] // distinct u64 
+AccessFlag2 :: enum Flags64 {&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;INDIRECT_COMMAND_READ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0,&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;INDEX_READ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 1,&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;VERTEX_ATTRIBUTE_READ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;// .. 
+}
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No. 
+                    <code>AccessFlags2</code>
+                    &nbsp;is effectively an integer (
+                    <code>Flags64</code>
+                    , specifically), where its bits are used to indicate the presence of the enum values. The numeric value of the 
+                    <code>enum</code>
+                    &nbsp;variants correspond to which bit in that integer is used to represent them. So bit 0 (
+                    <code>1 &lt;&lt; 0 == 1</code>
+                    ) is used to indicate whether 
+                    <code>INDIRECT_COMMAND_READ</code>
+                    &nbsp;is set, bit 1 (
+                    <code>1 &lt;&lt; 1 == 2</code>
+                    ) is used to indicate whether 
+                    <code>INDEX_READ</code>
+                    &nbsp;is set, and so on. So 
+                    <code>{}</code>
+                    &nbsp;is an integer 
+                    <code>0</code>
+                    &nbsp;internally, 
+                    <code>{.INDIRECT_COMMAND_READ}</code>
+                    &nbsp;would be an integer 
+                    <code>1</code>
+                    &nbsp;internally
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    So, in my head I had this idea of a &quot;bit mask&quot;, so for example if I set it to 
+                    <code>3</code>
+                    , then it would mean that 
+                    <code>INDEX_READ</code>
+                    &nbsp;and 
+                    <code>VERTEX_ATTRIBUTE_READ</code>
+                    &nbsp;were active and zero, would actually be zero, with nothing active
+				</p>
+			</li>
+			<li>
+				<p>
+                    Is it just a different concept? bit mask != bit set? I used bit masks before, so that's the model I have in my head
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It's the same idea, I think you just have it shifted by 1. 
+                    <code>INDIRECT_COMMAND_READ</code>
+                    &nbsp;occupies a bit too (edited)
+				</p>
+			</li>
+			<li>
+				<p>
+                    So in &quot;raw&quot; bit masks, it would be
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">INDIRECT_COMMAND_READ = 1 // 1 &lt;&lt; 0 (bit 0) 
+INDEX_READ = 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 1 &lt;&lt; 1 (bit 1) 
+VERTEX_ATTRIBUTE_READ = 4 // 1 &lt;&lt; 2 (bit 2) 
+FOURTH_ONE = 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 1 &lt;&lt; 3 (bit 3) 
+FIFTH_ONE = 16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 1 &lt;&lt; 4 (bit 4)
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    The value in the 
+                    <code>AccessFlag2</code>
+                    &nbsp;enum is just a bit 
+					<em>
+                        index
+					</em>
+                    , not a mask
+				</p>
+			</li>
+			<li>
+				<p>
+                    The 
+                    <code>bit_set</code>
+                    &nbsp;handles turning it into a mask.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

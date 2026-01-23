@@ -1,0 +1,4671 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Vulkan
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-samples.html" >
+                                Samples
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-core.html" >
+                                Core
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-render-loop.html" >
+                                Render Loop
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-synchronization-and-cache-control.html" >
+                                Synchronization and Cache Control
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-command-buffers.html" >
+                                Command Buffers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-pipelines.html" >
+                                Pipelines
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-graphics-pipeline.html" >
+                                Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-compute-pipeline.html" >
+                                Compute Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-resources.html" >
+                                Resources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-depth.html" >
+                                Depth
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-mapping-data-to-shaders.html" >
+                                Mapping Data to Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-memory-allocation.html" >
+                                Memory Allocation
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#info" >
+                                        Info
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#arenas" >
+                                        Arenas
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#host-memory" >
+                                        Host Memory
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#device-memory" >
+                                        Device Memory
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#host-access" >
+                                                Host Access
+											</a>
+										</li>
+										<li>
+											<a
+												href="#lazily-allocated-memory" >
+                                                Lazily Allocated Memory
+											</a>
+										</li>
+										<li>
+											<a
+												href="#protected-memory" >
+                                                Protected Memory
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#tracking-gpu-memory" >
+                                        Tracking GPU Memory
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#vulkan-memory-allocator-vma" >
+                                        <s>Vulkan Memory Allocator (VMA)</s>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-hdr-support.html" >
+                                HDR Support
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-profiling.html" >
+                                Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-mobile.html" >
+                                Mobile
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-vr.html" >
+                                VR
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-video-decoding.html" >
+                                Video Decoding
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-spir-v.html" >
+                                SPIR-V
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Render Engineering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-graphics-apis.html" >
+                                Graphics APIs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-shader-languages.html" >
+                                Shader Languages
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-choosing-the-space-to-compute-lighting.html" >
+                                Choosing the Space to compute Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-bsdf-bidirectional-scattering-distribution-function.html" >
+                                BSDF (Bidirectional Scattering Distribution Function)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-material.html" >
+                                Material
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-direct-lighting.html" >
+                                Direct Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-shadows.html" >
+                                Shadows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-skybox-skydome.html" >
+                                Skybox / Skydome
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-transparency.html" >
+                                Transparency
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-indirect-lighting.html" >
+                                Global Illumination / Indirect Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-solutions.html" >
+                                Global Illumination - Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-discarded-solutions.html" >
+                                Global Illumination - Discarded Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-lightmaps.html" >
+                                Lightmaps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-post-processing.html" >
+                                Post-Processing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-anti-aliasing.html" >
+                                Anti-Aliasing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-light-path-rendering-method.html" >
+                                Light Path / Rendering Method
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-optimization-techniques.html" >
+                                Optimization Techniques
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Graphics and Shaders
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-math-linear-algebra.html" >
+                                Math, Linear Algebra
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-spaces-transformations-and-graphics-pipeline.html" >
+                                Spaces, Transformations and Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-common-techniques.html" >
+                                Common Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-shaders.html" >
+                                Shaders
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GLSL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-storage-qualifiers.html" >
+                                Storage Qualifiers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-layout-qualifiers.html" >
+                                Layout Qualifiers
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-execution-building-blocks.html" >
+                                Execution Building Blocks
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-specialized-units-and-instructions.html" >
+                                Specialized units &amp; instructions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-gpu-va-virtual-address.html" >
+                                GPU VA (Virtual Address)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-tiled-gpus.html" >
+                                Tiled-GPUs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Slang
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Slang-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Font Rendering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-techniques.html" >
+                                Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-text-processing-pipeline.html" >
+                                Text Processing Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-formats.html" >
+                                Formats
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-libs.html" >
+                                Libs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-fonts.html" >
+                                Fonts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        OpenGL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/OpenGL/OpenGL-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Memory Allocation
+						</h1>
+						<p>
+							<time
+								datetime="2025-08-01" >
+                                🕒 Created: 2025-08-01
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/memory.html" 
+				class="external-link" 
+				target="_blank" >
+                Memory Allocation
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="info" >
+    Info
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=rXSdDE7NWmA" 
+				class="external-link" 
+				target="_blank" >
+                Memory Management
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Talk by AMD.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Shows no code.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The video is useful.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Memory Heaps, Memory Types.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Memory Blocks.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Suballocations.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Dos and Don'ts.
+				</p>
+			</li>
+			<li>
+				<p>
+                    VMA.
+				</p>
+			</li>
+			<li>
+				<p>
+                    VmaDumpVis.py to visualize the json file dumped by VMA.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=zSG6dPq57P8" 
+				class="external-link" 
+				target="_blank" >
+                Memory Management
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sounds more technical; I only saw parts of the talk.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Talk by AMD.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Shows code.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Memory Heaps, Memory Types.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Dos and Don'ts.
+				</p>
+			</li>
+			<li>
+				<p>
+                    VMA.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            There is additional level of indirection: 
+            <code>VkDeviceMemory</code>
+            &nbsp;is allocated separately from creating 
+            <code>VkBuffer</code>
+            /
+            <code>VkImage</code>
+            &nbsp;and they must be bound together.
+		</p>
+	</li>
+	<li>
+		<p>
+            Driver must be queried for supported memory heaps and memory types. Different GPU vendors provide different types of it.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is recommended to allocate bigger chunks of memory and assign parts of them to particular resources, as there is a limit on maximum number of memory blocks that can be allocated.
+		</p>
+	</li>
+	<li>
+		<p>
+            When memory is over-committed on Windows, the OS memory manager may move allocations from video memory to system memory, the OS also may temporarily suspend a process from the GPU runlist in order to page out its allocations to make room for a different process’ allocations. There is no OS memory manager on Linux that mitigates over-commitment by automatically performing paging operations on memory objects.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use 
+            <code>EXT_pageable_device_local_memory</code>
+            &nbsp;to avoid demotion of critical resources by assigning memory priority. It’s also a good idea to set low priority to non-critical resources such as vertex and index buffers; the app can verify the performance impact by placing the resources in system memory. 
+		</p>
+	</li>
+	<li>
+		<p>
+            Use 
+            <code>EXT_pageable_device_local_memory</code>
+            &nbsp;to also disable automatic promotion of allocations from system memory to video memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use dedicated memory allocations (
+            <code>KHR_dedicated_allocation</code>
+            , core in VK 1.1) when appropriate.
+		</p>
+	</li>
+	<li>
+		<p>
+            Using dedicated memory may improve performance for color and depth attachments, especially on pre-Turing GPUs.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use 
+            <code>KHR_get_memory_requirements2</code>
+            &nbsp;(core in VK 1.1) to check whether an image/buffer requires dedicated allocation.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use host visible video memory to write data directly to video memory from the CPU. Such heap can be detected using 
+            <code>DEVICE_LOCAL | HOST_VISIBLE</code>
+            . Take into account that CPU writes to such memory may be slower compared to normal memory. CPU reads are significantly slower. Check BAR1 traffic using Nsight Systems for possible issues.
+		</p>
+	</li>
+	<li>
+		<p>
+            Explicitly look for the 
+            <code>MEMORY_PROPERTY_DEVICE_LOCAL</code>
+            &nbsp;when picking a memory type for resources, which should be stored in video memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            Don’t assume fixed heap configuration, always query and use the memory properties using 
+            <code>vkGetPhysicalDeviceMemoryProperties()</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Don’t assume memory requirements of an image/buffer, use 
+            <code>vkGet*MemoryRequirements()</code>
+            . 
+		</p>
+	</li>
+	<li>
+		<p>
+            Don’t put every resource into a Dedicated Allocation.
+		</p>
+	</li>
+	<li>
+		<p>
+            For memory objects that are intended to be in device-local, do not just pick the first memory type. Pick one that is actually device-local.
+		</p>
+	</li>
+	<li>
+		<p>
+            The benefit is that we avoid CPU memory costs for lots of tiny buffers, as well as cache misses by using just the same buffer object and varying the offset.
+		</p>
+	</li>
+	<li>
+		<p>
+            This optimization applies to all buffers, but in the previous blog post on shader resource binding it was mentioned that the offsets are particularly good for uniform buffers.
+		</p>
+	</li>
+	<li>
+		<p>
+            Software developers use custom memory management for various reasons:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Making allocations often involves the operating system which is rather costly.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is usually faster to re-use existing allocations rather than to free and reallocate new ones.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Objects that live in a continuous chunk of memory can enjoy better cache utilization.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Data that is aligned well for the hardware can be processed faster.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Memory is a precious resource, and it can involve several indirect costs by the operating systems. For example some operating systems have a linear cost over the number of allocations for each submission to a Vulkan Queue. Another scenario is that the operating system also handles the paging state of allocations depending on other proceses, we therefore encourage not using too many allocations and organizing them “wisely”.
+		</p>
+	</li>
+	<li>
+		<p>
+            Device Memory: This memory is used for buffers and images and the developer is responsible for their content.
+		</p>
+	</li>
+	<li>
+		<p>
+            Resource Pools: Objects such as CommandBuffers and DescriptorSets are allocated from pools, the actual content is indirectly written by the driver.
+		</p>
+	</li>
+	<li>
+		<p>
+            Custom Host Allocators: Depending on your control-freak level you may also want to provide your own host allocator that the driver can use for the api objects.
+		</p>
+	</li>
+	<li>
+		<p>
+            Heap: Depending on the hardware and platform, the device will expose a fixed number of heaps, from which you can allocate certain amount of memory in total. Discrete GPUs with dedicated memory will be different to mobile or integrated solutions that share memory with the CPU. Heaps support different memory types which must be queried from the device.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory type: When creating a resource such as a buffer, Vulkan will provide information about which memory types are compatible with the resource. Depending on additional usage flags, the developer must pick the right type, and based on the type, the appropriate heap.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory property flags: These flags encode caching behavior and whether we can map the memory to the host (CPU), or if the GPU has fast access to the memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory: This object represents an allocation from a certain heap with a user-defined size.
+		</p>
+	</li>
+	<li>
+		<p>
+            Resource (Buffer/Image): After querying for the memory requirements and picking a compatible allocation, the memory is associated with the resource at a certain offset. This offset must fulfill the provided alignment requirements. After this we can start using our resource for actual work.
+		</p>
+	</li>
+	<li>
+		<p>
+            Sub-Resource (Offsets/View): It is not required to use a resource only in its full extent, just like in OpenGL we can bind ranges (e.g. varying the starting offset of a vertex-buffer) or make use of views (e.g. individual slice and mipmap of a texture array).
+		</p>
+	</li>
+	<li>
+		<p>
+            The fact that we can manually bind resources to actual memory addresses, gives rise to the following points:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Resources may alias (share) the same region of memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Alignment requirements for offsets into an allocation must be manually managed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Store multiple buffers, like the vertex and index buffer, into a single 
+            <code>VkBuffer</code>
+            &nbsp;and use offsets in commands like 
+            <code>vkCmdBindVertexBuffers</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The advantage is that your data is more cache friendly in that case, because it’s closer together. It is even possible to reuse the same chunk of memory for multiple resources if they are not used during the same render operations, provided that their data is refreshed, of course.
+		</p>
+	</li>
+	<li>
+		<p>
+            This is known as aliasing and some Vulkan functions have explicit flags to specify that you want to do this.
+		</p>
+	</li>
+	<li>
+		<p>
+            Uniform Buffer Binding: As part of a DescriptorSet this would be the equivalent of an arbitrary glBindBufferRange(GL_UNIFORM_BUFFER, dset.binding, dset.bufferOffset, dset.bufferSize) in OpenGL. All information for the actual binding by the CommandBuffer is stored within the DescriptorSet itself.
+		</p>
+	</li>
+	<li>
+		<p>
+            Uniform Buffer Dynamic Binding: Similar as above, but with the ability to provide the bufferOffset later when recording the CommandBuffer, a bit like this pseudo code: CommandBuffer-&gt;BindDescriptorSet(setNumber, descriptorSet, &amp;offset). It is very practical to use when sub-allocating uniform buffers from a larger buffer allocation.
+		</p>
+	</li>
+	<li>
+		<p>
+            Push Constants: PushConstants are uniform values that are stored within the CommandBuffer and can be accessed from the shaders similar to a single global uniform buffer. They provide enough bytes to hold some matrices or index values and the interpretation of the raw data is up the shader. You may recall glProgramEnvParameter from OpenGL providing something similar. The values are recorded with the CommandBuffer and cannot be altered afterwards: CommandBuffer-&gt;PushConstant(offset, size, &amp;data)
+		</p>
+	</li>
+	<li>
+		<p>
+            Dynamic offsets are very fast for NVIDIA hardware. Re-using the same DescriptorSet with just different offsets is rather CPU-cache friendly as well compared to using and managing many DescriptorSets. NVIDIA’s OpenGL driver actually also optimizes uniform buffer binds where just the range changes for a binding unit.
+		</p>
+	</li>
+</ul>
+<h5
+	id="sub-allocation" >
+    Sub-allocation
+</h5>
+<ul>
+	<li>
+		<p>
+            In a real world application, you’re not supposed to actually call 
+            <code>vkAllocateMemory</code>
+            &nbsp;for every individual buffer.
+		</p>
+	</li>
+	<li>
+		<p>
+            The maximum number of simultaneous memory allocations is limited by the 
+            <code>maxMemoryAllocationCount</code>
+            &nbsp;physical device limit, which may be as low as 
+            <code>4096</code>
+            &nbsp;even on high end hardware like an NVIDIA GTX 1080.
+		</p>
+	</li>
+	<li>
+		<p>
+            The right way to allocate memory for a large number of objects at the same time is to create a custom allocator that splits up a single allocation among many different objects by using the 
+            <code>offset</code>
+            &nbsp;parameters that we’ve seen in many functions.
+		</p>
+	</li>
+	<li>
+		<p>
+            You can either implement such an allocator yourself, or use the 
+			<a
+				href="https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator" 
+				class="external-link" 
+				target="_blank" >
+                VMA
+			</a>
+            &nbsp;library provided by the GPUOpen initiative.
+		</p>
+	</li>
+	<li>
+		<p>
+            Sub-allocation is a first-class approach when working in Vulkan.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory is allocated in pages with a fixed size; sub-allocation reduces the number of OS-level allocations.
+		</p>
+	</li>
+	<li>
+		<p>
+            You should use memory sub-allocation.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory allocation and deallocation at OS/driver level is expensive.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkAllocateMemory()</code>
+            &nbsp;is costly on the CPU.
+		</p>
+	</li>
+	<li>
+		<p>
+            Cost can be reduced by suballocating from a large memory object.
+		</p>
+	</li>
+	<li>
+		<p>
+            Also note the 
+            <code>maxMemoryAllocationCount</code>
+            &nbsp;limit which constrains the number of simultaneous allocations an application can have.
+		</p>
+	</li>
+	<li>
+		<p>
+            A Vulkan app should aim to create large allocations and then manage them itself.
+		</p>
+	</li>
+	<li>
+        <img src="assets/image_20250813094009.png" width="400" >
+
+	</li>
+</ul>
+<h3
+	id="arenas" >
+    Arenas
+</h3>
+<h5
+	id="discussion-around-the-availability-of-arenas-in-vulkan" >
+    Discussion around the availability of arenas in Vulkan
+</h5>
+<ul>
+	<li>
+		<p>
+            (2025-12-07)
+		</p>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    hello, is it possible to create a memory arena, placing all new objects in this region, and then freeing all this region without having to call the vkDestroyX functions? I'm having the impression that Vulkan memory management is rooted in RAII, which I don't like. All my games are managed through arenas, which I think is perfect, but for Vulkan I'm having to track each individual allocation and free each one at a time. I'm already treating memory as a big arena, but I'm having the overhead of calling the destruction of each resource separately.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            CharlesG:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You don’t own the memory that backs vulkan objects. For command buffers and descriptors there are pools so the driver can do a good job with the backing memory scheme.
+				</p>
+			</li>
+			<li>
+				<p>
+                    For VkDeviceMemory, you decide how to sub allocate them
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    do I need to call destroy for objects like vkPipeline, VkPipelineLayout, VkDescriptorSetLayout, VkShaderModule, VkRenderPass, etc? I have lots of objects that should die exacly at the same time, but I'm having to free them one by one. I heard about suballocations for buffers and images, but what about these types of objects I mentioned?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            VkIpotrick:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    they require actualy cleanup, they are not just some memory
+				</p>
+			</li>
+			<li>
+				<p>
+                    they might be referenced within other internal structures of the driver and have to be removed from those for example
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            CharlesG:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    anything that you vkCreate must be vkDestroyed; Except command buffers and descriptors where it is sufficient to just destroy the pools.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Using Vulkan is a lot like networking with a remote server, lots of driver internals have implementation requirements that make arenas not the “obvious choice” (otherwise we’d see more of them)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is there a future in Vulkan where the decision of how to free the memory is not bound to the driver, but for the programmer? You mentioned how this is limited by what the driver allows, but could this change in the future and move towards being more low-level?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            VkIpotrick:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    no. i dont think that is feasable.
+				</p>
+			</li>
+			<li>
+				<p>
+                    that would handcuff drivers so bad that you would be too low level. At that point a propper spec could be impossibly hard to create and maintain between vendors
+				</p>
+			</li>
+			<li>
+				<p>
+                    vulkan drivers still have to do a loooot of things internally. its still highish level api
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            CharlesG:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I concur.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I want to reiterate that drivers deal with much more than host memory allocations, but device memory, external memory (to the process), OS api’s, display hardware, shader compilers. Some objects don’t actually DO anything on deletion (sampler come to mind because the handle stores the entire state for some implementations, when the private data ext isnt active)
+				</p>
+			</li>
+			<li>
+				<p>
+                    Drivers get to ask the os on your behalf to map device memory into the host address space. And deal with you forgetting to unmap it during shutdown (though the OS is more likely to also clean up after user lode drivers…)
+				</p>
+			</li>
+			<li>
+				<p>
+                    I mention that some objects are “free” to leak cause they didn’t allocate anything internally because that is an implementation detail that isnt possible on all hardware, so the API cant guarantee “free” sampler cleanup without screwing over some hardware. And it just ties their hands when it is no longer possible to put all the state into the handle any more in the future with extensions to the API
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    well, I imagine this was the case, but still, I was hopeful there was some alternative for bulk deletion. Currently I just wrapped around the concept of shared lifetimes and created a pseudo-arena, which internally frees all the memory for me by calling each respective destructor. Still, it annoys me a bit knowing the design could be faster if I could bulk delete the content instead of being bound by what the driver exposes
+				</p>
+			</li>
+			<li>
+				<p>
+                    I understand why it's not possible due to the current design by drivers, but I wish it were
+				</p>
+			</li>
+			<li>
+				<p>
+                    my concern now is not the performance per se, but more about the freedom of having the option of managing memory in a way that could logically be faster (logically, as freeing a memory region is quite obviously faster than having to manage the state of different objects before deleting each of them individually). I'm not currently bound by the deletion times of those calls. I'm speaking more from a philosophical standpoint.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            CharlesG:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Inb4 going all in on bindless and gpu driven where there just arent as many vulkan objects to manage
+				</p>
+			</li>
+			<li>
+				<p>
+                    Fences and semaphores come to mind as prime examples of not just memory
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I'm trying to move it that way after trying bindful for a while, it's being much nicer and aligns with the vision I have of how memory is better managed;
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            CharlesG:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Suggestions for the API can be made in the vulkan-pain-points channel (although itd be good to link to this convo) and an issue can be made in the Vulkan-Docs github repo as thats the home of the specification. That said, this ask is not easily actionable so hard to quantify what “success” means.
+				</p>
+			</li>
+			<li>
+				<p>
+                    All good, and going towards bindless is definitely going to suite your tastes better!
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            VkIpotrick:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    bindless is simply better at this point
+				</p>
+			</li>
+			<li>
+				<p>
+                    descriptor sets, layouts, pools etc made sense for old hardware, but now they are just very clunky oddly behaving abstractions
+				</p>
+			</li>
+			<li>
+				<p>
+                    also with bindless you can have one static allocation for all descriptors
+				</p>
+			</li>
+			<li>
+				<p>
+                    the ultimate memory management is static lifetime after all.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="alternatives-and-half-solutions" >
+    Alternatives and half-solutions
+</h5>
+<ul>
+	<li>
+		<p>
+            You cannot safely get the behavior you want — i.e. allocate many Vulkan resources and then legally free one big memory region while leaving the Vulkan object handles alive and never calling their destruction; on a conformant Vulkan implementation. Freeing VkDeviceMemory that backs resources while those resources are still live or still in use is undefined behavior / validation errors unless you guarantee the resources are never used again and the driver allows that. The Vulkan spec requires you to manage object lifetimes; drivers may have internal bookkeeping tied to those object handles that won’t be cleaned just by freeing the raw memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            That said, you can achieve the practical “free everything by freeing a small number of objects/regions” without peppering vkDestroy* calls everywhere by changing how you structure resources. options that actually give you region-like semantics:
+		</p>
+	</li>
+	<li>
+		<p>
+            Mega-backings (buffers)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Never creating one Vulkan resource handle per logical allocation. In practice that means: create a small number of real Vulkan resources (big backing buffers / big images or sparse resources), suballocate from them, and operate using offsets/array-layer indices. When the region should die you destroy the backing objects (a few destroys) and free their VkDeviceMemory. No per-suballocation vkDestroy* calls are necessary because there are no per-suballocation Vulkan handles to destroy.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Create a small set of large backing VkDeviceMemory + VkBuffer objects (one per memory type/usage class you need).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Suballocate ranges from those big buffers and use offsets everywhere:
+				</p>
+			</li>
+			<li>
+				<p>
+                    For vertex/index bindings: vkCmdBindVertexBuffers(..., firstBinding, 1, &amp;bigBuffer, &amp;offset).
+				</p>
+			</li>
+			<li>
+				<p>
+                    For descriptors: VkDescriptorBufferInfo{ bigBuffer, offset, range } — descriptors can point at a buffer + offset without creating new VkBuffer handles.
+				</p>
+			</li>
+			<li>
+				<p>
+                    When you’re done, you only need to vkDestroyBuffer / vkFreeMemory for a few big buffers, not for every tiny allocation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Constraints: alignment, memoryRequirements and usage flags must be compatible for all suballocations placed in a given big buffer. If two allocations need different usage flags or memory types, they must go into different backing buffers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Texture atlases / arrays (images)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Replace many small VkImage objects with a single large image (or texture array/array layers / atlas) and pack multiple textures into it. Use UV/array-layer indices in shader, or use VkImageView / descriptor indexing accordingly.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You then destroy and free one big image rather than many small ones. Tradeoffs: packing, mipmapping, filtering artifacts, and sampler/view creation.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="host-memory" >
+    Host Memory
+</h3>
+<h5
+	id="allocator-codevkallocationcallbacks-code" >
+    Allocator (
+    <code>VkAllocationCallbacks</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>VkAllocationCallbacks</code>
+            &nbsp;only control host (CPU) allocations the loader/driver makes for Vulkan bookkeeping and temporary object.
+		</p>
+	</li>
+	<li>
+		<p>
+            They do not give you a direct view or control of device (GPU) memory payloads.
+		</p>
+	</li>
+	<li>
+		<p>
+            Passing a non-NULL 
+            <code>pAllocator</code>
+            &nbsp;to a 
+            <code>vkCreateX</code>
+            &nbsp;function causes the driver to call your callbacks for those host allocations. They do not switch the driver from using device heaps to host malloc; they only replace the host allocator functions used by the implementation. The allocation scope rules determine whether the allocation is command-scoped or object-scoped.
+		</p>
+	</li>
+	<li>
+		<p>
+            Passing a custom 
+            <code>VkAllocationCallbacks</code>
+            &nbsp;to 
+            <code>vkCreateBuffer</code>
+            &nbsp;lets you intercept and control the host memory the driver uses to represent the buffer object — but it does not tell you how many bytes of GPU heap were (or will be) consumed by the buffer’s storage. For the latter you must intercept device allocations (see below).
+		</p>
+	</li>
+	<li>
+		<p>
+            To track real GPU memory you must track 
+            <code>vkAllocateMemory</code>
+            /
+            <code>vkFreeMemory</code>
+            &nbsp;(and any driver-internal device allocations) and/or use 
+            <code>VK_EXT_memory_report</code>
+            &nbsp;/ 
+            <code>VK_EXT_memory_budget</code>
+            &nbsp;to observe what the driver actually commits.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Examples
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>vkCreateBuffer(...)</code>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This call creates a buffer object handle and the driver's host-side bookkeeping for that object (descriptor, small metadata).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Those host allocations are the things 
+                            <code>pAllocator</code>
+                            &nbsp;on 
+                            <code>vkCreateBuffer</code>
+                            &nbsp;controls.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The call does 
+							<strong>
+                                not
+							</strong>
+                            &nbsp;allocate GPU payload memory for the buffer contents.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The buffer becomes usable on the device only after you allocate 
+                            <code>VkDeviceMemory</code>
+                            &nbsp;and 
+							<strong>
+                                bind
+							</strong>
+                            &nbsp;it (or the driver performs some implicit allocation in non-standard implementations).
+						</p>
+					</li>
+					<li>
+						<p>
+                            The implementation goes as:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>vk.CreateBuffer</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Create buffer. Host Visible handle. CPU Memory.
+										</p>
+									</li>
+								</ul>
+<pre><code class="language-odin" data-lang="odin">vk_check(vk.CreateBuffer(_device.handle, &buffer_create_info, &arena.gpu_alloc, &buffer_handle))
+
+</code></pre>
+							</li>
+							<li>
+								<p>
+                                    <code>vk.GetBufferMemoryRequirements</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Prepare allocation_info for VkDeviceMemory. Choose a memoryTypeIndex with the desired properties
+										</p>
+									</li>
+									<li>
+										<p>
+                                            allocationSize and memoryTypeIndex determine whether the allocation will be device-local, host-visible, coherent, etc.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            This properties decide if the memory is mappable from the CPU.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            This call doesn't allocate anything.
+										</p>
+									</li>
+								</ul>
+<pre><code class="language-odin" data-lang="odin">mem_requirements: vk.MemoryRequirements
+vk.GetBufferMemoryRequirements(_device.handle, buffer_handle, &mem_requirements)
+mem_allocation_info := vk.MemoryAllocateInfo{
+&nbsp;&nbsp;&nbsp;&nbsp;sType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = .MEMORY_ALLOCATE_INFO,
+&nbsp;&nbsp;&nbsp;&nbsp;allocationSize&nbsp;&nbsp;= mem_requirements.size,
+&nbsp;&nbsp;&nbsp;&nbsp;memoryTypeIndex = device_find_memory_type(mem_requirements.memoryTypeBits, properties),
+}
+</code></pre>
+							</li>
+							<li>
+								<p>
+                                    <code>vk.AllocateMemory</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This is the call that requests a 
+                                            <code>VkDeviceMemory</code>
+                                            &nbsp;allocation from a particular memory type/heap.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Memory type is 
+                                            <code>HOST_VISIBLE</code>
+                                            :
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    The driver will allocate from the heap that provides host mappings (which is typically system RAM or a host-visible region).
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Effect: device payload is created — the 
+                                                    <code>VkDeviceMemory</code>
+                                                    &nbsp;object represents committed device memory (counts against the heap’s budget).
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    On discrete GPUs this is often a segment of system memory that is mapped by the driver, or on integrated GPUs it may be the same physical RAM but treated as both host- and device-accessible.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    The 
+                                                    <code>pAllocator</code>
+                                                    &nbsp;you pass to vkAllocateMemory only affects host-side allocations the driver does while processing the call; it does not change whether the allocation consumes device heap bytes.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Memory type is 
+                                            <code>DEVICE_LOCAL</code>
+                                            :
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Driver allocates a VkDeviceMemory from the device-local heap (on discrete GPUs this is the GPU VRAM heap). That is the device payload and consumes heap budget. The allocation is not host-visible, so you cannot vkMapMemory this memory.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Note: on integrated GPUs device-local may still be mappable because physical memory is shared — but that depends entirely on memory type flags exposed by the driver.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Memory type is 
+                                            <code>HOST VISIBLE + DEVICE_LOCAL</code>
+                                            :
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    The allocation is created in a heap that the driver marks both device-local and host-visible. Physically this can mean: shared system RAM (integrated GPU) or a special heap the driver exposes that is accessible by both CPU and GPU. The VkDeviceMemory is committed and counts against that heap’s budget.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    You may be able to 
+                                                    <code>vkMapMemory</code>
+                                                    &nbsp;this memory because it is host-visible. Performance characteristics vary: host-visible+device-local memory can be slower to CPU-access than pure host memory or slower to GPU-access than pure device-local VRAM.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    On PC discrete GPUs this commonly corresponds to the GPU memory that is accessible through the PCIe BAR (Resizible-BAR / ReBAR) or a special small window the driver exposes. Allocation behavior: vkAllocateMemory allocates from that BAR-exposed heap (it consumes VRAM or a BAR-mapped window of VRAM).
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+<pre><code class="language-odin" data-lang="odin">vk_check(vk.AllocateMemory(_device.handle, &mem_allocation_info, nil, &buffer_memory))
+</code></pre>
+							</li>
+							<li>
+								<p>
+                                    <code>vk.BindBufferMemory</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Binds one with the other (memory aliasing). Doesn't allocate anything
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Binds the previously allocated device memory to the buffer object. Binding itself normally does not allocate additional device heap bytes; it just associates that payload region with the buffer handle.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            After bind the buffer is usable for CPU mapping (if host-visible) and/or device operations.
+										</p>
+									</li>
+								</ul>
+<pre><code class="language-odin" data-lang="odin">vk_check(vk.BindBufferMemory(_device.handle, buffer_handle, buffer_memory, 0))
+</code></pre>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>vkCreateGraphicsPipelines(...)</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Pipeline creation can be expensive and opaque.
+						</p>
+					</li>
+					<li>
+						<p>
+                            During pipeline creation the driver may:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    allocate host-side structures for the pipeline object (controlled by 
+                                    <code>pAllocator</code>
+                                    &nbsp;passed to 
+                                    <code>vkCreateGraphicsPipelines</code>
+                                    ),
+								</p>
+							</li>
+							<li>
+								<p>
+                                    compile/optimize shaders, build internal representations,
+								</p>
+							</li>
+							<li>
+								<p>
+                                    and may allocate internal device resources (driver-controlled device memory, shader/kernel upload, caches) that are not the same as application 
+                                    <code>VkDeviceMemory</code>
+                                    &nbsp;allocations. The spec explicitly allows drivers to perform internal device allocations for things like pipelines; those allocations are not controlled by 
+                                    <code>VkAllocationCallbacks</code>
+                                    . If you need to see them, use 
+                                    <code>VK_EXT_device_memory_report</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="allocation-reallocation-free-internal-alloc-internal-free" >
+    Allocation, Reallocation, Free, Internal Alloc, Internal Free
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>pfnAllocation</code>
+            &nbsp;or 
+            <code>pfnReallocation</code>
+            &nbsp;may be called in the following situations:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkDevice</code>
+                    &nbsp;or 
+                    <code>VkInstance</code>
+                    &nbsp;may be allocated from any API command.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a command may be allocated from any API command.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkPipelineCache</code>
+                    &nbsp;may only be allocated from:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>vkCreatePipelineCache</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkMergePipelineCaches</code>
+                            &nbsp;for 
+                            <code>dstCache</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkCreateGraphicsPipelines</code>
+                            &nbsp;for 
+                            <code>pipelineCache</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkCreateComputePipelines</code>
+                            &nbsp;for 
+                            <code>pipelineCache</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkValidationCacheEXT</code>
+                    &nbsp;may only be allocated from:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>vkCreateValidationCacheEXT</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkMergeValidationCachesEXT</code>
+                            &nbsp;for 
+                            <code>dstCache</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkCreateShaderModule</code>
+                            &nbsp;for validationCache in 
+                            <code>VkShaderModuleValidationCacheCreateInfoEXT</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkDescriptorPool</code>
+                    &nbsp;may only be allocated from:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            any command that takes the pool as a direct argument
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkAllocateDescriptorSets</code>
+                            &nbsp;for the 
+                            <code>descriptorPool</code>
+                            &nbsp;member of its 
+                            <code>pAllocateInfo</code>
+                            &nbsp;parameter
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkCreateDescriptorPool</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkCommandPool</code>
+                    &nbsp;may only be allocated from:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            any command that takes the pool as a direct argument
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkCreateCommandPool</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkAllocateCommandBuffers</code>
+                            &nbsp;for the 
+                            <code>commandPool</code>
+                            &nbsp;member of its 
+                            <code>pAllocateInfo</code>
+                            &nbsp;parameter
+						</p>
+					</li>
+					<li>
+						<p>
+                            any 
+                            <code>vkCmd*</code>
+                            &nbsp;command whose 
+                            <code>commandBuffer</code>
+                            &nbsp;was allocated from that 
+                            <code>VkCommandPool</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to any other object may only be allocated in that object’s 
+                    <code>vkCreate*</code>
+                    &nbsp;command.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>pfnFree</code>
+            , or 
+            <code>pfnReallocation</code>
+            &nbsp;with zero size, may be called in the following situations:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkDevice</code>
+                    &nbsp;or VkInstance may be freed from any API command.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a command must be freed by any API command which allocates such memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkPipelineCache</code>
+                    &nbsp;may be freed from 
+                    <code>vkDestroyPipelineCache</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkValidationCacheEXT</code>
+                    &nbsp;may be freed from 
+                    <code>vkDestroyValidationCacheEXT</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkDescriptorPool</code>
+                    &nbsp;may be freed from
+				</p>
+				<ul>
+					<li>
+						<p>
+                            any command that takes the pool as a direct argument
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to a 
+                    <code>VkCommandPool</code>
+                    &nbsp;may be freed from:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            any command that takes the pool as a direct argument
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkResetCommandBuffer</code>
+                            &nbsp;whose 
+                            <code>commandBuffer</code>
+                            &nbsp;was allocated from that 
+                            <code>VkCommandPool</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Allocations scoped to any other object may be freed in that object’s 
+                    <code>vkDestroy*</code>
+                    &nbsp;command.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Any command that allocates host memory may also free host memory of the same scope.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>pfnAllocation</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If 
+                    <code>pfnAllocation</code>
+                    &nbsp;is unable to allocate the requested memory, it must return NULL.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the allocation was successful, it must return a valid pointer to memory allocation containing at least 
+                    <code>size</code>
+                    &nbsp;bytes, and with the pointer value being a multiple of 
+                    <code>alignment</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            `pfnReallocation``
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If the reallocation was successful, 
+                    <code>pfnReallocation</code>
+                    &nbsp;must return an allocation with enough space for size bytes, and the contents of the original allocation from bytes zero to min(original size, new size) - 1 must be preserved in the returned allocation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If size is larger than the old size, the contents of the additional space are 
+					<strong>
+                        undefined
+					</strong>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If satisfying these requirements involves creating a new allocation, then the old allocation should be freed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If 
+                    <code>pOriginal</code>
+                    &nbsp;is NULL, then 
+                    <code>pfnReallocation</code>
+                    &nbsp;must behave equivalently to a call to 
+                    <code>PFN_vkAllocationFunction</code>
+                    &nbsp;with the same parameter values (without 
+                    <code>pOriginal</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    If 
+                    <code>size</code>
+                    &nbsp;is zero, then 
+                    <code>pfnReallocation</code>
+                    &nbsp;must behave equivalently to a call to 
+                    <code>PFN_vkFreeFunction</code>
+                    &nbsp;with the same 
+                    <code>pUserData</code>
+                    &nbsp;parameter value, and 
+                    <code>pMemory</code>
+                    &nbsp;equal to 
+                    <code>pOriginal</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If 
+                    <code>pOriginal</code>
+                    &nbsp;is non-NULL, the implementation must ensure that 
+                    <code>alignment</code>
+                    &nbsp;is equal to the 
+                    <code>alignment</code>
+                    &nbsp;used to originally allocate 
+                    <code>pOriginal</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If this function fails and 
+                    <code>pOriginal</code>
+                    &nbsp;is non-NULL the application must not free the old allocation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>pfnFree</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    May be 
+                    <code>NULL</code>
+                    , which the callback must handle safely.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If 
+                    <code>pMemory</code>
+                    &nbsp;is non-NULL, it must be a pointer previously allocated by 
+                    <code>pfnAllocation</code>
+                    &nbsp;or 
+                    <code>pfnReallocation</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The application should free this memory.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>pfnInternalAllocation</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Upon allocation of executable memory, 
+                    <code>pfnInternalAllocation</code>
+                    &nbsp;will be called.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is a purely informational callback.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>pfnInternalFree</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Upon freeing executable memory, 
+                    <code>pfnInternalFree</code>
+                    &nbsp;will be called.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is a purely informational callback.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            If either of 
+            <code>pfnInternalAllocation</code>
+            &nbsp;or 
+            <code>pfnInternalFree</code>
+            &nbsp;is not NULL, both must be valid callbacks
+		</p>
+	</li>
+</ul>
+<h5
+	id="creating-the-allocator" >
+    Creating the allocator
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>VkAllocationCallbacks</code>
+            &nbsp;are for host-side allocations the Vulkan loader/driver makes (CPU memory for driver bookkeeping, staging buffers, etc.).
+		</p>
+	</li>
+	<li>
+		<p>
+            Using 
+            <code>malloc</code>
+            /
+            <code>free</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is common and acceptable for many apps — but you must meet Vulkan’s callback semantics (alignment, reallocation behavior, thread-safety) and consider performance.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is a normal, valid approach. It satisfies most apps and is what many people do in practice.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://stackoverflow.com/questions/36944492/vulkans-vkallocationcallbacks-implemented-with-malloc-free" 
+						class="external-link" 
+						target="_blank" >
+                        Discussion
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Caviats
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Alignment:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Vulkan allocators must return memory suitably aligned for any type the driver might need. Use posix_memalign/aligned_alloc on POSIX, _aligned_malloc on Windows, or otherwise ensure alignment. The Vulkan spec expects allocation functions to behave like platform allocators.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Reallocation semantics:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>pfnReallocation</code>
+                                    &nbsp;must implement C-like realloc semantics (grow/shrink, preserve contents if requested). If your platform realloc does not support required alignment, implement reallocation by allocating new aligned memory, copying the old contents, freeing the old pointer.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Thread-safety &amp; performance:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Drivers can call the callbacks from multiple threads. The system malloc is usually thread-safe but can have global locks and contention. For high-frequency allocation patterns, a custom pool or thread-local allocator can reduce contention and improve predictable performance.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Internal allocation tracking:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>VkAllocationCallbacks</code>
+                                    &nbsp;provide 
+                                    <code>pUserData</code>
+                                    &nbsp;so you can route allocations to a custom pool/context for tracking or to implement more efficient pooling per object type.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The GPU VkDeviceMemory allocations (the ones created with vkAllocateMemory) are a separate resource and must be managed with Vulkan APIs and counted against the appropriate memory heap
+		</p>
+	</li>
+	<li>
+		<p>
+            If you use malloc for 
+            <code>VkAllocationCallbacks</code>
+            , you are only providing host-allocator behavior for driver/loader-side allocations.
+		</p>
+	</li>
+</ul>
+<h5
+	id="scope" >
+    Scope
+</h5>
+<ul>
+	<li>
+		<p>
+            Each allocation has an allocation scope defining its lifetime and which object it is associated with. Possible values passed to the allocationScope parameter of the callback functions specified by 
+            <code>VkAllocationCallbacks</code>
+            , indicating the allocation scope, are:
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>COMMAND</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specifies that the allocation is scoped to the duration of the Vulkan command.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The most specific allocator available is used (
+                    <code>DEVICE</code>
+                    , else 
+                    <code>INSTANCE</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>OBJECT</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specifies that the allocation is scoped to the lifetime of the Vulkan object that is being created or used.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The most specific allocator available is used (
+                    <code>OBJECT</code>
+                    , else 
+                    <code>DEVICE</code>
+                    , else 
+                    <code>INSTANCE</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>CACHE</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specifies that the allocation is scoped to the lifetime of a 
+                    <code>VkPipelineCache</code>
+                    &nbsp;or 
+                    <code>VkValidationCacheEXT</code>
+                    &nbsp;object.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If an allocation is associated with a 
+                    <code>VkValidationCacheEXT</code>
+                    &nbsp;or 
+                    <code>VkPipelineCache</code>
+                    &nbsp;object, the allocator will use the 
+                    <code>CACHE</code>
+                    &nbsp;allocation scope.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The most specific allocator available is used (
+                    <code>CACHE</code>
+                    , else 
+                    <code>DEVICE</code>
+                    , else 
+                    <code>INSTANCE</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>DEVICE</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specifies that the allocation is scoped to the lifetime of the Vulkan device.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If an allocation is scoped to the lifetime of a device, the allocator will use an allocation scope of 
+                    <code>DEVICE</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The most specific allocator available is used (
+                    <code>DEVICE</code>
+                    , else 
+                    <code>INSTANCE</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>INSTANCE</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specifies that the allocation is scoped to the lifetime of the Vulkan instance.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If the allocation is scoped to the lifetime of an instance and the instance has an allocator, its allocator will be used with an allocation scope of 
+                    <code>INSTANCE</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Otherwise an implementation will allocate memory through an alternative mechanism that is unspecified.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Most Vulkan commands operate on a single object, or there is a sole object that is being created or manipulated. When an allocation uses an allocation scope of 
+            <code>OBJECT</code>
+            &nbsp;or 
+            <code>CACHE</code>
+            , the allocation is scoped to the object being created or manipulated.
+		</p>
+	</li>
+	<li>
+		<p>
+            When an implementation requires host memory, it will make callbacks to the application using the most specific allocator and allocation scope available:
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pools
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Objects that are allocated from pools do not specify their own allocator. When an implementation requires host memory for such an object, that memory is sourced from the object’s parent pool’s allocator.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="device-memory" >
+    Device Memory
+</h3>
+<ul>
+	<li>
+		<p>
+            Device memory is memory that is visible to the device — for example the contents of the image or buffer objects, which can be natively used by the device.
+		</p>
+	</li>
+	<li>
+		<p>
+            A Vulkan device operates on data in device memory via memory objects that are represented in the API by a 
+            <code>VkDeviceMemory</code>
+            &nbsp;handle.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>VkDeviceMemory</code>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Opaque handle to a device memory object.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="properties" >
+    Properties
+</h5>
+<ul>
+	<li>
+		<p>
+            Memory properties of a physical device describe the memory heaps and memory types available.
+		</p>
+	</li>
+	<li>
+		<p>
+            To query memory properties, call 
+            <code>vkGetPhysicalDeviceMemoryProperties</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>VkPhysicalDeviceMemoryProperties </code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Describes a number of memory heaps as well as a number of memory types that can be used to access memory allocated in those heaps.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Each heap describes a memory resource of a particular size, and each memory type describes a set of memory properties (e.g. host cached vs. uncached) that can be used with a given memory heap. Allocations using a particular memory type will consume resources from the heap indicated by that memory type’s heap index. More than one memory type may share each heap, and the heaps and memory types provide a mechanism to advertise an accurate size of the physical memory resources while allowing the memory to be used with a variety of different properties.
+				</p>
+			</li>
+			<li>
+				<p>
+                    At least one heap must include 
+                    <code>MEMORY_HEAP_DEVICE_LOCAL</code>
+                    &nbsp;in 
+                    <code>VkMemoryHeap.flags</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>memoryTypeCount</code>
+                    &nbsp;is the number of valid elements in the 
+                    <code>memoryTypes</code>
+                    &nbsp;array.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>memoryTypes</code>
+                    &nbsp;is an array of 
+                    <code>MAX_MEMORY_TYPES</code>
+                    &nbsp;
+                    <code>VkMemoryType</code>
+                    &nbsp;structures describing the memory types that can be used to access memory allocated from the heaps specified by memoryHeaps.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>memoryHeapCount</code>
+                    &nbsp;is the number of valid elements in the 
+                    <code>memoryHeaps</code>
+                    &nbsp;array.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>memoryHeaps</code>
+                    &nbsp;is an array of 
+                    <code>MAX_MEMORY_HEAPS</code>
+                    &nbsp;
+                    <code>VkMemoryHeap</code>
+                    &nbsp;structures describing the memory heaps from which memory can be allocated.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="device-memory-allocation" >
+    Device Memory Allocation
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Memory requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>vkGetBufferMemoryRequirements</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Returns the memory requirements for specified Vulkan object
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>device</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the logical device that owns the buffer.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>buffer</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the buffer to query.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>pMemoryRequirements</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is a pointer to a 
+                                    <code>VkMemoryRequirements</code>
+                                    &nbsp;structure in which the memory requirements of the buffer object are returned.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>VkMemoryRequirements</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>size</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the size, in bytes, of the memory allocation required for the resource.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The size of the required memory in bytes may differ from 
+                                    <code>bufferInfo.size</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>alignment</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The offset in bytes where the buffer begins in the allocated region of memory, depends on 
+                                    <code>bufferInfo.usage</code>
+                                    &nbsp;and 
+                                    <code>bufferInfo.flags</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>memoryTypeBits</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Bit field of the memory types that are suitable for the buffer.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Bit 
+                                    <code>i</code>
+                                    &nbsp;is set if and only if the memory type 
+                                    <code>i</code>
+                                    &nbsp;in the 
+                                    <code>VkPhysicalDeviceMemoryProperties</code>
+                                    &nbsp;structure for the physical device is supported for the resource.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>vkGetPhysicalDeviceMemoryProperties</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Reports memory information for the specified physical device
+						</p>
+					</li>
+					<li>
+						<p>
+                            We'll use it to find a memory type that is suitable for the buffer itself.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>vkGetPhysicalDeviceMemoryProperties2</code>
+                            &nbsp;behaves similarly to 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkGetPhysicalDeviceMemoryProperties.html" 
+								class="external-link" 
+								target="_blank" >
+                                vkGetPhysicalDeviceMemoryProperties
+							</a>
+                            , with the ability to return extended information in a 
+                            <code>pNext</code>
+                            &nbsp;chain of output structures.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>memoryHeaps</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Are distinct memory resources like dedicated VRAM and swap space in RAM for when VRAM runs out.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The different types of memory exist within these heaps.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Right now we’ll only concern ourselves with the type of memory and not the heap it comes from, but you can imagine that this can affect performance.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>memoryTypes</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Consists of 
+                                    <code>VkMemoryType</code>
+                                    &nbsp;structs that specify the heap and properties of each memory type.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The properties define special features of the memory, like being able to map it so we can write to it from the CPU.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>VkMemoryType</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Structure specifying memory type
+										</p>
+									</li>
+									<li>
+										<p>
+                                            <code>heapIndex</code>
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Describes which memory heap this memory type corresponds to, and 
+													<em>
+                                                        must
+													</em>
+                                                    &nbsp;be less than 
+                                                    <code>memoryHeapCount</code>
+                                                    &nbsp;from the 
+													<a
+														href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceMemoryProperties.html" 
+														class="external-link" 
+														target="_blank" >
+                                                        VkPhysicalDeviceMemoryProperties
+													</a>
+                                                    &nbsp;structure.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            <code>propertyFlags</code>
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Is a bitmask of 
+													<a
+														href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkMemoryPropertyFlagBits.html" 
+														class="external-link" 
+														target="_blank" >
+                                                        VkMemoryPropertyFlagBits
+													</a>
+                                                    &nbsp;of properties for this memory type.
+												</p>
+											</li>
+											<li>
+												<p>
+													<a
+														href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkMemoryPropertyFlagBits.html" 
+														class="external-link" 
+														target="_blank" >
+                                                        VkMemoryPropertyFlagBits
+													</a>
+                                                    .
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            The most optimal memory has the 
+                                                            <code>MEMORY_PROPERTY_DEVICE_LOCAL</code>
+                                                            &nbsp;flag and is usually not accessible by the CPU on dedicated graphics cards.
+														</p>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>typeFilter</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Specify the bit field of memory types that are suitable.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    That means that we can find the index of a suitable memory type by simply iterating over them and checking if the corresponding bit is set to 
+                                    <code>1</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    However, we’re not just interested in a memory type that is suitable for the vertex buffer.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    We also need to be able to write our vertex data to that memory.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            We may have more than one desirable property, so we should check if the result of the bitwise AND is not just non-zero, but equal to the desired properties bit field. If there is a memory type suitable for the buffer that also has all the properties we need, then we return its index, otherwise we throw an exception.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Allocation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>VkMemoryAllocateInfo</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>allocationSize</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the size of the allocation in bytes.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>memoryTypeIndex</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is an index identifying a memory type from the 
+                                    <code>memoryTypes</code>
+                                    &nbsp;array of the 
+                                    <code>vkGetPhysicalDeviceMemoryProperties</code>
+                                    &nbsp;struct, as defined in the 'memory requirements'.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>vkAllocateMemory</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            To allocate memory objects.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>device</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the logical device that owns the memory.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>pAllocateInfo</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is a pointer to a 
+                                    <code>VkMemoryAllocateInfo</code>
+                                    &nbsp;structure describing parameters of the allocation. A successfully returned allocation must use the requested parameters — no substitution is permitted by the implementation.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>pAllocator</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Controls 
+									<strong>
+                                        host
+									</strong>
+                                    &nbsp;memory allocation.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>pMemory</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is a pointer to a 
+                                    <code>VkDeviceMemory</code>
+                                    &nbsp;handle in which information about the allocated memory is returned.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Allocations returned by 
+                    <code>vkAllocateMemory</code>
+                    &nbsp;are guaranteed to meet any alignment requirement of the implementation. For example, if an implementation requires 128 byte alignment for images and 64 byte alignment for buffers, the device memory returned through this mechanism would be 128-byte aligned. This ensures that applications can correctly suballocate objects of different types (with potentially different alignment requirements) in the same memory object.
+				</p>
+			</li>
+			<li>
+				<p>
+                    When memory is allocated, its contents are undefined with the following constraint:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The contents of unprotected memory must not be a function of the contents of data protected memory objects, even if those memory objects were previously freed.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The contents of memory allocated by one application should not be a function of data from protected memory objects of another application, even if those memory objects were previously freed.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The maximum number of valid memory allocations that can exist simultaneously within a VkDevice may be restricted by implementation- or platform-dependent limits. The maxMemoryAllocationCount feature describes the number of allocations that can exist simultaneously before encountering these internal limits.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Freeing
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    To free a memory object, call 
+                    <code>vkFreeMemory</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Before freeing a memory object, an application must ensure the memory object is no longer in use by the device — for example by command buffers in the pending state. Memory can be freed whilst still bound to resources, but those resources must not be used afterwards. Freeing a memory object releases the reference it held, if any, to its payload. If there are still any bound images or buffers, the memory object’s payload may not be immediately released by the implementation, but must be released by the time all bound images and buffers have been destroyed. Once all references to a payload are released, it is returned to the heap from which it was allocated.
+				</p>
+			</li>
+			<li>
+				<p>
+                    How memory objects are bound to Images and Buffers is described in detail in the [Resource Memory Association] section.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If a memory object is mapped at the time it is freed, it is implicitly unmapped.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Host writes are not implicitly flushed when the memory object is unmapped, but the implementation must guarantee that writes that have not been flushed do not affect any other memory.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="resource-memory-association" >
+    Resource Memory Association
+</h5>
+<ul>
+	<li>
+		<p>
+            Resources are initially created as virtual allocations with no backing memory. Device memory is allocated separately and then associated with the resource. This association is done differently for sparse and non-sparse resources.
+		</p>
+	</li>
+	<li>
+		<p>
+            Resources created with any of the sparse creation flags are considered sparse resources. Resources created without these flags are non-sparse. The details on resource memory association for sparse resources is described in Sparse Resources.
+		</p>
+	</li>
+	<li>
+		<p>
+            Non-sparse resources must be bound completely and contiguously to a single VkDeviceMemory object before the resource is passed as a parameter to any of the following operations:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    creating buffer, image, or tensor views
+				</p>
+			</li>
+			<li>
+				<p>
+                    updating descriptor sets
+				</p>
+			</li>
+			<li>
+				<p>
+                    recording commands in a command buffer
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Once bound, the memory binding is immutable for the lifetime of the resource.
+		</p>
+	</li>
+	<li>
+		<p>
+            In a logical device representing more than one physical device, buffer and image resources exist on all physical devices but can be bound to memory differently on each. Each such replicated resource is an instance of the resource. For sparse resources, each instance can be bound to memory arbitrarily differently. For non-sparse resources, each instance can either be bound to the local or a peer instance of the memory, or for images can be bound to rectangular regions from the local and/or peer instances. When a resource is used in a descriptor set, each physical device interprets the descriptor according to its own instance’s binding to memory.
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/guide/latest/sparse_resources.html" 
+				class="external-link" 
+				target="_blank" >
+                Sparse Resources
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/sparsemem.html" 
+				class="external-link" 
+				target="_blank" >
+                Sparse Resources
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Sparse resources let you create 
+            <code>VkBuffer</code>
+            &nbsp;and 
+            <code>VkImage</code>
+            &nbsp;objects which are bound non-contiguously to one or more 
+            <code>VkDeviceMemory</code>
+            &nbsp;allocations.
+		</p>
+	</li>
+</ul>
+<h4
+	id="host-access" >
+    Host Access
+</h4>
+<ul>
+	<li>
+		<p>
+            Also check 
+            <a href="/studies/Graphics Programming/GPU/GPU.html">
+            GPU
+            </a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory objects created with 
+            <code>vkAllocateMemory</code>
+            &nbsp;are not directly host accessible.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory objects created with the memory property 
+            <code>MEMORY_PROPERTY_HOST_VISIBLE</code>
+            &nbsp;are considered mappable. Memory objects must be mappable in order to be successfully mapped on the host.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkMapMemory</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This function allows us to access a region of the specified memory resource defined by an offset and size.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used to retrieve a host virtual address pointer to a region of a mappable memory object.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is also possible to specify the special value 
+                    <code>WHOLE_SIZE</code>
+                    &nbsp;to map all of the memory.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>device</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the logical device that owns the memory.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>memory</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the 
+                            <code>VkDeviceMemory</code>
+                            &nbsp;object to be mapped.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>offset</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a zero-based byte offset from the beginning of the memory object.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>size</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the size of the memory range to map, or 
+                            <code>WHOLE_SIZE</code>
+                            &nbsp;to map from offset to the end of the allocation.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>flags</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a bitmask of 
+                            <code>VkMemoryMapFlagBits</code>
+                            &nbsp;specifying additional parameters of the memory map operation.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>ppData</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to a 
+                            <code>void*</code>
+                            &nbsp;variable in which a host-accessible pointer to the beginning of the mapped range is returned. The value of the returned pointer minus offset must be aligned to 
+                            <code>VkPhysicalDeviceLimits.minMemoryMapAlignment</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Acts like regular RAM, but physically points to GPU memory.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            After a successful call to 
+            <code>vkMapMemory</code>
+            &nbsp;the memory object memory is considered to be currently host mapped.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is an application error to call vkMapMemory on a memory object that is already host mapped.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkMapMemory</code>
+            &nbsp;does not check whether the device memory is currently in use before returning the host-accessible pointer.
+		</p>
+	</li>
+	<li>
+		<p>
+            If the device memory was allocated without the 
+            <code>MEMORY_PROPERTY_HOST_COHERENT</code>
+            &nbsp;set, these guarantees must be made for an extended range: the application must round down the start of the range to the nearest multiple of 
+            <code>VkPhysicalDeviceLimits.nonCoherentAtomSize</code>
+            , and round the end of the range up to the nearest multiple of 
+            <code>VkPhysicalDeviceLimits.nonCoherentAtomSize</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Problem
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The driver may not immediately copy the data into the buffer memory, for example, because of caching.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is also possible that writes to the buffer are not visible in the mapped memory yet.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There are two ways to deal with that problem:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Use a memory heap that is host coherent, indicated with 
+                            <code>MEMORY_PROPERTY_HOST_COHERENT</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            Call 
+                            <code>vkFlushMappedMemoryRanges</code>
+                            &nbsp;after writing to the mapped memory, and call 
+                            <code>vkInvalidateMappedMemoryRanges</code>
+                            &nbsp;before reading from the mapped memory.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Flushing memory ranges or using a coherent memory heap means that the driver will be aware of our writings to the buffer, but it doesn’t mean that they are actually visible on the GPU yet. The transfer of data to the GPU is an operation that happens in the background, and the specification simply 
+					<a
+						href="https://www.khronos.org/registry/vulkan/specs/1.3-extensions/html/chap7.html#synchronization-submission-host-writes" 
+						class="external-link" 
+						target="_blank" >
+                        tells us
+					</a>
+                    &nbsp;that it is guaranteed to be complete as of the next call to 
+                    <code>vkQueueSubmit</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Minimum Alignment
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceLimits.html" 
+						class="external-link" 
+						target="_blank" >
+                        <code>VkPhysicalDeviceLimits</code>
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>minMemoryMapAlignment</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the minimum 
+									<strong>
+                                        required
+									</strong>
+                                    &nbsp;alignment, in bytes, of host visible memory allocations within the host address space.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    When mapping a memory allocation with 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkMapMemory.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkMapMemory
+									</a>
+                                    , subtracting 
+                                    <code>offset</code>
+                                    &nbsp;bytes from the returned pointer will always produce an integer multiple of this limit.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    See 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#memory-device-hostaccess" 
+										class="external-link" 
+										target="_blank" >
+                                        https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#memory-device-hostaccess
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The value 
+									<strong>
+                                        must
+									</strong>
+                                    &nbsp;be a power of two.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>nonCoherentAtomSize</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the size and alignment in bytes that bounds 
+									<em>
+                                        concurrent
+									</em>
+                                    &nbsp;access to 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#memory-device-hostaccess" 
+										class="external-link" 
+										target="_blank" >
+                                        host-mapped device memory
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The value 
+									<strong>
+                                        must
+									</strong>
+                                    &nbsp;be a power of two.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    ChatGPT:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Dynamic offsets:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If you used 
+                                    <code>DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC</code>
+                                    &nbsp;or 
+                                    <code>DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC</code>
+                                    &nbsp;in your 
+                                    <code>VkDescriptorSetLayoutBinding</code>
+                                    .
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            That is the definition of a dynamic descriptor.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    If you call 
+                                    <code>vkCmdBindDescriptorSets(..., dynamicOffsetCount, pDynamicOffsets)</code>
+                                    . If 
+                                    <code>dynamicOffsetCount &gt; 0</code>
+                                    &nbsp;and 
+                                    <code>pDynamicOffsets</code>
+                                    &nbsp;is non-null you are supplying dynamic offsets at bind time.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            How offsets are applied:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Non-dynamic descriptor:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The 
+                                            <code>VkDescriptorBufferInfo.offset</code>
+                                            &nbsp;you gave to 
+                                            <code>vkUpdateDescriptorSets</code>
+                                            &nbsp;is baked into the descriptor.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            That 
+                                            <code>offset</code>
+                                            &nbsp;must be a multiple of 
+                                            <code>minUniformBufferOffsetAlignment</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Dynamic descriptor:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The descriptor stores a base 
+                                            <code>offset</code>
+                                            /
+                                            <code>range</code>
+                                            , and the runtime adds the dynamic offset(s) you pass to 
+                                            <code>vkCmdBindDescriptorSets</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Each dynamic offset must be a multiple of 
+                                            <code>minUniformBufferOffsetAlignment</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            If you are not using Dynamic Offsets in the 
+                            <code>vkCmdBindDescriptorSets</code>
+                            , nor using offsets in the 
+                            <code>VkDescriptorBufferInfo</code>
+                            , then you don't need to worry about this limit.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="staging-buffer" >
+    Staging buffer
+</h5>
+<ul>
+	<li>
+		<p>
+            Use a 
+			<em>
+                host visible buffer
+			</em>
+            &nbsp;as temporary buffer and use a 
+			<em>
+                device local buffer
+			</em>
+            &nbsp;as actual buffer.
+		</p>
+	</li>
+	<li>
+		<p>
+            The host visible buffer should have use 
+            <code>BUFFER_USAGE_TRANSFER_SRC</code>
+            , and the device local buffer should have use 
+            <code>BUFFER_USAGE_TRANSFER_DST</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The contents of the host visible buffer is copied to the device local buffer using 
+            <code>vkCmdCopyBuffer</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250813094230.png" width="475" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/guide/latest/memory_allocation.html#_transfer" 
+				class="external-link" 
+				target="_blank" >
+                Data Transfer
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Buffer copy requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Requires a queue family that supports transfer operations, which is indicated using 
+                    <code>QUEUE_TRANSFER</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Any queue family with 
+                            <code>QUEUE_GRAPHICS</code>
+                            &nbsp;or 
+                            <code>QUEUE_COMPUTE</code>
+                            &nbsp;capabilities already implicitly support 
+                            <code>QUEUE_TRANSFER</code>
+                            &nbsp;operations.
+						</p>
+					</li>
+					<li>
+						<p>
+                            A different queue family specifically for transfer operations could be used.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    It will require you to make the following modifications to your program:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Modify 
+                                            <code>QueueFamilyIndices</code>
+                                            &nbsp;and 
+                                            <code>findQueueFamilies</code>
+                                            &nbsp;to explicitly look for a queue family with the 
+                                            <code>QUEUE_TRANSFER</code>
+                                            &nbsp;bit, but not the 
+                                            <code>QUEUE_GRAPHICS</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Modify 
+                                            <code>createLogicalDevice</code>
+                                            &nbsp;to request a handle to the transfer queue
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Create a second command pool for command buffers that are submitted on the transfer queue family
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Change the 
+                                            <code>sharingMode</code>
+                                            &nbsp;of resources to be 
+                                            <code>SHARING_MODE_CONCURRENT</code>
+                                            &nbsp;and specify both the graphics and transfer queue families
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Submit any transfer commands like 
+                                            <code>vkCmdCopyBuffer</code>
+                                            &nbsp;(which we’ll be using in this chapter) to the transfer queue instead of the graphics queue
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            This will teach you a lot about how resources are shared between queue families.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Caio: Ok, but what's the benefits of using different queues? I don't know.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="bar-base-address-register" >
+    BAR (Base Address Register)
+</h5>
+<ul>
+	<li>
+		<p>
+            See 
+            <a href="/studies/Graphics Programming/GPU/GPU.html">
+            GPU
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="memory-aliasing" >
+    Memory Aliasing
+</h5>
+<ul>
+	<li>
+		<p>
+            A range of a VkDeviceMemory allocation is aliased if it is bound to multiple resources simultaneously, as described below, via 
+            <code>vkBindImageMemory</code>
+            , 
+            <code>vkBindBufferMemory</code>
+            , 
+            <code>vkBindAccelerationStructureMemoryNV</code>
+            , 
+            <code>vkBindTensorMemoryARM</code>
+            , via sparse memory bindings, or by binding the memory to resources in multiple Vulkan instances or external APIs using external memory handle export and import mechanisms.
+		</p>
+	</li>
+	<li>
+		<p>
+            Consider two resources, resourceA and resourceB, bound respectively to memory rangeA and rangeB. Let paddedRangeA and paddedRangeB be, respectively, rangeA and rangeB aligned to bufferImageGranularity. If the resources are both linear or both non-linear (as defined in the Glossary), then the resources alias the memory in the intersection of rangeA and rangeB. If one resource is linear and the other is non-linear, then the resources alias the memory in the intersection of paddedRangeA and paddedRangeB.
+		</p>
+	</li>
+	<li>
+		<p>
+            The implementation-dependent limit bufferImageGranularity also applies to tensor resources.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory aliasing can be useful to reduce the total device memory footprint of an application, if some large resources are used for disjoint periods of time.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkBindBufferMemory()</code>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If memory allocation was successful, then we can now associate this memory with the buffer using this function.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>offset</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Offset within the region of memory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Since this memory is allocated specifically for this the vertex buffer, the offset is simply 
+                            <code>0</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the offset is non-zero, then it is required to be divisible by 
+                            <code>memRequirements.alignment</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/spec/latest/chapters/resources.html#resources-memory-aliasing" 
+				class="external-link" 
+				target="_blank" >
+                Memory Aliasing
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h4
+	id="lazily-allocated-memory" >
+    Lazily Allocated Memory
+</h4>
+<ul>
+	<li>
+		<p>
+            If the memory object is allocated from a heap with the 
+            <code>MEMORY_PROPERTY_LAZILY_ALLOCATED</code>
+            &nbsp;bit set, that object’s backing memory may be provided by the implementation lazily. The actual committed size of the memory may initially be as small as zero (or as large as the requested size), and monotonically increases as additional memory is needed.
+		</p>
+	</li>
+	<li>
+		<p>
+            A memory type with this flag set is only allowed to be bound to a VkImage whose usage flags include 
+            <code>IMAGE_USAGE_TRANSIENT_ATTACHMENT</code>
+            .
+		</p>
+	</li>
+</ul>
+<h4
+	id="protected-memory" >
+    Protected Memory
+</h4>
+<ul>
+	<li>
+		<p>
+            Protected memory divides device memory into protected device memory and unprotected device memory.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Unprotected Device Memory
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Unprotected device memory, which can be visible to the device and can be visible to the host
+				</p>
+			</li>
+			<li>
+				<p>
+                    Unprotected images, unprotected tensors, and unprotected buffers, to which unprotected memory can be bound
+				</p>
+			</li>
+			<li>
+				<p>
+                    Unprotected command buffers, which can be submitted to a device queue to execute unprotected queue operations
+				</p>
+			</li>
+			<li>
+				<p>
+                    Unprotected device queues, to which unprotected command buffers can be submitted
+				</p>
+			</li>
+			<li>
+				<p>
+                    Unprotected queue submissions, through which unprotected command buffers can be submitted
+				</p>
+			</li>
+			<li>
+				<p>
+                    Unprotected queue operations
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Protected Device Memory
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Protected device memory, which can be visible to the device but must not be visible to the host
+				</p>
+			</li>
+			<li>
+				<p>
+                    Protected images, protected tensors, and protected buffers, to which protected memory can be bound
+				</p>
+			</li>
+			<li>
+				<p>
+                    Protected command buffers, which can be submitted to a protected-capable device queue to execute protected queue operations
+				</p>
+			</li>
+			<li>
+				<p>
+                    Protected-capable device queues, to which unprotected command buffers or protected command buffers can be submitted
+				</p>
+			</li>
+			<li>
+				<p>
+                    Protected queue submissions, through which protected command buffers can be submitted
+				</p>
+			</li>
+			<li>
+				<p>
+                    Protected queue operations
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://docs.vulkan.org/guide/latest/protected.html" 
+				class="external-link" 
+				target="_blank" >
+                Protected Memory
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="tracking-gpu-memory" >
+    Tracking GPU Memory
+</h3>
+<ul>
+	<li>
+		<p>
+            Vulkan does not expose fixed per-object byte counts for most objects — exact memory use is implementation and driver-dependent. Some objects (
+            <code>VkImage</code>
+            , 
+            <code>VkBuffer</code>
+            ) must be bound to 
+            <code>VkDeviceMemory</code>
+            &nbsp;you allocate (so you can know their size). Many other objects (pipelines, command buffers, descriptor sets, semaphores, imageviews, pipeline layouts, etc.) often cause hidden driver allocations that may live in host memory, device memory, or both — and those allocations’ size and placement vary by driver and GPU.
+		</p>
+	</li>
+</ul>
+<h5
+	id="by-object" >
+    By object
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>VkInstance</code>
+            &nbsp;/ 
+            <code>VkPhysicalDevice</code>
+            &nbsp;/ 
+            <code>VkDevice</code>
+            &nbsp;(handles):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Small host-side allocations (process RAM). Measure via your VkAllocationCallbacks or by tracking driver host allocations. These are host-visible (they are just process memory)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>VkImageView</code>
+            &nbsp;/ 
+            <code>VkBufferView</code>
+            &nbsp;/ 
+            <code>VkSampler</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Lightweight, usually host memory (small driver structures). They rarely allocate large device memory; they may cause small host allocations. Implementation dependent but small (tens to a few hundred bytes each in many drivers).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>VkDescriptorSetLayout</code>
+            &nbsp;/ 
+            <code>VkPipelineLayout</code>
+            &nbsp;/ 
+            <code>VkDescriptorSet</code>
+            &nbsp;(layout vs sets):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Layout and pipeline layout are small host structures (host memory). Descriptor sets and descriptor pools may be implemented in host memory or device memory; larger descriptor usage (large arrays, inline uniform blocks, inline immutable samplers, or driver internal structures) can cause real device allocations. Behavior is driver dependent.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>VkPipeline</code>
+            &nbsp;(graphics/compute):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Creation can cause hidden device and/or host allocations (compiled device binaries, GPU resident state). The spec explicitly allows implementations to allocate device memory during pipeline creation; the pipeline cache and pipeline executable properties APIs can help quantify some of this. Pipeline objects range from a few KB to multiple MB depending on driver, the number/complexity of shaders, and whether the driver stores compiled GPU blobs. Use 
+                    <code>VK_KHR_pipeline_executable_properties</code>
+                    &nbsp;and pipeline cache queries to inspect pipeline internals.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>VkPipelineCache</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Contains data you can query with 
+                    <code>vkGetPipelineCacheData</code>
+                    &nbsp;— that returns host-visible data you can size and persist.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>VkCommandPool</code>
+            &nbsp;/ 
+            <code>VkCommandBuffer</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Command buffers are allocated from a pool; actual memory holding recorded commands is driver-managed and may be placed in device local memory (GPU command stream) or host memory, depending on driver and OS. Sizes vary widely and are not exposed directly; instrument via driver callbacks or 
+                    <code>VK_EXT_device_memory_report</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>VkSemaphore</code>
+            &nbsp;/ 
+            <code>VkFence</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Binary semaphores and fences may use kernel/OS constructs or small host/device allocations; timeline semaphores hold a 64-bit value and may be backed by device memory on some implementations. Typically small (a few bytes to some KB) but driver dependent.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>VkSwapchainKHR</code>
+            &nbsp;and presentable images:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Swapchain images are VkImage objects with memory managed by the WSI/driver; they are typically DEVICE_LOCAL and can live in special presentable heaps. Their size equals image size × format bits × layers/levels plus padding (obtainable from 
+                    <code>vkGetImageMemoryRequirements</code>
+                    &nbsp;for images you allocate yourself; for WSI images use provided queries and 
+                    <code>VK_EXT_memory_budget</code>
+                    &nbsp;to monitor heap consumption).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Typical magnitude examples (illustrative only)
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Instance / layouts / view objects: tens to hundreds of bytes each (host).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Small buffers (uniform buffers) / small images: KBs to MBs, depending on dimensions and format — these are the allocations you make explicitly.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Pipelines: KBs → multiple MBs (depends on shader complexity and driver caching). Use pipeline executable queries to get an estimate.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Command buffer pools / driver command memory: KBs → MBs per many command buffers; driver dependent.
+				</p>
+			</li>
+			<li>
+				<p>
+                    These numbers must be measured on your target hardware — they are not constant across drivers.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="tracking" >
+    Tracking
+</h5>
+<ol>
+	<li>
+		<p
+			class="line-emphasis" >
+            Centralize and wrap all 
+            <code>vkAllocateMemory</code>
+            &nbsp;/ 
+            <code>vkFreeMemory</code>
+            &nbsp;calls.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Record: 
+                    <code>VkDeviceMemory</code>
+                    &nbsp;handle, 
+                    <code>VkMemoryAllocateInfo</code>
+                    &nbsp;size/flags, chosen memory type index, and optionally the 
+                    <code>VkDeviceSize</code>
+                    &nbsp;and offset for any suballocator logic. Suballocation (one 
+                    <code>VkDeviceMemory</code>
+                    &nbsp;used for many buffers/images) means you must additionally record your suballocations. Use this table as the authoritative committed GPU bytes. (Spec: 
+                    <code>vkAllocateMemory</code>
+                    &nbsp;produces the device memory payload.)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Track suballocation bookkeeping in your allocator.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If you allocate large 
+                    <code>VkDeviceMemory</code>
+                    &nbsp;blocks and suballocate slices for many buffers/images, account the slices into your counters (otherwise counting only 
+                    <code>VkDeviceMemory</code>
+                    &nbsp;handles will under- or over-count usage).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p
+			class="line-emphasis" >
+            Hook creation / bind points to attribute usage.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When you 
+                    <code>vkBindBufferMemory</code>
+                    &nbsp;/ 
+                    <code>vkBindImageMemory</code>
+                    , attach which application object is consuming which suballocation — this lets you produce per-buffer/per-image committed usage.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p
+			class="line-emphasis" >
+            Use 
+            <code>VK_EXT_memory_budget</code>
+            &nbsp;for driver-reported heap usage/budgets.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Query 
+                    <code>VkPhysicalDeviceMemoryBudgetPropertiesEXT</code>
+                    &nbsp;via 
+                    <code>vkGetPhysicalDeviceMemoryProperties2</code>
+                    &nbsp;to get 
+                    <code>heapBudget</code>
+                    &nbsp;and 
+                    <code>heapUsage</code>
+                    &nbsp;values per heap.
+				</p>
+			</li>
+			<li>
+				<p>
+                    These are implementation-provided and reflect other processes and driver internal usage; use them as cross-checks and to warn when you approach limits.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use it to see heap usage and budget per heap (useful to spot overall device local vs host mapped heap pressure). This is not per-object, but shows total heap usage and remaining budget. Combine with device_memory_report events to attribute heap changes to objects.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p
+			class="line-emphasis" >
+            Enable 
+            <code>VK_EXT_device_memory_report</code>
+            &nbsp;for visibility into 
+			<strong>
+                driver-internal
+			</strong>
+            &nbsp;allocations.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This extension gives callbacks for driver-side device memory events (allocate/free/import) including allocations not exposed as VkDeviceMemory (for example, allocations made internally during pipeline creation). Use it for debugging and to catch allocations that your vkAllocateMemory wrapper would miss.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Account for dedicated allocations and imports.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You can use 
+                    <code>VK_KHR_dedicated_allocation</code>
+                    &nbsp;to force one allocation per resource. If you allocate one 
+                    <code>VkDeviceMemory</code>
+                    &nbsp;per resource you know exactly how many bytes each resource consumes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If an allocation is made with 
+                    <code>VkMemoryDedicatedAllocateInfo</code>
+                    &nbsp;or via external memory import, count that device memory appropriately — it typically represents a whole allocation tied to a single image/buffer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Use 
+            <code>VK_KHR_pipeline_executable_properties</code>
+            &nbsp;for pipeline internals.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Create the pipeline with the capture flag (
+                    <code>VK_PIPELINE_CREATE_CAPTURE_STATISTICS_BIT_KHR</code>
+                    ) and call 
+                    <code>vkGetPipelineExecutablePropertiesKHR</code>
+                    &nbsp;/ 
+                    <code>vkGetPipelineExecutableStatisticsKHR</code>
+                    &nbsp;to obtain compile-time statistics and sizes for pipeline executables that the driver produced. This helps measure how much space pipeline compilation produced (but it may not show every byte the driver reserved at runtime).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Vendor tools + RenderDoc / NSight / Radeon GPU Profiler.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    These tools often show GPU memory usage, allocations, and sometimes attribute memory to API objects. Use them to validate your in-process accounting.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ol>
+<h5
+	id="device-memory-report-codevk_ext_device_memory_report-code" >
+    Device Memory Report (
+    <code>VK_EXT_device_memory_report</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+            Last updated (2021-01-06).
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/refpages/latest/refpages/source/VK_EXT_device_memory_report.html" 
+				class="external-link" 
+				target="_blank" >
+                Info
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Allows registration of device memory event callbacks upon device creation, so that applications or middleware can obtain detailed information about memory usage and how memory is associated with Vulkan objects. This extension exposes the actual underlying device memory usage, including allocations that are not normally visible to the application, such as memory consumed by 
+            <code>vkCreateGraphicsPipelines</code>
+            . It is intended primarily for use by debug tooling rather than for production applications.
+		</p>
+	</li>
+</ul>
+<h5
+	id="memory-budget-codeext_memory_budget-code" >
+    Memory Budget (
+    <code>EXT_memory_budget</code>
+    )
+</h5>
+<ul>
+	<li>
+		<p>
+            Last updated (2018-10-08).
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://vulkan.gpuinfo.org/displayextensiondetail.php?extension=VK_EXT_memory_budget" 
+				class="external-link" 
+				target="_blank" >
+                Coverage
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Not good on android, but the rest is 80%+.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/samples/latest/samples/extensions/memory_budget/README.html" 
+				class="external-link" 
+				target="_blank" >
+                Sample
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+            Query video memory budget for the process from the OS memory manager.
+		</p>
+	</li>
+	<li>
+		<p>
+            It’s important to keep usage below the budget to avoid stutters caused by demotion of video memory allocations.
+		</p>
+	</li>
+	<li>
+		<p>
+            While running a Vulkan application, other processes on the machine might also be attempting to use the same device memory, which can pose problems.
+		</p>
+	</li>
+	<li>
+		<p>
+            This extension adds support for querying the amount of memory used and the total memory budget for a memory heap. The values returned by this query are implementation-dependent and can depend on a variety of factors including operating system and system load.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>VkPhysicalDeviceMemoryBudgetPropertiesEXT.heapBudget</code>
+            &nbsp;values can be used as a guideline for how much total memory from each heap the current process can use at any given time, before allocations may start failing or causing performance degradation. The values may change based on other activity in the system that is outside the scope and control of the Vulkan implementation.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>VkPhysicalDeviceMemoryBudgetPropertiesEXT.heapUsage</code>
+            &nbsp;will display the current process estimated heap usage.
+		</p>
+	</li>
+	<li>
+		<p>
+            With this information, the idea is for an application at some interval (once per frame, per few seconds, etc) to query heapBudget and heapUsage. From here the application can notice if it is over budget and decide how it wants to handle the memory situation (free it, move to host memory, changing mipmap levels, etc).
+		</p>
+	</li>
+	<li>
+		<p>
+            This extension is designed to be used in concert with 
+            <code>VK_EXT_memory_priority</code>
+            &nbsp;to help with this part of memory management.
+		</p>
+	</li>
+</ul>
+<h3
+	id="vulkan-memory-allocator-vma" >
+    <s>Vulkan Memory Allocator (VMA)</s>
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Capati/odin-vma?utm_source=chatgpt.com" 
+				class="external-link" 
+				target="_blank" >
+                VMA in Odin
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator" 
+				class="external-link" 
+				target="_blank" >
+                VMA (vulkan memory allocator)
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Implements memory allocators for Vulkan, header only. In Vulkan, the user has to deal with the memory allocation of buffers, images, and other resources on their own. This can be very difficult to get right in a performant and safe way. Vulkan Memory Allocator does it for us and allows us to simplify the creation of images and other resources. Widely used in personal Vulkan engines or smaller scale projects like emulators. Very high end projects like Unreal Engine or AAA engines write their own memory allocators.
+		</p>
+	</li>
+	<li>
+		<p>
+            There are cases like the PCSX3 emulator project, where they replaced their attempt at allocation to VMA, and won 20% extra framerate.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Critiques
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250907092003.png" width="625" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

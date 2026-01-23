@@ -1,0 +1,1521 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Godot
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-info.html" >
+                                Info
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-game-style.html" >
+                                Game Style
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-nodes.html" >
+                                Nodes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-geometry.html" >
+                                Geometry
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-physics.html" >
+                                Physics
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-render.html" >
+                                Render
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-render-illumination.html" >
+                                Render: Illumination
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Godot Engine/Godot/Godot-animation.html" >
+                                Animation
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#tween" >
+                                        Tween
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#animated-sprite" >
+                                        Animated Sprite
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#importing-animations-from-a-gltf-glb-file" >
+                                        Importing animations from a .gltf / .glb file
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#animationmixer" >
+                                        AnimationMixer
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#animationplayer" >
+                                        AnimationPlayer
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#animationtree" >
+                                        AnimationTree
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-navigation.html" >
+                                Navigation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-audio.html" >
+                                Audio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-ui.html" >
+                                UI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-input.html" >
+                                Input
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-godot-high-level-multiplayer.html" >
+                                Godot High-level Multiplayer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-data-management.html" >
+                                Data Management
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-importing.html" >
+                                Importing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-exporting.html" >
+                                Exporting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-multi-threading.html" >
+                                Multi-threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-file-system-project-settings.html" >
+                                File System / Project Settings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-editor.html" >
+                                Editor
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-godot-shader-language.html" >
+                                Godot Shader Language
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-optimization-and-profiling.html" >
+                                Optimization and Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-addons.html" >
+                                Addons
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot/Godot-external-integrations.html" >
+                                External Integrations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - GDScript
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-print-strings-and-debug.html" >
+                                Print, Strings and Debug
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-functions.html" >
+                                Functions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-signals.html" >
+                                Signals
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-classes.html" >
+                                Classes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-annotations.html" >
+                                Annotations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-static-variables.html" >
+                                Static Variables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-execution.html" >
+                                Execution
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-limitations.html" >
+                                Limitations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - GDExtensions
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-gdextension.html" >
+                                GDExtension
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-rust-gdext.html" >
+                                Rust (Gdext)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - GDExtensions-swift-godot-swift.html" >
+                                Swift (Godot Swift)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Godot - Source Code
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Godot Engine/Godot - Source Code-source-code.html" >
+                                Source Code
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Animation
+						</h1>
+						<p>
+							<time
+								datetime="2021-11-23" >
+                                🕒 Created: 2021-11-23
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="tween" >
+    Tween
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=JfgKYUgDpLE" 
+				class="external-link" 
+				target="_blank" >
+                Tween: Making moving platforms
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.webp" 
+				class="external-link" 
+				target="_blank" >
+                Tween: Transitions and Easing
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="animationplayer-node-vs-tweens" >
+    AnimationPlayer Node vs Tweens
+</h5>
+<ul>
+	<li>
+		<p>
+            AnimationPlayer takes KeyFrames and transitions between them using a manually editable Easing; it's unclear if predefined ones can be used via Script. Tweens does the same but allows for custom (non-predefined) Easing.
+		</p>
+	</li>
+	<li>
+		<p>
+            In summary: both interpolate values using an Easing curve, while 
+            <code>AnimationPlayer</code>
+            &nbsp;is easier and more intuitive, Tweens allows better control when the final value is unknown.
+		</p>
+	</li>
+</ul>
+<h3
+	id="animated-sprite" >
+    Animated Sprite
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=owR7MI1NW9M" 
+				class="external-link" 
+				target="_blank" >
+                Change the entity's Hurtbox with an AnimatedSprite
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="importing-animations-from-a-gltf-glb-file" >
+    Importing animations from a .gltf / .glb file
+</h3>
+<h5
+	id="using-the-animations-in-an-animationplayer-different-from-the-one-generated-in-the-file" >
+    Using the animations in an AnimationPlayer different from the one generated in the file
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                (Safe!)
+			</strong>
+            &nbsp;Using a script on the Mesh to manage the internal 
+            <code>AnimationPlayer</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Create a script on the Mesh that has a function for each desired animation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Play the Mesh's animations by calling those functions inside the Entity's AnimationPlayer.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This causes some debugging inconveniences due to the visual loss of where the animation ends and what its &quot;critical points&quot; are.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If you want to loop animations, just call the Mesh function once and let the animation loop naturally inside the Mesh's AnimationPlayer.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Problem:
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This causes a blending problem between animations because the 
+                            <code>AnimationTree</code>
+                            &nbsp;will not have information about what is being animated, causing the transition to be completely discrete.
+						</p>
+					</li>
+					<li>
+						<p>
+                            As a consequence, transitions inside a BlendSpace2D are not done correctly if that BlendSpace2D's 
+                            <code>BlendMode</code>
+                            &nbsp;is set to continuous.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Solution:
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            You must set the BlendMode to Discrete for the BlendSpace2D so the called functions will work.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You can set a 'default_blend_time' on the mesh's AnimationPlayer so animations blend during the transition in the AnimationPlayer. This can be done via:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    'default_blend_time', affecting all animations.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    'set_blend_time', affecting two specified animations.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The Animation-&gt;Edit Transitions interface of the 
+                                    <code>AnimationPlayer</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                (Unsafe!)
+			</strong>
+            &nbsp;Using Animation Libraries and handling the import:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        &gt;
+					</em>
+                    &nbsp;Extract the animations to a separate file.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        &gt;
+					</em>
+                    &nbsp;Create an Animation Library and put the animations inside.
+				</p>
+			</li>
+			<li>
+				<p>
+                    ~Deal with the problem of a meaningless RootNode..
+				</p>
+				<ul>
+					<li>
+						<p>
+                            After attempts, I chose the only option that made sense: keep the RootNode in the Mesh while all other animations get a weird path.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Using the 'AnimationPlayerRefactor' Addon is very nice. It can solve the pathing problem, making it possible to keep the Root Node as the entity's CharacterBody.
+						</p>
+						<ul>
+							<li>
+								<p>
+									<strong>
+                                        However
+									</strong>
+                                    , re-importing the model breaks the model's animation pathing again because the old pathing is overwritten by the new pathing from the export.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Because of that, unfortunately, even with the addon this is still bad and unsafe.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="changing-the-animations-that-come-with-the-file-using-godot" >
+    Changing the animations that come with the file, using Godot
+</h5>
+<ul>
+	<li>
+		<p>
+            By default, animations cannot be edited in any way, this includes:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Trying to modify the AnimationPlayer of an Inherited Scene from the file.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Marking 'Editable Children' or 'Make Unique' on an instance of the Inherited Scene or an instance of the file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                (Unsafe)
+			</strong>
+            &nbsp;Editing the original tracks of a file animation:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        I choose not to do this, as it is strange and inconsistent
+					</strong>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        &gt;
+					</em>
+                    &nbsp;Extract the animations to a separate file.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Godot uses this to save the new tracks that will be added.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        &gt;
+					</em>
+                    &nbsp;Create an Animation Library and put the animations inside.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Mark 'Make Unique' on the Animation Library via one of these options:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Click 'Make Unique' in the Libraries tab of the AnimationMixer of the AnimationPlayer/AnimationTree.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Click the Disk icon on each animation and select 'Make Unique' inside the AnimationPlayer's 'Manage Animations' tab.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    After doing the above steps, you will be able to:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Create new tracks.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Remove tracks.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Rename tracks.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Even after these steps, any re-import of the file or 'Export as .glTF / .glb' in Blender will reset the animations to the file version.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This indicates that the animations are still linked to the file. I find this odd considering the AniLibrary was made unique.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                (Unsafe)
+			</strong>
+            &nbsp;Adding new tracks to a file animation:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In the file import tab, enable 'Keep Custom Tracks' for animations you want to add new tracks to.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This causes the 
+							<strong>
+                                new
+							</strong>
+                            &nbsp;tracks to remain intact after re-import or 'Export as .glTF / .glb' in Blender. The original tracks coming from Blender will be reset.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Although this option works, it seems ~unsafe and 'prone to trouble'.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="utils" >
+    Utils
+</h5>
+<ul>
+	<li>
+		<p>
+            Extract the animation to a separate file:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The animation should be saved in a separate .res or .tres file using one of the options in the file's import tab:
+				</p>
+			</li>
+			<li>
+				<p>
+                    'Actions -&gt; Set Animations Save Paths'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    'Save to File' when clicking the animation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ensure the 'Loop Mode' is set correctly.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Be careful not to use 'Skip Import' on the AnimationPlayer, as this can interfere with re-importing animations when re-importing the file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Create an Animation Library and put animations inside:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    *This is a very stupid process due to Godot's poor implementation of Animation Libraries.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Create an AnimationPlayer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Go to the AnimationPlayer's 'Manage Animations' tab and click 'New Library'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    After the AnimationLibrary is created, it must be saved to disk by clicking the Disk icon on the AnimationLibrary name in the AnimationPlayer's 'Manage Animations' tab.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Regardless of saving it as 
+                            <code>.tres</code>
+                            &nbsp;or 
+                            <code>.res</code>
+                            &nbsp;the Animation Library cannot be opened in the inspector for viewing. The only way to access and modify it is via the 'Manage Animations' tab of an AnimationPlayer.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="animationmixer" >
+    AnimationMixer
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://godotengine.org/article/migrating-animations-from-godot-4-0-to-4-3/#NodeStateMachine---State-Machine-Type" 
+				class="external-link" 
+				target="_blank" >
+                Features of AnimationMixer and Nested StateMachine in Godot 4.3
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="animationplayer" >
+    AnimationPlayer
+</h3>
+<ul>
+	<li>
+		<p>
+            File and Resource:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Clicking 'Duplicate' in the animation tab duplicates the animation with a new name. Doing this will make the Animation have a path pointing to {
+					<em>
+                        scene_path
+					</em>
+                    .tscn:
+					<em>
+                        id
+					</em>
+                    }, regardless of whether the Animation was a SubResource of the Scene or if it had its own path {
+					<em>
+                        resource_path
+					</em>
+                    .tres}.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Clicking 'Copy' and 'Paste' performs exactly the same process as 'Duplicate', except that this time the animation name will be the 'Name' variable of the Resource.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Clicking 'Copy' and 'Paste as Reference' results differently from 'Duplicate', since both animations will have the same path. If the animation has a path like {
+					<em>
+                        scene_path
+					</em>
+                    .tscn:
+					<em>
+                        id
+					</em>
+                    } or {
+					<em>
+                        resource_path
+					</em>
+                    .tres}, its 'paste by reference' will have the same path (and ID) as the original. If you use this option, I found it complicated to unlink the pathing between the copy and the original, since resetting their paths still causes them to share the same path.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Saving the entire 
+					<em>
+                        Scene
+					</em>
+                    &nbsp;'AnimationPlayer' with a {.tscn} file will save 
+					<em>
+                        all
+					</em>
+                    &nbsp;animations inside the AnimationPlayer. In other words, this method differs from the usual 'Save Animations' method, since all animations can be saved inside a single file. However, animations may not work if you place the Scene inside a SceneTree with different paths. You will need to recalibrate the tracks' paths manually.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Tracks:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Interpolation and Easing:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Interpolation can be changed on the right side of the Track, between 'Nearest', 'Linear' and 'Cubic'.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Easing can be changed by selecting a frame on the Track and editing its easing.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    You can right-click on the curve to select a preset.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Bezier Curves:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This Blender video helps visualize them: 
+							<a
+								href="https://www.youtube.com/watch?v=zHlln3AzeMs" 
+								class="external-link" 
+								target="_blank" >
+                                Blender: Understanding Bezier Curves and the Graph Editor
+							</a>
+						</p>
+					</li>
+					<li>
+						<p>
+                            To create Bezier Curves in the AniPlayer, click '+ Add Track' and 'Bezier Curve'.
+						</p>
+					</li>
+					<li>
+						<p>
+                            To edit the Curve, select the 'Toggle between bezier curve editor and track editor' icon at the bottom right of the interface.
+						</p>
+					</li>
+					<li>
+						<p>
+                            During editing, you can select a frame and change the Handle Type of the frame, as well as fine-tune the Handle position.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Tools:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When manipulating an animation in the AnimationPlayer, it is interesting to set the 'Snap Option' to 60 FPS (or the game's FrameRate), which results in a pseudo-frame-by-frame view of the animation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The 'Onion Skin' tool enables viewing 'past and future' frames at the same time, allowing better visualization of the motion. This did not work well for 'Discrete' animations and low frame rate 2D animations.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The tools to the right of 'Onion Skin': 'Directions', 'Depth', 'Differences Only', 'Force White Modulate' and 'Include Gizmos (3D)', seem to be responsible for fine-tuning the 'Onion Skin' tool.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The 'Group Track by Node' tool at the bottom left of the Snap options groups tracks based on their origin. 
+					<em>
+                        This allows moving tracks via the Inspector
+					</em>
+                    , which is great. Another way to get this functionality would be editing the .tres file with text editors, but that process is sometimes very unresponsive.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Behaviors:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Apparently, AniPlayer and AniTree can play simultaneously. For example, setting AnimationPlayer to AutoLoad will play it independently of whichever AniTree animation is active.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            [old] Dissatisfactions:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    (BUG) Disabling a track in an animation does absolutely nothing if the animation is started from an AniTree; the track still works anyway. Observed in Godot 3.5.1, but this has happened since ~Feb/2019.
+				</p>
+			</li>
+			<li>
+				<p>
+                    (BUG) If using an AniPlayer as its OWN SCENE, making any change to an Animation or property of the AniPlayer will not be saved or applied in the game. There are many situations where nothing fixes this bug, and if you restart Godot, all changes are lost and reverted. I believe this bug is caused by transforming an AniPlayer into a scene, since all animations inside it have their 'property path' incorrect, which can cause problems saving the scene. Therefore: avoid using AniPlayer scenes, I suppose.
+				</p>
+			</li>
+			<li>
+				<p>
+                    (Possible BUG) I changed settings of a {.tscn} file of an AniPlayer containing many animations, but there was a lot of inconsistency during the import of changes from VSCode to Godot, making it very frustrating to try to change this node this way. Note that ALL changes and import processes were done correctly. I tried resetting the scene, restarting the project and Godot, but there was still much frustration. In the end, if you want to make bulk changes in an AniPlayer, using the 'Copy Tracks' and 'Paste Tracks' tool may be one of the least frustrating solutions.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Notes: (2023-02-18) About the Player's AniPlayer animations:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    All AniPlayer animations have their BlendMode set to Discrete.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Most animations use the Linear Curve, while some sprite animations use the Cubic Curve.
+				</p>
+			</li>
+			<li>
+				<p>
+                    All animations use the Loop Wrap setting, that is, the default setting.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Only some animations have loop enabled, for example: Poison effects, Regeneration and Run movement. Idle and Switch movement animations do not loop.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Cautions
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Never make the AnimationPlayer the 'parent' of something you want to have its position updated. The node does not have a Transform property, so any movement it perceives will not be passed to its children.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="animationtree" >
+    AnimationTree
+</h3>
+<ul>
+	<li>
+		<p>
+            File and Resource:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Saving the AniTree's 'Tree Root' Resource will save the entire 'Animation Tree' configuration of the node; it will not save the animations themselves, since they are stored only inside the corresponding AnimationPlayer.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Transition Modes:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Switch Mode: from what I noticed, 'Immediate' transitions the animation as soon as a 'Travel' is requested. 'Sync' transitions the animation exactly like 'Immediate', but sends the 'Seek' property (animation frame) from the previous animation to the next one (the option behaved confusingly). 'AtEnd' transitions the animation when it finishes; however, it cannot exit loops without help from 'Auto_Advance'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Auto_Advance: from what I noticed, when used with 'Immediate' this option makes the animation transition instantly to the next one. When used with 'AtEnd' the option makes the animation transition to the next as soon as the animation ends. &quot;So what's the difference between 'Auto_Advance' and 'AtEnd'?&quot; From what I observed, 'Auto_Advance' can force exiting looping animations, while 'AtEnd' alone cannot transition in that case.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Changing parameters:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If you want to change internal parameters of the AniTree's 'tree_root', it is important to use 'AniTree.tree_root' to access parameters inside the 'tree_root' AnimationBlendTree. If you want to access an AnimationNode inside the 'tree_root', you can use 'AniTree.tree_root.get_node(&quot;
+					<em>
+                        animation_node_name
+					</em>
+                    &quot;)'; 'tree_root' in this case is an AnimationNodeStateMachine.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If you want to change external parameters of the AniTree's 'tree_root', the process can be done via the AniTree itself without needing to access 'tree_root'. For this, the command 'aniTree.get(&quot;
+					<em>
+                        parameter_path
+					</em>
+                    &quot;)' stores a parameter value. However, '.get()' only creates a copy of the information in most cases, but when using an AnimationStateMachine together with AniTree.get(&quot;parameters/playback&quot;)', it is possible to change the AnimationStateMachinePlayback (I believe this works because 'playback' is a resource by itself). Therefore, in general, you will need to use 'aniTree.set(&quot;
+					<em>
+                        parameter_path
+					</em>
+                    &quot;, 
+					<em>
+                        new_value
+					</em>
+                    )' to change a parameter's value; note that 'aniTree.get(&quot;
+					<em>
+                        parameter_path
+					</em>
+                    &quot;) = 
+					<em>
+                        new_value
+					</em>
+                    ' will crash the game, as Godot sees this as an error.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Cautions
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Never make the AnimationTree the 'parent' of something you want to have its position updated. The node does not have a Transform property, so any movement it perceives will not be passed to its children.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="animationtree-statemachine" >
+    AnimationTree: StateMachine
+</h5>
+<ul>
+	<li>
+		<p>
+            Observations:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The '.travel(..)' function acts like a 'queue', meaning the travel is only applied at the end of the frame. This implies that if several '.travel(..)' calls are made in sequence within the same frame, one will overwrite the other so that only the last one will actually travel.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Dissatisfactions:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The functions 'aniState.get_current_play_position()' and 'aniState.get_current_length()' interact strangely when using these commands to collect information that undergoes some kind of &quot;Blend&quot;. From my experience, it is important to disable all Blends made in the BlendSpace2D of the StateMachine to avoid this behavior; although I don't know if that was the real cause of my dissatisfaction. I experimented changing the animation anchor point inside the BlendSpace2D and there was no difference. Therefore I believe the problem is related to the 'Blend Mode'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    (BUG) If using an AniPlayer as its OWN SCENE, updating a Transition in the StateMachine does not make the game update the changes. To make the change effective, you need to make a more significant update in the AniTree, for example: create a new Transition between Segments and delete that Transition; this will make the game update and apply the changes. There are many situations where nothing fixes this bug, and if you restart Godot, all changes are lost and reverted. The same problem occurs when using a Resource for the AniTree's 'Tree Root'. Strange.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Notes: (2023-02-18) About the Player AniTree's BlendSpaces2D:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I used 'Blendmode Interpolated' with 'Sync' enabled. Using these settings was the only combination that gave me the result I wanted: be able to change the BlendPosition while keeping the animation frame, without looping it.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            After debugging these settings, I noticed there is no 'smooth transition' in the BlendPosition, so it can go from (-1,0) to (0,1) or from (0,1) to (1,0) in just 1 frame.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    I always use 'PlayMode' on Travel, which makes the States play via a &quot;path&quot; instead of simply &quot;teleporting&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=YrNQCB34PAc" 
+				class="external-link" 
+				target="_blank" >
+                Animation: Create an AnimationTree for a 3D character
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A 2D BlendSpace called IWR (Idle/Walk/Run) is used as Lobby.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=AW3rT-7J8ag" 
+				class="external-link" 
+				target="_blank" >
+                Animation: Create a CharacterController and AnimationTree StateMachine
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="animationtree-blendtree" >
+    AnimationTree: BlendTree
+</h5>
+<ul>
+	<li>
+		<p>
+            The 'Blend' effect contained in the nodes 'Blend2', 'Blend3' and 'OneShot' causes one animation OR the other to be played, but when switching to a second animation, the Blend effect remembers the position of the first animation so that when returning to the first one it continues from where it stopped.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 'Add' effect contained in nodes 'Add2', 'Add3', and 'OneShot' allows multiple animations to play simultaneously, combining them in a 'Discrete' way (without mixing).
+		</p>
+	</li>
+	<li>
+		<p>
+            The 'OneShot' node has random issues of ending the animation 1 frame earlier than expected, which can cause problems if an action is assigned to the animation's last frame. This was the cause of the attack animations 'POW bug'. The workaround is to leave 1 empty frame at the end of the animation to avoid the issue affecting the expected outcome.
+		</p>
+	</li>
+	<li>
+		<p>
+            Changing blendtree parameters:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Scale and Transition:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-gdscript" data-lang="gdscript">var aniDuracaoCooldown : String = 'parameters/DuracaoCooldown/scale'
+var aniTransicao : String = 'parameters/Transition/transition_request'
+aniTree.set(aniTransicao, 'Cooldown')
+aniTree.set(aniDuracaoCooldown, 1.0)
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=2gx1lfhqnFM" 
+				class="external-link" 
+				target="_blank" >
+                Animation: How to use AnimationTree BlendTree
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A 2D BlendSpace called IWR (Idle/Walk/Run) is used as Lobby.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=dbBG_LM4dwI" 
+				class="external-link" 
+				target="_blank" >
+                AnimationTree: Using AniBlendTree filters to only play some animation tracks
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The tip is okay, nothing spectacular.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

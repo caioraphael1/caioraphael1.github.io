@@ -1,0 +1,2212 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Vulkan
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-basic.html" >
+                                Basic
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#starting" >
+                                        Starting
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#compatibility" >
+                                        Compatibility
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#tutorials-in-docs" >
+                                        Tutorials in Docs
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#playlists" >
+                                        Playlists
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#talks" >
+                                        Talks
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-samples.html" >
+                                Samples
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-core.html" >
+                                Core
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-render-loop.html" >
+                                Render Loop
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-synchronization-and-cache-control.html" >
+                                Synchronization and Cache Control
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-command-buffers.html" >
+                                Command Buffers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-pipelines.html" >
+                                Pipelines
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-graphics-pipeline.html" >
+                                Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-compute-pipeline.html" >
+                                Compute Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-resources.html" >
+                                Resources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-depth.html" >
+                                Depth
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-mapping-data-to-shaders.html" >
+                                Mapping Data to Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-memory-allocation.html" >
+                                Memory Allocation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-hdr-support.html" >
+                                HDR Support
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-profiling.html" >
+                                Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-mobile.html" >
+                                Mobile
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-vr.html" >
+                                VR
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-video-decoding.html" >
+                                Video Decoding
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-spir-v.html" >
+                                SPIR-V
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Render Engineering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-graphics-apis.html" >
+                                Graphics APIs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-shader-languages.html" >
+                                Shader Languages
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-choosing-the-space-to-compute-lighting.html" >
+                                Choosing the Space to compute Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-bsdf-bidirectional-scattering-distribution-function.html" >
+                                BSDF (Bidirectional Scattering Distribution Function)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-material.html" >
+                                Material
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-direct-lighting.html" >
+                                Direct Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-shadows.html" >
+                                Shadows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-skybox-skydome.html" >
+                                Skybox / Skydome
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-transparency.html" >
+                                Transparency
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-indirect-lighting.html" >
+                                Global Illumination / Indirect Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-solutions.html" >
+                                Global Illumination - Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-discarded-solutions.html" >
+                                Global Illumination - Discarded Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-lightmaps.html" >
+                                Lightmaps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-post-processing.html" >
+                                Post-Processing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-anti-aliasing.html" >
+                                Anti-Aliasing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-light-path-rendering-method.html" >
+                                Light Path / Rendering Method
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-optimization-techniques.html" >
+                                Optimization Techniques
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Graphics and Shaders
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-math-linear-algebra.html" >
+                                Math, Linear Algebra
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-spaces-transformations-and-graphics-pipeline.html" >
+                                Spaces, Transformations and Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-common-techniques.html" >
+                                Common Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-shaders.html" >
+                                Shaders
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GLSL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-storage-qualifiers.html" >
+                                Storage Qualifiers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-layout-qualifiers.html" >
+                                Layout Qualifiers
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-execution-building-blocks.html" >
+                                Execution Building Blocks
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-specialized-units-and-instructions.html" >
+                                Specialized units &amp; instructions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-gpu-va-virtual-address.html" >
+                                GPU VA (Virtual Address)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-tiled-gpus.html" >
+                                Tiled-GPUs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Slang
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Slang-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Font Rendering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-techniques.html" >
+                                Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-text-processing-pipeline.html" >
+                                Text Processing Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-formats.html" >
+                                Formats
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-libs.html" >
+                                Libs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-fonts.html" >
+                                Fonts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        OpenGL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/OpenGL/OpenGL-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Basic
+						</h1>
+						<p>
+							<time
+								datetime="2025-08-01" >
+                                🕒 Created: 2025-08-01
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="starting" >
+    Starting
+</h3>
+<h5
+	id="versions" >
+    Versions
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/guide/latest/versions.html" 
+				class="external-link" 
+				target="_blank" >
+                Versions and Features Breakdown
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Patch notes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/guide/latest/vulkan_release_summary.html" 
+				class="external-link" 
+				target="_blank" >
+                Version Release Summary
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=7CtjMfDdTdg" 
+				class="external-link" 
+				target="_blank" >
+                Why not use Vulkan 1.0? {12:57 -&gt; end}
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    1.0 is harder, with missing features and clunky interfaces.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The video is pretty nice. I listed the problems it explained about 1.0 and placed them in the documentation below.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It was well explained and I came to appreciate using Vulkan 1.3+.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="is-oop" >
+    Is OOP?
+</h5>
+<ul>
+	<li>
+		<p>
+            Version 1.3, (2024-02-22).
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250801065314.png" width="375" >
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="api-structs" >
+    API Structs
+</h5>
+<ul>
+	<li>
+		<p>
+            Many structures in Vulkan require you to explicitly specify the type of structure in the 
+            <code>sType</code>
+            &nbsp;member.
+		</p>
+	</li>
+	<li>
+		<p>
+            Functions that create or destroy an object will have a 
+            <code>VkAllocationCallbacks</code>
+            &nbsp;parameter that allows you to use a custom allocator for driver memory, which will also be left 
+            <code>nullptr</code>
+            &nbsp;in this tutorial.
+		</p>
+	</li>
+	<li>
+		<p>
+            Almost all functions return a 
+            <code>VkResult</code>
+            &nbsp;that is either 
+            <code>SUCCESS</code>
+            &nbsp;or an error code. The specification describes which error codes each function can return and what they mean.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>KHR</code>
+            &nbsp;postfix, which means that these objects are part of a Vulkan extension.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>pNext</code>
+            &nbsp;member can point to an extension structure.
+		</p>
+	</li>
+</ul>
+<h3
+	id="compatibility" >
+    Compatibility
+</h3>
+<h5
+	id="support" >
+    Support
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/guide/latest/platforms.html" 
+				class="external-link" 
+				target="_blank" >
+                Platform Support
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.vulkan.org/guide/latest/checking_for_support.html" 
+				class="external-link" 
+				target="_blank" >
+                Checking for Vulkan support
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Windows (7 and later)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Yes, via the official SDK and drivers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Linux
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Yes. Native support via Mesa and vendor drivers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Android (5.0+)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Yes, most devices from Android 7.0+ support Vulkan.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            macOS
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No native support — requires MoltenVK (Vulkan-to-Metal wrapper).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            iOS
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No native support — requires MoltenVK.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Web
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No native support — experimental via WebGPU or Emscripten with translation layers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Consoles.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Partially supported; depends on platform SDKs and NDAs (e.g., Nintendo Switch uses a Vulkan-like API).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="driver-support" >
+    Driver support
+</h5>
+<ul>
+	<li>
+		<p>
+            Vulkan requires updated GPU drivers.
+		</p>
+	</li>
+	<li>
+		<p>
+            Older or integrated GPUs (especially pre-2013) may lack Vulkan support.
+		</p>
+	</li>
+	<li>
+		<p>
+            Vendor support varies: NVIDIA, AMD, and Intel generally support Vulkan on most modern hardware.
+		</p>
+	</li>
+</ul>
+<h5
+	id="compatibility-layers" >
+    Compatibility Layers
+</h5>
+<ul>
+	<li>
+		<p>
+            To increase compatibility.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                MoltenVK
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Runs Vulkan on Metal (required for macOS/iOS).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                gfx-rs / wgpu / bgfx
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Abstraction layers to use Vulkan when available, fallback to other APIs.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                ANGLE / Zink
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Can translate other APIs (e.g., OpenGL) to Vulkan and vice-versa.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="tutorials-in-docs" >
+    Tutorials in Docs
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan Specs
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html" 
+				class="external-link" 
+				target="_blank" >
+                Complete Vulkan Spec
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://vulkan.lunarg.com/sdk/home" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan SDK
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/vendor/vulkan/" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan Odin
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p
+			class="line-emphasis" >
+            
+			<a
+				href="https://docs.vulkan.org/guide/latest/memory_allocation.html" 
+				class="external-link" 
+				target="_blank" >
+                Docs Vulkan Guide
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I already read everything before the memory allocation section.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p
+			class="line-emphasis" >
+            
+			<a
+				href="https://docs.vulkan.org/tutorial/latest/00_Introduction.html" 
+				class="external-link" 
+				target="_blank" >
+                Docs Vulkan Tutorial
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Based on the vulkan-tutorial, with differences:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Vulkan 1.4 as a baseline
+						</p>
+					</li>
+					<li>
+						<p>
+                            Dynamic rendering instead of render passes
+						</p>
+					</li>
+					<li>
+						<p>
+                            Timeline semaphores
+						</p>
+					</li>
+					<li>
+						<p>
+							<a
+								href="https://shader-slang.org/" 
+								class="external-link" 
+								target="_blank" >
+                                Slang
+							</a>
+                            &nbsp;as the primary shading language
+						</p>
+					</li>
+					<li>
+						<p>
+                            Modern C++ (20) with modules
+						</p>
+					</li>
+					<li>
+						<p>
+							<a
+								href="https://github.com/KhronosGroup/Vulkan-Hpp" 
+								class="external-link" 
+								target="_blank" >
+                                Vulkan-Hpp
+							</a>
+                            &nbsp;with 
+							<a
+								href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization" 
+								class="external-link" 
+								target="_blank" >
+                                RAII
+							</a>
+						</p>
+					</li>
+					<li>
+						<p>
+                            It also contains Vulkan usage clarifications, improved synchronization and new content.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;This tutorial will use RAII with smart pointers and it will endeavor to demonstrate the latest methods and extensions which should hopefully make Vulkan a joy to use.&quot;
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Does not require knowledge of previous APIs, but you need to know C++ and graphics math.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Impressions
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Holy moly the new C++ API is a pain.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I preferred to go back to the 
+							<em>
+                                vulkan-tutorial
+							</em>
+                            &nbsp;several times and check how it's used in the C API.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I used this tutorial only as a base to consider the new features.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I didn't use Slang, I didn't like it; I stayed with GLSL.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p
+			class="line-emphasis" >
+            
+			<a
+				href="https://vulkan-tutorial.com/" 
+				class="external-link" 
+				target="_blank" >
+                vulkan-tutorial
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Does not require knowledge of previous APIs, but you need to know C++ and graphics math.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You can use C, but the tutorial is in C++.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Vulkan 1.0; shown 
+					<a
+						href="https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Instance" 
+						class="external-link" 
+						target="_blank" >
+                        here
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Uses GLSL for shaders.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            ~
+			<a
+				href="https://vkguide.dev/" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan Guide
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For people with previous experience with Graphics APIs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I'm not a big fan of this guide.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Uses
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Vulkan 1.3.
+						</p>
+					</li>
+					<li>
+						<p>
+                            C++, Visual Studio, CMake.
+						</p>
+					</li>
+					<li>
+						<p>
+                            SDL to create a window.
+						</p>
+					</li>
+					<li>
+						<p>
+							<a
+								href="https://github.com/charles-lunarg/vk-bootstrap/blob/master/src/VkBootstrap.cpp" 
+								class="external-link" 
+								target="_blank" >
+                                Vk Bootstrap
+							</a>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Abstracts a big amount of boilerplate that Vulkan has when setting up. Most of that code is written once and never touched again, so we will skip most of it using this library. This library simplifies instance creation, swapchain creation, and extension loading. It will be removed from the project eventually in an optional chapter that explains how to initialize that Vulkan boilerplate the “manual” way.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<a
+								href="https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator" 
+								class="external-link" 
+								target="_blank" >
+                                VMA (Vulkan Memory Allocator)
+							</a>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Implements memory allocators for Vulkan, header only. In Vulkan, the user has to deal with the memory allocation of buffers, images, and other resources on their own. This can be very difficult to get right in a performant and safe way. Vulkan Memory Allocator does it for us and allows us to simplify the creation of images and other resources. Widely used in personal Vulkan engines or smaller scale projects like emulators. Very high end projects like Unreal Engine or AAA engines write their own memory allocators.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Impressions
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The tutorial gives you a project with many things already done, and holds your hand for every syntax, file, folder, methodology, etc.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    It simply throws a lot of stuff at you.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    It's a pretty 
+									<em>
+                                        bloated
+									</em>
+                                    &nbsp;experience, for sure.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    I consider that a pain.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/SaschaWillems/Vulkan" 
+				class="external-link" 
+				target="_blank" >
+                Samples Collections in C++
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://gpuopen.com/learn/vulkan-barriers-explained/" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan Barriers Explained
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://gpuopen.com/learn/developing-vulkan-apps/" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan AMD Blog Posts
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://zeux.io/2020/02/27/writing-an-efficient-vulkan-renderer/" 
+				class="external-link" 
+				target="_blank" >
+                Writing an Efficient Vulkan Renderer
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="playlists" >
+    Playlists
+</h3>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+			<a
+				href="https://www.youtube.com/watch?v=j7e73AkmFUI&list=PLI3kBEQ3yd-D4CmRqdFoNii4z62t3vK6G&index=2" 
+				class="external-link" 
+				target="_blank" >
+                Playlist Vulkan with Odin - Nadako
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Vulkan 1.3, with Dynamic Rendering.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I watched videos 1 through 11.
+				</p>
+			</li>
+			<li>
+				<p>
+                    They are good videos.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I do not recommend them to someone who has never seen anything before, because they are not exactly for beginners and their explanations lack some foundation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I recommend them as a reference for how to set up in Odin.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=EsEP9iJKBhU&list=PLA0dXqQjCx0RntJy1pqje9uHRF1Z5vZgA" 
+				class="external-link" 
+				target="_blank" >
+                Playlist Vulkan - OGLDEV
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    C++, with Visual Studio.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Assumes you have seen another GPU API before.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Video 1:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Window with GLFW, not explained.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 8:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Theory explanation ok; code explanation meh.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 12:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Synchronization with 1 frame in-flight.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Good video.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>Video 16</s>:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Descriptor Sets.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Nope. See the spec, guides, or other videos on the subject, I think it's better.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 21:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Dynamic Rendering.
+						</p>
+					</li>
+					<li>
+						<p>
+                            {0:00 -&gt; 12:14}
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Explanation of the code to obtain the EXT for Vulkan 1.2, and ignore it for Vulkan 1.3
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            The rest of the video is irrelevant, it does not explain anything beyond what to change if someone is following his code line by line.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=Est5AvResbE&list=PLn3eTxaOtL2Nr89hYzKPib7tvce-ZO4yB" 
+				class="external-link" 
+				target="_blank" >
+                Playlist Vulkan 2024 - GetIntoGameDev
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Overall
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The person seems nice and I like when he draws things.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Unfortunately 95% of the series videos are code in C++ and he doesn't do a good job explaining the code.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I listed some videos below that I considered interesting.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Vulkan 1.3.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Video 12:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Synchronization, with 1 frame in-flight.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The drawings are nice.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    ~Video 13:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Multithreaded rendering.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Nope. See the Multithreading Rendering section to understand why &quot;nope&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+>
+                    Video 26:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Barycentric coordinates.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Only code, so nope
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Videos: 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>
+					<a
+						href="https://www.youtube.com/watch?v=2NVlG9TFT1c&list=PLn3eTxaOtL2NH5nbPHMK7gE07SqhcAjmk&index=3" 
+						class="external-link" 
+						target="_blank" >
+                        Playlist Vulkan - GetIntoGameDev
+					</a>
+                    </s>.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Vulkan 1.2, (2022-01-22).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Watch the new 2024 version of the tutorials.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The person sometimes explains on a sheet of paper, which is nice.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=tLwbj9qys18&list=PLmIqTlJ6KsE1Jx5HV4sd2jOe3V1KMHHgn&index=1" 
+				class="external-link" 
+				target="_blank" >
+                Playlist Vulkan - Computer Graphics at TU Wien
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Vulkan 1.2.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Video 1:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            SDK, Instances, extensions, physical devices, logical devices.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Ok.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 2:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Presentation Modes, Swapchain.
+						</p>
+					</li>
+					<li>
+						<p>
+                            {10:20 -&gt; 21:45}
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Explanation of all Presentation Modes.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 3:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Explanation of Buffers and Images.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The explanation seemed s a bit rushed and the definition is poorly established.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 4:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Commands, Command Pools, Command Buffers.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Ok, sure.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I skipped the descriptor sets part.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 5:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Pipelines.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I skipped it.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 6:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Synchronization.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Skipped.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Impressions
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I don't like the illustrations, nor the tone of the explanation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I simply feel I learn more and feel more confident reading the documentation or the spec.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The videos are &quot;more technical&quot;, but when that is the case documentation is better.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I prefer a simpler playlist to learn some basic concepts, and to read the documentation for advanced topics.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.youtube.com/@BrendanGalea/videos" 
+				class="external-link" 
+				target="_blank" >
+                Playlist Vulkan - Brendan Galea
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Vulkan 1.0.
+				</p>
+			</li>
+			<li>
+				<p>
+                    C++, with Visual Studio.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's a pain to see C++ code.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The sketch explanations in the middle of the videos are ok, but the rest is very bad; all code-related parts are unpleasant and with a LOT of mess in C++.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Video 1:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Window with GLFW.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 2:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Light explanation of the graphics pipeline.
+						</p>
+					</li>
+					<li>
+						<p>
+                            {9:54}
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Shader compilation, to SPIR-V.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Video 20:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Descriptor Sets
+						</p>
+					</li>
+					<li>
+						<p>
+                            {0:00 -&gt; 5:35} Nice explanation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The rest of the video is nah.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=PDPRhlh44TU&list=PLFAIgTeqcARkeHm-RimFyKET6IZPxlBSt&index=1&pp=iAQB" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan playlist - Cakez
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    C++
+				</p>
+			</li>
+			<li>
+				<p>
+                    Starts by teaching how to install Visual Studio and Git...
+				</p>
+			</li>
+			<li>
+				<p>
+                    Does not use GLFW, instead creates its own platform layer on Windows to create a window.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=vURfULK5wH4&list=PLS1lqxOwNjOYcAkRHQRpGCwQvJMMRNyOG&index=1&pp=iAQB" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan playlist - Francesco Piscani
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    He uses the vulkan-tutorial.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Spends the first 4 episodes doing basically nothing, just setting up CMake and Linux.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Nope, it sounds bad as tutorials.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="talks" >
+    Talks
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=p4iZMbXZbW8" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan in Doom 3
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Use RenderDoc extensively.
+				</p>
+			</li>
+			<li>
+				<p>
+                    1 Render Pass, 1 subpass, 3 attachments.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <img src="assets/image_20250506145949.png" width="300" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Buffers and Images
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <img src="assets/image_20250506150028.png" width="300" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Allocations:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            VMA for allocators.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/image_20250506150330.png" width="275" >
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/image_20250506150344.png" width="275" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    28 shaders + changes =&gt; 100 pipelines total at runtime.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <img src="assets/image_20250810104501.png" width="300" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Synchronization:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Not much of it. Doom 3 was single-threaded, it didn't require multithreading.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

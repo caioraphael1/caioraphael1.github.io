@@ -1,0 +1,2905 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Odin
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-overview.html" >
+                                Overview
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-my-impressions.html" >
+                                My Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-installation.html" >
+                                Installation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-compile-time-stuff.html" >
+                                Compile-time Stuff
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-package-system.html" >
+                                Package System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-lsp-ols-odin-language-server.html" >
+                                LSP (OLS - Odin Language Server)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-control-flow-if-when-switch-for-defer.html" >
+                                Control Flow (if, when, switch, for, defer)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-procedures.html" >
+                                Procedures
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-any.html" >
+                                any
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-primitive-types.html" >
+                                Primitive Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-matrix.html" >
+                                Matrix
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-quaternion.html" >
+                                Quaternion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-complex.html" >
+                                Complex
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Low-Level Systems/Odin/Odin-strings.html" >
+                                Strings
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#manipulation" >
+                                        Manipulation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#slicing" >
+                                        Slicing
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#prints" >
+                                        Prints
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#formatting" >
+                                        Formatting
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-rune.html" >
+                                Rune
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-maps-hash-maps.html" >
+                                Maps (Hash Maps)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-struct.html" >
+                                Struct
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-union.html" >
+                                Union
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-bit-sets.html" >
+                                Bit Sets
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-interfaces-methods-vtables.html" >
+                                Interfaces / Methods / VTables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-error-handling.html" >
+                                Error Handling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-context.html" >
+                                Context
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-address.html" >
+                                Memory: Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-allocators.html" >
+                                Memory: Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-operations.html" >
+                                Memory: Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-entry-point.html" >
+                                Entry Point
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-multi-threading.html" >
+                                Multi-Threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-directives.html" >
+                                Directives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-ffi-foreign-function-interface-bindings.html" >
+                                FFI (Foreign Function Interface) / Bindings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-web-build.html" >
+                                Web Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-file-system-process-cli-shell.html" >
+                                File System / Process / CLI / Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-useful-packages.html" >
+                                Useful Packages
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Memory
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-virtual-memory.html" >
+                                Virtual Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-os-memory-on-windows.html" >
+                                OS: Memory on Windows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-memory-alignment.html" >
+                                Memory Alignment
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-address.html" >
+                                Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-allocators.html" >
+                                Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-tools-memory-analysis.html" >
+                                Tools: Memory Analysis
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-handles-instead-of-pointers.html" >
+                                Handles instead of Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-ownership-strategies-destruction-strategies.html" >
+                                Ownership Strategies / Destruction Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-strategies-for-handling-short-lived-memory.html" >
+                                Strategies for handling short lived memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-garbage-collection.html" >
+                                Garbage Collection
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-initialization.html" >
+                                Initialization
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        CPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-physical-structure.html" >
+                                Physical Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-soa-struct-of-arrays-ecs-entity-component-system.html" >
+                                SOA (Struct Of Arrays) / ECS (Entity Component System)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Multithreading
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-core-concepts.html" >
+                                Core Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-thread.html" >
+                                Thread
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-implementation-detail.html" >
+                                Implementation Detail
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-synchronization-primitives.html" >
+                                Synchronization Primitives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-double-buffering.html" >
+                                Double-Buffering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-networking-strategies.html" >
+                                Networking Strategies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Handmade Hero
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Profilers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-tracy.html" >
+                                Tracy
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-spall.html" >
+                                Spall
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nvidia-nsight-graphics-gpu-trace.html" >
+                                Nvidia Nsight Graphics - GPU Trace
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-amd-gpu-profiler-amd-rgp.html" >
+                                AMD GPU Profiler (AMD RGP)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-intel-gpa.html" >
+                                Intel GPA
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nsight-systems.html" >
+                                <s>Nsight Systems</s>
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        C
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard.html" >
+                                C Standard
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard-library-libc.html" >
+                                C Standard Library (libc)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-loops.html" >
+                                Loops
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-structs.html" >
+                                Structs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-pointers.html" >
+                                Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-preprocessors.html" >
+                                Preprocessors
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-undefined-behavior.html" >
+                                Undefined Behavior
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-gamedev.html" >
+                                GameDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-windows-c-api.html" >
+                                WIndows C API
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Build Systems - Compilation - Linking
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilation-process.html" >
+                                Compilation Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilers.html" >
+                                Compilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-build-tools.html" >
+                                Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-meta-build-tools.html" >
+                                Meta Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-extra-annoying-things-on-windows.html" >
+                                Extra: Annoying things on Windows
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Debuggers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-file-types.html" >
+                                File Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-rad-debbuger.html" >
+                                RAD Debbuger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-gdb-gnu-debugger.html" >
+                                GDB (GNU Debugger)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-lldb.html" >
+                                LLDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-vscode.html" >
+                                VSCode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-visual-studio-debugger.html" >
+                                Visual Studio Debugger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-others.html" >
+                                Others
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Assembly - ASM
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-notes.html" >
+                                Notes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-reverse-engineering.html" >
+                                Reverse Engineering
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Parsing
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-lexer.html" >
+                                Lexer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        JAI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-build.html" >
+                                Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-types.html" >
+                                Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-meta-programming.html" >
+                                Meta programming
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-control-flow.html" >
+                                Control flow
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Strings
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-28" >
+                                🕒 Created: 2025-03-28
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#string-type" 
+				class="external-link" 
+				target="_blank" >
+                Strings
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="types" >
+    Types
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>string</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used as default when doing type inference: 
+                    <code>my_string := "hello"</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Stores the pointer to the data and the length of the string.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>cstring</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;A little longer, with a 0 at the end&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Is used to interface with foreign libraries written in/for C that use zero-terminated strings.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="syntax" >
+    Syntax
+</h5>
+<pre><code class="language-odin" data-lang="odin">"string"
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">'rune'
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">`multiline_string`
+</code></pre>
+<h3
+	id="manipulation" >
+    Manipulation
+</h3>
+<pre><code class="language-odin" data-lang="odin">import "core:strings"
+</code></pre>
+<ul>
+	<li>
+		<p>
+            If there is allocation, 
+            <code>delete</code>
+            &nbsp;is used.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Compare
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">value: int = strings.compare("hello", "hi")
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Contains
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">flag: bool = strings.contains("hello", "hi")&nbsp;&nbsp;// "hi" is in "hello"
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Concatenate
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">my_string, err := strings.concatenate({"hello", "hi"})
+defer delete(my_string)
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Upper
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">my_string := strings.to_upper("hello")
+defer delete(my_string)
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Lower
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">my_string := strings.to_lower("hello")
+defer delete(my_string)
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Cut
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;substring&quot;, &quot;make the string smaller&quot;.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">my_string, err := strings.cut("hello", 3, 5)&nbsp;&nbsp;// (string, first_idx, last_idx)
+defer delete(my_string)
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="slicing" >
+    Slicing
+</h3>
+<ul>
+	<li>
+		<p>
+            Uses array slicing property.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">my_str := "little cat"
+sub_str := my_str[7:]
+&nbsp;&nbsp;&nbsp;&nbsp;// `cat`
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Depending on the char, it is useful to use the 
+            <code>"core:string"</code>
+            &nbsp;library to avoid the issues below.
+		</p>
+	</li>
+	<li>
+		<p>
+            In the example below, ideally use &quot;runes&quot; instead of &quot;bytes&quot;, since Japanese chars use 3 bytes per rune.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">my_str := "imagine something Japanese"
+sub_str := my_str[1:]
+&nbsp;&nbsp;&nbsp;&nbsp;// issues
+</code></pre>
+<h3
+	id="prints" >
+    Prints
+</h3>
+<h5
+	id="formatting" >
+    Formatting
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#aprint" 
+				class="external-link" 
+				target="_blank" >
+                <code>aprint</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>aprintln</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>aprintf</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>aprintfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>any</code>
+                    &nbsp;and returns 
+                    <code>string</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#tprint" 
+				class="external-link" 
+				target="_blank" >
+                <code>tprint</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>tprintln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>tprintf</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>tprintfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>any</code>
+                    &nbsp;and returns 
+                    <code>int</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Prints
+					</em>
+                    &nbsp;to 
+                    <code>os.stdout</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allocates with the 
+                    <code>temp_allocator</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#bprint" 
+				class="external-link" 
+				target="_blank" >
+                <code>bprint</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>bprintln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>bprintf</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>bprintfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>[]u8</code>
+                    &nbsp;and returns 
+                    <code>string</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#sbprint" 
+				class="external-link" 
+				target="_blank" >
+                <code>sbprint</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>sbprintln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>sbprintf</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>sbprintfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>^strings.Builder</code>
+                    &nbsp;and returns 
+                    <code>string</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#caprint" 
+				class="external-link" 
+				target="_blank" >
+                <code>caprint</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>caprintln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>caprintf</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>caprintfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>any</code>
+                    &nbsp;and returns 
+                    <code>cstring</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#ctprint" 
+				class="external-link" 
+				target="_blank" >
+                <code>ctprint</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>ctprintln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>ctprintf</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>ctprintfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>any</code>
+                    &nbsp;and returns 
+                    <code>cstring</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allocates with the 
+                    <code>temp_allocator</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="writes-to-terminal-os-std" >
+    Writes to Terminal (os.std)
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#print" 
+				class="external-link" 
+				target="_blank" >
+                <code>fmt.print</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>println</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>printf</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>printfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>any</code>
+                    &nbsp;and returns 
+                    <code>int</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Prints
+					</em>
+                    &nbsp;to 
+                    <code>os.stdout</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#eprint" 
+				class="external-link" 
+				target="_blank" >
+                <code>fmt.eprint</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>eprintln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>eprintf</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>eprintfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>any</code>
+                    &nbsp;and returns 
+                    <code>int</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Prints
+					</em>
+                    &nbsp;to 
+                    <code>os.stderr</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#panicf" 
+				class="external-link" 
+				target="_blank" >
+                <code>fmt.panicf</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Takes 
+                    <code>any</code>
+                    &nbsp;and returns 
+                    <code>void</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Panics
+					</em>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="write-to-file" >
+    Write to File
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#fprint" 
+				class="external-link" 
+				target="_blank" >
+                <code>fprint</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>fprintln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>fprintf</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>fprintfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>fprint_type</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>fprint_typeid</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>os.Handle</code>
+                    &nbsp;and returns 
+                    <code>int</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Writes
+					</em>
+                    &nbsp;to file.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="writes-to-io-stream" >
+    Writes to io.Stream
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/fmt/#wprint" 
+				class="external-link" 
+				target="_blank" >
+                <code>wprint</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>wprintln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>wprintf</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>wprintfln</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>wprint_type</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>wprint_typeid</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes 
+                    <code>io.Stream</code>
+                    &nbsp;and returns 
+                    <code>int</code>
+                    &nbsp;(bytes written).
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Writes
+					</em>
+                    &nbsp;to stream.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="formatting" >
+    Formatting
+</h3>
+<h5
+	id="pretty-formatting" >
+    Pretty Formatting
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Opt 1
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin"> fmt.printf(
+&nbsp;&nbsp;&nbsp;&nbsp;"Ping %d:\n" +
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;Client RTT: %vms (self-measured)\n" +
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;Server RTT: %vms (server's view of us)\n",
+&nbsp;&nbsp;&nbsp;&nbsp;i,
+&nbsp;&nbsp;&nbsp;&nbsp;time.duration_milliseconds(client_rtt),
+&nbsp;&nbsp;&nbsp;&nbsp;time.duration_milliseconds(pong.client_ping), // Server's estimate
+)
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Opt 2
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/core/text/table/" 
+						class="external-link" 
+						target="_blank" >
+                        core:text/table
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Examples:
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-txt" data-lang="txt">A_LONG_ENUM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 54, // A comment about A_LONG_ENUM
+AN_EVEN_LONGER_ENUM = 1,&nbsp;&nbsp;// A comment about AN_EVEN_LONGER_ENUM
+</code></pre>
+<pre><code class="language-txt" data-lang="txt">+-----------------------------------------------+
+|&nbsp;&nbsp;This is a table caption and it is very long&nbsp;&nbsp;|
++------------------+-----------------+----------+
+| AAAAAAAAA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C |
++------------------+-----------------+----------+
+| 123&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+| 000000005&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 6.283185&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | bbb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
++------------------+-----------------+----------+
+
+|&nbsp;&nbsp;&nbsp;&nbsp;AAAAAAAAA&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp; |
+|:-----------------|:---------------:|---------:|
+| 123&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+| 000000005&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 6.283185&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+| a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| bbb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="tags-in-structs" >
+    Tags in Structs
+</h5>
+<pre><code class="language-odin" data-lang="odin">Foo :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;a: [L]u8 `fmt:"s"`, // whole buffer is a string
+&nbsp;&nbsp;&nbsp;&nbsp;b: [N]u8 `fmt:"s,0"`, // 0 terminated string
+&nbsp;&nbsp;&nbsp;&nbsp;c: [M]u8 `fmt:"q,n"`, // string with length determined by n, and use %q rather than %s
+&nbsp;&nbsp;&nbsp;&nbsp;n: int `fmt:"-"`, // ignore this from formatting
+}
+</code></pre>
+<h5
+	id="custom-formatters" >
+    Custom formatters
+</h5>
+<ul>
+	<li>
+		<p>
+            See 
+            <code>fmt/example.odin</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="escaping-symbols" >
+    Escaping symbols
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>%%</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    literal percent sign
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>{{</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    literal open brace
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>}}</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    literal close brace
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="formatting-verbs" >
+    Formatting Verbs
+</h5>
+<ul>
+	<li>
+		<p>
+            Using a verb in the wrong place does nothing, it just prints as if no formatting exists.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This is very strict. If it’s not in General, or the variable type, it won’t work.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                General
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%v</code>
+                    &nbsp;/ 
+                    <code>{:v}</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The value in default format
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">Tilesets: [Tileset{uid = 21, texture = Texture{id = 5, width = 384, height = 160, mipmaps = 1, format = "UNCOMPRESSED_R8G8B8A8"}, tilesize = [32, 32], pivot = [0, 0]}]
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    <code>%w</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            An Odin-syntax representation of the value
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">Tilesets: {Tileset{uid = 21, texture = Texture{id = 5, width = 384, height = 160, mipmaps = 1, format = PixelFormat.UNCOMPRESSED_R8G8B8A8}, tilesize = {32, 32}, pivot = {0, 0}}}
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    <code>%T</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            An Odin-syntax representation of the 
+							<strong>
+                                type
+							</strong>
+                            &nbsp;of the value
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">Tilesets: [dynamic]Tileset
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    <code>%#v</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            An expanded format of %v with newlines and indentation
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">Tilesets: [
+&nbsp;&nbsp;&nbsp;&nbsp;Tileset{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uid = 21,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;texture = Texture{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id = 5,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width = 384,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height = 160,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mipmaps = 1,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format = "UNCOMPRESSED_R8G8B8A8",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tilesize = [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pivot = [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],
+&nbsp;&nbsp;&nbsp;&nbsp;},
+]
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Boolean
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%t</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The word &quot;true&quot; or &quot;false&quot;
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Integer
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%b</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            base 2
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%c</code>
+                    &nbsp;/ 
+                    <code>%r</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            the character represented by the corresponding Unicode code point
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%o</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            base 8
+						</p>
+					</li>
+					<li>
+						<p>
+                            Bytes.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%d</code>
+                    &nbsp;/ 
+                    <code>%i</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            base 10
+						</p>
+					</li>
+					<li>
+						<p>
+                            Decimal
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Default for
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>[]byte</code>
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%z</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            base 12
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%x</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            base 16, lower-case a-f
+						</p>
+					</li>
+					<li>
+						<p>
+                            Hexadecimal
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%X</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            base 16, upper-case A-F
+						</p>
+					</li>
+					<li>
+						<p>
+                            Hexadecimal
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%U</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Unicode format: U+1234; same as &quot;U+%04X&quot;
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Floating-point
+			</strong>
+            , 
+			<strong>
+                complex numbers
+			</strong>
+            ,&nbsp;&nbsp;
+			<strong>
+                quaternions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%e</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            scientific notation, e.g. -1.23456e+78
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%E</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            scientific notation, e.g. -1.23456E+78
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%f</code>
+                    &nbsp;/ 
+                    <code>%F</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            decimal point, no exponent, e.g. 123.456
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%g</code>
+                    &nbsp;/ 
+                    <code>%G</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            synonym for %f with default max precision
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%h</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            hexadecimal (lower-case) with 0h prefix (0h01234abcd)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%H</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            hexadecimal (upper-case) with 0H prefix (0H01234ABCD)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%m</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            number of bytes in best unit, e.g. 123.45mib
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%M</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            number of bytes in best unit, e.g. 123.45MiB
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Width and Precision
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Width
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    optional decimal number after '%'.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Default: enough to represent value.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Precision
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    after width, period + decimal number.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    No period: default precision.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Period alone: precision 0.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Measured in Unicode code points (runes).
+						</p>
+					</li>
+					<li>
+						<p>
+                            n.b. C's printf uses bytes.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Examples
+							</strong>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>%f</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            default width, default precision
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>%8f</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            width 8, default precision
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>%.2f</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            default width, precision 2
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>%8.3f</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            width 8, precision 3
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>%8.f</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            width 8, precision 0
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                String and slice of bytes
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%s</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            uninterpreted bytes of string/slice
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%q</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            double-quoted string safely escaped with Odin syntax
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%x</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            base 16, lower-case, two chars per byte
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%X</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            base 16, upper-case, two chars per byte
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Slice and dynamic array
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%p</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            address of 0th element in base 16 (upper-case), with 0x
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pointer
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%p</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            base 16, with 0x
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%b</code>
+                    , 
+                    <code>%d</code>
+                    , 
+                    <code>%o</code>
+                    , 
+                    <code>%z,</code>
+                    &nbsp;
+                    <code>%x</code>
+                    , 
+                    <code>%X</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            also work with pointers as integers
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Enums
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>%s</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            name of enum field
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%i</code>
+                    , 
+                    <code>%d</code>
+                    , 
+                    <code>%f</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            also work as number
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="flags" >
+    Flags
+</h5>
+<ul>
+	<li>
+		<p>
+            Ignored by verbs that don't expect them.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>+</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    always print a sign for numeric values
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>-</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    pad spaces on right (left-justify)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>#</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Gives an alternative format.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>%#b</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            add leading 0b for binary
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%#o</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            add leading 0o for octal
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%#z</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            add leading 0z for dozenal
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%#x</code>
+                    &nbsp;/ 
+                    <code>%#X</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            add leading 0x or 0X for hexadecimal
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%#p</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            remove leading 0x for %p
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>%#m</code>
+                    &nbsp;/ 
+                    <code>%#M</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            add a space between bytes and the unit of measurement
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>(space)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    leave a space for elided sign in numbers (% d)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>0</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Pad with leading zeros rather than spaces
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

@@ -1,0 +1,5788 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Vulkan
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-samples.html" >
+                                Samples
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-core.html" >
+                                Core
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-render-loop.html" >
+                                Render Loop
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#swapchain" >
+                                        Swapchain
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#swapchain-recreation" >
+                                        Swapchain Recreation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#frames-in-flight" >
+                                        Frames In-Flight
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#acquire-next-image" >
+                                        Acquire Next Image
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#render-targets" >
+                                        Render Targets
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#dynamic-rendering" >
+                                        Dynamic Rendering
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#drawing-commands" >
+                                        Drawing Commands
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#multithreading-rendering" >
+                                        <s>Multithreading Rendering</s>
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#render-passes-and-framebuffers" >
+                                        <s>Render Passes and Framebuffers</s>
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#submit" >
+                                        Submit
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#presentation" >
+                                        Presentation
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-synchronization-and-cache-control.html" >
+                                Synchronization and Cache Control
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-command-buffers.html" >
+                                Command Buffers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-pipelines.html" >
+                                Pipelines
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-graphics-pipeline.html" >
+                                Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-compute-pipeline.html" >
+                                Compute Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-resources.html" >
+                                Resources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-depth.html" >
+                                Depth
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-mapping-data-to-shaders.html" >
+                                Mapping Data to Shaders
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-memory-allocation.html" >
+                                Memory Allocation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-hdr-support.html" >
+                                HDR Support
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-profiling.html" >
+                                Profiling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-mobile.html" >
+                                Mobile
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-vr.html" >
+                                VR
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-video-decoding.html" >
+                                Video Decoding
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-spir-v.html" >
+                                SPIR-V
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Vulkan/Vulkan-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Render Engineering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-graphics-apis.html" >
+                                Graphics APIs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-shader-languages.html" >
+                                Shader Languages
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-choosing-the-space-to-compute-lighting.html" >
+                                Choosing the Space to compute Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-bsdf-bidirectional-scattering-distribution-function.html" >
+                                BSDF (Bidirectional Scattering Distribution Function)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-material.html" >
+                                Material
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-direct-lighting.html" >
+                                Direct Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-shadows.html" >
+                                Shadows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-skybox-skydome.html" >
+                                Skybox / Skydome
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-transparency.html" >
+                                Transparency
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-indirect-lighting.html" >
+                                Global Illumination / Indirect Lighting
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-solutions.html" >
+                                Global Illumination - Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-global-illumination-discarded-solutions.html" >
+                                Global Illumination - Discarded Solutions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-lightmaps.html" >
+                                Lightmaps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-post-processing.html" >
+                                Post-Processing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-anti-aliasing.html" >
+                                Anti-Aliasing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-light-path-rendering-method.html" >
+                                Light Path / Rendering Method
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Render Engineering/Render Engineering-optimization-techniques.html" >
+                                Optimization Techniques
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Graphics and Shaders
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-math-linear-algebra.html" >
+                                Math, Linear Algebra
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-spaces-transformations-and-graphics-pipeline.html" >
+                                Spaces, Transformations and Graphics Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-common-techniques.html" >
+                                Common Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-shaders.html" >
+                                Shaders
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GLSL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-storage-qualifiers.html" >
+                                Storage Qualifiers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GLSL/GLSL-layout-qualifiers.html" >
+                                Layout Qualifiers
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        GPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-execution-building-blocks.html" >
+                                Execution Building Blocks
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-specialized-units-and-instructions.html" >
+                                Specialized units &amp; instructions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-gpu-va-virtual-address.html" >
+                                GPU VA (Virtual Address)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/GPU/GPU-tiled-gpus.html" >
+                                Tiled-GPUs
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Slang
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Slang-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Font Rendering
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-techniques.html" >
+                                Techniques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-text-processing-pipeline.html" >
+                                Text Processing Pipeline
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-formats.html" >
+                                Formats
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-libs.html" >
+                                Libs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/Font Rendering-fonts.html" >
+                                Fonts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        OpenGL
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Graphics Programming/OpenGL/OpenGL-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Render Loop
+						</h1>
+						<p>
+							<time
+								datetime="2025-08-01" >
+                                🕒 Created: 2025-08-01
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            Now that everything is ready for rendering, you first ask the 
+            <code>VkSwapchainKHR</code>
+            &nbsp;for an image to render to. Then you allocate a 
+            <code>VkCommandBuffer</code>
+            &nbsp;from a 
+            <code>VkCommandBufferPool</code>
+            &nbsp;or reuse an already allocated command buffer that has finished execution, and “start” the command buffer, which allows you to write commands into it.
+		</p>
+	</li>
+	<li>
+		<p>
+            Next, you begin rendering by using Dynamic Rendering.
+		</p>
+	</li>
+	<li>
+		<p>
+            Then create a loop where you bind a 
+            <code>VkPipeline</code>
+            , bind some 
+            <code>VkDescriptorSet</code>
+            &nbsp;resources (for the shader parameters), bind the vertex buffers, and then execute a draw call.
+		</p>
+	</li>
+	<li>
+		<p>
+            If there is nothing more to render, you end the 
+            <code>VkCommandBuffer</code>
+            . Finally, you submit the command buffer into the queue for rendering. This will begin execution of the commands in the command buffer on the gpu. If you want to display the result of the rendering, you “present” the image you have rendered to to the screen. Because the execution may not have finished yet, you use a semaphore to make the presentation of the image to the screen wait until rendering is finished.
+		</p>
+	</li>
+	<li>
+		<p>
+            At a high level, rendering a frame in Vulkan consists of a common set of steps:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Wait for the previous frame to finish
+				</p>
+			</li>
+			<li>
+				<p>
+                    Acquire an image from the Swapchain
+				</p>
+			</li>
+			<li>
+				<p>
+                    Record a command buffer which draws the scene onto that image
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Re-recording every frame doesn't really take up performance.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Submit the recorded command buffer
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Takes performance.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Present the Swapchain image
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Puts it up on the screen.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="swapchain" >
+    Swapchain
+</h3>
+<ul>
+	<li>
+		<p>
+            Vulkan does not have the concept of a &quot;default framebuffer,&quot; hence it requires an infrastructure that will own the buffers we will render to before we visualize them on the screen.
+		</p>
+	</li>
+	<li>
+		<p>
+            This infrastructure is known as the 
+			<em>
+                swapchain
+			</em>
+            &nbsp;and must be created explicitly in Vulkan.
+		</p>
+	</li>
+	<li>
+		<p>
+            The Swapchain is essentially a queue of images that are waiting to be presented to the screen.
+		</p>
+	</li>
+	<li>
+		<p>
+            Our application will acquire such an image to draw to it, and then return it to the queue.
+		</p>
+	</li>
+	<li>
+		<p>
+            The conditions for presenting an image from the queue depend on how the Swapchain is set up.
+		</p>
+	</li>
+	<li>
+		<p>
+            The general purpose of the Swapchain is to synchronize the presentation of images with the refresh rate of the screen.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This is important to make sure that only complete images are shown.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Every time we want to draw a frame, we have to ask the Swapchain to provide us with an image to render to. When we’ve finished drawing a frame, the image is returned to the Swapchain for it to be presented to the screen at some point.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;Is a collection of render targets&quot;.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Render Targets is not a well-defined term.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The number of render targets and conditions for presenting finished images to the screen depends on the present mode.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>VkSwapchainKHR</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Holds the images for the screen.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It allows you to render things into a visible window.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The 
+                    <code>KHR</code>
+                    &nbsp;suffix shows that it comes from an extension, which in this case is 
+                    <code>KHR_swapchain</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=mvkHYAu7i6c" 
+				class="external-link" 
+				target="_blank" >
+                Swapchains
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Good video.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Pre-rotate on mobile.
+				</p>
+			</li>
+			<li>
+				<p>
+                    When to recreate, recreation problems, recreation strategies, maintenance.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Present modes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Support
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    There are basically three kinds of properties we need to check:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Basic surface capabilities (min/max number of images in Swapchain, min/max width and height of images)
+						</p>
+					</li>
+					<li>
+						<p>
+                            Surface formats (pixel format, color space)
+						</p>
+					</li>
+					<li>
+						<p>
+                            Available presentation modes
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    It is important that we only try to query for Swapchain support after verifying that the extension is available.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="swapchain-creation" >
+    Swapchain Creation
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkSwapchainCreateInfoKHR.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkSwapchainCreateInfoKHR</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>surface</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the surface onto which the swapchain will present images. If the creation succeeds, the swapchain becomes associated with 
+                            <code>surface</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>minImageCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            we also have to decide how many images we would like to have in the Swapchain. However, simply sticking to the minimum means that we may sometimes have to wait on the driver to complete internal operations before we can acquire another image to render to. Therefore, it is recommended to request at least one more image than the minimum:
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-c" data-lang="c">uint32_t imageCount = surfaceCapabilities.minImageCount + 1;
+</code></pre>
+				<ul>
+					<li>
+						<p>
+                            We should also make sure to not exceed the maximum number of images while doing this, where 
+                            <code>0</code>
+                            &nbsp;is a special value that means that there is 
+							<strong>
+                                no
+							</strong>
+                            &nbsp;maximum
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-c" data-lang="c">if (surfaceCapabilities.maxImageCount &gt; 0 && imageCount &gt; surfaceCapabilities.maxImageCount) {
+&nbsp;&nbsp;&nbsp;&nbsp;imageCount = surfaceCapabilities.maxImageCount;
+}
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    <code>imageFormat</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            For the color space we’ll use SRGB if it is available, because it 
+							<a
+								href="http://stackoverflow.com/questions/12524623/" 
+								class="external-link" 
+								target="_blank" >
+                                results in more accurate perceived colors
+							</a>
+                            . It is also pretty much the standard color space for images, like the textures we’ll use later on.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Because of that we should also use an SRGB color format, of which one of the most common ones is 
+                            <code>FORMAT_B8G8R8A8_SRGB</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>imageColorSpace</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkColorSpaceKHR.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkColorSpaceKHR
+							</a>
+                            &nbsp;value specifying the way the swapchain interprets image data.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>imageExtent</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the size (in pixels) of the swapchain image(s).
+						</p>
+					</li>
+					<li>
+						<p>
+                            The swap extent is the 
+							<em>
+                                resolution
+							</em>
+                            &nbsp;of the Swapchain images. It’s almost always exactly equal to the resolution of the window that we’re drawing to 
+							<em>
+                                in pixels
+							</em>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            The range of the possible resolutions is defined in the 
+                            <code>VkSurfaceCapabilitiesKHR</code>
+                            &nbsp;structure.
+						</p>
+					</li>
+					<li>
+						<p>
+                            On some platforms, it is normal that 
+                            <code>maxImageExtent</code>
+                            &nbsp;
+							<strong>
+                                may
+							</strong>
+                            &nbsp;become 
+                            <code>(0, 0)</code>
+                            , for example when the window is minimized. In such a case, it is not possible to create a swapchain due to the Valid Usage requirements , unless scaling is selected through 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkSwapchainPresentScalingCreateInfoKHR.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkSwapchainPresentScalingCreateInfoKHR
+							</a>
+                            , if supported .
+						</p>
+					</li>
+					<li>
+						<p>
+                            We’ll pick the resolution that best matches the window within the 
+                            <code>minImageExtent</code>
+                            &nbsp;and 
+                            <code>maxImageExtent</code>
+                            &nbsp;bounds. But we must specify the resolution in the correct unit.
+						</p>
+					</li>
+					<li>
+						<p>
+                            GLFW uses two units when measuring sizes: pixels and 
+							<a
+								href="https://www.glfw.org/docs/latest/intro_guide.html#coordinate_systems" 
+								class="external-link" 
+								target="_blank" >
+                                screen coordinates
+							</a>
+                            . For example, the resolution 
+                            <code>{WIDTH, HEIGHT}</code>
+                            &nbsp;that we specified earlier when creating the window is measured in screen coordinates. But Vulkan works with pixels, so the Swapchain extent must be specified in pixels as well.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Unfortunately, if you are using a high DPI display (like Apple’s Retina display), screen coordinates don’t correspond to pixels. Instead, due to the higher pixel density, the resolution of the window in pixel will be larger than the resolution in screen coordinates. So if Vulkan doesn’t fix the swap extent for us, we can’t just use the original 
+                            <code>{WIDTH, HEIGHT}</code>
+                            . Instead, we must use 
+                            <code>glfwGetFramebufferSize</code>
+                            &nbsp;to query the resolution of the window in pixel before matching it against the minimum and maximum image extent.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The surface capabilities changes every time the window resizes, and it's only used for creating the Swapchain, so it doesn't make sense to cache.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>imageUsage</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>imageSharingMode</code>
+                    &nbsp;(Handling multiple queues):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            We need to specify how to handle Swapchain images that will be used across multiple queue families. That will be the case in our application if the graphics queue family is different from the presentation queue. We’ll be drawing on the images in the Swapchain from the graphics queue and then submitting them on the presentation queue. There are two ways to handle images that are accessed from multiple queues:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>SHARING_MODE_EXCLUSIVE</code>
+                                    :
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            An image is owned by one queue family at a time, and ownership must be explicitly transferred before using it in another queue family.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            This option offers the 
+											<strong>
+                                                best
+											</strong>
+                                            &nbsp;performance.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>SHARING_MODE_CONCURRENT</code>
+                                    :
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Images can be used across multiple queue families without explicit ownership transfers.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Concurrent mode requires you to specify in advance between which queue families ownership will be shared using the 
+                                            <code>queueFamilyIndexCount</code>
+                                            &nbsp;and 
+                                            <code>pQueueFamilyIndices</code>
+                                            &nbsp;parameters.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            If the queue families differ, then we’ll be using the concurrent mode in this tutorial to avoid having to do the ownership chapters, because these involve some concepts that are better explained at a later time.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the graphics queue family and presentation queue family are the same, which will be the case on most hardware, then we should stick to exclusive mode. Concurrent mode requires you to specify at least two distinct queue families.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>queueFamilyIndexCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the number of queue families having access to the image(s) of the swapchain when 
+                            <code>imageSharingMode</code>
+                            &nbsp;is 
+                            <code>SHARING_MODE_CONCURRENT</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pQueueFamilyIndices</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of queue family indices having access to the images(s) of the swapchain when 
+                            <code>imageSharingMode</code>
+                            &nbsp;is 
+                            <code>SHARING_MODE_CONCURRENT</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>imageArrayLayers</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the number of views in a multiview/stereo surface. For non-stereoscopic-3D applications, this value is 1.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>presentMode</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>preTransform</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            We can specify that a certain transform should be applied to images in the Swapchain if it is supported (
+                            <code>supportedTransforms</code>
+                            &nbsp;in 
+                            <code>capabilities</code>
+                            ), like a 90-degree clockwise rotation or horizontal flip. To specify that you do not want any transformation, simply specify the current transformation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>IDENTITY</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This would 
+									<strong>
+                                        not
+									</strong>
+                                    &nbsp;be optimal on devices that support rotation and will lead to measurable performance loss.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    It is strongly recommended that 
+                                    <code>surface_properties.currentTransform</code>
+                                    &nbsp;be used instead. However, the application is required to handle 
+                                    <code>preTransform</code>
+                                    &nbsp;elsewhere accordingly.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>compositeAlpha</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies if the alpha channel should be used for blending with other windows in the window system.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You’ll almost always want to simply ignore the alpha channel, hence 
+                            <code>OPAQUE</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>clipped</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If set to 
+                            <code>TRUE</code>
+                            , then that means that we don’t care about the color of pixels that are obscured, for example, because another window is in front of them.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Unless you really need to be able to read these pixels back and get predictable results, you’ll get the best performance by enabling clipping.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>oldSwapChain</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can be an existing 
+							<em>
+                                non-retired
+							</em>
+                            &nbsp;swapchain currently associated with 
+                            <code>surface</code>
+                            , or 
+                            <code>NULL_HANDLE</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the 
+                            <code>oldSwapchain</code>
+                            &nbsp;is 
+                            <code>NULL_HANDLE</code>
+                            :
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    And if the native window referred to by 
+                                    <code>pCreateInfo-&gt;surface</code>
+                                    &nbsp;is already associated with a Vulkan swapchain, 
+                                    <code>ERROR_NATIVE_WINDOW_IN_USE</code>
+                                    &nbsp;
+									<strong>
+                                        must
+									</strong>
+                                    &nbsp;be returned.
+								</p>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<p>
+                            If the 
+                            <code>oldSwapchain</code>
+                            &nbsp;is valid:
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    This 
+									<strong>
+                                        may
+									</strong>
+                                    &nbsp;aid in the resource reuse, and also allows the application to still present any images that are already acquired from it.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    And the 
+                                    <code>oldSwapchain</code>
+                                    &nbsp;has exclusive full-screen access, that access is released from 
+                                    <code>pCreateInfo-&gt;oldSwapchain</code>
+                                    . If the command succeeds in this case, the newly created swapchain will automatically acquire exclusive full-screen access from 
+                                    <code>pCreateInfo-&gt;oldSwapchain</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    And there are outstanding calls to 
+                                    <code>vkWaitForPresent2KHR</code>
+                                    , then 
+                                    <code>vkCreateSwapchainKHR</code>
+                                    &nbsp;
+									<strong>
+                                        may
+									</strong>
+                                    &nbsp;block until those calls complete.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Any images from 
+                                    <code>oldSwapchain</code>
+                                    &nbsp;that are not acquired by the application 
+									<strong>
+                                        may
+									</strong>
+                                    &nbsp;be freed by the implementation, upon calling 
+                                    <code>vkCreateSwapchainKHR</code>
+                                    , which 
+									<strong>
+                                        may
+									</strong>
+                                    &nbsp;occur even if creation of the new swapchain fails.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The 
+                                    <code>oldSwapchain</code>
+                                    &nbsp;will be retired upon calling 
+                                    <code>vkCreateSwapchainKHR</code>
+                                    , even if creation of the new swapchain fails.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            After 
+                                            <code>oldSwapchain</code>
+                                            &nbsp;is retired, the application 
+											<strong>
+                                                can
+											</strong>
+                                            &nbsp;pass to 
+                                            <code>vkQueuePresentKHR</code>
+                                            &nbsp;any images it had already acquired from 
+                                            <code>oldSwapchain</code>
+                                            .
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    An application may present an image from the old swapchain before an image from the new swapchain is ready to be presented.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    As usual, 
+                                                    <code>vkQueuePresentKHR</code>
+                                                    &nbsp;
+													<strong>
+                                                        may
+													</strong>
+                                                    &nbsp;fail if 
+                                                    <code>oldSwapchain</code>
+                                                    &nbsp;has entered a state that causes 
+                                                    <code>ERROR_OUT_OF_DATE</code>
+                                                    &nbsp;to be returned.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    The application 
+									<strong>
+                                        can
+									</strong>
+                                    &nbsp;continue to use a shared presentable image obtained from 
+                                    <code>oldSwapchain</code>
+                                    &nbsp;until a presentable image is acquired from the new swapchain, as long as it has not entered a state that causes it to return 
+                                    <code>ERROR_OUT_OF_DATE</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The application 
+									<strong>
+                                        can
+									</strong>
+                                    &nbsp;destroy 
+                                    <code>oldSwapchain</code>
+                                    &nbsp;to free all memory associated with 
+                                    <code>oldSwapchain</code>
+                                    .
+								</p>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<p>
+                            Regardless if the 
+                            <code>oldSwapchain</code>
+                            &nbsp;is valid or not:
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    The new swapchain is created in the 
+									<em>
+                                        non-retired
+									</em>
+                                    &nbsp;state.
+								</p>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>flags</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a bitmask of 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkSwapchainCreateFlagBitsKHR.html" 
+								class="external-link" 
+								target="_blank" >
+                                <code>VkSwapchainCreateFlagBitsKHR</code>
+							</a>
+                            &nbsp;indicating parameters of the swapchain creation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_EXT</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    When 
+                                    <code>EXT_swapchain_maintenance1</code>
+                                    &nbsp;is available, you can optionally amortize the cost of swapchain image allocations over multiple frames.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    When this is used, image views cannot be created until the first time the image is acquired.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The idea is that normally the images and image views are acquired when a Swapchain recreation happens, but if this flag is enabled it is necessary to acquire them after 
+                                            <code>result == SUCCESS || result == SUBOPTIMAL_KHR</code>
+                                            &nbsp;as the result of 
+                                            <code>vkAcquireNextImageKHR</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="present-modes" >
+    Present Modes
+</h5>
+<ul>
+	<li>
+		<p>
+            Common present modes are double buffering (vsync) and triple buffering.
+		</p>
+	</li>
+	<li>
+		<p>
+            The presentation mode is arguably the most important setting for the Swapchain, because it represents the actual conditions for showing images to the screen. There are four possible modes available in Vulkan:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>PRESENT_MODE_IMMEDIATE_KHR</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Images submitted by your application are transferred to the screen right away, which may result in tearing.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>PRESENT_MODE_FIFO_KHR</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The Swapchain is a queue where the display takes an image from the front of the queue when the display is refreshed, and the program inserts rendered images at the back of the queue. If the queue is full, then the program has to wait. This is most similar to vertical sync as found in modern games. The moment that the display is refreshed is known as &quot;vertical blank&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>PRESENT_MODE_FIFO_RELAXED_KHR</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This mode only differs from the previous one if the application is late and the queue was empty at the last vertical blank. Instead of waiting for the next vertical blank, the image is transferred right away when it finally arrives. This may result in visible tearing.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>PRESENT_MODE_MAILBOX_KHR</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This is another variation of the second mode. Instead of blocking the application when the queue is full, the images that are already queued are simply replaced with the newer ones. This mode can be used to render frames as fast as possible while still avoiding tearing, resulting in fewer latency issues than standard vertical sync. This is commonly known as &quot;triple buffering,&quot; although the existence of three buffers alone does not necessarily mean that the framerate is unlocked.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Only the 
+            <code>PRESENT_MODE_FIFO_KHR</code>
+            &nbsp;mode is guaranteed to be available, so we’ll again have to write a function that looks for the best mode that is available:
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250729081154.png" width="375" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Options
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I think that 
+                    <code>PRESENT_MODE_MAILBOX_KHR</code>
+                    &nbsp;is a very nice trade-off if energy usage is not a concern. It allows us to avoid tearing while still maintaining fairly low latency by rendering new images that are as up to date as possible right until the vertical blank.
+				</p>
+			</li>
+			<li>
+				<p>
+                    On mobile devices, where energy usage is more important, you will probably want to use 
+                    <code>PRESENT_MODE_FIFO_KHR</code>
+                    &nbsp;instead.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250731211715.png" width="375" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250818181535.png" width="375" >
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Slide from the Samsung talk on (2025-02-25).
+						</p>
+					</li>
+					<li>
+						<p>
+                            It recommends FIFO and says that mailbox is not as good as it seems because it induces a lot of stutter.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="drawing-directly-to-the-swapchain-vs-blitting-to-the-swapchain" >
+    Drawing directly to the Swapchain vs Blitting to the Swapchain
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://vkguide.dev/docs/new_chapter_2/vulkan_new_rendering/#new-draw-loop" 
+				class="external-link" 
+				target="_blank" >
+                Source
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Drawing directly into the swapchain
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is fine for many projects, and it can even be optimal in some cases such as phones.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Restrictions
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Their resolution is fixed to whatever your window size is.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If you want to have higher or lower resolution, and then do some scaling logic, you need to draw into a different image.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Swapchain image size (imageExtent / surface extent) is part of swapchain creation and is tied to the surface. If you want an internal render at a different resolution (supersampling, dynamic resolution, lower-res upscaling), you create an offscreen image/render-target at the desired size and then copy/blit/resolve/tone-map into the swapchain image for presentation. The spec and WSI notes treat imageExtent as the surface-presentable size.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            The formats of the image used in the swapchain are not guaranteed.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Different OS, drivers, and windowing modes can have different optimal swapchain formats.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The WSI model exposes the surface’s supported formats to the application via 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkGetPhysicalDeviceSurfaceFormatsKHR.html" 
+										class="external-link" 
+										target="_blank" >
+                                        <code>vkGetPhysicalDeviceSurfaceFormatsKHR</code>
+									</a>
+                                    &nbsp;(or equivalent WSI queries); the returned list is implementation- and surface-dependent, so you must choose from what the platform/driver exposes. That means formats available for swapchains vary by OS, driver, and surface.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Vulkan explicitly states this via 
+                                    <code>VkSurfaceFormatKHR</code>
+                                    &nbsp;and 
+                                    <code>vkGetPhysicalDeviceSurfaceFormatsKHR</code>
+                                    . The specification (Section 30.5 &quot;WSI Swapchain&quot;, Vulkan 1.3.275) and tutorials emphasize that the application must query and choose from available formats supported by the surface/device combination. Android documentation (Vulkan on Android) and Windows (DXGI_FORMAT) similarly highlight platform-specific format requirements and HDR needs (e.g., 
+                                    <code>FORMAT_A2B10G10R10_UNORM_PACK32</code>
+                                    &nbsp;or 
+                                    <code>DXGI_FORMAT_R10G10B10A2_UNORM</code>
+                                    &nbsp;for HDR10). This variability makes direct rendering inflexible.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            HDR support needs its own very specific formats.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    HDR output requires specific color formats and color-space metadata (examples: 10-bit packed UNORM formats or explicit HDR color-space support such as ST2084/Perceptual Quantizer). WSI and sample repos treat HDR as a distinct case (e.g. A2B10G10 formats and HDR color spaces). Support is platform- and driver-dependent.
+								</p>
+							</li>
+							<li>
+								<p>
+									<a
+										href="https://github.com/KhronosGroup/Vulkan-Samples/issues/638" 
+										class="external-link" 
+										target="_blank" >
+                                        HDR Sample discussion
+									</a>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Swapchain formats are, for the most part, low precision.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Some platforms with High Dynamic Range rendering have higher precision formats, but you will often default to 8 bits per color.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    So if you want high precision light calculations, systems that would prevent banding, or to be able to go past 1.0 on the normalized color range, you will need a separate image for drawing.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            HDR/high-dynamic-range lighting typically uses floating-point or extended-range render targets (e.g. 
+                                            <code>R16G16B16A16_SFLOAT</code>
+                                            &nbsp;or higher) for intermediate lighting accumulation; final tonemapping reduces values into the presentable format. Because presentable swapchain images are often limited (8-bit), the offscreen high-precision image plus a conversion/tonemap pass is the usual pattern.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Many surfaces expose 8-bit UNORM or sRGB formats (e.g. 
+                                    <code>B8G8R8A8_UNORM</code>
+                                    /
+                                    <code>SRGB</code>
+                                    ) as commonly returned swapchain formats. Higher-precision formats (16-bit float per channel or 10-bit packed) exist and are used for HDR/high-precision pipelines, but they are not guaranteed by every surface/driver. Therefore applications that need high-precision lighting/accumulation commonly render into a 16-bit-float render target and tonemap/convert for presentation.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Banding artifacts in gradients or low-light scenes are a well-known consequence of limited precision. High-precision rendering (HDR, complex lighting, deferred shading G-Buffers) requires formats like 
+                                    <code>FORMAT_R16G16B16A16_SFLOAT</code>
+                                    &nbsp;(RGBA16F) to store values outside the [0.0, 1.0] range and prevent banding. While 
+									<em>
+                                        some
+									</em>
+                                    &nbsp;swapchains 
+									<em>
+                                        can
+									</em>
+                                    &nbsp;support HDR formats (e.g., 10:10:10:2), they are less universally available and not the default. Using RGBA16F directly in a swapchain is often unsupported or inefficient for presentation.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Drawing to a different image and copying/blitting to the swapchain image
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Advantages
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+							<strong>
+                                Decouples tonemapping from presentation timing
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Tonemap into an intermediate LDR image that you control. You can finish the tonemap pass earlier and defer the actual transfer/present of the swapchain image to a later point, reducing risk of stalling the present path or blocking on swapchain ownership.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Avoids writing directly to the swapchain
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Writing directly into the swapchain can introduce stalls (wait-for-acquire or present-time synchronization). Using an intermediate LDR image lets you do the heavy work off-swapchain and only do a cheap transfer/present step when convenient.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Enables batching / chaining of postprocesses without touching the swapchain
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If you need further LDR processing (dithering, temporal AA, UI composite, overlays, readback for screenshots, or additional filters), do those against the intermediate image. This allows composing multiple passes without repeatedly transitioning the swapchain.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Easier support for multiple outputs or different sizes/formats
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    You can tonemap once to an LDR image and then blit/copy to different-size or different-format targets (screenshots, streaming encoder, secondary displays) without re-running tonemap.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Allows use of transient/optimized memory for the intermediate
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The intermediate image can be created as transient (e.g., 
+                                    <code>MEMORY_PROPERTY_LAZILY_ALLOCATED</code>
+                                    &nbsp;or tiled transient attachment) to reduce memory pressure and bandwidth compared with always keeping a full persistent LDR buffer.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Better control over final conversion semantics
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    In shader you control quantization, gamma conversion, ordered/temporal dithering, and color-space tagging. After producing the controlled LDR image you can choose the transfer method (exact copy vs scaled blit) that matches target capabilities, improving visual consistency across vendors.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Improved cross-queue / async workflows
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    You can produce the LDR image on a graphics/compute queue and then perform a transfer on a transfer-only queue (or use a dedicated present queue) with explicit ownership transfers, possibly improving throughput if hardware supports it.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Facilitates deterministic screenshots / capture
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Saving an intermediate LDR image for file export is safer (format/bit-depth known) than capturing the swapchain which may have platform-specific transforms applied.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Trade-offs
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+							<strong>
+                                Extra GPU memory usage
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    You need memory for the intermediate LDR image (unless you use transient attachments), which increases resident memory footprint.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Extra GPU bandwidth and a copy step
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Creating an LDR image then copying/blitting to the swapchain costs memory bandwidth and GPU cycles. This can increase frame time if the transfer is on the critical path.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                More layout transitions and synchronization complexity
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    You must manage transitions and possibly ownership transfers (if different queues are used). Incorrect synchronization can cause stalls or correctness bugs.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Potential increased latency if done poorly
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If the copy/blit is done synchronously right before present, it can add latency compared with rendering directly to the swapchain; the intended decoupling only helps if scheduling is arranged to avoid the critical path.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Implementation complexity
+							</strong>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Managing an extra render target, transient allocation, and copy logic is more code than rendering directly to the swapchain.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="swapchain-recreation" >
+    Swapchain Recreation
+</h3>
+<h5
+	id="when-to-recreate" >
+    When to recreate
+</h5>
+<ul>
+	<li>
+		<p>
+            If the window surface changed such that the Swapchain is no longer compatible with it.
+		</p>
+	</li>
+	<li>
+		<p>
+            If the window resizes.
+		</p>
+	</li>
+	<li>
+		<p>
+            If the window minimizes.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This case is special because it will result in a framebuffer size of 
+                    <code>0</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    We can handle by waiting for the framebuffer size to be back to something greater than 
+                    <code>0</code>
+                    , indicating that the window is no longer minimized.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            If the swapchain image format changed during an application's lifetime, for example, when moving a window from a standard range to a high dynamic range monitor.
+		</p>
+	</li>
+</ul>
+<h5
+	id="finding-out-that-a-recreation-is-needed" >
+    Finding out that a recreation is needed
+</h5>
+<ul>
+	<li>
+		<p>
+            The 
+            <code>vkAcquireNextImageKHR</code>
+            &nbsp;and 
+            <code>vkQueuePresentKHR</code>
+            &nbsp;functions can return the following special values to indicate this.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>ERROR_OUT_OF_DATE_KHR</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The Swapchain has become incompatible with the surface and can no longer be used for rendering. Usually happens after a window resize.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>SUBOPTIMAL_KHR</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The Swapchain can still be used to successfully present to the surface, but the surface properties are no longer matched exactly.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You should 
+							<strong>
+                                ALWAYS
+							</strong>
+                            &nbsp;recreate the swapchain if the result is suboptimal.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This result means that it's a &quot;success&quot; but there will be performance penalties.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Both 
+                            <code>SUCCESS</code>
+                            &nbsp;and 
+                            <code>SUBOPTIMAL_KHR</code>
+                            &nbsp;are considered &quot;success&quot; return codes.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            If the Swapchain turns out to be out of date when attempting to acquire an image, then it is no longer possible to present to it. Therefore, we should immediately recreate the Swapchain and try again in the next 
+            <code>drawFrame</code>
+            &nbsp;call.
+		</p>
+	</li>
+	<li>
+		<p>
+            You could also decide to do that if the Swapchain is suboptimal, but I’ve chosen to proceed anyway in that case because we’ve already acquired an image.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">result = presentQueue.presentKHR( presentInfoKHR );
+if (result == vk::Result::eErrorOutOfDateKHR || result == vk::Result::eSuboptimalKHR) {
+&nbsp;&nbsp;&nbsp;&nbsp;framebufferResized = false;
+&nbsp;&nbsp;&nbsp;&nbsp;recreateSwapChain();
+} else if (result != vk::Result::eSuccess) {
+&nbsp;&nbsp;&nbsp;&nbsp;throw std::runtime_error("failed to present Swapchain image!");
+}
+
+currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
+</code></pre>
+<ul>
+	<li>
+		<p>
+            The 
+            <code>vkQueuePresentKHR</code>
+            &nbsp;function returns the same values with the same meaning. In this case, we will also recreate the Swapchain if it is suboptimal, because we want the best possible result.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Finding out explicitly
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Although many drivers and platforms trigger 
+                    <code>ERROR_OUT_OF_DATE_KHR</code>
+                    &nbsp;automatically after a window resize, it is not guaranteed to happen.
+				</p>
+			</li>
+			<li>
+				<p>
+                    That’s why we’ll add some 
+					<em>
+                        extra
+					</em>
+                    &nbsp;code to also handle resizes explicitly:
+				</p>
+<pre><code class="language-c" data-lang="c">glfw.SetWindowUserPointer(vulkan_context.glfw_window, vulkan_context)
+glfw.SetFramebufferSizeCallback(vulkan_context.glfw_window, proc "c" (window: glfw.WindowHandle, _, _: i32) {s
+&nbsp;&nbsp;&nbsp;&nbsp;vulkan_context := cast(^Vulkan_Context)glfw.GetWindowUserPointer(window)
+&nbsp;&nbsp;&nbsp;&nbsp;vulkan_context.glfw_framebuffer_resized = true
+})
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    &quot;Usually it's not the best idea to depend on this&quot;.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Problems with multithreading.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You depend on the windowing system to notify changes correctly; this can be really tricky on mobile.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="recreating" >
+    Recreating
+</h5>
+<pre><code class="language-c" data-lang="c">void recreateSwapChain() {
+&nbsp;&nbsp;&nbsp;&nbsp;device.waitIdle();
+
+&nbsp;&nbsp;&nbsp;&nbsp;cleanupSwapChain();
+
+&nbsp;&nbsp;&nbsp;&nbsp;createSwapChain();
+&nbsp;&nbsp;&nbsp;&nbsp;createImageViews();
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Synchronization
+			</strong>
+            :
+		</p>
+		<ol>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    ~Flush and Recreate:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;We first call 
+                            <code>vkDeviceWaitIdle</code>
+                            , because just like in the last chapter, we shouldn’t touch resources that may still be in use.&quot;
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This is not enough.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <img src="assets/image_20250818175059.png" width="525" >
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            The whole app has to stop and wait for synchronization.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/image_20250818180311.png" width="425" >
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/image_20250818180351.png" width="475" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Recreate and check:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <img src="assets/image_20250818180214.png" width="375" >
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            You do 
+							<strong>
+                                not
+							</strong>
+                            &nbsp;need to stop your rendering at any given point.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The reason why you are allowed to pass the old swapchain when recreating the new swapchain, is due to this strategy.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This is the recommendation.
+						</p>
+					</li>
+					<li>
+						<p>
+							<a
+								href="https://github.com/KhronosGroup/Vulkan-Samples/tree/main/samples/api/swapchain_recreation#swapchain-recreation-1" 
+								class="external-link" 
+								target="_blank" >
+                                Strategy
+							</a>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This issue is resolved by deferring the destruction of the old swapchain and its remaining present semaphores to the time when the semaphore corresponding to the first present of the new swapchain can be destroyed. Because once the first present semaphore of the new swapchain can be destroyed, the first present operation of the new swapchain is done, which means the old swapchain is no longer being presented.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The destruction of both old swapchains must now be deferred to when the first QP of the new swapchain has been processed. If an application resizes the window constantly and at a high rate, we would keep accumulating old swapchains and not free them until it stops.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This potentially accumulates a lot of memory, I think.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    So what's the correct moment then? Only after the new swapchain has completed one full cycle of presentations, that is, when I acquire image index 
+                                    <code>0</code>
+                                    &nbsp;for the 
+									<em>
+                                        second
+									</em>
+                                    &nbsp;time.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Analysis
+							</strong>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    (2025-08-19)
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Holy, now I understand the problem.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    I cannot delete anything from the old swapchain until I am sure that everything from the previous one has been presented. I thought that by acquiring the first image of the new swapchain, that would already indicate that it was safe to delete the old swapchain, but that's not true; by doing that, I only guarantee that 1 (ONE) image from the old swapchain has been presented, but the old swapchain may have several images in the queue.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    However, as made clear, that is not the case.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Dealing with this can be a nightmare. Potentially having to handle multiple old swapchains at the same time in case of very frequent resizes (smooth swapchain).
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://registry.khronos.org/vulkan/specs/latest/man/html/EXT_swapchain_maintenance1.html" 
+						class="external-link" 
+						target="_blank" >
+                        <code>EXT_swapchain_maintenance1</code>
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;You should always use this extension if available&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Support
+							</strong>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Introduced in 2023.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    (2025-02-25)
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Only 25% of Android devices and 20% of desktop GPUs use it.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            It was added on Android 14.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Adds a collection of window system integration features that were intentionally left out or overlooked in the original 
+                            <code>KHR_swapchain</code>
+                            &nbsp;extension.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Features
+							</strong>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Allow applications to release previously acquired images without presenting them.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Allow applications to defer swapchain memory allocation for improved startup time and memory footprint.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Specify a fence that will be signaled when the resources associated with a present operation 
+									<strong>
+                                        can
+									</strong>
+                                    &nbsp;be safely destroyed.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Allow changing the present mode a swapchain is using at per-present granularity.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Allow applications to define the behavior when presenting a swapchain image to a surface with different dimensions than the image.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Using this feature 
+											<strong>
+                                                may
+											</strong>
+                                            &nbsp;allow implementations to avoid returning 
+                                            <code>ERROR_OUT_OF_DATE_KHR</code>
+                                            &nbsp;in this situation.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    This extension makes 
+                                    <code>vkQueuePresentKHR</code>
+                                    &nbsp;more similar to 
+                                    <code>vkQueueSubmit</code>
+                                    , allowing it to specify a fence that the application can wait on.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                The problem with 
+                                <code>vkDeviceWaitIdle</code>
+                                &nbsp;or 
+                                <code>vkQueueWaitIdle</code>
+							</strong>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Typically, applications call these functions and assume it’s safe to delete swapchain semaphores and the swapchain itself.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The problem is that 
+                                    <code>WaitIdle</code>
+                                    &nbsp;functions are defined in terms of fences - they only wait for workloads submitted through functions that accept a fence.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Unextended 
+                                    <code>vkQueuePresent</code>
+                                    &nbsp;does not provide a fence parameter.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The 
+                                    <code>vkDeviceWaitIdle</code>
+                                    &nbsp;can’t guarantee that it’s safe to delete swapchain resources.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The validation layers don't trigger errors in this case, but it's just because so many people use it and there's no good alternative.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            When 
+                                            <code>EXT_swapchain_maintenance1</code>
+                                            &nbsp;is enabled the validation layer will report an error if the application shutdown sequence relies on 
+                                            <code>vkDeviceWaitIdle</code>
+                                            &nbsp;or 
+                                            <code>vkQueueWaitIdle</code>
+                                            &nbsp;to release swapchain resources instead of using a presentation fence.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    The extension fixes this problem.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    By waiting on the presentation fence, the application can safely release swapchain resources.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ol>
+		<ul>
+			<li>
+				<p>
+                    To avoid a deadlock, only reset the fence if we are submitting work:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If reset is made right after wait for the fence, but the window was resized, then it will happen a deadlock.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The fence is opened by the signaling of 
+                            <code>QueueSubmit</code>
+                            , and closed by the 
+                            <code>ResetFences</code>
+                            .
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-cpp" data-lang="cpp">vkWaitForFences(device, 1, &inFlightFences[currentFrame], TRUE, UINT64_MAX);
+
+uint32_t imageIndex;
+VkResult result = vkAcquireNextImageKHR(device, swapChain, UINT64_MAX, imageAvailableSemaphores[currentFrame], NULL_HANDLE, &imageIndex);
+
+if (result == ERROR_OUT_OF_DATE_KHR) {
+&nbsp;&nbsp;&nbsp;&nbsp;recreateSwapChain();
+&nbsp;&nbsp;&nbsp;&nbsp;return;
+} else if (result != SUCCESS && result != SUBOPTIMAL_KHR) {
+&nbsp;&nbsp;&nbsp;&nbsp;throw std::runtime_error("failed to acquire Swapchain image!");
+}
+
+// Only reset the fence if we are submitting work
+vkResetFences(device, 1, &inFlightFences[currentFrame]);
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                What to recreate
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The image views need to be recreated because they are based directly on the Swapchain images.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Smooth Swapchain Resizing
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Don't bother with smooth swapchain resizing, it's not worth it&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        My experience
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            (2025-08-04)
+						</p>
+					</li>
+					<li>
+						<p>
+                            A callback 
+                            <code>glfw.SetWindowRefreshCallback</code>
+                            &nbsp;allows the swapchain to be recreated while resizing.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Synchronization
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Since the swapchain is recreated all the time, it becomes difficult to manage when the old swapchain should be destroyed along with its resources.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <s>At the moment I'm handling the old_swapchain in a &quot;bad&quot; way, and I feel that recreating it every resize frame only worsens synchronization</s>.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            It is not necessary to deal with the old_swapchain when using 
+                                            <code>vkDeviceWaitIdle()</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            My current implementation:
+						</p>
+<pre><code class="language-odin" data-lang="odin">eng.window_init(1280, 720, "Expedicao Hover", proc "c" (window: glfw.WindowHandle) {
+&nbsp;&nbsp;&nbsp;&nbsp;context = eng.global_context
+&nbsp;&nbsp;&nbsp;&nbsp;// fmt.printfln("REFRESHED")
+&nbsp;&nbsp;&nbsp;&nbsp;eng.swapchain_resize()
+&nbsp;&nbsp;&nbsp;&nbsp;game_draw(&game, game.cycle_draw.dt_cycles_s)
+})
+</code></pre>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="updating-resources-after-recreating" >
+    Updating resources after recreating
+</h5>
+<ul>
+	<li>
+		<p>
+            Destroy every image and view created from the old swapchain (the swapchain destroys its own images).
+		</p>
+	</li>
+	<li>
+		<p>
+            Update everything that holds a reference to either of those.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If anything was created using the swapchain's size you also have to destroy and recreate those and update anything that references them.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There's no getting around it.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="frames-in-flight" >
+    Frames In-Flight
+</h3>
+<h5
+	id="motivation" >
+    Motivation
+</h5>
+<ul>
+	<li>
+		<p>
+            The render loop has one glaring flaw: unnecessary 
+			<strong>
+                idling
+			</strong>
+            &nbsp;of the host. We are required to wait on the previous frame to finish before we can start rendering the next.
+		</p>
+	</li>
+	<li>
+		<p>
+            To fix this we allow multiple frames to be in-flight at once, allowing the rendering of one frame to not interfere with the recording of the next.
+		</p>
+	</li>
+	<li>
+		<p>
+            This control over the number of frames in flight is another example of Vulkan being explicit.
+		</p>
+	</li>
+</ul>
+<h5
+	id="frame" >
+    Frame
+</h5>
+<ul>
+	<li>
+		<p>
+            There is no concept of a frame in Vulkan. This means that the way you render is entirely up to you. The only thing that matters is when you have to display the frame to the screen, which is done through a swapchain. But there is no fundamental difference between rendering and then sending the images over the network, or saving the images into a file, or displaying it on the screen through the swapchain.
+		</p>
+	</li>
+	<li>
+		<p>
+            This means it is possible to use Vulkan in an entirely headless mode, where nothing is displayed to the screen. You can render the images and then store them on disk (very useful for testing) or use Vulkan as a way to perform GPU calculations such as a raytracer or other compute tasks.
+		</p>
+	</li>
+</ul>
+<h5
+	id="how-many-frames-in-flight" >
+    How many Frames In-Flight
+</h5>
+<ul>
+	<li>
+		<p>
+            We choose the number 2 because we don’t want the CPU to get 
+			<em>
+                too
+			</em>
+            &nbsp;far ahead of the GPU.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    With two frames in flight, the CPU and the GPU can be working on their own tasks at the same time. If the CPU finishes early, it will wait till the GPU finishes rendering before submitting more work.
+				</p>
+			</li>
+			<li>
+				<p>
+                    With three or more frames in flight, the CPU could get ahead of the GPU, adding frames of latency. Generally, extra latency isn’t desired.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="one-per-frame-in-flight" >
+    One Per Frame In-Flight
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Duplicate
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Resources
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Uniform Buffers.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If modified while a previous frame uses it, corruption occurs.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Dynamic Storage Buffers.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    GPU-computed results (e.g., particle positions). Writing to a buffer while an older frame reads it causes hazards.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Color/Depth Attachments.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Staging Buffers
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If updated per frame (e.g., 
+                                    <code>vkMapMemory</code>
+                                    ), duplication avoids overwriting mid-transfer.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Compute Shader Output Buffers:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If frame 
+                                    <code>N</code>
+                                    &nbsp;writes, and frame 
+                                    <code>N+1</code>
+                                    &nbsp;reads, duplicate to prevent read-before-write.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Use ping-pong buffers (count = frames in-flight).
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Command pool.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I have doubts about this; some people do it differently.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Command buffer.
+				</p>
+			</li>
+			<li>
+				<p>
+                    'present_finished_semaphore'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    'render_finished_fence'.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Don't duplicate
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Resources
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Static Vertex/Index Buffers:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Initialized once, read-only. No per-frame updates.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Immutable Textures
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Loaded once (e.g., via 
+                                    <code>VkDeviceMemory</code>
+                                    ).
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Not mapped for change.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    It's device local.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Static BRDF LUTs.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Initialized once, read by all frames.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="advancing-a-frame" >
+    Advancing a frame
+</h5>
+<pre><code class="language-c" data-lang="c">void drawFrame() {
+&nbsp;&nbsp;&nbsp;&nbsp;...
+
+&nbsp;&nbsp;&nbsp;&nbsp;currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            By using the modulo (
+            <code>%</code>
+            ) operator, we ensure that the frame index loops around after every 
+            <code>MAX_FRAMES_IN_FLIGHT</code>
+            &nbsp;enqueued frames.
+		</p>
+	</li>
+</ul>
+<h3
+	id="acquire-next-image" >
+    Acquire Next Image
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>vkWaitForFences()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Waits on the previous frame.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Takes an array of fences and waits on the host for either any or all of the fences to be signaled before returning.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The 
+                    <code>TRUE</code>
+                    &nbsp;we pass here indicates that we want to wait for all fences, but in the case of a single one it doesn’t matter.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This function also has a timeout parameter that we set to the maximum value of a 64 bit unsigned integer, 
+                    <code>UINT64_MAX</code>
+                    , which effectively disables the timeout.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>vkAcquireNextImageKHR()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Acquire the index of an available image from the swapchain for 
+					<strong>
+                        rendering
+					</strong>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If an image was acquired, then it means that this image is 
+					<strong>
+                        idle
+					</strong>
+                    &nbsp;(i.e., 
+					<strong>
+                        not
+					</strong>
+                    &nbsp;currently being displayed or written to).
+				</p>
+			</li>
+			<li>
+				<p>
+                    If no image is ready, the call blocks (or returns an error if non-blocking).
+				</p>
+			</li>
+			<li>
+				<p>
+                    The returned image index is now &quot;
+					<em>
+                        owned
+					</em>
+                    &quot; by your app for rendering.
+				</p>
+			</li>
+			<li>
+				<p>
+                    We only get a swapchain image index from the windowing present system.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A semaphore/fence is signaled when the image is safe to use.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>timeout</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If the swapchain doesn’t have any image we can use, it will block the thread with a maximum for the timeout set.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The measurement unit is nanoseconds.
+						</p>
+					</li>
+					<li>
+						<p>
+                            1 second is fine: 
+                            <code>1_000_000_000</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>semaphore</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Semaphore to signal.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>fence</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Fence to signal.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It is possible to specify a semaphore, fence or both.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pImageIndex</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies a variable to output the index of the Swapchain image that has 
+							<em>
+                                become available
+							</em>
+                            &nbsp;to use.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The index refers to the 
+                            <code>VkImage</code>
+                            &nbsp;in the 
+                            <code>swapChainImages</code>
+                            &nbsp;array.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="image-layout-transitions" >
+    Image Layout Transitions
+</h5>
+<ul>
+	<li>
+		<p>
+            See 
+            <a href="/studies/Graphics Programming/Vulkan/Vulkan.html#images">
+            Vulkan#Images
+            </a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Before we can start rendering to an image, we need to transition its layout to one that is suitable for rendering.
+		</p>
+	</li>
+	<li>
+		<p>
+            Before rendering, we transition the image layout to 
+            <code>IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL</code>
+            .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// Before starting rendering, transition the swapchain image to COLOR_ATTACHMENT_OPTIMAL
+transition_image_layout(
+&nbsp;&nbsp;&nbsp;&nbsp;imageIndex,
+&nbsp;&nbsp;&nbsp;&nbsp;vk::ImageLayout::eUndefined,
+&nbsp;&nbsp;&nbsp;&nbsp;vk::ImageLayout::eColorAttachmentOptimal,
+&nbsp;&nbsp;&nbsp;&nbsp;{},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // srcAccessMask (no need to wait for previous operations)
+&nbsp;&nbsp;&nbsp;&nbsp;vk::AccessFlagBits2::eColorAttachmentWrite,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// dstAccessMask
+&nbsp;&nbsp;&nbsp;&nbsp;vk::PipelineStageFlagBits2::eTopOfPipe,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // srcStage
+&nbsp;&nbsp;&nbsp;&nbsp;vk::PipelineStageFlagBits2::eColorAttachmentOutput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// dstStage
+);
+</code></pre>
+<ul>
+	<li>
+		<p>
+            After rendering, we need to transition the image layout back to 
+            <code>IMAGE_LAYOUT_PRESENT_SRC_KHR</code>
+            &nbsp;so it can be presented to the screen:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// After rendering, transition the swapchain image to PRESENT_SRC
+transition_image_layout(
+&nbsp;&nbsp;&nbsp;&nbsp;imageIndex,
+&nbsp;&nbsp;&nbsp;&nbsp;vk::ImageLayout::eColorAttachmentOptimal,
+&nbsp;&nbsp;&nbsp;&nbsp;vk::ImageLayout::ePresentSrcKHR,
+&nbsp;&nbsp;&nbsp;&nbsp;vk::AccessFlagBits2::eColorAttachmentWrite,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // srcAccessMask
+&nbsp;&nbsp;&nbsp;&nbsp;{},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// dstAccessMask
+&nbsp;&nbsp;&nbsp;&nbsp;vk::PipelineStageFlagBits2::eColorAttachmentOutput,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// srcStage
+&nbsp;&nbsp;&nbsp;&nbsp;vk::PipelineStageFlagBits2::eBottomOfPipe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// dstStage
+);
+</code></pre>
+<h3
+	id="render-targets" >
+    Render Targets
+</h3>
+<h5
+	id="attachments" >
+    Attachments
+</h5>
+<ul>
+	<li>
+		<p>
+            Nvidia: Use 
+            <code>storeOp = DONT_CARE</code>
+            &nbsp;rather than 
+            <code>UNDEFINED</code>
+            &nbsp;layouts to skip unneeded render target writes.
+		</p>
+	</li>
+	<li>
+		<p>
+            Nvidia: Don't transition color attachments from &quot;safe&quot; to &quot;unsafe&quot; unless required by the algorithm.
+		</p>
+	</li>
+</ul>
+<h5
+	id="transient-resources" >
+    Transient Resources
+</h5>
+<ul>
+	<li>
+		<p>
+            Transient attachments (or Transient Resources) are render targets (like color/depth buffers) designed to exist only temporarily during a render pass, with their contents discarded afterward. They're optimized for fast on-chip memory access and avoid unnecessary memory operations.
+		</p>
+	</li>
+</ul>
+<h5
+	id="render-target" >
+    Render Target
+</h5>
+<ul>
+	<li>
+		<p>
+            A Render Target is not a term in Vulkan but it's a term in graphics programming.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's a term for an image you render into. In Vulkan this is an 
+            <code>VkImage</code>
+            &nbsp;+ 
+            <code>VkImageView</code>
+            &nbsp;used as a color/depth attachment in a render pass or as a color attachment in dynamic rendering.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Examples
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <a href="/studies/Graphics Programming/Vulkan/Vulkan.html#drawing-to-a-high-precision-image-r16g16b16a16_sfloat">
+                    Vulkan#Drawing to a High Precision Image (
+                    <code>R16G16B16A16_SFLOAT</code>
+                    )
+                    </a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It's a Render Target technique to draw into a high-precision image and then copy the result to an SDR image for the swapchain.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Drawing a UI
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The UI texture must preserve alpha in the areas you want to be transparent, for later compositing.
+				</p>
+			</li>
+		</ul>
+		<ol>
+			<li>
+				<p>
+					<strong>
+                        Draw UI directly to the final render target (swapchain image, or image to blit to the swapchain image)
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            After tonemap, enable blending and draw UI.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Oni:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    For the scene, I render into an RGBA16 image, then I draw 
+									<em>
+                                        on the swapchain
+									</em>
+                                    &nbsp;with a tonemapper, then I draw the UI 
+									<em>
+                                        on the swapchain
+									</em>
+                                    &nbsp;with blending enabled.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Composite in a shader
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Sample scene image and UI image, compute 
+                            <code>out = scene * (1 - alpha_ui) + ui * alpha_ui</code>
+                            &nbsp;(or use premultiplied alpha: 
+                            <code>out = scene + ui</code>
+                            ).
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Both ways work; premultiplied alpha avoids some edge artifacts if UI already uses premultiplied data.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Compositing
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used to combine render targets, or any other images.
+				</p>
+			</li>
+		</ul>
+		<ol>
+			<li>
+				<p>
+					<em>
+                        Fragment shader
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Render to an image and draw a full-screen triangle/quad that samples the HDR image and outputs LDR color.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Could be the swapchain image if supported, or an intermediate image then blit/copy to swapchain.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Pros
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Simple and guaranteed compatible with swapchain color attachment usage.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Useful if you want to draw the UI while making this final composition.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Seems like I'm mixing responsibilities, even though I'm reducing one render pass.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Cons
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Less flexible for arbitrary per-pixel work that requires many conditionals or random write patterns.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Need to issue a draw call and set up graphics pipeline.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Compute shader
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Sample HDR image(s), write the LDR pixels to an output image.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Could be the swapchain image if supported, or an intermediate image then blit/copy to swapchain.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Pros
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Flexible: can read multiple inputs and write arbitrary outputs (random writes, multiple passes) without needing geometry.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Easy to implement multi-image compositing in one dispatch (read N sampled images + write to storage image).
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Cons
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    On some GPUs a simple full-screen fragment pass can be faster due to fixed-function hardware for rasterization and blending.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+<pre><code class="language-glsl" data-lang="glsl">#version 450
+
+layout(local_size_x = 16, local_size_y = 16) in;
+layout(set=0, binding=0) uniform sampler2D gameTex;
+layout(set=0, binding=1) uniform sampler2D uiTex;
+layout(set=0, binding=2, rgba8) uniform writeonly image2D swapchainImg;
+
+void main() {
+&nbsp;&nbsp;&nbsp;&nbsp;ivec2 coord = ivec2(gl_GlobalInvocationID.xy);
+&nbsp;&nbsp;&nbsp;&nbsp;vec2 uv = vec2(coord) / textureSize(gameTex, 0);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// Sample inputs
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 game = texture(gameTex, uv).rgb;
+&nbsp;&nbsp;&nbsp;&nbsp;vec4 ui = texture(uiTex, uv);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// Tonemap game (example: Reinhard)
+&nbsp;&nbsp;&nbsp;&nbsp;game = game / (game + vec3(1.0));
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// Composite: UI over game
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 final = mix(game, ui.rgb, ui.a);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// Write to swapchain
+&nbsp;&nbsp;&nbsp;&nbsp;imageStore(swapchainImg, coord, vec4(final, 1.0));
+}
+</code></pre>
+<pre><code class="language-glsl" data-lang="glsl">#version 450
+
+layout(local_size_x = 16, local_size_y = 16) in;
+
+layout(binding = 0) uniform sampler2D uSceneHDR;
+layout(binding = 1) uniform sampler2D uUI; // optional
+layout(binding = 2, rgba8) writeonly uniform image2D outImage; // target LDR image (could be swapchain-compatible image)
+
+vec3 reinhardTonemap(vec3 c) {
+&nbsp;&nbsp;&nbsp;&nbsp;return c / (1.0 + c);
+}
+
+vec3 toSRGB(vec3 linear) {
+&nbsp;&nbsp;&nbsp;&nbsp;return pow(linear, vec3(1.0/2.2));
+}
+
+void main() {
+&nbsp;&nbsp;&nbsp;&nbsp;ivec2 pix = ivec2(gl_GlobalInvocationID.xy);
+&nbsp;&nbsp;&nbsp;&nbsp;ivec2 size = imageSize(outImage);
+&nbsp;&nbsp;&nbsp;&nbsp;if (pix.x &gt;= size.x || pix.y &gt;= size.y) return;
+
+&nbsp;&nbsp;&nbsp;&nbsp;vec2 uv = (vec2(pix) + 0.5) / vec2(size);
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 hdr = texture(uSceneHDR, uv).rgb;
+&nbsp;&nbsp;&nbsp;&nbsp;float exposure = 1.0;
+&nbsp;&nbsp;&nbsp;&nbsp;vec3 mapped = reinhardTonemap(hdr * exposure);
+&nbsp;&nbsp;&nbsp;&nbsp;mapped = toSRGB(mapped);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Optionally composite UI
+&nbsp;&nbsp;&nbsp;&nbsp;// vec4 ui = texture(uUI, uv);
+&nbsp;&nbsp;&nbsp;&nbsp;// vec3 outc = mix(mapped, ui.rgb, ui.a);
+
+&nbsp;&nbsp;&nbsp;&nbsp;imageStore(outImage, pix, vec4(mapped, 1.0));
+}
+</code></pre>
+<pre><code class="language-c" data-lang="c">// Dispatch
+vkCmdBindPipeline(cmd, PIPELINE_BIND_POINT_COMPUTE, computePipe);
+vkCmdBindDescriptorSets(cmd, PIPELINE_BIND_POINT_COMPUTE, ...);
+vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
+</code></pre>
+			</li>
+		</ol>
+	</li>
+</ul>
+<h3
+	id="dynamic-rendering" >
+    Dynamic Rendering
+</h3>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Support
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://vulkan.gpuinfo.org/displayextensiondetail.php?extension=KHR_dynamic_rendering" 
+						class="external-link" 
+						target="_blank" >
+                        Dynamic Rendering
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://vulkan.gpuinfo.org/displayextensiondetail.php?extension=KHR_dynamic_rendering_local_read" 
+						class="external-link" 
+						target="_blank" >
+                        Dynamic Rendering Local Read
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Used for tiling GPUs.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://vulkan.gpuinfo.org/displayextensiondetail.php?extension=EXT_dynamic_rendering_unused_attachments" 
+						class="external-link" 
+						target="_blank" >
+                        Dynamic Rendering Unused Attachments
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/EXT_dynamic_rendering_unused_attachments.html" 
+								class="external-link" 
+								target="_blank" >
+                                EXT_dynamic_rendering_unused_attachments
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Requires Vulkan 1.3+.
+						</p>
+					</li>
+					<li>
+						<p>
+							<a
+								href="https://github.com/KhronosGroup/Vulkan-Docs/blob/main/proposals/EXT_dynamic_rendering_unused_attachments.adoc" 
+								class="external-link" 
+								target="_blank" >
+                                Proposal
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
+							</a>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            It relaxes the strict matching rules so a rendering instance and the bound pipelines may disagree about an attachment being “unused” in one but not the other (and relaxes some format/NULL mixing rules described in the extension).
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Support
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Pass 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT.html" 
+										class="external-link" 
+										target="_blank" >
+                                        VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
+									</a>
+                                    &nbsp;in the 
+                                    <code>pNext</code>
+                                    &nbsp;chain of the 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceFeatures2.html" 
+										class="external-link" 
+										target="_blank" >
+                                        VkPhysicalDeviceFeatures2
+									</a>
+                                    &nbsp;structure passed to 
+									<a
+										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkGetPhysicalDeviceFeatures2.html" 
+										class="external-link" 
+										target="_blank" >
+                                        vkGetPhysicalDeviceFeatures2
+									</a>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The struct will be filled in to indicate whether each corresponding feature is supported.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Enabling
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Enable the corresponding feature in 
+                                    <code>VkDeviceCreateInfo</code>
+                                    &nbsp;(via 
+                                    <code>VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT</code>
+                                    )
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            This extension lifts some restrictions in the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/KHR_dynamic_rendering.html" 
+								class="external-link" 
+								target="_blank" >
+                                KHR_dynamic_rendering
+							</a>
+                            &nbsp;extension to allow render pass instances and bound pipelines within those render pass instances to have an unused attachment specified in one but not the other. It also allows pipelines to use different formats in a render pass as long as the attachment is NULL.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkRenderingAttachmentInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkRenderingAttachmentInfo</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Structure specifying attachment information
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>imageView</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the image view that will be used for rendering.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>imageLayout</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the layout that 
+                            <code>imageView</code>
+                            &nbsp;will be in during rendering.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>resolveMode</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkResolveModeFlagBits.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkResolveModeFlagBits
+							</a>
+                            &nbsp;value defining how data written to 
+                            <code>imageView</code>
+                            &nbsp;will be resolved into 
+                            <code>resolveImageView</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>resolveImageView</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is an image view used to write resolved data at the end of rendering.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>resolveImageLayout</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the layout that 
+                            <code>resolveImageView</code>
+                            &nbsp;will be in during rendering.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>loadOp</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies what to do with the image before rendering.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Is a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAttachmentLoadOp.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkAttachmentLoadOp
+							</a>
+                            &nbsp;value defining the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#renderpass-load-operations" 
+								class="external-link" 
+								target="_blank" >
+                                load operation
+							</a>
+                            &nbsp;for the attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            We’re using 
+                            <code>ATTACHMENT_LOAD_OP_CLEAR</code>
+                            &nbsp;to clear the image to black before rendering.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>storeOp</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies what to do with the image after rendering.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Is a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAttachmentStoreOp.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkAttachmentStoreOp
+							</a>
+                            &nbsp;value defining the 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#renderpass-store-operations" 
+								class="external-link" 
+								target="_blank" >
+                                store operation
+							</a>
+                            &nbsp;for the attachment.
+						</p>
+					</li>
+					<li>
+						<p>
+                            We're using 
+                            <code>ATTACHMENT_STORE_OP_STORE</code>
+                            &nbsp;to store the rendered image for later use.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>clearValue</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkClearValue.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkClearValue
+							</a>
+                            &nbsp;structure defining values used to clear 
+                            <code>imageView</code>
+                            &nbsp;when 
+                            <code>loadOp</code>
+                            &nbsp;is 
+                            <code>ATTACHMENT_LOAD_OP_CLEAR</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkRenderingInfo.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>VkRenderingInfo</code>
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Structure specifying render pass instance begin info.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Specifies the attachments to render to and the render area.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Combines the 
+                    <code>RenderingAttachmentInfo</code>
+                    &nbsp;with other rendering parameters.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>flags</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a bitmask of 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkRenderingFlagBits.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkRenderingFlagBits
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>renderArea</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the render area that is affected by the render pass instance.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                Extent Requirements
+							</strong>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The 
+                                    <code>rendering_info.renderArea.extent</code>
+                                    &nbsp;has to fit inside the 
+                                    <code>rendering_attachment.imageView</code>
+                                    &nbsp;and hence the image.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            If there is an instance of 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDeviceGroupRenderPassBeginInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkDeviceGroupRenderPassBeginInfo
+							</a>
+                            &nbsp;included in the 
+                            <code>pNext</code>
+                            &nbsp;chain and its 
+                            <code>deviceRenderAreaCount</code>
+                            &nbsp;member is not 
+                            <code>0</code>
+                            , then 
+                            <code>renderArea</code>
+                            &nbsp;is ignored, and the render area is defined per-device by that structure.
+						</p>
+					</li>
+					<li>
+						<p>
+                            CharlesG - LunarG:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Viewports &amp; scissors let you specify a size smaller than the full image, as well as redefining the origin &amp; scale to use. Whereas the renderArea is specifying the actual image dimensions to use. This allows flexibility in how the backing VkImage is used in contrast to the viewport/scissor needs of the rendering itself. In most cases they are going to be “full” so its not like it comes into play always
+								</p>
+							</li>
+							<li>
+								<p>
+                                    More clarity: viewport &amp; scissor are inputs to the rasterization stage, while the render area is an input for the attachment read/write.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Caio:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    So, when comparing these two cases:
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            1- I use a 1080p image for the 
+                                            <code>renderArea</code>
+                                            &nbsp;and a 
+                                            <code>640p</code>
+                                            &nbsp;viewport and center the offset
+										</p>
+									</li>
+									<li>
+										<p>
+                                            2- I use a 640p image for the 
+                                            <code>renderArea</code>
+                                            &nbsp;and a 
+                                            <code>640p</code>
+                                            &nbsp;viewport and center the offset
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Is there a difference between the quality and performance of these two? Or even, is there a visual difference?
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            CharlesG - LunarG:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    I don't know tbh.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>colorAttachmentCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the number of elements in 
+                            <code>pColorAttachments</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pColorAttachments</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to an array of 
+                            <code>colorAttachmentCount</code>
+                            &nbsp;
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkRenderingAttachmentInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkRenderingAttachmentInfo
+							</a>
+                            &nbsp;structures describing any color attachments used.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Each element of the 
+                            <code>pColorAttachments</code>
+                            &nbsp;array corresponds to an output location in the shader, i.e. if the shader declares an output variable decorated with a 
+                            <code>Location</code>
+                            &nbsp;value of 
+							<strong>
+                                X
+							</strong>
+                            , then it uses the attachment provided in 
+                            <code>pColorAttachments[X]</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the 
+                            <code>imageView</code>
+                            &nbsp;member of any element of 
+                            <code>pColorAttachments</code>
+                            &nbsp;is 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/NULL_HANDLE.html" 
+								class="external-link" 
+								target="_blank" >
+                                NULL_HANDLE
+							</a>
+                            , and 
+                            <code>resolveMode</code>
+                            &nbsp;is not 
+                            <code>RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_ANDROID</code>
+                            , writes to the corresponding location by a fragment are discarded.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pDepthAttachment</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkRenderingAttachmentInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkRenderingAttachmentInfo
+							</a>
+                            &nbsp;structure describing a depth attachment.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pStencilAttachment</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a pointer to a 
+							<a
+								href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkRenderingAttachmentInfo.html" 
+								class="external-link" 
+								target="_blank" >
+                                VkRenderingAttachmentInfo
+							</a>
+                            &nbsp;structure describing a stencil attachment.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>viewMask</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is a bitfield of view indices describing which views are active during rendering, when it is not 
+                            <code>0</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>layerCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is the number of layers rendered to in each attachment when 
+                            <code>viewMask</code>
+                            &nbsp;is 
+                            <code>0</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Specifies the number of layers to render to, which is 1 for a non-layered image.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="multi-view" >
+    Multi-view
+</h5>
+<ul>
+	<li>
+		<p>
+            If 
+            <code>VkRenderingInfo.viewMask</code>
+            &nbsp;is not 
+            <code>0</code>
+            , multiview is enabled.
+		</p>
+	</li>
+	<li>
+		<p>
+            If multiview is enabled, and the 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#features-multiviewPerViewRenderAreas" 
+				class="external-link" 
+				target="_blank" >
+                <code>multiviewPerViewRenderAreas</code>
+			</a>
+            &nbsp;feature is enabled, and there is an instance of 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM.html" 
+				class="external-link" 
+				target="_blank" >
+                VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
+			</a>
+            &nbsp;included in the 
+            <code>pNext</code>
+            &nbsp;chain with 
+            <code>perViewRenderAreaCount</code>
+            &nbsp;not equal to 
+            <code>0</code>
+            , then the elements of 
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM.html" 
+				class="external-link" 
+				target="_blank" >
+                VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
+			</a>
+            ::
+            <code>pPerViewRenderAreas</code>
+            &nbsp;override 
+            <code>renderArea</code>
+            &nbsp;and define a render area for each view. In this case, 
+            <code>renderArea</code>
+            &nbsp;
+			<strong>
+                must
+			</strong>
+            &nbsp;be an area at least as large as the union of all the per-view render areas.
+		</p>
+	</li>
+</ul>
+<h5
+	id="render-cmds" >
+    Render Cmds
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdBeginRendering.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkCmdBeginRendering</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdBeginRendering.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkCmdEndRendering</code>
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="drawing-commands" >
+    Drawing Commands
+</h3>
+<h5
+	id="draw-direct" >
+    Draw Direct
+</h5>
+<ul>
+	<li>
+		<p>
+            Specify the Viewport and Scissor.
+		</p>
+	</li>
+	<li>
+		<p>
+            Bind the pipeline.
+		</p>
+	</li>
+	<li>
+		<p>
+            Bind the descriptor sets.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkCmdDraw()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>vertexCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Even though we don’t have a vertex buffer, we technically still have 3 vertices to draw.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>instanceCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Used for instanced rendering, use 
+                            <code>1</code>
+                            &nbsp;if you’re not doing that.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>firstVertex</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Used as an offset into the vertex buffer, defines the lowest value of 
+                            <code>SV_VertexId</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>firstInstance</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Used as an offset for instanced rendering, defines the lowest value of 
+                            <code>SV_InstanceID</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkCmdDrawIndexed.html" 
+				class="external-link" 
+				target="_blank" >
+                <code>vkCmdDrawIndexed</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>indexCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The number of vertices to draw.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>instanceCount</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The number of instances to draw.
+						</p>
+					</li>
+					<li>
+						<p>
+                            We’re not using instancing, so just specify 
+                            <code>1</code>
+                            &nbsp;instance.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>firstIndex</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The base index within the index buffer.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Specifies an offset into the index buffer, using a value of 
+                            <code>1</code>
+                            &nbsp;would cause the graphics card to start reading at the second index.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>vertexOffset</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The value added to the vertex index before indexing into the vertex buffer.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>firstInstance</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The instance ID of the first instance to draw.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="draw-indirect" >
+    Draw Indirect
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;In some ways, Indirect Rendering is a more advanced form of instancing&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>buffer + offset + (stride * index)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            Executing a draw-indirect call will be equivalent to doing this.
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">void FakeDrawIndirect(VkCommandBuffer commandBuffer,void* buffer,VkDeviceSize offset, uint32_t drawCount,uint32_t stride);
+
+&nbsp;&nbsp;&nbsp;&nbsp;char* memory = (char*)buffer + offset;
+
+&nbsp;&nbsp;&nbsp;&nbsp;for(int i = 0; i &lt; drawCount; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VkDrawIndexedIndirectCommand* command = VkDrawIndexedIndirectCommand*(memory + (i * stride));
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VkCmdDrawIndexed(commandBuffer, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;command-&gt;indexCount, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;command-&gt;instanceCount, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;command-&gt;firstIndex, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;command-&gt;vertexOffset,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;command-&gt;firstInstance);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+} 
+</code></pre>
+	</li>
+	<li>
+		<p>
+            It does not carry vertex data itself — it only supplies counts and base indices/instances. The actual vertex data and indices come from the buffers you previously bound with 
+            <code>vkCmdBindVertexBuffers</code>
+            &nbsp;and 
+            <code>vkCmdBindIndexBuffer</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Vertex
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    To move vertex and index buffers to bindless, generally you do it by merging the meshes into really big buffers. Instead of having 1 buffer per vertex buffer and index buffer pair, you have 1 buffer for all vertex buffers in a scene. When rendering, then you use BaseVertex offsets in the draw calls. In some engines, they remove vertex attributes from the pipelines entirely, and instead grab the vertex data from buffers in the vertex shader. Doing that makes it much easier to keep 1 big vertex buffer for all draw calls in the engine even if they use different vertex attribute formats. It also allows some advanced unpacking/compression techniques, and it’s the main use case for Mesh Shaders.
+				</p>
+			</li>
+			<li>
+				<p>
+                    We also change the way the meshes work. After loading a scene, we create a BIG vertex buffer, and stuff all of the meshes of the entire map into it. This way we will avoid having to rebind vertex buffers.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Implementation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If the device supports multi-draw indirect (
+                    <code>VkPhysicalDeviceFeatures2::multiDrawIndirect</code>
+                    ), then the entire array of draw commands can be executed through a single call to 
+                    <code>VkDrawIndexedIndirectCommand</code>
+                    . Otherwise, each draw call must be executed through a separate call to 
+                    <code>VkDrawIndexIndirectCommand</code>
+                    :
+				</p>
+<pre><code class="language-cpp" data-lang="cpp">// m_enable_mci: supports multiDrawIndirect
+if (m_enable_mci && m_supports_mci)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;vkCmdDrawIndexedIndirect(draw_cmd_buffers[i], indirect_call_buffer-&gt;get_handle(), 0, cpu_commands.size(), sizeof(cpu_commands[0]));
+}
+else
+{
+&nbsp;&nbsp;&nbsp;&nbsp;for (size_t j = 0; j &lt; cpu_commands.size(); ++j)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vkCmdDrawIndexedIndirect(draw_cmd_buffers[i], indirect_call_buffer-&gt;get_handle(), j * sizeof(cpu_commands[0]), 1, sizeof(cpu_commands[0]));
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://docs.vulkan.org/refpages/latest/refpages/source/vkCmdDrawIndexedIndirectCount.html" 
+						class="external-link" 
+						target="_blank" >
+                        <code>vkCmdDrawIndexedIndirectCount</code>
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Behaves similarly to vkCmdDrawIndexedIndirect except that the draw count is read by the device from a buffer during execution. The command will read an unsigned 32-bit integer from countBuffer located at countBufferOffset and use this as the draw count.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Textures
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Due to the fact that you want to have as much things on the GPU as possible, this pipeline maps very well if you combine it with “Bindless” techniques, where you stop needing to bind descriptor sets per material or changing vertex buffers. Having a bindless renderer also makes Raytracing much more performant and effective.
+				</p>
+			</li>
+			<li>
+				<p>
+                    On this guide we will not use bindless textures as their support is limited, so we will do 1 draw-indirect call per material used.
+				</p>
+			</li>
+			<li>
+				<p>
+                    To move textures into bindless, you use texture arrays.
+				</p>
+			</li>
+			<li>
+				<p>
+                    With the correct extension, the size of the texture array can be unbounded in the shader, like when you use SSBOs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Then, when accessing the textures in the shader, you access them by index which you grab from another buffer. If you don’t use the Descriptor Indexing extensions, you can still use texture arrays, but they will need a bounded size. Check your device limits to see how big can that be.
+				</p>
+			</li>
+			<li>
+				<p>
+                    To make materials bindless, you need to stop having 1 pipeline per material. Instead, you want to move the material parameters into SSBOs, and go with an 
+					<strong>
+                        ubershader
+					</strong>
+                    &nbsp;approach.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In the Doom engines, they have a very low amount of pipelines for the entire game. Doom eternal has less than 500 pipelines, while Unreal Engine games often have 100.000+ pipelines. If you use ubershaders to massively lower the amount of unique pipelines, you will be able to increase efficiency in a huge way, as VkCmdBindPipeline is one of the most expensive calls when drawing objects in vulkan.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Push Constants
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Push Constants and Dynamic Descriptors can be used, but they have to be “global”. Using push constants for things like camera location is perfectly fine, but you cant use them for object ID as that’s a per-object call and you specifically want to draw as many objects as possible in 1 draw.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="multithreading-rendering" >
+    <s>Multithreading Rendering</s>
+</h3>
+<ul>
+	<li>
+		<p>
+            I'm not sure, I don't think it's necessary.
+		</p>
+	</li>
+	<li>
+		<p>
+            From what I understand, it's about using multiple CPU threads to handle submissions and presentations, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            It has nothing to do with frames in flight, btw.
+		</p>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=a49AWmIfjdo" 
+				class="external-link" 
+				target="_blank" >
+                Explanation
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The video explains okay, but nah.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        -&gt;
+					</strong>
+                    &nbsp;In the next video he says it wasn't exactly a good idea and 
+					<em>
+                        reverted
+					</em>
+                    &nbsp;what he did in that video.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;It was technically slower and more confusing to do synchronizations&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="render-passes-and-framebuffers" >
+    <s>Render Passes and Framebuffers</s>
+</h3>
+<h5
+	id="dynamic-rendering-features-and-differences-from-render-passes" >
+    Dynamic Rendering: Features and differences from Render Passes
+</h5>
+<ul>
+	<li>
+		<p>
+            Replaces 
+            <code>VkRenderPass</code>
+            &nbsp;and Framebuffers.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Instead, we can specify the color, depth, and stencil attachments directly when we begin rendering.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Describe renderpasses inline with command buffer recording.
+		</p>
+	</li>
+	<li>
+		<p>
+            Provides more flexibility by allowing us to change the attachments we’re rendering to without creating new render pass objects.
+		</p>
+	</li>
+	<li>
+		<p>
+            Greatly simplifies application architecture.
+		</p>
+	</li>
+	<li>
+		<p>
+            Synchronization still needs to be done, but now it's even more explicit, truer to its stated nature.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    We had to do that with Render Passes, but that was bound up in the Render Pass creation.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Now, the synchronization is more explicit.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Tiling GPUs aren't left behind.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The v1.4 
+                    <code>dynamicRenderingLocalRead</code>
+                    , 
+                    <code>KHR_dynamic_rendering_local_read</code>
+                    &nbsp;brings tiling GPUs to the same capabilities, and they don't need to state the Render Passes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            I wouldn't say that &quot;You should use Render Passes if your hardware isn't new enough&quot;, because it isn't fun.
+		</p>
+	</li>
+	<li>
+		<p>
+            Better compatibility with modern rendering techniques.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250731211439.png" width="425" >
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="subpasses" >
+    Subpasses
+</h5>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20250930090957.png" width="480" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <s>
+			<strong>
+                External subpass dependencies
+			</strong>
+            </s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Explained by TheMaister 2019; he is part of the Khronos Group.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The main purpose of external subpass dependencies is to deal with initialLayout and finalLayout of an attachment reference. If initialLayout != layout used in the first subpass, the render pass is forced to perform a layout transition.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If you don’t specify anything else, that layout transition will wait for nothing before it performs the transition. Or rather, the driver will inject a dummy subpass dependency for you with srcStageMask = TOP_OF_PIPE. This is not what you want since it’s almost certainly going to be a race condition. You can set up a subpass dependency with the appropriate srcStageMask and srcAccessMask.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        The external subpass dependency is basically just a vkCmdPipelineBarrier injected for you by the driver.
+					</strong>
+				</p>
+			</li>
+			<li>
+				<p>
+                    The whole premise here is that it’s theoretically better to do it this way because the driver has more information, but this is questionable, at least on current hardware and drivers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There is a very similar external subpass dependency setup for finalLayout. If finalLayout differs from the last use in a subpass, driver will transition into the final layout automatically. Here you get to change 
+                    <code>dstStageMask</code>
+                    /
+                    <code>dstAccessMask</code>
+                    . If you do nothing here, you get 
+                    <code>BOTTOM_OF_PIPE</code>
+                    , which can actually be just fine. A prime use case here is swapchain images which have 
+                    <code>finalLayout = PRESENT_SRC_KHR</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Essentially, 
+					<strong>
+                        you can ignore external subpass dependencies
+					</strong>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Their added complexity gives very little gain. Render pass compatibility rules also imply that if you change even minor things like which stages to wait for, you need to create new pipelines!
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is dumb, and will hopefully be fixed at some point in the spec.
+				</p>
+			</li>
+			<li>
+				<p>
+                    However, while the usefulness of external subpass dependencies is questionable, they have some convenient use cases I’d like to go over:
+				</p>
+				<ul>
+					<li>
+						<p>
+							<em>
+                                Automatically transitioning 
+                                <code>TRANSIENT_ATTACHMENT</code>
+                                &nbsp;images
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    If you’re on mobile, you should be using transient images where possible. When using these attachments in a render pass, it makes sense to always have them as initialLayout = UNDEFINED. Since we know that these images can only ever be used in 
+                                    <code>COLOR_ATTACHMENT_OUTPUT</code>
+                                    &nbsp;or 
+                                    <code>EARLY</code>
+                                    /
+                                    <code>LATE_FRAGMENT_TEST</code>
+                                    &nbsp;stages depending on their image format, the external subpass dependency writes itself, and we can just use transient attachments without having to think too hard about how to synchronize them. This is what I do in my Granite engine, and it’s quite useful. Of course, we could just inject a pipeline barrier for this exact same purpose, but that’s more boilerplate.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Automatically transitioning swapchain images
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Typically, swapchain images are always just used once per frame, and we can deal with all synchronization using external subpass dependencies. We want 
+                                    <code>initialLayout = UNDEFINED</code>
+                                    , and 
+                                    <code>finalLayout = PRESENT_SRC_KHR</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>srcStageMask</code>
+                                    &nbsp;is 
+                                    <code>COLOR_ATTACHMENT_OUTPUT</code>
+                                    &nbsp;which lets us link up with the swapchain acquire semaphore. For this case, we will need an external subpass dependency. For the 
+                                    <code>finalLayout</code>
+                                    &nbsp;transition after the render pass, we are fine with 
+                                    <code>BOTTOM_OF_PIPE</code>
+                                    &nbsp;being used. We’re going to use semaphores here anyways.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    I also do this in Granite.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="framebuffers" >
+    Framebuffers
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>VkFrameBuffer</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Holds the target images for a renderpass.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Only used in legacy tutorials.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Just wrappers to image views.
+		</p>
+	</li>
+	<li>
+		<p>
+            The attachments of a Framebuffer are the Image Views.
+		</p>
+	</li>
+	<li>
+		<p>
+            The Framebuffers are used within a Render Pass.
+		</p>
+	</li>
+	<li>
+		<p>
+            LunarG / Vulkan: &quot;Kinda of a bad name, it's just a couple of image views&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Only exists to combine images and renderpasses.
+		</p>
+	</li>
+</ul>
+<h5
+	id="render-passes" >
+    Render Passes
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>VkRenderPass</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Holds information about the images you are rendering into. All drawing commands have to be done inside a renderpass.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Only used in legacy tutorials.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Render passes in Vulkan describe the 
+			<em>
+                type
+			</em>
+            &nbsp;of images that are used during rendering operations, 
+			<em>
+                how
+			</em>
+            &nbsp;they will be used, and 
+			<em>
+                how
+			</em>
+            &nbsp;their contents should be treated.
+		</p>
+	</li>
+	<li>
+		<p>
+            All drawing commands happen inside a &quot;render pass&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Acts as pseudo render graph.
+		</p>
+	</li>
+	<li>
+		<p>
+            Allows tiling GPUs to use memory efficiently.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Efficient scheduling.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Describe images attachments.
+		</p>
+	</li>
+	<li>
+		<p>
+            Defines the subpasses.
+		</p>
+	</li>
+	<li>
+		<p>
+            Declare dependencies between subpasses.
+		</p>
+	</li>
+	<li>
+		<p>
+            Require 
+            <code>VkFrameBuffers</code>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Whereas a render pass only describes the type of images, a 
+                    <code>VkFramebuffer</code>
+                    &nbsp;actually binds specific images to these slots.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250730160923.png" width="475" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Problem
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Great in theory, not so great to use in practice.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Single object with many responsibilities.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Made the API harder to reason about when looking at the code.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Hard to architect into a renderer.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Yet another input for pipelines.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The main benefit is for tiling based GPUs.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Commonly found in mobile.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    &quot;Use Dynamic Rendering, it's much better&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="submit" >
+    Submit
+</h3>
+<ul>
+	<li>
+		<p>
+            Submits the Command Buffers recorded.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>vkSubmitInfo</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The first three parameters specify which semaphores to wait on before execution begins and in which stage(s) of the pipeline to wait.
+				</p>
+			</li>
+			<li>
+				<p>
+                    We want to wait for writing colors to the image until it’s available, so we’re specifying the stage of the graphics pipeline that writes to the color attachment.
+				</p>
+			</li>
+			<li>
+				<p>
+                    That means that theoretically, the implementation can already start executing our vertex shader and such while the image is not yet available.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Each entry in the 
+                    <code>waitStages</code>
+                    &nbsp;array corresponds to the semaphore with the same index in 
+                    <code>pWaitSemaphores</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>pCommandBuffers</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies which command buffers to actually submit for execution. We simply submit the single command buffer we have.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>pSignalSemaphores</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Specifies which semaphores to signal once the command buffer(s) have finished execution.
+						</p>
+					</li>
+					<li>
+						<p>
+                            In our case we’re using the 
+                            <code>renderFinishedSemaphore</code>
+                            &nbsp;for that purpose.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>vkQueueSubmit()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>fence</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is an optional handle to a fence to be 
+							<em>
+                                signaled
+							</em>
+                            &nbsp;once all submitted command buffers have completed execution.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The function takes an array of 
+                    <code>VkSubmitInfo</code>
+                    &nbsp;structures as argument for efficiency when the workload is much larger.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The last parameter references an optional fence that will be signaled when the command buffers finish execution.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This allows us to know when it is safe for the command buffer to be reused, thus we want to give it 
+                    <code>drawFence</code>
+                    . Now we want the CPU to wait while the GPU finishes rendering that frame we just submitted:
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="presentation" >
+    Presentation
+</h3>
+<ul>
+	<li>
+		<p>
+            The last step of drawing a frame is submitting the result back to the Swapchain to have it 
+			<em>
+                eventually show up
+			</em>
+            &nbsp;on the screen.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Presentation Engine
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250818172910.png" width="350" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>VkPresentInfoKHR</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>pWaitSemaphores</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Which semaphores to wait on before presentation can happen, just like 
+                            <code>VkSubmitInfo</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Since we want to wait on the command buffer to finish execution, thus our triangle being drawn, we take the semaphores which will be signaled and wait on them, thus we use 
+                            <code>signalSemaphores</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The next two parameters specify the Swapchains to present images to and the index of the image for each Swapchain.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This will almost always be single.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>pResults</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It allows you to specify an array of 
+                            <code>VkResult</code>
+                            &nbsp;values to check for every Swapchain if presentation was successful.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It’s not necessary if you’re only using a single Swapchain, because you can use the return value of the present function.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>QueuePresentKHR()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Submits a rendered image to the presentation queue.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Used after queueing all rendering commands and transitioning the image to the correct layout.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Vulkan transfers ownership of the image to the 'presentation engine'.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                How a presentation happens
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Who
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The 
+							<em>
+                                GPU
+							</em>
+                            &nbsp;(via the display controller/hardware), orchestrated by the 
+							<em>
+                                OS/window system
+							</em>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        When
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            At the next vertical blanking interval (
+							<strong>
+                                Vblank
+							</strong>
+                            ).
+						</p>
+						<ul>
+							<li>
+								<p>
+									<strong>
+                                        Vblank
+									</strong>
+                                    &nbsp;is the moment between screen refreshes (e.g., at 60 Hz, every 16.67 ms).
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            In a Vulkan workflow, we can be sure that the presentation happened between the 
+                            <code>QueuePresentKHR()</code>
+                            &nbsp;and the 
+                            <code>vkAcquireNextImageKHR()</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The job of the 
+                                    <code>present_complete_semaphore</code>
+                                    &nbsp;is to hold this information.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        How
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The GPU's 
+							<em>
+                                display controller
+							</em>
+                            &nbsp;reads the image from GPU memory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The OS/window system (e.g., X11/Wayland on Linux, Win32 on Windows) composites the image into the application window.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The final output is scanned out to the display.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Image recycling
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    After presentation, the image is released back to the swapchain.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It becomes available for re-acquisition via 
+                    <code>vkAcquireNextImageKHR</code>
+                    &nbsp;(after the next vblank).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

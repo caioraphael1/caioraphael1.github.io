@@ -1,0 +1,1642 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Game AI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Game Development/Game AI/Game AI-utility-ai-fuzzy-logic.html" >
+                                Utility AI / Fuzzy Logic
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#games-that-use-it" >
+                                        Games that use it
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#quotetypesquote-of-utility-ai" >
+                                        &quot;Types&quot; of Utility AI
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#structure" >
+                                        Structure
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#quoteaggregation-methodsquote" >
+                                        &quot;Aggregation Methods&quot;
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#quoteweightquote" >
+                                        &quot;Weight&quot;
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#quotetagsquote" >
+                                        &quot;Tags&quot;
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#interruptions" >
+                                        Interruptions
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#explanations" >
+                                        Explanations
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#needs-based-ai" >
+                                        Needs-based AI
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#tools" >
+                                        Tools
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#addons-for-godot" >
+                                                <s>Addons for Godot</s>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-fsm-finite-state-machines-or-hsfm-hierarchical-state-machines.html" >
+                                FSM (Finite State Machines) or HSFM (Hierarchical State Machines)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-behavior-trees.html" >
+                                Behavior Trees
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-htn-hierarchical-task-network.html" >
+                                HTN (Hierarchical Task Network)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-goap-goal-oriented-action-planning.html" >
+                                GOAP (Goal-Oriented Action Planning)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-hgn-hierarchical-goal-network.html" >
+                                HGN (Hierarchical Goal Network)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-strips-stanford-research-institute-problem-solver.html" >
+                                STRIPS (Stanford Research Institute Problem Solver)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-rule-based-ai.html" >
+                                Rule-based AI
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game AI/Game AI-evaluations.html" >
+                                Evaluations
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Procedural Animation
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Procedural Animation/Procedural Animation-references-and-examples.html" >
+                                References and Examples
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Procedural Animation/Procedural Animation-inverse-kinematics.html" >
+                                Inverse Kinematics
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Procedural Animation/Procedural Animation-procedural-animation-with-soft-body.html" >
+                                Procedural Animation with Soft Body
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Game Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Game Design/Game Design-game-design.html" >
+                                Game Design
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Level Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Level Design-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Level Design-workflows.html" >
+                                Workflows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Level Design-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Level Design-analyses.html" >
+                                Analyses
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Scanning Algorithms
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Game Development/Scanning Algorithms-scanning-algorithms.html" >
+                                Scanning Algorithms
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Utility AI / Fuzzy Logic
+						</h1>
+						<p>
+							<time
+								datetime="2024-08-20" >
+                                🕒 Created: 2024-08-20
+							</time>
+							<time
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            &quot;Before being intelligent, one must not be stupid. A character that can stay 'grounded' in the environment can convey much more intelligence than a complex character that does stupid things.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;Results in behaviors that appear more intelligent and natural.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;Utility AI is extremely flexible. Instead of relying on rigid transitions between states or predefined behavior hierarchies, the agent can adapt dynamically to a wide range of situations.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;It is relatively easy to add new actions or adjust utility functions for more complex behaviors without having to redesign the whole system.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            Disadvantages:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Loss of some designer control&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Can be hard to conceptualize&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="games-that-use-it" >
+    Games that use it
+</h3>
+<ul>
+	<li>
+		<p>
+            The Sims.
+		</p>
+	</li>
+	<li>
+		<p>
+            Into The Breach.
+		</p>
+	</li>
+	<li>
+		<p>
+            Half-Life 2.
+		</p>
+	</li>
+	<li>
+		<p>
+            Spore.
+		</p>
+	</li>
+	<li>
+		<p>
+            Warframe.
+		</p>
+	</li>
+	<li>
+		<p>
+            Zoo Tycoon.
+		</p>
+	</li>
+</ul>
+<h3
+	id="quotetypesquote-of-utility-ai" >
+    &quot;Types&quot; of Utility AI
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;Absolute Utility&quot;
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Ranks / divides into categories.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            &quot;Relative Utility&quot;.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Calculates how &quot;appropriate&quot; something is.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="structure" >
+    Structure
+</h3>
+<ul>
+	<li>
+		<p>
+            'Consideration':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is a number representing a subset of game state which, from the perspective of the algorithm, is worth being considered during score calculation.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            'Curve':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is a function that converts one value into another. It usually takes the form of an analytical curve.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            'Evaluator':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is responsible for processing 'considerations' and returning the final score assigned to the evaluated behavior.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            'Selector':
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Is responsible for selecting the most suitable behavior based on scores received from evaluators.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="quoteaggregation-methodsquote" >
+    &quot;Aggregation Methods&quot;
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;Methods used to evaluate multiple considerations and obtain the final score&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Mult
+		</p>
+	</li>
+	<li>
+		<p>
+            Sum
+		</p>
+	</li>
+	<li>
+		<p>
+            Average
+		</p>
+	</li>
+	<li>
+		<p>
+            Max
+		</p>
+	</li>
+	<li>
+		<p>
+            Min
+		</p>
+	</li>
+</ul>
+<h3
+	id="quoteweightquote" >
+    &quot;Weight&quot;
+</h3>
+<ol>
+	<li>
+		<p>
+            On the obtained score after aggregating the considerations.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used in:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            'Applying Weight and mathematical equations in Utility AI'.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            On the individual score of each consideration, before aggregation.
+		</p>
+	</li>
+	<li>
+		<p>
+            No use of weight.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used in:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Implementing Utility AI in Unity.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
+<h3
+	id="quotetagsquote" >
+    &quot;Tags&quot;
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;The entity is this kind of thing&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;This event happened&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;This state is active&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Race
+		</p>
+	</li>
+	<li>
+		<p>
+            Faction
+		</p>
+	</li>
+	<li>
+		<p>
+            History
+		</p>
+	</li>
+	<li>
+		<p>
+            Also:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Attributes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Effects.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="interruptions" >
+    Interruptions
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;How to solve the problem where one action switches to another due to runtime variations while the first action is being executed?&quot;
+		</p>
+		<ol>
+			<li>
+				<p>
+                    Make a bool to store whether the action can or cannot be interrupted.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Make a float of &quot;persistence&quot;, where the current action is assigned a modifier so that the new action must have a substantially higher score for the action to be changed.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I found this suggestion quite useful.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</li>
+</ul>
+<h3
+	id="explanations" >
+    Explanations
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://gdcvault.com/play/1021848/Building-a-Better-Centaur-AI" 
+				class="external-link" 
+				target="_blank" >
+                Applying Weight and mathematical equations in Utility AI
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Great video. It shows in practice how the analysis of considerations is done after their normalization.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Presentation from 2015.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        My notes
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            DSEs (Decision Score Evaluators).
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Have internal considerations to obtain a final score.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Carry an action with them.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Skill Set and a Decision Maker:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <img src="assets/image_20240824091431.png" width="500" >
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The only difference between a Skill Set and a Decision Maker is that a Skill Set uses an &quot;export&quot; parameter corresponding to the animation / attack action. This is done because the DSEs used for Skill Sets are not specific to a single action and can be used across multiple characters.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    All DSEs from Skill Sets and DSEs from Decision Makers are put in the same &quot;bucket&quot;, that is, without making any distinction between &quot;combat&quot; and &quot;out of combat&quot;.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Score evaluation:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The only thing that truly makes the entity not be &quot;stupid&quot; in combat (or vice versa), is that each DSE has an attached weight, so that Skill Set DSEs have weight 3.0, while Decision Maker DSEs can vary from weight 1.0 up to about 4.0~5.0.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <img src="assets/image_20240824090942.png" width="500" >
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Multiplication of Scores:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    A compensation factor is used when multiplying scores to &quot;make the multiplication make more sense&quot;.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The equation is not explained.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>modification_factor = 1 - (1 / num_considerations)</code>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>makeup_value = (1 - score) * modification_factor</code>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    `final_score_consideration = score + (makeup_value * score)
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Optimization:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Considering that all possible actions are placed in the same &quot;bucket&quot;, that requires optimization.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <img src="assets/image_20240824091057.png" width="500" >
+                                    .
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The 'min' is used as an output parameter for the loop to optimize the calculation. If the 'finalScore' drops below 'min', cancel the loop and return the 'finalScore'; that is, the action will not happen anyway, so give up and exit the loop.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    This does not make much sense to be used if you use 'pick random' (or derivates) among the best actions. It makes sense in their case because they use 'pick best'.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Circumstantial DSEs (via new Decision Maker):
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Behavior injection is used based on the entity's context. For example, if the entity enters a tavern, tavern actions are 
+									<em>
+                                        injected
+									</em>
+                                    &nbsp;as now part of the pool of possible actions; upon leaving the cave, those possibilities are removed.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This injection is done via a new Decision Maker, parallel to the entity's Decision Maker, called &quot;Decision Maker Package&quot;.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Evaluations of a DSE's circumstances:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    &quot;Influence Maps&quot; are discussed, which are used when there are multiple enemies in the world and you want to know, for example, &quot;am I close to an enemy?&quot;. Two maps were made for each entity: an influence map of where it can move in 1 second; a map of where it can attack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    At first I thought it was something very specific, only for analytics, but it can be useful to help decision-making when facing multiple enemies, etc.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {~10:00}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Compensation factor for multiplication of scores.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {20:30}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Explanation of DSEs (Decision Score Evaluators).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {23:50}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Differences between a 'Skill Set' and a 'Decision Maker'.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {29:10 -&gt; 30:50}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Decision Maker Packages&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {30:55 -&gt; 44:55}.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Influence Maps&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {51:55}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Example of assembling an AI.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/image_20240824092112.png" width="500" >
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/image_20240824092000.png" width="425" >
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/image_20240824092040.png" width="500" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://gdcvault.com/play/1015683/Embracing-the-Dark-Art-of" 
+				class="external-link" 
+				target="_blank" >
+                Applying mathematical models in Utility AI
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Presentation from 2012.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The first part of the talk is about using &quot;Absolute Utility&quot; and &quot;Relative Utility&quot;, following certain rules:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Do not use weight &lt;= 0, it can be &quot;inappropriate&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Do not use 'very small weight', since that causes &quot;Artificial Stupidity&quot;.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Those options can be chosen randomly and can be stupid.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Use &quot;weighted random&quot;.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This can only be done if the bad options are eliminated.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Random but Reasonable.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The second part of the talk is about applying mathematical models to decision making:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <img src="assets/image_20240823105717.png" width="500" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The second part is better presented and a bit more relevant.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.gdcvault.com/play/1012410/Improving-AI-Decision-Modeling-Through" 
+				class="external-link" 
+				target="_blank" >
+                Modeling behaviors with mathematical functions
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Presentation from 2010.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is a more introductory presentation about the concept, although it shows some of the math behind the considerations.
+				</p>
+			</li>
+			<li>
+				<p>
+                    His newer presentations are better.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The questions at the end of the video are interesting.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=EGO7DevFq48" 
+				class="external-link" 
+				target="_blank" >
+                Making Utility AI in Unity
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The video is much longer than it should be because the code architecture part is done slowly. There is little theoretical content.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Technique used:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            After the status is normalized, he applies a curve for each status obtaining a score for the 'consideration'. He then averages all the action's considerations to obtain the action's final score.
+						</p>
+					</li>
+					<li>
+						<p>
+                            No 'weight' is applied.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {01:00:50}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The most relevant part of the video, where the concepts applied in the video are explained via drawings.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=fkEG55gFqrA" 
+				class="external-link" 
+				target="_blank" >
+                Utility AI in Into The Breach
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You can hardly say that this game implements Utility AI, since the AI is so simple that none of the potential complexity of Utility AI is really used.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Characters only 'advance' -&gt; 'attack' -&gt; repeat.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Usage:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            An interesting system is made where each tile of the game receives a score based on its &quot;usefulness&quot;, so tiles near buildings or enemies receive '+5' to the score, while tiles near enemies receive '-2' to the score. A tile on fire receives '-15' to the score.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The score is obtained via an evaluation of the 'amount of damage' that can be dealt by attacking from that tile.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Randomization is used for balance so that it does not always pick the best option and gives greater variability.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Recently attacked targets receive fewer points to avoid attacking the same target twice in a row.
+						</p>
+					</li>
+					<li>
+						<p>
+                            There is no cooperation between enemies; they do not even know the other exists.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=uyYdOBYt6g4" 
+				class="external-link" 
+				target="_blank" >
+                Utility AI in The Sims
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Presentation from 2019.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is said that the use of 
+					<em>
+                        randomization
+					</em>
+                    &nbsp;is always interesting; &quot;do not make it deterministic, because that makes it less interesting&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Task scheduling is discussed.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It is possible to have multiple tasks at the same time, but with different priority levels.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Mentions using graphical apps to better visualize the curves.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The mathematical implementation of 'considerations' or 'evaluations' is not explained.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=p3Jbp2cZg3Q" 
+				class="external-link" 
+				target="_blank" >
+                Utility AI in triple-A games
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It is just a 'documentary' video showing the use of Utility AI in triple-A games; absolutely nothing technical.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It is very introductory and concise.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Z6oZnDIgio4" 
+				class="external-link" 
+				target="_blank" >
+                Utility AI in The Sims and in Warframe
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Presentation from 2018.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The first part talks about things to paid attention during pathfinding and 'Influence Maps'.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The second part gives motivations about Utility AI and ends with a demo of Utility AI, using tags and stats.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Overall, not a very relevant implementation video. It is basically a documentary, but it is interesting.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=78AcS_0lQSM" 
+				class="external-link" 
+				target="_blank" >
+                Fundamentals explanations
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It explains a bit about curves and how to combine curves.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Each 
+					<em>
+                        consideration
+					</em>
+                    &nbsp;should be plotted on a curve&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Weights can be used to multiply the 
+					<em>
+                        final score
+					</em>
+                    &quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=H6QEpc2SQiY" 
+				class="external-link" 
+				target="_blank" >
+                Working with 'fuzzy floats' while using Utility AI
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The video is somewhat irrelevant compared to the other videos. It is introductory and does not help much.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It introduces some more technical things about implementing the system, but does not give necessary solutions to those problems. For example, it does not explain how to de-abstract floats into something more tangible and debuggable.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="needs-based-ai" >
+    Needs-based AI
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=FFpVBSGWbu8" 
+				class="external-link" 
+				target="_blank" >
+                About
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used in The Sims as well, supposedly.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Seems like a category of Utility AI.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="tools" >
+    Tools
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.desmos.com/?lang=pt-BR" 
+				class="external-link" 
+				target="_blank" >
+                Desmos
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.geogebra.org/" 
+				class="external-link" 
+				target="_blank" >
+                GeoGebra
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=TCf1GdRrerw" 
+				class="external-link" 
+				target="_blank" >
+                Curvature App, for visualizing and creating curves for Utility AI
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/apoch/curvature" 
+						class="external-link" 
+						target="_blank" >
+                        Curvature
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The program seems to use XML for data, which I don't like.
+				</p>
+			</li>
+			<li>
+				<p>
+                    After downloading I did not find it very relevant.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="addons-for-godot" >
+    <s>Addons for Godot</s>
+</h4>
+<ul>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://github.com/viniciusgerevini/godot-utility-ai" 
+				class="external-link" 
+				target="_blank" >
+                ViniciusGerevini's Addon
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=d63hbJYYqM8" 
+						class="external-link" 
+						target="_blank" >
+                        Explanation
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    MIT License.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The addon is inside a demo project.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The addon offers little utility, but at the same time it is simple and concise.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I would not use it anywhere, but it's okay and serves as a basis to better understand the idea of Utility AI.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://github.com/JarkkoPar/Utility_AI_GDExtension" 
+				class="external-link" 
+				target="_blank" >
+                JarkkoPar's Addon, with GDExtension
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It is a very complex addon with many nodes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The system has signal emission, cooldown system, etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The problem is that it is extremely generalized, so it implements Behavior Trees inside it, etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Although the addon has documentation on GitHub, it is not possible to clear particular doubts because the variables and nodes are not documented in Godot, and you cannot inspect the code.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            All addon files are binary...
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    I did not like the addon because of this. Maybe reading the documentation gives interesting ideas, but I did not feel like using it.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://github.com/Pennycook/godot-utility-ai" 
+				class="external-link" 
+				target="_blank" >
+                Pennycook's Addon
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Uses a strange structure with Resources and Classes, without any node definition.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The code is well organized and technical, but done in a very questionable way.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The addon itself offers almost no utility. Absolutely nothing special. Just the basics.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I did not like the addon.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

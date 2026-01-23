@@ -1,0 +1,815 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Data Oriented Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-criticisms-of-oop.html" >
+                                Criticisms of OOP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-philosophies.html" >
+                                Philosophies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Data Oriented Design - ECS
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-discussion.html" >
+                                Discussion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-critiques.html" >
+                                Critiques
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#mega-struct-as-an-alternative" >
+                                        Mega-Struct as an alternative
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#godot-why-isnt-ecs-based" >
+                                        Godot - Why isn't ECS-based?
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-entity.html" >
+                                Entity
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-component.html" >
+                                Component
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-system.html" >
+                                System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-n-greatern-relationship.html" >
+                                Design: N-&gt;N relationship
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-discarded-ideas.html" >
+                                Design: Discarded Ideas
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Data Oriented Design - COP
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - COP/Data Oriented Design - COP-cop-compression-oriented-programming-mega-struct.html" >
+                                COP (Compression-Oriented Programming) / Mega-Struct
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Other Design Patterns
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-definition.html" >
+                                Definition
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-behavioral-patterns.html" >
+                                Behavioral Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-creational-patterns.html" >
+                                Creational Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-structural-patterns.html" >
+                                Structural Patterns
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Concepts and Terminology
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-terminology.html" >
+                                Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Rules of thumb - Laws - Guidelines and Principles
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Rules of thumb - Laws - Guidelines and Principles/Rules of thumb - Laws - Guidelines and Principles-rules-of-thumb.html" >
+                                Rules of Thumb
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Paradigms
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-procedural.html" >
+                                Procedural
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-functional.html" >
+                                Functional
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-oop-object-oriented-programming.html" >
+                                OOP (Object-Oriented Programming)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Production Methodologies
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-design-process.html" >
+                                Design Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-apps.html" >
+                                Apps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-software-testing.html" >
+                                Software Testing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-methodologies.html" >
+                                Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Critiques
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-11" >
+                                🕒 Created: 2025-03-11
+							</time>
+							<time
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="mega-struct-as-an-alternative" >
+    Mega-Struct as an alternative
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=UolgW-Ff4bA" 
+				class="external-link" 
+				target="_blank" >
+                Ryan Fleury - Mega-Struct as an alternative to ECS
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=VWC9RT5u8gQ" 
+				class="external-link" 
+				target="_blank" >
+                Jonathan Blow - Mega-Struct as an alternative to ECS
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            What I've heard:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Performance:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Unnecessary:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Entity update is usually a very miniscule thing in the frame, and if you separate the world into chunks, the goes down even harder.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Particles:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    It's usually a complete separate thing than entities.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Flexibility:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If you put everything an entity might possibly have into a mega-struct (CoP), you get the flexibility.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Use a big table of flags, explicitly turn on/off paths of execution.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;streams of execution, instead of streams of data&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Don't think of &quot;doors&quot;, &quot;levers&quot;, &quot;guns&quot;, etc; do put things inside this mental model, just think of paths of execution.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    ECS already does that by default, but his suggestion is do that while using a mega-struct, thinking in terms of paths of execution.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            (2026-01-12) Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Performance.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Indeed not an actual concern by looking at Tracy; most of the frame is spent doing other things.
+						</p>
+					</li>
+					<li>
+						<p>
+                            And indeed, many games will not hit the entity count where having an ECS model makes a difference.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's sure good having the option for easy optimization with parallelism/SIMD, but if you are trying to be efficient with your time, probably entity updates will not be this first thing in your code you'll be optimizing.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Tho, simply just having a dense packed array with your data in it, simple gives you the benefit of faster code due to less cache misses &quot;basically for free&quot;; sure you have to interact with the component system and there's a little bit of wasted memory, but I don't think both of these compare to how wasteful and convoluted a Mega-struct can be. My point is: coding like the processor want us to code and thus making performant code being the base line is sure great.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Flexibility:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I disagree. After working with Mega-struct for some months, I see a lot of annoying things happening for having an insane branched-out code: having to manage a lot of different states and code paths, separating behavior based on some enums, or simply holding to SO MUCH DATA that will 
+							<strong>
+                                never
+							</strong>
+                            &nbsp;be used by that specific entity at any point during the whole game. All of this creates a lot of operational error, literally me just doing wrong things just by how convoluted the branched out code can be; forgetting to initialize vital structs, forgetting to turn on some behavior or turn off other behavior, etc. As there's a lot of different paths of execution, is not trivial to change the behavior of one entity. Adding new behavior or data in a specific can be quite demotivated, as now you have to go through a gigantic file, going through the scope of a bunch of things and have to constantly think whether you forgot to set up something inside that big pool of random code. One way to think about these issues is by considering how similar having to manage so many branches and states is to a State Machine; if you have worked with a complex State Machine before, you know how easily things can get out of hand and how maintenance complexity grows.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I'm currently implementing ECS in my engine, and I laugh at how easily it was to make the main character behave like an NPC: I commented 1 line that added a specific input move component, and added 1 line to add an AI move component, that's it.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    In conclusion, having the option for easy optimization is sure great but probably not very useful in most common games, but when it comes to flexibility I don't think a Mega-struct beats the clarity and peace of mind an ECS code brings.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Obviously, Mega-struct is the 
+					<strong>
+                        absolute
+					</strong>
+                    &nbsp;winner when comparing with OOP; I just thought I mentioned.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="godot-why-isnt-ecs-based" >
+    Godot - Why isn't ECS-based?
+</h3>
+<ul>
+	<li>
+		<p>
+            TLDR:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Godot as an engine tries to take the burden of 
+					<em>
+                        processing
+					</em>
+                    &nbsp;away from the user, and instead places the focus on 
+					<em>
+                        deciding
+					</em>
+                    &nbsp;what to do in case of an event. This ensures users have to optimize 
+					<em>
+                        less
+					</em>
+                    &nbsp;in order to write much of the game code, and is part of the vision Godot conveys about what should constitute an 
+					<em>
+                        easy to use game engine
+					</em>
+                    &quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine/" 
+				class="external-link" 
+				target="_blank" >
+                Why isn't Godot an ECS-based game engine?
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            ECS is a design pattern commonly used in video games (although not very common in the rest of the software industry) which consists of having a base Entity (a container object) and Components that can be added upon it. Components provide data and the means to interact with the whole world. Finally, Systems work independently and act on every similar component.
+		</p>
+	</li>
+	<li>
+		<p>
+            This design became common in game engines and libraries in the early 2010s. The main appeal (besides architecture) is that component data can be placed in contiguous memory, improving cache access.
+		</p>
+	</li>
+	<li>
+		<p>
+            This is a common form of 
+			<a
+				href="https://en.wikipedia.org/wiki/Data-oriented_design" 
+				class="external-link" 
+				target="_blank" >
+                data-oriented
+			</a>
+            &nbsp;optimization.
+		</p>
+	</li>
+	<li>
+		<p>
+            Architecturally, ECS aims to replace 
+			<a
+				href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)" 
+				class="external-link" 
+				target="_blank" >
+                inheritance
+			</a>
+            , by favoring composition, similar to how 
+			<em>
+                interfaces
+			</em>
+            &nbsp;or 
+			<em>
+                multiple inheritance
+			</em>
+            &nbsp;works in OOP.
+		</p>
+	</li>
+	<li>
+		<p>
+            The key advantage in ECS is that components are 
+			<em>
+                dynamic
+			</em>
+            &nbsp;(can be added or removed at runtime).
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot does composition at a higher level than in a traditional ECS.
+		</p>
+	</li>
+	<li>
+		<p>
+            One of the biggest advantages of ECS is the Systems (data-oriented) part, which allows running through a lot of similar components' data organized in linear memory.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This brings huge performance improvements over the way Godot works with nodes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Most (if not all) technologies that utilize ECS do it at the core engine level, by serving as the base architecture and building everything else (physics, rendering, audio, etc.) over it.
+		</p>
+	</li>
+	<li>
+		<p>
+            Godot instead keeps those subsystems separate and isolated (and they fit inside of 
+			<a
+				href="https://godotengine.org/article/why-does-godot-use-servers-and-rids" 
+				class="external-link" 
+				target="_blank" >
+				<em>
+                    Servers
+				</em>
+			</a>
+            ).
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I find this makes code simpler and easier to maintain and optimize.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            To put it simply, nodes are just interfaces to the actual data being processed inside servers, while in ECS the actual entities are what gets processed by the systems.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    As I understood it: Nodes seem to create a layer of abstraction over Systems, because they are very low-level.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            In other words, Godot as an engine tries to take the burden of 
+			<em>
+                processing
+			</em>
+            &nbsp;away from the user, and instead places the focus on 
+			<em>
+                deciding
+			</em>
+            &nbsp;what to do in case of an event. This ensures users have to optimize 
+			<em>
+                less
+			</em>
+            &nbsp;in order to write much of the game code, and is part of the vision Godot conveys about what should constitute an 
+			<em>
+                easy to use game engine
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            These are generally games that need to process game logic on dozens of thousands of objects, where data-oriented optimizations become necessary, as the amount of pages moved into CPU cache increases by several orders of magnitude, severely affecting performance (and battery usage on mobile devices).
+		</p>
+		<ul>
+			<li>
+				<p>
+                    City builders (lots of things going on).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Sandboxes (lots of tiny things need processing every frame).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Some strategy games (while not the majority, some can use thousands or tens of thousands of units at the same time).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Other AAA games with lots of content going on.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

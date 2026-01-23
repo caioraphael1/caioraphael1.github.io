@@ -1,0 +1,1933 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Odin
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-overview.html" >
+                                Overview
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-my-impressions.html" >
+                                My Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-installation.html" >
+                                Installation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-compile-time-stuff.html" >
+                                Compile-time Stuff
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-package-system.html" >
+                                Package System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-lsp-ols-odin-language-server.html" >
+                                LSP (OLS - Odin Language Server)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-control-flow-if-when-switch-for-defer.html" >
+                                Control Flow (if, when, switch, for, defer)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-procedures.html" >
+                                Procedures
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-any.html" >
+                                any
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-primitive-types.html" >
+                                Primitive Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-matrix.html" >
+                                Matrix
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-quaternion.html" >
+                                Quaternion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-complex.html" >
+                                Complex
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-rune.html" >
+                                Rune
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-maps-hash-maps.html" >
+                                Maps (Hash Maps)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-struct.html" >
+                                Struct
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-union.html" >
+                                Union
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-bit-sets.html" >
+                                Bit Sets
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-interfaces-methods-vtables.html" >
+                                Interfaces / Methods / VTables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-error-handling.html" >
+                                Error Handling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-context.html" >
+                                Context
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-address.html" >
+                                Memory: Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-allocators.html" >
+                                Memory: Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-operations.html" >
+                                Memory: Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-entry-point.html" >
+                                Entry Point
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-multi-threading.html" >
+                                Multi-Threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-directives.html" >
+                                Directives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-ffi-foreign-function-interface-bindings.html" >
+                                FFI (Foreign Function Interface) / Bindings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-web-build.html" >
+                                Web Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-file-system-process-cli-shell.html" >
+                                File System / Process / CLI / Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-useful-packages.html" >
+                                Useful Packages
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Memory
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-virtual-memory.html" >
+                                Virtual Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-os-memory-on-windows.html" >
+                                OS: Memory on Windows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-memory-alignment.html" >
+                                Memory Alignment
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-address.html" >
+                                Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-allocators.html" >
+                                Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-tools-memory-analysis.html" >
+                                Tools: Memory Analysis
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-handles-instead-of-pointers.html" >
+                                Handles instead of Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-ownership-strategies-destruction-strategies.html" >
+                                Ownership Strategies / Destruction Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-strategies-for-handling-short-lived-memory.html" >
+                                Strategies for handling short lived memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-garbage-collection.html" >
+                                Garbage Collection
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-initialization.html" >
+                                Initialization
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        CPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-physical-structure.html" >
+                                Physical Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-soa-struct-of-arrays-ecs-entity-component-system.html" >
+                                SOA (Struct Of Arrays) / ECS (Entity Component System)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Multithreading
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-core-concepts.html" >
+                                Core Concepts
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#process-vs-threads" >
+                                        Process vs Threads
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#multithreading" >
+                                        Multithreading
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#main-thread" >
+                                        Main Thread
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#resource" >
+                                        Resource
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#starvation" >
+                                        Starvation
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#race-conditions" >
+                                        Race conditions
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#deadlock" >
+                                        Deadlock
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#lock-free" >
+                                        Lock-Free
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#context-switching" >
+                                        Context Switching
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#parallelism" >
+                                        Parallelism
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#concurrency" >
+                                        Concurrency
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#sleeping" >
+                                        Sleeping
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-thread.html" >
+                                Thread
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-implementation-detail.html" >
+                                Implementation Detail
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-synchronization-primitives.html" >
+                                Synchronization Primitives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-double-buffering.html" >
+                                Double-Buffering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-networking-strategies.html" >
+                                Networking Strategies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Handmade Hero
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Profilers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-tracy.html" >
+                                Tracy
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-spall.html" >
+                                Spall
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nvidia-nsight-graphics-gpu-trace.html" >
+                                Nvidia Nsight Graphics - GPU Trace
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-amd-gpu-profiler-amd-rgp.html" >
+                                AMD GPU Profiler (AMD RGP)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-intel-gpa.html" >
+                                Intel GPA
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nsight-systems.html" >
+                                <s>Nsight Systems</s>
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        C
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard.html" >
+                                C Standard
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard-library-libc.html" >
+                                C Standard Library (libc)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-loops.html" >
+                                Loops
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-structs.html" >
+                                Structs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-pointers.html" >
+                                Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-preprocessors.html" >
+                                Preprocessors
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-undefined-behavior.html" >
+                                Undefined Behavior
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-gamedev.html" >
+                                GameDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-windows-c-api.html" >
+                                WIndows C API
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Build Systems - Compilation - Linking
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilation-process.html" >
+                                Compilation Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilers.html" >
+                                Compilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-build-tools.html" >
+                                Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-meta-build-tools.html" >
+                                Meta Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-extra-annoying-things-on-windows.html" >
+                                Extra: Annoying things on Windows
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Debuggers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-file-types.html" >
+                                File Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-rad-debbuger.html" >
+                                RAD Debbuger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-gdb-gnu-debugger.html" >
+                                GDB (GNU Debugger)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-lldb.html" >
+                                LLDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-vscode.html" >
+                                VSCode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-visual-studio-debugger.html" >
+                                Visual Studio Debugger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-others.html" >
+                                Others
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Assembly - ASM
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-notes.html" >
+                                Notes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-reverse-engineering.html" >
+                                Reverse Engineering
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Parsing
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-lexer.html" >
+                                Lexer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        JAI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-build.html" >
+                                Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-types.html" >
+                                Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-meta-programming.html" >
+                                Meta programming
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-control-flow.html" >
+                                Control flow
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Core Concepts
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-11" >
+                                🕒 Created: 2025-03-11
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=7ENFeb-J75k" 
+				class="external-link" 
+				target="_blank" >
+                Cool Explanation of Process and Multithread
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Uses a bit of machine code to demonstrate common multithreading issues.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=GNw3RXr-VJk" 
+				class="external-link" 
+				target="_blank" >
+                Multithreading - pt1
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    He presents everything very well. Great talk.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Assumes you already know what mutex, deadlocks, etc., are.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's an intermediate talk, not beginner.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Pt2 is very technical for C++, basically explaining a library with techniques.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Maybe useful, but not relevant atm.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <a href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero.html#ep-122-introduction-to-multithreading">
+            Handmade Hero#Ep 122 - Introduction to Multithreading
+            </a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="process-vs-threads" >
+    Process vs Threads
+</h3>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20250422073736.png" width="450" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Threads are execution units within the same process.
+		</p>
+	</li>
+	<li>
+		<p>
+            A process can contain multiple threads, all sharing the same process memory space.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/screenshot_2025-04-22_071300.png" width="425" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Memory
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    All threads (including main) share the same heap, code, and global data, but have independent stacks.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Memory shared among all threads
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            All heap-allocated memory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            All memory of global/static variables by the main thread.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Main thread stack.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Each thread has its own stack. However, pointers to main thread stack variables can be passed to other threads, risking out-of-scope use.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Passing a pointer to a local main thread variable to another thread is risky if main exits scope before the other thread finishes.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="multithreading" >
+    Multithreading
+</h3>
+<ul>
+	<li>
+		<p>
+            Technique that allows concurrent execution of two or more threads within a single process.
+		</p>
+	</li>
+	<li>
+		<p>
+            Threads can perform tasks independently while sharing process resources.
+		</p>
+	</li>
+	<li>
+		<p>
+            Multithreading is both:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A concept (the idea of using multiple threads).
+				</p>
+			</li>
+			<li>
+				<p>
+                    A strategy if used directly (e.g., &quot;We use raw threads for parallelism&quot;).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Models
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        User-Level Threads
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Managed by the application, no kernel involvement.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Kernel-Level Threads
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Managed directly by the operating system.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Hybrid Model
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Combines user and kernel threads.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="main-thread" >
+    Main Thread
+</h3>
+<ul>
+	<li>
+		<p>
+            It's the first thread that starts executing when the process is launched.
+		</p>
+	</li>
+	<li>
+		<p>
+            Automatically created by the OS when starting the process.
+		</p>
+	</li>
+</ul>
+<h3
+	id="resource" >
+    Resource
+</h3>
+<ul>
+	<li>
+		<p>
+            Something you don't want 2 threads to access simultaneously.
+		</p>
+	</li>
+	<li>
+		<p>
+            Ex:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Memory location.
+				</p>
+			</li>
+			<li>
+				<p>
+                    File handle.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Non-thread safe objects.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="starvation" >
+    Starvation
+</h3>
+<ul>
+	<li>
+		<p>
+            ~When a thread finishes work much faster than another and ends up doing nothing?
+		</p>
+	</li>
+</ul>
+<h3
+	id="race-conditions" >
+    Race conditions
+</h3>
+<ul>
+	<li>
+		<p>
+            When a Resource is accessed by 2 or more threads simultaneously, and at least one of them is a 
+			<em>
+                write
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Causes 
+			<strong>
+                Undefined Behavior
+			</strong>
+            ; it's critical to avoid this.
+		</p>
+	</li>
+</ul>
+<h5
+	id="read-with-concurrent-write" >
+    Read with concurrent Write
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;If a thread is modifing a variable and I try only READING this variable on a different thread, what can I expect? I assumed that only 2 thing could happen: I either get the old value, or the new value&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            More than just “old or new” can be observed in practice. Memory effects include seeing the old value, the new value, a 
+			<em>
+                torn
+			</em>
+            &nbsp;(partially-updated) value, or behavior caused by compiler/CPU reordering (stale values, values observed in surprising orders). Which of those can occur depends on alignment/size, hardware cache-coherence, and the language memory model and compiler.
+		</p>
+	</li>
+	<li>
+		<p>
+            atomic single-word writes (aligned to machine word)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    On most modern CPUs a naturally aligned write of a machine-word-sized integer is atomic at the hardware level — the hardware will not present a half-written word to another core. In that case the reader will typically see either the old value or the new value (once the write becomes visible).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Caveat: “typically” is not the same as “guaranteed by the language.” If your language/compiler does not declare the access atomic (e.g., plain 
+                    <code>int</code>
+                    &nbsp;in C/C++ pre-C11), the compiler may optimize assuming no concurrent writer, which can produce surprising behavior even if hardware atomicity holds. Use language atomics to get defined semantics.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            multi-word values or misaligned accesses → tearing possible
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If the write spans multiple machine words (for example writing a 64-bit value on a 32-bit CPU, or a struct covering multiple words) or is misaligned, hardware can perform the write as multiple smaller writes. A concurrent reader may see a value composed of some bytes from the old value and some bytes from the new value — a torn value (part old, part new). That is not just “old or new.”
+				</p>
+			</li>
+			<li>
+				<p>
+                    Example: on a 32-bit CPU writing a 64-bit integer might execute as two 32-bit stores; another core can read between them.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            caches, store buffers, and visibility delays
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Writing a value usually goes into the CPU core’s store buffer first; the write becomes globally visible when it propagates to other cores’ caches (through the coherence protocol). During that window another core may not yet see the new value and will read the old one. So a reader can see the old value for some time even after the write completed on the writer core.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The cache-coherence protocol (MESI / variants) guarantees eventual coherence, but not instantaneous visibility without synchronization/fences. On most coherent systems, once the write is visible it will appear as a single update for naturally aligned single-word writes; for multi-word/misaligned it may be torn.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            compiler and CPU reorderings (visibility and sequencing)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Compilers can cache a value in a register, reorder memory operations, or eliminate reads/writes if the code is not marked atomic/volatile as required by the language semantics. That means the value you read might be a stale register value or the read might be optimized away.
+				</p>
+			</li>
+			<li>
+				<p>
+                    CPUs reorder loads and stores (the allowed reorderings depend on the architecture). Without proper memory-ordering primitives (fences/atomic memory orders), the observed order of multiple memory operations can differ across threads.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            language-level oddities (Java “out-of-thin-air”, C/C++ undefined)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In Java, unsynchronized data races allow a wide set of behaviors — theoretically even values that seem “out of thin air” in some relaxed executions (practical occurrences are rare and subtle). 
+                    <code>volatile</code>
+                    &nbsp;or 
+                    <code>Atomic*</code>
+                    &nbsp;enforces ordering/visibility.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In C/C++ a plain non-atomic concurrent write+read is a data race → undefined behavior. That means anything can happen (including program crash, or surprising compiler-generated assumptions that make behavior impossible to reason about).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="deadlock" >
+    Deadlock
+</h3>
+<ul>
+	<li>
+		<p>
+            Occurs when two or more threads are blocked forever, waiting on each other’s resources.
+		</p>
+	</li>
+</ul>
+<h3
+	id="lock-free" >
+    Lock-Free
+</h3>
+<ul>
+	<li>
+		<p>
+            When using locks, sections of the code that access shared memory are guarded by locks, allowing limited access to threads and blocking the execution of other threads.
+		</p>
+	</li>
+	<li>
+		<p>
+            In lock-free programming, the data itself is organized such that threads don't intervene much.
+		</p>
+	</li>
+	<li>
+		<p>
+            It can be done via segmenting the data between threads, and/or by using atomic operations.
+		</p>
+	</li>
+</ul>
+<h3
+	id="context-switching" >
+    Context Switching
+</h3>
+<ul>
+	<li>
+		<p>
+            The CPU switches between threads to provide concurrency.
+		</p>
+	</li>
+	<li>
+		<p>
+            Involves saving and loading thread states.
+		</p>
+	</li>
+	<li>
+		<p>
+            Has performance cost due to saving/restoring CPU registers, etc.
+		</p>
+	</li>
+</ul>
+<h3
+	id="parallelism" >
+    Parallelism
+</h3>
+<ul>
+	<li>
+		<p>
+            Executing multiple tasks simultaneously, typically on multiple cores or processors.
+		</p>
+	</li>
+	<li>
+		<p>
+            Focuses on 
+			<em>
+                true simultaneous execution
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Requires multiple physical or logical processing units.
+		</p>
+	</li>
+	<li>
+		<p>
+            Common in CPU-bound workloads (e.g., simulations, rendering).
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Ex
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Using 4 cores to calculate physics updates for 4 game entities at the same time.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Multiple workers doing different tasks 
+					<em>
+                        at the same time
+					</em>
+                    .&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="concurrency" >
+    Concurrency
+</h3>
+<ul>
+	<li>
+		<p>
+            Managing multiple tasks at the same time, but not necessarily executing them simultaneously.
+		</p>
+	</li>
+	<li>
+		<p>
+            Focuses on interleaving execution of tasks.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Can occur on a single core
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Requires context switching.
+		</p>
+	</li>
+	<li>
+		<p>
+            Involves task coordination, scheduling, and synchronization.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Exs
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;One worker juggling multiple tasks — rapidly switching between them.&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    Switching between user input handling and background loading in a game loop.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                About Multiplexer
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A multiplexer is a building block, not a full concurrency strategy.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Enables event-driven concurrency on a single thread, often forming the basis of asynchronous runtimes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Common in network servers, GUIs, and I/O frameworks.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="sleeping" >
+    Sleeping
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;odd thing: while sleeping for 0.8 ms in my main loop I get 15% cpu usage, but if I sleep for 1ms then the cpu usage drops to 1%&quot;.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This behavior is actually expected and reveals insights about how modern OSes handle thread scheduling and sleep durations:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Windows (and most OSes) have a default scheduler tick interval (usually 15.6ms or 1ms depending on system)
+						</p>
+					</li>
+					<li>
+						<p>
+                            Below ~1ms, sleeps are often implemented as busy-waits (explaining your 15% CPU at 0.8ms)
+						</p>
+					</li>
+					<li>
+						<p>
+                            Above 1ms, the OS can properly suspend the thread (hence 1% at 1ms)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The 1% vs 15% difference represents your CPU entering deeper sleep states
+				</p>
+			</li>
+			<li>
+				<p>
+                    Wow, crazy.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

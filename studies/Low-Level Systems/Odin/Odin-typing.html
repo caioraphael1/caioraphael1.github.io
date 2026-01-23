@@ -1,0 +1,3333 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Odin
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-overview.html" >
+                                Overview
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-my-impressions.html" >
+                                My Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-installation.html" >
+                                Installation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-compile-time-stuff.html" >
+                                Compile-time Stuff
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-package-system.html" >
+                                Package System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-lsp-ols-odin-language-server.html" >
+                                LSP (OLS - Odin Language Server)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-control-flow-if-when-switch-for-defer.html" >
+                                Control Flow (if, when, switch, for, defer)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-procedures.html" >
+                                Procedures
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Low-Level Systems/Odin/Odin-typing.html" >
+                                Typing
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#declaration" >
+                                        Declaration
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#literal-types" >
+                                        Literal Types
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#untyped-types" >
+                                        Untyped Types
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#zero-value" >
+                                        Zero Value
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#broadcasting" >
+                                        Broadcasting
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#casting" >
+                                        Casting
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#transmute" >
+                                        Transmute
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#type-conversions" >
+                                        Type Conversions
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#type-typeid-size_of" >
+                                        type / typeid / size_of
+									</a>
+									<ul>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-any.html" >
+                                any
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-primitive-types.html" >
+                                Primitive Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-matrix.html" >
+                                Matrix
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-quaternion.html" >
+                                Quaternion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-complex.html" >
+                                Complex
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-rune.html" >
+                                Rune
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-maps-hash-maps.html" >
+                                Maps (Hash Maps)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-struct.html" >
+                                Struct
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-union.html" >
+                                Union
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-bit-sets.html" >
+                                Bit Sets
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-interfaces-methods-vtables.html" >
+                                Interfaces / Methods / VTables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-error-handling.html" >
+                                Error Handling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-context.html" >
+                                Context
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-address.html" >
+                                Memory: Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-allocators.html" >
+                                Memory: Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-operations.html" >
+                                Memory: Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-entry-point.html" >
+                                Entry Point
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-multi-threading.html" >
+                                Multi-Threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-directives.html" >
+                                Directives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-ffi-foreign-function-interface-bindings.html" >
+                                FFI (Foreign Function Interface) / Bindings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-web-build.html" >
+                                Web Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-file-system-process-cli-shell.html" >
+                                File System / Process / CLI / Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-useful-packages.html" >
+                                Useful Packages
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Memory
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-virtual-memory.html" >
+                                Virtual Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-os-memory-on-windows.html" >
+                                OS: Memory on Windows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-memory-alignment.html" >
+                                Memory Alignment
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-address.html" >
+                                Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-allocators.html" >
+                                Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-tools-memory-analysis.html" >
+                                Tools: Memory Analysis
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-handles-instead-of-pointers.html" >
+                                Handles instead of Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-ownership-strategies-destruction-strategies.html" >
+                                Ownership Strategies / Destruction Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-strategies-for-handling-short-lived-memory.html" >
+                                Strategies for handling short lived memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-garbage-collection.html" >
+                                Garbage Collection
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-initialization.html" >
+                                Initialization
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        CPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-physical-structure.html" >
+                                Physical Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-soa-struct-of-arrays-ecs-entity-component-system.html" >
+                                SOA (Struct Of Arrays) / ECS (Entity Component System)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Multithreading
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-core-concepts.html" >
+                                Core Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-thread.html" >
+                                Thread
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-implementation-detail.html" >
+                                Implementation Detail
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-synchronization-primitives.html" >
+                                Synchronization Primitives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-double-buffering.html" >
+                                Double-Buffering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-networking-strategies.html" >
+                                Networking Strategies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Handmade Hero
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Profilers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-tracy.html" >
+                                Tracy
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-spall.html" >
+                                Spall
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nvidia-nsight-graphics-gpu-trace.html" >
+                                Nvidia Nsight Graphics - GPU Trace
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-amd-gpu-profiler-amd-rgp.html" >
+                                AMD GPU Profiler (AMD RGP)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-intel-gpa.html" >
+                                Intel GPA
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nsight-systems.html" >
+                                <s>Nsight Systems</s>
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        C
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard.html" >
+                                C Standard
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard-library-libc.html" >
+                                C Standard Library (libc)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-loops.html" >
+                                Loops
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-structs.html" >
+                                Structs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-pointers.html" >
+                                Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-preprocessors.html" >
+                                Preprocessors
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-undefined-behavior.html" >
+                                Undefined Behavior
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-gamedev.html" >
+                                GameDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-windows-c-api.html" >
+                                WIndows C API
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Build Systems - Compilation - Linking
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilation-process.html" >
+                                Compilation Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilers.html" >
+                                Compilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-build-tools.html" >
+                                Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-meta-build-tools.html" >
+                                Meta Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-extra-annoying-things-on-windows.html" >
+                                Extra: Annoying things on Windows
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Debuggers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-file-types.html" >
+                                File Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-rad-debbuger.html" >
+                                RAD Debbuger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-gdb-gnu-debugger.html" >
+                                GDB (GNU Debugger)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-lldb.html" >
+                                LLDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-vscode.html" >
+                                VSCode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-visual-studio-debugger.html" >
+                                Visual Studio Debugger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-others.html" >
+                                Others
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Assembly - ASM
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-notes.html" >
+                                Notes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-reverse-engineering.html" >
+                                Reverse Engineering
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Parsing
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-lexer.html" >
+                                Lexer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        JAI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-build.html" >
+                                Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-types.html" >
+                                Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-meta-programming.html" >
+                                Meta programming
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-control-flow.html" >
+                                Control flow
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Typing
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-28" >
+                                🕒 Created: 2025-03-28
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="declaration" >
+    Declaration
+</h3>
+<h5
+	id="constants" >
+    Constants
+</h5>
+<pre><code class="language-odin" data-lang="odin">u :: "what";&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;// Untyped.
+y : int : 123
+&nbsp;&nbsp;&nbsp;&nbsp;// Explicitly typed constant.
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/faq/#why-can-i-not-indexaddress-a-constant-with-a-variable" 
+				class="external-link" 
+				target="_blank" >
+                Consts are not indexable
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>::</code>
+            &nbsp;is closer to 
+            <code>#define</code>
+            &nbsp;than it is 
+            <code>static const</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            To achieve similar behaviour to C’s 
+            <code>static const</code>
+            , apply the 
+            <code>@(rodata)</code>
+            &nbsp;attribute to a variable declaration (
+            <code>:=</code>
+            ) to state that the data must live in the read-only data section of the executable.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;Anything declared with 
+            <code>::</code>
+            &nbsp;behaves like a constant. That includes types and procs.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Aliases
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">Vector3 :: [3]f32
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="variables" >
+    Variables
+</h5>
+<pre><code class="language-odin" data-lang="odin">x: int
+&nbsp;&nbsp;&nbsp;&nbsp;// default to 0
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">// All below are equivalent.
+x : int = 123
+x :&nbsp;&nbsp;&nbsp;&nbsp; = 123
+x := 123
+x := int(123)
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Multi-declaration
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">y, z: int 
+&nbsp;&nbsp;&nbsp;&nbsp;// both are int.
+</code></pre>
+<h3
+	id="literal-types" >
+    Literal Types
+</h3>
+<ul>
+	<li>
+		<p>
+            Literals are 
+            <code>untyped</code>
+            , but 
+            <code>untyped</code>
+            &nbsp;values doesn't 
+			<em>
+                have
+			</em>
+            &nbsp;to be from a literal; you can get 
+            <code>untyped</code>
+            &nbsp;values from builtins like 
+            <code>len</code>
+            &nbsp;when applicable.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;I might say that a literal rune is a piece of syntax that yields an untyped rune&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>untyped</code>
+            &nbsp;usually means it comes from a literal, though sometimes intrinsics/builtins can give them too.
+		</p>
+	</li>
+	<li>
+		<p>
+            It basically just means a 
+			<strong>
+                compile-time-known
+			</strong>
+            &nbsp;value.
+		</p>
+	</li>
+	<li>
+		<p>
+            rgats:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    i can see why some people prefer literals having static types, 
+                    <code>10</code>
+                    &nbsp;is always an int in C
+				</p>
+			</li>
+			<li>
+				<p>
+                    and the conversions happen at runtime
+				</p>
+			</li>
+			<li>
+				<p>
+                    but i dont think it makes a very big difference in most cases
+				</p>
+			</li>
+			<li>
+				<p>
+                    honestly i think it'd make a bigger difference in a language without type inference
+				</p>
+			</li>
+			<li>
+				<p>
+                    in C you have to specify the type of your literal, 
+                    <code>10</code>
+                    , 
+                    <code>10u</code>
+                    , 
+                    <code>10f</code>
+                    , 
+                    <code>10l</code>
+                    , etc, and you also have to specify the type of your variable, like 
+                    <code>unsigned long long x = 10ull;</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    c implicitly converts 
+                    <code>int</code>
+                    &nbsp;to 
+                    <code>unsigned long long</code>
+                    &nbsp;i believe, but if you actually wanted a very large number you'd need to specify the type (edited)Monday, 27 October 2025 15:31
+				</p>
+			</li>
+			<li>
+				<p>
+                    so it gets extra messy there
+				</p>
+			</li>
+			<li>
+				<p>
+                    and not every number converts implicitly, i dont think 
+                    <code>float x = 10.5;</code>
+                    &nbsp;works for example, which gets annoying
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="untyped-types" >
+    Untyped Types
+</h3>
+<ul>
+	<li>
+		<p
+			class="line-emphasis" >
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://www.gingerbill.org/article/2021/03/07/untyped-types/" 
+				class="external-link" 
+				target="_blank" >
+                Ginger Bill - Untyped Types
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Can be assigned to constants (
+            <code>::</code>
+            ) without being forced into a specific type, but once it gets assigned to a variable (
+            <code>=</code>
+            ) it has to have an actual type.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-swift" data-lang="swift">A_CONSTANT :: 'x' 
+// is an untyped thing you can make yourself
+</code></pre>
+<h3
+	id="zero-value" >
+    Zero Value
+</h3>
+<ul>
+	<li>
+		<p>
+            Variables declared without an explicit initial value are given their 
+			<em>
+                zero
+			</em>
+            &nbsp;value.
+		</p>
+	</li>
+	<li>
+		<p>
+            The zero value is:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>0</code>
+                    &nbsp;for numeric and rune types
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>false</code>
+                    &nbsp;for boolean types
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>""</code>
+                    &nbsp;(the empty string) for strings
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>nil</code>
+                    &nbsp;for pointer, typeid, and any types.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The expression 
+            <code>{}</code>
+            &nbsp;can be used for all types to act as a zero type.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This is 
+					<em>
+                        not
+					</em>
+                    &nbsp;recommended as it is not clear and if a type has a specific zero value shown above, please prefer that.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="broadcasting" >
+    Broadcasting
+</h3>
+<h5
+	id="directive" >
+    Directive
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>#no_broadcast</code>
+		</p>
+	</li>
+</ul>
+<h5
+	id="example" >
+    Example
+</h5>
+<ul>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I have this procedure:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">tween_create :: proc(
+        value:              ^$T,
+        #no_broadcast end:  T,
+        duration_s:         f64,
+        ease:               ease.Ease = .Linear,
+        start_delay_s:      f64 = 0,
+        custom_data:        rawptr = nil,
+        on_start:           proc(tween: ^Tween) = nil,
+        on_update:          proc(tween: ^Tween) = nil,
+        on_end:             proc(tween: ^Tween) = nil,
+        loc :=              #caller_location
+    ) -&gt; (handle: Tween_Handle) { //etc }
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    And I call it with:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">tween_create(
+&nbsp;&nbsp;&nbsp;&nbsp;value = &personagem_user.arm1.pos_world,
+&nbsp;&nbsp;&nbsp;&nbsp;end = arm_relative_target_trans.pos,
+&nbsp;&nbsp;&nbsp;&nbsp;duration_s = 0.1,
+&nbsp;&nbsp;&nbsp;&nbsp;on_end = proc(tween: ^eng.Tween) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;personagem_user.arm1.is_stepping = false
+&nbsp;&nbsp;&nbsp;&nbsp;},
+)
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    So why don't I get a compile error, considering that 
+                    <code>value</code>
+                    &nbsp;is a 
+                    <code>[2]f32</code>
+                    &nbsp;and 
+                    <code>end</code>
+                    &nbsp;is a 
+                    <code>f32</code>
+                    ?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Thag and Blob:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Because 
+                    <code>f32</code>
+                    &nbsp;can broadcast to 
+                    <code>[2]f32</code>
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">my_arr: [2]f32 
+my_arr = 3.0 
+fmt.println(my_arr) // [2]f32{3.0, 3.0}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    it's really useful in certain cases
+				</p>
+			</li>
+			<li>
+				<p>
+                    like allowing you to do:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">my_vec *= 2
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    you can add 
+                    <code>#no_broadcast param</code>
+                    &nbsp;to procs params to stop it doing so.
+				</p>
+			</li>
+			<li>
+				<p>
+                    in front of the param
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">#no_broadcast end: T
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    you can add it both to 
+                    <code>value</code>
+                    &nbsp;and 
+                    <code>end</code>
+                    &nbsp;if you want.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="casting" >
+    Casting
+</h3>
+<ul>
+	<li>
+		<p>
+            All the syntaxes below produce the exact same result.
+		</p>
+	</li>
+	<li>
+		<p>
+            Those are semantic casts. It's a compiler-known 
+			<em>
+                conversion
+			</em>
+            &nbsp;between two types in a way that semantically makes sense.
+		</p>
+	</li>
+	<li>
+		<p>
+            A straightforward example would be converting between 
+            <code>int</code>
+            &nbsp;and 
+            <code>f64</code>
+            ; the conversion will have the same 
+			<em>
+                numerical
+			</em>
+            &nbsp;value, which will change its representation in memory.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">i := 123
+f := f64(i)
+u := u32(f)
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">i := 123
+f := (f64)(i)
+u := (u32)(f)
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">i := 123
+f := cast(f64)i
+u := cast(u32)f
+</code></pre>
+<h5
+	id="auto-cast-operator" >
+    ~Auto Cast Operator
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#auto-cast-operation" 
+				class="external-link" 
+				target="_blank" >
+                Auto Cast Operator
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>auto_cast</code>
+            &nbsp;operator automatically casts an expression to the destination’s type if possible.
+		</p>
+	</li>
+	<li>
+		<p>
+            This operation is only recommended for prototyping and quick tests. Do not overuse it.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">x: f32 = 123
+y: int = auto_cast x
+</code></pre>
+<h5
+	id="advanced-idioms-down-cast-and-up-cast" >
+    Advanced Idioms, Down-Cast and Up-Cast
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#advanced-idioms" 
+				class="external-link" 
+				target="_blank" >
+                <code>union</code>
+                -based subtype polymorphism (Advanced Idioms)
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Subtyping in procedure overload
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    See 
+                    <a href="/studies/Low-Level Systems/Odin/Odin.html#procedure-groups-explicit-overload">
+                    Odin#Procedure Groups (explicit overload)
+                    </a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Area to Hurtbox and Hurtbox to Area
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Very useful.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Caio:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Consider an 
+                            <code>Area</code>
+                            &nbsp;and a 
+                            <code>Hurtbox</code>
+                            &nbsp;type, where 
+                            <code>Hurtbox</code>
+                            &nbsp;inherits from 
+                            <code>Area</code>
+                            &nbsp;(
+                            <code>using area: Area</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">obj := Area{
+&nbsp;&nbsp;&nbsp;&nbsp;area_entered = some_func_pointer,
+&nbsp;&nbsp;&nbsp;&nbsp;area_exited&nbsp;&nbsp;= some_func_pointer,
+}
+fmt.printfln("OPERATION 1: %v", cast(Hurtbox)obj)
+fmt.printfln("OPERATION 2: %v", cast(^Hurtbox)&obj)
+</code></pre>
+				<ul>
+					<li>
+						<p>
+                            The Operation 1 is not allowed, and the Operation 2 causes a Stack-Buffer-Overflow. My question is: how / why does this happen, for both operations?
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Barinzaya:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            A 
+                            <code>Hurtbox</code>
+                            &nbsp;is an 
+                            <code>Area</code>
+                            &nbsp;
+							<em>
+                                plus more
+							</em>
+                            &nbsp;(the 
+                            <code>Area</code>
+                            &nbsp;is just part of the 
+                            <code>Hurtbox</code>
+                            ). When you assign 
+                            <code>obj</code>
+                            &nbsp;to be an 
+                            <code>Area</code>
+                            , it is 
+							<em>
+                                only
+							</em>
+                            &nbsp;the contents of an 
+                            <code>Area</code>
+                            , there's no extra space reserved for the extra things that a 
+                            <code>Hurtbox</code>
+                            &nbsp;would also contain.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Subtyping can easily downcast (
+                            <code>Hurtbox</code>
+                            &nbsp;to 
+                            <code>Area</code>
+                            ) because every 
+                            <code>Hurtbox</code>
+                            &nbsp;contains a complete 
+                            <code>Area</code>
+                            , but upcasting (
+                            <code>Area</code>
+                            &nbsp;to 
+                            <code>Hurtbox</code>
+                            ) only works on an 
+                            <code>^Area</code>
+                            &nbsp;that 
+							<em>
+                                points into
+							</em>
+                            &nbsp;a complete 
+                            <code>Hurtbox</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+									<em>
+                                        NOTE
+									</em>
+                                    : You can 
+									<strong>
+                                        only
+									</strong>
+                                    &nbsp;cast if it's also the first field, otherwise you'd need to use 
+                                    <code>container_of</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    When you make a variable of type 
+                                    <code>Area</code>
+                                    , it 
+									<em>
+                                        isn't
+									</em>
+                                    &nbsp;part of a complete 
+                                    <code>Hurtbox</code>
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Odin doesn't implicitly embed any 
+							<strong>
+                                RTTI
+							</strong>
+                            &nbsp;(Runtime Type Information) in the type, so you can't definitively tell whether a given 
+                            <code>Area</code>
+                            &nbsp;is part of a 
+                            <code>Hurtbox</code>
+                            &nbsp;or not, so there is no 
+                            <code>dynamic_cast</code>
+                            /type-aware pointer casting.
+						</p>
+					</li>
+					<li>
+						<p>
+                            That's where patterns like 
+							<a
+								href="https://odin-lang.org/docs/overview/#advanced-idioms" 
+								class="external-link" 
+								target="_blank" >
+                                <code>union</code>
+                                -based subtype polymorphism
+							</a>
+                            &nbsp;come into play--that's an approach to 
+							<em>
+                                adding
+							</em>
+                            &nbsp;that extra information for you to know what type it is.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Though it stores a self-pointer, so it can cause issues if you later copy the struct without updating it.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Caio:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Isn't there a way to do something like gdscript does: 
+                            <code>if not (area is Hitbox): return</code>
+                            , for example?
+						</p>
+					</li>
+					<li>
+						<p>
+                            I mean, can I check for something like the length of the object inside the pointer, to see if the length corresponds to a complete Area or something more? I'm not sure if my question makes sense, as I don't know if checking for the content of the ^Area would give me something besides what an Area has
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Barinzaya:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            That would require Odin to implicitly add extra info into the 
+                            <code>struct</code>
+                            . It doesn't do that.
+						</p>
+					</li>
+					<li>
+						<p>
+                            And as for the length: That info isn't in the type. If you're talking like 
+                            <code>size_of(ptr^)</code>
+                            &nbsp;or something, the compiler is just going to give you that info based on what it knows based on the types. It doesn't do any kind of run-time lookup to try to figure it out.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;as I don't know if checking for the content of the ^Area would give me something besides what an Area has&quot;. That's exactly what I'm saying--there 
+							<em>
+                                is
+							</em>
+                            &nbsp;no other info there other than what you put in the 
+                            <code>struct</code>
+                            . There's nothing 
+							<em>
+                                to
+							</em>
+                            &nbsp;check, unless you put it there yourself.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Subtyping is syntax sugar, and nothing more.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Caio:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            So my only options are:
+						</p>
+						<ol>
+							<li>
+								<p>
+                                    Place some more info in the struct to avoid casting blindly
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Yolo cast blindly, but only do the casting if you are sure it's safe (like I'm doing for the function pointers inside the structs).
+								</p>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Barinzaya:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Basically, yes.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Number 1 is what OOP languages do, they just do it implicitly. Odin doesn't do that.
+						</p>
+					</li>
+					<li>
+						<p>
+                            More specifically: that info has to come from 
+							<em>
+                                somewhere
+							</em>
+                            . If all you have is an 
+                            <code>^Area</code>
+                            , then it has to come from inside of the 
+                            <code>struct</code>
+                            , but it could also come from something associated with the pointer.
+						</p>
+					</li>
+					<li>
+						<p>
+                            A 
+                            <code>union</code>
+                            &nbsp;of pointers or an 
+                            <code>any</code>
+                            , they store both a pointer 
+							<em>
+                                and
+							</em>
+                            &nbsp;a tag/
+                            <code>typeid</code>
+                            &nbsp;respectively that they use to know what the pointer actually points it.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    He means in the sense of not receiving 
+                                    <code>^Arena</code>
+                                    &nbsp;directly, but an 
+                                    <code>union</code>
+                                    &nbsp;or 
+                                    <code>any</code>
+                                    &nbsp;in its place
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="transmute" >
+    Transmute
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://odin-lang.org/docs/overview/#transmute-operator" 
+				class="external-link" 
+				target="_blank" >
+                Transmute Operator
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It is a bitcast; that is, it reinterprets the memory for a variable without changing its actual bytes.
+		</p>
+	</li>
+	<li>
+		<p>
+            Using the same example as above, 
+            <code>transmute</code>
+            ing from 
+            <code>int</code>
+            &nbsp;to 
+            <code>f64</code>
+            &nbsp;will keep the same representation in memory, which means the 
+			<em>
+                numerical
+			</em>
+            &nbsp;value will be different.
+		</p>
+	</li>
+	<li>
+		<p>
+            This can be useful for bit-twiddling things in floats, for instance; 
+            <code>core:math</code>
+            &nbsp;does that for some of its procs.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">f: f32 = 123
+u := transmute(u32)f
+</code></pre>
+<h3
+	id="type-conversions" >
+    Type Conversions
+</h3>
+<h5
+	id="from-codeint-code-to-code8byte-code" >
+    From 
+    <code>int</code>
+    &nbsp;to 
+    <code>[8]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>transmute([8]byte)i</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            A fixed array is its data, so transmuting will give you the actual bytes of the 
+            <code>int</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            You may also want to consider 
+			<em>
+                casting
+			</em>
+            &nbsp;to one of the endian-specific integer types first if you care about the bytes being the same on big-endian systems.
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codeint-code-to-codebyte-code" >
+    From 
+    <code>[]int</code>
+    &nbsp;to 
+    <code>[]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>[]int</code>
+            &nbsp;ss a slice, but 
+            <code>transmute</code>
+            ing to 
+            <code>u8</code>
+            &nbsp;won't change the length; a slice of 4 
+            <code>int</code>
+            s would 
+            <code>transmute</code>
+            &nbsp;into a slice of 4 
+            <code>u8</code>
+            s.
+		</p>
+	</li>
+	<li>
+		<p>
+            You probably want to use 
+            <code>slice.to_bytes</code>
+            &nbsp;(or more generically, 
+            <code>slice.reinterpret</code>
+            ). That will give you a 
+            <code>u8</code>
+            &nbsp;slice with the correct size.
+		</p>
+	</li>
+	<li>
+		<p>
+            The same note about endianness applies here, but it's not as straightforward to convert between the two.
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codet-code-to-codebyte-code" >
+    From 
+    <code>[]T</code>
+    &nbsp;to 
+    <code>[]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <s>
+            <code>transmute([]byte)my_slice</code>
+            </s>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Doesn't work well.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;It will literally reinterpret the slice itself as a byte slice; you have to use something in 
+                    <code>core:slice</code>
+                    &nbsp;or 
+                    <code>encoding</code>
+                    &quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codestring-code-to-codecstring-code" >
+    From 
+    <code>string</code>
+    &nbsp;to 
+    <code>cstring</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>strings.unsafe_string_to_cstring(st)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Alias.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The internal operation is:
+				</p>
+<pre><code class="language-odin" data-lang="odin">raw_string&nbsp;&nbsp;:= transmute(mem.Raw_String)s
+cs := cstring(raw_string.data)
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>strings.clone_to_cstring(s)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Copy.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codestring-code-to-coderune-code" >
+    From 
+    <code>string</code>
+    &nbsp;to 
+    <code>rune</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>for in</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Assumes the string is encoded as UTF-8.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">s := "important words"
+for r in s {
+&nbsp;&nbsp;&nbsp;&nbsp;// r is type `rune`.
+&nbsp;&nbsp;&nbsp;&nbsp;// works equally for any UTF-8 char; e.g., Japanese, etc.
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Stream
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codestring-code-to-coderune-code" >
+    From 
+    <code>string</code>
+    &nbsp;to 
+    <code>[]rune</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>utf8.string_to_runes(st)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Copy
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codestring-code-to-codebyte-code" >
+    From 
+    <code>string</code>
+    &nbsp;to 
+    <code>byte</code>
+</h5>
+<pre><code class="language-odin" data-lang="odin">last_character := s[len(s) - 1]
+&nbsp;&nbsp;&nbsp;&nbsp;// This is a `byte` / `u8`
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">// string length is in bytes
+for idx in 0..&lt;len(s) {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.println(idx, s[idx])
+&nbsp;&nbsp;&nbsp;&nbsp;// 0 65
+&nbsp;&nbsp;&nbsp;&nbsp;// 1 66
+&nbsp;&nbsp;&nbsp;&nbsp;// 2 67
+}
+</code></pre>
+<h5
+	id="from-codestring-code-to-codebyte-code" >
+    From 
+    <code>string</code>
+    &nbsp;to 
+    <code>[]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>transmute([]byte)s</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Alias.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Is functionally a 
+                    <code>[]byte</code>
+                    &nbsp;with different semantics, so you can transmute to it.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This works because their in-memory layout is the same; see 
+                    <code>runtime.Raw_Slice</code>
+                    &nbsp;and 
+                    <code>runtime.Raw_String</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Does not work for 
+                    <code>untyped string</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The type needs to be explicit.
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">// Does not work
+msg :: "hello"
+data := transmute([]u8)msg
+
+// Works
+msg: string : "hello"
+data := transmute([]u8)msg
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codestring-code-to-codebyte-code" >
+    From 
+    <code>string</code>
+    &nbsp;to 
+    <code>[^]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>raw_data(s)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Alias.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codestring-code-to-codebyte-code" >
+    From 
+    <code>[]string</code>
+    &nbsp;to 
+    <code>[]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            It's effectively a pointer to pointers.
+		</p>
+	</li>
+	<li>
+		<p>
+            If you want the bytes of each string sequentially, you will have to loop through them and copy them into a buffer.
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codecstring-code-to-codestring-code" >
+    From 
+    <code>cstring</code>
+    &nbsp;to 
+    <code>string</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>string(cs)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Alias.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>strings.clone_from_cstring(cs)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Copy.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codecstring-code-to-coderune-code" >
+    From 
+    <code>cstring</code>
+    &nbsp;to 
+    <code>rune</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codecstring-code-to-coderune-code" >
+    From 
+    <code>cstring</code>
+    &nbsp;to 
+    <code>[]rune</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codecstring-code-to-codebyte-code" >
+    From 
+    <code>cstring</code>
+    &nbsp;to 
+    <code>byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codecstring-code-to-codebyte-code" >
+    From 
+    <code>cstring</code>
+    &nbsp;to 
+    <code>[]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codecstring-code-to-codebyte-code" >
+    From 
+    <code>cstring</code>
+    &nbsp;to 
+    <code>[^]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>transmute([^]byte)cs</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Alias.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codebyte-code-to-codestring-code" >
+    From 
+    <code>[]byte</code>
+    &nbsp;to 
+    <code>string</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>string(bs)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Unless it's a slice literal
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Alias.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>transmute(string)bs</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Alias.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codebyte-code-to-codecstring-code" >
+    From 
+    <code>[]byte</code>
+    &nbsp;to 
+    <code>cstring</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codebyte-code-to-coderune-code" >
+    From 
+    <code>[]byte</code>
+    &nbsp;to 
+    <code>rune</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codebyte-code-to-coderune-code" >
+    From 
+    <code>[]byte</code>
+    &nbsp;to 
+    <code>[]rune</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codebyte-code-to-codebyte-code" >
+    From 
+    <code>[]byte</code>
+    &nbsp;to 
+    <code>[^]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>raw_data(bs)</code>
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codebyte-code-to-codestring-code" >
+    From 
+    <code>byte</code>
+    &nbsp;to 
+    <code>string</code>
+</h5>
+<pre><code class="language-odin" data-lang="odin">last_character_as_byte := my_str[len(my_str) - 1]
+string([]byte{ last_character_as_byte })
+</code></pre>
+<h5
+	id="from-codebyte-code-to-codecstring-code" >
+    From 
+    <code>byte</code>
+    &nbsp;to 
+    <code>cstring</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codebyte-code-to-coderune-code" >
+    From 
+    <code>byte</code>
+    &nbsp;to 
+    <code>rune</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-coderune-code-to-codestring-code" >
+    From 
+    <code>rune</code>
+    &nbsp;to 
+    <code>string</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            With a 
+            <code>strings.Builder</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>strings.write_rune</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">bytes, length := utf8.encode_rune(r)
+string(bytes[:length])
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>utf8.encode_rune</code>
+            &nbsp;+ slice using the 
+            <code>int</code>
+            &nbsp;returned, to perform a 
+            <code>string()</code>
+            &nbsp;cast.
+		</p>
+	</li>
+	<li>
+		<p>
+            No allocation is needed.
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-coderune-code-to-codebyte-code" >
+    From 
+    <code>rune</code>
+    &nbsp;to 
+    <code>[]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>utf8.encode_rune</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Takes a 
+                    <code>rune</code>
+                    &nbsp;and gives you a 
+                    <code>[4]u8, int</code>
+                    &nbsp;which you can slice and string cast.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-coderune-code-to-codestring-code" >
+    From 
+    <code>[]rune</code>
+    &nbsp;to 
+    <code>string</code>
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/unicode/utf8/#runes_to_string" 
+				class="external-link" 
+				target="_blank" >
+                <code>utf8.runes_to_string(rs)</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;C Byte Slice&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Copy.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codebyte-code-length-to-codestring-code" >
+    From 
+    <code>[^]byte</code>
+    &nbsp;+ length to 
+    <code>string</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>strings.string_from_ptr(ptr, length)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Alias.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codebyte-code-to-codecstring-code" >
+    From 
+    <code>[^]byte</code>
+    &nbsp;to 
+    <code>cstring</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>cstring(ptr)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;C Byte Slice&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Action
+					</strong>
+                    : Alias.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="from-codestruct-code-to-codebyte-code" >
+    From 
+    <code>struct</code>
+    &nbsp;to 
+    <code>[^]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>cast([^]u8)&my_struct</code>
+		</p>
+	</li>
+</ul>
+<h5
+	id="from-codestruct-code-to-codebyte-code" >
+    From 
+    <code>struct</code>
+    &nbsp;to 
+    <code>[]byte</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>(cast([^]u8)&my_struct)[:size_of(my_struct)]</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>mem.ptr_to_bytes(ptr, len)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Creates a byte slice pointing to 
+                    <code>len</code>
+                    &nbsp;objects, starting from the address specified by 
+                    <code>ptr</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    It just does 
+                    <code>transmute([]byte)Raw_Slice{ptr, len*size_of(T)}</code>
+                    &nbsp;internally.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="type-typeid-size_of" >
+    type / typeid / size_of
+</h3>
+<h5
+	id="type" >
+    Type
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/builtin/#type_of" 
+				class="external-link" 
+				target="_blank" >
+                <code>type_of(x: expr) -&gt; type</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Strange.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Get the type of a variable
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">typeid_of(type_of(parse))
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Places using 
+                <code>expr</code>
+                &nbsp;or 
+                <code>type</code>
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>base:builtin</code>
+				</p>
+<pre><code class="language-odin" data-lang="odin">type_of :: proc(x: expr) -&gt; type ---
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    <code>base:intrinsics</code>
+                    :
+				</p>
+<pre><code class="language-odin" data-lang="odin">soa_struct :: proc($N: int, $T: typeid) -&gt; type/#soa[N]T
+type_base_type :: proc($T: typeid) -&gt; type ---
+type_core_type :: proc($T: typeid) -&gt; type ---
+type_elem_type :: proc($T: typeid) -&gt; type ---
+type_integer_to_unsigned :: proc($T: typeid) -&gt; type where type_is_integer(T), !type_is_unsigned(T) ---
+type_integer_to_signed   :: proc($T: typeid) -&gt; type where type_is_integer(T), type_is_unsigned(T) ---
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="typeid" >
+    typeid
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/builtin/#typeid" 
+				class="external-link" 
+				target="_blank" >
+                <code>typeid</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/builtin/#type_info_of" 
+				class="external-link" 
+				target="_blank" >
+                <code>type_info_of($T: typeid) -&gt; Type_Info</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/builtin/#typeid_of" 
+				class="external-link" 
+				target="_blank" >
+                <code>typeid_of($T: typeid) -&gt; typeid</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Strange.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Caio:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Why isn't this allowed?
+						</p>
+<pre><code class="language-odin" data-lang="odin">id: typeid = f32
+data: int = 2
+log.debugf("thing: %v", cast(id)data)
+</code></pre>
+					</li>
+					<li>
+						<p>
+                            I'm trying to understand a bit more about typeid.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I've seen it being used as a compile time known constant in generic procedures, 
+                            <code>$T: typeid</code>
+                            , and in this case it can be used for casting? How does this work?
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    GingerBill:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Because 
+                            <code>cast</code>
+                            &nbsp;is a compile time operation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            What you are doing requires an run time operation which is very difficult to do.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Barinzaya:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            A proc argument like 
+                            <code>$T: typeid</code>
+                            &nbsp;is 
+							<a
+								href="https://odin-lang.org/docs/overview/#explicit-parametric-polymorphism" 
+								class="external-link" 
+								target="_blank" >
+                                parapoly
+							</a>
+                            , which means it's basically a generic/template argument.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The compiler will generate a separate variation of the proc for every unique group of parapoly arguments it's called with.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Naturally, that means that the argument must be known at compile-time, so it can't be a variable.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Caio:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            hmmm ok. So, a brief of what I was thinking of doing: I'm trying to store some data in a struct in its generic form, and then use some other data to cast it back to the original data. A 
+                            <code>any</code>
+                            &nbsp;stores exactly what I need: a 
+                            <code>rawptr</code>
+                            &nbsp;and a type, but I got confused about the 
+                            <code>typeid</code>
+                            . Is there a way to accomplish this operation?
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Barinzaya:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            You basically have to just type switch on the 
+                            <code>any</code>
+                            &nbsp;and handle the cases that you care about, e.g. how 
+                            <code>fmt</code>
+                            &nbsp;handles arguments: https://github.com/odin-lang/Odin/blob/38faec757d4e4648a86fb17a1fda0e2399a3ea19/core/fmt/fmt.odin#L3168.
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">base_arg := arg&nbsp;&nbsp;// is an any.
+base_arg.id = runtime.typeid_base(base_arg.id)&nbsp;&nbsp;// probably to avoid derivative types `my_int :: int`, something like that.
+switch a in base_arg {
+case bool:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fmt_bool(fi, a, verb)
+case b8:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fmt_bool(fi, bool(a), verb)
+case b16:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fmt_bool(fi, bool(a), verb)
+case b32:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fmt_bool(fi, bool(a), verb)
+case b64:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fmt_bool(fi, bool(a), verb)
+
+case any:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fmt_arg(fi,&nbsp;&nbsp;a, verb)
+case rune:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fmt_rune(fi, a, verb)
+// etc
+}
+</code></pre>
+				<ul>
+					<li>
+						<p>
+                            A 
+                            <code>union</code>
+                            &nbsp;is usually better unless you 
+							<em>
+                                really
+							</em>
+                            &nbsp;need to handle anything. 
+                            <code>any</code>
+                            &nbsp;is a pointer that doesn't behave like a pointer and is easy to misuse; a 
+                            <code>union</code>
+                            &nbsp;actually contains its value. Cases needing true generic handling are rare, usually for arbitrary (de)serialization and printing.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Jesse:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>any</code>
+                            &nbsp;should be avoided until all other alternatives have been explored.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It is almost never the case that you really don't know what set of types some data could be.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="size_of" >
+    size_of
+</h5>
+<ul>
+	<li>
+		<p>
+            Why do I get a different value for 
+            <code>size_of</code>
+            , between 
+            <code>bar1</code>
+            &nbsp;and 
+            <code>bar2</code>
+            ?
+		</p>
+<pre><code class="language-odin" data-lang="odin">Vertex :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;pos:&nbsp;&nbsp; [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;color: [3]f32,
+}
+
+foo :: proc(array: []$MEMBER) {&nbsp;&nbsp;// passing a `[]Vertex` as a parameter
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.println(size_of(MEMBER))&nbsp;&nbsp;// prints 20
+&nbsp;&nbsp;&nbsp;&nbsp;bar1(MEMBER)
+&nbsp;&nbsp;&nbsp;&nbsp;bar2(MEMBER)
+}
+
+bar1 :: proc(member: typeid) {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.println(size_of(member)) // prints 8
+}
+
+bar2 :: proc($member: typeid) {
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.println(size_of(member)) // prints 20
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    <code>bar1</code>
+                    &nbsp;is the 
+                    <code>typeid</code>
+                    &nbsp;of 
+                    <code>Vertex</code>
+                    , not 
+                    <code>Vertex</code>
+                    , so it's getting the size of a 
+                    <code>typeid</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>typeid</code>
+                    &nbsp;is the type of types. It's a hash of the type's canonical name. At compile time the compiler knows what the underlying type is, so it'll use the type itself rather than 
+                    <code>typeid</code>
+                    . At runtime it can't know, so it'll be a 
+                    <code>typeid</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Compile-time 
+                    <code>typeid</code>
+                    s 
+					<em>
+                        are
+					</em>
+                    &nbsp;effectively types (which is why you can do stuff like 
+                    <code>proc ($T: typeid) -&gt; T</code>
+                    ), whereas run-time 
+                    <code>typeid</code>
+                    s are indeed just an ID (
+                    <code>u64</code>
+                    -sized).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

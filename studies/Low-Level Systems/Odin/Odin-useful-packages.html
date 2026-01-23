@@ -1,0 +1,2608 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+					open="">
+					<summary>
+                        Odin
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-overview.html" >
+                                Overview
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-my-impressions.html" >
+                                My Impressions
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-installation.html" >
+                                Installation
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-compile-time-stuff.html" >
+                                Compile-time Stuff
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-package-system.html" >
+                                Package System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-lsp-ols-odin-language-server.html" >
+                                LSP (OLS - Odin Language Server)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-control-flow-if-when-switch-for-defer.html" >
+                                Control Flow (if, when, switch, for, defer)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-procedures.html" >
+                                Procedures
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-typing.html" >
+                                Typing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-any.html" >
+                                any
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-primitive-types.html" >
+                                Primitive Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-matrix.html" >
+                                Matrix
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-quaternion.html" >
+                                Quaternion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-complex.html" >
+                                Complex
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-rune.html" >
+                                Rune
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-maps-hash-maps.html" >
+                                Maps (Hash Maps)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-struct.html" >
+                                Struct
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-union.html" >
+                                Union
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-bit-sets.html" >
+                                Bit Sets
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-interfaces-methods-vtables.html" >
+                                Interfaces / Methods / VTables
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-error-handling.html" >
+                                Error Handling
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-context.html" >
+                                Context
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-address.html" >
+                                Memory: Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-allocators.html" >
+                                Memory: Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-memory-operations.html" >
+                                Memory: Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-entry-point.html" >
+                                Entry Point
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-multi-threading.html" >
+                                Multi-Threading
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-directives.html" >
+                                Directives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-ffi-foreign-function-interface-bindings.html" >
+                                FFI (Foreign Function Interface) / Bindings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-web-build.html" >
+                                Web Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Odin/Odin-file-system-process-cli-shell.html" >
+                                File System / Process / CLI / Shell
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Low-Level Systems/Odin/Odin-useful-packages.html" >
+                                Useful Packages
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#math" >
+                                        Math
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#geometry" >
+                                        Geometry
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#shader" >
+                                        Shader
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#pathfinding" >
+                                        Pathfinding
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#logger" >
+                                        Logger
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#json" >
+                                        Json
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#sql" >
+                                        SQL
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#plotting" >
+                                        Plotting
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#network" >
+                                        Network
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#terminal-utilities" >
+                                        Terminal Utilities
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#capturing-codectrl-c-code-in-the-terminal" >
+                                                Capturing <code>ctrl + C</code> in the Terminal
+											</a>
+										</li>
+										<li>
+											<a
+												href="#colors-and-strings" >
+                                                Colors and Strings
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#formats" >
+                                        Formats
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#hot-reload" >
+                                        Hot-Reload
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Memory
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-virtual-memory.html" >
+                                Virtual Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-os-memory-on-windows.html" >
+                                OS: Memory on Windows
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-memory-alignment.html" >
+                                Memory Alignment
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-address.html" >
+                                Address
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-allocators.html" >
+                                Allocators
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-tools-memory-analysis.html" >
+                                Tools: Memory Analysis
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-handles-instead-of-pointers.html" >
+                                Handles instead of Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-ownership-strategies-destruction-strategies.html" >
+                                Ownership Strategies / Destruction Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-strategies-for-handling-short-lived-memory.html" >
+                                Strategies for handling short lived memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-garbage-collection.html" >
+                                Garbage Collection
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Memory/Memory-initialization.html" >
+                                Initialization
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        CPU
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-physical-structure.html" >
+                                Physical Structure
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-cache.html" >
+                                Cache
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-soa-struct-of-arrays-ecs-entity-component-system.html" >
+                                SOA (Struct Of Arrays) / ECS (Entity Component System)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/CPU/CPU-simd.html" >
+                                SIMD
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Multithreading
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-core-concepts.html" >
+                                Core Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-thread.html" >
+                                Thread
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-strategies.html" >
+                                Strategies
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-implementation-detail.html" >
+                                Implementation Detail
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-synchronization-primitives.html" >
+                                Synchronization Primitives
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-double-buffering.html" >
+                                Double-Buffering
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Multithreading/Multithreading-networking-strategies.html" >
+                                Networking Strategies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Handmade Hero
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Profilers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-tracy.html" >
+                                Tracy
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-spall.html" >
+                                Spall
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nvidia-nsight-graphics-gpu-trace.html" >
+                                Nvidia Nsight Graphics - GPU Trace
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-amd-gpu-profiler-amd-rgp.html" >
+                                AMD GPU Profiler (AMD RGP)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-intel-gpa.html" >
+                                Intel GPA
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Profilers/Profilers-nsight-systems.html" >
+                                <s>Nsight Systems</s>
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        C
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-basic.html" >
+                                Basic
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard.html" >
+                                C Standard
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-c-standard-library-libc.html" >
+                                C Standard Library (libc)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-building.html" >
+                                Building
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-memory.html" >
+                                Memory
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-loops.html" >
+                                Loops
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-strings.html" >
+                                Strings
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-structs.html" >
+                                Structs
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-pointers.html" >
+                                Pointers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-arrays.html" >
+                                Arrays
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-preprocessors.html" >
+                                Preprocessors
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-undefined-behavior.html" >
+                                Undefined Behavior
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-gamedev.html" >
+                                GameDev
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/C-windows-c-api.html" >
+                                WIndows C API
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Build Systems - Compilation - Linking
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilation-process.html" >
+                                Compilation Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-compilers.html" >
+                                Compilers
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-build-tools.html" >
+                                Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-meta-build-tools.html" >
+                                Meta Build Tools
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-extra-annoying-things-on-windows.html" >
+                                Extra: Annoying things on Windows
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Debuggers
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-file-types.html" >
+                                File Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-rad-debbuger.html" >
+                                RAD Debbuger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-gdb-gnu-debugger.html" >
+                                GDB (GNU Debugger)
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-lldb.html" >
+                                LLDB
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-vscode.html" >
+                                VSCode
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-visual-studio-debugger.html" >
+                                Visual Studio Debugger
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-others.html" >
+                                Others
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Debuggers-web.html" >
+                                Web
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Assembly - ASM
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-notes.html" >
+                                Notes
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-operations.html" >
+                                Operations
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Assembly/Assembly - ASM-reverse-engineering.html" >
+                                Reverse Engineering
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Parsing
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-parsing.html" >
+                                Parsing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-lexer.html" >
+                                Lexer
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Parsing-tools.html" >
+                                Tools
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        JAI
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-build.html" >
+                                Build
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-types.html" >
+                                Types
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-meta-programming.html" >
+                                Meta programming
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/JAI-control-flow.html" >
+                                Control flow
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Useful Packages
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-28" >
+                                🕒 Created: 2025-03-28
+							</time>
+							<time
+								datetime="2026-01-22" >
+                                | Updated: 2026-01-22
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/jakubtomsu/awesome-odin" 
+				class="external-link" 
+				target="_blank" >
+                Collection of tools
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="math" >
+    Math
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Omair-R/Nuod" 
+				class="external-link" 
+				target="_blank" >
+                Nuod (Numpy Odin)
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Omair-R/fftod" 
+				class="external-link" 
+				target="_blank" >
+                FFTOD - Odin
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Fast Fourier Transform (FFT) written in the Odin language.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="geometry" >
+    Geometry
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Binasaurus-Hex/PolyMerge" 
+				class="external-link" 
+				target="_blank" >
+                Odin-poly-merge
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="shader" >
+    Shader
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/FrancisTheCat/hephaistos" 
+				class="external-link" 
+				target="_blank" >
+                hephaistos
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="pathfinding" >
+    Pathfinding
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/scoobery/odin_pathgrid" 
+				class="external-link" 
+				target="_blank" >
+                Odin-pathgrid
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/ChrisPHP/odin-flowfield" 
+				class="external-link" 
+				target="_blank" >
+                odin-flowfield
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="logger" >
+    Logger
+</h3>
+<ul>
+	<li>
+		<p>
+            By default, there is no logger in the Context.
+		</p>
+	</li>
+</ul>
+<h5
+	id="using-a-logger" >
+    Using a logger
+</h5>
+<pre><code class="language-odin" data-lang="odin">import "core:log"
+</code></pre>
+<h5
+	id="creating-a-logger" >
+    Creating a logger
+</h5>
+<pre><code class="language-odin" data-lang="odin">context.logger = log.create_console_logger()
+// or
+context.logger = log.create_file_logger()
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20250402092216.png" width="1350" >
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="options" >
+    Options
+</h5>
+<pre><code class="language-odin" data-lang="odin">context.logger = log.create_console_logger(
+&nbsp;&nbsp;&nbsp;&nbsp;opt = log.Options{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Level,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Terminal_Color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// .Short_File_Path,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Procedure,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// .Line,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// .Thread_Id,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+)
+</code></pre>
+<h3
+	id="json" >
+    Json
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/encoding/json/" 
+				class="external-link" 
+				target="_blank" >
+                core:encoding/json
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/odin-lang/examples/tree/master/json" 
+				class="external-link" 
+				target="_blank" >
+                Examples
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="marshal-and-unmarshal" >
+    Marshal and Unmarshal
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Struct field tags
+			</strong>
+            :
+		</p>
+<pre><code class="language-odin" data-lang="odin">User :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;flag: bool, // untagged field
+&nbsp;&nbsp;&nbsp;&nbsp;age:&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;&nbsp;"custom whatever information",
+&nbsp;&nbsp;&nbsp;&nbsp;name: string `json:"username" xml:"user-name" fmt:"q"`, // `core:reflect` layout
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    If multiple information is to be passed in the 
+                    <code>"value"</code>
+                    , usually it is specified by separating it with a comma (
+                    <code>,</code>
+                    ).
+				</p>
+<pre><code class="language-odin" data-lang="odin">name: string `json:"username,omitempty",
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                About unions
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>core:encoding/json</code>
+                    &nbsp;is pretty simple when it comes to 
+                    <code>union</code>
+                    s, it just takes the first variant that it can unmarshal without error. For structs it doesn't consider an unknown field to be an error, though, and I don't think there's a way to make it do so
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="comparison" >
+    Comparison
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                In Odin
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Simple layout
+					</em>
+                    :
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">for tileset_info in world["defs"].(json.Object)["tilesets"].(json.Array) {
+&nbsp;&nbsp;&nbsp;&nbsp;if tileset_info.(json.Object)["identifier"].(json.String) == "Internal_Icons" {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue 
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Practical layout
+					</em>
+                    :
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">for tileset_info in world["defs"].(json.Object)["tilesets"].(json.Array) {
+&nbsp;&nbsp;&nbsp;&nbsp;tileset_info := item.(json.Object)
+&nbsp;&nbsp;&nbsp;&nbsp;if tileset_info["identifier"].(json.String) == "Internal_Icons" {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                In Zig
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Simple layout
+					</em>
+                    :
+				</p>
+<pre><code class="language-zig" data-lang="zig">for (jsonParsed.value.object.get("defs").?.object.get("tilesets").?.array.items) |item| {
+</code></pre>
+			</li>
+		</ul>
+		<p>
+                    if (std.mem.eql(u8, item.object.get(&quot;identifier&quot;).?.string, &quot;Internal_Icons&quot;)) {
+            <br>
+                        continue;
+            <br>
+                    }
+            <br>
+                }
+            <br>
+            ```
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Practical layout
+					</em>
+                    :
+				</p>
+<pre><code class="language-zig" data-lang="zig">for (jsonParsed.value.object.get("defs").?.object.get("tilesets").?.array.items) |item| {
+</code></pre>
+			</li>
+		</ul>
+		<p>
+                    const info_tileset = item.object;
+            <br>
+                    if (std.mem.eql(u8, info_tileset.get(&quot;identifier&quot;).?.string, &quot;Internal_Icons&quot;)) {
+            <br>
+                        continue;
+            <br>
+                    }
+            <br>
+                }
+            <br>
+            ```
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                In Godot
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Without reinforcing casting
+					</em>
+                    :
+				</p>
+<pre><code class="language-gdscript" data-lang="gdscript">for ts in world.get('defs').get('tilesets'):
+&nbsp;&nbsp;&nbsp;&nbsp;if (ts.get('identifier') == 'Internal_Icons'):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Slightly reinforcing casting
+					</em>
+                    : (Using like this atm)
+				</p>
+<pre><code class="language-gdscript" data-lang="gdscript">for ts: Dictionary in (world.get('defs') as Dictionary).get('tilesets'):
+&nbsp;&nbsp;&nbsp;&nbsp;if (ts.get('identifier') == 'Internal_Icons'):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Reinforcing casting
+					</em>
+                    :
+				</p>
+<pre><code class="language-gdscript" data-lang="gdscript">for ts: Dictionary in ((world.get('defs') as Dictionary).get('tilesets') as Array):
+&nbsp;&nbsp;&nbsp;&nbsp;if ((ts.get('identifier') as String) == 'Internal_Icons'):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="sql" >
+    SQL
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/saenai255/odin-sqlite3" 
+				class="external-link" 
+				target="_blank" >
+                odin-sqlite3
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Skytrias/odin-sqlite" 
+				class="external-link" 
+				target="_blank" >
+                odin-sqlite
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/powerc9000/odin_sqlite" 
+				class="external-link" 
+				target="_blank" >
+                odin_sqlite
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/laytan/odin-mysql" 
+				class="external-link" 
+				target="_blank" >
+                MySQL
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/laytan/odin-postgresql" 
+				class="external-link" 
+				target="_blank" >
+                Postgree
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="plotting" >
+    Plotting
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/joaocarvalhoopen/Plots_in_Odin/tree/main" 
+				class="external-link" 
+				target="_blank" >
+                Plots_in_Odin
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="network" >
+    Network
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;0 bytes received means the connection was closed normally/gracefully, and then you have the 
+            <code>.Connection_Closed</code>
+            &nbsp;error for abnormal closes&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>.Would_Block</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;it's not an actual error in this case. it just uses the error slot to indicate that you need to wait.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/odin-lang/examples/tree/master/net/tcp_echo_server" 
+				class="external-link" 
+				target="_blank" >
+                Echo server example
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/laytan/odin-http" 
+				class="external-link" 
+				target="_blank" >
+                Odin-http
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Inch4Tk/odinhttp" 
+				class="external-link" 
+				target="_blank" >
+                odinhttp
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="terminal-utilities" >
+    Terminal Utilities
+</h3>
+<h4
+	id="capturing-codectrl-c-code-in-the-terminal" >
+    Capturing 
+    <code>ctrl + C</code>
+    &nbsp;in the Terminal
+</h4>
+<h5
+	id="windows" >
+    Windows
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://learn.microsoft.com/en-us/windows/console/setconsolectrlhandler?redirectedfrom=MSDN" 
+				class="external-link" 
+				target="_blank" >
+                Info
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">main :: proc() {
+    win_handler_ok := windows.SetConsoleCtrlHandler(win_handler, windows.TRUE)
+    if !win_handler_ok {
+        log.error("win_handler not ok")
+        return
+    }
+
+    for !wants_to_exit {
+    }
+}
+
+
+wants_to_exit := false
+
+
+win_handler :: proc "system" (dwCtrlType: windows.DWORD) -&gt; windows.BOOL {
+    // fmt.printfln("dwCtrlType: %v", dwCtrlType)
+    switch dwCtrlType {
+    case windows.CTRL_C_EVENT, windows.CTRL_BREAK_EVENT, windows.CTRL_CLOSE_EVENT:
+        wants_to_exit = true
+    }
+    return windows.TRUE
+}
+</code></pre>
+<h5
+	id="linux" >
+    Linux
+</h5>
+<pre><code class="language-odin" data-lang="odin">package shnt
+
+import "core:fmt"
+import "core:sys/linux"
+
+_got_int: bool 
+
+_int_handler :: proc "c" (sig: linux.Signal) {
+&nbsp;&nbsp;&nbsp;&nbsp;_got_int = true
+}
+
+main :: proc() { 
+&nbsp;&nbsp;&nbsp;&nbsp;sigact: linux.Sig_Action(int) = { 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler = _int_handler,
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;&nbsp;old_sigact: ^linux.Sig_Action(int)
+&nbsp;&nbsp;&nbsp;&nbsp;linux.rt_sigaction(.SIGINT, &sigact, old_sigact)
+&nbsp;&nbsp;&nbsp;&nbsp;for !_got_int { } 
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.println("got sigint!")
+}
+</code></pre>
+<h4
+	id="colors-and-strings" >
+    Colors and Strings
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://forum.odin-lang.org/t/odin-cli-best-practices/175" 
+				class="external-link" 
+				target="_blank" >
+                Post about ANSI Colors and string lengths
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/hrszpuk/odin-color" 
+				class="external-link" 
+				target="_blank" >
+                odin-color
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="formats" >
+    Formats
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/hpb0412/odin-mpc" 
+				class="external-link" 
+				target="_blank" >
+                odin-mcpx
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Using 
+					<em>
+                        mpc
+					</em>
+                    &nbsp;might be of interest to you if you are...
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Building a new programming language
+						</p>
+					</li>
+					<li>
+						<p>
+                            Building a new data format
+						</p>
+					</li>
+					<li>
+						<p>
+                            Parsing an existing programming language
+						</p>
+					</li>
+					<li>
+						<p>
+                            Parsing an existing data format
+						</p>
+					</li>
+					<li>
+						<p>
+                            Embedding a Domain Specific Language
+						</p>
+					</li>
+					<li>
+						<p>
+                            Implementing 
+							<a
+								href="http://en.wikipedia.org/wiki/Greenspun%27s_tenth_rule" 
+								class="external-link" 
+								target="_blank" >
+                                Greenspun's Tenth Rule
+							</a>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="image-formats" >
+    Image Formats
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/CoolDove/odin-assimp/" 
+				class="external-link" 
+				target="_blank" >
+                odin-assimp
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/assimp/assimp" 
+						class="external-link" 
+						target="_blank" >
+                        Assimp
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/assimp/assimp/blob/master/doc/Fileformats.html" 
+						class="internal-link" 
+						target="_self" >
+                        List of all file formats supported
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Support for 
+							<a
+								href="https://en.wikipedia.org/wiki/.blend_(file_format)" 
+								class="external-link" 
+								target="_blank" >
+                                BLEND
+							</a>
+                            &nbsp;is deprecated. It is too time-consuming to maintain an undocumented format which contains so much more than we need.
+						</p>
+					</li>
+					<li>
+						<p>
+                            No 
+                            <code>.exr</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Can calculate the tangents for each vertex if used a flag during 
+                    <code>readFile</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                png
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In png, the alpha channel is optional.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/vendor/stb/image/#load_from_file" 
+						class="external-link" 
+						target="_blank" >
+                        vendor:stb/image
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://github.com/nothings/stb/blob/master/stb_image.h" 
+								class="external-link" 
+								target="_blank" >
+                                Documentation
+							</a>
+                            .
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">channels, width, height: ^i32
+image.load("file.png", width, height, channels, 4)
+</code></pre>
+				<ul>
+					<li>
+						<p>
+                            The first 3 are set by the function to read the data, so if you have an RGB image, 
+                            <code>channels</code>
+                            &nbsp;will be 
+                            <code>3</code>
+                            &nbsp;but it'll load 4 because 
+                            <code>4</code>
+                            &nbsp;was specified as the 
+                            <code>desired_channels</code>
+                            , so you can do 
+                            <code>data[:width * height * 4]</code>
+                            &nbsp;to get a 
+                            <code>[]byte</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            The number of components N is 'desired_channels' if desired_channels is non-zero, or 
+                            <code>*channels_in_file</code>
+                            &nbsp;otherwise. If desired_channels is non-zero, 
+                            <code>*channels_in_file</code>
+                            &nbsp;has the number of components that would have been output otherwise. E.g. if you set desired_channels to 4, you will always get RGBA output
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>
+					<a
+						href="https://pkg.odin-lang.org/core/image/png/" 
+						class="external-link" 
+						target="_blank" >
+                        core:image/png
+					</a>
+                    </s>.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Performance
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Caio:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    hello, I'm using 
+                                    <code>core:image/png</code>
+                                    &nbsp;to read a 4k png image and it seems 
+									<em>
+                                        really
+									</em>
+                                    &nbsp;slow, taking 8-10 seconds to complete. This is the code I'm using: 
+                                    <code>png.load_from_file(path, { .alpha_add_if_missing }, context.temp_allocator)</code>
+                                    . Is there something here I should be aware of? I'm loading the texture to then send it to the GPU with a vulkan host_visible/host_coherent staging buffer, and then to a device_local image. I profiled the whole process and I'm pretty sure this 
+                                    <code>png</code>
+                                    &nbsp;is what is slowing things down. Do you have some tips for this? I don't know much about png, so I don't know what to expect, but this seems too much
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Yawning:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    if you profile it, my gut feeling is that it is zlib, since we have a naive implementation, but that's just a guess
+								</p>
+							</li>
+							<li>
+								<p>
+                                    we do try to make core fast, but maintainabily/ease of implementation take priority atm
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;I think core:image is basically always gonna be slower than stb&quot;, I wouldn't say always, this can be made faster, but it's a time/effort/personel thing.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Barinzaya:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is that in an optimized build? It's pure Odin code, so optimization settings 
+									<em>
+                                        will
+									</em>
+                                    &nbsp;affect it, and they're usually significant.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    That being said, even in an optimized build, AFAIK 
+                                    <code>stb_image</code>
+                                    &nbsp;is typically faster (though it comes with cautions about using it with untrusted images, if that applies to you)
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Caio:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    oh yea, with 
+                                    <code>-o:speed</code>
+                                    &nbsp;the load time drops to ~1s
+								</p>
+							</li>
+							<li>
+								<p>
+                                    just out of curiosity: with 
+                                    <code>-o:speed</code>
+                                    , 
+                                    <code>image/png</code>
+                                    &nbsp;takes 344ms to load the 4k image, vs 6ms from 
+                                    <code>stb/image</code>
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="3d-models" >
+    3D Models
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                gltf
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#reference-buffer" 
+						class="external-link" 
+						target="_blank" >
+                        gltf spec
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/Pawel82S/glTF2" 
+						class="external-link" 
+						target="_blank" >
+                        gtfl2
+					</a>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The content is the same as 
+                            <code>cgltf</code>
+                            , but it seems better, indeed.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    ~
+					<a
+						href="https://pkg.odin-lang.org/vendor/cgltf/" 
+						class="external-link" 
+						target="_blank" >
+                        cgltf
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/jakubtomsu/odin-vox" 
+				class="external-link" 
+				target="_blank" >
+                Vox loader
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="config-files" >
+    Config Files
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/laytan/odin-ini-parser" 
+				class="external-link" 
+				target="_blank" >
+                odin-ini
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Up05/toml_parser" 
+				class="external-link" 
+				target="_blank" >
+                odin-toml-parser
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="general-data-files" >
+    General Data Files
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/mabeh19/bml/" 
+				class="external-link" 
+				target="_blank" >
+                odin-bml
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Binary Markup Language (BML) is an XML scheme for describing structured binary data. The library contains a protocol parser, a binary data parser, as well as a C header emitter.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="markdown" >
+    Markdown
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/vendor/commonmark/" 
+				class="external-link" 
+				target="_blank" >
+                vendor:commonmark
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Bindings for 
+					<a
+						href="https://github.com/commonmark/cmark" 
+						class="external-link" 
+						target="_blank" >
+                        CMark
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            ~
+			<a
+				href="https://github.com/hrszpuk/odin-markdown" 
+				class="external-link" 
+				target="_blank" >
+                odin-markdown
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    (2025-10-14)
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Really not ready.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's useful for creating a markdown file while inside Odin, but it's not a parser.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If you have an existing md file, it's useless for now.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                In C
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/commonmark/cmark" 
+						class="external-link" 
+						target="_blank" >
+                        CMark
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://github.com/mity/md4c" 
+						class="external-link" 
+						target="_blank" >
+                        md4c
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<strong>
+                In Go
+			</strong>
+            </s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/yuin/goldmark/" 
+						class="external-link" 
+						target="_blank" >
+                        goldmark
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="other-parsers" >
+    Other Parsers
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Up05/odin-RFC-3339-date-parser" 
+				class="external-link" 
+				target="_blank" >
+                odin-date-parser
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    RFC-3339.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="debug" >
+    Debug
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/DaseinPhaos/pdb" 
+				class="external-link" 
+				target="_blank" >
+                odin-pdb
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Reads Microsoft PDB (Program Database) files. Enables stacktracing on Windows for The Odin Programming Language.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="media" >
+    Media
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/numbers-zz/odin-ffmpeg-bindings" 
+				class="external-link" 
+				target="_blank" >
+                Odin-ffmpeg
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/Kelimion/odin-file-formats" 
+				class="external-link" 
+				target="_blank" >
+                Odin-file-formats
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Extensible Binary Meta Language (EBML)
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>Matroska</code>
+                            &nbsp;and 
+                            <code>WebM</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    ISO Base Media File Format (BMFF)
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>MP4</code>
+                            , 
+                            <code>HEIF</code>
+                            , 
+                            <code>JPEG 2000</code>
+                            , and other formats.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/jakubtomsu/odin-fmod" 
+				class="external-link" 
+				target="_blank" >
+                fmod
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="hot-reload" >
+    Hot-Reload
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/karl-zylinski/odin-RayLib-hot-reload-game-template" 
+				class="external-link" 
+				target="_blank" >
+                Odin + RayLib hotreload
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1056 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Data Oriented Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-criticisms-of-oop.html" >
+                                Criticisms of OOP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-philosophies.html" >
+                                Philosophies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Data Oriented Design - ECS
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-discussion.html" >
+                                Discussion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-sources.html" >
+                                Sources
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#bitsquid-engine-building-a-data-oriented-entity-system" >
+                                        Bitsquid Engine - Building a Data-Oriented Entity System
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#mach-engine-lets-build-ecs-in-zig" >
+                                        <s>Mach Engine - Let's Build ECS in Zig</s>
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#bevy-engine-ecs" >
+                                        <s>Bevy Engine - ECS</s>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-entity.html" >
+                                Entity
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-component.html" >
+                                Component
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-system.html" >
+                                System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-n-greatern-relationship.html" >
+                                Design: N-&gt;N relationship
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-discarded-ideas.html" >
+                                Design: Discarded Ideas
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Data Oriented Design - COP
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - COP/Data Oriented Design - COP-cop-compression-oriented-programming-mega-struct.html" >
+                                COP (Compression-Oriented Programming) / Mega-Struct
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Other Design Patterns
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-definition.html" >
+                                Definition
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-behavioral-patterns.html" >
+                                Behavioral Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-creational-patterns.html" >
+                                Creational Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-structural-patterns.html" >
+                                Structural Patterns
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Concepts and Terminology
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-terminology.html" >
+                                Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Rules of thumb - Laws - Guidelines and Principles
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Rules of thumb - Laws - Guidelines and Principles/Rules of thumb - Laws - Guidelines and Principles-rules-of-thumb.html" >
+                                Rules of Thumb
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Paradigms
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-procedural.html" >
+                                Procedural
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-functional.html" >
+                                Functional
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-oop-object-oriented-programming.html" >
+                                OOP (Object-Oriented Programming)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Production Methodologies
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-design-process.html" >
+                                Design Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-apps.html" >
+                                Apps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-software-testing.html" >
+                                Software Testing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-methodologies.html" >
+                                Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Sources
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-11" >
+                                🕒 Created: 2025-03-11
+							</time>
+							<time
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=SofC6c9xQv4" 
+				class="external-link" 
+				target="_blank" >
+                Rust Auckland - Azriel: ECS: A Programming Paradigm
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Really good video for explaining the general theory behind ECS, but then falls short when it comes to implementation and Rust things.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I didn't like the video after {31:00}, as it went for an implementation with Rust and I though it was very confusing.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="bitsquid-engine-building-a-data-oriented-entity-system" >
+    Bitsquid Engine - Building a Data-Oriented Entity System
+</h3>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+			<a
+				href="https://bitsquid.blogspot.com/2014/08/building-data-oriented-entity-system.html" 
+				class="external-link" 
+				target="_blank" >
+                pt1
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+			<a
+				href="https://bitsquid.blogspot.com/2014/09/building-data-oriented-entity-system.html" 
+				class="external-link" 
+				target="_blank" >
+                pt2
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://bitsquid.blogspot.com/2014/10/building-data-oriented-entity-system.html" 
+				class="external-link" 
+				target="_blank" >
+                pt3
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://bitsquid.blogspot.com/2014/10/building-data-oriented-entity-system_10.html" 
+				class="external-link" 
+				target="_blank" >
+                pt4
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">const unsigned ENTITY_INDEX_BITS = 22;
+const unsigned ENTITY_INDEX_MASK = (1&lt;&lt;ENTITY_INDEX_BITS)-1;
+
+const unsigned ENTITY_GENERATION_BITS = 8;
+const unsigned ENTITY_GENERATION_MASK = (1&lt;&lt;ENTITY_GENERATION_BITS)-1;
+
+struct Entity
+{
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned id;
+
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned index() const {return id & ENTITY_INDEX_MASK;}
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned generation() const {return (id &gt;&gt; ENTITY_INDEX_BITS) & ENTITY_GENERATION_MASK;}
+};
+
+class EntityManager
+{
+&nbsp;&nbsp;&nbsp;&nbsp;Array&lt;unsigned char&gt; _generation;
+&nbsp;&nbsp;&nbsp;&nbsp;Deque&lt;unsigned&gt; _free_indices;
+
+&nbsp;&nbsp;&nbsp;&nbsp;public:
+&nbsp;&nbsp;&nbsp;&nbsp;Entity create() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unsigned idx;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_free_indices.size() &gt; MINIMUM_FREE_INDICES) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;idx = _free_indices.front();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_free_indices.pop_front();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_generation.push_back(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;idx = _generation.size() - 1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XENSURE(idx &lt; (1 &lt;&lt; ENTITY_INDEX_BITS));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return make_entity(idx, _generation[idx]);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;bool alive(Entity e) const {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return _generation[e.index()] == e.generation();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;void destroy(Entity e) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const unsigned idx = e.index();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++_generation[idx];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_free_indices.push_back(idx);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+};
+</code></pre>
+<ul>
+	<li>
+		<p>
+            The idea here is that the index part directly gives us the index of the entity in a lookup array.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The generation part is used to distinguish entities created at the same index slot. As we create and destroy entities we will at some point have to reuse an index in the array. By changing the generation value when that happens we ensure that we still get a unique ID.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            In our system we are restricted to using 30 bits for the entity ID. We steal two bits from this pointer in order to distinguish it from other types of light userdata that we use in the engine.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    We've split up our 30 bits into 22 bits for the index and 8 bits for the generation. This means that we support a maximum of 4 million simultaneous entities. It also means that we can only distinguish between 256 different entities created at the same index slot. If more than 256 entities are created at the same index slot, the generation value will wrap around and our new entity will get the same ID as an old entity.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            A nice thing about only having 8 bits in generation is that we just need 8 bits per entity in our lookup array. This saves memory, but also gives us better performance, since we will fit more in the cache.
+		</p>
+	</li>
+	<li>
+		<p>
+            Component:
+		</p>
+	</li>
+	<li>
+		<p>
+            Components in our system are not individual objects, instead all components of a particular type are handled by a component manager for that type. The component manager has full control over how the component data is stored internally and how updates are applied.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is perhaps not self-evident why we want to store the entity that owns the component, but it will come in handy later.
+		</p>
+	</li>
+	<li>
+		<p>
+            Component Manager:
+		</p>
+	</li>
+	<li>
+		<p>
+            The task of a ComponentManager is to associate entities with components. It is up to the component manager to decide if it makes sense for an entity to have multiple components of its type.
+		</p>
+	</li>
+	<li>
+		<p>
+            There is no place where we keep a list of all the components that an entity has. This is only defined by what has been registered with the different component managers in the game.
+		</p>
+	</li>
+	<li>
+		<p>
+            When considering how we should layout the data in the component manager we have two goals:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Given an entity we want to be able to quickly look up the component data for that entity.
+				</p>
+			</li>
+			<li>
+				<p>
+                    We want the component data to be packed tightly in memory for good cache performance.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">class PointMassComponentManager {
+&nbsp;&nbsp;&nbsp;&nbsp;struct InstanceData {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Array&lt;Entity&gt; entity;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Array&lt;float&gt; mass;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Array&lt;Vector3&gt; position;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Array&lt;Vector3&gt; velocity;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Array&lt;Vector3&gt; acceleration;
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;InstanceData _data;
+};
+</code></pre>
+<ul>
+	<li>
+		<p>
+            That works well enough, but it does mean that the data gets stored in five separately allocated memory buffers.
+		</p>
+	</li>
+	<li>
+		<p>
+            I use a different approach. I allocate the entire memory buffer as a single allocation and then just let entity, mass, etc, point to different parts of that buffer:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">class PointMassComponentManager {
+&nbsp;&nbsp;&nbsp;&nbsp;struct InstanceData {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unsigned n;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&lt; Number of used instances.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unsigned allocated;&nbsp;&nbsp;///&lt; Number of allocated instances.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void *buffer;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&lt; Buffer with instance data.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entity *entity;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float *mass;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3 *position;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3 *velocity;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3 *acceleration;
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;InstanceData _data;
+
+&nbsp;&nbsp;&nbsp;&nbsp;void allocate(unsigned sz)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert(sz &gt; _data.n);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InstanceData new_data;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const unsigned bytes = sz * (sizeof(Entity) + sizeof(float) +
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 * sizeof(Vector3));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_data.buffer = _allocator.allocate(bytes);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_data.n = _data.n;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_data.allocated = sz;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_data.entity = (Entity *)(new_data.buffer);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_data.mass = (float *)(new_data.entity + sz);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_data.position = (Vector3 *)(new_data.mass + sz);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_data.velocity = new_data.position + sz;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_data.acceleration = new_data.velocity + sz;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memcpy(new_data.entity, _data.entity, _data.n * sizeof(Entity));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memcpy(new_data.mass, _data.mass, _data.n * sizeof(float));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memcpy(new_data.position, _data.position, _data.n * sizeof(Vector3));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memcpy(new_data.velocity, _data.velocity, _data.n * sizeof(Vector3));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memcpy(new_data.acceleration, _data.acceleration,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_data.n * sizeof(Vector3));
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_allocator.deallocate(_data.buffer);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_data = new_data;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+};
+</code></pre>
+<ul>
+	<li>
+		<p>
+            This avoids any hidden overheads that might exist in the Array class and we only have a single allocation to keep track of. This is better both for the cache and the memory allocation system`.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">
+Array&lt;unsigned&gt; _map;
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Here, the 
+            <code>_map</code>
+            &nbsp;allows us to look up a component index based on the entity index.
+            <br>
+            This is a lot better, because now it is just the _map array that has holes, not the _data array, which means that the holes are fewer and smaller. Still, I would only use this if I was certain that the component was almost universal and that lookups where performance critical. In most cases, I think a hash index is a better approach:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">HashMap&lt;Entity, unsigned&gt; _map;
+</code></pre>
+<ul>
+	<li>
+		<p>
+            This uses less memory and lookups are still pretty fast.
+		</p>
+	</li>
+	<li>
+		<p>
+            Update:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Since the component data is laid out sequentially in memory, writing a function that simulates physics for all entities is simple:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">void simulate(float dt)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;for (unsigned i=0; i&lt;_data.n; ++i) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_data.velocity[i] += _data.acceleration[i] * dt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_data.position[i] += _data.velocity[i] * dt;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    This function traverses memory in-order which gives us good cache performance. It’s also easy to profile, vectorize and parallelize, should the need arise.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Destroy:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When destroying components, we want to make sure that we keep the 
+                    <code>_data</code>
+                    &nbsp;array tightly packed. We can achieve that by moving the last element to the position of the component we want to remove. We must also update the 
+                    <code>_map</code>
+                    &nbsp;entry for the corresponding entity.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">void destroy(unsigned i)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned last = _data.n - 1;
+&nbsp;&nbsp;&nbsp;&nbsp;Entity e = _data.entity[i];
+&nbsp;&nbsp;&nbsp;&nbsp;Entity last_e = _data.entity[last];
+
+&nbsp;&nbsp;&nbsp;&nbsp;_data.entity[i] = _data.entity[last];
+&nbsp;&nbsp;&nbsp;&nbsp;_data.mass[i] = _data.mass[last];
+&nbsp;&nbsp;&nbsp;&nbsp;_data.position[i] = _data.position[last];
+&nbsp;&nbsp;&nbsp;&nbsp;_data.velocity[i] = _data.velocity[last];
+&nbsp;&nbsp;&nbsp;&nbsp;_data.acceleration[i] = _data.acceleration[last];
+
+&nbsp;&nbsp;&nbsp;&nbsp;_map[last_e] =&nbsp;&nbsp;i;
+&nbsp;&nbsp;&nbsp;&nbsp;_map.erase(e);
+
+&nbsp;&nbsp;&nbsp;&nbsp;--_n;
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Another question is how we handle destruction of components when an entity is destroyed. As you may recall, the entity does not have an explicit list of components that it owns. Also, it seems onerous to require of the user of the API to manually destroy the right components when the entity dies.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Components that need to be destroyed immediately (perhaps because they hold external resources) can register a destruction callback with the EntityManager and that callback will be called when the entity is destroyed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    However, for simpler components, like the point mass component, there is nothing that require components to be destroyed at exactly the same time as the entity. We can take advantage of that and use garbage collection to lazily destroy components instead of spending memory and effort on storing callback lists:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">void gc(const EntityManager &em)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned alive_in_row = 0;
+&nbsp;&nbsp;&nbsp;&nbsp;while (_data.n &gt; 0 && alive_in_row &lt; 4) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unsigned i = random_in_range(0, _data.n - 1);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (em.alive(_data.entity[i])) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++alive_in_row;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alive_in_row = 0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destroy(i);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="mach-engine-lets-build-ecs-in-zig" >
+    <s>Mach Engine - Let's Build ECS in Zig</s>
+</h3>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+			<a
+				href="https://devlog.hexops.com/2022/lets-build-ecs-part-1/" 
+				class="external-link" 
+				target="_blank" >
+                pt1
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+			<a
+				href="https://devlog.hexops.com/2022/lets-build-ecs-part-2-databases/" 
+				class="external-link" 
+				target="_blank" >
+                pt2
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Mentioned ECS in Bevy as a great source, but now &quot;further simplified&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            There's a lot of 'method' usage, classes, etc. Not a pretty code.
+		</p>
+	</li>
+	<li>
+		<p>
+            Seems to have used solely archetypes.
+		</p>
+	</li>
+	<li>
+		<p>
+            Zig code is not great to look at; very OOP-ed.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-zig" data-lang="zig">pub const Entities = struct {
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;// Returns a new entity.
+&nbsp;&nbsp;&nbsp;&nbsp;pub fn new(entities: *Entities) !EntityID {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const new_id = entities.counter;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entities.counter += 1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new_id;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;pub inline fn archetypeByID(entities: *Entities, entity: EntityID) *ArchetypeStorage {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const ptr = entities.entities.get(entity).?;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return &entities.archetypes.values()[ptr.archetype_index];
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;pub fn getComponent(entities: *Entities, entity: EntityID, name: []const u8, comptime Component: type) ?Component {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var archetype = entities.archetypeByID(entity);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var component_storage_erased = archetype.components.get(name) orelse return null;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const ptr = entities.entities.get(entity).?;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var component_storage = ErasedComponentStorage.cast(component_storage_erased.ptr, Component);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return component_storage.get(ptr.row_index);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;pub fn setComponent(entities: *Entities, entity: EntityID, name: []const u8, component: anytype) !void {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var archetype = entities.archetypeByID(entity);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const old_hash = archetype.hash;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var have_already = archetype.components.contains(name);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const new_hash = if (have_already) old_hash else old_hash ^ std.hash_map.hashString(name);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var archetype_entry = try entities.archetypes.getOrPut(entities.allocator, new_hash);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!archetype_entry.found_existing) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;archetype_entry.value_ptr.* = ArchetypeStorage{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.allocator = entities.allocator,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.components = .{},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.hash = 0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var new_archetype = archetype_entry.value_ptr;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var column_iter = archetype.components.iterator();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (column_iter.next()) |entry| {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var erased: ErasedComponentStorage = undefined;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry.value_ptr.cloneType(entry.value_ptr.*, &new_archetype.entity_ids.items.len, entities.allocator, &erased) catch ...;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_archetype.components.put(entities.allocator, entry.key_ptr.*, erased) catch ...;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create storage/column for the new component.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const erased = entities.initErasedStorage(&new_archetype.entity_ids.items.len, @TypeOf(component)) catch ...;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_archetype.components.put(entities.allocator, name, erased) catch ...;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_archetype.calculateHash();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var current_archetype_storage = archetype_entry.value_ptr;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (new_hash == old_hash) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const ptr = entities.entities.get(entity).?;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try current_archetype_storage.set(ptr.row_index, name, component);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const new_row = try current_archetype_storage.new(entity);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const old_ptr = entities.entities.get(entity).?;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var column_iter = archetype.components.iterator();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (column_iter.next()) |entry| {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var old_component_storage = entry.value_ptr;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var new_component_storage = current_archetype_storage.components.get(entry.key_ptr.*).?;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_component_storage.copy(new_component_storage.ptr, entities.allocator, new_row, old_ptr.row_index, old_component_storage.ptr) catch |err| {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current_archetype_storage.undoNew();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return err;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current_archetype_storage.entity_ids.items[new_row] = entity;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current_archetype_storage.set(new_row, name, component) catch |err| {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current_archetype_storage.undoNew();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return err;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;};
+};
+
+// Represents the storage for a single type of component within a single type of entity.
+// Database equivalent: a column within a table.
+pub fn ComponentStorage(comptime Component: type) type {
+&nbsp;&nbsp;&nbsp;&nbsp;return struct {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// A reference to the total number of entities with the same type as is being stored here.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total_rows: *usize,
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// The actual densely stored component data.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data: std.ArrayListUnmanaged(Component) = .{},
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const Self = @This();
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pub fn deinit(storage: *Self, allocator: Allocator) void {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage.data.deinit(allocator);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;};
+}
+
+const ptr: Pointer = entities.entities.get(entity_id).?;
+var archetype = entities.archetypes.entries.get(ptr.archetype_index);
+
+test "ecs" {
+&nbsp;&nbsp;&nbsp;&nbsp;...
+
+&nbsp;&nbsp;&nbsp;&nbsp;const Location = struct {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x: f32 = 0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y: f32 = 0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z: f32 = 0,
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;try world.setComponent(player, "Name", "jane"); // add Name component
+&nbsp;&nbsp;&nbsp;&nbsp;try world.setComponent(player, "Location", Location{}); // add Location component
+&nbsp;&nbsp;&nbsp;&nbsp;try world.setComponent(player, "Name", "joe"); // update Name component
+}
+</code></pre>
+<h3
+	id="bevy-engine-ecs" >
+    <s>Bevy Engine - ECS</s>
+</h3>
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            https://bevy.org/learn/quick-start/getting-started/ecs/
+		</p>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            
+			<a
+				href="https://github.com/bevyengine/bevy/blob/v0.14.0/examples/ecs/ecs_guide.rs" 
+				class="external-link" 
+				target="_blank" >
+                ECS demo in Bevy
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            it's terrible trying to understand anything inside a rust code....
+		</p>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

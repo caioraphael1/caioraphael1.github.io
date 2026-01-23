@@ -1,0 +1,1001 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.75003.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Data Oriented Design
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-criticisms-of-oop.html" >
+                                Criticisms of OOP
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-philosophies.html" >
+                                Philosophies
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Data Oriented Design - ECS
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-discussion.html" >
+                                Discussion
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-critiques.html" >
+                                Critiques
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-sources.html" >
+                                Sources
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-entity.html" >
+                                Entity
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-component.html" >
+                                Component
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#storage-models" >
+                                        Storage Models
+									</a>
+									<ul>
+										<li>
+											<a
+												href="#sparse-set" >
+                                                Sparse Set
+											</a>
+										</li>
+										<li>
+											<a
+												href="#archetypes" >
+                                                Archetypes
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-system.html" >
+                                System
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-n-greatern-relationship.html" >
+                                Design: N-&gt;N relationship
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-design-discarded-ideas.html" >
+                                Design: Discarded Ideas
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Data Oriented Design - COP
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Data Oriented Design - COP/Data Oriented Design - COP-cop-compression-oriented-programming-mega-struct.html" >
+                                COP (Compression-Oriented Programming) / Mega-Struct
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Other Design Patterns
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-definition.html" >
+                                Definition
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-behavioral-patterns.html" >
+                                Behavioral Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-creational-patterns.html" >
+                                Creational Patterns
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Other Design Patterns/Other Design Patterns-structural-patterns.html" >
+                                Structural Patterns
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Concepts and Terminology
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-terminology.html" >
+                                Terminology
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Concepts and Terminology-concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Rules of thumb - Laws - Guidelines and Principles
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Rules of thumb - Laws - Guidelines and Principles/Rules of thumb - Laws - Guidelines and Principles-rules-of-thumb.html" >
+                                Rules of Thumb
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Paradigms
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-procedural.html" >
+                                Procedural
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-functional.html" >
+                                Functional
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Paradigms-oop-object-oriented-programming.html" >
+                                OOP (Object-Oriented Programming)
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Production Methodologies
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-design-process.html" >
+                                Design Process
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-apps.html" >
+                                Apps
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-software-testing.html" >
+                                Software Testing
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Design Patterns/Production Methodologies/Production Methodologies-methodologies.html" >
+                                Methodologies
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Component
+						</h1>
+						<p>
+							<time
+								datetime="2025-03-11" >
+                                🕒 Created: 2025-03-11
+							</time>
+							<time
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<ul>
+	<li>
+		<p>
+            A truly component based object is nothing more than the sum of its parts. This means the definition of a component based object is also nothing more than an inventory with some construction arguments. This object or definition agnostic approach makes refactoring and redesigning a much simpler exercise.
+		</p>
+	</li>
+	<li>
+		<p>
+            When you introduce component based entities, you have an opportunity to turn the idea of how you define an object on its head. The normal approach to defining an object in object-oriented design is to name it, then fill out the details as and when they become necessary. For example, your car object is defined as a Car,&nbsp;&nbsp;if not extending Vehicle, then at least including some data about what physics and meshes are needed, with construction arguments for wheels and body shell model assets etc, possibly changing class dependent on whether it's an AI or player car. In component-oriented design, objects aren't so rigidly defined, and don't so much become defined after they are named, as much as a definition is selected or compiled, and then tagged with a name if necessary. For example, instancing a physics component with four-wheel physics,&nbsp;&nbsp;instancing a renderable for each part (wheels,&nbsp;&nbsp;shell, suspension) adding an AI or player component to control the inputs for the physics component, all adds up to something which we can tag as a Car, or leave as is and it becomes something implicit rather than explicit and immutable.
+		</p>
+	</li>
+</ul>
+<h3
+	id="storage-models" >
+    Storage Models
+</h3>
+<ul>
+	<li>
+		<p>
+			<em>
+                Problem
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+                <img src="assets/2026-01-04_17-48-21.png" width="350" >
+
+			</li>
+			<li>
+				<p>
+                    In this case, it's used an 
+                    <code>union</code>
+                    , so the data can be either a value or nil.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There are a lot of empty spots inside those vectors, causing memory bloat; the data is not tightly packed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Frameworks
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Entt uses a sparse set ECS, Flecs uses archetypes&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<p
+	class="table" >
+    | Strategy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Iteration | Removal | Complexity |
+    <br>
+    | -------------- | --------- | ------- | ---------- |
+    <br>
+    | Sparse Set&nbsp;&nbsp;&nbsp;&nbsp; | Fast&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| O(1)&nbsp;&nbsp;&nbsp;&nbsp;| Medium&nbsp;&nbsp;&nbsp;&nbsp; |
+    <br>
+    | Archetype&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Fastest&nbsp;&nbsp; | Medium&nbsp;&nbsp;| High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+</p>
+<h4
+	id="sparse-set" >
+    Sparse Set
+</h4>
+<ul>
+	<li>
+		<p>
+            Sparse-sets organize data by component type (one dense array per component + a sparse entity→index table).
+		</p>
+	</li>
+	<li>
+		<p>
+            Make structural changes cheap and queries flexible.
+		</p>
+	</li>
+	<li>
+		<p>
+            Manage components individually, using a dense array for each component type and a sparse array for existence checks. It's generally better in scenarios where components are added or removed frequently because you don't need to move all components an entity has, but iteration is more expensive as it requires checks to ensure each entity has the requested components.
+		</p>
+	</li>
+	<li>
+		<p>
+            Splits one list into a Sparse List and a Dense List.
+		</p>
+	</li>
+	<li>
+		<p>
+            We don't care about the cache friendliness of the Sparse List, only for the Dense List.
+		</p>
+	</li>
+	<li>
+		<p>
+            Dense List:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Contains the actual component data.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Sparse List:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It's what maps its Entity ID to its corresponding Dense List index.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-01-08_09-05-11.png" width="500" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-01-04_18-02-35.png" width="300" >
+            .
+		</p>
+	</li>
+	<li>
+        <img src="assets/2026-01-07_13-59-07.png" width="600" >
+
+	</li>
+	<li>
+		<p>
+            It's also possible to use the Sparse List as a HashMap:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/2026-01-04_18-03-02.png" width="300" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    This has trade-offs in performance, depending on the amount of entities there are stored.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=yyZMoE1FAJ0" 
+						class="external-link" 
+						target="_blank" >
+                        Cient video
+					</a>
+                    : &quot;For what I've seem, the HashMap is usually faster for fewer entities (100), but a sparse list with Pagination is faster with a higher entity count (100k)&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">Component :: struct($T: typeid) {
+&nbsp;&nbsp;&nbsp;&nbsp;sparse: [COMPONENT_MAX_ENTITIES]Maybe(u32), // Maybe(dense_idx) = sparse[ent]
+&nbsp;&nbsp;&nbsp;&nbsp;dense:&nbsp;&nbsp;[dynamic]Entity_ID,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // ent = dense[dense_idx]
+&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;&nbsp; [dynamic]T,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // T = data[dense_idx]
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<em>
+                Get
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>O(1)</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/2026-01-08_09-06-12.png" width="400" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Add
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>O(1)</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/2026-01-08_09-06-00.png" width="400" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Remove
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>O(1)</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/2026-01-08_09-10-22.png" width="400" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Swap the element we want to delete in the Dense List, with the last element of the Dense List.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Update the Sparse List, so the swapped elements from the Dense List point to the correct elements.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The deleted element from the Dense List should be set to a nil value, so it doesn't point to anything.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Pop the Dense List.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                For very large entity numbers
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Pagination
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The Sparse Set can be divided into a &quot;array of arrays&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/2026-01-08_09-12-38.png" width="400" >
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/2026-01-08_09-14-29.png" width="400" >
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;Allocate pages only when needed&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Entity ID Recycling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generation counter.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Bitmask
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Only answers “is the component present?”; it does not give you the 
+                    <code>dense_idx</code>
+                    &nbsp;you need to locate the component 
+                    <code>T</code>
+                    &nbsp;in your data array.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Speeding multi-component queries
+			</strong>
+            :
+		</p>
+		<ol>
+			<li>
+				<p>
+                    Archetypes is a way to get the speed up, at its costs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Iterate the best order.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Always drive the query with the smallest component set (sparse-set dense array with fewest entries).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Complexity: O(min_set_size) + O(1) membership checks for each candidate.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Cheap, no extra memory, often good enough if one component is small.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Etc, do it later.
+				</p>
+			</li>
+		</ol>
+	</li>
+</ul>
+<h4
+	id="archetypes" >
+    Archetypes
+</h4>
+<ul>
+	<li>
+		<p>
+            An archetype is a grouping of entities that all share the exact same set of component types. Each archetype stores component data in contiguous, component-oriented arrays so that iteration over entities that have a particular set of components is very fast.
+		</p>
+	</li>
+	<li>
+		<p>
+            Maximize per-system data locality and remove membership checks at the cost of entity migration bookkeeping.
+		</p>
+	</li>
+	<li>
+		<p>
+            Archetypes seems like a specialization, just like oop is a specialization, so it comes at a cost of less flexibility.
+		</p>
+	</li>
+	<li>
+		<p>
+            Group entities with identical sets of components together in memory, allowing for contiguous memory storage and fast access patterns during iteration.
+		</p>
+	</li>
+	<li>
+		<p>
+            You don't need to check whether a given entity has certain components on each iteration.
+		</p>
+	</li>
+	<li>
+		<p>
+            Adding or removing components is generally more expensive than with sparse sets, as you need to transfer all components for an entity from one pool to another.
+		</p>
+	</li>
+	<li>
+		<p>
+            A chosen set of components that an entity of a certain type will have
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-01-08_14-40-19.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Each archetype has one contiguous array per component type. Rows are entities.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">Entities:&nbsp;&nbsp;&nbsp;&nbsp; Pos.x&nbsp;&nbsp;Pos.y&nbsp;&nbsp;| Vel.x&nbsp;&nbsp;Vel.y&nbsp;&nbsp;| Health.hp
+Entity 42&nbsp;&nbsp;&nbsp;&nbsp; [ 1.2 ] [ 3.4 ]| [ 0.1 ] [ 0.0 ]| [ 100 ]
+Entity 73&nbsp;&nbsp;&nbsp;&nbsp; [ 5.6 ] [ 2.2 ]| [ -1. ] [ 0.3 ]| [&nbsp;&nbsp;80 ]
+Entity 11&nbsp;&nbsp;&nbsp;&nbsp; [ ... ] [ ... ]| [ ... ] [ ... ]| [ 120 ]
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <img src="assets/2026-01-05_19-19-18.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-01-08_14-36-17.png" width="400" >
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=71RSWVyOMEY" 
+						class="external-link" 
+						target="_blank" >
+                        ECS Archetypes explanation {5:09}
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Archetypes are created lazily, else we run into a combinatorial of creating new tables for each theoretical component combination, even tho that combination might not be useful as an entity type in the world.
+		</p>
+	</li>
+	<li>
+		<p>
+            Because every entity in a table must have every component, there can't be any gaps.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Problem
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If we want to loop over everything with a position and velocity components, we would have to loop over 2 different tables.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Solution:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <img src="assets/2026-01-08_14-41-07.png" width="500" >
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Take the intersection of these arrays, giving us the final set of archetypes, where each archetype contains all of the requested components.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Add/Remove
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Move entity from one archetype to another (copy component values to new archetype arrays, remove from old archetype).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                In Unity
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It's not a container for anything. It doesn't contain the entity or any data associated with them. It's just an unique identifier.
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;Unique combination of components types for an entity&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+                    We can have multiple archetypes for an entity query.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.75003.js" >
+		</script>
+	</body>
+</html>

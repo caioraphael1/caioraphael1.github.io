@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.72761.css" >
+			href="/static/studies.74277.css" >
 	</head>
 	<body>
 		<aside
@@ -75,35 +75,25 @@ window.MathJax = {
 			</a>
 			<nav>
 				<details
->
+					open="">
 					<summary>
                         Databases - SQL - Relational
 					</summary>
 					<ul>
 						<li>
 							<a
-								class="" 
-								href="/studies/Databases/Databases - SQL - Relational/prototyping.html" >
-                                Prototyping
+								class="active" 
+								href="/studies/Databases/Databases - SQL - Relational/concepts.html" >
+                                Concepts
 							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Databases/Databases - SQL - Relational/general.html" >
-                                General
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Databases/Databases - SQL - Relational/primary-key.html" >
-                                Primary Key
-							</a>
+							<ul>
+								<li>
+									<a
+										href="#primary-key" >
+                                        Primary Key
+									</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 					<ul>
@@ -128,7 +118,7 @@ window.MathJax = {
 				<details
 >
 					<summary>
-                        Databases - MongoDB
+                        Databases - MongoDB - Document Oriented
 					</summary>
 					<ul>
 						<li>
@@ -136,6 +126,15 @@ window.MathJax = {
 								class="" 
 								href="/studies/Databases/about.html" >
                                 About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Databases/operations.html" >
+                                Operations
 							</a>
 						</li>
 					</ul>
@@ -150,78 +149,25 @@ window.MathJax = {
 					</ul>
 				</details>
 				<details
-					open="">
-					<summary>
-                        Databases - Document Oriented
-					</summary>
-					<ul>
-						<li>
-							<a
-								class="active" 
-								href="/studies/Databases/document-oriented.html" >
-                                Document Oriented
-							</a>
-							<ul>
-								<li>
-									<a
-										href="#mongodb" >
-                                        MongoDB
-									</a>
-									<ul>
-									</ul>
-								</li>
-								<li>
-									<a
-										href="#firestore" >
-                                        Firestore
-									</a>
-									<ul>
-									</ul>
-								</li>
-								<li>
-									<a
-										href="#couchdb" >
-                                        CouchDB
-									</a>
-									<ul>
-									</ul>
-								</li>
-								<li>
-									<a
-										href="#cassandra" >
-                                        Cassandra
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</details>
-				<details
 >
 					<summary>
-                        Databases - Object Oriented
+                        Databases - Object Oriented - ORMs
 					</summary>
 					<ul>
 						<li>
 							<a
 								class="" 
-								href="/studies/Databases/about.html" >
-                                About
+								href="/studies/Databases/object-oriented.html" >
+                                Object Oriented
 							</a>
 						</li>
 					</ul>
-				</details>
-				<details
->
-					<summary>
-                        Databases - ORMs
-					</summary>
 					<ul>
 						<li>
 							<a
 								class="" 
-								href="/studies/Databases/about.html" >
-                                About
+								href="/studies/Databases/orm-object-relational-mapping.html" >
+                                ORM (Object-Relational Mapping)
 							</a>
 						</li>
 					</ul>
@@ -252,94 +198,54 @@ window.MathJax = {
 					id="note-article" >
 					<header>
 						<h1>
-                            Document Oriented
+                            Concepts
 						</h1>
 						<p>
 							<time
-								datetime="2024-12-11" >
-                                🕒 Created: 2024-12-11
+								datetime="2024-12-13" >
+                                🕒 Created: 2024-12-13
 							</time>
 							<time
-								datetime="2026-01-21" >
-                                | Updated: 2026-01-21
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
 							</time>
 						</p>
 					</header>
 					<div
 						id="note-content" >
-<h3
-	id="mongodb" >
-    MongoDB
-</h3>
 <ul>
 	<li>
 		<p>
-            <a href="/studies/Databases/Databases - MongoDB.html#cli">
-            Databases - MongoDB
-            </a>
+            <img src="assets/image_20241213002633.png" width="575" >
             .
 		</p>
 	</li>
 </ul>
 <h3
-	id="firestore" >
-    Firestore
+	id="primary-key" >
+    Primary Key
 </h3>
 <ul>
 	<li>
 		<p>
-            From Google.
+            All tables need a key. The key is often used to order the sorting of the table in physical media, to help optimize queries. For this reason, the key needs to be unique, but as small as possible. You can think of the key as the key in a map or dictionary.
 		</p>
 	</li>
 	<li>
 		<p>
-            It's part of the Firebase kit, from Google.
+            Because of the uniqueness rule, every table has an implicit key because the table can use the combination of all the columns at once to identify each row uniquely. That is, the key, or the unique lookup, which is the primary key for a table, can be defined as the totality of the whole row. If the row is unique, then the primary key is unique. Normally, we try to avoid using the whole row as the primary key, but sometimes, it's actually our only choice.
 		</p>
 	</li>
 	<li>
 		<p>
-			<a
-				href="https://www.youtube.com/watch?v=jm66TSlVtcc" 
-				class="external-link" 
-				target="_blank" >
-                Tutorial
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    &quot;It's important to have consistent names accross objects, to properly query them later&quot;.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            :/
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="couchdb" >
-    CouchDB
-</h3>
-<ul>
-	<li>
-		<p>
-            .
+            As a bit of an aside, the idea that a row in a database is also the key can be a core concept worth spending time thinking about.&nbsp;&nbsp;It is as if a database table is a very sparse set from an extremely large domain of possible values. This can be useful because you may notice that under some circumstances, the set of possible values isn't very large, and your table can be more easily defined as a bit set.
 		</p>
 	</li>
-</ul>
-<h3
-	id="cassandra" >
-    Cassandra
-</h3>
-<ul>
 	<li>
 		<p>
+			<strong>
+                The column that seems more likely to be unique will also be the column you can use as the primary key
+			</strong>
             .
 		</p>
 	</li>
@@ -363,7 +269,7 @@ window.MathJax = {
 			</footer>
 		</div>
 		<script
-			src="/static/studies.72761.js" >
+			src="/static/studies.74277.js" >
 		</script>
 	</body>
 </html>

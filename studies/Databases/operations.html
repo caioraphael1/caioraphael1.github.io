@@ -1,0 +1,933 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#ffffff" 
+			media="(prefers-color-scheme: light)" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.74277.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar" >
+			<a
+				href="/" 
+				class="site-logo" >
+                Caio Raphael
+			</a>
+			<nav>
+				<details
+>
+					<summary>
+                        Databases - SQL - Relational
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Databases/Databases - SQL - Relational/concepts.html" >
+                                Concepts
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Databases/Databases - SQL - Relational/normalization.html" >
+                                Normalization
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Databases/Databases - SQL - Relational/database-platforms.html" >
+                                Database Platforms
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+					open="">
+					<summary>
+                        Databases - MongoDB - Document Oriented
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Databases/about.html" >
+                                About
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="active" 
+								href="/studies/Databases/operations.html" >
+                                Operations
+							</a>
+							<ul>
+								<li>
+									<a
+										href="#cli" >
+                                        CLI
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#query-filters" >
+                                        Query / Filters
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#query-operators" >
+                                        Query Operators
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#update-operators" >
+                                        Update Operators
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#schema-without-mongoose" >
+                                        Schema without Mongoose
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Databases/godot-driver.html" >
+                                Godot Driver
+							</a>
+						</li>
+					</ul>
+				</details>
+				<details
+>
+					<summary>
+                        Databases - Object Oriented - ORMs
+					</summary>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Databases/object-oriented.html" >
+                                Object Oriented
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Databases/orm-object-relational-mapping.html" >
+                                ORM (Object-Relational Mapping)
+							</a>
+						</li>
+					</ul>
+				</details>
+			</nav>
+		</aside>
+		<div
+			id="central-wrapper" >
+			<a
+				href="/" 
+				class="icon-home" >
+
+                <svg version="1.1" id="Capa_1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.021 299.021" xml:space="preserve" style="color: whitesmoke;">
+                    <g>
+                        <g>
+                            <path d="M292.866,254.432c-2.288,0-4.443-1.285-5.5-3.399c-0.354-0.684-28.541-52.949-146.169-54.727v51.977
+                                c0,2.342-1.333,4.48-3.432,5.513c-2.096,1.033-4.594,0.793-6.461-0.63L2.417,154.392C0.898,153.227,0,151.425,0,149.516
+                                c0-1.919,0.898-3.72,2.417-4.888l128.893-98.77c1.87-1.426,4.365-1.667,6.461-0.639c2.099,1.026,3.432,3.173,3.432,5.509v54.776
+                                c3.111-0.198,7.164-0.37,11.947-0.37c43.861,0,145.871,13.952,145.871,143.136c0,2.858-1.964,5.344-4.75,5.993
+                                C293.802,254.384,293.34,254.432,292.866,254.432z"></path>
+                        </g>
+                    </g>
+                </svg>
+                    
+			</a>
+			<main>
+				<article
+					id="note-article" >
+					<header>
+						<h1>
+                            Operations
+						</h1>
+						<p>
+							<time
+								datetime="2024-12-11" >
+                                🕒 Created: 2024-12-11
+							</time>
+							<time
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
+							</time>
+						</p>
+					</header>
+					<div
+						id="note-content" >
+<h3
+	id="cli" >
+    CLI
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=bJSj1a84I20&list=PL4cUxeGkcC9h77dJ-QJlwGlZlTd4ecZOA&index=4" 
+				class="external-link" 
+				target="_blank" >
+                Tutorial using MongoDB Compass {Playlist with 21 videos (4 to 14)}
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The first 3 videos are unnecessary.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Videos 5 to 14 talk about CLI.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Videos 14 to 23 are about a ~primitive connection with Node.js and creation of an HTTP API.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Video 19 explains about Postman, to test HTTP calls.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Video 23 talks about &quot;pagination&quot;, referring to the classic 'queries' of the URL.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>mongosh</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Enters the MongoDB Shell, if you are using an external shell.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>help</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Shows all MongoDB Shell commands, with explanations.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>show dbs</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns all dbs.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>use bookstore</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Changes to the bookstore db.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the current db.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>show collections</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns all collections within the current db.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the books collection, within the current db.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.insertOne({titulo: "Cor da magia", autor: "Terry", rating: 9})</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Adds a new document within the Books collection of the current db.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.insertMany(_array_de_dict_)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Adds several new documents within the Books collection of the current db.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.deleteOne(_filtro_)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Removes a document, identified by the filter.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ideally, 
+                    <code>{_id: ObjectId("_numero_")}</code>
+                    &nbsp;is used, to ensure that the correct document is being deleted.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.deleteMany({autor: "Terry"})</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Deletes multiple documents, identified by the filter.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.updateOne({_id: ObjectId(_numero_)}, {$set: {rating: 8, paginas: 200}})</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Update Operators are used.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Updates the rating and the number of pages of the object identified by the ID.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.updateMany({autor: "Terry"}, {$inc: {paginas: 5}})</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Update Operators are used.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Increases the number of pages of the objects identified by the filter.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.find(_filtro_opcional_)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A 
+					<strong>
+                        filter
+					</strong>
+                    &nbsp;can be passed as an optional parameter, as explained in the session below.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Within the Shell:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Returns the first 20 documents within the collection.
+						</p>
+					</li>
+					<li>
+						<p>
+                            When typing 
+                            <code>it</code>
+                            , the next 20 documents are displayed.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.findOne(_filtro_)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the first entry found, obtained by the filter.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.find().count()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns a number with the amount of entries found by 
+                    <code>.find()</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.find().limit(3)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns only 3 entries found by 
+                    <code>.find()</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>db.books.find().sort({titulo: 1})</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Format:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            { entry: 1 or -1 }.
+						</p>
+					</li>
+					<li>
+						<p>
+                            1:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Ascending.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            -1:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Descending.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Returns the entries found by 
+                    <code>.find()</code>
+                    , sorted in Ascending order.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="query-filters" >
+    Query / Filters
+</h3>
+<ul>
+	<li>
+		<p>
+            In MongoDB Compass:
+		</p>
+	</li>
+	<li>
+		<p>
+            First argument: 
+			<em>
+                Filter
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>{rating: 9}</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Only the documents where the rating is 9.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>{genero: "magic"}</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Returns the documents that contain the genre &quot;magic&quot; within the 'genre' array.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>{genero: ["magic"]}</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Returns the documents that contain ONLY the genre &quot;magic&quot; within the 'genre' array.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Second argument: 
+			<em>
+                Project
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Format:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            { entry: 1 or 0 }.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The '_id' always comes along, unless you use 
+                    <code>{id: 0}</code>
+                    &nbsp;in the second parameter.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>{autor: "Terry"}, {titulo: 1}</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Only the documents where the 'author' is Terry, displaying only the 'title' entries, with the _id.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>{}, {titulo: 1, _id: 0}</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            All documents, displaying only the title of each document, without the _id.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="query-operators" >
+    Query Operators
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.mongodb.com/pt-br/docs/manual/reference/operator/query/" 
+				class="external-link" 
+				target="_blank" >
+                List with all Query Operators
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                greater than
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>db.books.find({rating: {$gt: 7}})</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Returns all books with a rating greater than 7, without including 7.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                or
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>db.books.find({$or: [{rating: 7}, {rating: 9}]})</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Returns all books that have a rating equal to 7 or 9.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                in
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Super similar to 
+					<strong>
+                        or
+					</strong>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>db.books.find({rating: {$in: [7, 8, 9]}})</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Returns all books that have a rating equal to 7, 8 or 9.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                not in
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>db.books.find({rating: {$nin: [7, 8, 9]}})</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Returns all books that have a rating different from 7, 8 or 9.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="update-operators" >
+    Update Operators
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.mongodb.com/pt-br/docs/manual/reference/operator/update/" 
+				class="external-link" 
+				target="_blank" >
+                List with all Update Operators
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                push
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Adds an entry.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                pull
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Removes an entry.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="schema-without-mongoose" >
+    Schema without Mongoose
+</h3>
+<ul>
+	<li>
+		<p>
+            In MongoDB, schemas are not required because it is 
+			<em>
+                schema-less
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            However, you can implement document validations through the 
+			<em>
+                JSON schema validation
+			</em>
+            &nbsp;feature.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-js" data-lang="js">db.createCollection("users", {
+&nbsp;&nbsp;validator: {
+&nbsp;&nbsp;&nbsp;&nbsp;$jsonSchema: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsonType: "object",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required: ["name", "email", "password"],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsonType: "string",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description: "The user's name must be a string and is required."
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsonType: "string",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pattern: "^.+@.+\\..+$",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description: "The email must be a valid string and is required."
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsonType: "string",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minLength: 6,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description: "The password must be at least 6 characters long."
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createdAt: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsonType: "date",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description: "Creation date, default is the current date."
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+});
+</code></pre>
+
+					</div>
+					<footer
+						id="previous-next" >
+					</footer>
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built by and copyright
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-23 🚀
+			</footer>
+		</div>
+		<script
+			src="/static/studies.74277.js" >
+		</script>
+	</body>
+</html>

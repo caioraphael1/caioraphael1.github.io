@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.89309.css" >
+			href="/static/studies.90371.css" >
 	</head>
 	<body>
 		<aside
@@ -83,17 +83,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Godot Engine/Godot/Godot-info.html" >
-                                Info
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								class="" 
-								href="/studies/Godot Engine/Godot/Godot-game-style.html" >
-                                Game Style
+								href="/studies/Godot Engine/Godot/Godot-game-styles-reference.html" >
+                                Game Styles Reference
 							</a>
 						</li>
 					</ul>
@@ -114,6 +105,52 @@ window.MathJax = {
                                 Geometry
 							</a>
 							<ul>
+								<li>
+									<a
+										href="#vector-rotations" >
+                                        Vector rotations
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#mathematical-manipulations" >
+                                        Mathematical manipulations
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#node3d-rotations" >
+                                        Node3D: Rotations
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#node3d-transform" >
+                                        Node3D Transform
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#node2d-rotations-and-translations" >
+                                        Node2D Rotations and Translations
+									</a>
+									<ul>
+									</ul>
+								</li>
+								<li>
+									<a
+										href="#csg" >
+                                        CSG
+									</a>
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -298,8 +335,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-print-strings-and-debug.html" >
-                                Print, Strings and Debug
+								href="/studies/Godot Engine/Godot - GDScript/Godot - GDScript-basic.html" >
+                                Basic
 							</a>
 						</li>
 					</ul>
@@ -572,10 +609,10 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
+<h3
 	id="vector-rotations" >
     Vector rotations
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -592,10 +629,10 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
+<h3
 	id="mathematical-manipulations" >
     Mathematical manipulations
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -640,10 +677,10 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
+<h3
 	id="node3d-rotations" >
     Node3D: Rotations
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -673,10 +710,10 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
+<h3
 	id="node3d-transform" >
     Node3D Transform
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -685,7 +722,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    <code>var xform = Transform()</code>
+                    <code>var trans = Transform()</code>
 				</p>
 			</li>
 		</ul>
@@ -707,7 +744,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    <code>xform.basis = Basis()</code>
+                    <code>trans.basis = Basis()</code>
 				</p>
 			</li>
 		</ul>
@@ -719,7 +756,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    <code>xform = xform.orthonormalized()</code>
+                    <code>trans = trans.orthonormalized()</code>
 				</p>
 			</li>
 		</ul>
@@ -731,7 +768,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    <code>xform = xform.rotated(_axis, _ang_rad)</code>
+                    <code>trans = trans.rotated(_axis, _ang_rad)</code>
 				</p>
 			</li>
 		</ul>
@@ -743,7 +780,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    <code>xform = xform.rotated_local(_axis, _ang_rad)</code>
+                    <code>trans = trans.rotated_local(_axis, _ang_rad)</code>
 				</p>
 			</li>
 		</ul>
@@ -755,7 +792,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    <code>xform = xform.translated(_offset)</code>
+                    <code>trans = trans.translated(_offset)</code>
 				</p>
 			</li>
 		</ul>
@@ -767,23 +804,23 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    <code>xform = xform.translated_local(_offset)</code>
+                    <code>trans = trans.translated_local(_offset)</code>
 				</p>
 			</li>
 		</ul>
 	</li>
 </ul>
-<h5
+<h3
 	id="node2d-rotations-and-translations" >
     Node2D Rotations and Translations
-</h5>
+</h3>
 <pre><code class="language-gdscript" data-lang="gdscript">rotation += (PI/16 + get_rotation()) *&nbsp;&nbsp;delta
 translate(Vector2(0, G/2))
 </code></pre>
-<h5
+<h3
 	id="csg" >
     CSG
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -815,7 +852,7 @@ translate(Vector2(0, G/2))
 			</footer>
 		</div>
 		<script
-			src="/static/studies.89309.js" >
+			src="/static/studies.90371.js" >
 		</script>
 	</body>
 </html>

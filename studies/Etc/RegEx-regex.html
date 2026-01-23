@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.90371.css" >
+			href="/static/studies.93113.css" >
 	</head>
 	<body>
 		<aside
@@ -92,8 +92,8 @@ window.MathJax = {
 						<li>
 							<a
 								class="" 
-								href="/studies/Etc/Git/Git-etc.html" >
-                                Etc
+								href="/studies/Etc/Git/Git-concepts.html" >
+                                Concepts
 							</a>
 						</li>
 					</ul>
@@ -166,13 +166,20 @@ window.MathJax = {
 								</li>
 								<li>
 									<a
-										href="#about" >
-                                        About
+										href="#regex-generators" >
+                                        RegEx Generators
 									</a>
-									<ul>
-									</ul>
 								</li>
 							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Etc/RegEx-syntax.html" >
+                                Syntax
+							</a>
 						</li>
 					</ul>
 				</details>
@@ -225,13 +232,20 @@ window.MathJax = {
                                 🕒 Created: 2025-01-02
 							</time>
 							<time
-								datetime="2026-01-21" >
-                                | Updated: 2026-01-21
+								datetime="2026-01-23" >
+                                | Updated: 2026-01-23
 							</time>
 						</p>
 					</header>
 					<div
 						id="note-content" >
+<ul>
+	<li>
+		<p>
+            RegEx =&gt; Regular Expressions.
+		</p>
+	</li>
+</ul>
 <h3
 	id="regex-visualizers" >
     RegEx Visualizers
@@ -260,10 +274,10 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
-	id="generators" >
-    Generators
-</h5>
+<h3
+	id="regex-generators" >
+    RegEx Generators
+</h3>
 <ul>
 	<li>
 		<p>
@@ -281,543 +295,6 @@ window.MathJax = {
 				<p>
                     For simple captures.
 				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="about" >
-    About
-</h3>
-<ul>
-	<li>
-		<p>
-            RegEx =&gt; Regular Expressions.
-		</p>
-	</li>
-</ul>
-<h5
-	id="specials" >
-    Specials
-</h5>
-<ul>
-	<li>
-		<p>
-            If you want them literally, prefix with 
-            <code>\</code>
-            .
-		</p>
-	</li>
-</ul>
-<pre><code class="language-txt" data-lang="txt">.^$*+?{}[]\|()
-</code></pre>
-<h5
-	id="sets" >
-    Sets
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>[]</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Match a character within a set.
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>[abc]</code>
-                    &nbsp;→ one of a, b, or c
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>[a-z]</code>
-                    &nbsp;→ any lowercase letter
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>[^...]</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>[^\d]</code>
-                    &nbsp;→ anything except digits
-				</p>
-			</li>
-			<li>
-				<p>
-                    Match a character 
-					<strong>
-                        not
-					</strong>
-                    &nbsp;within a set.
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>[^a-z]</code>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            any character not a lowercase letter
-						</p>
-					</li>
-					<li>
-						<p>
-                            Matches, for example: 
-                            <code>A</code>
-                            , 
-                            <code>1</code>
-                            , 
-                            <code>#</code>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    <code>[^0-9]</code>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Any non-digit
-						</p>
-					</li>
-					<li>
-						<p>
-                            Matches, for example: 
-                            <code>a</code>
-                            , 
-                            <code>!</code>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    <code>[^\]]</code>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Any char except 
-                            <code>]</code>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    <code>[^\]|]</code>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Any char except 
-                            <code>]</code>
-                            &nbsp;or 
-                            <code>|</code>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="quantifiers" >
-    Quantifiers
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>*</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    0 or more
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>+</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    1 or more
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>?</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    0 or 1
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>{n}</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    exactly n
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>{n,}</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    n or more
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>{n,m}</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    between n and m
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="group" >
-    Group
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Capture
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>( )</code>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            capture a portion of the match.
-						</p>
-					</li>
-				</ul>
-<pre><code class="language-txt" data-lang="txt">(hot)(dog)
-</code></pre>
-				<ul>
-					<li>
-						<p>
-                            Group 1 = 
-                            <code>hot</code>
-                            ; Group 2 = 
-                            <code>dog</code>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Non-capturing
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    no memory.
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>(?:...)</code>
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="alternation" >
-    Alternation
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>|</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>cat|dog</code>
-				</p>
-			</li>
-			<li>
-				<p>
-                    cat or dog.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="shorthands" >
-    Shorthands
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>\d</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Digits.
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>[0-9]</code>
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>\D</code>
-                    &nbsp;negated
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>\s</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Whitespaces.
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>[\t\n\f\r ]</code>
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>\S</code>
-                    &nbsp;negated
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>\w</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Word chars.
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>[0-9A-Z_a-z]</code>
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>\W</code>
-                    &nbsp;negated.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>.</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Any char, except newline.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>.*</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Any char.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>.*?</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Any char, non-greedy. Shortest match.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="anchors" >
-    Anchors
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>^</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Start of string.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>$</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    End of string.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>\b</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Word boundary.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="lookaround-syntax" >
-    Lookaround Syntax
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>(?=...)</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    lookahead (must be followed by)
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>(?!...)</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    negative lookahead (must not be followed by)
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>(?&lt;=...)</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    lookbehind (must be preceded by)
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>(?&lt;!...)</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    negative lookbehind
-				</p>
-			</li>
-			<li>
-				<p>
-                    <code>(?&lt;!!)\[\[</code>
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Ensures there is no 
-                            <code>!</code>
-                            &nbsp;immediately before the 
-                            <code>[[</code>
-                            &nbsp;pattern.
-						</p>
-					</li>
-				</ul>
 			</li>
 		</ul>
 	</li>
@@ -841,7 +318,7 @@ window.MathJax = {
 			</footer>
 		</div>
 		<script
-			src="/static/studies.90371.js" >
+			src="/static/studies.93113.js" >
 		</script>
 	</body>
 </html>

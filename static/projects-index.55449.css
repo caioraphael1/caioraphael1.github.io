@@ -328,9 +328,9 @@ pre, code {
 
 .projects-grid {
     display: flex;
+    flex-direction: column;
+    
     gap: 2.8rem;
-    justify-content: center;
-    /* padding: 1rem 0 2rem; */
 }
 
 
@@ -341,49 +341,36 @@ pre, code {
     .project-card {
         display: flex;
         flex-direction: column;
-        padding: 2.5rem 3rem 3rem;
+        padding: 3rem;
         /* min-height: 800px; */
 
         border-radius: var(--border-radius);
         background: var(--dark-transparent);
         border: 1px solid var(--darker);
-        /* transition:
-            transform 0.25s ease,
-            background-color 0.25s ease,
-            border-color 0.25s ease; */
     }
 
-    /* .project-card:hover {
-        transform: translateY(-6px);
-        background: var(--dark-hover);
-        border-color: var(--highlight-hover-bg);
-    } */
-
-    /* Keyboard accessibility */
-    /* .project-card:focus-visible {
-        outline: 2px solid var(--highlight-hover-bg);
-        outline-offset: 4px;
-    } */
-
     .project-name {
-        text-align: center;
+        text-align: initial;
         margin-bottom: 0.4rem;
 
         font-size: 2rem;
         font-weight: 600;
         color: var(--highlight-bg);
 
-        transition: color 0.25s ease;
+        /* opt1 */
+        /* border-bottom: 1px solid #f6cf3482;
+        padding-bottom: 0.25rem; */
+
+        /* opt2 */
+        /* text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-color: #f6cf34c4;
+        text-decoration-thickness: 1.5px; */
     }
 
-    /* .project-card:hover .project-name {
-        color: var(--highlight-hover-bg);
-    } */
-
     .project-description {
+        text-align: initial;
         min-height: 2.4em;
-
-        text-align: center;
 
         font-size: 0.9rem;
         line-height: 1.4;
@@ -401,6 +388,7 @@ pre, code {
         display: flex;
         gap: 8px;
         padding-bottom: 18px;
+        justify-content: center;
     }
 
     .video-container {
@@ -416,7 +404,7 @@ pre, code {
     }
 
     .grid-text {
-        text-align: initial;
+        text-align: justify;
         font-size: large;
     }
 
@@ -526,7 +514,7 @@ pre, code {
 
 /* HEADERS */
     #note-content header {
-        padding: 20px 0px;
+        padding: 20px 0px 32px;
         display: flex;
         flex-direction: column;
     }

@@ -838,7 +838,8 @@ main > article > header > p {
 Only the first h2 OR the first h3 in the div will have; it's the first between both.
 Only whichever comes first among all children of the div—and only if it is an <h2> or <h3>—will get the style. Later <h2> or <h3> elements are ignored.
 */
-#note-content h2:first-child, #note-content h3:first-child {
+#note-content h2:first-child, 
+#note-content h3:first-child {
     margin-top: .6em
 }
 
@@ -874,7 +875,9 @@ Only whichever comes first among all children of the div—and only if it is an 
 
 /* STRONG */
 
-#note-content strong, #note-content b, #note-content table th {
+#note-content strong, 
+#note-content b, 
+#note-content table th {
   font-weight: 600
 }
 
@@ -896,14 +899,11 @@ Only whichever comes first among all children of the div—and only if it is an 
 
 /* STRIKE-THROUGH */
 
-#note-content del, #note-content s {
-    /* font-weight: lighter; */
-    /* color: red; */
-
+#note-content del, 
+#note-content s {
     text-decoration-line: line-through;
     text-decoration-color: var(--strikethrough);
     text-decoration-thickness: 2px;
-    /* text-decoration-style: dotted; */
 }
 
 

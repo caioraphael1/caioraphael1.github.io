@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.68458.css" >
+			href="/static/projects-index.49456.css" >
 	</head>
 	<body>
 		<div
@@ -80,7 +80,7 @@ window.MathJax = {
                         Projects
 					</h1>
 					<p>
-WORK IN PROGRESS!
+WORK IN PROGRESS! I’ve always wanted to create meaningful games while enjoying the process, collaborate with people who share the same passion, and continuously learn new things. These projects exist to bring all three together, with the long-term goal of releasing a game I’m truly proud of. Until then, I’m focused on learning, experimenting, and enjoying the journey.
 					</p>
 				</header>
 				<div
@@ -93,50 +93,48 @@ WORK IN PROGRESS!
 						</p>
 						<p
 							class="project-description" >
-My engine, etc
+Exploring modern rendering techniques with Vulkan, using Odin Lang
 						</p>
 						<div
 							class="content" >
 							<div
-								class="media" >
+								class="medias" >
 								<div
-									class="media-container" >
-									<a
-										href="/assets/projects/vulkan_engine/2025-11-05 141223.png" >
-										<img
-											src="/assets/projects/vulkan_engine/2025-11-05 141223.png" 
-											width="700" >
-										</img>
-									</a>
-								</div>
-								<div
-									class="media-container" >
-									<a
-										href="/assets/projects/vulkan_engine/2025-11-05 094853.png" >
-										<img
-											src="/assets/projects/vulkan_engine/2025-11-05 094853.png" 
-											width="700" >
-										</img>
-									</a>
+									class="media" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/vulkan_engine/2025-11-05 141223.png" >
+											<img
+												src="/assets/projects/vulkan_engine/2025-11-05 141223.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/vulkan_engine/2025-11-05 094853.png" >
+											<img
+												src="/assets/projects/vulkan_engine/2025-11-05 094853.png" >
+											</img>
+										</a>
+									</div>
 								</div>
 							</div>
 							<ul>
 								<li>
-									<p
-										class="grid-text" >
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									<p>
+                                        A custom 3D engine built to explore modern real-time rendering techniques while addressing the complexity of designing an easy-to-use API on top of Vulkan. The engine emphasizes performance through aggressive CPU task parallelization using a custom job system and an ECS-based architecture.
 									</p>
 								</li>
 								<li>
-									<p
-										class="grid-text" >
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									<p>
+                                        On the rendering side, the engine implements advanced GPU-driven techniques such as bindless textures and indirect drawing. It was instrumented from the start, with extensive profiling and debugging using RenderDoc, Tracy, and RadDbg.
 									</p>
 								</li>
 								<li>
-									<p
-										class="grid-text" >
-                                        Lorem ipsum dolor sit amet
+									<p>
+                                        Future work includes implementing Radiance Cascades for global illumination and Screen Space Indirect Lighting with Visibility Bitmask for ambient occlusion. A strong focus is placed on atmospheric lighting, neon-inspired post-processing effects, and support for heavy visual stylization.
 									</p>
 								</li>
 							</ul>
@@ -147,21 +145,461 @@ My engine, etc
 								</summary>
 								<ul>
 									<li>
-										<p
-											class="grid-text" >
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+										<p>
+                                            Camera system
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Reversed-Z infinite projection matrix (good for depth precision)
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Perspective and Orthographic project.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Ponctual Lights
 										</p>
 									</li>
 									<li>
-										<p
-											class="grid-text" >
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										<p>
+                                            Forward renderer with PBR materials
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    ORM Textures.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Ambient Occlusion.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Metallic Map.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Normal Map.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Tone-Mapping
 										</p>
 									</li>
 									<li>
-										<p
-											class="grid-text" >
-                                            Lorem ipsum dolor sit amet
+										<p>
+                                            Skydome
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Pre-recording of commands
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    As an early optimization to avoid being CPU-bound. This would rarely be the case if using Draw Indirect/Batches, but it makes sense from the hardware perspective and doesn't hurt the API.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Multithreaded texture loading
+										</p>
+									</li>
+									<li>
+										<p>
+                                            glTF/glb models with the gltf2 parser
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Really similar to RayLib's implementation, but with early support for multi-windows
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Tangent generation for models missing tangents
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    I settled for an implementation based on <a href="https://terathon.com/blog/tangent-space.html" target="_blank">https://terathon.com/blog/tangent-space.html</a>, by Eric Lengyel. The MikkTSpace's tangent generation is probably a better algorithm, but the current Odin binding for it was quite a mess, so I opted for something a little bit more sane.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Multi-window system
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Wrapper around image transitions and pipeline barriers, to improve synchronization consistency and API usability.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Descriptor Indexing / Bindless
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Entity Component System (ECS)
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Excelent CPU performance on entity processing and cache friendlyness, but also giving a huge flexbility for entity creation.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Multi-Sampling Anti-Aliasing (MSAA)
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Mipmapping
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Custom Vulkan Allocator and custom CPU Allocators, for general tracking of memory usage/peaks with Tracy
+										</p>
+									</li>
+									<li>
+										<p>
+                                            GLFW input system.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Easy-to-use graphics pipeline creation via shader reflection with spirv-cross.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Personally, I think this is really handy to have. The API would just be really annoying to deal with without this. I'm happy I went with it.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Depth Prepass
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    As a way to prepare for a Clustered Forward Shading technique.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            HDR composite pass
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    The user is to be able to chain composite passes one after the other in a trivial way.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Jolt Physics
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Jolt is an awesome physics engine, used now by Godot.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    I made the bindings for it here: <a href="https://github.com/caioraphael1/jolt-odin" target="_blank">caioraphael1/jolt-odin</a>.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    The engine makes a wrapper around the binding. Dealing with the wrapper should be *much* easier to deal then with raw jolt, but the main goal is re-writing Jolt in Odin.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Custom Multiplayer library
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Completely focused on server-side authority.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Custom RPC system with raw TCP packages
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Supports authentication systems with a gateway and tokenizers, user databases and world databases.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    I got <strong>good</strong> performance for a server-side prediction, reconciliation, interpolation/extrapolation, and a soft-rollback system. To make that work, I use it side by side with the fixed cycle system and some multithread + jobfication
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Support for UDP packets and CPU drifting corrections will be implemented in the future.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Custom Job system
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Cached transforms system
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Cycle and Fixed Cycle system
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Crucial for multiplayer, and a way to manage input processing, draw times, etc. Used in conjunction with a sleep scheduler system to avoid using too much CPU time.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Tween System
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    For animations and general interpolation.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Event System
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Extensive support for Tracy and Spall profiler.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            3D level editor using a parser for Blender
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    This is excelent for artists, as they don't have to leave their modeling tool for creating maps and logic
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            UI
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    UI Text Box / UI Input Text Box
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Buttons
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    2D Editor for UI placement
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+							<details
+>
+								<summary>
+                                    Future plans
+								</summary>
+								<ul>
+									<li>
+										<p>
+                                            Clustered Forward Shading
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    I plan to have lots of lights for great creative expression, and Clustered Forward Shading sounds the best options for performance and flexibility when comparing to modern techiques. I also considered Deferred Shading, but I decided for something that doesn't weight so much on the bandwidth.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Perspective and Orthographic project.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Radiance Cascades
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    An excellent technique for Global Illumination used in Path of Exile 2. I plan to implement this techique on a 2D game first and then translate it to a 3D game to see how it behaves.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            VBAO/SSILVB.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Directional Lights, Spot Lights, Area Lights (without soft shadows for now).
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Clustered Forward Shading
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    I plan to have lots of lights for great creative expression, and Clustered Forward Shading sounds the best options for performance and flexibility when comparing to modern techiques. I also considered Deferred Shading, but I decided for something that doesn't weight so much on the bandwidth.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            HDRI Skies with .exr files
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Emission / Bloom shader
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    I love the effect to create neon lights
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Frustum Culling on GPU other 'Approach Zero Driver Overhead' techniques
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    I want to explore more with GPU Compute and extract the maximum of GPU parallelization
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Investigate a bit more into Buffer Device Address techniques.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Custom Font Rendering.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            New UI layer with Clay
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Remove GLFW and replace it with a new OS layer.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Shadows.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Fog.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Volumetric Fog.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Particle System
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Mesh Skinning.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Support for VR with Variable Refresh Rate techniques (VRS).
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Mobile support.
 										</p>
 									</li>
 								</ul>
@@ -172,7 +610,80 @@ My engine, etc
 						class="project-card" >
 						<p
 							class="project-name" >
-Vulkan Engine
+Snow Expedition Prototype
+						</p>
+						<p
+							class="project-description" >
+Exploring snow shaders
+						</p>
+						<div
+							class="content" >
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 128px;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/snow_expedition/2024-06-13 2104241.png" >
+											<img
+												src="/assets/projects/snow_expedition/2024-06-13 2104241.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/snow_expedition/2024-06-13 2104242.png" >
+											<img
+												src="/assets/projects/snow_expedition/2024-06-13 2104242.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+								<div
+									class="media" 
+									style="padding: 0 128px;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/snow_expedition/2024-06-13 2104243.png" >
+											<img
+												src="/assets/projects/snow_expedition/2024-06-13 2104243.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/snow_expedition/2024-06-27 192220.png" >
+											<img
+												src="/assets/projects/snow_expedition/2024-06-27 192220.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        A prototype made while exploring snow shaders, fog effects for low-poly art in Godot.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        The snow deforms when an entity walks on it, as well as physics objects and vehicles. The same goes for accumulated snow on top of rocks and mountains.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
+2D Multiplayer Engine
 						</p>
 						<p
 							class="project-description" >
@@ -181,50 +692,46 @@ My engine, etc
 						<div
 							class="content" >
 							<div
-								class="media" >
+								class="medias" >
 								<div
-									class="media-container" >
-									<iframe
-										width="560" 
-										height="315" 
-										src="https://www.youtube.com/embed/q4DvaaWeN5o?si=tzvp_x3lFyDvOC30" 
-										title="My video" 
-										frameborder="0" 
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-										referrerpolicy="strict-origin-when-cross-origin" 
-										allowfullscreen="">
-									</iframe>
-								</div>
-								<div
-									class="media-container" >
-									<iframe
-										width="560" 
-										height="315" 
-										src="https://www.youtube.com/embed/q4DvaaWeN5o?si=tzvp_x3lFyDvOC30" 
-										title="My video" 
-										frameborder="0" 
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-										referrerpolicy="strict-origin-when-cross-origin" 
-										allowfullscreen="">
-									</iframe>
+									class="media" >
+									<div
+										class="video-container" >
+										<iframe
+											src="https://www.youtube.com/embed/q4DvaaWeN5o?si=tzvp_x3lFyDvOC30" 
+											title="" 
+											frameborder="0" 
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+											referrerpolicy="strict-origin-when-cross-origin" 
+											allowfullscreen="">
+										</iframe>
+									</div>
+									<div
+										class="video-container" >
+										<iframe
+											src="https://www.youtube.com/embed/q4DvaaWeN5o?si=tzvp_x3lFyDvOC30" 
+											title="" 
+											frameborder="0" 
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+											referrerpolicy="strict-origin-when-cross-origin" 
+											allowfullscreen="">
+										</iframe>
+									</div>
 								</div>
 							</div>
 							<ul>
 								<li>
-									<p
-										class="grid-text" >
+									<p>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 									</p>
 								</li>
 								<li>
-									<p
-										class="grid-text" >
+									<p>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 									</p>
 								</li>
 								<li>
-									<p
-										class="grid-text" >
+									<p>
                                         Lorem ipsum dolor sit amet
 									</p>
 								</li>
@@ -241,11 +748,11 @@ My engine, etc
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2026-01-24 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-01-25 🚀
 			</footer>
 		</div>
 		<script
-			src="/static/projects.68458.js" >
+			src="/static/projects.49456.js" >
 		</script>
 	</body>
 </html>

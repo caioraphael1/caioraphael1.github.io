@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.26909.css" >
+			href="/static/studies.88482.css" >
 	</head>
 	<body>
 		<aside
@@ -887,15 +887,16 @@ window.MathJax = {
                                 Compilation Process
 							</a>
 							<ul>
-								<li>
-									<a
-										href="#linker" >
-                                        Linker
-									</a>
-									<ul>
-									</ul>
-								</li>
 							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								class="" 
+								href="/studies/Low-Level Systems/Build Systems - Compilation - Linking/Build Systems - Compilation - Linking-linker.html" >
+                                Linker
+							</a>
 						</li>
 					</ul>
 					<ul>
@@ -1164,8 +1165,8 @@ window.MathJax = {
                                 🕒 Created: 2025-05-27
 							</time>
 							<time
-								datetime="2026-01-22" >
-                                | Updated: 2026-01-22
+								datetime="2026-02-01" >
+                                | Updated: 2026-02-01
 							</time>
 						</p>
 					</header>
@@ -1296,230 +1297,6 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
-<h3
-	id="linker" >
-    Linker
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=H4s55GgAg0I" 
-				class="external-link" 
-				target="_blank" >
-                Linking in C++
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Errors starting with C: Compiler Error
-				</p>
-			</li>
-			<li>
-				<p>
-                    Errors starting with LNK: Linker Error
-				</p>
-			</li>
-			<li>
-				<p>
-                    Many examples of errors caused by Compiler vs Linker.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Examples of how 
-                    <code>static</code>
-                    &nbsp;and 
-                    <code>inline</code>
-                    &nbsp;interact with 
-                    <code>#include</code>
-                    .
-				</p>
-			</li>
-			<li>
-				<p>
-                    Last example shows linking via header files.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="static-linker" >
-    Static Linker
-</h5>
-<ul>
-	<li>
-		<p>
-            <code>.lib</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Is the MSVC library format.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Can be a Static Library or an Import Library.
-				</p>
-			</li>
-			<li>
-				<p>
-					<em>
-                        Static Library (.lib)
-					</em>
-                    :
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Contains compiled object code that is statically linked into the final executable.
-						</p>
-					</li>
-					<li>
-						<p>
-                            All code and data from the library are copied into the executable at build time.
-						</p>
-					</li>
-					<li>
-						<p>
-                            The resulting executable does not depend on the 
-                            <code>.lib</code>
-                            &nbsp;file at runtime.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Used when you want everything in one binary without external dependencies.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<em>
-                        Import Library (.lib)
-					</em>
-                    :
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Provides symbols for linking against a DLL (Dynamic Link Library).
-						</p>
-					</li>
-					<li>
-						<p>
-                            Contains only symbol references, not actual code.
-						</p>
-					</li>
-					<li>
-						<p>
-                            The executable will require the corresponding 
-                            <code>.dll</code>
-                            &nbsp;file at runtime.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Used when linking against DLLs. The linker uses the 
-                            <code>.lib</code>
-                            &nbsp;to resolve symbols, but the actual code resides in the 
-                            <code>.dll</code>
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    You can determine whether a 
-                    <code>.lib</code>
-                    &nbsp;is static or import:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            If it's paired with a 
-                            <code>.dll</code>
-                            , it's likely an import library.
-						</p>
-					</li>
-					<li>
-						<p>
-                            If there's no 
-                            <code>.dll</code>
-                            , or the 
-                            <code>.lib</code>
-                            &nbsp;is explicitly intended for static linking, then it's a static library.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>.a</code>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Is the GCC/MinGW library format.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>.o</code>
-		</p>
-	</li>
-</ul>
-<h5
-	id="dynamic-linker" >
-    Dynamic Linker
-</h5>
-<ul>
-	<li>
-		<p>
-            Linux:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>.so</code>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Windows:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>.dll</code>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Mac
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>.dylib</code>
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
 
 					</div>
 					<footer
@@ -1535,11 +1312,11 @@ window.MathJax = {
 					target="_blank" >
                     Caio Raphael
 				</a>
-                📅 2025-10-21 .&nbsp;&nbsp;2026-01-26 🚀
+                📅 2025-10-21 .&nbsp;&nbsp;2026-02-01 🚀
 			</footer>
 		</div>
 		<script
-			src="/static/studies.26909.js" >
+			src="/static/studies.88482.js" >
 		</script>
 	</body>
 </html>

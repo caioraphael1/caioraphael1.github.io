@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.33274.css" >
+			href="/static/projects-index.45986.css" >
 	</head>
 	<body>
 		<div
@@ -938,7 +938,7 @@ The Jolt Physics Engine, now for Odin Lang
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 180px;" >
+									style="padding: 0 200px;" >
 									<div
 										class="img-container" >
 										<a
@@ -962,7 +962,7 @@ The Jolt Physics Engine, now for Odin Lang
 								</div>
 								<div
 									class="media" 
-									style="padding: 0 180px;" >
+									style="padding: 0 200px;" >
 									<div
 										class="img-container" >
 										<a
@@ -1130,11 +1130,74 @@ Exploration of Multiplayer Techniques, Game AI, Real-time 2D Combat
 						class="project-card" >
 						<p
 							class="project-name" >
-Moss World
+Multiplayer Library in Godot
 						</p>
 						<p
 							class="project-description" >
-Turn-based and grid-based combat, Game AI, Isometric Art, Pathfinding
+Peer-to-Peer and Server-Authoritive
+						</p>
+						<div
+							class="content" >
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 240px;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/godot_multiplayer/multiplayer.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/godot_multiplayer/multiplayer.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/godot_multiplayer/rpc.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/godot_multiplayer/rpc.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        Godot already has a system for Peer-to-Peer multiplayer via using the MultiplayerSpawner and MultiplayerSynchronizer nodes, but at the time these nodes where extremelly buggy and unsafe, to the point where it was impossible to use them in a serious application. The first multiplayer library was developed to circumvent this issue and make synchronization happen via a lower-level API, using ENet as the backend and avoiding both multiplayer nodes Godot gives us.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        With time, I became unhappy with the architecture decision for this library and decided on something with extensive control over safety and connections. For that reason, I switched from a Peer-to-Peer model and went for a Server-Authority model. This aligned with my game design decisions and helped organize what had become a mess by having both client and server behavior in the same project.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        Switching to a Server-Authority model meant that I could place the client in a different project from the server, improving safety against cheating and making code maintenance more sane.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        Even with previous decisions, the Godot model was still too invasive and high-level for my taste. Having to manage communication through the native Godot RPC API was really unsafe and confusing; some of that was due to how, in Godot 4, one has to declare a function in both client and server as RPC, and both should have the same name, otherwise this would result in network errors. This decision by the Godot team made it clear the philosophy of the engine, and how the multiplayer would be unnecessarily complicated by my having to constantly go against the engine's decision of enforcing Peer-to-Peer multiplayer, and with no safety for Server-Authority solutions. Later, this led me to leave Godot altogether and start a new multiplayer game with a new network library made from scratch in Odin, with decisions compatible with the networking architecture design I had envisioned. This Godot library was later deprecated.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
+Moss World: Turn-based/Grid-based Combat
+						</p>
+						<p
+							class="project-description" >
+Turn-based and grid-based combat, Game AI, Isometric Pathfinding, Isometric Art
 						</p>
 						<div
 							class="content" >
@@ -1158,7 +1221,7 @@ Turn-based and grid-based combat, Game AI, Isometric Art, Pathfinding
 							<ul>
 								<li>
 									<p>
-                                        A game inspired by the combat of <a href="https://www.dofus.com/en/mmorpg/discover">Dofus</a>.
+                                        A game inspired by the combat of <a href="https://www.dofus.com/en/mmorpg/discover" target="_blank">Dofus</a>.
 									</p>
 								</li>
 							</ul>
@@ -1209,6 +1272,74 @@ Turn-based and grid-based combat, Game AI, Isometric Art, Pathfinding
 								<li>
 									<p>
                                         .
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
+Utility AI Library in Godot
+						</p>
+						<p
+							class="project-description" >
+Library for AI with emergent behavior
+						</p>
+						<div
+							class="content" >
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 200px;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/godot_utility_ai/icon.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/godot_utility_ai/icon.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/godot_utility_ai/godot_ai.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/godot_utility_ai/godot_ai.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/godot_utility_ai/godot_ai_2.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/godot_utility_ai/godot_ai_2.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        The images show the interface for the library with curve customization for each Consideration inside a "Decision". Each Decision holds aggregation configurations and a reference to an "Action", defined by an external library. The second image shows the AI Agent (root node) with controls for memory duration for that entity, update frequency, and navigation optimization tweaks.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        This implementation in Godot supports both real-time navigation and grid-based navigation systems.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        For more information, see the <a href="/studies/Game Development/Game AI/Game AI-utility-ai-fuzzy-logic.html" target="_blank">Utility AI</a> note.
 									</p>
 								</li>
 							</ul>
@@ -1789,7 +1920,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.33274.js" >
+			src="/static/projects.45986.js" >
 		</script>
 	</body>
 </html>

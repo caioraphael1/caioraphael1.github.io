@@ -403,6 +403,7 @@ pre, code {
         height: auto;
         width: 100%;
         display: block;
+        border-radius: 3px;
     }
 
     .video-container {
@@ -436,7 +437,7 @@ pre, code {
     }
 
     details {
-        padding: 5px 15px 5px;
+        padding: 5px 22px 5px;
         margin: 16px 0 8px;
 
         border-radius: var(--border-radius);
@@ -482,8 +483,11 @@ pre, code {
     details[open] > summary::before {
         transform: rotate(90deg);
     }
-    details > ul {
-        margin: 0 40px;
+
+    details > :not(summary) {
+        padding: 0px 15px;
+    }
+    details > :last-child {
         padding-bottom: 20px;
     }
 

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.45986.css" >
+			href="/static/projects-index.47787.css" >
 	</head>
 	<body>
 		<div
@@ -104,7 +104,7 @@ Frozen Sprouts
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 240px;" >
 									<div
 										class="img-container" >
 										<a
@@ -115,10 +115,6 @@ Frozen Sprouts
 											</img>
 										</a>
 									</div>
-								</div>
-								<div
-									class="media" 
-									style="padding: 0 200px;" >
 								</div>
 							</div>
 							<ul>
@@ -828,98 +824,104 @@ Extensive Multiplayer Techniques, Procedural Animations, Pixelart
 									</p>
 								</li>
 							</ul>
-							<h5>
-                                Multiplayer - Netcode
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        Multiplayer was the foundation for everything in this game, being the first thing to be implemented and always something to come back to. I wanted to make sure to treat netcode as a priority and have the multiplayer scale well with time.
-									</p>
-								</li>
-								<li>
-									<p>
-                                        For this engine I went with <a href="https://github.com/jrouwe/JoltPhysics">JoltPhysics</a>, which gives excellent physics simulation; for that I made this <a href="https://github.com/caioraphael1/jolt-odin">jolt-odin</a> binding, bringing Jolt to the Odin programming language.
-									</p>
-									<ul>
-										<li>
-											<p>
-                                                It's worth noticing that Jolt is a 3D physics engine, but this game is 2D, so changes had to be made so the simulation runs correctly and objects don't slip into a unseen dimension.
-											</p>
-										</li>
-										<li>
-											<p>
-                                                I opted for Jolt instead of something more usual, such as Box2D, as I was pretty sure I would use this binding later for a 3D game, and wanted to streamline the physics process. If necessary, I would later simplify the physics engine by making a full rewrite in Odin.
-											</p>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<p>
-                                        Even though this engine had a pretty robust physics engine, that wouldn't matter if the client felt laggy or if the client and server couldn't agree on the current physics state, leaving the client to be rolledback constantly. This was one of the first big challenges I had with netcode. To fix this issue, I decided to completely separate the updates inside the server and client via well-defined "cycles" and "fixed cycles", in a way that a single clock-sync when the client logs in would be enough to keep latency to a minimum. This, of course, only works in a vacuum, as CPU drift can occur and latency is not constant in time. For that reason, a series of measurements is taken at a fixed rate to identify delta spikes in latency, so the client can process faster or slower to properly have the physics update synchronized. The result is shown in the graph above: a much smaller delta ratio comparing gray entries (old) vs colorful entries (new), indicating a big improvement in synchronization. Not all was solved, as there was still a "minimum ms delta" due to restrictions around the server update frequency, as well as problems of "over-compensation" if the client has a delta-ms too large due to high RTT, but I believe that both could be solved with improved temporal metrics.
-									</p>
-								</li>
-								<li>
-									<p>
-                                        Beyond the solutions I talked about, I worked on creating my own encoding/decoding through a specialized serialization system, using CBOR for something more complex, such as the custom RPC system I created, or using something as compact as a single byte to identify instructions. This could also be improved even further by better utilization of UDP packets for non-crucial tasks, as well as better utilization of the TCP payload when considering the size of the header.
-									</p>
-								</li>
-								<li>
-									<p>
-                                        With that, the multiplayer was much better than before, while also requiring much less from the the server, as now not only the bandwidth is improved, but the server can process a lot slower as the client has now the tools to compensate for the increased latency without losing input/action precision.
-									</p>
-								</li>
-							</ul>
-							<h5>
-                                Multiplayer - Login
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        .
-									</p>
-								</li>
-							</ul>
-							<h5>
-                                Visuals
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        For the visuals, I decided to completely avoid an internal level editor. I'm of the belief that external editors are much better choices when it comes to customization and artistic choice. For the external editor in question, instead of creating something of my own, I decided to go for <a href="https://github.com/deepnight/ldtk">LDtk</a>, from one of the creators of <a href="https://store.steampowered.com/app/588650/Dead_Cells/">Dead Cells</a>. For that, I made a custom parser that would translate the .ldtk files into custom logic inside the engine. Unfortunately, I had a very bad experience working with LDtk, which led me to edit its source code constantly in order to solve a lot of the bugs and missing features it was lacking; coding in Haxe/OOP/JS was not fun.
-									</p>
-								</li>
-							</ul>
-							<h5>
-                                Rendering
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        For rendering, I decided to keep using <a href="https://github.com/raysan5/raylib">RayLib</a> for this game, as it has a very easy-to-use API that allowed me to focus on other parts of the engine. Though, when it comes to customization, I felt quite stuck without being able to evolve past what OpenGL gives me and what RayLib exposes.
-									</p>
-								</li>
-							</ul>
-							<h5>
-                                Procedural Animation
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        A library was created for handling all 2D procedural animations, using Inverse Kinematics with the FABRIK algorithm as the solver. As shown in the videos, it's possible to represent "grab motions" and "fish-like" motions. I was also implementing constraints so a new variety of motions could be represented, such as arachnoids, drones, lizards, snakes, etc. As the game is 2D top-down, there's a limited amount of motion it can represent, but for 2D platformer the options change, being more resonable to represent mammals. My goal was to create a library with concepts easy enough to understand so it could later be implemented for a 3D game.
-									</p>
-								</li>
-							</ul>
-							<h5>
-                                Key Takeaways
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        I was really proud of what I've accomplished with the Multiplayer, but after not being quite satisfied with Raylib and LDtk I decided to try something different and learn Vulkan in 3D, so I could finally answer my questions about the world of rendering, and in the mean time I could think of a better solution to improve the workflow of 2D or 3D tools to keep making games with less friction.
-									</p>
-								</li>
-							</ul>
+							<details
+>
+								<summary>
+                                    Read more
+								</summary>
+								<h5>
+                                    Multiplayer - Netcode
+								</h5>
+								<ul>
+									<li>
+										<p>
+                                            Multiplayer was the foundation for everything in this game, being the first thing to be implemented and always something to come back to. I wanted to make sure to treat netcode as a priority and have the multiplayer scale well with time.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            For this engine I went with <a href="https://github.com/jrouwe/JoltPhysics">JoltPhysics</a>, which gives excellent physics simulation; for that I made this <a href="https://github.com/caioraphael1/jolt-odin">jolt-odin</a> binding, bringing Jolt to the Odin programming language.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    It's worth noticing that Jolt is a 3D physics engine, but this game is 2D, so changes had to be made so the simulation runs correctly and objects don't slip into a unseen dimension.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    I opted for Jolt instead of something more usual, such as Box2D, as I was pretty sure I would use this binding later for a 3D game, and wanted to streamline the physics process. If necessary, I would later simplify the physics engine by making a full rewrite in Odin.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+                                            Even though this engine had a pretty robust physics engine, that wouldn't matter if the client felt laggy or if the client and server couldn't agree on the current physics state, leaving the client to be rolledback constantly. This was one of the first big challenges I had with netcode. To fix this issue, I decided to completely separate the updates inside the server and client via well-defined "cycles" and "fixed cycles", in a way that a single clock-sync when the client logs in would be enough to keep latency to a minimum. This, of course, only works in a vacuum, as CPU drift can occur and latency is not constant in time. For that reason, a series of measurements is taken at a fixed rate to identify delta spikes in latency, so the client can process faster or slower to properly have the physics update synchronized. The result is shown in the graph above: a much smaller delta ratio comparing gray entries (old) vs colorful entries (new), indicating a big improvement in synchronization. Not all was solved, as there was still a "minimum ms delta" due to restrictions around the server update frequency, as well as problems of "over-compensation" if the client has a delta-ms too large due to high RTT, but I believe that both could be solved with improved temporal metrics.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Beyond the solutions I talked about, I worked on creating my own encoding/decoding through a specialized serialization system, using CBOR for something more complex, such as the custom RPC system I created, or using something as compact as a single byte to identify instructions. This could also be improved even further by better utilization of UDP packets for non-crucial tasks, as well as better utilization of the TCP payload when considering the size of the header.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            With that, the multiplayer was much better than before, while also requiring much less from the the server, as now not only the bandwidth is improved, but the server can process a lot slower as the client has now the tools to compensate for the increased latency without losing input/action precision.
+										</p>
+									</li>
+								</ul>
+								<h5>
+                                    Multiplayer - Login
+								</h5>
+								<ul>
+									<li>
+										<p>
+                                            .
+										</p>
+									</li>
+								</ul>
+								<h5>
+                                    Visuals
+								</h5>
+								<ul>
+									<li>
+										<p>
+                                            For the visuals, I decided to completely avoid an internal level editor. I'm of the belief that external editors are much better choices when it comes to customization and artistic choice. For the external editor in question, instead of creating something of my own, I decided to go for <a href="https://github.com/deepnight/ldtk">LDtk</a>, from one of the creators of <a href="https://store.steampowered.com/app/588650/Dead_Cells/">Dead Cells</a>. For that, I made a custom parser that would translate the .ldtk files into custom logic inside the engine. Unfortunately, I had a very bad experience working with LDtk, which led me to edit its source code constantly in order to solve a lot of the bugs and missing features it was lacking; coding in Haxe/OOP/JS was not fun.
+										</p>
+									</li>
+								</ul>
+								<h5>
+                                    Rendering
+								</h5>
+								<ul>
+									<li>
+										<p>
+                                            For rendering, I decided to keep using <a href="https://github.com/raysan5/raylib">RayLib</a> for this game, as it has a very easy-to-use API that allowed me to focus on other parts of the engine. Though, when it comes to customization, I felt quite stuck without being able to evolve past what OpenGL gives me and what RayLib exposes.
+										</p>
+									</li>
+								</ul>
+								<h5>
+                                    Procedural Animation
+								</h5>
+								<ul>
+									<li>
+										<p>
+                                            A library was created for handling all 2D procedural animations, using Inverse Kinematics with the FABRIK algorithm as the solver. As shown in the videos, it's possible to represent "grab motions" and "fish-like" motions. I was also implementing constraints so a new variety of motions could be represented, such as arachnoids, drones, lizards, snakes, etc. As the game is 2D top-down, there's a limited amount of motion it can represent, but for 2D platformer the options change, being more resonable to represent mammals. My goal was to create a library with concepts easy enough to understand so it could later be implemented for a 3D game.
+										</p>
+									</li>
+								</ul>
+								<h5>
+                                    Key Takeaways
+								</h5>
+								<ul>
+									<li>
+										<p>
+                                            I was really proud of what I've accomplished with the Multiplayer, but after not being quite satisfied with Raylib and LDtk I decided to try something different and learn Vulkan in 3D, so I could finally answer my questions about the world of rendering, and in the mean time I could think of a better solution to improve the workflow of 2D or 3D tools to keep making games with less friction.
+										</p>
+									</li>
+								</ul>
+							</details>
 						</div>
 					</div>
 					<div
@@ -1047,7 +1049,7 @@ Exploration of Multiplayer Techniques, Game AI, Real-time 2D Combat
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 320px;" >
 									<div
 										class="img-container" >
 										<a
@@ -1205,7 +1207,7 @@ Turn-based and grid-based combat, Game AI, Isometric Pathfinding, Isometric Art
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 240px;" >
 									<div
 										class="img-container" >
 										<a
@@ -1920,7 +1922,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.45986.js" >
+			src="/static/projects.47787.js" >
 		</script>
 	</body>
 </html>

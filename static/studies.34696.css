@@ -287,7 +287,7 @@ pre, code {
 /* ROOT */
     body {
         display: flex;
-        
+       
         font-family: var(--body-font);
     }
 
@@ -310,12 +310,8 @@ pre, code {
 /* LEFT SIDEBAR */
     #left-sidebar-wrapper {
         display: flex;
-        position: sticky;
-        top: 0;
-
+        
         height: 100dvh;
-        min-height: 100vh;
-        min-width: 15dvw;
 
         background: var(--central-bg);
     }
@@ -414,6 +410,8 @@ pre, code {
 
     /* LEFT SIDEBAR NAV */
     #left-sidebar nav {
+        flex: 1;
+
         padding: 0 24px 0 0;
         margin: 0 16px 0 24px;
 
@@ -625,25 +623,35 @@ pre, code {
 
 /* CENTRAL */
     #central-wrapper {
-        flex: 1;
+        flex: max-content;
+
+        height: 100dvh;
+
         background: var(--central-bg);
     }
 
 
 /* NOTE WRAPPER */
     #note-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        height: calc(100dvh - 57px);        
+
         padding: 36px 38px 36px 42px;
-        margin: var(--study-cards-padding) var(--study-cards-padding) var(--study-cards-padding) 0;
+        margin: var(--study-cards-padding) var(--study-cards-padding) 0 0;
         
         background: var(--study-cards-bg);
         border-radius: 12px;
         border: 1px solid var(--dark-1);
-        
     }
     @media (orientation: portrait) {
         #note-wrapper {
-            padding: 8px 12px;
-            margin: 18px;
+            width:  calc(100dvw - 36px);
+            height: calc(100dvh - 53px);
+            
+            padding: 8px 12px 22px;
+            margin:  18px 18px 0px;
 
             font-size: small;
         }
@@ -689,7 +697,6 @@ pre, code {
         color: var(--footer-text);
         display: flex;
         
-        margin-top: -23px;
         padding: 8px 56px 6px;
         gap: 8px;
         justify-content: end;
@@ -702,7 +709,6 @@ pre, code {
             justify-content: center;
             font-size: x-small;
             padding: 10px 0px;
-            margin-top: -19px;
         }
     }
     
@@ -719,10 +725,10 @@ pre, code {
 /* NOTE CONTENT */
 
 #note-content {
+    flex: 1;
+    
     padding: 16px 0px;
     
-    height: 80.5dvh;
-
     overflow-y: scroll;
 
     color: var(--note-text);
@@ -743,7 +749,6 @@ pre, code {
 @media (orientation: portrait) {    
     #note-content {
         padding: 8px 16px;
-        height: 87.5dvh;
     }
 }
 
@@ -1148,28 +1153,31 @@ input[type="checkbox"] {
 /* CODE BLOCK */
 
 pre {
+    display: flex;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
     font-family: var(--code-font);
     font-size: .9em;
     line-height: 1.8;
     letter-spacing: -.1px;
 
     border-radius: 8px;
-
-    margin-top: 1em;
-    margin-bottom: 1em;
 }
 
 pre code {
+    display: block;
+    overflow-x: auto;
+
+    padding: 1em;
+
     background: var(--code-bg);
     color: var(--code-text);
 
-    display: block;
-    overflow-x: auto;
     white-space: pre;
 
     border-radius: 8px;
-    
-    padding: 1em;
 }
 
 

@@ -93,7 +93,7 @@ pre, code {
 :root {
     /* Primary */
     /* --soft-dark: #181820; */
-    --soft-dark-transparent: #181820e5;
+    --soft-dark-transparent: #181820cc;; 
     /* --dark: rgb(19, 19, 26); */
     --dark-transparent:      rgba(19, 19, 26, 0.93);
     --dark-hover:            rgba(57, 57, 76, 0.25);       /* --vscode-list-inactiveSelectionBackground; */
@@ -102,6 +102,7 @@ pre, code {
     --white:                 #c8c8d5;                           /* --vscode-list-activeSelectionForeground; --vscode-list-inactiveSelectionForeground */
     --white-small-fade:      #a4a4b6;                /*--vscode-list-focusForeground */
     --white-fade:            rgba(171, 171, 191, 0.8);     /* --vscode-breadcrumb-foreground */
+    --white-fade2:           rgba(255, 255, 255, 0.65);
 
     /* Body */
     --body-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -137,7 +138,7 @@ pre, code {
     --projects-details-open:        var(--white);
     
     /* Study */
-    --study-cards-bg:               rgba(105, 105, 105, 0.05);
+    --study-cards-bg:               rgba(0, 0, 0, 0.20);
     --study-cards-padding:          24px;
 
     /* Study Sidebar */
@@ -226,15 +227,25 @@ pre, code {
 
     body {
         display: flex;
+
         min-height: 100vh;
         margin: 0;
 
         font-family: var(--body-font);
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
 
         background-image: url("/assets/bg.png");
         background-repeat: no-repeat;
         background-position: center;
-        background-attachment: fixed;
         background-size: cover;
     }
 
@@ -252,7 +263,7 @@ pre, code {
     }
 
     /* Mobile */
-    @media (max-width: 768px) {
+    @media (max-width: 1080px) {
         #central-wrapper {
             padding: 80px 7vw 24px;
         }
@@ -300,124 +311,271 @@ pre, code {
 :root {
   --border-radius: 12px;
 
-  --dark-transparent: rgba(255, 255, 255, 0.04);
-  --dark-hover: rgba(255, 255, 255, 0.07);
-
-  --white-fade: rgba(255, 255, 255, 0.65);
-
   --card-width: 480px;
 }
 
-/* ================================
-   TOPICS GRID
-   ================================ */
-
-.topics-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1.2fr);
-    gap: 2.8rem;
-
-    justify-content: center;
-
-    padding: 1rem 0 2rem;
-}
-
-/* Tablet */
-@media (max-width: 1200px) {
-    .topics-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .topics-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5em;
-        justify-content: stretch;
-    }
-}
 
 /* ================================
-   TOPIC CARD
+   PROJECTS GRID
    ================================ */
 
-.topic-card {
+.projects-grid {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    width: 100%;
-    min-height: 160px;
-
-    padding: 1.75rem 1.25rem;
-
-    border-radius: 4px;
-    background: var(--dark-transparent);
-    border: 1px solid var(--darker);
-
-    font-size: large;
-    text-decoration: none;
-    cursor: pointer;
-
-    transition:
-        transform 0.25s ease,
-        background-color 0.25s ease,
-        border-color 0.25s ease;
+    
+    gap: 2.8rem;
 }
 
-.topic-card:hover {
-    transform: translateY(-6px);
-    background: var(--dark-hover);
-    border-color: var(--highlight-hover-bg);
-}
-
-/* Keyboard accessibility */
-.topic-card:focus-visible {
-    outline: 2px solid var(--highlight-hover-bg);
-    outline-offset: 4px;
-}
 
 /* ================================
-   TOPIC ICON
+   PROJECT CARD
    ================================ */
 
-.topic-icon {
-    font-size: 2.8rem;
-    line-height: 1;
-    margin-bottom: 0.75rem;
-}
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+        /* min-height: 800px; */
 
-/* ================================
-   TOPIC NAME
-   ================================ */
+        border-radius: 4px;
+        background: var(--study-cards-bg);
+        border: 1px solid var(--darker);
+    }
 
-.topic-name {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--highlight-bg);
+    .project-name {
+        text-align: initial;
+        margin-bottom: 0.4rem;
 
-  margin-bottom: 0.4rem;
-  transition: color 0.25s ease;
-}
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--highlight-bg);
 
-.topic-card:hover .topic-name {
-  color: var(--highlight-hover-bg);
-}
+        /* opt1 */
+        /* border-bottom: 1px solid #f6cf3482;
+        padding-bottom: 0.25rem; */
 
-/* ================================
-   TOPIC DESCRIPTION
-   ================================ */
+        /* opt2 */
+        /* text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-color: #f6cf34c4;
+        text-decoration-thickness: 1.5px; */
+    }
 
-.topic-description {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: var(--white-fade);
+    .project-description {
+        text-align: initial;
+        min-height: 2.4em;
 
-  min-height: 2.4em;
-}
+        font-size: 0.9rem;
+        line-height: 1.4;
+        color: var(--white-small-fade);
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .medias {
+        display: flex;
+        flex-direction: column;
+        padding: 18px 0;
+    }
+
+    .media {
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-container {
+        align-self: center; /* Vertical align */
+        padding: 4px;
+    }
+
+    .img-container img {
+        object-fit: contain;
+        height: auto;
+        width: 100%;
+        display: block;
+        border-radius: 3px;
+    }
+
+    .video-container {
+        padding: 4px;
+
+        aspect-ratio: 16/9;
+        height: auto;
+        width: 100%;
+        align-self: center;  
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+    }
+
+    @media (max-width: 1200px) {
+        .media {
+            flex-direction: column;
+            padding: 0px !important;
+        }
+        .img-container {
+            width: 100%;
+        }
+
+        .project-card {
+            padding: 2.5rem 1.8rem 3rem;
+        }
+    }
+
+    details {
+        padding: 5px 22px 5px;
+        margin: 16px 0 8px;
+
+        border-radius: 4px;
+        border: 1px solid var(--study-sidebar-border);
+
+        background: rgba(0, 0, 0, 0.23);
+    }
+    details > summary {
+        display: flex;
+        padding: 16px 0;
+
+        color: var(--projects-details-close);
+
+        font-weight: bold;
+
+        user-select: none;
+
+        list-style: none;
+        cursor: pointer;
+        align-items: center;
+    }
+    details[open] > summary {
+        color: var(--projects-details-open);
+    }
+
+    details > summary:hover {
+        color: #eeeeee;
+    }
+
+    details > summary::-webkit-details-marker {
+        display: none;
+    }
+    details > summary::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 12px solid var(--note-text);
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        margin-right: 0.5rem;
+        transition: transform 0.15s ease;
+    }
+    details[open] > summary::before {
+        transform: rotate(90deg);
+    }
+
+    details > :not(summary) {
+        padding: 0px 15px;
+    }
+    details > :last-child {
+        padding-bottom: 20px;
+    }
+
+    blockquote,
+    dl,
+    ol,
+    p,
+    table,
+    ul {
+        line-height: 1.8rem;
+        letter-spacing: -.1px;
+    }
+    dl,
+    ol,
+    ul {
+        margin-left: 20px
+    }
+    dl dl,
+    dl ol,
+    dl ul,
+    ol dl,
+    ol ol,
+    ol ul,
+    ul dl,
+    ul ol,
+    ul ul {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+    li {
+        position: relative;
+        margin: 5px 0;
+    }
+    li > ol {
+        list-style: square;
+    }
+    ol {
+        list-style: square;
+    }
+    li p {
+        margin: 0;
+        text-align: justify;
+        font-size: large;
+        color: var(--white-fade2);
+    }
+    li blockquote,
+    li iframe,
+    li table {
+        margin: 1em 0
+    }
+    li::before {
+        content: "•";
+
+        position: absolute;
+        left: -0.7em;
+        top: -0.1em;
+        
+        font-size: x-large;
+        font-weight: bold;
+    }
+    li li::before {
+        content: "◦";  /* Unicode 25E6 */
+        top: -0.025em;
+        left: -0.6em;
+    }
+
+    strong, 
+    b, 
+    table th {
+        font-weight: 600
+    }
+    em {
+        font-style: italic
+    }
+    del, 
+    s {
+        text-decoration-line: line-through;
+        text-decoration-color: var(--strikethrough);
+        text-decoration-thickness: 2px;
+    }
+    
+    .content a {
+        color: var(--hyperlink);
+        text-decoration: none
+    }
+
+    .content a:hover {
+        color: var(--hyperlink-hover);
+        text-decoration: underline
+    }
+
+    .content .internal-link {
+        font-weight: 800;
+    }
+
 
 
 /* NOTE CONTENT */
@@ -436,12 +594,12 @@ pre, code {
 
 /* HEADERS */
     #note-content header {
-        padding: 20px 0px;
+        padding: 20px 0px 32px;
         display: flex;
         flex-direction: column;
     }
     #note-content header > p {
-        color: var(--note-subtitle);
+        color: var(--white-small-fade);
 
         font-size: 1.0em;
         padding-top: 8px;
@@ -454,6 +612,7 @@ pre, code {
     #note-content h5,
     #note-content h6 {
         line-height: 1em;
+        color: var(--white);
     }
 
     #note-content h1 {
@@ -464,33 +623,28 @@ pre, code {
     #note-content h2 {
         font-size: 1.65em;
         font-weight: bold;
-        color: #3d7fe0;
         margin: 3.0em 0em 0.5em;
     }
 
     #note-content h3 {
         font-size: 1.4em;
         font-weight: bold;
-        color: #eecf1d;
         margin: 2.0em 0em 0.5em;
     }
 
     #note-content h4 {
         font-size: 1.20em;
         font-weight: bold;
-        color: #ff8513;
         margin: 2.0em 0em 0.5em;
     }
     #note-content h5 {
         font-size: 1.05em;
         font-weight: bold;
-        color: #f04545;
         margin: 1.5em 0em 0.3em;
     }
     #note-content h6 {
         font-size: 1.0em;
         font-weight: bold;
-        color: #ff82b2;
         margin: 1.5em 0em 0.3em;
     }
 

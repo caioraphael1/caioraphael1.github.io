@@ -262,15 +262,9 @@ pre, code {
         background: var(--central-bg);
     }
 
-    /* Mobile */
-    @media (max-width: 768px) {
+    @media (orientation: portrait) {
         #central-wrapper {
-            padding: 80px 7vw 24px;
-        }
-    }
-    @media (max-width: 600px) {
-        #central-wrapper {
-            padding: 80px 4vw 24px;
+            padding: 60px 7vw 0px;
         }
     }
 
@@ -305,21 +299,6 @@ pre, code {
 
 
 /* ================================
-   ROOT VARIABLES
-   ================================ */
-
-:root {
-  --border-radius: 12px;
-
-  --dark-transparent: rgba(255, 255, 255, 0.04);
-  --dark-hover: rgba(255, 255, 255, 0.07);
-
-  --white-fade: rgba(255, 255, 255, 0.65);
-
-  --card-width: 480px;
-}
-
-/* ================================
    TOPICS GRID
    ================================ */
 
@@ -345,8 +324,10 @@ pre, code {
 @media (max-width: 768px) {
     .topics-grid {
         grid-template-columns: 1fr;
-        gap: 1.5em;
+        gap: 18px;
         justify-content: stretch;
+
+        padding: 1rem 0 0.6rem;
     }
 }
 
@@ -379,6 +360,12 @@ pre, code {
         border-color 0.25s ease;
 }
 
+@media (orientation: portrait) {
+    .topic-card {
+        padding: 1rem;
+    }
+}
+
 .topic-card:hover {
     transform: translateY(-6px);
     background: var(--dark-hover);
@@ -401,21 +388,28 @@ pre, code {
     margin-bottom: 0.75rem;
 }
 
+@media (orientation: portrait) {    
+    .topic-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
 /* ================================
    TOPIC NAME
    ================================ */
 
 .topic-name {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--highlight-bg);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--highlight-bg);
 
-  margin-bottom: 0.4rem;
-  transition: color 0.25s ease;
+    margin-bottom: 0.4rem;
+    transition: color 0.25s ease;
 }
 
 .topic-card:hover .topic-name {
-  color: var(--highlight-hover-bg);
+    color: var(--highlight-hover-bg);
 }
 
 /* ================================
@@ -423,12 +417,20 @@ pre, code {
    ================================ */
 
 .topic-description {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: var(--white-fade);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--white-fade2);
 
-  min-height: 2.4em;
+    min-height: 2.4em;
 }
+
+
+@media (orientation: portrait) {    
+    .topic-description {
+        font-size: 0.8rem;
+    }
+}
+
 
 
 /* NOTE CONTENT */
@@ -442,6 +444,12 @@ pre, code {
         
         overflow-x: hidden;
         overflow-y: visible;
+    }
+    
+    @media (orientation: portrait) {
+        #note-content {
+            padding-top: 10px;
+        }
     }
 
 
@@ -480,11 +488,12 @@ pre, code {
         color: var(--footer-text);
     }
 
-    @media (max-width: 768px) {
+    @media (orientation: portrait) {
         #central-footer {
-            flex-direction: column;
+            /* flex-direction: column;
             align-content: center;
-            text-align: center;
+            text-align: center; */
+            font-size: x-small;
         }
     }
 
@@ -500,10 +509,10 @@ pre, code {
         cursor: pointer;
     }
 
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
         #central-footer > a {
             margin-left: auto;
             margin-right: auto;
         }
-    }
+    } */
 

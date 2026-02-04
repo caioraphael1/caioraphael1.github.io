@@ -309,6 +309,13 @@ pre, code {
         text-align: center;
         padding: 25px 36px 60px;
     }
+    @media (orientation: portrait) {    
+        main > section > header {
+            padding: 25px 36px 35px;
+        }
+    }
+
+    
 
     /* Title */
     main > section > header > h1 {
@@ -328,6 +335,13 @@ pre, code {
         padding-bottom: calc(16px*1.2);
     }
 
+    @media (orientation: portrait) {
+        main > section > header > h1 {
+            letter-spacing: 2px;
+            line-height: 1.05em;
+        }
+    }
+
 
     /* Secondary title */
     main > section > header > h1 > span {
@@ -343,22 +357,20 @@ pre, code {
 
 
 #topics {
-    color: var(--home-button-text);
-
     display: flex;
-    justify-content: center;
-    gap: 50px;
-
     flex-direction: column;
+
     gap: 40px;  
+    justify-content: center;
+
+    color: var(--home-button-text);
 }
 
-/* @media (orientation: portrait) {    
+@media (orientation: portrait) {    
    #topics {
-        flex-direction: column;
-        gap: 40px;  
+        gap: 20px;  
    }
-} */
+}
 
 
 
@@ -394,12 +406,12 @@ TOPIC CARD
         border-color 0.25s ease;
 }
 
-/* @media (orientation: portrait) {    
+@media (orientation: portrait) {    
     .topic-card {
-        width: auto;
-        margin: 0 10%;
+        min-height: 0;
+        padding: 1.25rem 1.25rem;
     }
-} */
+}
 
 .topic-card:hover {
     transform: translateY(-6px);
@@ -424,6 +436,12 @@ TOPIC CARD
     margin-bottom: 0.75rem;
 }
 
+@media (orientation: portrait) {    
+    .topic-icon {
+        font-size: 2.1rem;
+    }
+}
+
 /* ================================
    TOPIC NAME
    ================================ */
@@ -435,6 +453,12 @@ TOPIC CARD
 
   margin-bottom: 0.4rem;
   transition: color 0.25s ease;
+}
+
+@media (orientation: portrait) {    
+    .topic-name {
+        font-size: 1.6rem;
+    }
 }
 
 .topic-card:hover .topic-name {
@@ -469,11 +493,11 @@ TOPIC CARD
         gap: 8px;
     }
 
-    /* @media (orientation: portrait) {    
+    @media (orientation: portrait) {    
         #central-footer {
             font-size: x-small;
         }
-    } */
+    }
 
     #central-footer > a {
         background: var(--highlight-bg);

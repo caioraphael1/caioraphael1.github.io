@@ -86,7 +86,7 @@ const sliders = document.querySelectorAll('#note-content .table');
 // const note_content = document.querySelector('body');
 // const note_content = document.getElementById('central-wrapper');
 // const note_content = document.querySelector('main');
-// const note_content = document.getElementById('note-article');
+// const note_content = document.getElementById('note-wrapper');
 // const note_content = document.getElementById('note-content');
 
 sliders.forEach(slider => {

@@ -225,30 +225,11 @@ pre, code {
         scroll-padding: 2em;
     }
 
-    /* Chrome, Safari, Edge: Scrollbar */
-    html::-webkit-scrollbar {
-        height: 12px;
-    }
-    html::-webkit-scrollbar-track {
-        background: var(--table-scrollbar);
-        border-radius: 6px;
-    }
-    html::-webkit-scrollbar-thumb {
-        background: var(--highlight-bg);
-        border-radius: 6px;
-    }
-    html::-webkit-scrollbar-thumb:hover {
-        background: var(--checkbox-border);
-    }
-
     body {
         display: flex;
-        flex-direction: column;
 
-        min-height: 100svh;
+        min-height: 100vh;
         margin: 0;
-
-        overflow: hidden;
 
         font-family: var(--body-font);
     }
@@ -266,144 +247,115 @@ pre, code {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-
-        overflow: hidden;
     }
 
+/* CENTRAL */
+    #central-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: auto;
 
-/* HEADER */
-    body > header {
-        background: var(--dark-transparent);
-        border-bottom: 1px solid var(--study-sidebar-border);
-    }
+        margin: 0 auto;
 
-    body > header > a {
-        display: inline-block;
-        padding: 16px;
-    }
-
-
-/* MAIN */
-    main {
+        padding: 80px 15vw 24px;
+        
         background: var(--central-bg);
-
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        overflow: hidden;
-    }
-
-    main > section {
-        display: flex;
-        flex-direction: column;
-    }
-
-    @media (orientation: portrait) {    
-        main > section {
-            font-size: smaller;
-        }
-    }
-
-    /* TITLE */
-
-    main > section > header {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding: 25px 36px 60px;
-    }
-    @media (orientation: portrait) {    
-        main > section > header {
-            padding: 25px 36px 35px;
-        }
-    }
-
-    
-
-    /* Title */
-    main > section > header > h1 {
-        color: transparent;
-        background: linear-gradient(45deg, #ea60da, #ed8f57, #fbd41d);
-
-        filter: drop-shadow(8px 8px 12px rgba(0, 0, 0, 0.8));
-        background-clip: text;
-        -webkit-background-clip: text;
-
-        font-family: var(--logo-font);
-        font-size: 6em;
-        font-weight: 800;
-        letter-spacing: 3px;
-
-        /* text-transform: uppercase; */
-        padding-bottom: calc(16px*1.2);
     }
 
     @media (orientation: portrait) {
-        main > section > header > h1 {
-            letter-spacing: 2px;
-            line-height: 1.05em;
+        #central-wrapper {
+            padding: 60px 7vw 0px;
         }
     }
 
 
-    /* Secondary title */
-    main > section > header > h1 > span {
-        color: var(--home-title-2);
-    }
 
-    /* Description */
-    main > section > header > p {
-        color: var(--home-description);
-        font-size: 1.6em
-    }
+.site-logo {
+    width: 480px;
 
+    color: transparent;
+    background: linear-gradient(45deg, #ea60da, #ed8f57, #fbd41d);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: .5px var(--logo-border);
 
+    font-family: var(--logo-font);
+    font-size: 2.3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 
-#topics {
-    display: flex;
-    flex-direction: column;
+    background-clip: text;
+    -webkit-background-clip: text;
 
-    gap: 40px;  
-    justify-content: center;
-
-    color: var(--home-button-text);
+    background-position-x: -78px;
+    background-attachment: local;
 }
 
-@media (orientation: portrait) {    
-   #topics {
-        gap: 20px;  
-   }
+@media (max-width: 600px) {
+    .site-logo {
+        width: auto;
+        
+        font-size: xx-large;
+        
+        background-position-x: 0;
+    }
 }
-
-
-
 
 
 /* ================================
-TOPIC CARD
-================================ */
+   TOPICS GRID
+   ================================ */
+
+.topics-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1.2fr);
+    gap: 2.8rem;
+
+    justify-content: center;
+
+    padding: 1rem 0 2rem;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        justify-content: stretch;
+
+        padding: 1rem 0 0.6rem;
+    }
+}
+
+/* ================================
+   TOPIC CARD
+   ================================ */
 
 .topic-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
 
-    /* width: 100%; */
-    width: auto;
+    width: 100%;
     min-height: 160px;
 
-    margin: 0 10%;
     padding: 1.75rem 1.25rem;
 
     border-radius: 4px;
     background: var(--study-cards-bg);
     border: 1px solid var(--darker);
 
+    font-size: large;
+    text-decoration: none;
     cursor: pointer;
 
     transition:
@@ -412,9 +364,8 @@ TOPIC CARD
         border-color 0.25s ease;
 }
 
-@media (orientation: portrait) {    
+@media (orientation: portrait) {
     .topic-card {
-        min-height: 0;
         padding: 1rem;
     }
 }
@@ -431,20 +382,20 @@ TOPIC CARD
     outline-offset: 4px;
 }
 
-
 /* ================================
    TOPIC ICON
    ================================ */
 
 .topic-icon {
-    font-size: 2.9rem;
+    font-size: 2.8rem;
     line-height: 1;
     margin-bottom: 0.75rem;
 }
 
 @media (orientation: portrait) {    
     .topic-icon {
-        font-size: 2.1rem;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -453,23 +404,16 @@ TOPIC CARD
    ================================ */
 
 .topic-name {
-  font-size: 1.7rem;
-  font-weight: 600;
-  color: var(--highlight-bg);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--highlight-bg);
 
-  margin-bottom: 0.4rem;
-  transition: color 0.25s ease;
-}
-
-@media (orientation: portrait) {    
-    .topic-name {
-        font-size: 1.6rem;
-        margin-bottom: 0;
-    }
+    margin-bottom: 0.4rem;
+    transition: color 0.25s ease;
 }
 
 .topic-card:hover .topic-name {
-  color: var(--highlight-hover-bg);
+    color: var(--highlight-hover-bg);
 }
 
 /* ================================
@@ -477,40 +421,106 @@ TOPIC CARD
    ================================ */
 
 .topic-description {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: var(--white-fade);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--white-fade2);
 
-  min-height: 2.4em;
+    min-height: 2.4em;
+}
+
+
+@media (orientation: portrait) {    
+    .topic-description {
+        font-size: 0.8rem;
+    }
 }
 
 
 
-
-/* CENTRAL FOOTER */
-    #central-footer {
-        background: var(--central-bg);
-        color: var(--footer-text);
-
+/* NOTE CONTENT */
+    #note-content {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        flex: 1;
+        padding-top: 30px;
 
-        padding: 25px 12px 25px 12px;
-
-        gap: 8px;
+        color: var(--note-text);
+        
+        overflow-x: hidden;
+        overflow-y: visible;
     }
-
-    @media (orientation: portrait) {    
-        #central-footer {
-            font-size: x-small;
+    
+    @media (orientation: portrait) {
+        #note-content {
+            padding-top: 10px;
         }
     }
 
+
+/* HEADERS */
+    #note-content header {
+        padding: 20px 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    #note-content header > p {
+        color: var(--note-subtitle);
+
+        font-size: 1.0em;
+        padding-top: 8px;
+    }
+
+    #note-content h1 {
+        line-height: 1em;
+        font-size: 3.0em;
+        font-weight: 400;
+        color: var(--white);
+    }
+
+    @media (orientation: portrait) {
+        #note-content h1 {
+            font-size: 2.6em;
+        }
+    }
+
+
+/* CENTRAL FOOTER */
+    #central-footer {
+        display: flex;
+        justify-content: center;
+
+        margin-top: auto;
+        padding: 25px 12px 25px 12px;
+
+
+        gap: 8px;
+
+        color: var(--footer-text);
+    }
+
+    @media (orientation: portrait) {
+        #central-footer {
+            font-size: x-small;
+            padding: 25px 0px;
+        }
+    }
+
+
     #central-footer > a {
+        width: max-content;
+        padding: 0 8px;
+
         background: var(--highlight-bg);
         color: var(--highlight-text);
 
         border-radius: 4px;
         cursor: pointer;
-        padding: 0 8px;
     }
+
+    /* @media (max-width: 768px) {
+        #central-footer > a {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    } */
+

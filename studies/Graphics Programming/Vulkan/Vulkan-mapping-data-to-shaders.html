@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.34696.css" >
+			href="/static/studies.08621.css" >
 	</head>
 	<body>
 		<aside
@@ -241,6 +241,12 @@ window.MathJax = {
 												<a
 													href="#about" >
                                                     About
+												</a>
+											</li>
+											<li>
+												<a
+													href="#recommendations" >
+                                                    Recommendations
 												</a>
 											</li>
 											<li>
@@ -818,8 +824,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-01-22" >
-                            | Updated: 2026-01-22
+							datetime="2026-02-11" >
+                            | Updated: 2026-02-11
 						</time>
 					</p>
 				</header>
@@ -3486,6 +3492,133 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 				</ul>
 			</li>
 		</ul>
+	</li>
+</ul>
+<h4
+	id="recommendations" >
+    Recommendations
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://developer.nvidia.com/blog/advanced-api-performance-descriptors" 
+				class="external-link" 
+				target="_blank" >
+                NVIDIA Recommendations
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Prefer a “bindless” design.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use unbounded array descriptors pointing to big descriptor tables or sets with all known textures, buffers, and acceleration structures needed for the frame.
+		</p>
+	</li>
+	<li>
+		<p>
+            Upload as much data upfront as possible (textures, per-draw constants, and per-frame constants) and make them accessible through these descriptor arrays.
+		</p>
+	</li>
+	<li>
+		<p>
+            This design also makes it easier to implement ray tracing; that is, allowing access to every texture and buffers from each shader.
+		</p>
+	</li>
+	<li>
+		<p>
+            Cache descriptors on GPU-visible descriptor heaps (DirectX 12) or sets (Vulkan) with a known offset. This lowers the CPU overhead and virtually eliminates the need for copying descriptors.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use multiple copies of the heap to handle descriptor changes gracefully, such as streaming textures and buffers. But don’t exceed the 1M and 2K limits. For more information, see the Not Recommended section later in this post.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use root (DirectX 12) or push (Vulkan) constants. They are the fastest way to transfer per-draw varying constants.
+		</p>
+	</li>
+	<li>
+		<p>
+            Try to keep the number of descriptor sets in pipeline layouts as low as possible.
+		</p>
+	</li>
+	<li>
+		<p>
+            Use dynamic uniform and storage buffers for per-draw call changes.
+		</p>
+	</li>
+	<li>
+		<p>
+            Prefer using combined image and sampler descriptors.
+		</p>
+	</li>
+	<li>
+		<p>
+            Vulkan 1.2 enables passing device addresses of storage buffers as 64-bit values to shaders. This enables pointer-like workflows (such as casting) that are not available in DirectX or HLSL. GLSL exposes this through 
+            <code>GL_EXT_buffer_reference(2)</code>
+            &nbsp;and uses 
+            <code>SPV_EXT_physical_storage_buffer</code>
+            . Try to make optimal usage of the 
+            <code>buffer_reference_align</code>
+            &nbsp;information, as the hardware can leverage wider memory load operations accordingly.
+		</p>
+	</li>
+	<li>
+		<p>
+            Do not have excessively sparse binding offsets in a single descriptor set.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Keep bindings as tightly packed as possible.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Unused binding indices waste memory and reduce cache efficiency.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Do not exceed 1M active descriptors and 2K samplers in total for the whole application (GPU-visible).
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Otherwise, pipeline stalls across the whole GPU could occur when switching descriptor heaps (DirectX 12).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Whenever the limits are exceeded, it reduces the asynchronous execution efficiency of command lists.
+				</p>
+			</li>
+			<li>
+				<p>
+                    On Vulkan, the deduplication of descriptors is automatically performed by the driver. The limits mentioned earlier only count towards unique variations.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In general, try to keep under the thresholds described in VkPhysicalDeviceLimits.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Avoid typed UAV loads or stores where possible.
+		</p>
 	</li>
 </ul>
 <h4
@@ -9807,7 +9940,7 @@ pointer.v = 42.0;
 			</footer>
 		</main>
 		<script
-			src="/static/studies.34696.js" >
+			src="/static/studies.08621.js" >
 		</script>
 	</body>
 </html>

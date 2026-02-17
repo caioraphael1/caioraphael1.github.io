@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.53525.css" >
+			href="/static/projects-index.64934.css" >
 	</head>
 	<body>
 		<div
@@ -104,7 +104,7 @@ Audio middleware for adaptive audio
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 80px;" >
+									style="padding: 0 6%;" >
 									<div
 										class="img-container" >
 										<a
@@ -179,7 +179,7 @@ Frozen Sprouts
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 240px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -272,7 +272,7 @@ Data Oriented Design with Entity Component System
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 140px;" >
+									style="padding: 0 12%;" >
 									<div
 										class="img-container" >
 										<a
@@ -340,7 +340,7 @@ Improving level creation
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 80px;" >
+									style="padding: 0 8%;" >
 									<div
 										class="img-container" >
 										<a
@@ -398,14 +398,14 @@ Language design and safer code
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 140px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
 											href="https://github.com/caioraphael1/Odin" 
 											target="_blank" >
 											<img
-												src="https://wsrv.nl/?h=1080px0&url=https://opengraph.githubassets.com/1/caioraphael1/Odin" 
+												src="https://wsrv.nl/?h=1080px&url=https://opengraph.githubassets.com/1/caioraphael1/Odin" 
 												style="border-radius: 18px;" >
 											</img>
 										</a>
@@ -936,7 +936,7 @@ Real-time CPU and GPU Profiler with nanosecond resolution
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 90px;" >
+									style="padding: 0 6%;" >
 									<div
 										class="img-container" >
 										<a
@@ -970,7 +970,7 @@ Real-time CPU and GPU Profiler with nanosecond resolution
 								</div>
 								<div
 									class="media" 
-									style="padding: 0 90px;" >
+									style="padding: 0 6%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1033,7 +1033,7 @@ Atomics, CPU intrinsics, Job Stealing
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 90px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1101,15 +1101,19 @@ Extensive Multiplayer Techniques, Procedural Animations, Pixelart
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 90px;" >
+									style="padding: 0 6%;" >
 									<div
 										class="img-container" >
 										<a
 											href="/assets/projects/mystical_forest_v2/2025-07-10 17-22-59.mp4" 
 											target="_self" >
 											<video
-												src="/assets/projects/mystical_forest_v2/2025-07-10 17-22-59.mp4" 
-												controls="">
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/mystical_forest_v2/2025-07-10 17-22-59.mp4" >
+												</source>
 											</video>
 										</a>
 									</div>
@@ -1166,7 +1170,7 @@ The Jolt Physics Engine, now for Odin Lang
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1190,7 +1194,7 @@ The Jolt Physics Engine, now for Odin Lang
 								</div>
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1275,7 +1279,7 @@ Exploration of Multiplayer Techniques, Game AI, Real-time 2D Combat
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 400px;" >
+									style="padding: 0 25%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1289,7 +1293,7 @@ Exploration of Multiplayer Techniques, Game AI, Real-time 2D Combat
 								</div>
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1360,7 +1364,7 @@ Server-Authoritive architecture and Netcode techniques
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1382,9 +1386,24 @@ Server-Authoritive architecture and Netcode techniques
 										</a>
 									</div>
 								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        Multiplayer would be the foundation for my future games, so I took good care of it right in the beginning of my transition from Godot to my custom engine in Odin. I wanted to make sure to treat netcode as a priority and have the multiplayer scale well with time.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        Even though I later added to the engine a pretty robust physics engine via JoltPhysics, that wouldn't matter if the client felt laggy or if the client and server couldn't agree on the current physics state, leaving the client to be rolledback constantly. This was one of the first big challenges I had with netcode. To fix this issue, I decided to completely separate the updates inside the server and client via well-defined "cycles" and "fixed cycles", in a way that a single clock-sync when the client logs in would be enough to keep latency to a minimum. This, of course, only works in a vacuum, as CPU drift can occur and latency is not constant in time. For that reason, a series of measurements is taken at a fixed rate to identify delta spikes in latency, so the client can process faster or slower to properly have the physics update synchronized. The result is shown in the graph below: a much smaller delta ratio comparing gray entries (old) vs colorful entries (new), indicating a big improvement in synchronization. Not all was solved, as there was still a "minimum ms delta" due to restrictions around the server update frequency, as well as problems of "over-compensation" if the client has a delta-ms too large due to high RTT, but I believe that both could be solved with improved temporal metrics.
+									</p>
+								</li>
+							</ul>
+							<div
+								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 450px;" >
+									style="padding-right: 60%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1398,16 +1417,6 @@ Server-Authoritive architecture and Netcode techniques
 								</div>
 							</div>
 							<ul>
-								<li>
-									<p>
-                                        Multiplayer would be the foundation for my future games, so I took good care of it right in the beginning of my transition from Godot to my custom engine in Odin. I wanted to make sure to treat netcode as a priority and have the multiplayer scale well with time.
-									</p>
-								</li>
-								<li>
-									<p>
-                                        Even though I later added to the engine a pretty robust physics engine via JoltPhysics, that wouldn't matter if the client felt laggy or if the client and server couldn't agree on the current physics state, leaving the client to be rolledback constantly. This was one of the first big challenges I had with netcode. To fix this issue, I decided to completely separate the updates inside the server and client via well-defined "cycles" and "fixed cycles", in a way that a single clock-sync when the client logs in would be enough to keep latency to a minimum. This, of course, only works in a vacuum, as CPU drift can occur and latency is not constant in time. For that reason, a series of measurements is taken at a fixed rate to identify delta spikes in latency, so the client can process faster or slower to properly have the physics update synchronized. The result is shown in the graph above: a much smaller delta ratio comparing gray entries (old) vs colorful entries (new), indicating a big improvement in synchronization. Not all was solved, as there was still a "minimum ms delta" due to restrictions around the server update frequency, as well as problems of "over-compensation" if the client has a delta-ms too large due to high RTT, but I believe that both could be solved with improved temporal metrics.
-									</p>
-								</li>
 								<li>
 									<p>
                                         Beyond the solutions I talked about, I worked on creating my own encoding/decoding through a specialized serialization system, using CBOR for something more complex, such as the custom RPC system I created, or using something as compact as a single byte to identify instructions. This could also be improved even further by better utilization of UDP packets for non-crucial tasks, as well as better utilization of the TCP payload when considering the size of the header.
@@ -1447,7 +1456,7 @@ Separating level creation from engine logic
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 150px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1535,7 +1544,7 @@ Peer-to-Peer and Server-Authoritive
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 240px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1598,15 +1607,69 @@ Turn-based and grid-based combat, Game AI, Isometric Pathfinding, Isometric Art
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 270px;" >
+									style="padding: 0 3%;" >
 									<div
 										class="img-container" >
 										<a
-											href="/assets/projects/moss_isometric/2024-08-31 19-20-54 - Dofus de noite 1.png" 
+											href="/assets/projects/moss_isometric/2024-08-31 19-20-54 - Dofus de noite.mp4" 
 											target="_self" >
-											<img
-												src="/assets/projects/moss_isometric/2024-08-31 19-20-54 - Dofus de noite 1.png" >
-											</img>
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/moss_isometric/2024-08-31 19-20-54 - Dofus de noite.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/moss_isometric/2024-09-26 13-19-38 - Demo combate caves of qud.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/moss_isometric/2024-09-26 13-19-38 - Demo combate caves of qud.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+								<div
+									class="media" 
+									style="padding: 0 3%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/moss_isometric/2024-08-17 23-10-14 - Raycasting.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/moss_isometric/2024-08-17 23-10-14 - Raycasting.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/moss_isometric/2024-08-09 01-25-23 - Demo Pathfinding.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/moss_isometric/2024-08-09 01-25-23 - Demo Pathfinding.mp4" >
+												</source>
+											</video>
 										</a>
 									</div>
 								</div>
@@ -1658,8 +1721,30 @@ Turn-based and grid-based combat, Game AI, Isometric Pathfinding, Isometric Art
 									</p>
 								</li>
 							</ul>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/moss_isometric/2024-09-26 13-19-38 - Demo combate caves of qud.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/moss_isometric/2024-09-26 13-19-38 - Demo combate caves of qud.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
 							<h5>
-                                Top-down iteration
+                                Top-down version
 							</h5>
 							<ul>
 								<li>
@@ -1668,6 +1753,28 @@ Turn-based and grid-based combat, Game AI, Isometric Pathfinding, Isometric Art
 									</p>
 								</li>
 							</ul>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/moss_isometric/2024-08-02 20-37-36.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/moss_isometric/2024-08-02 20-37-36.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div
@@ -1686,7 +1793,7 @@ Library for AI with emergent behavior
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1742,11 +1849,11 @@ Library for AI with emergent behavior
 						class="project-card" >
 						<p
 							class="project-name" >
-Snow Shaders for the Snow Expedition game prototype
+Snow Shaders
 						</p>
 						<p
 							class="project-description" >
-Exploring snow shaders
+Exploring snow
 						</p>
 						<div
 							class="content" >
@@ -1754,7 +1861,7 @@ Exploring snow shaders
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 160px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1778,7 +1885,7 @@ Exploring snow shaders
 								</div>
 								<div
 									class="media" 
-									style="padding: 0 160px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1831,7 +1938,7 @@ Bringing Minecraft movement and workflow to Blockbench
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -2031,7 +2138,7 @@ Improving the Blockbench modeling software
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -2095,7 +2202,7 @@ Batch export and export customizations for Blender
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 200px;" >
+									style="padding: 0 15%;" >
 									<div
 										class="img-container" >
 										<a
@@ -2144,7 +2251,7 @@ First look at 3D in Godot
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 140px;" >
+									style="padding: 0 12%;" >
 									<div
 										class="img-container" >
 										<a
@@ -2178,7 +2285,7 @@ First look at 3D in Godot
 								</div>
 								<div
 									class="media" 
-									style="padding: 0 140px;" >
+									style="padding: 0 12%;" >
 									<div
 										class="img-container" >
 										<a
@@ -2255,7 +2362,8 @@ Other projects will be added soon
 							<div
 								class="medias" >
 								<div
-									class="media" >
+									class="media" 
+									style="padding: 0 5%;" >
 									<div
 										class="video-container" >
 										<iframe
@@ -2308,7 +2416,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.53525.js" >
+			src="/static/projects.64934.js" >
 		</script>
 	</body>
 </html>

@@ -12,7 +12,7 @@
 			content="width=device-width, initial-scale=1" >
 		<meta
 			name="description" 
-			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems, Physicist" >
 		<meta
 			name="author" 
 			content="Caio Raphael" >
@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.72685.css" >
+			href="/static/studies.30129.css" >
 	</head>
 	<body>
 		<aside
@@ -477,6 +477,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-sizes.html" >
+                                    Sizes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-common-techniques.html" >
                                     Common Techniques
 								</a>
@@ -507,6 +516,15 @@ window.MathJax = {
 										</ul>
 									</li>
 								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-fixing-artifacts.html" >
+                                    Fixing Artifacts
+								</a>
 							</li>
 						</ul>
 					</details>
@@ -720,8 +738,8 @@ window.MathJax = {
                             🕒 Created: 2023-07-10
 						</time>
 						<time
-							datetime="2026-01-21" >
-                            | Updated: 2026-01-21
+							datetime="2026-02-16" >
+                            | Updated: 2026-02-16
 						</time>
 					</p>
 				</header>
@@ -752,11 +770,6 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-			<input
-				type="checkbox" 
-				disabled=""
->
-            
 			<a
 				href="https://thebookofshaders.com/03/" 
 				class="external-link" 
@@ -2633,206 +2646,8 @@ view_distance = depth;
 	</li>
 </ul>
 <h5
-	id="fixing-the-quoteshimmering-artifactquote" >
-    Fixing the &quot;shimmering artifact&quot;
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://jorenjoestar.github.io/post/pixel_art_filtering/" 
-				class="external-link" 
-				target="_blank" >
-                Shimmering Artifact in Pixel Art
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    The idea behind the filtering is simple: apply 
-					<strong>
-                        nearest
-					</strong>
-                    &nbsp;filter to pixels that are fully inside a texel, and use 
-					<strong>
-                        bilinear
-					</strong>
-                    &nbsp;with custom weights at the edges.
-				</p>
-			</li>
-			<li>
-				<p>
-                    That is the core idea.
-				</p>
-			</li>
-			<li>
-				<p>
-                    The tricky part is creating custom weights for the bilinear filter to work, and that is why there are so many different filters.
-				</p>
-			</li>
-			<li>
-				<p>
-                    The rest of the article is: We will now see the different filters included in the testbed. Nothing that I wrote, so I will include links to the original material and you can see the authors' work.
-				</p>
-			</li>
-			<li>
-				<p>
-                    See the links at the end of the article to view the analyzed shaders.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            https://www.shadertoy.com/view/MllBWf
-						</p>
-					</li>
-					<li>
-						<p>
-                            https://www.shadertoy.com/view/ltfXWS
-						</p>
-					</li>
-					<li>
-						<p>
-                            https://www.shadertoy.com/view/4dlXzB
-						</p>
-					</li>
-					<li>
-						<p>
-                            https://www.shadertoy.com/view/ltBGWc / https://www.shadertoy.com/view/MlB3D3
-						</p>
-					</li>
-					<li>
-						<p>
-                            https://www.shadertoy.com/view/ltBfRD
-						</p>
-					</li>
-					<li>
-						<p>
-                            https://www.shadertoy.com/view/ltcGDX
-						</p>
-						<ul>
-							<li>
-								<p>
-                                    scale/rotate a pixel-art-piece while preserving the chunky pixels (zoomed in view to highlight the effect of the filtering)
-								</p>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-                    The article references 
-                    <a href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero.html#chat-18-shimmering-artifact-in-pixel-art-and-nsight-shader-analysis">
-                    Handmade Hero#Chat 18 - Shimmering artifact in Pixel Art and nSight Shader Analysis
-                    </a>
-                    &nbsp;and comments on the shader made.
-				</p>
-				<ul>
-					<li>
-						<p>
-                            This article and the video below talk about the same topic.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://guide.handmadehero.org/chat/chat018/" 
-				class="external-link" 
-				target="_blank" >
-                Shimmering artifact in Pixel Art and nSight Shader Analysis
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <a href="/studies/Low-Level Systems/Handmade Hero/Handmade Hero.html#chat-18-shimmering-artifact-in-pixel-art-and-nsight-shader-analysis">
-                    Handmade Hero#Chat 18 - Shimmering artifact in Pixel Art and nSight Shader Analysis
-                    </a>
-                    .
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=d6tp43wZqps" 
-				class="external-link" 
-				target="_blank" >
-                Removing the shimmering artifact from Pixel Art in 3D
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Well explained.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Unlike the videos above, this considers that Pixel Art can be rotated in 3D.
-				</p>
-			</li>
-			<li>
-				<p>
-                    He uses mipmap and premultiplied alpha.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Final shader:
-				</p>
-				<ul>
-					<li>
-						<p>
-                            <img src="assets/image_20250704084655.png" width="500" >
-                            .
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="camera-smoothness" >
-    Camera Smoothness
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=jguyR4yJb1M" 
-				class="external-link" 
-				target="_blank" >
-                aarthificial: Pixel Art look for everything while keeping camera smoothness
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    The technique is to use a low-resolution viewport but correct the camera position to avoid a snapping feel.
-				</p>
-			</li>
-			<li>
-				<p>
-                    No code or equations are shown.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="etc" >
-    Etc
+	id="shaders" >
+    Shaders
 </h5>
 <ul>
 	<li>
@@ -2908,7 +2723,7 @@ view_distance = depth;
 			</footer>
 		</main>
 		<script
-			src="/static/studies.72685.js" >
+			src="/static/studies.30129.js" >
 		</script>
 	</body>
 </html>

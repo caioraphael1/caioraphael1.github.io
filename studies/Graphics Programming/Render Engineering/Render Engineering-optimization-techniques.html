@@ -12,7 +12,7 @@
 			content="width=device-width, initial-scale=1" >
 		<meta
 			name="description" 
-			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems, Physicist" >
 		<meta
 			name="author" 
 			content="Caio Raphael" >
@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.72685.css" >
+			href="/static/studies.30129.css" >
 	</head>
 	<body>
 		<aside
@@ -465,6 +465,14 @@ window.MathJax = {
 									</li>
 									<li>
 										<a
+											href="#many-small-textures-or-one-big-texture-atlas-texture" >
+                                            Many Small Textures or One Big Texture (Atlas Texture)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
 											href="#scene-management" >
                                             Scene Management
 										</a>
@@ -565,6 +573,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-sizes.html" >
+                                    Sizes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-common-techniques.html" >
                                     Common Techniques
 								</a>
@@ -576,6 +593,15 @@ window.MathJax = {
 									class="" 
 									href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-shaders.html" >
                                     Shaders
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Graphics Programming/Graphics and Shaders/Graphics and Shaders-fixing-artifacts.html" >
+                                    Fixing Artifacts
 								</a>
 							</li>
 						</ul>
@@ -790,13 +816,31 @@ window.MathJax = {
                             🕒 Created: 2025-07-03
 						</time>
 						<time
-							datetime="2026-01-22" >
-                            | Updated: 2026-01-22
+							datetime="2026-02-15" >
+                            | Updated: 2026-02-15
 						</time>
 					</p>
 				</header>
 				<article
 					id="note-content" >
+<ul>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://gpuopen.com/learn/rdna-performance-guide/" 
+				class="external-link" 
+				target="_blank" >
+                AMD RDNA 3 Performance Guide
+			</a>
+            .
+		</p>
+	</li>
+</ul>
 <h3
 	id="shader-branching" >
     Shader Branching
@@ -1416,6 +1460,221 @@ window.MathJax = {
 						</p>
 					</li>
 				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="many-small-textures-or-one-big-texture-atlas-texture" >
+    Many Small Textures or One Big Texture (Atlas Texture)
+</h3>
+<ul>
+	<li>
+		<p>
+            The main differences lie in memory usage and resource management.
+		</p>
+	</li>
+	<li>
+		<p>
+            A single 8000×8000 RGBA8 texture (~244 MB) can be allocated as one large GPU block. In contrast, hundreds of smaller textures must be sub-allocated from one or more heaps. Vulkan drivers limit the number of memory allocations (~4K) and align each image to hardware granularity, so many small textures tend to waste space.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://stackoverflow.com/questions/38509303/does-directx-12-eliminate-the-need-for-texture-atlasing" 
+				class="external-link" 
+				target="_blank" >
+                Does DirectX 12 / Vulkan eliminate the need for texture atlasing?
+			</a>
+		</p>
+	</li>
+</ul>
+<h5
+	id="memory" >
+    Memory
+</h5>
+<ul>
+	<li>
+		<p>
+            It's all about packing. A Atlas texture has good packing, as for no padding, while many texture might have bad padding due to driver constraints and fragmentation.
+		</p>
+	</li>
+	<li>
+		<p>
+            Arrayed images are not allocated contiguously in the same way that pixels in an &quot;equivalent&quot; unarrayed image would be allocated. That is, the next layer does not start where the next pixel would have started in a bigger image. Each layer will start with its own alignment.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;Given that the sub-images that you want arrayed are so tiny, it's probably best to just use one large single image instead of using array layers&quot;; 
+					<a
+						href="https://stackoverflow.com/questions/78966030/vulkan-texture-array-memory-size-difference#:~:text=Given%20that%20the%20sub,instead%20of%20using%20array%20layers" 
+						class="external-link" 
+						target="_blank" >
+                        source
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;would this be an issue with power 2 sized textures?&quot;
+				</p>
+				<ul>
+					<li>
+						<p>
+                            That wouldn't guarantee the alignment requirement. For example, an 8x8x8bpp image layer only takes up 64 bytes. So the 512 byte alignment would likely still apply.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Unlike some other APIs that allow an option to perform one memory allocation per resource, in Vulkan this is impractical for large applications – drivers are only required to support up to 4096 individual allocations. In addition to the total number being limited, allocations can be slow to perform, may waste memory due to assuming worst case possible alignment requirements, and also require extra overhead during command buffer submission to ensure memory residency. Because of this, suballocation is necessary. A typical pattern of working with Vulkan involves performing large (e.g. 16 MB – 256 MB depending on how dynamic the memory requirements are) allocations using vkAllocateMemory, and performing suballocation of objects within this memory, effectively managing it yourself; 
+			<a
+				href="https://zeux.io/2020/02/27/writing-an-efficient-vulkan-renderer/#:~:text=Unlike%20some%20other%20APIs%20that,this%20memory%2C%20effectively%20managing%20it" 
+				class="external-link" 
+				target="_blank" >
+                source
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            In short, the VRAM footprint of 200 small images is roughly the same as one big one, but the small-image approach requires careful sub-allocation to prevent fragmentation.
+		</p>
+	</li>
+</ul>
+<h5
+	id="performance" >
+    Performance
+</h5>
+<ul>
+	<li>
+		<p>
+            On desktop GPUs, reading texels from RGBA8 images is identical regardless of layout . With nearest filtering (typical for pixel art), there’s no filtering or mip overhead, so sampling is trivial in both cases. NVidia confirms bindless sampling has “absolutely no penalty” and AMD likewise uses similar hardware fetch paths.
+		</p>
+	</li>
+	<li>
+		<p>
+            Developer guidance (and engine experience) thus leans towards multiple textures with bindless access: they are just as fast at draw time and far easier to stream on today’s hardware
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                If using bindless
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    With bindless and GPU-driven draws, neither option causes CPU bottlenecks – the limiting factor is simply how much texture data the GPU must read.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            
+			<a
+				href="https://gpuopen.com/learn/rdna-performance-guide/" 
+				class="external-link" 
+				target="_blank" >
+                AMD RDNA 3 Performance Guide
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="ergonomics" >
+    Ergonomics
+</h5>
+<ul>
+	<li>
+		<p>
+            Using a Atlas Texture requires more careful maintance, as moving any pixels inside the texture might screw the expected result.
+		</p>
+	</li>
+	<li>
+		<p>
+            Using Many Textures avoid this problem, as changing the contents of one texture doesn't affect the contents of other textures.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This improvement comes at a cost of probable worse memory footprint, if not manually managed for optimal padding, which could also result in worse performance due to cache misses.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Is it worth it?
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Yes, probably yes.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="texture-streaming" >
+    Texture Streaming
+</h5>
+<ul>
+	<li>
+		<p>
+            Hardware support for sparse textures is currently extremely limited. NVIDIA engineers explicitly report that binding sparse pages in Vulkan is “painfully slow” – on an A4000 they saw seconds of CPU/GPU work just to bind ~1000 pages of a sparse texture; 
+			<a
+				href="https://forums.developer.nvidia.com/t/sparse-texture-binding-is-painfully-slow/259105" 
+				class="external-link" 
+				target="_blank" >
+                source
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It even notes that reading from very sparse textures “can be bad for cache utilization”.
+		</p>
+	</li>
+	<li>
+		<p>
+            These findings are illustrated by timing charts: for example, one test on NVIDIA hardware showed vkQueueBindSparse taking ~1–2 seconds to map 1000+ tiles of a 1024³ image . In practice, this means GPU-side streaming a single large texture (e.g. via sparse residency or tile binding) will introduce severe stalls. Modern GPUs simply do not stream into huge megatextures efficiently yet. By contrast, many smaller textures can be streamed individually without sparse methods: the game can load or update just the textures needed for visible sprites.
+		</p>
+	</li>
+	<li>
+		<p>
+            For instance, Wicked Engine’s developer implemented texture streaming by background-loading mip levels and recreating VkImage objects when new detail is needed. He found that this “recreating textures” approach gave “good enough performance” for his engine, avoiding any use of tiled resources . In short, updating or swapping dozens of smaller textures on the fly is far simpler and currently far faster than trying to patch a giant sparse texture.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://wickedengine.net/2024/06/texture-streaming/" 
+						class="external-link" 
+						target="_blank" >
+                        Wicked Engine - Texture Streaming
+					</a>
+                    .
+				</p>
 			</li>
 		</ul>
 	</li>
@@ -2524,7 +2783,7 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 			</footer>
 		</main>
 		<script
-			src="/static/studies.72685.js" >
+			src="/static/studies.30129.js" >
 		</script>
 	</body>
 </html>

@@ -12,7 +12,7 @@
 			content="width=device-width, initial-scale=1" >
 		<meta
 			name="description" 
-			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems" >
+			content="Senior Game Developer, Engine Developer, Low-Level Network, Low-Level Systems, Physicist" >
 		<meta
 			name="author" 
 			content="Caio Raphael" >
@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.72685.css" >
+			href="/static/projects-index.30129.css" >
 	</head>
 	<body>
 		<div
@@ -88,6 +88,81 @@ I’ve always wanted to create meaningful games while enjoying the process, coll
 				</header>
 				<div
 					class="projects-grid" >
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
+FMOD Integration and Low-Level Audio API
+						</p>
+						<p
+							class="project-description" >
+Audio middleware for adaptive audio
+						</p>
+						<div
+							class="content" >
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 80px;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/fmod/fmod-logo.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/fmod/fmod-logo.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/fmod/fmod.jpg" 
+											target="_self" >
+											<img
+												src="/assets/projects/fmod/fmod.jpg" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/fmod/miniaudio.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/fmod/miniaudio.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        First it was implemented a low-level audio API using <a href="https://github.com/mackron/miniaudio">miniaudio</a> as the backend. I opted to use its low-level API to have direct control over audio physical devices and better understand how audio is processed under the hood. More about that is found at <a href="studies/Audio and Video/Audio Programming/Audio Programming.md">Audio Programming</a>.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        Right after that, I decided to work on a higher abstraction library with <a href="https://www.fmod.com/">fmod</a>, which is the industry standard Audio Middleware for adaptive audio in games. The result is great audio control, giving the engine support for spatial and adaptive audio.
+									</p>
+									<ul>
+										<li>
+											<p>
+                                                It's worth noticing that I don't love how memory and threading are hidden from the programmer, but that's usually the price to pay for working with third-party software; I thought about creating my own audio middleware software, but I decided against it as that's quite unreasonable for now.
+											</p>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<p>
+                                        More information on the FMOD API implementation, check: <a href="studies/Audio and Video/Audio Programming/FMOD API.md">FMOD API</a>.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
 					<div
 						class="project-card" >
 						<p
@@ -1922,7 +1997,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.72685.js" >
+			src="/static/projects.30129.js" >
 		</script>
 	</body>
 </html>

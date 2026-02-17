@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.42575.css" >
+			href="/static/projects-index.51121.css" >
 	</head>
 	<body>
 		<div
@@ -1189,36 +1189,6 @@ Extensive Multiplayer Techniques, Procedural Animations, Pixelart
 									</li>
 								</ul>
 								<h5>
-                                    Visuals
-								</h5>
-								<ul>
-									<li>
-										<p>
-                                            For the visuals, I decided to completely avoid an internal level editor. I'm of the belief that external editors are much better choices when it comes to customization and artistic choice. For the external editor in question, instead of creating something of my own, I decided to go for <a href="https://github.com/deepnight/ldtk">LDtk</a>, from one of the creators of <a href="https://store.steampowered.com/app/588650/Dead_Cells/">Dead Cells</a>. For that, I made a custom parser that would translate the .ldtk files into custom logic inside the engine. Unfortunately, I had a very bad experience working with LDtk, which led me to edit its source code constantly in order to solve a lot of the bugs and missing features it was lacking; coding in Haxe/OOP/JS was not fun.
-										</p>
-									</li>
-								</ul>
-								<h5>
-                                    Rendering
-								</h5>
-								<ul>
-									<li>
-										<p>
-                                            For rendering, I decided to keep using <a href="https://github.com/raysan5/raylib">RayLib</a> for this game, as it has a very easy-to-use API that allowed me to focus on other parts of the engine. Though, when it comes to customization, I felt quite stuck without being able to evolve past what OpenGL gives me and what RayLib exposes.
-										</p>
-									</li>
-								</ul>
-								<h5>
-                                    Procedural Animation
-								</h5>
-								<ul>
-									<li>
-										<p>
-                                            A library was created for handling all 2D procedural animations, using Inverse Kinematics with the FABRIK algorithm as the solver. As shown in the videos, it's possible to represent "grab motions" and "fish-like" motions. I was also implementing constraints so a new variety of motions could be represented, such as arachnoids, drones, lizards, snakes, etc. As the game is 2D top-down, there's a limited amount of motion it can represent, but for 2D platformer the options change, being more resonable to represent mammals. My goal was to create a library with concepts easy enough to understand so it could later be implemented for a 3D game.
-										</p>
-									</li>
-								</ul>
-								<h5>
                                     Key Takeaways
 								</h5>
 								<ul>
@@ -1429,6 +1399,94 @@ Exploration of Multiplayer Techniques, Game AI, Real-time 2D Combat
 						class="project-card" >
 						<p
 							class="project-name" >
+LDtk Parser for Odin and Godot
+						</p>
+						<p
+							class="project-description" >
+Separating level creation from engine logic
+						</p>
+						<div
+							class="content" >
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 100px;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/ldtk/logo.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/ldtk/logo.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/ldtk/ldtk.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/ldtk/ldtk.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        LDtk (Level Designer Toolkit) is a 2D level editor writen in Haxe, from one of the creators of <a href="https://store.steampowered.com/app/588650/Dead_Cells/" target="_blank">Dead Cells</a>.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        More information can be found at <a href="https://ldtk.io/" target="_blank">LDtk</a> / <a href="https://github.com/deepnight/ldtk" target="_blank">LDtk Repository</a>.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        A parser was initially created for Godot and later ported to Odin when I transitioned to the language and began focusing on lower-level game development.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        At the time this was a great improvement from previous solutions. Separating level creation from gameplay logic was a breath of fresh air, orienting programming towards data and not objects. I'm also of the belief that external editors are much better choices when it comes to customization and artistic choice.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        With time, I required something more complex for level creation, and LDtk was simply not being enough. The app, even though beautiful, was really buggy, with a complicated UX and a had ton of missing features.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        LDtk development was stalled, so I started working on my own fork of the level editor, which required using Haxe and some JavaScript; not a pleasant experience.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        I implemented new features and UI elements to expose additional metadata workflows, along with a prototype for defining collision shapes within tiles. However, this proved difficult—not only due to the less friendly ecosystem, but also because I constantly felt I was working against the app’s core design.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        I also worked on some PRs, such as <a href="https://github.com/deepnight/ldtk/pull/1159" target="_blank">LDtk#1159</a>, but they were ultimately denied.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        For these reasons, I eventually moved to a different solution for handling 2D level design.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
 Multiplayer Library in Godot
 						</p>
 						<p
@@ -1504,7 +1562,7 @@ Turn-based and grid-based combat, Game AI, Isometric Pathfinding, Isometric Art
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 240px;" >
+									style="padding: 0 270px;" >
 									<div
 										class="img-container" >
 										<a
@@ -2214,7 +2272,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.42575.js" >
+			src="/static/projects.51121.js" >
 		</script>
 	</body>
 </html>

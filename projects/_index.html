@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.39984.css" >
+			href="/static/projects-index.42061.css" >
 	</head>
 	<body>
 		<div
@@ -705,28 +705,6 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 									</li>
 									<li>
 										<p>
-                                            Jolt Physics
-										</p>
-										<ul>
-											<li>
-												<p>
-                                                    Jolt is an awesome physics engine, used now by Godot.
-												</p>
-											</li>
-											<li>
-												<p>
-                                                    I made the bindings for it here: <a href="https://github.com/caioraphael1/jolt-odin" target="_blank">caioraphael1/jolt-odin</a>.
-												</p>
-											</li>
-											<li>
-												<p>
-                                                    The engine makes a wrapper around the binding. Dealing with the wrapper should be *much* easier to deal then with raw jolt, but the main goal is re-writing Jolt in Odin.
-												</p>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<p>
                                             Custom Multiplayer library
 										</p>
 										<ul>
@@ -756,11 +734,6 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 												</p>
 											</li>
 										</ul>
-									</li>
-									<li>
-										<p>
-                                            Custom Job system
-										</p>
 									</li>
 									<li>
 										<p>
@@ -795,23 +768,6 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 										<p>
                                             Event System
 										</p>
-									</li>
-									<li>
-										<p>
-                                            Extensive support for Tracy and Spall profiler.
-										</p>
-									</li>
-									<li>
-										<p>
-                                            3D level editor using a parser for Blender
-										</p>
-										<ul>
-											<li>
-												<p>
-                                                    This is excelent for artists, as they don't have to leave their modeling tool for creating maps and logic
-												</p>
-											</li>
-										</ul>
 									</li>
 									<li>
 										<p>
@@ -983,7 +939,7 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 						class="project-card" >
 						<p
 							class="project-name" >
-Tracy Integration
+Tracy Profiler Integration
 						</p>
 						<p
 							class="project-description" >
@@ -1055,22 +1011,90 @@ Real-time CPU and GPU Profiler with nanosecond resolution
 							<ul>
 								<li>
 									<p>
-                                        Tracy is a real-time, nanosecond resolution, remote telemetry, hybrid frame and sampling profiler for games and other applications. For me information, check out the <a href="github.com/wolfpld/tracy" target="_blank">Tracy repository</a> and check out my notes about the <a href="/studies/Low-Level Systems/Profilers/Profilers-tracy.html">Tracy API</a>.
+                                        Tracy is a real-time, nanosecond-resolution remote telemetry profiler that combines frame and sampling analysis for games and other applications. For more information, see the <a href="github.com/wolfpld/tracy" target="_blank">Tracy repository</a> and my notes on the <a href="/studies/Low-Level Systems/Profilers/Profilers-tracy.html">Tracy API</a>.
 									</p>
 								</li>
 								<li>
 									<p>
-                                        Before using Tracy I also experimented with <a href="/studies/Low-Level%20Systems/Profilers/Profilers-spall.html">Spall</a> and <a href="/studies/Low-Level Systems/Profilers/Profilers-nvidia-nsight-graphics-gpu-trace.html">Nsight Graphics GPU Trace</a>, but Tracy was the one I got more interested in for its many capabilities and resolution.
+                                        Before adopting Tracy, I experimented with <a href="/studies/Low-Level%20Systems/Profilers/Profilers-spall.html">Spall</a> and <a href="/studies/Low-Level Systems/Profilers/Profilers-nvidia-nsight-graphics-gpu-trace.html">Nsight Graphics GPU Trace</a>. Tracy ultimately became my preferred tool due to its feature set and high-resolution timing.
 									</p>
 								</li>
 								<li>
 									<p>
-                                        I love how Tracy lets me visualize the bottlenecks of performance in the program, as well as have a perfect graph of memory evolution, which allows me to better use temporary allocators and reduce the overall memory footprint of the app. I often also use Tracy as a logger, as it can store the call stack for each function call and give me exact timings for when the logging happened.
+                                        Tracy makes it easy to visualize performance bottlenecks and track memory evolution over time. This helps me use temporary allocators more effectively and reduce the application's overall memory footprint. I also use Tracy as a logger, since it can capture call stacks and provide precise timing for each event.
 									</p>
 								</li>
 								<li>
 									<p>
-                                        One excellent use of Tracy was identifying GPU driver bottlenecks when not using vkDrawIndirect or other batching techniques for many draw calls, as well as visualizing the performance advantages of switching for a bindless / bind-once GPU design.
+                                        One particularly valuable use case was identifying GPU driver bottlenecks when not using vkDrawIndirect or other batching techniques. Tracy also helped demonstrate the performance benefits of moving to a bindless/bind-once GPU design.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
+Multithreading Job System Library
+						</p>
+						<p
+							class="project-description" >
+Atomics, CPU intrinsics, Job Stealing
+						</p>
+						<div
+							class="content" >
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 90px;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/multithread/async.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/multithread/async.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/multithread/jobqueue.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/multithread/jobqueue.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        Easy-to-use API that makes parallelism comfortable to work with.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        Atomics, CPU intrinsics, and job stealing, all designed with a lock-free approach.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        <a href="/studies/Low-Level Systems/Multithreading/Multithreading-core-concepts.html">Multithreading</a>.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        <a href="/studies/Low-Level Systems/Multithreading/Multithreading-synchronization-primitives.html#atomic-operations-lock-free">Synchronization Primitives</a>.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        <a href="/studies/Low-Level%20Systems/Odin/Odin-multi-threading.html">Odin Multithreading</a>.
 									</p>
 								</li>
 							</ul>
@@ -2220,7 +2244,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.39984.js" >
+			src="/static/projects.42061.js" >
 		</script>
 	</body>
 </html>

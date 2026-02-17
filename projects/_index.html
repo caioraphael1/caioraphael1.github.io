@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.64934.css" >
+			href="/static/projects-index.68710.css" >
 	</head>
 	<body>
 		<div
@@ -179,7 +179,7 @@ Frozen Sprouts
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 15%;" >
+									style="padding: 0 18%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1101,22 +1101,7 @@ Extensive Multiplayer Techniques, Procedural Animations, Pixelart
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 6%;" >
-									<div
-										class="img-container" >
-										<a
-											href="/assets/projects/mystical_forest_v2/2025-07-10 17-22-59.mp4" 
-											target="_self" >
-											<video
-												controls=""
-												playsinline=""
-												preload="metadata" >
-												<source
-													src="/assets/projects/mystical_forest_v2/2025-07-10 17-22-59.mp4" >
-												</source>
-											</video>
-										</a>
-									</div>
+									style="padding: 0 25%;" >
 									<div
 										class="img-container" >
 										<a
@@ -1152,6 +1137,74 @@ Extensive Multiplayer Techniques, Procedural Animations, Pixelart
 									</li>
 								</ul>
 							</details>
+						</div>
+					</div>
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
+Skeleton 2D Library
+						</p>
+						<p
+							class="project-description" >
+Dynamism with 2D Procedural Animations
+						</p>
+						<div
+							class="content" >
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 6%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/skeleton_2d/2025-07-10 17-22-59.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/skeleton_2d/2025-07-10 17-22-59.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/skeleton_2d/2025-07-20 11-29-56.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/skeleton_2d/2025-07-20 11-29-56.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        Easy-to-use API for constructing Joint Segments and Skeletons, using Inverse Kinematics with FABRIK (Forward And Backwards Reaching Inverse Kinematics), including IK Foot Placement and Chained Constraint algorithms for procedural movement.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        Supports representation of grab motions, fish-like movement, and a wide range of creatures such as arachnids, drones, lizards, and snakes.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        Planned features include physical motion constraints and multiple solvers tailored to different scenarios. The long-term goal is to keep the concepts simple and approachable so the library can later be adapted for 3D games.
+									</p>
+								</li>
+							</ul>
 						</div>
 					</div>
 					<div
@@ -1395,7 +1448,36 @@ Server-Authoritive architecture and Netcode techniques
 								</li>
 								<li>
 									<p>
-                                        Even though I later added to the engine a pretty robust physics engine via JoltPhysics, that wouldn't matter if the client felt laggy or if the client and server couldn't agree on the current physics state, leaving the client to be rolledback constantly. This was one of the first big challenges I had with netcode. To fix this issue, I decided to completely separate the updates inside the server and client via well-defined "cycles" and "fixed cycles", in a way that a single clock-sync when the client logs in would be enough to keep latency to a minimum. This, of course, only works in a vacuum, as CPU drift can occur and latency is not constant in time. For that reason, a series of measurements is taken at a fixed rate to identify delta spikes in latency, so the client can process faster or slower to properly have the physics update synchronized. The result is shown in the graph below: a much smaller delta ratio comparing gray entries (old) vs colorful entries (new), indicating a big improvement in synchronization. Not all was solved, as there was still a "minimum ms delta" due to restrictions around the server update frequency, as well as problems of "over-compensation" if the client has a delta-ms too large due to high RTT, but I believe that both could be solved with improved temporal metrics.
+                                        Even though I later added to the engine a pretty robust physics engine via JoltPhysics, that wouldn't matter if the client felt laggy or if the client and server couldn't agree on the current physics state, leaving the client to be rolledback constantly. This was one of the first big challenges I had with netcode. To fix this issue, I decided to completely separate the updates inside the server and client via well-defined "cycles" and "fixed cycles", in a way that a single clock-sync when the client logs in would be enough to keep latency to a minimum. This, of course, only works in a vacuum, as CPU drift can occur and latency is not constant in time. For that reason, a series of measurements is taken at a fixed rate to identify delta spikes in latency, so the client can process faster or slower to properly have the physics update synchronized.
+									</p>
+								</li>
+							</ul>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/multiplayer_odin/2025-06-27 08-49-12.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/multiplayer_odin/2025-06-27 08-49-12.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        The result is shown in the graph below: a much smaller delta ratio comparing gray entries (old) vs colorful entries (new), indicating a big improvement in synchronization. Not all was solved, as there was still a "minimum ms delta" due to restrictions around the server update frequency, as well as problems of "over-compensation" if the client has a delta-ms too large due to high RTT, but I believe that both could be solved with improved temporal metrics.
 									</p>
 								</li>
 							</ul>
@@ -1961,6 +2043,25 @@ Bringing Minecraft movement and workflow to Blockbench
 										</a>
 									</div>
 								</div>
+								<div
+									class="media" 
+									style="padding: 0 25%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/blockbench_creative/2024-07-25 - 3 (Blockbench).mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/blockbench_creative/2024-07-25 - 3 (Blockbench).mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
 							</div>
 							<ul>
 								<li>
@@ -2416,7 +2517,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.64934.js" >
+			src="/static/projects.68710.js" >
 		</script>
 	</body>
 </html>

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.30129.css" >
+			href="/static/projects-index.33995.css" >
 	</head>
 	<body>
 		<div
@@ -140,12 +140,12 @@ Audio middleware for adaptive audio
 							<ul>
 								<li>
 									<p>
-                                        First it was implemented a low-level audio API using <a href="https://github.com/mackron/miniaudio">miniaudio</a> as the backend. I opted to use its low-level API to have direct control over audio physical devices and better understand how audio is processed under the hood. More about that is found at <a href="studies/Audio and Video/Audio Programming/Audio Programming.md">Audio Programming</a>.
+                                        First it was implemented a low-level audio API using <a href="https://github.com/mackron/miniaudio" target="_blank">miniaudio</a> as the backend. I opted to use its low-level API to have direct control over audio physical devices and better understand how audio is processed under the hood. More about that is found in my notes about <a href="/studies/Audio and Video/Audio Programming/Audio Programming.html">Audio Programming</a>.
 									</p>
 								</li>
 								<li>
 									<p>
-                                        Right after that, I decided to work on a higher abstraction library with <a href="https://www.fmod.com/">fmod</a>, which is the industry standard Audio Middleware for adaptive audio in games. The result is great audio control, giving the engine support for spatial and adaptive audio.
+                                        Right after that, I decided to work on a higher abstraction library with <a href="https://www.fmod.com/" target="_blank">fmod</a>, which is the industry standard Audio Middleware for adaptive audio in games. The result is great audio control, giving the engine support for spatial and adaptive audio.
 									</p>
 									<ul>
 										<li>
@@ -157,7 +157,7 @@ Audio middleware for adaptive audio
 								</li>
 								<li>
 									<p>
-                                        More information on the FMOD API implementation, check: <a href="studies/Audio and Video/Audio Programming/FMOD API.md">FMOD API</a>.
+                                        More information on the FMOD API implementation, check my notes: <a href="/studies/Audio and Video/Audio Programming/FMOD API.html">FMOD API</a>.
 									</p>
 								</li>
 							</ul>
@@ -266,6 +266,74 @@ Frozen Sprouts
 								<li>
 									<p>
                                         .
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
+ECS Library with Sparse Sets
+						</p>
+						<p
+							class="project-description" >
+Data Oriented Design with Entity Component System
+						</p>
+						<div
+							class="content" >
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 140px;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/ecs/ecs.jpg" 
+											target="_self" >
+											<img
+												src="/assets/projects/ecs/ecs.jpg" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/ecs/sparse1.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/ecs/sparse1.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        An ECS (Entity Component System) library using Sparse Sets.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        A detailed explanation of ECS and the challenges I faced during implementation can be found at: <a href="/studies/Design Patterns/Data Oriented Design - ECS/Data Oriented Design - ECS-discussion.html">Data Oriented Design - ECS</a>. I also highly recommend the read on <a href="/studies/Design Patterns/Data Oriented Design/Data Oriented Design-about.html">Data Oriented Design</a> for a better understanding of the core philosophy around data-driven techniques.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        As a result of this library, performance is much more scalable and easy to be parallelized, both in the CPU or GPU. Data is also now much more packed and cache efficient.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        One of the main advantages for me, and one of the main driving forces to opt for this strategy, was the flexibility around entity creation that the technique gives. Components can easily be inserted or removed at runtime, without any friction whatsoever. This was a breeze of fresh air when compared to object-oriented techniques, which make code maintance to be a nightmare in some situations.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        The hardest challenge for me in this design was how to deal with extra layers of indirection while maintaining all forms of data normalization from relational databases, mainly for N->N relationships. A study about that can be found at <a href="/studies/Design%20Patterns/Data%20Oriented%20Design%20-%20ECS/Data%20Oriented%20Design%20-%20ECS-design-n-greatern-relationship.html">ECS - Designing N->N Relationships</a> and <a href="/studies/Databases/Databases - SQL - Relational/Databases - SQL - Relational-database-platforms.html">Relational Databases - Data Normalization</a>.
 									</p>
 								</li>
 							</ul>
@@ -1997,7 +2065,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.30129.js" >
+			src="/static/projects.33995.js" >
 		</script>
 	</body>
 </html>

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.68710.css" >
+			href="/static/projects-index.70566.css" >
 	</head>
 	<body>
 		<div
@@ -512,7 +512,7 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 										<ul>
 											<li>
 												<p>
-                                                    Reversed-Z infinite projection matrix (good for depth precision)
+                                                    Reversed-Z infinite projection matrix (good for depth precision).
 												</p>
 											</li>
 											<li>
@@ -524,7 +524,7 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 									</li>
 									<li>
 										<p>
-                                            Ponctual Lights
+                                            Ponctual Lights.
 										</p>
 									</li>
 									<li>
@@ -575,6 +575,21 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 												</p>
 											</li>
 										</ul>
+									</li>
+									<li>
+										<p>
+                                            Bindless with Descriptor Indexing.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Custom Vulkan Allocator and custom CPU Allocators, for general tracking of memory usage/peaks with Tracy.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            GPU memory arenas.
+										</p>
 									</li>
 									<li>
 										<p>
@@ -640,11 +655,6 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 									<li>
 										<p>
                                             Mipmapping
-										</p>
-									</li>
-									<li>
-										<p>
-                                            Custom Vulkan Allocator and custom CPU Allocators, for general tracking of memory usage/peaks with Tracy
 										</p>
 									</li>
 									<li>
@@ -783,17 +793,24 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 								<ul>
 									<li>
 										<p>
+                                            Tiled Forward Shading
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    This will be the standard for 2D, but is as well as step forward in the direction of having Clustered Forward Shading for 3D.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
                                             Clustered Forward Shading
 										</p>
 										<ul>
 											<li>
 												<p>
                                                     I plan to have lots of lights for great creative expression, and Clustered Forward Shading sounds the best options for performance and flexibility when comparing to modern techiques. I also considered Deferred Shading, but I decided for something that doesn't weight so much on the bandwidth.
-												</p>
-											</li>
-											<li>
-												<p>
-                                                    Perspective and Orthographic project.
 												</p>
 											</li>
 										</ul>
@@ -819,18 +836,6 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 										<p>
                                             Directional Lights, Spot Lights, Area Lights (without soft shadows for now).
 										</p>
-									</li>
-									<li>
-										<p>
-                                            Clustered Forward Shading
-										</p>
-										<ul>
-											<li>
-												<p>
-                                                    I plan to have lots of lights for great creative expression, and Clustered Forward Shading sounds the best options for performance and flexibility when comparing to modern techiques. I also considered Deferred Shading, but I decided for something that doesn't weight so much on the bandwidth.
-												</p>
-											</li>
-										</ul>
 									</li>
 									<li>
 										<p>
@@ -908,6 +913,23 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 									</li>
 									<li>
 										<p>
+                                            Anti-Aliasing solution that doesn't blur, and doesn't over-complicate the pipeline.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    The renderer has support for MSAA, but the performance is not great, as expected.
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    TAA is probably out of the question. FXAA seems too simple. I want to investigate how to implement some options like SMAA or CMAA, but that will be for later.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
                                             Support for VR with Variable Refresh Rate techniques (VRS).
 										</p>
 									</li>
@@ -915,6 +937,23 @@ Exploring modern rendering techniques with Vulkan, using Odin Lang
 										<p>
                                             Mobile support.
 										</p>
+									</li>
+									<li>
+										<p>
+                                            Support for HDR output, not only for high precision in the graphics pipeline and composite.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Explore Raytracing.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    This would be much higher as a priority if my GPU allowed for good Raytracing performance.
+												</p>
+											</li>
+										</ul>
 									</li>
 								</ul>
 							</details>
@@ -1759,37 +1798,17 @@ Turn-based and grid-based combat, Game AI, Isometric Pathfinding, Isometric Art
 							<ul>
 								<li>
 									<p>
-                                        A game inspired by the combat of <a href="https://www.dofus.com/en/mmorpg/discover" target="_blank">Dofus</a>.
+                                        The game consist of a Turn-based and grid-based combat, inspired by the combat of <a href="https://www.dofus.com/en/mmorpg/discover" target="_blank">Dofus</a>.
 									</p>
 								</li>
-							</ul>
-							<h5>
-                                Combat
-							</h5>
-							<ul>
 								<li>
 									<p>
-                                        Turn-based and grid-based combat
+                                        It uses a Utility AI Library for the entities, in a way that both enemies and allies can have emergent behavior and fight as a group.
 									</p>
 								</li>
-							</ul>
-							<h5>
-                                Game AI
-							</h5>
-							<ul>
 								<li>
 									<p>
-                                        Utility AI library.
-									</p>
-								</li>
-							</ul>
-							<h5>
-                                Pathfinding and Fake-3D
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        AStar Grid in an isometric perspective.
+                                        For path-finding, it uses AStar Grid, adapted for the isometric perspective.
 									</p>
 								</li>
 							</ul>
@@ -2517,7 +2536,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.68710.js" >
+			src="/static/projects.70566.js" >
 		</script>
 	</body>
 </html>

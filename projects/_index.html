@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/projects-index.70566.css" >
+			href="/static/projects-index.29354.css" >
 	</head>
 	<body>
 		<div
@@ -1159,23 +1159,22 @@ Extensive Multiplayer Techniques, Procedural Animations, Pixelart
                                         A multiplayer 2D game built with Raylib (OpenGL) and Odin Lang.
 									</p>
 								</li>
+								<li>
+									<p>
+                                        It used the previous libraries made in Odin (Jolt Physics Binding, Multiplayer, Skeleton 2D, etc) as a way to create a top-down shooter with procedural animations and physics-based system.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        I was really proud of what I've accomplished with the Multiplayer, but after not being quite satisfied with Raylib and LDtk I decided to try something different and learn Vulkan in 3D, so I could finally answer my questions about the world of rendering, and in the mean time I could think of a better solution to improve the workflow of 2D or 3D tools to keep making games with less friction.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        I wish I had more images to show for this project, but as I later rebuilt the engine in Vulkan and hadn't recorded videos in a while, I ended up not having footage of the last stages of this game. Once I have time, I'll rollback the engine so there are better screenshots of this prototype.
+									</p>
+								</li>
 							</ul>
-							<details
->
-								<summary>
-                                    Read more
-								</summary>
-								<h5>
-                                    Key Takeaways
-								</h5>
-								<ul>
-									<li>
-										<p>
-                                            I was really proud of what I've accomplished with the Multiplayer, but after not being quite satisfied with Raylib and LDtk I decided to try something different and learn Vulkan in 3D, so I could finally answer my questions about the world of rendering, and in the mean time I could think of a better solution to improve the workflow of 2D or 3D tools to keep making games with less friction.
-										</p>
-									</li>
-								</ul>
-							</details>
 						</div>
 					</div>
 					<div
@@ -1359,91 +1358,6 @@ The Jolt Physics Engine, now for Odin Lang
 						class="project-card" >
 						<p
 							class="project-name" >
-Mystical Forest V1
-						</p>
-						<p
-							class="project-description" >
-Exploration of Multiplayer Techniques, Game AI, Real-time 2D Combat
-						</p>
-						<div
-							class="content" >
-							<div
-								class="medias" >
-								<div
-									class="media" 
-									style="padding: 0 25%;" >
-									<div
-										class="img-container" >
-										<a
-											href="/assets/projects/mystical_forest_v1/2025-01-19 211353.png" 
-											target="_self" >
-											<img
-												src="/assets/projects/mystical_forest_v1/2025-01-19 211353.png" >
-											</img>
-										</a>
-									</div>
-								</div>
-								<div
-									class="media" 
-									style="padding: 0 15%;" >
-									<div
-										class="img-container" >
-										<a
-											href="/assets/projects/mystical_forest_v1/2024-11-20 160228.png" 
-											target="_self" >
-											<img
-												src="/assets/projects/mystical_forest_v1/2024-11-20 160228.png" >
-											</img>
-										</a>
-									</div>
-									<div
-										class="img-container" >
-										<a
-											href="/assets/projects/mystical_forest_v1/2024-11-14 160228.png" 
-											target="_self" >
-											<img
-												src="/assets/projects/mystical_forest_v1/2024-11-14 160228.png" >
-											</img>
-										</a>
-									</div>
-								</div>
-							</div>
-							<h5>
-                                Evolution of the Multiplayer
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        Coop Peer-to-peer -> Dedicated Server, login system, authentication server, gateway server, dedicated databases for credentials and world data
-									</p>
-								</li>
-							</ul>
-							<h5>
-                                Game AI
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        Utility AI library.
-									</p>
-								</li>
-							</ul>
-							<h5>
-                                The many problems I had with Godot
-							</h5>
-							<ul>
-								<li>
-									<p>
-                                        .
-									</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div
-						class="project-card" >
-						<p
-							class="project-name" >
 Low-level Multiplayer Library in Odin
 						</p>
 						<p
@@ -1540,7 +1454,7 @@ Server-Authoritive architecture and Netcode techniques
 							<ul>
 								<li>
 									<p>
-                                        Beyond the solutions I talked about, I worked on creating my own encoding/decoding through a specialized serialization system, using CBOR for something more complex, such as the custom RPC system I created, or using something as compact as a single byte to identify instructions. This could also be improved even further by better utilization of UDP packets for non-crucial tasks, as well as better utilization of the TCP payload when considering the size of the header.
+                                        Beyond the solutions I talked about, I worked on creating my own encoding/decoding through a specialized serialization system, using CBOR for something more complex, such as the custom RPC system I created, or using something as compact as a single byte to identify instructions.
 									</p>
 								</li>
 								<li>
@@ -1548,9 +1462,14 @@ Server-Authoritive architecture and Netcode techniques
                                         With that, the multiplayer was much better than before, while also requiring much less from the the server, as now not only the bandwidth is improved, but the server can process a lot slower as the client has now the tools to compensate for the increased latency without losing input/action precision.
 									</p>
 								</li>
+								<li>
+									<p>
+                                        This could also be improved even further by better utilization of UDP packets for non-crucial tasks, as well as better utilization of the TCP payload when considering the size of the header. I also want to add a better system for handling CPU drifting depending on the machine's performance.
+									</p>
+								</li>
 							</ul>
 							<h5>
-                                Multiplayer - Login
+                                Authentication System
 							</h5>
 							<ul>
 								<li>
@@ -1644,6 +1563,93 @@ Separating level creation from engine logic
 								<li>
 									<p>
                                         For these reasons, I eventually moved to a different solution for handling 2D level design.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
+Mystical Forest V1
+						</p>
+						<p
+							class="project-description" >
+Exploration of Multiplayer Techniques, Game AI, Real-time 2D Combat
+						</p>
+						<div
+							class="content" >
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 22%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/mystical_forest_v1/2025-01-19 211353.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/mystical_forest_v1/2025-01-19 211353.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+								<div
+									class="media" 
+									style="padding: 0 8%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/mystical_forest_v1/2024-11-30 09-55-05 - Demo Multiplayer.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/mystical_forest_v1/2024-11-30 09-55-05 - Demo Multiplayer.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/mystical_forest_v1/2024-11-03 21-41-19 - Demo.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/mystical_forest_v1/2024-11-03 21-41-19 - Demo.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        This game was made as an exploration of different techniques of multiplayer in Godot, and also an experimentation of top-down pixel art.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        The multiplayer went from Coop Peer-to-peer to Dedicated Server. It had a login system, authentication server, gateway server, dedicated databases for credentials and world data.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        The AI used my Utility AI library, for emergent behavior.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        I had a lot of problems in Godot in the development of this project, which led me to switch to Odin. A lot of these problems are better explained in the 'Multiplayer Library in Godot' post.
 									</p>
 								</li>
 							</ul>
@@ -1808,7 +1814,7 @@ Turn-based and grid-based combat, Game AI, Isometric Pathfinding, Isometric Art
 								</li>
 								<li>
 									<p>
-                                        For path-finding, it uses AStar Grid, adapted for the isometric perspective.
+                                        For path-finding, it uses AStar Grid, adapted for the isometric perspective. It can traverse through different layers (pseudo-z-index), and can also be used for the grid-based combat by allowing adaptive pathfinding and adaptive ranges for spell casting; this is better seen in the videos above.
 									</p>
 								</li>
 							</ul>
@@ -2471,55 +2477,664 @@ First look at 3D in Godot
 						class="project-card" >
 						<p
 							class="project-name" >
-Other projects will be added soon
+Earlier Games
 						</p>
 						<p
 							class="project-description" >
-.
+From the time I was learning how to make games
 						</p>
 						<div
 							class="content" >
+							<h3>
+                                Crypted Core
+							</h3>
 							<div
 								class="medias" >
 								<div
 									class="media" 
-									style="padding: 0 5%;" >
+									style="padding: 0 1%;" >
 									<div
-										class="video-container" >
-										<iframe
-											src="https://www.youtube.com/embed/q4DvaaWeN5o?si=tzvp_x3lFyDvOC30" 
-											title="" 
-											frameborder="0" 
-											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-											referrerpolicy="strict-origin-when-cross-origin" 
-											allowfullscreen="">
-										</iframe>
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/crypted_core/2025-06-19 112917.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/crypted_core/2025-06-19 112917.png" >
+											</img>
+										</a>
 									</div>
 									<div
-										class="video-container" >
-										<iframe
-											src="https://www.youtube.com/embed/q4DvaaWeN5o?si=tzvp_x3lFyDvOC30" 
-											title="" 
-											frameborder="0" 
-											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-											referrerpolicy="strict-origin-when-cross-origin" 
-											allowfullscreen="">
-										</iframe>
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/crypted_core/2025-06-19 112918.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/crypted_core/2025-06-19 112918.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/crypted_core/2025-06-19 112919.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/crypted_core/2025-06-19 112919.png" >
+											</img>
+										</a>
 									</div>
 								</div>
 							</div>
 							<ul>
 								<li>
 									<p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        A game inspired by Undertale and Minit, with Twin Peaks inspired atmosphere. The core idea was time-based puzzles and mysteries exploration.
+									</p>
+								</li>
+							</ul>
+							<h3>
+                                Sci-fi Mystery
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 1%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/sci-fi/2023-11-12_192816.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/sci-fi/2023-11-12_192816.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/sci-fi/2023-08-26-WA0002.jpg" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/sci-fi/2023-08-26-WA0002.jpg" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/sci-fi/2023-08-05-WA0005.jpg" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/sci-fi/2023-08-05-WA0005.jpg" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        A 3D platformer with an *overly* ambitious narrative. This project would never work out, but at least I was learning 3D for the first time, and I was having fun.
+									</p>
+								</li>
+							</ul>
+							<h3>
+                                Galeria do Medo (Gallery of Fear)
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 1%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/galeria_do_medo/2026-02-04 132851.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/galeria_do_medo/2026-02-04 132851.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/galeria_do_medo/YwZeGb.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/galeria_do_medo/YwZeGb.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/galeria_do_medo/pIR_9J.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/galeria_do_medo/pIR_9J.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        "Explore Paintings in a Mysterious Art Gallery!". A game inspired by Undertale and Omori, about exploring a mysterious gallery with tales of horror. I worked on it as programmer with a friend, you can play it on itch.io: <a href="https://peter2000x.itch.io/galeria-do-medo">Galeria do Medo</a>.
+									</p>
+								</li>
+							</ul>
+							<h3>
+                                Jungle 2D Platformer
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 1%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/jungle/2024-03-25 114153.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/jungle/2024-03-25 114153.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/jungle/2024-03-25 114209.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/jungle/2024-03-25 114209.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/jungle/2024-03-25 114424.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/jungle/2024-03-25 114424.png" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        A basic 2D platformer where you had to swing between vines and bounce between shrooms to collect coins.
+									</p>
+								</li>
+							</ul>
+							<h3>
+                                Top-down 2D RPG
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 1%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/topdown-rpg/2023-02-21.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/topdown-rpg/2023-02-21.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/topdown-rpg/2024-04-20 131618.png" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/topdown-rpg/2024-04-20 131618.png" >
+											</img>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/topdown-rpg/2023-02-23 - Mundo Neve 1.jpg" 
+											target="_self" >
+											<img
+												src="/assets/projects/earlier_games/topdown-rpg/2023-02-23 - Mundo Neve 1.jpg" >
+											</img>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        A game made using the assets from the classic <a href="https://www.youtube.com/watch?v=mAbG8Oi-SvQ&list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a">Heartbeast Godot 3 Tutorial</a> while exploring RPG systems and learning a bit more about the fundamentals of Object Oriented Programming. The idea was a basic combat and exploration gameplay loop, just like in the classic tutorials, but with a complex animation and status system that allowed for a bunch of cool interactions between effects to spice up the combat. The most problematic part for me was lighting, I don't think I ever got it right, and of course, learning OOP for the first time. I ported this game to mobile a while back, but I don't have the footage, unfortunately.
+									</p>
+								</li>
+							</ul>
+							<h3>
+                                Fluorescence 2D Platformer
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding: 0 1%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/fluorescence/2021-12-02 - 01-04-15-03.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/earlier_games/fluorescence/2021-12-02 - 01-04-15-03.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/fluorescence/2021-12-02 - 16-35-08-05.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/earlier_games/fluorescence/2021-12-02 - 16-35-08-05.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/earlier_games/fluorescence/2021-12-02 - 11-22-40-02.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/earlier_games/fluorescence/2021-12-02 - 11-22-40-02.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        The first game I ever made. It had an overly ambitious narrative and atmosphere, but that never went on as I was having too much fun breaking Godot's physics.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div
+						class="project-card" >
+						<p
+							class="project-name" >
+Educational Games on RaspberryPi
+						</p>
+						<p
+							class="project-description" >
+
+						</p>
+						<div
+							class="content" >
+							<ul>
+								<li>
+									<p>
+                                        A series of educational games made for RaspberryPi for children to play and interact with robotics.
 									</p>
 								</li>
 								<li>
 									<p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        I worked on all these games as the only programmer. I did not make the arts.
+									</p>
+								</li>
+								<li>
+									<p>
+                                        Made for <a href="https://museudaimaginacao.org.br/">Museu da Imaginação (Museum of Imagination)</a> and 'Potência' companies.
 									</p>
 								</li>
 							</ul>
+							<h3>
+                                Museu da Imaginacao - Mesoamerica
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Mesoamerica.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Mesoamerica.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Museu da Imaginacao - Navegacoes
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Navegacoes.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Navegacoes.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Museu da Imaginacao - Rede Social
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Rede Social.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Rede Social.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Potência Event
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Potencia.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Potencia.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Masp Scroll
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Scroll Masp.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Scroll Masp.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Museu da Imaginacao - Sistema Imunologico
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 20%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Sistema Imunologico -.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Sistema Imunologico -.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Sistema Imunologico - Mobile - 2024-10-19 17-11-35.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Sistema Imunologico - Mobile - 2024-10-19 17-11-35.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<p>
+                                        This game was also exported for mobile.
+									</p>
+								</li>
+							</ul>
+							<h3>
+                                Museu da Imaginacao - Sistema Esqueletico
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Sistema Esqueletico.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Sistema Esqueletico.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Museu da Imaginacao - Sistema Muscular
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Sistema Muscular.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Sistema Muscular.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Museu da Imaginacao - Sistema Digestorio
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Sistema Digestorio.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Sistema Digestorio.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Museu da Imaginacao - Quem Sou Eu
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Quem Sou Eu.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Quem Sou Eu.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Museu da Imaginacao - Easter Eggs
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Easter Eggs.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Easter Eggs.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
+							<h3>
+                                Museu da Imaginacao - Gestao da Agua
+							</h3>
+							<div
+								class="medias" >
+								<div
+									class="media" 
+									style="padding-right: 60%;" >
+									<div
+										class="img-container" >
+										<a
+											href="/assets/projects/educational_games/Museu da Imaginacao - Gestao da Agua.mp4" 
+											target="_self" >
+											<video
+												controls=""
+												playsinline=""
+												preload="metadata" >
+												<source
+													src="/assets/projects/educational_games/Museu da Imaginacao - Gestao da Agua.mp4" >
+												</source>
+											</video>
+										</a>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -2536,7 +3151,7 @@ Other projects will be added soon
 			</footer>
 		</div>
 		<script
-			src="/static/projects.70566.js" >
+			src="/static/projects.29354.js" >
 		</script>
 	</body>
 </html>

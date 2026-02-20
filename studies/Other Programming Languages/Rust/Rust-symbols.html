@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.29354.css" >
+			href="/static/studies.15460.css" >
 	</head>
 	<body>
 		<aside
@@ -158,18 +158,17 @@ window.MathJax = {
 											href="#attributes" >
                                             Attributes
 										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#derive-macros" >
-                                            Derive Macros
-										</a>
-										<ul>
-										</ul>
 									</li>
 								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/Rust/Rust-macros.html" >
+                                    Macros
+								</a>
 							</li>
 						</ul>
 						<ul>
@@ -434,6 +433,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Other Programming Languages/Zig/Zig-metaprogramming.html" >
+                                    Metaprogramming
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Other Programming Languages/Zig/Zig-threads.html" >
                                     Threads
 								</a>
@@ -520,6 +528,24 @@ window.MathJax = {
 									class="" 
 									href="/studies/Other Programming Languages/C++/C++-building.html" >
                                     Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-syntax.html" >
+                                    Syntax
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-attributes.html" >
+                                    Attributes
 								</a>
 							</li>
 						</ul>
@@ -914,8 +940,8 @@ window.MathJax = {
                             🕒 Created: 2024-04-13
 						</time>
 						<time
-							datetime="2026-02-11" >
-                            | Updated: 2026-02-11
+							datetime="2026-02-19" >
+                            | Updated: 2026-02-19
 						</time>
 					</p>
 				</header>
@@ -994,114 +1020,6 @@ super::path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Path relative to the parent of
 			</li>
 		</ul>
 	</li>
-	<li>
-		<p>
-            Invoke macro
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>something!()</code>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Macro substitution
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>$something</code>
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Macro capture
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>$something:kind</code>
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="derive-macros" >
-    Derive Macros
-</h3>
-<h6
-	id="definition" >
-    Definition
-</h6>
-<ul>
-	<li>
-		<p>
-            <code>#[derive]</code>
-            &nbsp;is a convenient way to apply macros that automatically implement traits for an entire struct (or enum). When you use 
-            <code>#[derive(...)]</code>
-            , the compiler automatically generates the implementation for you. Without derive, you’d need to write it manually.
-		</p>
-	</li>
-</ul>
-<h5
-	id="derivedebug" >
-    derive(debug)
-</h5>
-<ul>
-	<li>
-		<p>
-            Automatic implementation of the 
-            <code>Debug</code>
-            &nbsp;trait, using 
-            <code>#[derive(Debug)]</code>
-            :
-		</p>
-<pre><code class="language-rust" data-lang="rust">#[derive(Debug)] // Compiler implements Debug
-struct Point {
-&nbsp;&nbsp;&nbsp;&nbsp;x: i32,
-&nbsp;&nbsp;&nbsp;&nbsp;y: i32,
-}
-
-fn main() {
-&nbsp;&nbsp;&nbsp;&nbsp;let p = Point { x: 3, y: 4 };
-&nbsp;&nbsp;&nbsp;&nbsp;println!("{:?}", p); // Output: Point { x: 3, y: 4 }
-}
-</code></pre>
-	</li>
-	<li>
-		<p>
-            Manual implementation of the 
-            <code>Debug</code>
-            &nbsp;trait, without 
-            <code>#[derive(Debug)]</code>
-            :
-		</p>
-<pre><code class="language-rust" data-lang="rust">use std::fmt;
-
-struct Point {
-&nbsp;&nbsp;&nbsp;&nbsp;x: i32,
-&nbsp;&nbsp;&nbsp;&nbsp;y: i32,
-}
-
-// Manual implementation of the Debug trait
-impl fmt::Debug for Point {
-&nbsp;&nbsp;&nbsp;&nbsp;fn fmt(&self, f: &mut fmt::Formatter&lt;'_&gt;) -&gt; fmt::Result {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write!(f, "Point {{ x: {}, y: {} }}", self.x, self.y)
-&nbsp;&nbsp;&nbsp;&nbsp;}
-}
-
-fn main() {
-&nbsp;&nbsp;&nbsp;&nbsp;let p = Point { x: 3, y: 4 };
-&nbsp;&nbsp;&nbsp;&nbsp;println!("{:?}", p); // Output: Point { x: 3, y: 4 }
-}
-</code></pre>
-	</li>
 </ul>
 
 				</article>
@@ -1118,7 +1036,7 @@ fn main() {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.29354.js" >
+			src="/static/studies.15460.js" >
 		</script>
 	</body>
 </html>

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.29354.css" >
+			href="/static/studies.15460.css" >
 	</head>
 	<body>
 		<aside
@@ -585,6 +585,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Low-Level Systems/CPU/CPU-branchless.html" >
+                                    Branchless
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Low-Level Systems/CPU/CPU-soa-struct-of-arrays-ecs-entity-component-system.html" >
                                     SOA (Struct Of Arrays) / ECS (Entity Component System)
 								</a>
@@ -759,28 +768,11 @@ window.MathJax = {
 								<ul>
 									<li>
 										<a
-											href="#includes" >
-                                            Includes
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#libraries" >
-                                            Libraries
+											href="#tips" >
+                                            Tips
 										</a>
 									</li>
 								</ul>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="" 
-									href="/studies/Low-Level Systems/C-critiques.html" >
-                                    Critiques
-								</a>
 							</li>
 						</ul>
 						<ul>
@@ -805,8 +797,35 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/C-building.html" >
-                                    Building
+									href="/studies/Low-Level Systems/C-compiling.html" >
+                                    Compiling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C-includes.html" >
+                                    Includes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C-libraries.html" >
+                                    Libraries
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C-critiques.html" >
+                                    Critiques
 								</a>
 							</li>
 						</ul>
@@ -1071,6 +1090,66 @@ window.MathJax = {
 								</a>
 							</li>
 						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+>
+						<summary>
+                            History of Programming
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/History of Programming-architectural-specifications.html" >
+                                    Architectural Specifications
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/History of Programming-microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/History of Programming-abi-application-binary-interface.html" >
+                                    ABI (Application Binary Interface)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/History of Programming-languages.html" >
+                                    Languages
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/History of Programming-assembly.html" >
+                                    Assembly
+								</a>
+							</li>
+						</ul>
 					</details>
 					<details
 >
@@ -1198,8 +1277,8 @@ window.MathJax = {
                             🕒 Created: 2024-04-13
 						</time>
 						<time
-							datetime="2026-02-11" >
-                            | Updated: 2026-02-11
+							datetime="2026-02-20" >
+                            | Updated: 2026-02-20
 						</time>
 					</p>
 				</header>
@@ -1235,7 +1314,7 @@ window.MathJax = {
 				href="https://www.youtube.com/watch?v=rJrd2QMVbGM" 
 				class="external-link" 
 				target="_blank" >
-                Nice explanation with Teej
+                Teej - C Explanation
 			</a>
             .
 		</p>
@@ -1250,38 +1329,244 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
-<h5
+<h3
 	id="tips" >
     Tips
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
 			<a
-				href="https://www.youtube.com/watch?v=9UIIMBqq1D4" 
+				href="https://www.youtube.com/watch?v=443UNeGrFoM" 
 				class="external-link" 
 				target="_blank" >
-                Tips for C
+                Eskil Steenberg - How I program C
 			</a>
             .
 		</p>
 		<ul>
 			<li>
 				<p>
-                    C Versions.
+                    Excellent video!
+				</p>
+			</li>
+			<li>
+				<p>
+                    Slide 17, 18:
 				</p>
 				<ul>
 					<li>
 						<p>
-                            He uses C99.
+                            Interesting how it organizes the 
+                            <code>.h</code>
+                            &nbsp;files.
 						</p>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<p>
+                    Slide 19:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Only uses 
+                            <code>uint</code>
+                            , 
+                            <code>int</code>
+                            &nbsp;is only used when it can actually be signed.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Defends macro for generics.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Defends 
+                            <code>__FILE__</code>
+                            &nbsp;and 
+                            <code>__LINE__</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Slide 21, 22, 23:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Memory and pointer intuition. Very good.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Slide 24:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Very interesting use of 
+                            <code>sizeof</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Slide 25, 26:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Arrays explanation.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Slide 27, 28, 29, 30, 31, 32:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Structs.
+						</p>
+					</li>
+					<li>
+						<p>
+                            OOP via pointer casting.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Padding explanation.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Slide 33:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            How the OS gives memory to you.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Using 
+                            <code>gflags.exe</code>
+                            &nbsp;to find bugs where an unexpected variable in the stack is changed when changing the last element of an array.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Bound checking in a nutshell.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Slide 34, 35:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            CPU cycles.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Against Linked List, due to cache coherence.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Slide 36:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Hiding the contents of a struct by using a void pointer, so the data cannot be changed directly, to avoid some confusion bugs when having to store some data twice (as for caching, for example).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Slide 37, 38:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allocating once and using the region to store random things, instead of allocating many times.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=9UIIMBqq1D4" 
+				class="external-link" 
+				target="_blank" >
+                Nic Barker - Tips for C
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Great video.(2026-02-20)
+				</p>
+			</li>
+			<li>
+				<p>
+                    He uses C99; he arguments against C89 giving examples.
+				</p>
+			</li>
+			<li>
+				<p>
                     Compiler Flags.
 				</p>
+			</li>
+			<li>
+				<p>
+                    Includes.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            You can use 
+                            <code>clang --save-temps</code>
+                            &nbsp;for debugging.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Avoid the problem by using a Single Translation Unity, also knowing as Unity Build.
+						</p>
+					</li>
+				</ul>
 			</li>
 			<li>
 				<p>
@@ -1324,12 +1609,37 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    Arrays and Strings.
+                    Arrays:
 				</p>
 				<ul>
 					<li>
 						<p>
                             He creates his own arrays and strings using structs, so he can implement his own &quot;boundary checks&quot;, etc.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/2026-02-20_12-03-58.png" width="400" >
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/2026-02-20_12-02-37.png" width="400" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Strings:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <img src="assets/2026-02-20_12-05-32.png" width="400" >
+                            .
 						</p>
 					</li>
 				</ul>
@@ -1341,13 +1651,20 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            Suggestion: store the index of an object instead of a pointer to the object.
+                            Store the index of an object instead of a pointer to the object.
 						</p>
-					</li>
-					<li>
-						<p>
-                            Apparently, this helps with array resizing, etc.
-						</p>
+						<ul>
+							<li>
+								<p>
+                                    If the array is resized while storing pointers to it, its previous pointers become invalid.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    If the array is resized while storing indices to it, there's absolutely no problem.
+								</p>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</li>
@@ -1371,195 +1688,42 @@ window.MathJax = {
                             It's where you store all data that has the same lifetime.
 						</p>
 					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="includes" >
-    Includes
-</h3>
-<ul>
-	<li>
-		<p>
-            Unity Build.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    A way to handle 
-                    <code>#includes</code>
-                    &nbsp;and avoid duplicate includes.
-				</p>
-			</li>
-			<li>
-				<p>
-                    I found it interesting; I saw it being used in Zig too.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            <code>#pragma once</code>
-            &nbsp;in 
-            <code>.h</code>
-            &nbsp;files.
-		</p>
-	</li>
-</ul>
-<h3
-	id="libraries" >
-    Libraries
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://github.com/gingerBill/gb/tree/master" 
-				class="external-link" 
-				target="_blank" >
-                gb library
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    A helper library by Ginger Bill, to group everything together.
-				</p>
-			</li>
-			<li>
-				<p>
-                    (2025-07-03) On a quick glance, I found it very useful, as it resembles Odin types.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://github.com/nothings/stb" 
-				class="external-link" 
-				target="_blank" >
-                stb
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Single-file public domain libraries for C/C++.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Created by Sean Barrett.
-				</p>
-			</li>
-			<li>
-				<p>
-                    ~
-					<a
-						href="https://www.youtube.com/watch?v=eAhWIO1Ra6M" 
-						class="external-link" 
-						target="_blank" >
-                        Advice for Writing Small Programs in C
-					</a>
-                    .
-				</p>
-				<ul>
 					<li>
 						<p>
-							<em>
-                                Quotes
-							</em>
-                            :
+                            There are 3 lifetimes:
 						</p>
 						<ul>
 							<li>
 								<p>
-                                    The C std library is terrible.
-								</p>
-								<ul>
-									<li>
-										<p>
-                                            Some APIs are not designed very well.
-										</p>
-									</li>
-									<li>
-										<p>
-                                            <code>strcopy</code>
-                                            &nbsp;is notoriously bad.
-										</p>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<p>
-                                    I needed a way to systematically reuse code.
+                                    Static: program.
 								</p>
 							</li>
 							<li>
 								<p>
-                                    JAI is quite interesting.
+                                    Function.
 								</p>
 							</li>
 							<li>
 								<p>
-                                    He worked on 
-									<a
-										href="https://www.google.com/search?q=thief+the+dark+project&client=firefox-b-d&sca_esv=d16c61d435099b34&sxsrf=AE3TifPvV5dO1hB7TnRfECaMuK2nnQFRkg%3A1751563902958&ei=fr5maPOiOoLR1sQP2c720A0&ved=0ahUKEwjz2fKBnKGOAxWCqJUCHVmnHdoQ4dUDCBA&uact=5&oq=thief+the+dark+project&gs_lp=Egxnd3Mtd2l6LXNlcnAiFnRoaWVmIHRoZSBkYXJrIHByb2plY3QyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyDRAAGIAEGLADGEMYigUyDRAAGIAEGLADGEMYigUyDhAAGLADGOQCGNYE2AEBMg4QABiwAxjkAhjWBNgBATIOEAAYsAMY5AIY1gTYAQEyExAuGIAEGLADGEMYyAMYigXYAQEyFhAuGIAEGLADGEMY1AIYyAMYigXYAQEyFhAuGIAEGLADGEMY1AIYyAMYigXYAQEyFhAuGIAEGLADGEMY1AIYyAMYigXYAQFI0gNQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAJgCAaACCpgDAIgGAZAGEboGBggBEAEYCZIHATGgBwCyBwC4BwDCBwMzLTHIBwg&sclient=gws-wiz-serp" 
-										class="external-link" 
-										target="_blank" >
-                                        Thief
-									</a>
-                                    , creating the render engine.
-								</p>
-								<ul>
-									<li>
-										<p>
-                                            Thief is known for having good programming; use of 'fat structs'.
-										</p>
-									</li>
-									<li>
-										<p>
-                                            It was the first time ECS was used; the entity is just an ID for a lookup table.
-										</p>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<p>
-                                    OOP is a waste of time.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    Spend your time writing useful code, not doing other things. Aka, minimize overhead.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    Many libraries are written only for big projects.
-								</p>
-							</li>
-							<li>
-								<p>
-                                    He disagrees with Casey on some things, but agrees quite a bit on others.
+                                    Task.
 								</p>
 							</li>
 						</ul>
 					</li>
-					<li>
-						<p>
-                            Overall, the video is mostly irrelevant; the only &quot;relevant&quot; things are the quotes I put.
-						</p>
-					</li>
 				</ul>
 			</li>
 		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=63zGtiv89bA" 
+				class="external-link" 
+				target="_blank" >
+                C Fun Facts
+			</a>
+            .
+		</p>
 	</li>
 </ul>
 
@@ -1577,7 +1741,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.29354.js" >
+			src="/static/studies.15460.js" >
 		</script>
 	</body>
 </html>

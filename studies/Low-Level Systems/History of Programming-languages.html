@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.15460.css" >
+			href="/static/studies.90633.css" >
 	</head>
 	<body>
 		<aside
@@ -825,6 +825,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Low-Level Systems/C-integers.html" >
+                                    Integers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Low-Level Systems/C-memory.html" >
                                     Memory
 								</a>
@@ -981,6 +990,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Low-Level Systems/Debuggers-debugging-tips.html" >
+                                    Debugging Tips
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Low-Level Systems/Debuggers-file-types.html" >
                                     File Types
 								</a>
@@ -990,8 +1008,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/Debuggers-rad-debbuger.html" >
-                                    RAD Debbuger
+									href="/studies/Low-Level Systems/Debuggers-rad-debugger.html" >
+                                    RAD Debugger
 								</a>
 							</li>
 						</ul>
@@ -1059,8 +1077,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-notes.html" >
-                                    Notes
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-my-notes.html" >
+                                    My Notes
 								</a>
 							</li>
 						</ul>
@@ -1622,6 +1640,14 @@ window.MathJax = {
 									</li>
 									<li>
 										<a
+											href="#hare-2021" >
+                                            Hare (2021)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
 											href="#carbon-2022" >
                                             Carbon (2022)
 										</a>
@@ -1656,8 +1682,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/Parsing-parsing.html" >
-                                    Parsing
+									href="/studies/Low-Level Systems/Parsing-lexer.html" >
+                                    Lexer
 								</a>
 							</li>
 						</ul>
@@ -1665,8 +1691,17 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/Parsing-lexer.html" >
-                                    Lexer
+									href="/studies/Low-Level Systems/Parsing-parser.html" >
+                                    Parser
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/Parsing-abstract-syntax-tree-ast.html" >
+                                    Abstract Syntax Tree (AST)
 								</a>
 							</li>
 						</ul>
@@ -1773,8 +1808,8 @@ window.MathJax = {
                             🕒 Created: 2026-02-19
 						</time>
 						<time
-							datetime="2026-02-20" >
-                            | Updated: 2026-02-20
+							datetime="2026-02-22" >
+                            | Updated: 2026-02-22
 						</time>
 					</p>
 				</header>
@@ -5782,6 +5817,216 @@ class Program {
 	</li>
 </ul>
 <h3
+	id="hare-2021" >
+    Hare (2021)
+</h3>
+<pre><code class="language-hare" data-lang="hare">use fmt;
+
+export fn main() void = {
+&nbsp;&nbsp;&nbsp;&nbsp;const greetings = [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Hello, world!",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"¡Hola Mundo!",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Γειά σου Κόσμε!",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Привіт, світе!",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"こんにちは世界！",
+&nbsp;&nbsp;&nbsp;&nbsp;];
+&nbsp;&nbsp;&nbsp;&nbsp;for (let greeting .. greetings) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fmt::println(greeting)!;
+&nbsp;&nbsp;&nbsp;&nbsp;};
+};
+</code></pre>
+<pre><code class="language-hare" data-lang="hare">let x = 10;
+let y: *int = &x;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Guaranteed to be non-null
+let z: nullable *int = y; // May be null!
+
+*y; // Valid
+*z; // Error: main.ha:6:19: Cannot dereference nullable pointer type
+
+match (z) {
+case null =&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;abort();
+case let z: *int =&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;yield *z; // Valid
+};
+</code></pre>
+<pre><code class="language-hare" data-lang="hare">let x: int = if (foo) {
+&nbsp;&nbsp;&nbsp;&nbsp;let results = do_work();
+&nbsp;&nbsp;&nbsp;&nbsp;yield results.x;
+} else 42;
+</code></pre>
+<pre><code class="language-hare" data-lang="hare">fn io::write(s: *stream, buf: const []u8) (size | io::error);
+
+// ...
+
+sum += match (io::write(s, buf)) {
+case let err: io::error =&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;match (err) {
+&nbsp;&nbsp;&nbsp;&nbsp;case unsupported =&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abort("Expected write to be supported");
+&nbsp;&nbsp;&nbsp;&nbsp;case =&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return err;
+&nbsp;&nbsp;&nbsp;&nbsp;};
+case let n: size =&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;process(buf[..n]);
+&nbsp;&nbsp;&nbsp;&nbsp;yield n;
+};
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Hare is a systems programming language designed to be simple, stable, and robust. Hare uses a static type system, manual memory management, and a minimal runtime. It is well-suited to writing operating systems, system tools, compilers, networking software, and other low-level, high performance tasks.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://harelang.org/" 
+				class="external-link" 
+				target="_blank" >
+                Hare lang
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://harelang.org/blog/2021-02-09-hare-advances-on-c/" 
+				class="external-link" 
+				target="_blank" >
+                Hare advantages on C
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://sr.ht/~sircmpwn/hare/" 
+				class="external-link" 
+				target="_blank" >
+                Hare Source Code
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://harebyexample.org/" 
+				class="external-link" 
+				target="_blank" >
+                Hare by example
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://hareprogramming.com/" 
+				class="external-link" 
+				target="_blank" >
+                Hare docs
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://harelang.org/documentation/" 
+				class="external-link" 
+				target="_blank" >
+                Hare docs
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=oDEuf1gcapY&list=PLPi563THK-X_yMKQs9lzRRB2QBJrWnMA_&index=10" 
+				class="external-link" 
+				target="_blank" >
+                Demo
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            QBE Compiler.
+		</p>
+	</li>
+	<li>
+		<p>
+            Expression oriented.
+		</p>
+	</li>
+	<li>
+		<p>
+            Bound checking in arrays and slices.
+		</p>
+	</li>
+	<li>
+		<p>
+            Optional unbound arrays for performance.
+		</p>
+	</li>
+	<li>
+		<p>
+            No NULL value.
+		</p>
+	</li>
+	<li>
+		<p>
+            Non-nullable pointers by default; cannot deref null pointer.
+		</p>
+	</li>
+	<li>
+		<p>
+            Defer.
+		</p>
+	</li>
+	<li>
+		<p>
+            Mandatory error handling.
+		</p>
+	</li>
+	<li>
+		<p>
+            No macros, generics or multithreading.
+		</p>
+	</li>
+	<li>
+		<p>
+            Transparency:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No function overloading.
+				</p>
+			</li>
+			<li>
+				<p>
+                    No operator overloading.
+				</p>
+			</li>
+			<li>
+				<p>
+                    No implicit conversions.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            (2026-02-13) Hare 0.26.0 released.
+		</p>
+	</li>
+</ul>
+<h3
 	id="carbon-2022" >
     Carbon (2022)
 </h3>
@@ -5928,7 +6173,7 @@ fn Run() -&gt; i32 {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.15460.js" >
+			src="/static/studies.90633.js" >
 		</script>
 	</body>
 </html>

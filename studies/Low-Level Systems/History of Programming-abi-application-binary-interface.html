@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.15460.css" >
+			href="/static/studies.90633.css" >
 	</head>
 	<body>
 		<aside
@@ -825,6 +825,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Low-Level Systems/C-integers.html" >
+                                    Integers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Low-Level Systems/C-memory.html" >
                                     Memory
 								</a>
@@ -981,6 +990,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Low-Level Systems/Debuggers-debugging-tips.html" >
+                                    Debugging Tips
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Low-Level Systems/Debuggers-file-types.html" >
                                     File Types
 								</a>
@@ -990,8 +1008,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/Debuggers-rad-debbuger.html" >
-                                    RAD Debbuger
+									href="/studies/Low-Level Systems/Debuggers-rad-debugger.html" >
+                                    RAD Debugger
 								</a>
 							</li>
 						</ul>
@@ -1059,8 +1077,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-notes.html" >
-                                    Notes
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-my-notes.html" >
+                                    My Notes
 								</a>
 							</li>
 						</ul>
@@ -1123,6 +1141,12 @@ window.MathJax = {
                                     ABI (Application Binary Interface)
 								</a>
 								<ul>
+									<li>
+										<a
+											href="#c-abi" >
+                                            C ABI
+										</a>
+									</li>
 								</ul>
 							</li>
 						</ul>
@@ -1154,8 +1178,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/Parsing-parsing.html" >
-                                    Parsing
+									href="/studies/Low-Level Systems/Parsing-lexer.html" >
+                                    Lexer
 								</a>
 							</li>
 						</ul>
@@ -1163,8 +1187,17 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/Parsing-lexer.html" >
-                                    Lexer
+									href="/studies/Low-Level Systems/Parsing-parser.html" >
+                                    Parser
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/Parsing-abstract-syntax-tree-ast.html" >
+                                    Abstract Syntax Tree (AST)
 								</a>
 							</li>
 						</ul>
@@ -1271,8 +1304,8 @@ window.MathJax = {
                             🕒 Created: 2026-02-19
 						</time>
 						<time
-							datetime="2026-02-20" >
-                            | Updated: 2026-02-20
+							datetime="2026-02-22" >
+                            | Updated: 2026-02-22
 						</time>
 					</p>
 				</header>
@@ -1348,6 +1381,146 @@ window.MathJax = {
 			</li>
 		</ul>
 	</li>
+	<li>
+		<p>
+            It is the assumptions the compiler makes about how exactly the bit-for-bit representation and the usage of the computer’s actual hardware resources when it negotiate things that lie outside of a singular routine.
+		</p>
+	</li>
+	<li>
+		<p>
+            This includes things like:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    the position, order, and layout of members in a struct/class;
+				</p>
+			</li>
+			<li>
+				<p>
+                    the argument types and return type of single function (C++-only: and any relevant overloaded functions);
+				</p>
+			</li>
+			<li>
+				<p>
+                    the “special members” on a given class (C++-only);
+				</p>
+			</li>
+			<li>
+				<p>
+                    the hierarchy and ordering of virtual functions (C++-only);
+				</p>
+			</li>
+			<li>
+				<p>
+                    and more.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="c-abi" >
+    C ABI
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://faultlore.com/blah/c-isnt-a-language/" 
+				class="external-link" 
+				target="_blank" >
+                C is a protocol, not a programming language
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Interesting read, but also a bit of a sad one. It basically kinda implies, from my understanding, that C can't change things for the better due to incompatibilities that it would create.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://faultlore.com/blah/rust-layouts-and-abis/#the-c-integer-hierarchy" 
+				class="external-link" 
+				target="_blank" >
+                The C integer hierarchy
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            C also has much simpler ways of doing things, so it effectively boils down to two things that matter the most:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    the position, order, and layout of members in a struct; and,
+				</p>
+			</li>
+			<li>
+				<p>
+                    the argument types and return type of a function.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Because C++ consumes the entire C standard library into itself nearly wholesale with very little modifications, C’s ABI problems become C++’s ABI problems.
+		</p>
+	</li>
+	<li>
+		<p>
+            C’s ABI is “simple”, in that there is effectively a one-to-one correspondence between a function you write, and the symbol that gets vomited out into your binary. As an example, if I were to declare a function do_stuff, that took a long long parameter and returned a long long value to use, the code might look like this:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-c" data-lang="c">#include &lt;limits.h&gt;
+
+extern long long do_stuff(long long value);
+
+int main () {
+&nbsp;&nbsp;&nbsp;&nbsp;long long x = do_stuff(-LLONG_MAX);
+&nbsp;&nbsp;&nbsp;&nbsp;/* wow cool stuff with x ! */
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            and the resulting assembly for an x86_64 target would end up looking something like this:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-asm" data-lang="asm">main:
+&nbsp;&nbsp;&nbsp;&nbsp;movabs&nbsp;&nbsp;rdi, -9223372036854775807
+&nbsp;&nbsp;&nbsp;&nbsp;sub&nbsp;&nbsp;&nbsp;&nbsp; rsp, 8
+&nbsp;&nbsp;&nbsp;&nbsp;call&nbsp;&nbsp;&nbsp;&nbsp;do_stuff
+&nbsp;&nbsp;&nbsp;&nbsp;xor&nbsp;&nbsp;&nbsp;&nbsp; eax, eax
+&nbsp;&nbsp;&nbsp;&nbsp;add&nbsp;&nbsp;&nbsp;&nbsp; rsp, 8
+&nbsp;&nbsp;&nbsp;&nbsp;ret
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>sub rsp, 8</code>
+            &nbsp;&quot;The ABI requires the stack to be 16-byte aligned at call sites.&quot;. Subtracting 8 fixes alignment.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>xor reg, reg</code>
+            &nbsp;is faster/smaller than 
+            <code>mov reg, 0</code>
+            .
+		</p>
+	</li>
 </ul>
 
 				</article>
@@ -1364,7 +1537,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.15460.js" >
+			src="/static/studies.90633.js" >
 		</script>
 	</body>
 </html>

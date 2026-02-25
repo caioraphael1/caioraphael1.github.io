@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.90633.css" >
+			href="/static/studies.55658.css" >
 	</head>
 	<body>
 		<aside
@@ -1161,6 +1161,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-calling-conventions.html" >
+                                    Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-reverse-engineering.html" >
                                     Reverse Engineering
 								</a>
@@ -1362,8 +1371,8 @@ window.MathJax = {
                             🕒 Created: 2025-03-28
 						</time>
 						<time
-							datetime="2026-02-20" >
-                            | Updated: 2026-02-20
+							datetime="2026-02-25" >
+                            | Updated: 2026-02-25
 						</time>
 					</p>
 				</header>
@@ -1426,6 +1435,15 @@ fmt.println(multiply(137, 432))
             Procedure types are only compatible with the procedures that have the same calling convention and parameter types.
 		</p>
 	</li>
+	<li>
+		<p>
+            I also recommend checking: 
+            <a href="/studies/Low-Level Systems/Assembly/Assembly - ASM.html#calling-conventions">
+            Assembly - ASM #Calling Conventions
+            </a>
+            .
+		</p>
+	</li>
 </ul>
 <h5
 	id="odin" >
@@ -1445,12 +1463,7 @@ fmt.println(multiply(137, 432))
 		</p>
 		<ul>
 			<li>
-				<p
-					class="line-emphasis" >
-					<input
-						type="checkbox" 
-						disabled=""
->
+				<p>
                     It promotes values to a pointer if that’s more efficient on the target system
 				</p>
 				<ul>
@@ -1510,8 +1523,8 @@ fmt.println(multiply(137, 432))
 	</li>
 </ul>
 <h5
-	id="stdcall-std" >
-    stdcall / std
+	id="std" >
+    std
 </h5>
 <ul>
 	<li>
@@ -1523,8 +1536,8 @@ fmt.println(multiply(137, 432))
 	</li>
 </ul>
 <h5
-	id="c-cdecl" >
-    c / cdecl
+	id="c" >
+    c
 </h5>
 <ul>
 	<li>
@@ -1543,8 +1556,33 @@ fmt.println(multiply(137, 432))
 	</li>
 </ul>
 <h5
-	id="fastcall-fast" >
-    fastcall / fast
+	id="system" >
+    system
+</h5>
+<ul>
+	<li>
+		<p>
+            From the source code.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>src/parser.cpp/string_to_calling_convention</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">if (s == "system") {
+&nbsp;&nbsp;&nbsp;&nbsp;if (build_context.metrics.os == TargetOs_windows) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ProcCC_StdCall;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return ProcCC_CDecl;
+}
+</code></pre>
+<h5
+	id="fast" >
+    fast
 </h5>
 <ul>
 	<li>
@@ -1560,7 +1598,11 @@ fmt.println(multiply(137, 432))
 <ul>
 	<li>
 		<p>
-            This is a compiler dependent calling convention which will do nothing to parameters.
+            This is a compiler dependent calling convention which will do nothing to 
+			<em>
+                parameters
+			</em>
+            .
 		</p>
 	</li>
 </ul>
@@ -1990,7 +2032,7 @@ defer end()
 			</footer>
 		</main>
 		<script
-			src="/static/studies.90633.js" >
+			src="/static/studies.55658.js" >
 		</script>
 	</body>
 </html>

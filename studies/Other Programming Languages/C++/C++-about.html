@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.04852.css" >
+			href="/static/studies.92425.css" >
 	</head>
 	<body>
 		<aside
@@ -505,6 +505,20 @@ window.MathJax = {
                                     About
 								</a>
 								<ul>
+									<li>
+										<a
+											href="#versions" >
+                                            Versions
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#syntax-variations" >
+                                            Syntax Variations
+										</a>
+									</li>
 								</ul>
 							</li>
 						</ul>
@@ -521,8 +535,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Other Programming Languages/C++/C++-syntax.html" >
-                                    Syntax
+									href="/studies/Other Programming Languages/C++/C++-debugging.html" >
+                                    Debugging
 								</a>
 							</li>
 						</ul>
@@ -530,8 +544,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Other Programming Languages/C++/C++-attributes.html" >
-                                    Attributes
+									href="/studies/Other Programming Languages/C++/C++-explicitness.html" >
+                                    Explicitness
 								</a>
 							</li>
 						</ul>
@@ -539,8 +553,89 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Other Programming Languages/C++/C++-explanations.html" >
-                                    Explanations
+									href="/studies/Other Programming Languages/C++/C++-compiler-hints.html" >
+                                    Compiler Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-variable-declarations.html" >
+                                    Variable Declarations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-constants.html" >
+                                    Constants
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-basic-types.html" >
+                                    Basic Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-multithreading.html" >
+                                    Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-classes.html" >
+                                    Classes
 								</a>
 							</li>
 						</ul>
@@ -926,8 +1021,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-02-25" >
-                            | Updated: 2026-02-25
+							datetime="2026-02-28" >
+                            | Updated: 2026-02-28
 						</time>
 					</p>
 				</header>
@@ -946,10 +1041,13 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<h5
+<p>
+    alignas, alignof, and, and_eq, asm, auto, bitand, bitor, bool, break, case, catch, char, char16_t, char32_t, class, compl, const, constexpr, const_cast, continue, decltype, default, delete, do, double, dynamic_cast, else, enum, explicit, export, extern, false, float, for, friend, goto, if, inline, int, long, mutable, namespace, new, noexcept, not, not_eq, nullptr, operator, or, or_eq, private, protected, public, register, reinterpret_cast, return, short, signed, sizeof, static, static_assert, static_cast, struct, switch, template, this, thread_local, throw, true, try, typedef, typeid, typename, union, unsigned, using, virtual, void, volatile, wchar_t, while, xor, xor_eq
+</p>
+<h3
 	id="versions" >
     Versions
-</h5>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -961,6 +1059,52 @@ window.MathJax = {
 			</a>
             .
 		</p>
+	</li>
+</ul>
+<h3
+	id="syntax-variations" >
+    Syntax Variations
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=z5o5pu3FOfg" 
+				class="external-link" 
+				target="_blank" >
+                CppFront
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A compiler from an experimental C++ 'syntax 2' (Cpp2) to today's 'syntax 1' (Cpp1), to prove out some concepts, share some ideas, and prototype features that can also be proposed for evolving today's C++.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">main: () = {
+&nbsp;&nbsp;&nbsp;&nbsp;words: std::vector = ( "Alice", "Bob" );
+&nbsp;&nbsp;&nbsp;&nbsp;hello( words[0] );
+&nbsp;&nbsp;&nbsp;&nbsp;hello( words[1] );
+}
+
+hello: (msg: std::string_view) = {
+&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; "Hello, (msg)$!\n";
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=z5o5pu3FOfg" 
+						class="external-link" 
+						target="_blank" >
+                        Demo
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
 	</li>
 </ul>
 
@@ -978,7 +1122,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.04852.js" >
+			src="/static/studies.92425.js" >
 		</script>
 	</body>
 </html>

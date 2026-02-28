@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.04852.css" >
+			href="/static/studies.92425.css" >
 	</head>
 	<body>
 		<aside
@@ -519,8 +519,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Other Programming Languages/C++/C++-syntax.html" >
-                                    Syntax
+									href="/studies/Other Programming Languages/C++/C++-debugging.html" >
+                                    Debugging
 								</a>
 							</li>
 						</ul>
@@ -528,22 +528,54 @@ window.MathJax = {
 							<li>
 								<a
 									class="active" 
-									href="/studies/Other Programming Languages/C++/C++-attributes.html" >
-                                    Attributes
+									href="/studies/Other Programming Languages/C++/C++-explicitness.html" >
+                                    Explicitness
 								</a>
 								<ul>
 									<li>
 										<a
-											href="#nodiscard" >
-                                            [[nodiscard]]
+											href="#nodiscard-c23-c17" >
+                                            [[nodiscard]] (C23, C++17)
 										</a>
 										<ul>
 										</ul>
 									</li>
 									<li>
 										<a
-											href="#maybe_unused-c17-c23" >
-                                            [[maybe_unused]] (C++17, C23)
+											href="#maybe_unused-c23-c17" >
+                                            [[maybe_unused]] (C23, C++17)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#fallthrough-c23-c17" >
+                                            [[fallthrough]] (C23, C++17)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#deprecated-c23-c14" >
+                                            [[deprecated]] (C23, C++14)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#likely-unlikely-c20" >
+                                            [[likely]] / [[unlikely]] (C++20)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#carries_dependency-c11" >
+                                            [[carries_dependency]] (C++11)
 										</a>
 									</li>
 								</ul>
@@ -553,8 +585,89 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Other Programming Languages/C++/C++-explanations.html" >
-                                    Explanations
+									href="/studies/Other Programming Languages/C++/C++-compiler-hints.html" >
+                                    Compiler Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-variable-declarations.html" >
+                                    Variable Declarations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-constants.html" >
+                                    Constants
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-basic-types.html" >
+                                    Basic Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-multithreading.html" >
+                                    Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-classes.html" >
+                                    Classes
 								</a>
 							</li>
 						</ul>
@@ -932,7 +1045,7 @@ window.MathJax = {
 				<header
 					id="note-header" >
 					<h1>
-                        Attributes
+                        Explicitness
 					</h1>
 					<p>
 						<time
@@ -940,16 +1053,25 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-02-25" >
-                            | Updated: 2026-02-25
+							datetime="2026-02-28" >
+                            | Updated: 2026-02-28
 						</time>
 					</p>
 				</header>
 				<article
 					id="note-content" >
+<ul>
+	<li>
+		<p>
+            C only gained 
+            <code>[[...]]</code>
+            &nbsp;attribute syntax in C23.
+		</p>
+	</li>
+</ul>
 <h3
-	id="nodiscard" >
-    [[nodiscard]]
+	id="nodiscard-c23-c17" >
+    [[nodiscard]] (C23, C++17)
 </h3>
 <ul>
 	<li>
@@ -1051,27 +1173,197 @@ int compute(void);
 	</li>
 </ul>
 <h3
-	id="maybe_unused-c17-c23" >
-    [[maybe_unused]] (C++17, C23)
+	id="maybe_unused-c23-c17" >
+    [[maybe_unused]] (C23, C++17)
 </h3>
-<p>
-    Suppresses unused warnings explicitly, documenting intent.
-</p>
-<p>
-    [[maybe_unused]] int debug_flag;
-</p>
-<p>
-    Good for:
-</p>
-<p>
-    debug-only variables
-</p>
-<p>
-    platform-specific code
-</p>
-<p>
-    intentional parameter ignoring
-</p>
+<ul>
+	<li>
+		<p>
+            Suppresses unused warnings explicitly, documenting intent.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">[[maybe_unused]] int debug_flag;
+</code></pre>
+<h3
+	id="fallthrough-c23-c17" >
+    [[fallthrough]] (C23, C++17)
+</h3>
+<ul>
+	<li>
+		<p>
+            Makes switch fallthrough explicit and warning-free.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">switch (x) {
+case 1:
+&nbsp;&nbsp;&nbsp;&nbsp;do_something();
+&nbsp;&nbsp;&nbsp;&nbsp;[[fallthrough]];
+case 2:
+&nbsp;&nbsp;&nbsp;&nbsp;do_other();
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Prevents accidental fallthrough bugs.
+		</p>
+	</li>
+</ul>
+<h3
+	id="deprecated-c23-c14" >
+    [[deprecated]] (C23, C++14)
+</h3>
+<ul>
+	<li>
+		<p>
+            Marks APIs as obsolete.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">[[deprecated("Use new_api instead")]]
+void old_api();
+</code></pre>
+<h3
+	id="likely-unlikely-c20" >
+    [[likely]] / [[unlikely]] (C++20)
+</h3>
+<ul>
+	<li>
+		<p>
+            Branch prediction hints.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">if (ptr == nullptr) [[unlikely]] {
+&nbsp;&nbsp;&nbsp;&nbsp;return;
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Primary value: document intent, 
+			<em>
+                not performance
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Vendor alternative (both languages):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>__builtin_expect</code>
+                    &nbsp;(GCC/Clang)
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="carries_dependency-c11" >
+    [[carries_dependency]] (C++11)
+</h3>
+<ul>
+	<li>
+		<p>
+            Used with memory ordering / dependency chains (rarely used in practice).
+		</p>
+	</li>
+	<li>
+		<p>
+            It exists solely for a now largely abandoned optimization strategy: 
+            <code>memory_order_consume</code>
+            &nbsp;dependency chains.
+		</p>
+	</li>
+	<li>
+		<p>
+            It tells the compiler: A value carries a dependency from an atomic load performed with memory_order_consume.
+		</p>
+	</li>
+	<li>
+		<p>
+            This was meant to allow weaker-than-acquire synchronization on weakly ordered CPUs (e.g., ARM, PowerPC).
+		</p>
+	</li>
+	<li>
+		<p>
+            considered failed design.
+		</p>
+	</li>
+	<li>
+		<p>
+            There have been ongoing efforts in the standards committee to redefine or replace 
+            <code>memory_order_consume</code>
+            .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">void f(int* [[carries_dependency]] p);
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Mostly relevant for low-level lock-free code.
+		</p>
+	</li>
+	<li>
+		<p>
+            Performance impact:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In theory:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            allows weaker barriers than memory_order_acquire
+						</p>
+					</li>
+					<li>
+						<p>
+                            avoids full memory fence
+						</p>
+					</li>
+					<li>
+						<p>
+                            improves performance on weak memory architectures
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    In practice (2026):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            No major compiler implements true consume semantics.
+						</p>
+					</li>
+					<li>
+						<p>
+                            They upgrade consume → acquire.
+						</p>
+					</li>
+					<li>
+						<p>
+                            [[carries_dependency]] has effectively no performance impact.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
 
 				</article>
 			</main>
@@ -1087,7 +1379,7 @@ int compute(void);
 			</footer>
 		</main>
 		<script
-			src="/static/studies.04852.js" >
+			src="/static/studies.92425.js" >
 		</script>
 	</body>
 </html>

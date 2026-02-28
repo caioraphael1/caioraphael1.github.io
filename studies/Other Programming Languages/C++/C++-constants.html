@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.04852.css" >
+			href="/static/studies.92425.css" >
 	</head>
 	<body>
 		<aside
@@ -519,8 +519,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Other Programming Languages/C++/C++-syntax.html" >
-                                    Syntax
+									href="/studies/Other Programming Languages/C++/C++-debugging.html" >
+                                    Debugging
 								</a>
 							</li>
 						</ul>
@@ -528,8 +528,26 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Other Programming Languages/C++/C++-attributes.html" >
-                                    Attributes
+									href="/studies/Other Programming Languages/C++/C++-explicitness.html" >
+                                    Explicitness
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-compiler-hints.html" >
+                                    Compiler Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-variable-declarations.html" >
+                                    Variable Declarations
 								</a>
 							</li>
 						</ul>
@@ -537,19 +555,96 @@ window.MathJax = {
 							<li>
 								<a
 									class="active" 
-									href="/studies/Other Programming Languages/C++/C++-explanations.html" >
-                                    Explanations
+									href="/studies/Other Programming Languages/C++/C++-constants.html" >
+                                    Constants
 								</a>
 								<ul>
 									<li>
 										<a
-											href="#classes" >
-                                            Classes
+											href="#literals" >
+                                            Literals
 										</a>
 										<ul>
 										</ul>
 									</li>
+									<li>
+										<a
+											href="#typed-constant-expressions" >
+                                            Typed constant expressions
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#using-preprocessor-definitions-define" >
+                                            Using Preprocessor Definitions (#define)
+										</a>
+									</li>
 								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-basic-types.html" >
+                                    Basic Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-multithreading.html" >
+                                    Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Other Programming Languages/C++/C++-classes.html" >
+                                    Classes
+								</a>
 							</li>
 						</ul>
 						<ul>
@@ -926,7 +1021,7 @@ window.MathJax = {
 				<header
 					id="note-header" >
 					<h1>
-                        Explanations
+                        Constants
 					</h1>
 					<p>
 						<time
@@ -934,88 +1029,378 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-02-25" >
-                            | Updated: 2026-02-25
+							datetime="2026-02-28" >
+                            | Updated: 2026-02-28
 						</time>
 					</p>
 				</header>
 				<article
 					id="note-content" >
+<ul>
+	<li>
+		<p>
+            Constants are expressions with a fixed value.
+		</p>
+	</li>
+</ul>
 <h3
-	id="classes" >
-    Classes
+	id="literals" >
+    Literals
 </h3>
 <ul>
 	<li>
 		<p>
-            Default access control: Private.
+            Literal constants can be classified into: integer, floating-point, characters, strings, Boolean, pointers, and user-defined literals.
 		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=HClSfuT2bFA" 
-				class="external-link" 
-				target="_blank" >
-                Object Oriented Programming is a Dirty Rotten Low Down Trick: A Look at How C++ Works
-			</a>
-            .
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Very interesting.
-				</p>
-			</li>
-		</ul>
 	</li>
 </ul>
 <h5
-	id="operator-" >
-    Operator ( :: )
+	id="postfixes" >
+    Postfixes
 </h5>
 <ul>
 	<li>
 		<p>
-            Used to access the content of a 
-            <code>class</code>
-            , 
-            <code>struct</code>
-            , 
-            <code>scope</code>
-            , or 
-            <code>namespace</code>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            The symbol 
-            <code>::</code>
-            &nbsp;is used like an &quot;address/directory&quot;, so using:
+			<strong>
+                For integers
+			</strong>
+            :
 		</p>
 		<ul>
 			<li>
 				<p>
-                    <code>MyClass::variable_name</code>
-                    , refers to a variable of the class 
-                    <code>MyClass</code>
-                    .
+                    <code>u</code>
+                    &nbsp;/ 
+                    <code>U</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>unsigned</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>l</code>
+                    &nbsp;/ 
+                    <code>L</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>long</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>ll</code>
+                    &nbsp;/ 
+                    <code>LL</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>long long</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // int
+75u&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// unsigned int
+75l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// long
+75ul&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // unsigned long 
+75lu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // unsigned long 
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                For floats
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>f</code>
+                    &nbsp;/ 
+                    <code>F</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>float</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>l</code>
+                    &nbsp;/ 
+                    <code>L</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>long double</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">6.02e23f&nbsp;&nbsp; // float
+3.14159L&nbsp;&nbsp; // long double
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="prefixes" >
+    Prefixes
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                For integers
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By default, integer literals are of type 
+                    <code>int</code>
+                    , but certain suffixes may be appended to an integer literal to specify a different integer type:
 				</p>
 			</li>
 			<li>
 				<p>
-                    <code>::variable_name</code>
-                    , refers to a variable in the global scope.
+                    All literals below represent the same 
+                    <code>75</code>
+                    &nbsp;number.
 				</p>
 			</li>
+			<li>
+				<p>
+                    <code>0b</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Binary (base-2).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>0</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Octal&nbsp;&nbsp;(base-8).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>0x</code>
+                    &nbsp;/ 
+                    <code>0X</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Hexadecimal (base-16).
+						</p>
+					</li>
+				</ul>
+			</li>
 		</ul>
+<pre><code class="language-cpp" data-lang="cpp">// binary&nbsp;&nbsp;(base-2)
+0b01001011
+
+// octal&nbsp;&nbsp; (base-8)
+0113&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;= 1×8² + 1×8¹ + 3×8⁰
+&nbsp;&nbsp;&nbsp;&nbsp;= 64 + 8 + 3
+&nbsp;&nbsp;&nbsp;&nbsp;= 75
+
+// decimal (base-10)
+75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+// hexadecimal (base-16)
+0x4b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;= 4×16¹ + 11×16⁰
+&nbsp;&nbsp;&nbsp;&nbsp;= 64 + 11
+&nbsp;&nbsp;&nbsp;&nbsp;= 75
+</code></pre>
 	</li>
 	<li>
 		<p>
-            Writing 
-            <code>using ScopeName</code>
-            &nbsp;exposes the content of the desired scope in the current scope.
+			<strong>
+                For strings
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>u</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>char16_t</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>U</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>char32_t</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>L</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>wchar_t</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>u8</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The string literal is encoded in the executable using UTF-8
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>R</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The string literal is a raw string
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">u'a'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// char16_t
+u"hello"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// const char16_t[]
+U'a'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// char32_t
+U"hello"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// const char32_t[]
+L'a'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// wchar_t
+L"hello"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// const wchar_t[]
+u8"hello"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // const char[] (C++11), char8_t[] (C++20)
+R"(C:\path\file.txt)" // Raw string literal
+</code></pre>
+	</li>
+</ul>
+<h5
+	id="floating-point-numerals" >
+    Floating point Numerals
+</h5>
+<pre><code class="language-cpp" data-lang="cpp">3.14159&nbsp;&nbsp;&nbsp;&nbsp;// 3.14159
+3.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 3.0&nbsp;&nbsp;
+6.02e23&nbsp;&nbsp;&nbsp;&nbsp;// 6.02 x 10^23
+1.6e-19&nbsp;&nbsp;&nbsp;&nbsp;// 1.6 x 10^-19
+</code></pre>
+<h5
+	id="other-literals" >
+    Other literals
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>true</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>false</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>nullptr</code>
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">bool foo = true;
+bool bar = false;
+int* p = nullptr;
+</code></pre>
+<h3
+	id="typed-constant-expressions" >
+    Typed constant expressions
+</h3>
+<ul>
+	<li>
+		<p>
+            Sometimes, it is just convenient to give a name to a constant value:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">const double pi = 3.1415926;
+const char tab = '\t';
+</code></pre>
+<h3
+	id="using-preprocessor-definitions-define" >
+    Using Preprocessor Definitions (#define)
+</h3>
+<ul>
+	<li>
+		<p>
+            They have the following form:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#define identifier replacement
+</code></pre>
+<ul>
+	<li>
+		<p>
+            This replacement is performed by the preprocessor, and happens before the program is compiled.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's sort of 
+			<em>
+                blind replacement
+			</em>
+            : the validity of 
+			<em>
+                the types or syntax involved is not checked in any way
+			</em>
+            .
 		</p>
 	</li>
 </ul>
@@ -1034,7 +1419,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.04852.js" >
+			src="/static/studies.92425.js" >
 		</script>
 	</body>
 </html>

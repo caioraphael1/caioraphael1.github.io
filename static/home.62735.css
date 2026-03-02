@@ -344,7 +344,12 @@ pre, code {
         display: flex;
         flex-direction: column;
         text-align: center;
-        padding: 25px 36px 60px;
+        padding: 25px 30px 60px;
+    }
+    @media (max-height: 1080px) {
+        main > section > header {
+            padding: 5px 10% 40px;
+        }
     }
     @media (orientation: portrait) {    
         main > section > header {
@@ -369,6 +374,12 @@ pre, code {
         /* text-transform: uppercase; */
         padding-bottom: calc(16px*1.2);
     }
+    @media (max-height: 1080px) {
+        main > section > header > h1 {
+            font-size: 5em;
+        }
+    }
+
     @media (orientation: portrait) {
         main > section > header > h1 {
             letter-spacing: 2px;
@@ -400,6 +411,18 @@ pre, code {
     color: var(--home-button-text);
 }
 
+@media (max-height: 1080px) {
+    #topics {
+        gap: 20px;  
+   }
+}
+
+@media (max-height: 800px) {
+    #topics {
+        gap: 12px;  
+   }
+}
+
 @media (orientation: portrait) {    
    #topics {
         gap: 20px;  
@@ -420,11 +443,10 @@ TOPIC CARD
 
     /* width: 100%; */
     width: auto;
-    min-height: 160px;
+    /* min-height: 160px; */
 
     margin: 0 10%;
-    /* padding: 1.75rem 1.25rem; */
-    padding: 30px 16px;
+    padding: 1.75rem 1.25rem;
 
     border-radius: 4px;
     background: var(--study-cards-bg);
@@ -436,6 +458,18 @@ TOPIC CARD
         transform 0.25s ease,
         background-color 0.25s ease,
         border-color 0.25s ease;
+}
+
+@media (max-height: 1080px) {
+    .topic-card {
+        margin: 0 15%;
+        padding: 1.0rem 1.25rem;
+    }
+}
+@media (max-height: 800px) {
+    .topic-card {
+        padding: 0.8rem 1.25rem;
+    }
 }
 
 @media (orientation: portrait) {    
@@ -521,11 +555,18 @@ TOPIC CARD
         display: flex;
         justify-content: center;
 
-        padding: 25px 12px 25px 12px;
+        padding: 0px 12px 25px 12px;
 
         gap: 8px;
     }
 
+
+    @media (max-height: 1080px) {    
+        #central-footer {
+            padding: 0px 12px 12px 12px;
+            font-size: small;
+        }
+    }
     @media (orientation: portrait) {    
         #central-footer {
             font-size: x-small;

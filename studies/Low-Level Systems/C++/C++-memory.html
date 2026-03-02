@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.73416.css" >
+			href="/static/studies.59116.css" >
 	</head>
 	<body>
 		<aside
@@ -755,6 +755,51 @@ window.MathJax = {
 						<ul>
 							<li>
 								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-structs.html" >
+                                    Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-unions.html" >
+                                    Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-enums.html" >
+                                    Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-classes.html" >
+                                    Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-pointers.html" >
+                                    Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
 									class="active" 
 									href="/studies/Low-Level Systems/C++/C++-memory.html" >
                                     Memory
@@ -773,6 +818,34 @@ window.MathJax = {
 											href="#_alignof-c11-alignof-c11" >
                                             _Alignof (C11), alignof (C++11)
 										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#allocating-memory" >
+                                            Allocating memory
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#operator-codenew-code-and-codenew-code-c98-and-forward" >
+                                                    Operator <code>new</code> and <code>new[]</code> (C++98 and forward)
+												</a>
+											</li>
+											<li>
+												<a
+													href="#operator-codedelete-code-and-codedelete-code-c98-and-forward" >
+                                                    Operator <code>delete</code> and <code>delete[]</code> (C++98 and forward)
+												</a>
+											</li>
+											<li>
+												<a
+													href="#using-codemalloc-code-codecalloc-code-coderealloc-code-and-codefree-code-from-codeltcstdlibgreater-code-c-style" >
+                                                    Using <code>malloc</code>, <code>calloc</code>, <code>realloc</code> and <code>free</code>, from <code>&lt;cstdlib&gt;</code> (C style)
+												</a>
+											</li>
+										</ul>
 									</li>
 								</ul>
 							</li>
@@ -783,15 +856,6 @@ window.MathJax = {
 									class="" 
 									href="/studies/Low-Level Systems/C++/C++-multithreading.html" >
                                     Multithreading
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="" 
-									href="/studies/Low-Level Systems/C++/C++-classes.html" >
-                                    Classes
 								</a>
 							</li>
 						</ul>
@@ -1474,8 +1538,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-03-01" >
-                            | Updated: 2026-03-01
+							datetime="2026-03-02" >
+                            | Updated: 2026-03-02
 						</time>
 					</p>
 				</header>
@@ -1503,6 +1567,113 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
+<h3
+	id="allocating-memory" >
+    Allocating memory
+</h3>
+<h4
+	id="operator-codenew-code-and-codenew-code-c98-and-forward" >
+    Operator 
+    <code>new</code>
+    &nbsp;and 
+    <code>new[]</code>
+    &nbsp;(C++98 and forward)
+</h4>
+<ul>
+	<li>
+		<p>
+            Syntax:
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">pointer = new type
+pointer = new type [number_of_elements]
+</code></pre>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">int* foo;
+foo = new int [5]; // if allocation fails, an exception is thrown
+</code></pre>
+<ul>
+	<li>
+		<p>
+            This method can be specified by using a special object called 
+            <code>nothrow</code>
+            , declared in header 
+            <code>&lt;new&gt;</code>
+            , as argument for new:
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">foo = new (nothrow) int [5];
+</code></pre>
+	</li>
+	<li>
+		<p>
+            In this case, if the allocation of this block of memory fails, the failure can be detected by checking if 
+            <code>foo</code>
+            &nbsp;is a null pointer:
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">int * foo;
+foo = new (nothrow) int [5];
+if (foo == nullptr) {
+&nbsp;&nbsp;&nbsp;&nbsp;// error assigning memory. Take measures.
+}
+</code></pre>
+	</li>
+</ul>
+<h4
+	id="operator-codedelete-code-and-codedelete-code-c98-and-forward" >
+    Operator 
+    <code>delete</code>
+    &nbsp;and 
+    <code>delete[]</code>
+    &nbsp;(C++98 and forward)
+</h4>
+<ul>
+	<li>
+		<p>
+            Syntax:
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">delete pointer;
+delete[] pointer;
+</code></pre>
+	</li>
+	<li>
+		<p>
+            The first statement releases the memory of a single element allocated using new, and the second one releases the memory allocated for arrays of elements using new and a size in brackets ([]).
+		</p>
+	</li>
+	<li>
+		<p>
+            The value passed as argument to delete shall be either a pointer to a memory block previously allocated with new, or a null pointer (in the case of a null pointer, delete produces no effect).
+		</p>
+	</li>
+</ul>
+<h4
+	id="using-codemalloc-code-codecalloc-code-coderealloc-code-and-codefree-code-from-codeltcstdlibgreater-code-c-style" >
+    Using 
+    <code>malloc</code>
+    , 
+    <code>calloc</code>
+    , 
+    <code>realloc</code>
+    &nbsp;and 
+    <code>free</code>
+    , from 
+    <code>&lt;cstdlib&gt;</code>
+    &nbsp;(C style)
+</h4>
+<ul>
+	<li>
+		<p>
+            The library was known as 
+            <code>&lt;stdlib.h&gt;</code>
+            &nbsp;in C; The functions are also available in C++ and can also be used to allocate and deallocate dynamic memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            Memory blocks allocated by these functions are not necessarily compatible with those returned by new, so they should not be mixed; each one should be handled with its own set of functions or operators.
+		</p>
+	</li>
+</ul>
 
 				</article>
 			</main>
@@ -1518,7 +1689,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.73416.js" >
+			src="/static/studies.59116.js" >
 		</script>
 	</body>
 </html>

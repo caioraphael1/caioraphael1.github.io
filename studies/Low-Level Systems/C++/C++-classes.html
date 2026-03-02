@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.73416.css" >
+			href="/static/studies.59116.css" >
 	</head>
 	<body>
 		<aside
@@ -756,8 +756,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/C++/C++-memory.html" >
-                                    Memory
+									href="/studies/Low-Level Systems/C++/C++-structs.html" >
+                                    Structs
 								</a>
 							</li>
 						</ul>
@@ -765,8 +765,17 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
-									href="/studies/Low-Level Systems/C++/C++-multithreading.html" >
-                                    Multithreading
+									href="/studies/Low-Level Systems/C++/C++-unions.html" >
+                                    Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-enums.html" >
+                                    Enums
 								</a>
 							</li>
 						</ul>
@@ -780,11 +789,88 @@ window.MathJax = {
 								<ul>
 									<li>
 										<a
-											href="#operator-" >
-                                            Operator (::)
+											href="#methods" >
+                                            Methods
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#member-access" >
+                                            Member Access
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#access-control" >
+                                            Access Control
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#constructors" >
+                                            Constructors
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#constructor-syntaxes" >
+                                                    Constructor Syntaxes
+												</a>
+											</li>
+											<li>
+												<a
+													href="#initialization-syntaxes" >
+                                                    Initialization Syntaxes
+												</a>
+											</li>
+											<li>
+												<a
+													href="#overloading-constructors-default-constructor" >
+                                                    Overloading Constructors / Default Constructor
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#operator-overloading" >
+                                            Operator Overloading
 										</a>
 									</li>
 								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-pointers.html" >
+                                    Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-multithreading.html" >
+                                    Multithreading
+								</a>
 							</li>
 						</ul>
 						<ul>
@@ -1466,8 +1552,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-03-01" >
-                            | Updated: 2026-03-01
+							datetime="2026-03-02" >
+                            | Updated: 2026-03-02
 						</time>
 					</p>
 				</header>
@@ -1476,8 +1562,59 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            Default access control: Private.
+            Syntax:
 		</p>
+<pre><code class="language-cpp" data-lang="cpp">class class_name {
+&nbsp;&nbsp;&nbsp;&nbsp;access_specifier_1:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;member1;
+&nbsp;&nbsp;&nbsp;&nbsp;access_specifier_2:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;member2;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+} variables_with_this_type;
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Classes can be defined not only with keyword 
+                    <code>class</code>
+                    , but also with keywords 
+                    <code>struct</code>
+                    &nbsp;and 
+                    <code>union</code>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>struct</code>
+                            &nbsp;vs 
+                            <code>class</code>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    The only difference between both is that members of classes declared with the keyword 
+                                    <code>struct</code>
+                                    &nbsp;have 
+                                    <code>public</code>
+                                    &nbsp;access by default, while members of classes declared with the keyword 
+                                    <code>class</code>
+                                    &nbsp;have 
+                                    <code>private</code>
+                                    &nbsp;access by default. For all other purposes both keywords are equivalent in this context.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            The concept of unions is different from that of classes declared with struct and class, since unions only store one data member at a time, but nevertheless they are also classes and can thus also hold member functions. The default access in union classes is public.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
 	</li>
 	<li>
 		<p>
@@ -1485,7 +1622,7 @@ window.MathJax = {
 				href="https://www.youtube.com/watch?v=HClSfuT2bFA" 
 				class="external-link" 
 				target="_blank" >
-                Object Oriented Programming is a Dirty Rotten Low Down Trick: A Look at How C++ Works
+                OOP is a Dirty Rotten Low Down Trick: A Look at How C++ Works
 			</a>
             .
 		</p>
@@ -1499,35 +1636,37 @@ window.MathJax = {
 	</li>
 </ul>
 <h3
-	id="operator-" >
-    Operator (::)
+	id="methods" >
+    Methods
 </h3>
 <ul>
 	<li>
 		<p>
-            Used to access the content of a 
-            <code>class</code>
-            , 
-            <code>struct</code>
-            , 
-            <code>scope</code>
-            , or 
-            <code>namespace</code>
+            A method can be defined inside the class, or outside the class by using the 
+			<strong>
+                scope operator
+			</strong>
+            &nbsp;
+            <code>::</code>
             .
 		</p>
 	</li>
 	<li>
 		<p>
-            The symbol 
+            The 
+			<strong>
+                scope operator
+			</strong>
+            &nbsp;
             <code>::</code>
-            &nbsp;is used like an &quot;address/directory&quot;, so using:
+            &nbsp;specifies the class to which the member being defined belongs. It's used like an &quot;address/directory&quot;, so using:
 		</p>
 		<ul>
 			<li>
 				<p>
-                    <code>MyClass::variable_name</code>
+                    <code>My_Class::variable_name</code>
                     , refers to a variable of the class 
-                    <code>MyClass</code>
+                    <code>My_Class</code>
                     .
 				</p>
 			</li>
@@ -1539,12 +1678,342 @@ window.MathJax = {
 			</li>
 		</ul>
 	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;iostream&gt;
+
+class Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int width, height;
+&nbsp;&nbsp;&nbsp;&nbsp;public:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void set_values (int,int);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int area() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return width*height;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+};
+
+void Rectangle::set_values (int x, int y) {
+&nbsp;&nbsp;&nbsp;&nbsp;width = x;
+&nbsp;&nbsp;&nbsp;&nbsp;height = y;
+}
+
+int main () {
+&nbsp;&nbsp;&nbsp;&nbsp;Rectangle rect;
+&nbsp;&nbsp;&nbsp;&nbsp;rect.set_values (3,4);
+&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; "area: " &lt;&lt; rect.area();
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+}
+</code></pre>
+<ul>
 	<li>
 		<p>
-            Writing 
-            <code>using ScopeName</code>
-            &nbsp;exposes the content of the desired scope in the current scope.
+            The only difference between defining a member function completely within the class definition or to just include its declaration in the function and define it later outside the class, is that in the first case the function is automatically considered an inline member function by the compiler, while in the second it is a normal (not-inline) class member function. This causes no differences in behavior, but only on possible compiler optimizations.
 		</p>
+	</li>
+</ul>
+<h3
+	id="member-access" >
+    Member Access
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>*x</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    pointed to by x
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>&x</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    address of x
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>x.y</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    member y of object x
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>x-&gt;y</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    member y of object pointed to by x
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>(*x).y</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    member y of object pointed to by x (equivalent to the previous one)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>x[0]</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    first object pointed to by x
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>x[1]</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    second object pointed to by x
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>x[n]</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    (n+1)th object pointed to by x
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="access-control" >
+    Access Control
+</h3>
+<ul>
+	<li>
+		<p>
+            An access specifier is one of the following three keywords: 
+            <code>private</code>
+            , 
+            <code>public</code>
+            &nbsp;or 
+            <code>protected</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>private</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Members are accessible only from within other members of the same class (or from their &quot;friends&quot;).
+				</p>
+			</li>
+			<li>
+				<p>
+                    This is the default access control. Any member that is declared before any other access specifier has 
+                    <code>private</code>
+                    &nbsp;access automatically.
+				</p>
+<pre><code class="language-cpp" data-lang="cpp">class Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int width, height;
+&nbsp;&nbsp;&nbsp;&nbsp;public:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void set_values (int,int);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int area (void);
+} rect;
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>protected</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Members are accessible from other members of the same class (or from their &quot;friends&quot;), but also from members of their derived classes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>public</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Members are accessible from anywhere where the object is visible.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="constructors" >
+    Constructors
+</h3>
+<ul>
+	<li>
+		<p>
+            Constructors cannot be called explicitly as if they were regular member functions. They are only executed once, when a new object of that class is created, allowing the class to initialize member variables or allocate storage.
+		</p>
+	</li>
+	<li>
+		<p>
+            This constructor function is declared just like a regular member function, but with a name that matches the class name and without any return type; not even void. Constructors never return values, they simply initialize the object.
+		</p>
+	</li>
+</ul>
+<h4
+	id="constructor-syntaxes" >
+    Constructor Syntaxes
+</h4>
+<ul>
+	<li>
+		<p>
+            Outside the class, with the scope operator 
+            <code>::</code>
+            :
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">class Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int width, height;
+&nbsp;&nbsp;&nbsp;&nbsp;public:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rectangle(int,int);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int area() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (width * height);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+};
+
+Rectangle::Rectangle(int x, int y) { 
+&nbsp;&nbsp;&nbsp;&nbsp;width&nbsp;&nbsp;= x; 
+&nbsp;&nbsp;&nbsp;&nbsp;height = y;
+}
+</code></pre>
+	</li>
+	<li>
+		<p>
+            With member initialization, using a 
+            <code>:</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">class Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int width, height;
+&nbsp;&nbsp;&nbsp;&nbsp;public:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rectangle(int,int);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int area() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (width * height);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+};
+
+Rectangle::Rectangle(int x, int y): width(x), height(y) {
+&nbsp;&nbsp;&nbsp;&nbsp;// empty
+}
+</code></pre>
+	</li>
+</ul>
+<h4
+	id="initialization-syntaxes" >
+    Initialization Syntaxes
+</h4>
+<ul>
+	<li>
+		<p>
+            They are all equivalent. It's just style.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">class_name object_name(value, value, value, ...);&nbsp;&nbsp; // 'functional initialization'.
+class_name object_name{value, value, value, ...}&nbsp;&nbsp;&nbsp;&nbsp;// 'uniform initialization'.
+class_name object_name = {value, value, value, ...} // 'uniform initialization', POD-like.
+class_name object_name = initialization_value;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 'variable initialization / assignment initialization', only allowed for constructors with a single parameter.
+</code></pre>
+<h4
+	id="overloading-constructors-default-constructor" >
+    Overloading Constructors / Default Constructor
+</h4>
+<ul>
+	<li>
+		<p>
+            The default constructor is the constructor that takes no parameters, and it is special because it is called when an object is declared but is not initialized with any arguments.
+		</p>
+	</li>
+	<li>
+		<p>
+            Empty parentheses cannot be used to call the default constructor.
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">Rectangle rect_a;&nbsp;&nbsp; // default constructor called
+Rectangle rect_b{}; // default constructor called using 'uniform initialization'.
+Rectangle rect_c(); // default constructor NOT called
+</code></pre>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">class Rectangle {
+&nbsp;&nbsp;&nbsp;&nbsp;int width, height;
+&nbsp;&nbsp;public:
+&nbsp;&nbsp;&nbsp;&nbsp;Rectangle ();
+&nbsp;&nbsp;&nbsp;&nbsp;Rectangle (int,int);
+&nbsp;&nbsp;&nbsp;&nbsp;int area (void) {return (width*height);}
+};
+
+Rectangle::Rectangle () {
+&nbsp;&nbsp;width = 5;
+&nbsp;&nbsp;height = 5;
+}
+
+Rectangle::Rectangle (int a, int b) {
+&nbsp;&nbsp;width = a;
+&nbsp;&nbsp;height = b;
+}
+
+int main () {
+&nbsp;&nbsp;Rectangle rect_a(3,4);
+&nbsp;&nbsp;Rectangle rect_b;
+}
+</code></pre>
+<h3
+	id="operator-overloading" >
+    Operator Overloading
+</h3>
+<ul>
+	<li>
 	</li>
 </ul>
 
@@ -1562,7 +2031,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.73416.js" >
+			src="/static/studies.59116.js" >
 		</script>
 	</body>
 </html>

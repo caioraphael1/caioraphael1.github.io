@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.73416.css" >
+			href="/static/studies.59116.css" >
 	</head>
 	<body>
 		<aside
@@ -771,6 +771,14 @@ window.MathJax = {
 											href="#templates" >
                                             Templates
 										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#function-pointers" >
+                                            Function Pointers
+										</a>
 									</li>
 								</ul>
 							</li>
@@ -824,6 +832,51 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Low-Level Systems/C++/C++-structs.html" >
+                                    Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-unions.html" >
+                                    Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-enums.html" >
+                                    Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-classes.html" >
+                                    Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-pointers.html" >
+                                    Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Low-Level Systems/C++/C++-memory.html" >
                                     Memory
 								</a>
@@ -835,15 +888,6 @@ window.MathJax = {
 									class="" 
 									href="/studies/Low-Level Systems/C++/C++-multithreading.html" >
                                     Multithreading
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="" 
-									href="/studies/Low-Level Systems/C++/C++-classes.html" >
-                                    Classes
 								</a>
 							</li>
 						</ul>
@@ -1526,8 +1570,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-03-01" >
-                            | Updated: 2026-03-01
+							datetime="2026-03-02" >
+                            | Updated: 2026-03-02
 						</time>
 					</p>
 				</header>
@@ -2162,6 +2206,43 @@ int main() {
 		</p>
 	</li>
 </ul>
+<h3
+	id="function-pointers" >
+    Function Pointers
+</h3>
+<ul>
+	<li>
+		<p>
+            Pointers to functions are declared with the same syntax as a regular function declaration, except that the name of the function is enclosed between parentheses () and an asterisk (*) is inserted before the name:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;iostream&gt;
+
+int addition(int a, int b) { 
+&nbsp;&nbsp;&nbsp;&nbsp;return (a+b);
+}
+
+int subtraction(int a, int b) { 
+&nbsp;&nbsp;&nbsp;&nbsp;return (a-b);
+}
+
+int operation(int x, int y, int (*func_to_call)(int,int)) {
+&nbsp;&nbsp;&nbsp;&nbsp;int g;
+&nbsp;&nbsp;&nbsp;&nbsp;g = (*func_to_call)(x,y);
+&nbsp;&nbsp;&nbsp;&nbsp;return (g);
+}
+
+int main() {
+&nbsp;&nbsp;&nbsp;&nbsp;int m,n;
+&nbsp;&nbsp;&nbsp;&nbsp;int (*minus)(int,int) = subtraction;
+
+&nbsp;&nbsp;&nbsp;&nbsp;m = operation(7, 5, addition);
+&nbsp;&nbsp;&nbsp;&nbsp;n = operation(20, m, minus);
+&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt;n;
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+}
+</code></pre>
 
 				</article>
 			</main>
@@ -2177,7 +2258,7 @@ int main() {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.73416.js" >
+			src="/static/studies.59116.js" >
 		</script>
 	</body>
 </html>

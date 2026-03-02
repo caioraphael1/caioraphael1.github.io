@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.73416.css" >
+			href="/static/studies.59116.css" >
 	</head>
 	<body>
 		<aside
@@ -749,8 +749,24 @@ window.MathJax = {
 									</li>
 									<li>
 										<a
+											href="#codet-code-or-codet-foo-code" >
+                                            <code>T*</code> or <code>T foo[]</code>
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
 											href="#access" >
                                             Access
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#reassigning" >
+                                            Reassigning
 										</a>
 										<ul>
 										</ul>
@@ -794,6 +810,51 @@ window.MathJax = {
 							<li>
 								<a
 									class="" 
+									href="/studies/Low-Level Systems/C++/C++-structs.html" >
+                                    Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-unions.html" >
+                                    Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-enums.html" >
+                                    Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-classes.html" >
+                                    Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
+									href="/studies/Low-Level Systems/C++/C++-pointers.html" >
+                                    Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="" 
 									href="/studies/Low-Level Systems/C++/C++-memory.html" >
                                     Memory
 								</a>
@@ -805,15 +866,6 @@ window.MathJax = {
 									class="" 
 									href="/studies/Low-Level Systems/C++/C++-multithreading.html" >
                                     Multithreading
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="" 
-									href="/studies/Low-Level Systems/C++/C++-classes.html" >
-                                    Classes
 								</a>
 							</li>
 						</ul>
@@ -1496,8 +1548,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-03-01" >
-                            | Updated: 2026-03-01
+							datetime="2026-03-02" >
+                            | Updated: 2026-03-02
 						</time>
 					</p>
 				</header>
@@ -1601,6 +1653,79 @@ int main () {
 	</li>
 </ul>
 <h3
+	id="codet-code-or-codet-foo-code" >
+    <code>T*</code>
+    &nbsp;or 
+    <code>T foo[]</code>
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>T*</code>
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">char* p = "hello";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // This is allowed but deprecated in older versions; comptime error in C++11 and forward.
+const char* p = "hello"; // Correct version, to not have UBs.
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Allows reassignment
+				</p>
+			</li>
+			<li>
+				<p>
+                    Allows dynamic allocation
+				</p>
+			</li>
+			<li>
+				<p>
+                    Is natural for function parameters
+				</p>
+			</li>
+			<li>
+				<p>
+                    Matches C string APIs
+				</p>
+			</li>
+			<li>
+				<p>
+                    Can reference string literals without copying
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>T foo[]</code>
+            :
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">char p[] = "hello";
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Size is known
+				</p>
+			</li>
+			<li>
+				<p>
+                    Storage should be owned locally
+				</p>
+			</li>
+			<li>
+				<p>
+                    No reassignment is needed
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            They are not interchangeable; they serve different purposes.
+		</p>
+	</li>
+</ul>
+<h3
 	id="access" >
     Access
 </h3>
@@ -1612,6 +1737,139 @@ foo[2] = 75;&nbsp;&nbsp;// access to an element of the array.
 		<p>
             It is syntactically correct to exceed the valid range of indices for an array. This can create problems, since accessing out-of-range elements do not cause errors on compilation, but can cause errors on runtime.
 		</p>
+	</li>
+	<li>
+		<p>
+            This is equivalent:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">*(foo+4)
+foo[4]
+</code></pre>
+<h3
+	id="reassigning" >
+    Reassigning
+</h3>
+<ul>
+	<li>
+		<p>
+            In C++, built-in arrays are not assignable. After an array is created, you cannot assign a new initializer list to it.
+		</p>
+	</li>
+	<li>
+		<p>
+            Arrays are not first-class assignable objects.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Arrays cannot be assigned
+				</p>
+			</li>
+			<li>
+				<p>
+                    Arrays cannot be copy-assigned
+				</p>
+			</li>
+			<li>
+				<p>
+                    Arrays cannot be returned by value
+				</p>
+			</li>
+			<li>
+				<p>
+                    Arrays cannot be passed by value
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            They are objects, but they lack assignment semantics.
+		</p>
+	</li>
+	<li>
+		<p>
+            This is a major reason people use pointers.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                This is not valid
+			</strong>
+            :
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">int foo[5];
+int bar[] = {1,2,3};
+
+
+foo[] = { 16, 2, 77, 40, 12071 };
+foo&nbsp;&nbsp; = { 16, 2, 77, 40, 12071 }
+foo&nbsp;&nbsp; = bar;
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Reasons
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>foo[]</code>
+                            &nbsp;without a size is only allowed at declaration.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Arrays do not support 
+                            <code>operator=</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Decay to pointers in most expressions
+						</p>
+					</li>
+					<li>
+						<p>
+                            Have no copy assignment operator
+						</p>
+					</li>
+					<li>
+						<p>
+                            Are fixed-size objects
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                This is valid
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Element-wise assignment is valid.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">foo[0] = 16; 
+foo[1] = 2; 
+foo[2] = 77; 
+foo[3] = 40; 
+foo[4] = 12071; 
+</code></pre>
 	</li>
 </ul>
 <h3
@@ -1658,6 +1916,23 @@ print_array(second_array,5);
             In a way, passing an array as argument always loses a dimension. The reason behind is that, for historical reasons, arrays cannot be directly copied, and thus what is really passed is a pointer.
 		</p>
 	</li>
+	<li>
+		<p>
+            In both C and C++:
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">void foo(char s[]);
+// is the same as
+void foo(char* s);
+</code></pre>
+	</li>
+	<li>
+		<p
+			class="line-emphasis" >
+            Arrays decay to pointers in parameter lists, so many APIs naturally use 
+            <code>char*</code>
+            .
+		</p>
+	</li>
 </ul>
 <h4
 	id="for-multidimensional-arrays" >
@@ -1696,7 +1971,7 @@ print_array(second_array,5);
 			</footer>
 		</main>
 		<script
-			src="/static/studies.73416.js" >
+			src="/static/studies.59116.js" >
 		</script>
 	</body>
 </html>

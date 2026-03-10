@@ -7,7 +7,7 @@ if ('IntersectionObserver' in window) {
         if (nav && current) {
             // Scroll so the active item is visible inside the nav container
             current.scrollIntoView({
-                block: 'center',   // or 'start' if you want it at the top
+                block: 'start',   // or 'start' if you want it at the top
                 inline: 'nearest',
                 behavior: 'auto'   // use 'smooth' if you want animation
             });

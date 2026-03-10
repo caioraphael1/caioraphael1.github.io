@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.52220.css" >
+			href="/static/studies.60360.css" >
 	</head>
 	<body>
 		<aside
@@ -634,8 +634,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/C and C++/C and C++-arrays-from-codeltarraygreater-code.html" >
-                                    Arrays from <code>&lt;array&gt;</code>
+									href="/studies/Low-Level Systems/C and C++/C and C++-containers.html" >
+                                    Containers
 								</a>
 							</li>
 						</ul>
@@ -724,6 +724,24 @@ window.MathJax = {
 											href="#pointers-to-constant-data-and-constant-pointers" 
 											class="summary-t3" >
                                             Pointers to constant data and constant pointers
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#stdunique_ptr" 
+											class="summary-t3" >
+                                            std::unique_ptr
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#stdshared_ptr" 
+											class="summary-t3" >
+                                            std::shared_ptr
 										</a>
 									</li>
 								</ul>
@@ -1444,8 +1462,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-03-03" >
-                            | Updated: 2026-03-03
+							datetime="2026-03-10" >
+                            | Updated: 2026-03-10
 						</time>
 					</p>
 				</header>
@@ -1679,6 +1697,58 @@ int main() {
 &nbsp;&nbsp;&nbsp;&nbsp;return 0;
 }
 </code></pre>
+<h3
+	id="stdunique_ptr" >
+    std::unique_ptr
+</h3>
+<ul>
+	<li>
+		<p>
+            single owner
+		</p>
+	</li>
+	<li>
+		<p>
+            cannot be copied
+		</p>
+	</li>
+	<li>
+		<p>
+            cheap
+		</p>
+	</li>
+	<li>
+		<p>
+            deterministic lifetime
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::unique_ptr&lt;A&gt; p = std::make_unique&lt;A&gt;();
+</code></pre>
+<h3
+	id="stdshared_ptr" >
+    std::shared_ptr
+</h3>
+<ul>
+	<li>
+		<p>
+            reference counted
+		</p>
+	</li>
+	<li>
+		<p>
+            multiple owners
+		</p>
+	</li>
+	<li>
+		<p>
+            more expensive
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::shared_ptr&lt;A&gt; p1 = std::make_shared&lt;A&gt;();
+std::shared_ptr&lt;A&gt; p2 = p1;
+</code></pre>
 
 				</article>
 			</main>
@@ -1694,7 +1764,7 @@ int main() {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.52220.js" >
+			src="/static/studies.60360.js" >
 		</script>
 	</body>
 </html>

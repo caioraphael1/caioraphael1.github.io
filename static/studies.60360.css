@@ -318,7 +318,7 @@ pre, code {
         background: var(--central-bg);
     }
 
-    @media (orientation: portrait) {
+    @media (orientation: portrait), (max-width: 1150px) {
         #left-sidebar-wrapper {
             display: none;
         }
@@ -687,7 +687,7 @@ pre, code {
         border-radius: 12px;
         border: 1px solid var(--dark-1);
     }
-    @media (orientation: portrait) {
+    @media (orientation: portrait), (max-width: 1150px) {
         #note-wrapper {
             width:  calc(100dvw - 36px);
             height: calc(100dvh - 53px);
@@ -712,7 +712,7 @@ pre, code {
         }
     }
 
-    @media (orientation: portrait) {
+    @media (orientation: portrait), (max-width: 1150px) {
         #note-header {
             padding: 0px 0px 16px;
         }
@@ -757,7 +757,7 @@ pre, code {
         font-size: smaller;
     }
 
-    @media (orientation: portrait) {
+    @media (orientation: portrait), (max-width: 1150px) {
         #central-footer {
             justify-content: center;
             font-size: x-small;
@@ -1138,7 +1138,7 @@ input[type="checkbox"] {
 
 #note-content blockquote footer cite:before {
   content: "—";
-  padding: 0 .3em
+  padding: 0.3em
 }
 
 #note-content blockquote footer cite a {
@@ -1237,15 +1237,21 @@ pre code {
 /* INLINE CODE */
 
 code {
-    background: var(--code-inline-bg);
-    color: var(--code-inline-text);
+    padding: calc(16px/3.7);
 
+    background: var(--code-inline-bg);
     font-family: var(--code-font);
     font-size: .9em;
 
-    padding: calc(16px/3.7);
-
     border-radius: 4px;
+}
+
+:not(h1, h2, h3, h4, h5, h6, a, pre) > code {
+    color: var(--code-inline-text);
+}
+
+.summary-t2-current code, a.active code {
+    color: var(--white-2);
 }
 
 

@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.52220.css" >
+			href="/static/studies.60360.css" >
 	</head>
 	<body>
 		<aside
@@ -634,10 +634,53 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-current" 
-									href="/studies/Low-Level Systems/C and C++/C and C++-arrays-from-codeltarraygreater-code.html" >
-                                    Arrays from <code>&lt;array&gt;</code>
+									href="/studies/Low-Level Systems/C and C++/C and C++-containers.html" >
+                                    Containers
 								</a>
 								<ul>
+									<li>
+										<a
+											href="#codestdarray-code-from-codeltarraygreater-code" 
+											class="summary-t3" >
+                                            <code>std::array</code> (from <code>&lt;array&gt;</code>)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdvector-code-from-codeltvectorgreater-code" 
+											class="summary-t3" >
+                                            <code>std::vector</code> (from <code>&lt;vector&gt;</code>)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdspan-code-c20" 
+											class="summary-t3" >
+                                            <code>std::span</code> (C++20)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestddeque-code" 
+											class="summary-t3" >
+                                            <code>std::deque</code>
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdunordered_map-code" 
+											class="summary-t3" >
+                                            <code>std::unordered_map</code>
+										</a>
+									</li>
 								</ul>
 							</li>
 						</ul>
@@ -1402,7 +1445,7 @@ window.MathJax = {
 				<header
 					id="note-header" >
 					<h1>
-                        Arrays from <code>&lt;array&gt;</code>
+                        Containers
 					</h1>
 					<p>
 						<time
@@ -1410,14 +1453,26 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-03-03" >
-                            | Updated: 2026-03-03
+							datetime="2026-03-10" >
+                            | Updated: 2026-03-10
 						</time>
 					</p>
 				</header>
 				<article
 					id="note-content" >
+<h3
+	id="codestdarray-code-from-codeltarraygreater-code" >
+    <code>std::array</code>
+    &nbsp;(from 
+    <code>&lt;array&gt;</code>
+    )
+</h3>
 <ul>
+	<li>
+		<p>
+            Fixed-size wrapper over arrays.
+		</p>
+	</li>
 	<li>
 		<p>
             Arrays from C restrict its copy and easily decay into pointers, they probably suffer from an excess of optimization.
@@ -1431,8 +1486,8 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
-<pre><code class="language-cpp" data-lang="cpp">#include iostream&gt;
-#include array&gt;
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;array&gt;
 
 int main() {
 &nbsp;&nbsp;&nbsp;&nbsp;array&lt;int,3&gt; my_array {10,20,30};
@@ -1441,6 +1496,116 @@ int main() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int elem : my_array)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; elem &lt;&lt; '\n';
 }
+</code></pre>
+<h3
+	id="codestdvector-code-from-codeltvectorgreater-code" >
+    <code>std::vector</code>
+    &nbsp;(from 
+    <code>&lt;vector&gt;</code>
+    )
+</h3>
+<ul>
+	<li>
+		<p>
+            dynamic growth
+		</p>
+	</li>
+	<li>
+		<p>
+            contiguous memory
+		</p>
+	</li>
+	<li>
+		<p>
+            similar to C# 
+            <code>List&lt;T&gt;</code>
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;vector&gt;
+
+std::vector&lt;int&gt; v;
+
+v.push_back(1);
+v.push_back(2);
+
+int x = v[0];
+</code></pre>
+<h3
+	id="codestdspan-code-c20" >
+    <code>std::span</code>
+    &nbsp;(C++20)
+</h3>
+<ul>
+	<li>
+		<p>
+            Non-owning view over contiguous memory.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Caio: Same as Odin's Slices?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            No memory allocation.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;span&gt;
+
+void Process(std::span&lt;int&gt; data)
+{
+&nbsp;&nbsp;&nbsp;&nbsp;for (int v : data)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d\n", v);
+}
+
+int arr[4] = {1,2,3,4};
+
+Process(arr);
+</code></pre>
+<h3
+	id="codestddeque-code" >
+    <code>std::deque</code>
+</h3>
+<ul>
+	<li>
+		<p>
+            Double-ended queue.
+		</p>
+	</li>
+	<li>
+		<p>
+            Not contiguous.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;deque&gt;
+
+std::deque&lt;int&gt; d;
+
+d.push_front(1);
+d.push_back(2);
+</code></pre>
+<h3
+	id="codestdunordered_map-code" >
+    <code>std::unordered_map</code>
+</h3>
+<ul>
+	<li>
+		<p>
+            Hash map.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;unordered_map&gt;
+
+std::unordered_map&lt;int,int&gt; map;
+
+map[5] = 10;
 </code></pre>
 
 				</article>
@@ -1457,7 +1622,7 @@ int main() {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.52220.js" >
+			src="/static/studies.60360.js" >
 		</script>
 	</body>
 </html>

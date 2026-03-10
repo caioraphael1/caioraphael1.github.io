@@ -63,7 +63,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.52220.css" >
+			href="/static/studies.60360.css" >
 	</head>
 	<body>
 		<aside
@@ -634,8 +634,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/C and C++/C and C++-arrays-from-codeltarraygreater-code.html" >
-                                    Arrays from <code>&lt;array&gt;</code>
+									href="/studies/Low-Level Systems/C and C++/C and C++-containers.html" >
+                                    Containers
 								</a>
 							</li>
 						</ul>
@@ -756,6 +756,13 @@ window.MathJax = {
                                             Copy Constructor / Copy Assignment / Move Constructor / Move Assignment
 										</a>
 										<ul>
+											<li>
+												<a
+													href="#quoterule-of-5quote" 
+													class="summary-t4" >
+                                                    &quot;Rule of 5&quot;
+												</a>
+											</li>
 										</ul>
 									</li>
 									<li>
@@ -1537,8 +1544,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-03-03" >
-                            | Updated: 2026-03-03
+							datetime="2026-03-10" >
+                            | Updated: 2026-03-10
 						</time>
 					</p>
 				</header>
@@ -2051,6 +2058,60 @@ public:
 		</p>
 	</li>
 </ul>
+<h4
+	id="quoterule-of-5quote" >
+    &quot;Rule of 5&quot;
+</h4>
+<ul>
+	<li>
+		<p>
+            If a class manages resources and defines one of these:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    destructor
+				</p>
+			</li>
+			<li>
+				<p>
+                    copy constructor
+				</p>
+			</li>
+			<li>
+				<p>
+                    copy assignment
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Then it should probably also define:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    move constructor
+				</p>
+			</li>
+			<li>
+				<p>
+                    move assignment
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">class A {
+&nbsp;&nbsp;&nbsp;&nbsp;public:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A(const A&);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A& operator=(const A&);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A(A&&);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A& operator=(A&&);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~A();
+};
+</code></pre>
 <h3
 	id="operator-overloading" >
     Operator Overloading
@@ -2282,7 +2343,7 @@ class Triangle: public Polygon {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.52220.js" >
+			src="/static/studies.60360.js" >
 		</script>
 	</body>
 </html>

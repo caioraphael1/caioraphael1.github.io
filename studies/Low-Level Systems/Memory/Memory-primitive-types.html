@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.71464.css" >
+			href="/static/studies.90461.css" >
 	</head>
 	<body>
 		<aside
@@ -770,9 +770,123 @@ window.MathJax = {
 						<ul>
 							<li>
 								<a
+									class="summary-t2-current" 
+									href="/studies/Low-Level Systems/Memory/Memory-primitive-types.html" >
+                                    Primitive Types
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#bool" 
+											class="summary-t3" >
+                                            Bool
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#integers" 
+											class="summary-t3" >
+                                            Integers
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#pointers" 
+											class="summary-t3" >
+                                            Pointers
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#floats-ieee-754-floating-point" 
+											class="summary-t3" >
+                                            Floats (IEEE-754 floating-point)
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#final-value" 
+													class="summary-t4" >
+                                                    Final value
+												</a>
+											</li>
+											<li>
+												<a
+													href="#bias" 
+													class="summary-t4" >
+                                                    Bias
+												</a>
+											</li>
+											<li>
+												<a
+													href="#special-values" 
+													class="summary-t4" >
+                                                    Special values
+												</a>
+											</li>
+											<li>
+												<a
+													href="#codef16-code" 
+													class="summary-t4" >
+                                                    <code>f16</code>
+												</a>
+											</li>
+											<li>
+												<a
+													href="#codef32-code" 
+													class="summary-t4" >
+                                                    <code>f32</code>
+												</a>
+											</li>
+											<li>
+												<a
+													href="#codef64-code" 
+													class="summary-t4" >
+                                                    <code>f64</code>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#simd" 
+											class="summary-t3" >
+                                            SIMD
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Memory/Memory-containers.html" >
                                     Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-alignment.html" >
+                                    Alignment
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-endianness-byte-order.html" >
+                                    Endianness (byte order)
 								</a>
 							</li>
 						</ul>
@@ -791,69 +905,6 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Memory/Memory-os-memory-on-windows.html" >
                                     OS: Memory on Windows
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-current" 
-									href="/studies/Low-Level Systems/Memory/Memory-memory-alignment.html" >
-                                    Memory Alignment
-								</a>
-								<ul>
-									<li>
-										<a
-											href="#why-to-align" 
-											class="summary-t3" >
-                                            Why to align
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#memory-access" 
-											class="summary-t3" >
-                                            Memory Access
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#size" 
-											class="summary-t3" >
-                                            Size
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#offset" 
-											class="summary-t3" >
-                                            Offset
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#stride" 
-											class="summary-t3" >
-                                            Stride
-										</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Memory/Memory-address.html" >
-                                    Address
 								</a>
 							</li>
 						</ul>
@@ -1501,7 +1552,7 @@ window.MathJax = {
 				<header
 					id="note-header" >
 					<h1>
-                        Memory Alignment
+                        Primitive Types
 					</h1>
 					<p>
 						<time
@@ -1509,94 +1560,219 @@ window.MathJax = {
                             🕒 Created: 2025-03-12
 						</time>
 						<time
-							datetime="2026-03-27" >
-                            | Updated: 2026-03-27
+							datetime="2026-03-30" >
+                            | Updated: 2026-03-30
 						</time>
 					</p>
 				</header>
 				<article
 					id="note-content" >
 <h3
-	id="why-to-align" >
-    Why to align
+	id="bool" >
+    Bool
+</h3>
+<p
+	class="table" >
+    | Type&nbsp;&nbsp; | Size (bytes) | Alignment (bytes) | Range&nbsp;&nbsp;|
+    <br>
+    |--------|--------------|-------------------|--------|
+    <br>
+    | 
+    <code>bool</code>
+    &nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 0 or 1 |
+    <br>
+    | 
+    <code>b8</code>
+    &nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 0 or 1 |
+    <br>
+    | 
+    <code>b16</code>
+    &nbsp; | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 0 or 1 |
+    <br>
+    | 
+    <code>b32</code>
+    &nbsp; | 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 0 or 1 |
+    <br>
+    | 
+    <code>b64</code>
+    &nbsp; | 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 0 or 1 |
+</p>
+<pre><code class="language-txt" data-lang="txt">[ all bits = value ]
+</code></pre>
+<pre><code class="language-txt" data-lang="txt">00000000 → false
+00000001 → true
+</code></pre>
+<pre><code class="language-txt" data-lang="txt">0 = false
+anything else = treated as true (language-dependent)
+</code></pre>
+<h3
+	id="integers" >
+    Integers
 </h3>
 <ul>
 	<li>
 		<p>
-            The scenario below causes unnecessary wastage of CPU cycles.
-		</p>
-	</li>
-	<li>
-		<p>
-            <img src="assets/image_20251009090530.png" width="480" >
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            If we use padding (empty space) we can improve the CPU cycles, at the cost of the struct storing more memory.
-		</p>
-	</li>
-	<li>
-		<p>
-            <img src="assets/image_20251009090718.png" width="400" >
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            <img src="assets/image_20251009090834.png" width="400" >
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            The order of the elements matters, as it can introduce more padding than necessary:
-		</p>
-	</li>
-	<li>
-		<p>
-            <img src="assets/image_20251009090936.png" width="400" >
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            <img src="assets/image_20251009091017.png" width="400" >
-            .
+            <code>int</code>
+            &nbsp;and 
+            <code>uint</code>
+            &nbsp;here are implementation-defined, with not fixed-width.
 		</p>
 	</li>
 </ul>
-<h3
-	id="memory-access" >
-    Memory Access
-</h3>
+<p
+	class="table" >
+    | Type&nbsp;&nbsp; | Size (bytes)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Alignment (bytes)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Range&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>
+    |--------|----------------------------|----------------------------|----------------------------------------------------------------------------------------------|
+    <br>
+    | 
+    <code>u8 </code>
+    &nbsp; | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| [0 → 255]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>
+    | 
+    <code>u16</code>
+    &nbsp; | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| [0 → 65,535]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+    <br>
+    | 
+    <code>u32</code>
+    &nbsp; | 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| [0 → 4,294,967,295]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>
+    | 
+    <code>u64</code>
+    &nbsp; | 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| [0 → 18,446,744,073,709,551,615]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+    <br>
+    | 
+    <code>uint</code>
+    &nbsp;| 4 (32-bits) or 8 (64-bits) | 4 (32-bits) or 8 (64-bits) | [0 → 4,294,967,295] or [0 → 18,446,744,073,709,551,615]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>
+    | 
+    <code>i8 </code>
+    &nbsp; | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| [-128 → 127]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+    <br>
+    | 
+    <code>i16</code>
+    &nbsp; | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| [-32,768 → 32,767]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+    <br>
+    | 
+    <code>i32</code>
+    &nbsp; | 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| [-2,147,483,648 → 2,147,483,647]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+    <br>
+    | 
+    <code>i64</code>
+    &nbsp; | 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| [-2^63 → (2^63) - 1] [-9,223,372,036,854,775,808 → 9,223,372,036,854,775,807]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>
+    | 
+    <code>int</code>
+    &nbsp; | 4 (32-bits) or 8 (64-bits) | 4 (32-bits) or 8 (64-bits) | [-2,147,483,648 → 2,147,483,647] or [-9,223,372,036,854,775,808 → 9,223,372,036,854,775,807] |
+</p>
+<h5
+	id="unsigned" >
+    Unsigned
+</h5>
+<pre><code class="language-txt" data-lang="txt">[ all bits = value ]
+</code></pre>
+<h5
+	id="sign-msb-most-significant-bit" >
+    Sign (MSB - most significant bit)
+</h5>
 <ul>
 	<li>
 		<p>
-            Processors don't read 1 byte at a time from memory.
+            All signed integer types (
+            <code>i8</code>
+            , 
+            <code>i16</code>
+            , 
+            <code>i32</code>
+            , 
+            <code>i64</code>
+            ) use two’s complement with the same layout rule.
 		</p>
 	</li>
 	<li>
 		<p>
-            They read 1 
+            Two’s complement is just a way to encode negative numbers so that binary addition still works normally.
+		</p>
+	</li>
+	<li>
+		<p>
+            Instead of having a separate “sign + magnitude”, the number is stored in a way where:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Positive numbers look like normal binary
+				</p>
+			</li>
+			<li>
+				<p>
+                    Negative numbers are encoded so that adding works without special rules
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            This works because
+		</p>
+<pre><code class="language-txt" data-lang="txt">x + (-x) = 0&nbsp;&nbsp; (mod 2^N)
+</code></pre>
+<pre><code class="language-txt" data-lang="txt">00000101&nbsp;&nbsp; (+5)
++ 11111011&nbsp;&nbsp; (-5)
+-----------
+00000000&nbsp;&nbsp; (carry discarded)
+</code></pre>
+	</li>
+	<li>
+		<p>
+            For any signed integer with N bits:
+		</p>
+<pre><code class="language-txt" data-lang="txt">bit index:&nbsp;&nbsp;N-1 ............ 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ MSB | remaining bits ]
+</code></pre>
+	</li>
+	<li>
+		<p>
 			<strong>
-                word
+                How to get the negative number
 			</strong>
-            &nbsp;at a time.
+            :
 		</p>
+		<ol>
+			<li>
+				<p>
+                    Write +x in binary
+				</p>
+			</li>
+			<li>
+				<p>
+                    Invert all bits
+				</p>
+			</li>
+			<li>
+				<p>
+                    Add 1
+				</p>
+			</li>
+		</ol>
 	</li>
 	<li>
 		<p>
 			<strong>
-                32-bit Processor
+                As an INDIRECT consequence, the MSB (most significant bit) acts as the sign indicator
 			</strong>
             :
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Word size is 4 bytes.
+                    If MSB = 1 (negative) → fill new bits with 1
+				</p>
+			</li>
+			<li>
+				<p>
+                    If MSB = 0 (positive) → fill new bits with 0
 				</p>
 			</li>
 		</ul>
@@ -1604,131 +1780,454 @@ window.MathJax = {
 	<li>
 		<p>
 			<strong>
-                64-bit Processor
+                Examples
 			</strong>
             :
+		</p>
+<pre><code class="language-txt" data-lang="txt">00000101 → +5
+
+invert: 11111010
++1:&nbsp;&nbsp;&nbsp;&nbsp; 11111011
+
+11111011 → -5
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="pointers" >
+    Pointers
+</h3>
+<ul>
+	<li>
+		<p>
+            &quot;an address value with a specific type&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            At the memory level, it's just an 
+            <code>uint</code>
+            &nbsp;/ 
+            <code>uintptr</code>
+            :
+		</p>
+	</li>
+</ul>
+<p
+	class="table" >
+    | Type&nbsp;&nbsp; | Size (bytes)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Alignment (bytes)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Range&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+    <br>
+    |--------|----------------------------|----------------------------|---------------------------------------------------------|
+    <br>
+    | 
+    <code>uint</code>
+    &nbsp;| 4 (32-bits) or 8 (64-bits) | 4 (32-bits) or 8 (64-bits) | [0 → 4,294,967,295] or [0 → 18,446,744,073,709,551,615] |
+</p>
+<h3
+	id="floats-ieee-754-floating-point" >
+    Floats (IEEE-754 floating-point)
+</h3>
+<p
+	class="table" >
+    | Type&nbsp;&nbsp;| Size (bytes) | Alignment (bytes) | Range&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+    <br>
+    |-------|--------------|-------------------|-------------------------------------|
+    <br>
+    | 
+    <code>f16</code>
+    &nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ~±6.55×10⁴ (≈3–4 decimal digits)&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>
+    | 
+    <code>f32</code>
+    &nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ~±3.4×10³⁸ (≈7 decimal digits)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>
+    | 
+    <code>f64</code>
+    &nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ~±1.8×10³⁰⁸ (≈15–16 decimal digits) |
+</p>
+<h4
+	id="final-value" >
+    Final value
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>value = (-1)^sign × (1 + mantissa) × 2^(exponent - bias)</code>
+		</p>
+	</li>
+</ul>
+<h4
+	id="bias" >
+    Bias
+</h4>
+<ul>
+	<li>
+		<p>
+            Bias is a fixed offset added to the real exponent so it can be stored as an unsigned value.
+		</p>
+	</li>
+	<li>
+		<p>
+            Exponent bits are stored without a sign bit. Instead of storing negative exponents directly, IEEE 754 does:
+		</p>
+<pre><code class="language-txt" data-lang="txt">stored_exponent = real_exponent + bias
+</code></pre>
+	</li>
+	<li>
+		<p>
+            So:
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Word size is 8 bytes.
+                    Negative exponents become small positive numbers
+				</p>
+			</li>
+			<li>
+				<p>
+                    Positive exponents become larger numbers
+				</p>
+			</li>
+			<li>
+				<p>
+                    Everything fits in an unsigned field
 				</p>
 			</li>
 		</ul>
 	</li>
 </ul>
-<h3
-	id="size" >
-    Size
-</h3>
+<h4
+	id="special-values" >
+    Special values
+</h4>
 <ul>
 	<li>
 		<p>
-            The total number of bytes that a single element actually occupies in memory, 
 			<em>
-                including
+                Plus Infinite
 			</em>
-            &nbsp;any internal padding required by alignment.
-		</p>
-	</li>
-</ul>
-<h3
-	id="offset" >
-    Offset
-</h3>
-<ul>
-	<li>
-		<p>
-            Defines where a field resides relative to a structure’s base address.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Example
-			</strong>
             :
 		</p>
 		<ul>
 			<li>
 				<p>
-                    In 
-                    <code>struct { int a; char b; }</code>
-                    , if 
-                    <code>a</code>
-                    &nbsp;starts at offset 
-                    <code>0</code>
-                    , 
-                    <code>b</code>
-                    &nbsp;might be at offset 
-                    <code>4</code>
-                    &nbsp;due to alignment padding.
+                    <code>+∞ &gt; all finite numbers</code>
 				</p>
 			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="stride" >
-    Stride
-</h3>
-<ul>
-	<li>
-		<p>
-            Byte distance between consecutive elements in an array or buffer.
-		</p>
-	</li>
-	<li>
-		<p>
-            It’s not “after the element finishes”, it’s the 
-			<em>
-                total distance between consecutive starts
-			</em>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            That’s why stride includes all bytes (data + padding) in a single element.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Example
-			</strong>
-            :
-		</p>
-		<ul>
 			<li>
 				<p>
-                    In a vertex buffer with position (12 bytes) + color (4 bytes), stride = 16 bytes. The next vertex starts 16 bytes after the previous one.
+                    <code>∞ + 1 = ∞</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>∞ * 2 = ∞</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>∞ - ∞ = NaN</code>
+                    <br>
+                    | sign | exponent | mantissa |
+                    <br>
+                    |------|----------|----------|
+                    <br>
+                    | 0&nbsp;&nbsp;&nbsp;&nbsp;| 11111111 | 000...0&nbsp;&nbsp;|
+				</p>
+			</li>
+			<li>
+				<p>
+                    How to get it:
 				</p>
 				<ul>
 					<li>
 						<p>
-                            Vertex 0 starts at byte 
-                            <code>0</code>
-                            .
+                            <code>1.0f / 0.0f → +∞</code>
 						</p>
 					</li>
 					<li>
 						<p>
-                            Vertex 0 occupies bytes 
-                            <code>0–15</code>
-                            .
-						</p>
-					</li>
-					<li>
-						<p>
-                            Vertex 1 starts at byte 
-                            <code>16</code>
-                            .
+                            <code>huge_value * huge_value → +∞ // via overflow</code>
 						</p>
 					</li>
 				</ul>
 			</li>
 		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Minus Infinite
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-∞ &lt; all finite numbers</code>
+                    <br>
+                    | sign | exponent | mantissa |
+                    <br>
+                    |------|----------|----------|
+                    <br>
+                    | 1&nbsp;&nbsp;&nbsp;&nbsp;| 11111111 | 000...0&nbsp;&nbsp;|
+				</p>
+			</li>
+			<li>
+				<p>
+                    How to get it:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>-1.0f / 0.0f → -∞</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                NaN
+			</em>
+            :
+            <br>
+            | sign | exponent | mantissa |
+            <br>
+            |------|----------|----------|
+            <br>
+            | x&nbsp;&nbsp;&nbsp;&nbsp;| 11111111 | non-zero |
+		</p>
+		<ul>
+			<li>
+				<p>
+                    There are many NaN bit patterns because mantissa can vary.
+				</p>
+			</li>
+			<li>
+				<p>
+                    How to get it:
+				</p>
+<pre><code class="language-txt" data-lang="txt">0.0 / 0.0
+∞ - ∞
+sqrt(-1.0)
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Behavior:
+				</p>
+<pre><code class="language-txt" data-lang="txt">NaN == NaN → false
+NaN != NaN → true
+NaN &lt; any&nbsp;&nbsp;→ false
+NaN &gt; any&nbsp;&nbsp;→ false
+NaN + 5 = NaN
+NaN * 10 = NaN
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Subnormals (Denormals)
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    They represent numbers very close to zero, smaller than the smallest “normal” float.
+                    <br>
+                    | sign | exponent | mantissa |
+                    <br>
+                    |------|----------|----------|
+                    <br>
+                    | x&nbsp;&nbsp;&nbsp;&nbsp;| 00000000 | non-zero |
+				</p>
+			</li>
+			<li>
+				<p>
+                    Normal numbers:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>value = 1.mantissa × 2^(exp - bias)</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Subnormals:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>value = 0.mantissa × 2^(1 - bias)</code>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    No implicit leading 1
+				</p>
+			</li>
+			<li>
+				<p>
+                    Reduced precision
+				</p>
+			</li>
+			<li>
+				<p>
+                    Without subnormals:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            smallest normal ≈ 1.175e-38 (f32)
+						</p>
+					</li>
+					<li>
+						<p>
+                            next value → 0
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    With subnormals:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            smooth transition to 0
+						</p>
+					</li>
+					<li>
+						<p>
+                            (no sudden underflow gap)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Subnormals are slow on many CPUs:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can be 10–100× slower
+						</p>
+					</li>
+					<li>
+						<p>
+                            Many systems enable:
+						</p>
+					</li>
+					<li>
+						<p>
+                            FTZ (Flush To Zero)
+						</p>
+					</li>
+					<li>
+						<p>
+                            DAZ (Denormals Are Zero)
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Zero
+			</em>
+            :
+		</p>
+<pre><code class="language-txt" data-lang="txt">+0.0 ≠ -0.0 (bitwise)
+but
++0.0 == -0.0 (comparison)
+</code></pre>
+<pre><code class="language-txt" data-lang="txt">1 / +0.0 = +∞
+1 / -0.0 = -∞
+</code></pre>
+	</li>
+</ul>
+<h4
+	id="codef16-code" >
+    <code>f16</code>
+</h4>
+<ul>
+	<li>
+		<p>
+            half precision, less universally supported in CPUs but common in GPUs and some SIMD extensions.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">[ sign | exponent (5 bits) (bias = 15) | mantissa (10 bits) ]
+</code></pre>
+<h4
+	id="codef32-code" >
+    <code>f32</code>
+</h4>
+<pre><code class="language-txt" data-lang="txt">[ sign | exponent (8 bits) (bias = 127) | mantissa (23 bits) ]
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<em>
+                Example
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>f32 = 1.0</code>
+				</p>
+<pre><code class="language-txt" data-lang="txt">0 01111111 00000000000000000000000
+[ 00 ][ 00 ][ 80 ][ 3F ]
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="codef64-code" >
+    <code>f64</code>
+</h4>
+<pre><code class="language-txt" data-lang="txt">[ sign | exponent (11 bits) (bias = 1023) | mantissa (52 bits) ]
+</code></pre>
+<h3
+	id="simd" >
+    SIMD
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>__m128</code>
+            &nbsp;(128-bit SIMD)
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>__m256</code>
+            &nbsp;(256-bit SIMD)
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>__m512</code>
+            &nbsp;(512-bit SIMD)
+		</p>
 	</li>
 </ul>
 
@@ -1746,7 +2245,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.71464.js" >
+			src="/static/studies.90461.js" >
 		</script>
 	</body>
 </html>

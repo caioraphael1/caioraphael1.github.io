@@ -744,7 +744,8 @@ window.MathJax = {
 						</ul>
 					</details>
 					<details
-						class="summary-t1-other" >
+						open=""
+						class="summary-t1-current" >
 						<summary>
                             Memory
 						</summary>
@@ -787,10 +788,73 @@ window.MathJax = {
 						<ul>
 							<li>
 								<a
-									class="summary-t2-other" 
+									class="summary-t2-current" 
 									href="/studies/Low-Level Systems/Memory/Memory-alignment.html" >
                                     Alignment
 								</a>
+								<ul>
+									<li>
+										<a
+											href="#why-to-align" 
+											class="summary-t3" >
+                                            Why to align
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#memory-access" 
+											class="summary-t3" >
+                                            Memory Access
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#size" 
+											class="summary-t3" >
+                                            Size
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#offset" 
+											class="summary-t3" >
+                                            Offset
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#stride" 
+											class="summary-t3" >
+                                            Stride
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#implicit-alignment" 
+											class="summary-t3" >
+                                            Implicit Alignment
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#std140-and-std430" 
+											class="summary-t3" >
+                                            std140 and std430
+										</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 						<ul>
@@ -1380,38 +1444,17 @@ window.MathJax = {
 						</ul>
 					</details>
 					<details
-						open=""
-						class="summary-t1-current" >
+						class="summary-t1-other" >
 						<summary>
                             Serialization - Encoding
 						</summary>
 						<ul>
 							<li>
 								<a
-									class="summary-t2-current" 
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Serialization - Encoding/Serialization - Encoding-serialization.html" >
                                     Serialization
 								</a>
-								<ul>
-									<li>
-										<a
-											href="#binary" 
-											class="summary-t3" >
-                                            Binary
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#non-binary" 
-											class="summary-t3" >
-                                            Non-Binary
-										</a>
-										<ul>
-										</ul>
-									</li>
-								</ul>
 							</li>
 						</ul>
 						<ul>
@@ -1485,16 +1528,16 @@ window.MathJax = {
 				<header
 					id="note-header" >
 					<h1>
-                        Serialization
+                        Alignment
 					</h1>
 					<p>
 						<time
-							datetime="2025-04-10" >
-                            🕒 Created: 2025-04-10
+							datetime="2025-03-12" >
+                            🕒 Created: 2025-03-12
 						</time>
 						<time
-							datetime="2026-03-01" >
-                            | Updated: 2026-03-01
+							datetime="2026-03-30" >
+                            | Updated: 2026-03-30
 						</time>
 					</p>
 				</header>
@@ -1503,589 +1546,446 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            Represents complex data structures (like structs, maps, arrays) as a sequence of bytes for transmission or storage.
+            Alignment and Size are different things.
+		</p>
+	</li>
+	<li>
+		<p>
+            Alignment == &quot;Divisible by&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Required byte boundary a value must start on, typically a power of two.
+		</p>
+	</li>
+	<li>
+		<p>
+            Hardware or ABI rule ensuring each type begins at addresses divisible by its alignment requirement.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251009083338.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            An address is said to be 
+			<em>
+                aligned to 
+                <code>N</code>
+                &nbsp;bytes
+			</em>
+            , if the addresses's numeric value is divisible by 
+            <code>N</code>
+            . The number 
+            <code>N</code>
+            &nbsp;in this case can be referred to as the 
+			<em>
+                alignment boundary
+			</em>
+            . Typically an alignment is a power of two integer value.
+		</p>
+	</li>
+	<li>
+		<p>
+            A 
+			<em>
+                natural alignment
+			</em>
+            &nbsp;of an object is typically equal to its size. For example a 16 bit integer has a natural alignment of 2 bytes.
 		</p>
 	</li>
 </ul>
 <h3
-	id="binary" >
-    Binary
+	id="why-to-align" >
+    Why to align
 </h3>
-<h5
-	id="cbor-concise-binary-object-representation" >
-    CBOR (Concise Binary Object Representation)
-</h5>
 <ul>
 	<li>
 		<p>
-			<a
-				href="https://cbor.io/" 
-				class="external-link" 
-				target="_blank" >
-                CBOR
-			</a>
+            The scenario below causes unnecessary wastage of CPU cycles.
 		</p>
 	</li>
 	<li>
 		<p>
-			<a
-				href="https://www.rfc-editor.org/rfc/rfc8949.html" 
-				class="external-link" 
-				target="_blank" >
-                RFC 8949
-			</a>
+            <img src="assets/image_20251009090530.png" width="480" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            If we use padding (empty space) we can improve the CPU cycles, at the cost of the struct storing more memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251009090718.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251009090834.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The order of the elements matters, as it can introduce more padding than necessary:
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251009090936.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251009091017.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            When an object is not located on its natural alignment boundary, accesses to that object are considered 
+			<em>
+                unaligned
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Some machines issue a hardware 
+			<strong>
+                exception
+			</strong>
+            , or experience 
+			<strong>
+                slowdowns
+			</strong>
+            &nbsp;when a memory access operation occurs from an unaligned address. Examples of such operations are:
 		</p>
 		<ul>
 			<li>
 				<p>
-					<a
-						href="https://www.rfc-editor.org/rfc/rfc8949.html#name-tagging-of-items" 
-						class="external-link" 
-						target="_blank" >
-                        Tags
-					</a>
+                    SIMD instructions on x86. These instructions require all memory accesses to be on an address that is aligned to 16 bytes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    On ARM unaligned loads have an extra cycle penalty.
 				</p>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<p>
-            2013
+            If you have an unaligned memory access (on a processor that allows it), the processor will have to read multiple “words”. This means that an unaligned memory access 
+			<em>
+                may
+			</em>
+            &nbsp;be much slower than an aligned memory access.
 		</p>
 	</li>
 	<li>
 		<p>
-			<strong>
-                Why unpopular
-			</strong>
-            :
+            This can also lead to undefined behavior if the unaligned memory is within cache bounds.
 		</p>
-		<ul>
-			<li>
-				<p>
-                    CBOR emerged in niche areas (IoT, security) outside mainstream web ecosystems.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Unlike JSON (native support), CBOR relies on external libraries in most languages.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Lacks backing from major platforms compared to Protobuf, JSON, or Avro.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Binary format is not human-readable, complicating debugging.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Few official serializers, almost no widely used CLI or visual tools.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Adds complexity not always needed.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                RPC
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    CBOR doesn’t implement RPC directly but can be used as a payload format within RPC systems like JSON or Protobuf.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="custom-binary-format" >
-    Custom Binary Format
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Advantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Extremely Efficient: Can optimize exactly what you need to send.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Full Control: Avoid extra bytes, sending minimal data.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Implementation &amp; Maintenance Complexity: Requires skill and time, harder to modify later.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="capn-proto" >
-    Cap’n Proto
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://capnproto.org/" 
-				class="external-link" 
-				target="_blank" >
-                Cap'n Proto
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://github.com/capnproto/capnproto" 
-				class="external-link" 
-				target="_blank" >
-                Cap'n Proto GitHub
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-            2013
-		</p>
-	</li>
-</ul>
-<h5
-	id="flatbuffers" >
-    FlatBuffers
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://flatbuffers.dev/" 
-				class="external-link" 
-				target="_blank" >
-                FlatBuffers
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-            2014, developed by Google
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Advantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Direct Access: Can read data without deserialization, boosting performance in games needing immediate data.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Compact and Fast: Produces small, fast-to-read files.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Implementation Complexity: Setup and usage can be tricky for newcomers.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="protocol-buffers-protobuf" >
-    <s>Protocol Buffers (Protobuf)</s>
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://protobuf.dev/" 
-				class="external-link" 
-				target="_blank" >
-                Protobuf
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://github.com/protocolbuffers/protobuf" 
-				class="external-link" 
-				target="_blank" >
-                Protobuf GitHub
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-            2008 (v2) / 2016 (v3)
-		</p>
-	</li>
-	<li>
-		<p>
-            Internal since 2001, public 2008
-		</p>
-	</li>
-	<li>
-		<p>
-            Developed by Google
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=FR754e5xIwg" 
-				class="external-link" 
-				target="_blank" >
-                Example of using Protobuf
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Advantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Compact: Generates much smaller data packets than JSON/XML, reducing bandwidth usage.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Flexible Structure: Allows defining data schemas for multiple programming languages.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Performance: Fast serialization/deserialization reduces client/server load.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Schema Dependency: Requires a 
-                    <code>.proto</code>
-                    &nbsp;schema file, adding a development step.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Bindings
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-					<a
-						href="https://github.com/lordhippo/odin-protobuf" 
-						class="external-link" 
-						target="_blank" >
-                        Odin-protobuf
-					</a>
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="messagepack" >
-    MessagePack
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://msgpack.org/" 
-				class="external-link" 
-				target="_blank" >
-                MessagePack
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-            2008
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Advantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Compact and Fast: Nearly as efficient as Protobuf, often 50% smaller than JSON.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Familiar Structure: Similar to JSON, easy to implement.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Less Flexible than Protobuf: Lacks some space/performance optimizations.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="thrift" >
-    Thrift
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://github.com/apache/thrift" 
-				class="external-link" 
-				target="_blank" >
-                Thrift
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-            Developed by Apache
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Advantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Compact and Flexible: Smaller than JSON/XML.
-				</p>
-			</li>
-			<li>
-				<p>
-                    RPC Support: Integrated remote procedure calls.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages
-			</strong>
-            :
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Higher Complexity: Requires more setup and learning.
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h5
-	id="karmem" >
-    Karmem
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://github.com/inkeliz/karmem" 
-				class="external-link" 
-				target="_blank" >
-                Karmem
-			</a>
-		</p>
-	</li>
-</ul>
-<h5
-	id="sqlite-code-db-code" >
-    SQLite 
-    <code>.db</code>
-</h5>
-<ul>
-	<li>
-		<p>
-            SQLite is embedded; each game instance has its own 
-            <code>.db</code>
-            &nbsp;file, complicating synchronization between players.
-		</p>
-	</li>
-</ul>
-<h5
-	id="godot-built-in-encoding-with-codepacketpeer-code" >
-    Godot: Built-In Encoding with 
-    <code>PacketPeer</code>
-</h5>
-<ul>
-	<li>
-		<p>
-			<strong>
-                Advantages
-			</strong>
-            : Integrated into Godot networking, supports common data types, simple and efficient for small/moderate network games.
-		</p>
-	</li>
-	<li>
-		<p>
-			<strong>
-                Disadvantages
-			</strong>
-            : Less control and advanced optimization than Protobuf/FlatBuffers.
-		</p>
-	</li>
-	<li>
-		<p>
-            Recommendation: Good for small/medium games needing quick state synchronization without extreme optimization.
-		</p>
-	</li>
-</ul>
-<h5
-	id="godot-custom-encoding" >
-    Godot: Custom Encoding
-</h5>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=Sa4W0yINTag" 
-				class="external-link" 
-				target="_blank" >
-                Creating a custom network encoding system
-			</a>
-		</p>
-		<ul>
-			<li>
-				<p>
-                    Highly optimized, but requires more work per data type.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Example: Sending a vector as 1–8 instead of 20 bytes.
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-        <img src="assets/array.png" width="1225">
-&nbsp;&nbsp;- `var_to_bytes([type, node_path, method_stringname, array_params])`
-
-	</li>
-	<li>
-        <img src="assets/append_array.png" width="1225">
-&nbsp;&nbsp;- Progressive encoding:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `var_to_bytes(type)`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `var_to_bytes(type) + var_to_bytes(node_path)`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `var_to_bytes(type) + var_to_bytes(node_path) + var_to_bytes(method_stringname)`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `var_to_bytes(type) + var_to_bytes(node_path) + var_to_bytes(method_stringname) + var_to_bytes(array_params)`
-
 	</li>
 </ul>
 <h3
-	id="non-binary" >
-    Non-Binary
+	id="memory-access" >
+    Memory Access
 </h3>
 <ul>
 	<li>
 		<p>
-            Formats like JSON/XML are common but not ideal for games due to extra size and overhead bytes.
+            Processors don't read 1 byte at a time from memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            They read 1 
+			<strong>
+                word
+			</strong>
+            &nbsp;at a time.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                32-bit Processor
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Word size is 4 bytes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                64-bit Processor
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Word size is 8 bytes.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="size" >
+    Size
+</h3>
+<ul>
+	<li>
+		<p>
+            The total number of bytes that a single element actually occupies in memory, 
+			<em>
+                including
+			</em>
+            &nbsp;any internal padding required by alignment.
+		</p>
+	</li>
+</ul>
+<h3
+	id="offset" >
+    Offset
+</h3>
+<ul>
+	<li>
+		<p>
+            Defines where a field resides relative to a structure’s base address.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In 
+                    <code>struct { int a; char b; }</code>
+                    , if 
+                    <code>a</code>
+                    &nbsp;starts at offset 
+                    <code>0</code>
+                    , 
+                    <code>b</code>
+                    &nbsp;might be at offset 
+                    <code>4</code>
+                    &nbsp;due to alignment padding.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="stride" >
+    Stride
+</h3>
+<ul>
+	<li>
+		<p>
+            Byte distance between consecutive elements in an array or buffer.
+		</p>
+	</li>
+	<li>
+		<p>
+            It’s not “after the element finishes”, it’s the 
+			<em>
+                total distance between consecutive starts
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            That’s why stride includes all bytes (data + padding) in a single element.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In a vertex buffer with position (12 bytes) + color (4 bytes), stride = 16 bytes. The next vertex starts 16 bytes after the previous one.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Vertex 0 starts at byte 
+                            <code>0</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Vertex 0 occupies bytes 
+                            <code>0–15</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Vertex 1 starts at byte 
+                            <code>16</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="implicit-alignment" >
+    Implicit Alignment
+</h3>
+<ul>
+	<li>
+		<p>
+            When placing a field, the compiler ensures the field's offset is a multiple of the field's alignment. If the current offset is 
+			<em>
+                not
+			</em>
+            &nbsp;a multiple of the field's alignment, the compiler inserts padding before the field so the resulting offset becomes a multiple of the alignment.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When placing field F the compiler ensures 
+                    <code>offset(F) % align(F) == 0</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    If not, it inserts 
+                    <code>padding = (align(F) - (offset % align(F))) % align(F)</code>
+                    &nbsp;bytes before F.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The struct’s overall alignment is 
+                    <code>max(align(member))</code>
+                    . The compiler may add trailing padding so 
+                    <code>sizeof(struct)</code>
+                    &nbsp;is a multiple of that max alignment.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            A struct adds implicit padding between members, based on the alignment of the member with the highest alignment.
+		</p>
+	</li>
+	<li>
+		<p>
+            The gray dots indicate the implicit padding added by the compiler.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251009083656.png" width="400" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It may also add padding at the end of the struct, so the struct is divisible by its alignment. This ensures that when the struct is used as an array, each struct will be properly aligned along with its members.
 		</p>
 	</li>
 </ul>
 <h5
-	id="json" >
-    JSON
+	id="odin" >
+    Odin
 </h5>
 <ul>
 	<li>
 		<p>
-            2001
+            Alignment, Size and the Pointer are related, such as:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>size_of(T) % align_of(T) == 0</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>uintptr(&t) % align_of(t) == 0</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Check 
+                    <a href="/studies/Low-Level Systems/Odin/Odin.html#alignment">
+                    Odin#Alignment
+                    </a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Many operations that allocate memory in this package allow to explicitly specify the alignment of allocated pointers/slices.
 		</p>
 	</li>
 	<li>
 		<p>
-            Standardized as ECMA-404 (2013), RFC 8259
+            The default alignment for all operations is specified in a constant 
+            <code>mem.DEFAULT_ALIGNMENT</code>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="std140-and-std430" >
+    std140 and std430
+</h3>
+<ul>
+	<li>
+		<p>
+            Both are GLSL memory alignments.
+		</p>
+	</li>
+	<li>
+		<p>
+            Check 
+            <a href="/studies/Graphics Programming/Vulkan/Vulkan.html#shader-aligment-stride-offsets">
+            Vulkan#Shader Alignment, Stride, Offsets
+            </a>
+            .
 		</p>
 	</li>
 </ul>

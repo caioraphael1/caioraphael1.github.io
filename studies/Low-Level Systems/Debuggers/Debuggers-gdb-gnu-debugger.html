@@ -18,10 +18,6 @@
 			content="Caio Raphael" >
 		<meta
 			name="theme-color" 
-			content="#ffffff" 
-			media="(prefers-color-scheme: light)" >
-		<meta
-			name="theme-color" 
 			content="#101010" 
 			media="(prefers-color-scheme: dark)" >
 		<link
@@ -52,9 +48,9 @@ window.MathJax = {
 			type="module" >
 
                     import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
-                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
-                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
-                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
                     hljs.registerLanguage('odin', hljs_odin);
                     hljs.registerLanguage('glsl', hljs_glsl);
                     hljs.registerLanguage('gdscript', hljs_swift);
@@ -63,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.60360.css" >
+			href="/static/studies.71464.css" >
 	</head>
 	<body>
 		<aside
@@ -195,8 +191,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Odin/Odin-any.html" >
-                                    any
+									href="/studies/Low-Level Systems/Odin/Odin-codeany-code.html" >
+                                    <code>any</code>
 								</a>
 							</li>
 						</ul>
@@ -498,6 +494,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/C and C++/C and C++-lsp.html" >
+                                    LSP
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/C and C++/C and C++-building.html" >
                                     Building
 								</a>
@@ -743,6 +748,33 @@ window.MathJax = {
 						<summary>
                             Memory
 						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
 						<ul>
 							<li>
 								<a
@@ -1035,6 +1067,21 @@ window.MathJax = {
 					<details
 						class="summary-t1-other" >
 						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Safety Critical/Safety Critical-about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
                             Handmade Hero
 						</summary>
 						<ul>
@@ -1148,6 +1195,13 @@ window.MathJax = {
                                     GDB (GNU Debugger)
 								</a>
 								<ul>
+									<li>
+										<a
+											href="#gui-front-ends" 
+											class="summary-t3" >
+                                            GUI Front-ends
+										</a>
+									</li>
 								</ul>
 							</li>
 						</ul>
@@ -1157,6 +1211,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Debuggers/Debuggers-lldb.html" >
                                     LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Debuggers/Debuggers-remedybg-debugger.html" >
+                                    RemedyBG Debugger
 								</a>
 							</li>
 						</ul>
@@ -1410,8 +1473,8 @@ window.MathJax = {
                             🕒 Created: 2025-04-23
 						</time>
 						<time
-							datetime="2026-03-03" >
-                            | Updated: 2026-03-03
+							datetime="2026-03-24" >
+                            | Updated: 2026-03-24
 						</time>
 					</p>
 				</header>
@@ -1449,6 +1512,71 @@ window.MathJax = {
                 download
 			</a>
             .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Dq8l1_-QgAc" 
+				class="external-link" 
+				target="_blank" >
+                GDB Showcase
+			</a>
+		</p>
+	</li>
+</ul>
+<h5
+	id="installation" >
+    Installation
+</h5>
+<ul>
+	<li>
+		<p>
+            With MSYS2:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    MINGW64: 
+                    <code>pacman -S mingw-w64-x86_64-gdb</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    UCRT64: 
+                    <code>pacman -S mingw-w64-ucrt-x86_64-gdb</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    CLANG64: 
+                    <code>pacman -S mingw-w64-clang-x86_64-gdb</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            At 
+                            <code>C:\msys64\clang64\bin\</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            I opted for this one.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="can-read" >
+    Can read
+</h5>
+<ul>
+	<li>
+		<p>
+            DWARF
 		</p>
 	</li>
 </ul>
@@ -1588,6 +1716,32 @@ window.MathJax = {
 		</p>
 	</li>
 </ul>
+<h3
+	id="gui-front-ends" >
+    GUI Front-ends
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/epasveer/seer" 
+				class="external-link" 
+				target="_blank" >
+                SeerGDB
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=wQJnJ1NNfQU" 
+				class="external-link" 
+				target="_blank" >
+                SeerGDB Showcase
+			</a>
+		</p>
+	</li>
+</ul>
 
 				</article>
 			</main>
@@ -1603,7 +1757,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.60360.js" >
+			src="/static/studies.71464.js" >
 		</script>
 	</body>
 </html>

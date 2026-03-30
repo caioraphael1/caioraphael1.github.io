@@ -18,10 +18,6 @@
 			content="Caio Raphael" >
 		<meta
 			name="theme-color" 
-			content="#ffffff" 
-			media="(prefers-color-scheme: light)" >
-		<meta
-			name="theme-color" 
 			content="#101010" 
 			media="(prefers-color-scheme: dark)" >
 		<link
@@ -52,9 +48,9 @@ window.MathJax = {
 			type="module" >
 
                     import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
-                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
-                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
-                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
                     hljs.registerLanguage('odin', hljs_odin);
                     hljs.registerLanguage('glsl', hljs_glsl);
                     hljs.registerLanguage('gdscript', hljs_swift);
@@ -63,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.60360.css" >
+			href="/static/studies.71464.css" >
 	</head>
 	<body>
 		<aside
@@ -238,18 +234,41 @@ window.MathJax = {
 									</li>
 									<li>
 										<a
-											href="#casting" 
+											href="#codecast-code" 
 											class="summary-t3" >
-                                            Casting
+                                            <code>cast</code>
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#auto-cast-operator" 
+													class="summary-t4" >
+                                                    ~Auto Cast Operator
+												</a>
+											</li>
+											<li>
+												<a
+													href="#advanced-idioms-down-cast-and-up-cast" 
+													class="summary-t4" >
+                                                    Advanced Idioms, Down-Cast and Up-Cast
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codetransmute-code" 
+											class="summary-t3" >
+                                            <code>transmute</code>
 										</a>
 										<ul>
 										</ul>
 									</li>
 									<li>
 										<a
-											href="#transmute" 
+											href="#when-codecast-code-is-equal-to-codetransmute-code" 
 											class="summary-t3" >
-                                            Transmute
+                                            When <code>cast</code> is equal to <code>transmute</code>
 										</a>
 										<ul>
 										</ul>
@@ -265,12 +284,28 @@ window.MathJax = {
 									</li>
 									<li>
 										<a
-											href="#type-typeid-size_of" 
+											href="#codetype-code" 
 											class="summary-t3" >
-                                            type / typeid / size_of
+                                            <code>type</code>
 										</a>
 										<ul>
 										</ul>
+									</li>
+									<li>
+										<a
+											href="#codetypeid-code" 
+											class="summary-t3" >
+                                            <code>typeid</code>
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codesize_of-code" 
+											class="summary-t3" >
+                                            <code>size_of</code>
+										</a>
 									</li>
 								</ul>
 							</li>
@@ -279,8 +314,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Odin/Odin-any.html" >
-                                    any
+									href="/studies/Low-Level Systems/Odin/Odin-codeany-code.html" >
+                                    <code>any</code>
 								</a>
 							</li>
 						</ul>
@@ -582,6 +617,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/C and C++/C and C++-lsp.html" >
+                                    LSP
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/C and C++/C and C++-building.html" >
                                     Building
 								</a>
@@ -827,6 +871,33 @@ window.MathJax = {
 						<summary>
                             Memory
 						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
 						<ul>
 							<li>
 								<a
@@ -1119,6 +1190,21 @@ window.MathJax = {
 					<details
 						class="summary-t1-other" >
 						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Safety Critical/Safety Critical-about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
                             Handmade Hero
 						</summary>
 						<ul>
@@ -1238,6 +1324,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Debuggers/Debuggers-lldb.html" >
                                     LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Debuggers/Debuggers-remedybg-debugger.html" >
+                                    RemedyBG Debugger
 								</a>
 							</li>
 						</ul>
@@ -1491,8 +1586,8 @@ window.MathJax = {
                             🕒 Created: 2025-03-28
 						</time>
 						<time
-							datetime="2026-03-09" >
-                            | Updated: 2026-03-09
+							datetime="2026-03-26" >
+                            | Updated: 2026-03-26
 						</time>
 					</p>
 				</header>
@@ -1932,8 +2027,8 @@ fmt.println(my_arr) // [2]f32{3.0, 3.0}
 	</li>
 </ul>
 <h3
-	id="casting" >
-    Casting
+	id="codecast-code" >
+    <code>cast</code>
 </h3>
 <ul>
 	<li>
@@ -1976,10 +2071,10 @@ u := (u32)(f)
 f := cast(f64)i
 u := cast(u32)f
 </code></pre>
-<h5
+<h4
 	id="auto-cast-operator" >
     ~Auto Cast Operator
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -2008,10 +2103,10 @@ u := cast(u32)f
 <pre><code class="language-odin" data-lang="odin">x: f32 = 123
 y: int = auto_cast x
 </code></pre>
-<h5
+<h4
 	id="advanced-idioms-down-cast-and-up-cast" >
     Advanced Idioms, Down-Cast and Up-Cast
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -2367,8 +2462,8 @@ fmt.printfln("OPERATION 2: %v", cast(^Hurtbox)&obj)
 	</li>
 </ul>
 <h3
-	id="transmute" >
-    Transmute
+	id="codetransmute-code" >
+    <code>transmute</code>
 </h3>
 <ul>
 	<li>
@@ -2413,6 +2508,107 @@ fmt.printfln("OPERATION 2: %v", cast(^Hurtbox)&obj)
 <pre><code class="language-odin" data-lang="odin">f: f32 = 123
 u := transmute(u32)f
 </code></pre>
+<h3
+	id="when-codecast-code-is-equal-to-codetransmute-code" >
+    When 
+    <code>cast</code>
+    &nbsp;is equal to 
+    <code>transmute</code>
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>cast</code>
+            &nbsp;is equal to 
+            <code>transmute</code>
+            &nbsp;when it does not have a run-time operation.
+		</p>
+	</li>
+</ul>
+<h5
+	id="pointer-type-casting" >
+    Pointer Type Casting
+</h5>
+<pre><code class="language-odin" data-lang="odin">x: f32&nbsp;&nbsp;= 5
+y: ^f32 = &x
+
+z: ^int = cast(^int)y
+w: ^int = transmute(^int)y
+</code></pre>
+<ul>
+	<li>
+		<p>
+            There is no difference between 
+            <code>cast</code>
+            &nbsp;and 
+            <code>transmute</code>
+            &nbsp;for pointer casting. It's all a 
+            <code>transmute</code>
+            &nbsp;under the hood; just reinterpretation by the compiler.
+		</p>
+	</li>
+</ul>
+<h5
+	id="integer-casting" >
+    Integer casting
+</h5>
+<ul>
+	<li>
+		<p>
+			<em>
+                Valid for
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>u32</code>
+                    &nbsp; &lt;-&gt; 
+                    <code>i32</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>u64</code>
+                    &nbsp; &lt;-&gt; 
+                    <code>i64</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>uint</code>
+                    &nbsp;&lt;-&gt; 
+                    <code>int</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>enum</code>
+                    &nbsp;&lt;-&gt; 
+                    <code>int</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="alias" >
+    Alias
+</h5>
+<ul>
+	<li>
+		<p>
+            Base type &lt;-&gt; 
+            <code>distinct</code>
+            &nbsp;alias.
+		</p>
+	</li>
+</ul>
 <h3
 	id="type-conversions" >
     Type Conversions
@@ -2530,6 +2726,20 @@ u := transmute(u32)f
 <ul>
 	<li>
 		<p>
+            <code>cstring(str)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I think this only works if 
+                    <code>str</code>
+                    &nbsp;is literal / constant.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
             <code>strings.unsafe_string_to_cstring(st)</code>
 		</p>
 		<ul>
@@ -2545,8 +2755,8 @@ u := transmute(u32)f
 				<p>
                     The internal operation is:
 				</p>
-<pre><code class="language-odin" data-lang="odin">raw_string&nbsp;&nbsp;:= transmute(mem.Raw_String)s
-cs := cstring(raw_string.data)
+<pre><code class="language-odin" data-lang="odin">raw_string&nbsp;&nbsp;:= transmute(mem.Raw_String)str
+cstr := cstring(raw_string.data)
 </code></pre>
 			</li>
 		</ul>
@@ -2913,6 +3123,18 @@ data := transmute([]u8)msg
 			</li>
 		</ul>
 	</li>
+	<li>
+		<p>
+            <code>truncate_to_byte(string(properties.properties.deviceName[:]), 0)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For when there's a string inside a huge byte slice.
+				</p>
+			</li>
+		</ul>
+	</li>
 </ul>
 <h5
 	id="from-codebyte-code-to-codecstring-code" >
@@ -3216,13 +3438,9 @@ string(bytes[:length])
 	</li>
 </ul>
 <h3
-	id="type-typeid-size_of" >
-    type / typeid / size_of
+	id="codetype-code" >
+    <code>type</code>
 </h3>
-<h5
-	id="type" >
-    Type
-</h5>
 <ul>
 	<li>
 		<p>
@@ -3286,10 +3504,10 @@ type_integer_to_signed   :: proc($T: typeid) -&gt; type where type_is_integer(T
 		</ul>
 	</li>
 </ul>
-<h5
-	id="typeid" >
-    typeid
-</h5>
+<h3
+	id="codetypeid-code" >
+    <code>typeid</code>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -3334,7 +3552,7 @@ type_integer_to_signed   :: proc($T: typeid) -&gt; type where type_is_integer(T
 	<li>
 		<p>
 			<strong>
-                Example
+                Discussion 1: cast with typeid
 			</strong>
             :
 		</p>
@@ -3502,11 +3720,108 @@ case rune:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fmt_rune(fi, a, verb)
 			</li>
 		</ul>
 	</li>
+	<li>
+		<p>
+			<strong>
+                Discussion 2: typeid vs type
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Caio:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I'm confused about the distinction between type and typeid: we have to use any{data, typeid_of(u8)}, as any requires a typeid and u8 is a type. Sure, but how do we justify the foo :: proc($T: typeid), where foo(u8) is allowed? Wouldn't something like foo :: proc($T: type) make more sense?
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Barinzaya:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Compile-time 
+                            <code>typeid</code>
+                            s (as a parapoly argument is) and run-time 
+                            <code>typeid</code>
+                            s (as the value in an any is) are effectively separate things.
+						</p>
+					</li>
+					<li>
+						<p>
+                            At compile-time it effectively is a 
+                            <code>type</code>
+                            , whereas at run-time it's just an &quot;opaque ID&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Caio:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            this example got me even confused:
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-odin" data-lang="odin">make_soa_aligned :: proc($T: typeid/#soa[]$E, ...) -&gt; (array: T, err: mem.Allocator_Error) {
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;ti := type_info_of(typeid_of(T))&nbsp;&nbsp;// why do we need `typeid_of` here?
+&nbsp;&nbsp;&nbsp;&nbsp;...
+}
+</code></pre>
+				<ul>
+					<li>
+						<p>
+                            also, is it possible to store a comptime typeid inside a struct, so I could use this information to perform a cast down the line?
+						</p>
+					</li>
+					<li>
+						<p>
+                            I imagine this is effectively what a struct parapoly does under the hood, or something like that
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Barinzaya:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It actually works either way, but I think that's because type_info_of is a compiler builtin that handles both. &quot;Normal&quot; Odin code wouldn't, typeid_of is effectively the way to convert from a compile-time typeid to a run-time one
+						</p>
+					</li>
+					<li>
+						<p>
+                            You mean store it in a field in the struct? No, parapoly arguments are a completely separate mechanism from fields, and that wouldn't make sense considering structs can be used at run-time.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Parapoly data is never stored at runtime
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
 </ul>
-<h5
-	id="size_of" >
-    size_of
-</h5>
+<h3
+	id="codesize_of-code" >
+    <code>size_of</code>
+</h3>
 <ul>
 	<li>
 		<p>
@@ -3597,7 +3912,7 @@ bar2 :: proc($member: typeid) {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.60360.js" >
+			src="/static/studies.71464.js" >
 		</script>
 	</body>
 </html>

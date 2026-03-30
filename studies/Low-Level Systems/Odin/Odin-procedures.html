@@ -18,10 +18,6 @@
 			content="Caio Raphael" >
 		<meta
 			name="theme-color" 
-			content="#ffffff" 
-			media="(prefers-color-scheme: light)" >
-		<meta
-			name="theme-color" 
 			content="#101010" 
 			media="(prefers-color-scheme: dark)" >
 		<link
@@ -52,9 +48,9 @@ window.MathJax = {
 			type="module" >
 
                     import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
-                    import hljs_odin from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
-                    import hljs_glsl from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
-                    import hljs_swift  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
                     hljs.registerLanguage('odin', hljs_odin);
                     hljs.registerLanguage('glsl', hljs_glsl);
                     hljs.registerLanguage('gdscript', hljs_swift);
@@ -63,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.60360.css" >
+			href="/static/studies.71464.css" >
 	</head>
 	<body>
 		<aside
@@ -234,6 +230,13 @@ window.MathJax = {
                                             Generics
 										</a>
 										<ul>
+											<li>
+												<a
+													href="#specialization" 
+													class="summary-t4" >
+                                                    Specialization
+												</a>
+											</li>
 										</ul>
 									</li>
 									<li>
@@ -270,8 +273,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Odin/Odin-any.html" >
-                                    any
+									href="/studies/Low-Level Systems/Odin/Odin-codeany-code.html" >
+                                    <code>any</code>
 								</a>
 							</li>
 						</ul>
@@ -573,6 +576,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/C and C++/C and C++-lsp.html" >
+                                    LSP
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/C and C++/C and C++-building.html" >
                                     Building
 								</a>
@@ -818,6 +830,33 @@ window.MathJax = {
 						<summary>
                             Memory
 						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
 						<ul>
 							<li>
 								<a
@@ -1110,6 +1149,21 @@ window.MathJax = {
 					<details
 						class="summary-t1-other" >
 						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Safety Critical/Safety Critical-about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
                             Handmade Hero
 						</summary>
 						<ul>
@@ -1229,6 +1283,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Debuggers/Debuggers-lldb.html" >
                                     LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Debuggers/Debuggers-remedybg-debugger.html" >
+                                    RemedyBG Debugger
 								</a>
 							</li>
 						</ul>
@@ -1482,8 +1545,8 @@ window.MathJax = {
                             🕒 Created: 2025-03-28
 						</time>
 						<time
-							datetime="2026-03-09" >
-                            | Updated: 2026-03-09
+							datetime="2026-03-26" >
+                            | Updated: 2026-03-26
 						</time>
 					</p>
 				</header>
@@ -1492,10 +1555,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-			<em>
-                Procedure
-			</em>
-            &nbsp;used to be the common term as opposed to a function or subroutine. A function is a mathematical entity that has no side effects. A subroutine is something that has side effects but does not return anything.
+            Procedure used to be the common term as opposed to a function or subroutine. A function is a mathematical entity that has no side effects. A subroutine is something that has side effects but does not return anything.
 		</p>
 	</li>
 	<li>
@@ -1971,41 +2031,150 @@ packet_as_bytes: []byte; err_packet: cbor.Marshal_Error
 			</li>
 		</ul>
 	</li>
+</ul>
+<h4
+	id="specialization" >
+    Specialization
+</h4>
+<pre><code class="language-odin" data-lang="odin">array: $T/[dynamic]$E
+</code></pre>
+<ul>
 	<li>
 		<p>
-			<em>
-                Specialization
-			</em>
+            <code>T</code>
             :
 		</p>
-<pre><code class="language-odin" data-lang="odin">array: $T/[dynamic]$E
+		<ul>
+			<li>
+				<p>
+                    Type of the entire array.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>E</code>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Type of the element inside the array.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    why would you do arg: 
+                    <code>$A/string</code>
+                    , instead of arg: 
+                    <code>string</code>
+                    , considering that $A is not use anywhere? Example: 
+                    <code>_append_elem_string</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Perlind:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    the 2 are semantically the same
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Ginger Bill:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It's used for distinct types.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">append(&array, My_String("Hellope"))
 </code></pre>
 		<ul>
 			<li>
 				<p>
-                    <code>T</code>
-                    :
+                    <code>A == My_String</code>
+                    , because 
+                    <code>A</code>
+                    &nbsp;is a specialization of 
+                    <code>string</code>
 				</p>
-				<ul>
-					<li>
-						<p>
-                            Type of the entire array.
-						</p>
-					</li>
-				</ul>
 			</li>
 			<li>
 				<p>
-                    <code>E</code>
-                    :
+                    <code>cstring</code>
+                    &nbsp;is is not accepted, as it's not distinct from string and do not share the same base type.
 				</p>
-				<ul>
-					<li>
-						<p>
-                            Type of the element inside the array.
-						</p>
-					</li>
-				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+<pre><code class="language-odin" data-lang="odin">@builtin
+append_elem_string :: proc(array: ^$T/[dynamic]$E/u8, arg: $A/string, loc := #caller_location) -&gt; (n: int, err: Allocator_Error) #optional_allocator_error {
+&nbsp;&nbsp;&nbsp;&nbsp;return _append_elem_string(array, arg, true, loc)
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Is this the same as &quot;any type that derives from 
+                    <code>[dynamic]E</code>
+                    , while 
+                    <code>E</code>
+                    &nbsp;is anything that derives 
+                    <code>from</code>
+                    &nbsp;u8&quot;? So if it were to discard distinct types, this would be the same 
+                    <code>[dynamic]u8</code>
+                    ?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Ginger Bill:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Yes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If distinct types were not a thing (hypothetically speaking), you could drop the 
+                    <code>$T/</code>
+                    &nbsp;and 
+                    <code>$E/</code>
+                    &nbsp;and 
+                    <code>$A/</code>
+                    &nbsp;entirely.
+				</p>
+			</li>
+			<li>
+				<p>
+                    But because anyone can make a&nbsp;&nbsp;distinct type from anything, we make sure in the core library to allow for things like that.
+				</p>
 			</li>
 		</ul>
 	</li>
@@ -2143,7 +2312,7 @@ defer end()
 			</footer>
 		</main>
 		<script
-			src="/static/studies.60360.js" >
+			src="/static/studies.71464.js" >
 		</script>
 	</body>
 </html>

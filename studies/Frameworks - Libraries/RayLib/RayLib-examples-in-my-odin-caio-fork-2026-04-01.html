@@ -1,0 +1,740 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.55226.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Frameworks - Libraries
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/Frameworks - Libraries/Frameworks - Libraries-comparing-with-engines.html" >
+                                    Comparing with Engines
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/Frameworks - Libraries/Frameworks - Libraries-render.html" >
+                                    Render
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/Frameworks - Libraries/Frameworks - Libraries-math.html" >
+                                    Math
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/Frameworks - Libraries/Frameworks - Libraries-model-loading.html" >
+                                    Model Loading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/Frameworks - Libraries/Frameworks - Libraries-ui.html" >
+                                    UI
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            RayLib
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/RayLib/RayLib-about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/RayLib/RayLib-examples-in-c.html" >
+                                    Examples in C
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/RayLib/RayLib-examples-in-odin.html" >
+                                    Examples in Odin
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/Frameworks - Libraries/RayLib/RayLib-examples-in-my-odin-caio-fork-2026-04-01.html" >
+                                    Examples in my Odin-Caio-Fork (2026-04-01)
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#setup" 
+											class="summary-t3" >
+                                            Setup
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#moving-ball" 
+											class="summary-t3" >
+                                            Moving Ball
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#collect-the-coins" 
+											class="summary-t3" >
+                                            Collect The Coins
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#space-invaders" 
+											class="summary-t3" >
+                                            Space Invaders
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/RayLib/RayLib-building-from-source.html" >
+                                    Building from Source
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/RayLib/RayLib-explanations.html" >
+                                    Explanations
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Clay
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/Clay/Clay-about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Frameworks - Libraries/Clay/Clay-odin-bindings.html" >
+                                    Odin Bindings
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Examples in my Odin-Caio-Fork (2026-04-01)
+					</h1>
+					<p>
+						<time
+							datetime="2025-03-09" >
+                            🕒 Created: 2025-03-09
+						</time>
+						<time
+							datetime="2026-04-01" >
+                            | Updated: 2026-04-01
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<h3
+	id="setup" >
+    Setup
+</h3>
+<ul>
+	<li>
+		<p>
+			<em>
+                Install Odin
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://github.com/caioraphael1/Odin/tree/master" 
+						class="external-link" 
+						target="_blank" >
+                        caioraphael1/Odin
+					</a>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            There are no releases.
+						</p>
+					</li>
+					<li>
+						<p>
+                            The code has to be compiled from source by running the 
+                            <code>.\build.bat release</code>
+                            &nbsp;in 
+                            <code>x64 Native Tools Command Prompt for VS 2022</code>
+                            &nbsp;command shell.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<em>
+                Get the latest RayLib release
+			</em>
+            :</s>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Not needed, as Raylib is already part of the Odin vendor, located at: 
+                    <code>&lt;odin_installation_folder&gt;/vendor/raylib/</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                The file system
+			</em>
+            :
+		</p>
+<pre><code class="language-txt" data-lang="txt"> .
+└──  main.odin
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Inside the 
+                    <code>&lt;odin_installation_folder&gt;/vendor/raylib</code>
+                    :
+				</p>
+<pre><code class="language-txt" data-lang="txt"> .
+├── 󰂺 README.md
+├──  raymath.odin
+├──  raylib.odin
+├──  raygui.odin
+├──  LICENSE
+├──  easings.odin
+├──  windows
+│&nbsp;&nbsp; ├──  raylibdll.lib
+│&nbsp;&nbsp; ├──  raylib.lib
+│&nbsp;&nbsp; ├──  raylib.dll
+│&nbsp;&nbsp; ├──  rayguidll.lib
+│&nbsp;&nbsp; ├──  raygui.lib
+│&nbsp;&nbsp; └──  raygui.dll
+├──  wasm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// not needed for Windows
+│&nbsp;&nbsp; ├──  libraylib.a
+│&nbsp;&nbsp; └──  libraygui.a
+├──  rlgl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// standalone module, not required for raylib "A multi-OpenGL abstraction layer with an immediate-mode style API"
+│&nbsp;&nbsp; └──  rlgl.odin
+├──  macos-arm64 // not needed for Windows
+│&nbsp;&nbsp; ├──  libraygui.dylib
+│&nbsp;&nbsp; └──  libraygui.a
+├──  macos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // not needed for Windows
+│&nbsp;&nbsp; ├──  libraylib.dylib
+│&nbsp;&nbsp; ├──  libraylib.a
+│&nbsp;&nbsp; ├──  libraylib.550.dylib
+│&nbsp;&nbsp; ├──  libraylib.5.5.0.dylib
+│&nbsp;&nbsp; ├──  libraygui.dylib
+│&nbsp;&nbsp; └──  libraygui.a
+└──  linux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // not needed for Windows
+&nbsp;&nbsp;&nbsp;&nbsp;├──  libraylib.so.550
+&nbsp;&nbsp;&nbsp;&nbsp;├──  libraylib.so.5.5.0
+&nbsp;&nbsp;&nbsp;&nbsp;├──  libraylib.so
+&nbsp;&nbsp;&nbsp;&nbsp;├──  libraylib.a
+&nbsp;&nbsp;&nbsp;&nbsp;├──  libraygui.so
+&nbsp;&nbsp;&nbsp;&nbsp;└──  libraygui.a
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Compile and execute
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>odin run .</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="moving-ball" >
+    Moving Ball
+</h3>
+<pre><code class="language-odin" data-lang="odin">/* 
+odin run .
+*/
+
+import rl "vendor:raylib"
+
+
+main :: proc() {
+&nbsp;&nbsp;&nbsp;&nbsp;SCREEN_WIDTH&nbsp;&nbsp;:: 800
+&nbsp;&nbsp;&nbsp;&nbsp;SCREEN_HEIGHT :: 450
+
+&nbsp;&nbsp;&nbsp;&nbsp;rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in Odin-Caio-Fork | 1_moving_ball")
+&nbsp;&nbsp;&nbsp;&nbsp;defer rl.CloseWindow()
+&nbsp;&nbsp;&nbsp;&nbsp;rl.SetTargetFPS(60)
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Initialize ball
+&nbsp;&nbsp;&nbsp;&nbsp;ball_position := [2]f32{ SCREEN_WIDTH/2.0, SCREEN_HEIGHT/2.0 }
+
+&nbsp;&nbsp;&nbsp;&nbsp;for !rl.WindowShouldClose() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Update ball position
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.RIGHT) { ball_position.x += 2.0 }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.LEFT)&nbsp;&nbsp;{ ball_position.x -= 2.0 }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.UP)&nbsp;&nbsp;&nbsp;&nbsp;{ ball_position.y -= 2.0 }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.DOWN)&nbsp;&nbsp;{ ball_position.y += 2.0 }
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Draw
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.BeginDrawing()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defer rl.EndDrawing()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.ClearBackground(rl.WHITE)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawText("move the ball with arrow keys", 10, 10, 20, rl.DARKGRAY)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawCircleV(ball_position, 50, rl.MAROON)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+<h3
+	id="collect-the-coins" >
+    Collect The Coins
+</h3>
+<pre><code class="language-odin" data-lang="odin">/* 
+odin run .
+*/
+
+import rl "vendor:raylib"
+
+MAX_COINS&nbsp;&nbsp;&nbsp;&nbsp;:: 20
+PLAYER_SPEED :: 4.0
+
+Player :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
+&nbsp;&nbsp;&nbsp;&nbsp;score:&nbsp;&nbsp;&nbsp;&nbsp;int,
+}
+
+Coin :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
+&nbsp;&nbsp;&nbsp;&nbsp;active:&nbsp;&nbsp; bool,
+}
+
+main :: proc() {
+&nbsp;&nbsp;&nbsp;&nbsp;SCREEN_WIDTH&nbsp;&nbsp;:: 800
+&nbsp;&nbsp;&nbsp;&nbsp;SCREEN_HEIGHT :: 600
+
+&nbsp;&nbsp;&nbsp;&nbsp;rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in Odin-Caio-Fork | 2_collect_the_coins")
+&nbsp;&nbsp;&nbsp;&nbsp;defer rl.CloseWindow()
+&nbsp;&nbsp;&nbsp;&nbsp;rl.SetTargetFPS(60)
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Initialize player
+&nbsp;&nbsp;&nbsp;&nbsp;player := Player{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position = { 400, 300 },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radius&nbsp;&nbsp; = 20,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score&nbsp;&nbsp;&nbsp;&nbsp;= 0,
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Initialize coins
+&nbsp;&nbsp;&nbsp;&nbsp;coins: [MAX_COINS]Coin
+&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;MAX_COINS {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coins[i].position = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f32(rl.GetRandomValue(20, SCREEN_WIDTH - 20)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f32(rl.GetRandomValue(20, SCREEN_HEIGHT - 20)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coins[i].radius = 8
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coins[i].active = true
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;for !rl.WindowShouldClose() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Update player
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.W) { player.position.y -= PLAYER_SPEED }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.S) { player.position.y += PLAYER_SPEED }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.A) { player.position.x -= PLAYER_SPEED }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.D) { player.position.x += PLAYER_SPEED }
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Check collisions
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;MAX_COINS {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if coins[i].active {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dist := rl.Vector2Distance(player.position, coins[i].position)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if dist &lt; player.radius + coins[i].radius {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coins[i].active = false
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player.score += 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Draw
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.BeginDrawing()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defer rl.EndDrawing()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.ClearBackground(rl.DARKGREEN)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawCircleV(player.position, player.radius, rl.BLUE)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;MAX_COINS {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if coins[i].active {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawCircleV(coins[i].position, coins[i].radius, rl.GOLD)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawText(rl.TextFormat("Score: %d", player.score), 10, 10, 20, rl.WHITE)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+<h3
+	id="space-invaders" >
+    Space Invaders
+</h3>
+<pre><code class="language-odin" data-lang="odin">import "base:mem"
+import "base:mem/allocators"
+import "base:container/slice"
+
+import "core:os"
+import "core:fmt"
+
+import rl "vendor:raylib"
+
+MAX_BULLETS&nbsp;&nbsp;:: 64
+BULLET_SPEED :: 6.0
+
+Player :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
+}
+
+Bullet :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;velocity: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
+&nbsp;&nbsp;&nbsp;&nbsp;active:&nbsp;&nbsp; bool,
+}
+
+Enemy :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
+&nbsp;&nbsp;&nbsp;&nbsp;active:&nbsp;&nbsp; bool,
+&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;&nbsp;&nbsp;&nbsp;rl.Color,
+}
+
+main :: proc() {
+&nbsp;&nbsp;&nbsp;&nbsp;allocator := allocators.heap_allocator()
+&nbsp;&nbsp;&nbsp;&nbsp;os.init_std_files()
+&nbsp;&nbsp;&nbsp;&nbsp;allocators.temp_allocator_init(0, allocator)
+&nbsp;&nbsp;&nbsp;&nbsp;defer allocators.temp_allocator_destroy()
+
+&nbsp;&nbsp;&nbsp;&nbsp;SCREEN_WIDTH&nbsp;&nbsp;:: 800
+&nbsp;&nbsp;&nbsp;&nbsp;SCREEN_HEIGHT :: 600
+
+&nbsp;&nbsp;&nbsp;&nbsp;rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in Odin-Caio-Fork | 3_space_invaders")
+&nbsp;&nbsp;&nbsp;&nbsp;defer rl.CloseWindow()
+&nbsp;&nbsp;&nbsp;&nbsp;rl.SetTargetFPS(60)
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Initialize player
+&nbsp;&nbsp;&nbsp;&nbsp;player := Player{ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 400, 500 }, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20,
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;&nbsp;bullets: [MAX_BULLETS]Bullet // Stack allocation
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Initialize enemies
+&nbsp;&nbsp;&nbsp;&nbsp;enemies, slice_err := slice.create(Enemy, 20, allocator) // Heap allocation, using context.allocator implicitly
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.assertf(slice_err == nil, "Error '%v' when creating the slice", slice_err)
+&nbsp;&nbsp;&nbsp;&nbsp;defer _ = slice.delete(enemies, allocator)
+
+&nbsp;&nbsp;&nbsp;&nbsp;enemies_destroyed_count: uint
+&nbsp;&nbsp;&nbsp;&nbsp;spawn_inactive_enemies(enemies)
+
+&nbsp;&nbsp;&nbsp;&nbsp;for !rl.WindowShouldClose() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Update player
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.A) { player.position.x -= 4 }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.D) { player.position.x += 4 }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.W) { player.position.y -= 4 }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.S) { player.position.y += 4 }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyPressed(.SPACE) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spawn_bullet(bullets[:], player.position)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Update bullets
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;len(bullets) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if bullets[i].active {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bullets[i].position.x += bullets[i].velocity.x
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bullets[i].position.y += bullets[i].velocity.y
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if bullets[i].position.y &lt; 0 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bullets[i].active = false
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Update enemies
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active_enemies := 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;len(enemies) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if enemies[i].active {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[i].position.y += 0.5
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active_enemies += 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Respawn inactive enemies
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if active_enemies &lt; 5 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spawn_inactive_enemies(enemies)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Check Collisions
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;len(bullets) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if !bullets[i].active { continue }
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for j in 0..&lt;len(enemies) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if !enemies[j].active { continue }
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d := rl.Vector2Distance(bullets[i].position, enemies[j].position)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r := bullets[i].radius + enemies[j].radius
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if d &lt; r {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bullets[i].active&nbsp;&nbsp;= false
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[j].active&nbsp;&nbsp;= false
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies_destroyed_count += 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Draw
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.BeginDrawing()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defer rl.EndDrawing()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.ClearBackground(rl.BLACK)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawCircleV(player.position, player.radius, rl.BLUE)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;len(bullets) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if bullets[i].active {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawCircleV(bullets[i].position, bullets[i].radius, rl.YELLOW)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;len(enemies) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if enemies[i].active {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawCircleV(enemies[i].position, enemies[i].radius, enemies[i].color)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawText("Space Invaders: WASD move | SPACE shoot", 10, 10, 20, rl.WHITE)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawText(fmt.ctprintf("Enemies destroyed: %v", enemies_destroyed_count), 10, 40, 20, rl.YELLOW)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Prints while doing a temporary allocation.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free_all_err := mem.free_all(allocators.temp_allocator)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fmt.assertf(free_all_err == nil, "Error '%v' when freeing the temp_allocator", free_all_err)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+spawn_bullet :: proc(bullets: []Bullet, pos: [2]f32) {
+&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;len(bullets) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if !bullets[i].active {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bullets[i].active&nbsp;&nbsp; = true
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bullets[i].position = pos
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bullets[i].velocity = {0, -BULLET_SPEED}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bullets[i].radius&nbsp;&nbsp; = 5
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+spawn_inactive_enemies :: proc(enemies: []Enemy) {
+&nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;len(enemies) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if !enemies[i].active {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[i].position = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f32(rl.GetRandomValue(50, 750)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f32(rl.GetRandomValue(50, 300)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[i].radius = 15
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[i].active = true
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[i].color&nbsp;&nbsp;= {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u8(rl.GetRandomValue(100, 255)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u8(rl.GetRandomValue(100, 255)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u8(rl.GetRandomValue(100, 255)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;255,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.55226.js" >
+		</script>
+	</body>
+</html>

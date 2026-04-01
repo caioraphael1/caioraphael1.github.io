@@ -1,0 +1,561 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.71352.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            Exploring Game Dev
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-c-and-raylib.html" >
+                                    C and Raylib
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-odin-and-raylib.html" >
+                                    Odin and Raylib
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-odin-caio-fork-and-raylib-2026-04-01.html" >
+                                    Odin-Caio-Fork and Raylib (2026-04-01)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-godot-equivalent-examples.html" >
+                                    Godot equivalent examples
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-python-and-raylib.html" >
+                                    Python and Raylib
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-lua-and-raylib.html" >
+                                    Lua and Raylib
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#setup" 
+											class="summary-t3" >
+                                            Setup
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#moving-ball" 
+											class="summary-t3" >
+                                            Moving Ball
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Game AI
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game AI/Game AI-utility-ai-fuzzy-logic.html" >
+                                    Utility AI / Fuzzy Logic
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game AI/Game AI-fsm-finite-state-machines-or-hsfm-hierarchical-state-machines.html" >
+                                    FSM (Finite State Machines) or HSFM (Hierarchical State Machines)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game AI/Game AI-behavior-trees.html" >
+                                    Behavior Trees
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game AI/Game AI-htn-hierarchical-task-network.html" >
+                                    HTN (Hierarchical Task Network)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game AI/Game AI-goap-goal-oriented-action-planning.html" >
+                                    GOAP (Goal-Oriented Action Planning)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game AI/Game AI-hgn-hierarchical-goal-network.html" >
+                                    HGN (Hierarchical Goal Network)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game AI/Game AI-strips-stanford-research-institute-problem-solver.html" >
+                                    STRIPS (Stanford Research Institute Problem Solver)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game AI/Game AI-rule-based-ai.html" >
+                                    Rule-based AI
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game AI/Game AI-evaluations.html" >
+                                    Evaluations
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Procedural Animation
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Procedural Animation/Procedural Animation-references-and-examples.html" >
+                                    References and Examples
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Procedural Animation/Procedural Animation-inverse-kinematics.html" >
+                                    Inverse Kinematics
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Procedural Animation/Procedural Animation-procedural-animation-with-soft-body.html" >
+                                    Procedural Animation with Soft Body
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Game Design
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game Design/Game Design-design-process.html" >
+                                    Design Process
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game Design/Game Design-expressiveness-quoteautonomyquote-quotevolitionquote.html" >
+                                    Expressiveness / &quot;Autonomy&quot; / &quot;Volition&quot;
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game Design/Game Design-mechanics.html" >
+                                    Mechanics
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game Design/Game Design-multiplayer.html" >
+                                    Multiplayer
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Game Design/Game Design-financial-success-and-marketing.html" >
+                                    Financial Success and Marketing
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Level Design
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Level Design-sources.html" >
+                                    Sources
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Level Design-workflows.html" >
+                                    Workflows
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Level Design-concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Scanning Algorithms
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Scanning Algorithms-scanning-algorithms.html" >
+                                    Scanning Algorithms
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Lua and Raylib
+					</h1>
+					<p>
+						<time
+							datetime="2026-04-01" >
+                            🕒 Created: 2026-04-01
+						</time>
+						<time
+							datetime="2026-04-01" >
+                            | Updated: 2026-04-01
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<h3
+	id="setup" >
+    Setup
+</h3>
+<ul>
+	<li>
+		<p>
+			<em>
+                Install Lua
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://luabinaries.sourceforge.net/" 
+						class="external-link" 
+						target="_blank" >
+                        Lua Download
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+                    The files downloaded can be placed anywhere.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You can either:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>&lt;the_path_to_the_exe&gt; main.lua</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            or
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>lua55 main.lua</code>
+                            &nbsp;IF you add the path of the exe file to the System PATH (environment variables).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Install raylib
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    (2026-04-01) I'm getting issues with this one
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Execute
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>lua55 main.lua</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="moving-ball" >
+    Moving Ball
+</h3>
+<pre><code class="language-lua" data-lang="lua">--[[
+lua55 main.lua
+]]
+
+local rl = require("raylib")
+
+local SCREEN_WIDTH&nbsp;&nbsp;= 800
+local SCREEN_HEIGHT = 450
+
+rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in C | 1_moving_ball")
+rl.SetTargetFPS(60)
+
+-- Initialize ball
+local ball_position = { 
+&nbsp;&nbsp;&nbsp;&nbsp;x = SCREEN_WIDTH / 2, 
+&nbsp;&nbsp;&nbsp;&nbsp;y = SCREEN_HEIGHT / 2 
+}
+
+while not rl.WindowShouldClose() do
+&nbsp;&nbsp;&nbsp;&nbsp;-- Update ball position
+&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(rl.KEY_RIGHT) then ball_position.x = ball_position.x + 2.0 end
+&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(rl.KEY_LEFT)&nbsp;&nbsp;then ball_position.x = ball_position.x - 2.0 end
+&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(rl.KEY_UP)&nbsp;&nbsp;&nbsp;&nbsp;then ball_position.y = ball_position.y - 2.0 end
+&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(rl.KEY_DOWN)&nbsp;&nbsp;then ball_position.y = ball_position.y + 2.0 end
+
+&nbsp;&nbsp;&nbsp;&nbsp;-- Draw
+&nbsp;&nbsp;&nbsp;&nbsp;rl.BeginDrawing()
+&nbsp;&nbsp;&nbsp;&nbsp;rl.ClearBackground(rl.RAYWHITE)
+
+&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawText("move the ball with arrow keys", 10, 10, 20, rl.DARKGRAY)
+&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawCircleV(ball_position, 50, rl.MAROON)
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;rl.EndDrawing()
+end
+
+rl.CloseWindow()
+</code></pre>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.71352.js" >
+		</script>
+	</body>
+</html>

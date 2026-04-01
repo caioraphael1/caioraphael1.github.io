@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.71352.css" >
+			href="/static/studies.84003.css" >
 	</head>
 	<body>
 		<aside
@@ -102,8 +102,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-c-and-raylib.html" >
-                                    C and Raylib
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-c-with-raylib.html" >
+                                    C with Raylib
 								</a>
 							</li>
 						</ul>
@@ -111,8 +111,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-odin-and-raylib.html" >
-                                    Odin and Raylib
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-c-with-raylib.html" >
+                                    C++ with Raylib
 								</a>
 							</li>
 						</ul>
@@ -120,8 +120,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-current" 
-									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-odin-caio-fork-and-raylib-2026-04-01.html" >
-                                    Odin-Caio-Fork and Raylib (2026-04-01)
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-odin-with-raylib.html" >
+                                    Odin with Raylib
 								</a>
 								<ul>
 									<li>
@@ -157,8 +157,26 @@ window.MathJax = {
 											class="summary-t3" >
                                             Space Invaders
 										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#other-examples" 
+											class="summary-t3" >
+                                            Other Examples
+										</a>
 									</li>
 								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-odin-caio-fork-with-raylib-2026-04-01.html" >
+                                    Odin-Caio-Fork with Raylib (2026-04-01)
+								</a>
 							</li>
 						</ul>
 						<ul>
@@ -174,8 +192,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-python-and-raylib.html" >
-                                    Python and Raylib
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-rust-with-raylib.html" >
+                                    Rust with Raylib
 								</a>
 							</li>
 						</ul>
@@ -183,8 +201,35 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-lua-and-raylib.html" >
-                                    Lua and Raylib
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-lua-with-raylib.html" >
+                                    Lua with Raylib
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-c-with-raylib.html" >
+                                    C# with Raylib
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-java-with-raylib.html" >
+                                    Java with Raylib
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Game Development/Exploring Game Dev/Exploring Game Dev-python-with-raylib.html" >
+                                    Python with Raylib
 								</a>
 							</li>
 						</ul>
@@ -418,7 +463,7 @@ window.MathJax = {
 				<header
 					id="note-header" >
 					<h1>
-                        Odin-Caio-Fork and Raylib (2026-04-01)
+                        Odin with Raylib
 					</h1>
 					<p>
 						<time
@@ -449,28 +494,12 @@ window.MathJax = {
 			<li>
 				<p>
 					<a
-						href="https://github.com/caioraphael1/Odin/tree/master" 
+						href="https://github.com/odin-lang/Odin/releases" 
 						class="external-link" 
 						target="_blank" >
-                        caioraphael1/Odin
+                        Odin/Releases
 					</a>
 				</p>
-				<ul>
-					<li>
-						<p>
-                            There are no releases.
-						</p>
-					</li>
-					<li>
-						<p>
-                            The code has to be compiled from source by running the 
-                            <code>.\build.bat release</code>
-                            &nbsp;in 
-                            <code>x64 Native Tools Command Prompt for VS 2022</code>
-                            &nbsp;command shell.
-						</p>
-					</li>
-				</ul>
 			</li>
 		</ul>
 	</li>
@@ -486,7 +515,7 @@ window.MathJax = {
 			<li>
 				<p>
                     Not needed, as Raylib is already part of the Odin vendor, located at: 
-                    <code>&lt;odin_installation_folder&gt;/vendor/raylib/</code>
+                    <code>&lt;odin_installation_folder&gt;/vendor/raylib</code>
                     .
 				</p>
 			</li>
@@ -573,6 +602,8 @@ window.MathJax = {
 odin run .
 */
 
+package main
+
 import rl "vendor:raylib"
 
 
@@ -580,12 +611,12 @@ main :: proc() {
 &nbsp;&nbsp;&nbsp;&nbsp;SCREEN_WIDTH&nbsp;&nbsp;:: 800
 &nbsp;&nbsp;&nbsp;&nbsp;SCREEN_HEIGHT :: 450
 
-&nbsp;&nbsp;&nbsp;&nbsp;rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in Odin-Caio-Fork | 1_moving_ball")
+&nbsp;&nbsp;&nbsp;&nbsp;rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in Odin | 1_moving_ball")
 &nbsp;&nbsp;&nbsp;&nbsp;defer rl.CloseWindow()
 &nbsp;&nbsp;&nbsp;&nbsp;rl.SetTargetFPS(60)
 
 &nbsp;&nbsp;&nbsp;&nbsp;// Initialize ball
-&nbsp;&nbsp;&nbsp;&nbsp;ball_position := [2]f32{ SCREEN_WIDTH/2.0, SCREEN_HEIGHT/2.0 }
+&nbsp;&nbsp;&nbsp;&nbsp;ball_position := rl.Vector2{ SCREEN_WIDTH/2.0, SCREEN_HEIGHT/2.0 }
 
 &nbsp;&nbsp;&nbsp;&nbsp;for !rl.WindowShouldClose() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Update ball position
@@ -595,11 +626,11 @@ main :: proc() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if rl.IsKeyDown(.DOWN)&nbsp;&nbsp;{ ball_position.y += 2.0 }
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Draw
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.BeginDrawing()
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defer rl.EndDrawing()
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.ClearBackground(rl.WHITE)
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawText("move the ball with arrow keys", 10, 10, 20, rl.DARKGRAY)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rl.DrawCircleV(ball_position, 50, rl.MAROON)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
@@ -614,19 +645,21 @@ main :: proc() {
 odin run .
 */
 
+package main
+
 import rl "vendor:raylib"
 
 MAX_COINS&nbsp;&nbsp;&nbsp;&nbsp;:: 20
 PLAYER_SPEED :: 4.0
 
 Player :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;position: rl.Vector2,
 &nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
 &nbsp;&nbsp;&nbsp;&nbsp;score:&nbsp;&nbsp;&nbsp;&nbsp;int,
 }
 
 Coin :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;position: rl.Vector2,
 &nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
 &nbsp;&nbsp;&nbsp;&nbsp;active:&nbsp;&nbsp; bool,
 }
@@ -635,7 +668,7 @@ main :: proc() {
 &nbsp;&nbsp;&nbsp;&nbsp;SCREEN_WIDTH&nbsp;&nbsp;:: 800
 &nbsp;&nbsp;&nbsp;&nbsp;SCREEN_HEIGHT :: 600
 
-&nbsp;&nbsp;&nbsp;&nbsp;rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in Odin-Caio-Fork | 2_collect_the_coins")
+&nbsp;&nbsp;&nbsp;&nbsp;rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in Odin | 2_collect_the_coins")
 &nbsp;&nbsp;&nbsp;&nbsp;defer rl.CloseWindow()
 &nbsp;&nbsp;&nbsp;&nbsp;rl.SetTargetFPS(60)
 
@@ -698,47 +731,42 @@ main :: proc() {
 	id="space-invaders" >
     Space Invaders
 </h3>
-<pre><code class="language-odin" data-lang="odin">import "base:mem"
-import "base:mem/allocators"
-import "base:container/slice"
+<pre><code class="language-odin" data-lang="odin">/* 
+odin run .
+*/
 
-import "core:os"
-import "core:fmt"
+package main
 
 import rl "vendor:raylib"
+import "core:fmt"
 
 MAX_BULLETS&nbsp;&nbsp;:: 64
 BULLET_SPEED :: 6.0
 
 Player :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;position: rl.Vector2,
 &nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
 }
 
 Bullet :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
-&nbsp;&nbsp;&nbsp;&nbsp;velocity: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;position: rl.Vector2,
+&nbsp;&nbsp;&nbsp;&nbsp;velocity: rl.Vector2,
 &nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
 &nbsp;&nbsp;&nbsp;&nbsp;active:&nbsp;&nbsp; bool,
 }
 
 Enemy :: struct {
-&nbsp;&nbsp;&nbsp;&nbsp;position: [2]f32,
+&nbsp;&nbsp;&nbsp;&nbsp;position: rl.Vector2,
 &nbsp;&nbsp;&nbsp;&nbsp;radius:&nbsp;&nbsp; f32,
 &nbsp;&nbsp;&nbsp;&nbsp;active:&nbsp;&nbsp; bool,
 &nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;&nbsp;&nbsp;&nbsp;rl.Color,
 }
 
 main :: proc() {
-&nbsp;&nbsp;&nbsp;&nbsp;allocator := allocators.heap_allocator()
-&nbsp;&nbsp;&nbsp;&nbsp;os.init_std_files()
-&nbsp;&nbsp;&nbsp;&nbsp;allocators.temp_allocator_init(0, allocator)
-&nbsp;&nbsp;&nbsp;&nbsp;defer allocators.temp_allocator_destroy()
-
 &nbsp;&nbsp;&nbsp;&nbsp;SCREEN_WIDTH&nbsp;&nbsp;:: 800
 &nbsp;&nbsp;&nbsp;&nbsp;SCREEN_HEIGHT :: 600
 
-&nbsp;&nbsp;&nbsp;&nbsp;rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in Odin-Caio-Fork | 3_space_invaders")
+&nbsp;&nbsp;&nbsp;&nbsp;rl.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Raylib in Odin | 3_space_invaders")
 &nbsp;&nbsp;&nbsp;&nbsp;defer rl.CloseWindow()
 &nbsp;&nbsp;&nbsp;&nbsp;rl.SetTargetFPS(60)
 
@@ -750,11 +778,9 @@ main :: proc() {
 &nbsp;&nbsp;&nbsp;&nbsp;bullets: [MAX_BULLETS]Bullet // Stack allocation
 
 &nbsp;&nbsp;&nbsp;&nbsp;// Initialize enemies
-&nbsp;&nbsp;&nbsp;&nbsp;enemies, slice_err := slice.create(Enemy, 20, allocator) // Heap allocation, using context.allocator implicitly
-&nbsp;&nbsp;&nbsp;&nbsp;fmt.assertf(slice_err == nil, "Error '%v' when creating the slice", slice_err)
-&nbsp;&nbsp;&nbsp;&nbsp;defer _ = slice.delete(enemies, allocator)
-
-&nbsp;&nbsp;&nbsp;&nbsp;enemies_destroyed_count: uint
+&nbsp;&nbsp;&nbsp;&nbsp;enemies := make([]Enemy, 20) // Heap allocation, using context.allocator implicitly
+&nbsp;&nbsp;&nbsp;&nbsp;defer delete(enemies)
+&nbsp;&nbsp;&nbsp;&nbsp;enemies_destroyed_count := 0
 &nbsp;&nbsp;&nbsp;&nbsp;spawn_inactive_enemies(enemies)
 
 &nbsp;&nbsp;&nbsp;&nbsp;for !rl.WindowShouldClose() {
@@ -836,12 +862,11 @@ main :: proc() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Prints while doing a temporary allocation.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free_all_err := mem.free_all(allocators.temp_allocator)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fmt.assertf(free_all_err == nil, "Error '%v' when freeing the temp_allocator", free_all_err)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free_all(context.temp_allocator)
 &nbsp;&nbsp;&nbsp;&nbsp;}
 }
 
-spawn_bullet :: proc(bullets: []Bullet, pos: [2]f32) {
+spawn_bullet :: proc(bullets: []Bullet, pos: rl.Vector2) {
 &nbsp;&nbsp;&nbsp;&nbsp;for i in 0..&lt;len(bullets) {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if !bullets[i].active {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bullets[i].active&nbsp;&nbsp; = true
@@ -872,6 +897,80 @@ spawn_inactive_enemies :: proc(enemies: []Enemy) {
 &nbsp;&nbsp;&nbsp;&nbsp;}
 }
 </code></pre>
+<h3
+	id="other-examples" >
+    Other Examples
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/odin-lang/examples/tree/master/raylib" 
+				class="external-link" 
+				target="_blank" >
+                Odin Raylib Examples
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=8J4ZGy-yIyc&list=PLxE7SoPYTef1jYHJ6NxNgocVjQKkq7eEa&index=1" 
+				class="external-link" 
+				target="_blank" >
+                Odin + RayLib {Playlist}
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://gist.github.com/karl-zylinski/a23501d5e1cf585f82c5f8928bc73ab6" 
+						class="external-link" 
+						target="_blank" >
+                        Final file of the cat game
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://zylinski.se/odinraylib5/platform.png" 
+						class="external-link" 
+						target="_blank" >
+                        platform
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://zylinski.se/odinraylib3/cat_run.png" 
+						class="external-link" 
+						target="_blank" >
+                        cat-run
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <s>cat-idle</s>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I couldn't find the image, so I just took the cat-run and kept the first two frames.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
 
 				</article>
 			</main>
@@ -887,7 +986,7 @@ spawn_inactive_enemies :: proc(enemies: []Enemy) {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.71352.js" >
+			src="/static/studies.84003.js" >
 		</script>
 	</body>
 </html>

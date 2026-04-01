@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.90623.css" >
+			href="/static/studies.36613.css" >
 	</head>
 	<body>
 		<aside
@@ -857,8 +857,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-03-24" >
-                            | Updated: 2026-03-24
+							datetime="2026-03-31" >
+                            | Updated: 2026-03-31
 						</time>
 					</p>
 				</header>
@@ -4492,6 +4492,92 @@ layout(set = 0, binding = 0, std140) uniform SceneParams {
 <ul>
 	<li>
 		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            SSBOs and UBOs.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    Can I just put different data without restriction?
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Yes. See the SSBO section for that.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    SSBOs or UBOs?
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Using storage buffers exclusively instead of uniform buffers can increase GPU time on some architectures.
+						</p>
+					</li>
+					<li>
+						<p>
+                            I'll use SSBO, as that was the general recommendation.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Maybe I'll mix both.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            Should I store an array of textures inside a layout(set = 0, binding = 1) uniform sampler2D texs[256]; or inside a SSBO? what are the differences?
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Use sampler2D[] (descriptor arrays) for textures, not SSBOs. SSBOs are not designed to hold textures themselves.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You cannot store sampler2D or images inside an SSBO. Vulkan separates:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            resources (images, samplers) → descriptors
+						</p>
+					</li>
+					<li>
+						<p>
+                            data (numbers, structs) → buffers (SSBO/UBO)
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
             <code>DESCRIPTOR_TYPE_STORAGE_BUFFER</code>
 		</p>
 	</li>
@@ -6893,59 +6979,6 @@ vec4 data = subpassLoad(inputAttachment);
 <ul>
 	<li>
 		<p>
-			<input
-				type="checkbox" 
-				disabled=""
-				checked="">
-            SSBOs and UBOs.
-		</p>
-		<ul>
-			<li>
-				<p>
-					<input
-						type="checkbox" 
-						disabled=""
-						checked="">
-                    Can I just put different data without restriction?
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Yes. See the SSBO section for that.
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<p>
-					<input
-						type="checkbox" 
-						disabled=""
-						checked="">
-                    SSBOs or UBOs?
-				</p>
-				<ul>
-					<li>
-						<p>
-                            Using storage buffers exclusively instead of uniform buffers can increase GPU time on some architectures.
-						</p>
-					</li>
-					<li>
-						<p>
-                            I'll use SSBO, as that was the general recommendation.
-						</p>
-					</li>
-					<li>
-						<p>
-                            Maybe I'll mix both.
-						</p>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
             Globals:
 		</p>
 		<ul>
@@ -7090,7 +7123,7 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 				<ul>
 					<li>
 						<p>
-                            As input attributes, to then use Indirect Drawing.
+                            As input attributes with Indirect Drawing, to then use Bindless.
 						</p>
 					</li>
 				</ul>
@@ -9973,7 +10006,7 @@ pointer.v = 42.0;
 			</footer>
 		</main>
 		<script
-			src="/static/studies.90623.js" >
+			src="/static/studies.36613.js" >
 		</script>
 	</body>
 </html>

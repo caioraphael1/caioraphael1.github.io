@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.84003.css" >
+			href="/static/studies.66957.css" >
 	</head>
 	<body>
 		<aside
@@ -1215,8 +1215,35 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-sections.html" >
+                                    Sections
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-common-operations.html" >
                                     Common Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-jump-patterns.html" >
+                                    Jump Patterns
 								</a>
 							</li>
 						</ul>
@@ -1242,8 +1269,35 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-assembly-languages-assemblers.html" >
-                                    Assembly Languages / Assemblers
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-generating-the-assembly-via-code.html" >
+                                    Generating the Assembly via code
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-virtual-instruction-sets.html" >
+                                    Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-cpu-architectures-instructions-sets.html" >
+                                    CPU Architectures / Instructions Sets
 								</a>
 							</li>
 						</ul>
@@ -1554,8 +1608,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-04-01" >
-                            | Updated: 2026-04-01
+							datetime="2026-04-02" >
+                            | Updated: 2026-04-02
 						</time>
 					</p>
 				</header>
@@ -1703,8 +1757,24 @@ int main () {
 		<p>
             Syntax:
 		</p>
-<pre><code class="language-cpp" data-lang="cpp">for ( declaration : range ) statement;
+<pre><code class="language-cpp" data-lang="cpp">for (declaration : container) {
+&nbsp;&nbsp;&nbsp;&nbsp;// loop body
+}
 </code></pre>
+		<ul>
+			<li>
+				<p>
+                    <code>declaration</code>
+                    &nbsp;can be a value or reference.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>container</code>
+                    &nbsp;is the collection you want to iterate over.
+				</p>
+			</li>
+		</ul>
 	</li>
 	<li>
 		<p>
@@ -1717,18 +1787,26 @@ int main () {
 	</li>
 	<li>
 		<p>
+            Using as a reference:
+		</p>
+<pre><code class="language-cpp" data-lang="cpp">for (int &x : arr) {
+&nbsp;&nbsp;&nbsp;&nbsp;x *= 2;&nbsp;&nbsp;// modifies original array
+}
+</code></pre>
+	</li>
+	<li>
+		<p>
             Example:
 		</p>
 <pre><code class="language-cpp" data-lang="cpp">#include &lt;iostream&gt;
-#include &lt;string&gt;
 
-int main ()
-{
-&nbsp;&nbsp;&nbsp;&nbsp;std::string str {"Hello!"};
-&nbsp;&nbsp;&nbsp;&nbsp;for (char c : str){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; "[" &lt;&lt; c &lt;&lt; "]";
+int main() {
+&nbsp;&nbsp;&nbsp;&nbsp;int arr[] = {1, 2, 3, 4, 5};
+
+&nbsp;&nbsp;&nbsp;&nbsp;for (int x : arr) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; x &lt;&lt; " ";
 &nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; '\n';
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
 }
 </code></pre>
 	</li>
@@ -1895,7 +1973,7 @@ my_label:
 			</footer>
 		</main>
 		<script
-			src="/static/studies.84003.js" >
+			src="/static/studies.66957.js" >
 		</script>
 	</body>
 </html>

@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.84003.css" >
+			href="/static/studies.66957.css" >
 	</head>
 	<body>
 		<aside
@@ -1134,8 +1134,53 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-sections.html" >
+                                    Sections
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-directives.html" >
+                                    Directives
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#linker" 
+											class="summary-t3" >
+                                            Linker
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#data-definition" 
+											class="summary-t3" >
+                                            Data Definition
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-common-operations.html" >
                                     Common Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-jump-patterns.html" >
+                                    Jump Patterns
 								</a>
 							</li>
 						</ul>
@@ -1160,87 +1205,37 @@ window.MathJax = {
 						<ul>
 							<li>
 								<a
-									class="summary-t2-current" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-assembly-languages-assemblers.html" >
-                                    Assembly Languages / Assemblers
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-generating-the-assembly-via-code.html" >
+                                    Generating the Assembly via code
 								</a>
-								<ul>
-									<li>
-										<a
-											href="#x86-64-assembly" 
-											class="summary-t3" >
-                                            x86-64 Assembly
-										</a>
-										<ul>
-											<li>
-												<a
-													href="#intel-syntax" 
-													class="summary-t4" >
-                                                    Intel Syntax
-												</a>
-											</li>
-											<li>
-												<a
-													href="#atandt-syntax" 
-													class="summary-t4" >
-                                                    AT&amp;T syntax
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#arm-aarch64-assembly" 
-											class="summary-t3" >
-                                            ARM (AArch64) Assembly
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#risc-v-assembly" 
-											class="summary-t3" >
-                                            RISC-V Assembly
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#avr-assembly" 
-											class="summary-t3" >
-                                            AVR Assembly
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#pic-assembly" 
-											class="summary-t3" >
-                                            PIC Assembly
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#flat-assembler" 
-											class="summary-t3" >
-                                            flat assembler
-										</a>
-										<ul>
-										</ul>
-									</li>
-									<li>
-										<a
-											href="#urcl-universal-reduced-computer-language" 
-											class="summary-t3" >
-                                            URCL (Universal Reduced Computer Language)
-										</a>
-									</li>
-								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-virtual-instruction-sets.html" >
+                                    Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-cpu-architectures-instructions-sets.html" >
+                                    CPU Architectures / Instructions Sets
+								</a>
 							</li>
 						</ul>
 					</details>
@@ -1542,7 +1537,7 @@ window.MathJax = {
 				<header
 					id="note-header" >
 					<h1>
-                        Assembly Languages / Assemblers
+                        Directives
 					</h1>
 					<p>
 						<time
@@ -1550,385 +1545,225 @@ window.MathJax = {
                             🕒 Created: 2025-08-02
 						</time>
 						<time
-							datetime="2026-03-30" >
-                            | Updated: 2026-03-30
+							datetime="2026-04-02" >
+                            | Updated: 2026-04-02
 						</time>
 					</p>
 				</header>
 				<article
 					id="note-content" >
 <h3
-	id="x86-64-assembly" >
-    x86-64 Assembly
+	id="linker" >
+    Linker
 </h3>
-<h4
-	id="intel-syntax" >
-    Intel Syntax
-</h4>
 <ul>
 	<li>
 		<p>
-            Demonstrates: register moves, system call.
+            <code>global</code>
 		</p>
-	</li>
-</ul>
-<pre><code class="language-asm" data-lang="asm">; Linux x86-64: exit(0)
-section .text
-global _start
+		<ul>
+			<li>
+				<p>
+                    Makes a symbol visible outside the current object file.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Without it, labels are local to the file.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-asm" data-lang="asm">section .text
+
+_start:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; local symbol (not visible to linker)
+&nbsp;&nbsp;&nbsp;&nbsp;ret
+</code></pre>
+<pre><code class="language-asm" data-lang="asm">section .text
+global _start&nbsp;&nbsp;; export symbol
 
 _start:
-&nbsp;&nbsp;&nbsp;&nbsp;mov rax, 60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; syscall: exit
-&nbsp;&nbsp;&nbsp;&nbsp;mov rdi, 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; status
-&nbsp;&nbsp;&nbsp;&nbsp;syscall
+&nbsp;&nbsp;&nbsp;&nbsp;ret
 </code></pre>
-<ul>
+	</li>
 	<li>
 		<p>
-            Key traits
+            <code>extern</code>
 		</p>
 		<ul>
 			<li>
 				<p>
-                    CISC
-				</p>
-			</li>
-			<li>
-				<p>
-                    variable-length instructions
-				</p>
-			</li>
-			<li>
-				<p>
-                    many addressing modes
+                    Declares a symbol defined elsewhere.
 				</p>
 			</li>
 		</ul>
-	</li>
-</ul>
-<h4
-	id="atandt-syntax" >
-    AT&amp;T syntax
-</h4>
-<ul>
-	<li>
-		<p>
-            Same behavior, different syntax.
-		</p>
-	</li>
-</ul>
-<pre><code class="language-asm" data-lang="asm">.globl _start
-.text
-_start:
-&nbsp;&nbsp;&nbsp;&nbsp;mov $60, %rax
-&nbsp;&nbsp;&nbsp;&nbsp;mov $0, %rdi
-&nbsp;&nbsp;&nbsp;&nbsp;syscall
+<pre><code class="language-asm" data-lang="asm">extern printf
 </code></pre>
-<ul>
-	<li>
-		<p>
-            Notable differences
-		</p>
-		<ul>
-			<li>
-				<p>
-                    source, destination order reversed
-				</p>
-			</li>
-			<li>
-				<p>
-                    registers prefixed with %
-				</p>
-			</li>
-			<li>
-				<p>
-                    immediates prefixed with $
-				</p>
-			</li>
-			<li>
-				<p>
-                    These are syntactic differences only — same machine code.
-				</p>
-			</li>
-		</ul>
 	</li>
 </ul>
 <h3
-	id="arm-aarch64-assembly" >
-    ARM (AArch64) Assembly
+	id="data-definition" >
+    Data Definition
 </h3>
 <ul>
 	<li>
 		<p>
-            Demonstrates: fixed-width RISC instructions and syscall convention.
+            They are not CPU instructions. They are handled by the assembler to lay out bytes in memory.
 		</p>
 	</li>
-</ul>
-<pre><code class="language-asm" data-lang="asm">// Linux AArch64: exit(0)
-.global _start
-_start:
-&nbsp;&nbsp;&nbsp;&nbsp;mov x0, #0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// status
-&nbsp;&nbsp;&nbsp;&nbsp;mov x8, #93&nbsp;&nbsp;&nbsp;&nbsp; // syscall: exit
-&nbsp;&nbsp;&nbsp;&nbsp;svc #0
+	<li>
+		<p>
+            x86-64 is little-endian, so values are stored least-significant byte first.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>db</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    define byte
+				</p>
+			</li>
+			<li>
+				<p>
+                    1 byte
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>dw</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    define word
+				</p>
+			</li>
+			<li>
+				<p>
+                    2 bytes
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>dd</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    define double word (dword)
+				</p>
+			</li>
+			<li>
+				<p>
+                    4 bytes
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>dq</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    define quad word (qword)
+				</p>
+			</li>
+			<li>
+				<p>
+                    8 bytes
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>resb</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    reserve bytes
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>resw</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    reserve words
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>resd</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    reserve dwords
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>resq</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    reserve qwords
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Example:
+		</p>
+<pre><code class="language-asm" data-lang="asm">msg db "Hello", 0
 </code></pre>
-<ul>
-	<li>
-		<p>
-            Key traits
-		</p>
 		<ul>
 			<li>
 				<p>
-                    load/store architecture
-				</p>
-			</li>
-			<li>
-				<p>
-                    fixed instruction width
-				</p>
-			</li>
-			<li>
-				<p>
-                    many registers
+                    Equivalent to:
 				</p>
 			</li>
 		</ul>
-	</li>
-</ul>
-<h3
-	id="risc-v-assembly" >
-    RISC-V Assembly
-</h3>
-<ul>
-	<li>
-		<p>
-            Modern open ISA.
-		</p>
-	</li>
-	<li>
-		<p>
-            open standard
-		</p>
-	</li>
-	<li>
-		<p>
-            modular ISA
-		</p>
-	</li>
-	<li>
-		<p>
-            growing ecosystem
-		</p>
-	</li>
-	<li>
-		<p>
-            Used in:
-		</p>
-		<ul>
-			<li>
-				<p>
-                    research
-				</p>
-			</li>
-			<li>
-				<p>
-                    embedded
-				</p>
-			</li>
-			<li>
-				<p>
-                    experimental CPUs
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Demonstrates: very clean RISC design.
-		</p>
-	</li>
-</ul>
-<pre><code class="language-asm" data-lang="asm"># Linux RISC-V: exit(0)
-.global _start
-_start:
-&nbsp;&nbsp;&nbsp;&nbsp;li a0, 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# status
-&nbsp;&nbsp;&nbsp;&nbsp;li a7, 93&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # syscall: exit
-&nbsp;&nbsp;&nbsp;&nbsp;ecall
+<pre><code class="language-txt" data-lang="txt">48 65 6C 6C 6F 00
 </code></pre>
-<ul>
+	</li>
 	<li>
 		<p>
-            Key traits
+            Using 
+            <code>dq</code>
+            &nbsp;doesn’t guarantee alignment unless you explicitly request it:
 		</p>
-		<ul>
-			<li>
-				<p>
-                    minimal ISA
-				</p>
-			</li>
-			<li>
-				<p>
-                    highly regular
-				</p>
-			</li>
-			<li>
-				<p>
-                    open standard
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="avr-assembly" >
-    AVR Assembly
-</h3>
-<ul>
-	<li>
-		<p>
-            Demonstrates: simple microcontroller style.
-		</p>
-	</li>
-</ul>
-<pre><code class="language-asm" data-lang="asm">; AVR: infinite loop
-.global main
-main:
-loop:
-&nbsp;&nbsp;&nbsp;&nbsp;rjmp loop
+<pre><code class="language-asm" data-lang="asm">align 8
+value dq 1
 </code></pre>
-<ul>
-	<li>
-		<p>
-            Key traits
-		</p>
-		<ul>
-			<li>
-				<p>
-                    tiny register file
-				</p>
-			</li>
-			<li>
-				<p>
-                    Harvard architecture
-				</p>
-			</li>
-			<li>
-				<p>
-                    common in microcontrollers
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="pic-assembly" >
-    PIC Assembly
-</h3>
-<ul>
-	<li>
-		<p>
-            Demonstrates: banked register style.
-		</p>
 	</li>
 	<li>
 		<p>
-            Generic example
+            Floating point:
 		</p>
-	</li>
-</ul>
-<pre><code class="language-asm" data-lang="asm">; PIC: infinite loop
-org 0x0000
-goto $
-
-end
+<pre><code class="language-asm" data-lang="asm">pi&nbsp;&nbsp;dd 3.1415927&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; float (32-bit)
+piq dq 3.141592653589793 ; double (64-bit)
 </code></pre>
-<ul>
-	<li>
-		<p>
-            Key traits
-		</p>
-		<ul>
-			<li>
-				<p>
-                    very small cores
-				</p>
-			</li>
-			<li>
-				<p>
-                    banked memory
-				</p>
-			</li>
-			<li>
-				<p>
-                    embedded focus
-				</p>
-			</li>
-		</ul>
-	</li>
-</ul>
-<h3
-	id="flat-assembler" >
-    flat assembler
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://flatassembler.net/" 
-				class="external-link" 
-				target="_blank" >
-                flat assembler
-			</a>
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://github.com/kroq86/fasm-handbook" 
-				class="external-link" 
-				target="_blank" >
-                fasm handbook
-			</a>
-            .
-		</p>
-	</li>
-</ul>
-<h3
-	id="urcl-universal-reduced-computer-language" >
-    URCL (Universal Reduced Computer Language)
-</h3>
-<ul>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=zA5PxLtgB_E" 
-				class="external-link" 
-				target="_blank" >
-                URCL Showcase
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://www.youtube.com/watch?v=u7qcns4K344" 
-				class="external-link" 
-				target="_blank" >
-                URCL Explanation
-			</a>
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-			<a
-				href="https://github.com/ModPunchtree/URCL" 
-				class="external-link" 
-				target="_blank" >
-                URCL Github, Documentation and Discord
-			</a>
-            .
-		</p>
 	</li>
 </ul>
 
@@ -1946,7 +1781,7 @@ end
 			</footer>
 		</main>
 		<script
-			src="/static/studies.84003.js" >
+			src="/static/studies.66957.js" >
 		</script>
 	</body>
 </html>

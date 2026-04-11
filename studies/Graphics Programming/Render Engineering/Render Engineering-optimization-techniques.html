@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.67251.css" >
+			href="/static/studies.13869.css" >
 	</head>
 	<body>
 		<aside
@@ -193,6 +193,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Graphics Programming/Vulkan/Vulkan-mapping-data-to-shaders.html" >
                                     Mapping Data to Shaders
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Graphics Programming/Vulkan/Vulkan-shader-internals.html" >
+                                    Shader Internals
 								</a>
 							</li>
 						</ul>
@@ -452,6 +461,27 @@ window.MathJax = {
                                             AZDO (Approach Zero Driver Overhead)
 										</a>
 										<ul>
+											<li>
+												<a
+													href="#motivation" 
+													class="summary-t4" >
+                                                    Motivation
+												</a>
+											</li>
+											<li>
+												<a
+													href="#optimizations" 
+													class="summary-t4" >
+                                                    Optimizations
+												</a>
+											</li>
+											<li>
+												<a
+													href="#avoid-being-vertex-bound" 
+													class="summary-t4" >
+                                                    Avoid being Vertex Bound
+												</a>
+											</li>
 										</ul>
 									</li>
 									<li>
@@ -488,6 +518,34 @@ window.MathJax = {
                                             Culling
 										</a>
 										<ul>
+											<li>
+												<a
+													href="#hierarchical-z-buffer-culling" 
+													class="summary-t4" >
+                                                    Hierarchical Z-Buffer Culling
+												</a>
+											</li>
+											<li>
+												<a
+													href="#frustum-culling" 
+													class="summary-t4" >
+                                                    Frustum Culling
+												</a>
+											</li>
+											<li>
+												<a
+													href="#gpu-frustum-culling" 
+													class="summary-t4" >
+                                                    GPU Frustum Culling
+												</a>
+											</li>
+											<li>
+												<a
+													href="#cpu-frustum-culling" 
+													class="summary-t4" >
+                                                    CPU Frustum Culling
+												</a>
+											</li>
 										</ul>
 									</li>
 									<li>
@@ -825,8 +883,8 @@ window.MathJax = {
                             🕒 Created: 2025-07-03
 						</time>
 						<time
-							datetime="2026-04-01" >
-                            | Updated: 2026-04-01
+							datetime="2026-04-11" >
+                            | Updated: 2026-04-11
 						</time>
 					</p>
 				</header>
@@ -883,10 +941,10 @@ window.MathJax = {
 	id="azdo-approach-zero-driver-overhead" >
     AZDO (Approach Zero Driver Overhead)
 </h3>
-<h5
+<h4
 	id="motivation" >
     Motivation
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -942,42 +1000,17 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
-<h5
+<h4
 	id="optimizations" >
     Optimizations
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
-            Batch 
-            <code>vkCmdDrawIndexed</code>
-            : Multi-draw Indirect.
-		</p>
-		<ul>
-			<li>
-				<p>
-                    <code>vkCmdDrawIndexedIndirect</code>
-                    &nbsp;/ multi-draw indirect to let GPU consume a small indirect buffer with many draws in one driver call.
-				</p>
-			</li>
-			<li>
-				<p>
-                    Avoid binding vertex/index buffer per draw — bind the quad vertex/index buffer once and supply per-instance data via instance attributes or an SSBO.
-				</p>
-			</li>
-			<li>
-				<p>
-                    See 
-                    <a href="/studies/Graphics Programming/Vulkan/Vulkan.html#drawing-commands">
-                    Vulkan.md#Drawing Commands
-                    </a>
-                    .
-				</p>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
             Batch 
             <code>vkCmdPushConstants</code>
             .
@@ -992,16 +1025,51 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Batch 
-            <code>vkCmdBindDescriptorSets</code>
-            : using Bindless.
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            Texture Atlas.
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Bindless Textures.
+                    Pack multiple textures into atlases or a texture array and index into them.
 				</p>
 			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            Pre-record commands.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Useful if CPU-bound.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250909090542.png" width="450" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            Bindless Textures
+		</p>
+		<ul>
 			<li>
 				<p>
                     Bindless / descriptor indexing (
@@ -1029,37 +1097,75 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Batch textures: Texture Atlas.
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            Draw Indirect
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Pack multiple textures into atlases or a texture array and index into them.
+                    <code>vkCmdDrawIndexedIndirect</code>
+                    &nbsp;/ multi-draw indirect to let GPU consume a small indirect buffer with many draws in one driver call.
 				</p>
 			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            Pre-record commands.
-		</p>
-		<ul>
 			<li>
 				<p>
-                    Useful if CPU-bound.
+                    Avoid binding vertex/index buffer per draw — bind the quad vertex/index buffer once and supply per-instance data via instance attributes or an SSBO.
 				</p>
 			</li>
-		</ul>
-	</li>
-	<li>
-		<p>
-            GPU Culling:
-		</p>
-		<ul>
 			<li>
 				<p>
-                    <img src="assets/image_20250909090901.png" width="500" >
+                    See 
+                    <a href="/studies/Graphics Programming/Vulkan/Vulkan.html#drawing-commands">
+                    Vulkan.md#Drawing Commands
+                    </a>
                     .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The less drawcalls you use to render your scene, the better, as modern GPUs are really big and have a big ramp up/ramp down time. Big modern GPUs love when you give them massive amounts of work on each drawcall, as that way they can ramp up to 100% usage.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A Batch is a set of objects that matches material and mesh. Each batch will be rendered with one 
+                    <code>DrawIndirect</code>
+                    &nbsp;call that does instanced drawing. Each mesh pass (forward pass, shadow pass, others) contains an array of batches which it will use for rendering.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+				checked="">
+            Remove Input Attributes.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Not an optimization necesserly, but is sort of a consequence of using Indirect Drawing.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            GPU Frustum Culling:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Once we have that buffer uploaded and synced, we execute a compute shader that performs the culling.
 				</p>
 			</li>
 			<li>
@@ -1067,105 +1173,73 @@ window.MathJax = {
                     All culling passes would be a single pass, for performance reasons.
 				</p>
 			</li>
+			<li>
+				<p>
+                    Because it takes its parameters from a buffer, it is possible to use compute shaders to write into these buffers and do culling or LOD selection in compute shaders. Doing culling this way is one of the simplest and most performant ways of doing culling. Due to the power of the GPU you can easily expect to cull more than a million objects in less than half a millisecond. Normal scenes don’t tend to go as far. In more advanced pipelines like the one in Dragon Age or Rainbow Six, they go one step further and also cull individual triangles from the meshes. They do that by writing an output Index Buffer with the surviving triangles and using indirect to draw that.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Store the matrices for all loaded objects into a big SSBO. In GPU driven pipelines, we also want to store more data, such as material ID and cull bounds.
+				</p>
+			</li>
+			<li>
+				<p>
+                    GPU driven pipelines work best when the amount of binds is as limited as possible. Best case scenario is to do a extremely minimal amount of 
+                    <code>BindVertexBuffer</code>
+                    , 
+                    <code>BindIndexBuffer</code>
+                    , 
+                    <code>BindPipeline</code>
+                    , and 
+                    <code>BindDescriptorSet</code>
+                    &nbsp;calls.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://pulsegeek.com/articles/gpu-culling-occlusion-frustum-and-smart-skips/" 
+						class="external-link" 
+						target="_blank" >
+                        Ethan Palmer - GPU Culling: Occlusion, Frustum, and Smart Skips
+					</a>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Great read.
+						</p>
+					</li>
+				</ul>
+			</li>
 		</ul>
 	</li>
-</ul>
-<h6
-	id="etc" >
-    Etc
-</h6>
-<ul>
 	<li>
-		<p
-			class="line-emphasis" >
-            Once we have a renderer where everything is stored in big GPU buffers, and we don’t use PushConstants or descriptor sets per object, we are ready to go with a GPU-driven-renderer.
+		<p>
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            Physical Storage Buffer (
+            <code>KHR_buffer_device_address</code>
+            )
 		</p>
 	</li>
 	<li>
 		<p>
-            Because it takes its parameters from a buffer, it is possible to use compute shaders to write into these buffers and do culling or LOD selection in compute shaders. Doing culling this way is one of the simplest and most performant ways of doing culling. Due to the power of the GPU you can easily expect to cull more than a million objects in less than half a millisecond. Normal scenes don’t tend to go as far. In more advanced pipelines like the one in Dragon Age or Rainbow Six, they go one step further and also cull individual triangles from the meshes. They do that by writing an output Index Buffer with the surviving triangles and using indirect to draw that.
-		</p>
-	</li>
-	<li>
-		<p>
-            Store the matrices for all loaded objects into a big SSBO. In GPU driven pipelines, we also want to store more data, such as material ID and cull bounds.
-		</p>
-	</li>
-	<li>
-		<p>
-            GPU driven pipelines work best when the amount of binds is as limited as possible. Best case scenario is to do a extremely minimal amount of BindVertexBuffer, BindIndexBuffer, BindPipeline, and BindDescriptorSet calls.
-		</p>
-	</li>
-	<li>
-		<p>
-            The less drawcalls you use to render your scene, the better, as modern GPUs are really big and have a big ramp up/ramp down time. Big modern GPUs love when you give them massive amounts of work on each drawcall, as that way they can ramp up to 100% usage.
-		</p>
-	</li>
-	<li>
-		<p>
-            The new Unreal 5 engine relies heavily on compute shaders for software rasterization.
-		</p>
-	</li>
-	<li>
-		<p>
-            The first thing is to go all in on object data in GPU buffers. Per-object PushConstants are removed, per-object dynamic uniform buffers are removed, and everything is replaced by ObjectBuffer where we store the object matrix and we index into it from the shader.
-		</p>
-	</li>
-	<li>
-		<p>
-            A Batch is a set of objects that matches material and mesh. Each batch will be rendered with one DrawIndirect call that does instanced drawing. Each mesh pass (forward pass, shadow pass, others) contains an array of batches which it will use for rendering.
-		</p>
-	</li>
-	<li>
-		<p>
-            When starting the frame, we sync the objects that are on each mesh pass into a buffer. This buffer will be an array of ObjectID + BatchID. The BatchID maps directly as an index into the batch array of the mesh-pass.
-		</p>
-	</li>
-	<li>
-		<p>
-            Once we have that buffer uploaded and synced, we execute a compute shader that performs the culling.
-		</p>
-	</li>
-	<li>
-		<p>
-            For every object in said array of ObjectID + BatchID pairs, we access the object data in the ObjectBuffer using the ObjectID, and check if it is visible. If it’s visible, we use the BatchID index to insert the draw into the Batches array, which contains the draw indirect calls, increasing the instance count. We also write it into the indirection buffer that maps from the instance ID of each batch into the ObjectID.
-		</p>
-	</li>
-	<li>
-		<p>
-            With that done, on the CPU side we iterate over the batches in a mesh pass, and execute each of them in order, making sure to bind each batch pipeline and material descriptor set. The gpu will then use the parameters it just wrote into from the culling pass to render the objects.
-		</p>
-	</li>
-	<li>
-		<p>
-            Buffer Storage.
-		</p>
-	</li>
-	<li>
-		<p>
-            Direct State Access.
-		</p>
-	</li>
-	<li>
-		<p>
-            Shader Buffer Load.
-		</p>
-	</li>
-	<li>
-		<p>
-            UBO &amp; SSBO.
-		</p>
-	</li>
-	<li>
-		<p>
-            and more...
+			<input
+				type="checkbox" 
+				disabled=""
+>
+            Mesh Shaders
 		</p>
 	</li>
 </ul>
-<h5
+<h4
 	id="avoid-being-vertex-bound" >
     Avoid being Vertex Bound
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -1726,33 +1800,21 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            <img src="assets/image_20250909090542.png" width="450" >
-            .
-		</p>
-	</li>
-	<li>
-		<p>
-            <img src="assets/image_20250909090657.png" width="500" >
-            .
-		</p>
-	</li>
-</ul>
-<h5
-	id="culling" >
-    Culling
-</h5>
-<ul>
-	<li>
-		<p>
 			<a
 				href="https://docs.godotengine.org/en/stable/tutorials/3d/occlusion_culling.html" 
 				class="external-link" 
 				target="_blank" >
-                Godot 4 - Occlusion Culling
+                How Godot 4 does Occlusion Culling
 			</a>
             .
 		</p>
 	</li>
+</ul>
+<h4
+	id="hierarchical-z-buffer-culling" >
+    Hierarchical Z-Buffer Culling
+</h4>
+<ul>
 	<li>
 		<p>
 			<input
@@ -1815,10 +1877,10 @@ window.MathJax = {
 		</ul>
 	</li>
 </ul>
-<h5
+<h4
 	id="frustum-culling" >
     Frustum Culling
-</h5>
+</h4>
 <ul>
 	<li>
 		<p>
@@ -1894,32 +1956,58 @@ window.MathJax = {
 				</p>
 			</li>
 			<li>
-				<p
-					class="line-emphasis" >
-                    For characters, you would use different models with different poly count, rendering the correct one based on the distance to the camera.
+				<p>
+                    LOD: For characters, you would use different models with different poly count, rendering the correct one based on the distance to the camera.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="gpu-frustum-culling" >
+    GPU Frustum Culling
+</h4>
+<ul>
+	<li>
+		<p>
+            Compute-based Culling / Depth Pyramid Culling:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250909090657.png" width="500" >
+                    .
 				</p>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<p>
-			<strong>
-                CPU Frustum Culling
-			</strong>
-            :
+			<a
+				href="https://github.com/KhronosGroup/Vulkan-Samples/tree/main/samples/performance/multi_draw_indirect" 
+				class="external-link" 
+				target="_blank" >
+                Vulkan Sample - GPU Rendering and Multi-Draw Indirect
+			</a>
 		</p>
-		<ul>
-			<li>
-				<p>
-                    The way this works is that we transform each of the 8 corners of the mesh-space bounding box into screen space, using the object matrix and view-projection matrix. From those, we find the screen-space box bounds, and we check if that box is inside the clip-space view. This way of calculating bounds is on the slow side compared to other formulas, and can have false-positives where it thinks objects are visible when they aren't. All the functions have different tradeoffs, and this one was selected for code simplicity and parallels with the functions we are doing on the vertex shaders.
-				</p>
-			</li>
-			<li>
-				<p>
-                    We check for visibility before drawing.
-				</p>
-			</li>
-		</ul>
+	</li>
+</ul>
+<h4
+	id="cpu-frustum-culling" >
+    CPU Frustum Culling
+</h4>
+<ul>
+	<li>
+		<p>
+            The way this works is that we transform each of the 8 corners of the mesh-space bounding box into screen space, using the object matrix and view-projection matrix. From those, we find the screen-space box bounds, and we check if that box is inside the clip-space view. This way of calculating bounds is on the slow side compared to other formulas, and can have false-positives where it thinks objects are visible when they aren't. All the functions have different tradeoffs, and this one was selected for code simplicity and parallels with the functions we are doing on the vertex shaders.
+		</p>
+	</li>
+	<li>
+		<p>
+            We check for visibility before drawing.
+		</p>
+	</li>
+</ul>
 <pre><code class="language-glsl" data-lang="glsl">bool is_visible(const RenderObject& obj, const glm::mat4& viewproj) {
 &nbsp;&nbsp;&nbsp;&nbsp;std::array&lt;glm::vec3, 8&gt; corners {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glm::vec3 { 1, 1, 1 },
@@ -1958,7 +2046,7 @@ window.MathJax = {
 &nbsp;&nbsp;&nbsp;&nbsp;}
 }
 </code></pre>
-	</li>
+<ul>
 	<li>
 		<p>
             VkGuide:
@@ -2792,7 +2880,7 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 			</footer>
 		</main>
 		<script
-			src="/static/studies.67251.js" >
+			src="/static/studies.13869.js" >
 		</script>
 	</body>
 </html>

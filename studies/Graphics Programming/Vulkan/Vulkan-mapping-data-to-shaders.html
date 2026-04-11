@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.67251.css" >
+			href="/static/studies.13869.css" >
 	</head>
 	<body>
 		<aside
@@ -335,6 +335,15 @@ window.MathJax = {
 										</a>
 									</li>
 								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Graphics Programming/Vulkan/Vulkan-shader-internals.html" >
+                                    Shader Internals
+								</a>
 							</li>
 						</ul>
 						<ul>
@@ -857,8 +866,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-03-31" >
-                            | Updated: 2026-03-31
+							datetime="2026-04-09" >
+                            | Updated: 2026-04-09
 						</time>
 					</p>
 				</header>
@@ -6979,7 +6988,60 @@ vec4 data = subpassLoad(inputAttachment);
 <ul>
 	<li>
 		<p>
-            Globals:
+            In non-indirect, the drawing can be made by 
+            <code>rd.sprite_draw(cmd, &world.bg_neve)</code>
+            , but with indirect, the call will be something like 
+            <code>rd.sprites_draw(cmd, { sprite1, sprite2... })</code>
+            ; the data will no longer be passed as push constants, the only useful data is the instance index. A 
+            <code>[]Draw_Data</code>
+            &nbsp;will be used inside the shader, using the instance index for that, getting the information of the other indices.
+		</p>
+	</li>
+	<li>
+		<p>
+            Check 'Vulkan.md -&gt; Render Loop -&gt; Drawing Commands -&gt; Draw Indirect'.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Profiling
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    With 
+                    <code>window_render_queue_recording</code>
+                    &nbsp;on repeat, I get ~100fps; with it off, I get ~500fps.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Seems that the lag is just from the CPU.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    No Y-Sort is being done. Total of 434 draws inside the layers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I'm CPU bound, for sure.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Globals
+			</strong>
+            :
 		</p>
 		<ul>
 			<li>
@@ -6996,7 +7058,10 @@ vec4 data = subpassLoad(inputAttachment);
 	</li>
 	<li>
 		<p>
-            Material Data:
+			<strong>
+                Material Data
+			</strong>
+            :
 		</p>
 		<ul>
 			<li>
@@ -7015,7 +7080,10 @@ vec4 data = subpassLoad(inputAttachment);
 	</li>
 	<li>
 		<p>
-            Model Matrix / Transforms:
+			<strong>
+                Model Matrix / Transforms
+			</strong>
+            :
 		</p>
 		<ul>
 			<li>
@@ -7029,7 +7097,10 @@ vec4 data = subpassLoad(inputAttachment);
 	</li>
 	<li>
 		<p>
-            Draw Data:
+			<strong>
+                Draw Data
+			</strong>
+            :
 		</p>
 		<ul>
 			<li>
@@ -7072,7 +7143,10 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 	</li>
 	<li>
 		<p>
-            Overall:
+			<strong>
+                Overall
+			</strong>
+            :
 		</p>
 		<ul>
 			<li>
@@ -7132,7 +7206,10 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 	</li>
 	<li>
 		<p>
-            Slots:
+			<strong>
+                Slots
+			</strong>
+            :
 		</p>
 		<ul>
 			<li>
@@ -7154,7 +7231,10 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 	</li>
 	<li>
 		<p>
-            Vertex:
+			<strong>
+                Vertex
+			</strong>
+            :
 		</p>
 		<ul>
 			<li>
@@ -7254,6 +7334,266 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 				</ul>
 			</li>
 		</ol>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Design
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I want the resources to be able to change. Easy access to modification. This is not just blind flexibility, but a way to make working with shaders easier.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                For textures
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p
+					class="line-emphasis" >
+                    To change the desc set, I 
+					<strong>
+                        have
+					</strong>
+                    &nbsp;to change the textures. I need a reference to it. It's a relation between desc set and image (resource).
+				</p>
+			</li>
+			<li>
+				<p
+					class="line-emphasis" >
+                    The problem with the resource holding the index, is that only 1 desc set can be used per resource; the same texture can no longer belong to different desc sets.
+				</p>
+				<ul>
+					<li>
+						<p
+							class="line-emphasis" >
+                            If a desc set with globals is bound, one graphics pipeline might use it differently then the composite pipeline, for example.-
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<ol>
+			<li>
+				<p>
+					<input
+						type="checkbox" 
+						disabled=""
+						checked="">
+                    The sprite stores a stable handle to the texture, where the texture is stored inside a &quot;stable array&quot;:
+				</p>
+				<ol>
+					<li>
+						<p>
+							<input
+								type="checkbox" 
+								disabled=""
+								checked="">
+                            Storing the texture inside a sparse_set:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Done, as part of the ECS design.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <s>Storing the texture inside a handle_map</s>:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Each &quot;thing&quot; inside a 
+                                    <code>handle_map</code>
+                                    &nbsp;has to be a struct containing a 
+                                    <code>.handle</code>
+                                    &nbsp;entry; the type of handle from the &quot;thing&quot; and the type of handle used to create the 
+                                    <code>handle_map</code>
+                                    &nbsp;must match.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            &quot;I have a card to a list of things. This card will give me a result that can or not be nil. If the result is not nil, a check is made so the internals of the result match what it was expected from the handle; this avoids a handle giving a old result&quot;.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    This &quot;identity check&quot; could be made without having to change the &quot;thing&quot; to hold the handle as well; avoiding 
+                                                    <code>.handle</code>
+                                                    &nbsp;inside the stored data.
+												</p>
+												<ul>
+													<li>
+														<p>
+                                                            Why would I do that? I don't like how the process of using a handle, which should just basically be a &quot;safe pointer and index to an array&quot; has to change the data struct itself it is storing.
+														</p>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    I don't love this solution, as it's not even that cache efficient.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<p>
+                    <s>The sprite stores a pointer to the texture, where the texture is stored inside an array</s>:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This pointer is not stable, as removing a texture from the array makes every other pointer to the array to be incorrect.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>The sprite stores the texture itself</s>:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It's a copy, and a bad one.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>The desc set stores the 
+                    <code>texture_idx</code>
+                    , where the texture is stored in a separate container</s>.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            No actual reason to do that.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It 
+							<em>
+                                could
+							</em>
+                            &nbsp;make sense that the desc set keep track of bound things, but it doesn't make sense that the sprite wouldn't store the information about what the sprite is using.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    In this context, the sprite is either OOP, storing the information inside itself, or it's DOD, by using the sprite itself as handle and accessing a texture container using this handle.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <s>The sprite stores the 
+                    <code>texture_idx</code>
+                    </s>:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The sprite would store the information about how a texture and a desc set relate.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This can be a bit odd. If the desc set is updated, or a texture change, the sprite is the last to know, and it may not know.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This is a consequence of not storing a reference to something, but a concrete data, while the sprite doesn't own that data. It's a copy of something that the sprite has no agency over.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</li>
+	<li>
+		<p>
+			<strong>
+                For transforms
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p
+					class="line-emphasis" >
+                    I don't like how there's duplicate information. The sprite 
+					<strong>
+                        owns
+					</strong>
+                    &nbsp;the transform information, but now it needs to consult on a 
+                    <code>array_of_transforms</code>
+                    &nbsp;to know of which it will use inside the shader to actually get the transform information. &quot;The sprite owns, but it kinda gives this ownership to an array, and now has to consult this array&quot;; weird. This is ok for textures, as the sprite 
+					<strong>
+                        doesn't own
+					</strong>
+                    &nbsp;the texture.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The transforms has to be stored inside an array with a buffer-SSBO.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This requires a 
+                    <code>mem.copy</code>
+                    &nbsp;to the region. The desc set is just a host-visible region. There need to be a cpu-struct that holds the information before copying it to this host-visible region, just like:
+				</p>
+<pre><code class="language-odin" data-lang="odin">rd.buffer_mapped_set_data(_game.shader_set0_bind0[frame_idx], Scene_Globals_2D{ 
+&nbsp;&nbsp;&nbsp;&nbsp;view_matrix = _game.camera.view_matrix,
+&nbsp;&nbsp;&nbsp;&nbsp;proj_matrix = _game.camera.proj_matrix,
+})
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    The desc set does 
+					<em>
+                        not
+					</em>
+                    &nbsp;need to be written/updated. It's just a 
+                    <code>mem.copy</code>
+                    &nbsp;from the cpu-struct to the host-visible region.
+				</p>
+			</li>
+		</ul>
 	</li>
 </ul>
 <h5
@@ -10006,7 +10346,7 @@ pointer.v = 42.0;
 			</footer>
 		</main>
 		<script
-			src="/static/studies.67251.js" >
+			src="/static/studies.13869.js" >
 		</script>
 	</body>
 </html>

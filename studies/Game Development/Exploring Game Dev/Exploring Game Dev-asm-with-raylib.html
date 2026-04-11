@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.67251.css" >
+			href="/static/studies.13869.css" >
 	</head>
 	<body>
 		<aside
@@ -471,8 +471,8 @@ window.MathJax = {
                             🕒 Created: 2026-04-01
 						</time>
 						<time
-							datetime="2026-04-02" >
-                            | Updated: 2026-04-02
+							datetime="2026-04-03" >
+                            | Updated: 2026-04-03
 						</time>
 					</p>
 				</header>
@@ -564,7 +564,7 @@ section .data
 &nbsp;&nbsp;&nbsp;&nbsp;radius&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dd 50.0
 
 &nbsp;&nbsp;&nbsp;&nbsp;; Null-terminated C strings.
-&nbsp;&nbsp;&nbsp;&nbsp;msg db "move the ball_pos with arrow keys",0
+&nbsp;&nbsp;&nbsp;&nbsp;msg&nbsp;&nbsp; db "move the ball_pos with arrow keys",0
 &nbsp;&nbsp;&nbsp;&nbsp;title db "Raylib ASM",0
 
 &nbsp;&nbsp;&nbsp;&nbsp;; key codes (raylib)
@@ -598,12 +598,12 @@ main:
 &nbsp;&nbsp;&nbsp;&nbsp;call SetTargetFPS
 
 &nbsp;&nbsp;&nbsp;&nbsp;; ball_pos.x = width * 0.5
-&nbsp;&nbsp;&nbsp;&nbsp;cvtsi2ss xmm0, dword [SCREEN_WIDTH]
+&nbsp;&nbsp;&nbsp;&nbsp;cvtsi2ss xmm0, [SCREEN_WIDTH]
 &nbsp;&nbsp;&nbsp;&nbsp;mulss xmm0, [half]
 &nbsp;&nbsp;&nbsp;&nbsp;movss [ball_pos], xmm0
 
 &nbsp;&nbsp;&nbsp;&nbsp;; ball_pos.y = height * 0.5
-&nbsp;&nbsp;&nbsp;&nbsp;cvtsi2ss xmm0, dword [SCREEN_HEIGHT]
+&nbsp;&nbsp;&nbsp;&nbsp;cvtsi2ss xmm0, [SCREEN_HEIGHT]
 &nbsp;&nbsp;&nbsp;&nbsp;mulss xmm0, [half]
 &nbsp;&nbsp;&nbsp;&nbsp;movss [ball_pos+4], xmm0
 
@@ -619,7 +619,7 @@ main:
 &nbsp;&nbsp;&nbsp;&nbsp;jz .not_key_right_down
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;movss xmm0, [ball_pos]
-&nbsp;&nbsp;&nbsp;&nbsp;addss xmm0, dword [speed]
+&nbsp;&nbsp;&nbsp;&nbsp;addss xmm0, [speed]
 &nbsp;&nbsp;&nbsp;&nbsp;movss [ball_pos], xmm0
 
 .not_key_right_down:
@@ -630,7 +630,7 @@ main:
 &nbsp;&nbsp;&nbsp;&nbsp;jz .not_key_left_down
 
 &nbsp;&nbsp;&nbsp;&nbsp;movss xmm0, [ball_pos]
-&nbsp;&nbsp;&nbsp;&nbsp;subss xmm0, dword [speed]
+&nbsp;&nbsp;&nbsp;&nbsp;subss xmm0, [speed]
 &nbsp;&nbsp;&nbsp;&nbsp;movss [ball_pos], xmm0
 
 .not_key_left_down:
@@ -641,7 +641,7 @@ main:
 &nbsp;&nbsp;&nbsp;&nbsp;jz .not_key_up_down
 
 &nbsp;&nbsp;&nbsp;&nbsp;movss xmm0, [ball_pos+4]
-&nbsp;&nbsp;&nbsp;&nbsp;subss xmm0, dword [speed]
+&nbsp;&nbsp;&nbsp;&nbsp;subss xmm0, [speed]
 &nbsp;&nbsp;&nbsp;&nbsp;movss [ball_pos+4], xmm0
 
 .not_key_up_down:
@@ -652,14 +652,14 @@ main:
 &nbsp;&nbsp;&nbsp;&nbsp;jz .not_key_down_down
 
 &nbsp;&nbsp;&nbsp;&nbsp;movss xmm0, [ball_pos+4]
-&nbsp;&nbsp;&nbsp;&nbsp;addss xmm0, dword [speed]
+&nbsp;&nbsp;&nbsp;&nbsp;addss xmm0, [speed]
 &nbsp;&nbsp;&nbsp;&nbsp;movss [ball_pos+4], xmm0
 
 .not_key_down_down:
 &nbsp;&nbsp;&nbsp;&nbsp;; Draw
 &nbsp;&nbsp;&nbsp;&nbsp;call BeginDrawing
 
-&nbsp;&nbsp;&nbsp;&nbsp;mov eax, dword [RAYWHITE]
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, [RAYWHITE]
 &nbsp;&nbsp;&nbsp;&nbsp;mov ecx, eax
 &nbsp;&nbsp;&nbsp;&nbsp;call ClearBackground
 
@@ -668,14 +668,14 @@ main:
 &nbsp;&nbsp;&nbsp;&nbsp;mov edx, 10
 &nbsp;&nbsp;&nbsp;&nbsp;mov r8d, 10
 &nbsp;&nbsp;&nbsp;&nbsp;mov r9d, 20
-&nbsp;&nbsp;&nbsp;&nbsp;mov eax, dword [DARKGRAY]
-&nbsp;&nbsp;&nbsp;&nbsp;mov dword [rsp+32], eax
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, [DARKGRAY]
+&nbsp;&nbsp;&nbsp;&nbsp;mov [rsp+32], eax
 &nbsp;&nbsp;&nbsp;&nbsp;call DrawText
 
 &nbsp;&nbsp;&nbsp;&nbsp;; DrawCircleV(Vector2 pos, float radius, Color color)
 &nbsp;&nbsp;&nbsp;&nbsp;mov rcx, [ball_pos]
 &nbsp;&nbsp;&nbsp;&nbsp;movss xmm1, [radius]
-&nbsp;&nbsp;&nbsp;&nbsp;mov r8d, dword [MAROON]
+&nbsp;&nbsp;&nbsp;&nbsp;mov r8d, [MAROON]
 &nbsp;&nbsp;&nbsp;&nbsp;call DrawCircleV
 
 &nbsp;&nbsp;&nbsp;&nbsp;call EndDrawing
@@ -702,7 +702,7 @@ main:
 			</footer>
 		</main>
 		<script
-			src="/static/studies.67251.js" >
+			src="/static/studies.13869.js" >
 		</script>
 	</body>
 </html>

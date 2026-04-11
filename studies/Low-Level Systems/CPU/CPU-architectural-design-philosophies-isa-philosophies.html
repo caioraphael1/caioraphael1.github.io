@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.67251.css" >
+			href="/static/studies.13869.css" >
 	</head>
 	<body>
 		<aside
@@ -225,7 +225,8 @@ window.MathJax = {
 						</ul>
 					</details>
 					<details
-						class="summary-t1-other" >
+						open=""
+						class="summary-t1-current" >
 						<summary>
                             CPU
 						</summary>
@@ -244,6 +245,60 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/CPU/CPU-physical-structure.html" >
                                     Physical Structure
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-architectures-instructions-sets-architectures-isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/Low-Level Systems/CPU/CPU-architectural-design-philosophies-isa-philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#cisc-complex-instruction-set-computer" 
+											class="summary-t3" >
+                                            CISC (Complex Instruction Set Computer)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#risc-reduced-instruction-set-computer" 
+											class="summary-t3" >
+                                            RISC (Reduced Instruction Set Computer)
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-registers.html" >
+                                    Registers
 								</a>
 							</li>
 						</ul>
@@ -1089,8 +1144,7 @@ window.MathJax = {
 						</ul>
 					</details>
 					<details
-						open=""
-						class="summary-t1-current" >
+						class="summary-t1-other" >
 						<summary>
                             Assembly - ASM
 						</summary>
@@ -1101,26 +1155,6 @@ window.MathJax = {
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-my-notes.html" >
                                     My Notes
 								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-architectural-specifications.html" >
-                                    Architectural Specifications
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-current" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-microarchitecture.html" >
-                                    Microarchitecture
-								</a>
-								<ul>
-								</ul>
 							</li>
 						</ul>
 						<ul>
@@ -1154,8 +1188,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-common-operations.html" >
-                                    Common Operations
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-operations.html" >
+                                    Operations
 								</a>
 							</li>
 						</ul>
@@ -1174,6 +1208,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-calling-conventions.html" >
                                     Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-representing-structs.html" >
+                                    Representing Structs
 								</a>
 							</li>
 						</ul>
@@ -1210,15 +1253,6 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-virtual-instruction-sets.html" >
                                     Virtual instruction sets
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-cpu-architectures-instructions-sets.html" >
-                                    CPU Architectures / Instructions Sets
 								</a>
 							</li>
 						</ul>
@@ -1521,16 +1555,16 @@ window.MathJax = {
 				<header
 					id="note-header" >
 					<h1>
-                        Microarchitecture
+                        Architectural Design Philosophies (ISA Philosophies)
 					</h1>
 					<p>
 						<time
-							datetime="2025-08-02" >
-                            🕒 Created: 2025-08-02
+							datetime="2025-07-22" >
+                            🕒 Created: 2025-07-22
 						</time>
 						<time
-							datetime="2026-04-02" >
-                            | Updated: 2026-04-02
+							datetime="2026-04-03" >
+                            | Updated: 2026-04-03
 						</time>
 					</p>
 				</header>
@@ -1539,81 +1573,210 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            Hardware implementation strategy
+            Describe how ISA is shaped, not how the CPU internally executes instructions.
+		</p>
+	</li>
+</ul>
+<h3
+	id="cisc-complex-instruction-set-computer" >
+    CISC (Complex Instruction Set Computer)
+</h3>
+<ul>
+	<li>
+		<p>
+            CISC is a CPU design philosophy that favors powerful, complex instructions.
 		</p>
 	</li>
 	<li>
 		<p>
-            This is the level that actually includes:
+            Original goals (1970s)
 		</p>
 		<ul>
 			<li>
 				<p>
-                    pipelines
+                    reduce number of instructions per program
 				</p>
 			</li>
 			<li>
 				<p>
-                    out-of-order execution
+                    make compilers simpler
 				</p>
 			</li>
 			<li>
 				<p>
-                    branch prediction
-				</p>
-			</li>
-			<li>
-				<p>
-                    caches
-				</p>
-			</li>
-			<li>
-				<p>
-                    execution units
-				</p>
-			</li>
-			<li>
-				<p>
-                    reorder buffers
-				</p>
-			</li>
-			<li>
-				<p>
-                    µop translation
+                    save memory (important at the time)
 				</p>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<p>
-            Two CPUs can share the same ISA but have completely different microarchitectures.
-		</p>
-	</li>
-	<li>
-		<p>
-            Example
+            Typical characteristics
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Both run x86-64:
+                    variable-length instructions
 				</p>
-				<ul>
-					<li>
-						<p>
-                            Intel Skylake
-						</p>
-					</li>
-					<li>
-						<p>
-                            AMD Zen
-						</p>
-					</li>
-				</ul>
 			</li>
 			<li>
 				<p>
-                    but internally they are very different machines.
+                    many addressing modes
+				</p>
+			</li>
+			<li>
+				<p>
+                    instructions that perform multiple operations
+				</p>
+			</li>
+			<li>
+				<p>
+                    memory-to-memory operations possible
+				</p>
+			</li>
+			<li>
+				<p>
+                    irregular encoding
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            One instruction, many internal steps.
+		</p>
+	</li>
+	<li>
+		<p>
+            Example ISA
+		</p>
+		<ul>
+			<li>
+				<p>
+                    x86
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Example sequence (conceptual):
+		</p>
+<pre><code class="language-asm" data-lang="asm">add [mem1], [mem2]
+</code></pre>
+	</li>
+</ul>
+<h3
+	id="risc-reduced-instruction-set-computer" >
+    RISC (Reduced Instruction Set Computer)
+</h3>
+<ul>
+	<li>
+		<p>
+            RISC is a philosophy favoring simple, uniform instructions.
+		</p>
+	</li>
+	<li>
+		<p>
+            Original goals (1980s)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    make pipelines efficient
+				</p>
+			</li>
+			<li>
+				<p>
+                    enable higher clock speeds
+				</p>
+			</li>
+			<li>
+				<p>
+                    simplify hardware
+				</p>
+			</li>
+			<li>
+				<p>
+                    rely more on the compiler
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Typical characteristics
+		</p>
+		<ul>
+			<li>
+				<p>
+                    fixed instruction width
+				</p>
+			</li>
+			<li>
+				<p>
+                    load/store architecture
+				</p>
+			</li>
+			<li>
+				<p>
+                    many general-purpose registers
+				</p>
+			</li>
+			<li>
+				<p>
+                    simple addressing modes
+				</p>
+			</li>
+			<li>
+				<p>
+                    usually one operation per instruction
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Example ISAs
+		</p>
+		<ul>
+			<li>
+				<p>
+                    ARM
+				</p>
+			</li>
+			<li>
+				<p>
+                    MIPS
+				</p>
+			</li>
+			<li>
+				<p>
+                    RISC-V
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Example sequence:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Instead of one complex instruction:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-asm" data-lang="asm">ldr r0, [mem1]
+ldr r1, [mem2]
+add r0, r0, r1
+str r0, [mem1]
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    More instructions, but each is simple and predictable.
 				</p>
 			</li>
 		</ul>
@@ -1634,7 +1797,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.67251.js" >
+			src="/static/studies.13869.js" >
 		</script>
 	</body>
 </html>

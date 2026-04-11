@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.67251.css" >
+			href="/static/studies.13869.css" >
 	</head>
 	<body>
 		<aside
@@ -244,6 +244,42 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/CPU/CPU-physical-structure.html" >
                                     Physical Structure
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-architectures-instructions-sets-architectures-isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-architectural-design-philosophies-isa-philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-registers.html" >
+                                    Registers
 								</a>
 							</li>
 						</ul>
@@ -1107,24 +1143,6 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-architectural-specifications.html" >
-                                    Architectural Specifications
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-microarchitecture.html" >
-                                    Microarchitecture
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-abi-application-binary-interface.html" >
                                     ABI (Application Binary Interface)
 								</a>
@@ -1149,6 +1167,15 @@ window.MathJax = {
 								<ul>
 									<li>
 										<a
+											href="#pre-processor" 
+											class="summary-t3" >
+                                            Pre-processor
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
 											href="#linker" 
 											class="summary-t3" >
                                             Linker
@@ -1158,10 +1185,49 @@ window.MathJax = {
 									</li>
 									<li>
 										<a
-											href="#data-definition" 
+											href="#assembler" 
 											class="summary-t3" >
-                                            Data Definition
+                                            Assembler
 										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#data-types-data-definition-directives" 
+											class="summary-t3" >
+                                            Data Types (Data Definition Directives)
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#integer-data-types" 
+													class="summary-t4" >
+                                                    Integer Data Types
+												</a>
+											</li>
+											<li>
+												<a
+													href="#floating-point-data-types" 
+													class="summary-t4" >
+                                                    Floating Point Data Types
+												</a>
+											</li>
+											<li>
+												<a
+													href="#simd-data-types" 
+													class="summary-t4" >
+                                                    SIMD Data Types
+												</a>
+											</li>
+											<li>
+												<a
+													href="#reserve" 
+													class="summary-t4" >
+                                                    Reserve
+												</a>
+											</li>
+										</ul>
 									</li>
 								</ul>
 							</li>
@@ -1170,8 +1236,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-common-operations.html" >
-                                    Common Operations
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-operations.html" >
+                                    Operations
 								</a>
 							</li>
 						</ul>
@@ -1190,6 +1256,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-calling-conventions.html" >
                                     Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-representing-structs.html" >
+                                    Representing Structs
 								</a>
 							</li>
 						</ul>
@@ -1226,15 +1301,6 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-virtual-instruction-sets.html" >
                                     Virtual instruction sets
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-cpu-architectures-instructions-sets.html" >
-                                    CPU Architectures / Instructions Sets
 								</a>
 							</li>
 						</ul>
@@ -1545,13 +1611,180 @@ window.MathJax = {
                             🕒 Created: 2025-08-02
 						</time>
 						<time
-							datetime="2026-04-02" >
-                            | Updated: 2026-04-02
+							datetime="2026-04-09" >
+                            | Updated: 2026-04-09
 						</time>
 					</p>
 				</header>
 				<article
 					id="note-content" >
+<h3
+	id="pre-processor" >
+    Pre-processor
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>equ</code>
+            &nbsp;(Equivalent to 
+            <code>#define</code>
+            &nbsp;in C.)
+		</p>
+<pre><code class="language-asm" data-lang="asm">MAX_COINS&nbsp;&nbsp;&nbsp;&nbsp;equ 20
+KEY_W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;equ 87
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    It tells the assembler &quot;wherever you see this name, substitute this value at assemble-time.&quot; It's essentially a find-and-replace that happens before any code is generated.
+				</p>
+			</li>
+			<li>
+				<p>
+                    No memory is reserved, no address exists, it doesn't belong to any section at all.
+				</p>
+			</li>
+		</ul>
+		<p
+			class="table" >
+            | Assembler | Syntax&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            |-----------|------------------|----------------|
+            <br>
+            | NASM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>equ</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>MAX equ 20</code>
+            &nbsp;&nbsp;&nbsp;|
+            <br>
+            | MASM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>equ</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>MAX equ 20</code>
+            &nbsp;&nbsp;&nbsp;|
+            <br>
+            | GAS (GNU) | 
+            <code>.equ</code>
+            &nbsp;or 
+            <code>.set</code>
+            &nbsp;| 
+            <code>.equ MAX, 20</code>
+            &nbsp;|
+            <br>
+            | FASM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>=</code>
+            &nbsp;or 
+            <code>equ</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>MAX = 20</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | ARM (as)&nbsp;&nbsp;| 
+            <code>.equ</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>.equ MAX, 20</code>
+            &nbsp;|
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>struct</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        NASM
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>struc</code>
+                            &nbsp;/ 
+                            <code>endstruc</code>
+                            &nbsp;as shown
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-asm" data-lang="asm">struc Player
+&nbsp;&nbsp;&nbsp;&nbsp;.x: resd 1
+&nbsp;&nbsp;&nbsp;&nbsp;.y: resd 1
+endstruc
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        MASM
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>STRUCT</code>
+                            &nbsp;/ 
+                            <code>ENDS</code>
+                            , and actually lets you declare instances inline
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-asm" data-lang="asm">Player STRUCT
+&nbsp;&nbsp;&nbsp;&nbsp;x REAL4 ?
+&nbsp;&nbsp;&nbsp;&nbsp;y REAL4 ?
+Player ENDS
+myPlayer Player &lt;&gt; ; declares an actual instance in .data
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        FASM
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Virtual at idiom, more explicit
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-asm" data-lang="asm">virtual at 0
+&nbsp;&nbsp;&nbsp;&nbsp;player.x rd 1
+&nbsp;&nbsp;&nbsp;&nbsp;player.y rd 1
+end virtual
+</code></pre>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        GAS
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            No built-in struct support at all.
+						</p>
+					</li>
+					<li>
+						<p>
+                            You just use 
+                            <code>.equ</code>
+                            &nbsp;manually for every offset, which is exactly Pattern 1 from before.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This is very common in Linux kernel source and GAS-based codebases.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
 <h3
 	id="linker" >
     Linker
@@ -1572,15 +1805,20 @@ window.MathJax = {
                     Without it, labels are local to the file.
 				</p>
 			</li>
+			<li>
+				<p>
+                    It's not required to be inside a section.
+				</p>
+			</li>
 		</ul>
 <pre><code class="language-asm" data-lang="asm">section .text
 
 _start:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; local symbol (not visible to linker)
 &nbsp;&nbsp;&nbsp;&nbsp;ret
 </code></pre>
-<pre><code class="language-asm" data-lang="asm">section .text
-global _start&nbsp;&nbsp;; export symbol
+<pre><code class="language-asm" data-lang="asm">global _start&nbsp;&nbsp;; export symbol
 
+section .text
 _start:
 &nbsp;&nbsp;&nbsp;&nbsp;ret
 </code></pre>
@@ -1595,16 +1833,142 @@ _start:
                     Declares a symbol defined elsewhere.
 				</p>
 			</li>
+			<li>
+				<p>
+                    It's not required to be inside a section.
+				</p>
+			</li>
 		</ul>
 <pre><code class="language-asm" data-lang="asm">extern printf
 </code></pre>
 	</li>
 </ul>
 <h3
-	id="data-definition" >
-    Data Definition
+	id="assembler" >
+    Assembler
 </h3>
 <ul>
+	<li>
+		<p>
+            <code>bits &lt;value&gt;</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Tells NASM to emit 
+                    <code>&lt;value&gt;</code>
+                    -bit instructions — it controls how the assembler encodes opcodes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Without it, NASM defaults to 16-bit mode (
+                    <code>bits 16</code>
+                    ), so instructions like 
+                    <code>mov eax, 1</code>
+                    &nbsp;might encode differently or not at all.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>rax</code>
+                    , 
+                    <code>r8</code>
+                    -
+                    <code>r15</code>
+                    , 
+                    <code>xmm</code>
+                    &nbsp;registers etc. are only valid in 64-bit mode.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Note
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            When you use 
+                            <code>-f win64</code>
+                            &nbsp;as your output format, NASM already implies 64-bit mode.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Where bits 64 would matter is if you were writing a file that mixed modes, or targeting a raw binary format like -f bin (e.g. writing a bootloader), where NASM has no format to infer the mode from and defaults to bits 16.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Ex:
+						</p>
+<pre><code class="language-asm" data-lang="asm">; bootloader — starts in 16-bit real mode
+bits 16
+; ... real mode code ...
+
+bits 32
+; ... protected mode code ...
+
+bits 64
+; ... long mode code ...
+</code></pre>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Ex
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>bits 64</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    NASM emits 64-bit instructions
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="data-types-data-definition-directives" >
+    Data Types (Data Definition Directives)
+</h3>
+<ul>
+	<li>
+		<p>
+            They are 
+			<strong>
+                not
+			</strong>
+            &nbsp;CPU instructions. The CPU never sees them. Instead, they tell the assembler: “Emit these bytes into the output at this location”.
+		</p>
+	</li>
+	<li>
+		<p>
+            There's no type safety.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Signed and Unsigned comes down to what instructions you use.
+				</p>
+			</li>
+		</ul>
+	</li>
 	<li>
 		<p>
             They are not CPU instructions. They are handled by the assembler to lay out bytes in memory.
@@ -1616,8 +1980,45 @@ _start:
 		</p>
 	</li>
 	<li>
+        <img src="assets/2026-04-03_16-02-35.png" width="600" >
+
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=lqRSU70wlxM&list=PLKK11Ligqitg9MOX3-0tFT1Rmh3uJp7kA&index=4" 
+				class="external-link" 
+				target="_blank" >
+                Creel - Data Types
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                About pointers
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In x64 all memory is flat, so all pointers are 64 bits wide.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="integer-data-types" >
+    Integer Data Types
+</h4>
+<ul>
+	<li>
 		<p>
             <code>db</code>
+            &nbsp;/ 
+            <code>byte</code>
 		</p>
 		<ul>
 			<li>
@@ -1635,6 +2036,8 @@ _start:
 	<li>
 		<p>
             <code>dw</code>
+            &nbsp;/ 
+            <code>word</code>
 		</p>
 		<ul>
 			<li>
@@ -1652,6 +2055,8 @@ _start:
 	<li>
 		<p>
             <code>dd</code>
+            &nbsp;/ 
+            <code>dword</code>
 		</p>
 		<ul>
 			<li>
@@ -1669,6 +2074,8 @@ _start:
 	<li>
 		<p>
             <code>dq</code>
+            &nbsp;/ 
+            <code>qword</code>
 		</p>
 		<ul>
 			<li>
@@ -1683,6 +2090,193 @@ _start:
 			</li>
 		</ul>
 	</li>
+	<li>
+		<p>
+            <code>dt</code>
+            &nbsp;/ 
+            <code>tbyte</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    80 bits.
+				</p>
+			</li>
+			<li>
+				<p>
+                    10 bytes.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Using 
+            <code>dq</code>
+            &nbsp;doesn’t guarantee alignment unless you explicitly request it:
+		</p>
+<pre><code class="language-asm" data-lang="asm">align 8
+value dq 1
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Example:
+		</p>
+<pre><code class="language-asm" data-lang="asm">msg db "Hello", 0
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Equivalent to:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt">48 65 6C 6C 6F 00
+</code></pre>
+	</li>
+</ul>
+<h4
+	id="floating-point-data-types" >
+    Floating Point Data Types
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>dd</code>
+            &nbsp;/ 
+            <code>float</code>
+            &nbsp;(FASM alias) / 
+            <code>.float</code>
+            &nbsp;(GAS alias) / 
+            <code>real4</code>
+            &nbsp;(MASM alias)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    f32.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>dq</code>
+            &nbsp;/ 
+            <code>double</code>
+            &nbsp;(FASM alias) / 
+            <code>.double</code>
+            &nbsp;(GAS alias) / 
+            <code>real8</code>
+            &nbsp;(MASM alias).
+		</p>
+		<ul>
+			<li>
+				<p>
+                    f64.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>dt</code>
+            &nbsp;/ 
+            <code>.tfloat</code>
+            &nbsp;(GAS alias) / 
+            <code>real10</code>
+            &nbsp;(MASM alias)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    f80.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Only used with the x87 FPU (Floating-Point Unit); largely ignored nowadays.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You can't use 
+                    <code>real10</code>
+                    &nbsp;with SSE.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            ? / 
+            <code>real16</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    f128
+				</p>
+			</li>
+			<li>
+				<p>
+                    Not consistently supported
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-asm" data-lang="asm">pi&nbsp;&nbsp;dd 3.1415927&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; float (32-bit)
+piq dq 3.141592653589793 ; double (64-bit)
+</code></pre>
+<h4
+	id="simd-data-types" >
+    SIMD Data Types
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>Xmmword</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    128 bits.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>Ymmword</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    256 bits.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>Zmmword</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    512 bits.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="reserve" >
+    Reserve
+</h4>
+<ul>
 	<li>
 		<p>
             <code>resb</code>
@@ -1731,40 +2325,6 @@ _start:
 			</li>
 		</ul>
 	</li>
-	<li>
-		<p>
-            Example:
-		</p>
-<pre><code class="language-asm" data-lang="asm">msg db "Hello", 0
-</code></pre>
-		<ul>
-			<li>
-				<p>
-                    Equivalent to:
-				</p>
-			</li>
-		</ul>
-<pre><code class="language-txt" data-lang="txt">48 65 6C 6C 6F 00
-</code></pre>
-	</li>
-	<li>
-		<p>
-            Using 
-            <code>dq</code>
-            &nbsp;doesn’t guarantee alignment unless you explicitly request it:
-		</p>
-<pre><code class="language-asm" data-lang="asm">align 8
-value dq 1
-</code></pre>
-	</li>
-	<li>
-		<p>
-            Floating point:
-		</p>
-<pre><code class="language-asm" data-lang="asm">pi&nbsp;&nbsp;dd 3.1415927&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; float (32-bit)
-piq dq 3.141592653589793 ; double (64-bit)
-</code></pre>
-	</li>
 </ul>
 
 				</article>
@@ -1781,7 +2341,7 @@ piq dq 3.141592653589793 ; double (64-bit)
 			</footer>
 		</main>
 		<script
-			src="/static/studies.67251.js" >
+			src="/static/studies.13869.js" >
 		</script>
 	</body>
 </html>

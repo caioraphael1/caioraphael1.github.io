@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.67251.css" >
+			href="/static/studies.13869.css" >
 	</head>
 	<body>
 		<aside
@@ -176,6 +176,13 @@ window.MathJax = {
                                             Input Assembly
 										</a>
 										<ul>
+											<li>
+												<a
+													href="#removing-input-attributes" 
+													class="summary-t4" >
+                                                    Removing Input Attributes
+												</a>
+											</li>
 										</ul>
 									</li>
 									<li>
@@ -318,6 +325,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Graphics Programming/Vulkan/Vulkan-mapping-data-to-shaders.html" >
                                     Mapping Data to Shaders
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Graphics Programming/Vulkan/Vulkan-shader-internals.html" >
+                                    Shader Internals
 								</a>
 							</li>
 						</ul>
@@ -841,8 +857,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-03-31" >
-                            | Updated: 2026-03-31
+							datetime="2026-04-09" >
+                            | Updated: 2026-04-09
 						</time>
 					</p>
 				</header>
@@ -1240,6 +1256,26 @@ window.MathJax = {
 		<p>
             <img src="assets/image_20250908151239.png" width="450" >
             .
+		</p>
+	</li>
+</ul>
+<h4
+	id="removing-input-attributes" >
+    Removing Input Attributes
+</h4>
+<pre><code class="language-cpp" data-lang="cpp">VkPipelineVertexInputStateCreateInfo vertexInput = {
+&nbsp;&nbsp;&nbsp;&nbsp;.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO,
+&nbsp;&nbsp;&nbsp;&nbsp;.vertexBindingDescriptionCount&nbsp;&nbsp; = 0,
+&nbsp;&nbsp;&nbsp;&nbsp;.pVertexBindingDescriptions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= NULL,
+&nbsp;&nbsp;&nbsp;&nbsp;.vertexAttributeDescriptionCount = 0,
+&nbsp;&nbsp;&nbsp;&nbsp;.pVertexAttributeDescriptions&nbsp;&nbsp;&nbsp;&nbsp;= NULL,
+};
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Input assembly still required: 
+            <code>.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST</code>
 		</p>
 	</li>
 </ul>
@@ -6038,7 +6074,7 @@ layout(set = 1) UBO_Y;
 			</footer>
 		</main>
 		<script
-			src="/static/studies.67251.js" >
+			src="/static/studies.13869.js" >
 		</script>
 	</body>
 </html>

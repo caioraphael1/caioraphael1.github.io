@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.67251.css" >
+			href="/static/studies.13869.css" >
 	</head>
 	<body>
 		<aside
@@ -273,6 +273,42 @@ window.MathJax = {
 										</a>
 									</li>
 								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-architectures-instructions-sets-architectures-isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-architectural-design-philosophies-isa-philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/CPU/CPU-registers.html" >
+                                    Registers
+								</a>
 							</li>
 						</ul>
 						<ul>
@@ -1134,24 +1170,6 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-architectural-specifications.html" >
-                                    Architectural Specifications
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-microarchitecture.html" >
-                                    Microarchitecture
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-abi-application-binary-interface.html" >
                                     ABI (Application Binary Interface)
 								</a>
@@ -1179,8 +1197,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-common-operations.html" >
-                                    Common Operations
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-operations.html" >
+                                    Operations
 								</a>
 							</li>
 						</ul>
@@ -1199,6 +1217,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-calling-conventions.html" >
                                     Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-representing-structs.html" >
+                                    Representing Structs
 								</a>
 							</li>
 						</ul>
@@ -1235,15 +1262,6 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-virtual-instruction-sets.html" >
                                     Virtual instruction sets
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-cpu-architectures-instructions-sets.html" >
-                                    CPU Architectures / Instructions Sets
 								</a>
 							</li>
 						</ul>
@@ -1554,8 +1572,8 @@ window.MathJax = {
                             🕒 Created: 2025-07-22
 						</time>
 						<time
-							datetime="2026-03-30" >
-                            | Updated: 2026-03-30
+							datetime="2026-04-03" >
+                            | Updated: 2026-04-03
 						</time>
 					</p>
 				</header>
@@ -1823,12 +1841,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    In the past, a register was a real register, it meant a real place in the chip. This is not what happens anymore. Now the register name goes into something called RAT, which will translate the names you gave (RAX, for example) to names that corresponds to &quot;slots&quot; used by a micro op instruction.
-				</p>
-			</li>
-			<li>
-				<p>
-                    There are 16 registers in assembly (or 32 registers if you count vector registers), but there's around ~192 entries in a modern RAT, or maybe more in newer chips. The reason for that, is so it can extract the parallelism of things that are independent from each other, to optimize the pipeline. This tries to fill in a window of things we could be doing. The RAT job is to expand the instruction stream into independent dependency chains that use those slots, to decompose that 16 register stream into something much more verbose that involves much more registers than that.
+                    See below in 'Register -&gt; Register Renaming'
 				</p>
 			</li>
 		</ul>
@@ -1908,7 +1921,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.67251.js" >
+			src="/static/studies.13869.js" >
 		</script>
 	</body>
 </html>

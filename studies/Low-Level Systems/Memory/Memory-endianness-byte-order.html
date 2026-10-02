@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.13869.css" >
+			href="/static/studies.44355.css" >
 	</head>
 	<body>
 		<aside
@@ -144,21 +144,55 @@ window.MathJax = {
 								<ul>
 									<li>
 										<a
-											href="#little-endian" 
+											href="#little-endian-reversed-byte-order-in-memory-quotelittle-byte-comes-firstquote" 
 											class="summary-t3" >
-                                            Little-endian
+                                            Little-endian (reversed byte order in memory / &quot;little byte comes first&quot;)
 										</a>
 										<ul>
 										</ul>
 									</li>
 									<li>
 										<a
-											href="#big-endian" 
+											href="#big-endian-same-order-you-write-numbers-quotebig-byte-comes-firstquote" 
 											class="summary-t3" >
-                                            Big-endian
+                                            Big-endian (same order you write numbers / &quot;big byte comes first&quot;)
 										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#examples" 
+											class="summary-t3" >
+                                            Examples
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#string8" 
+													class="summary-t4" >
+                                                    String8
+												</a>
+											</li>
+											<li>
+												<a
+													href="#string16" 
+													class="summary-t4" >
+                                                    String16
+												</a>
+											</li>
+										</ul>
 									</li>
 								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-stack-memory.html" >
+                                    Stack Memory
+								</a>
 							</li>
 						</ul>
 						<ul>
@@ -1041,6 +1075,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/C and C++/C and C++-references-c_plus__plus_98.html" >
+                                    References (C++98)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/C and C++/C and C++-memory.html" >
                                     Memory
 								</a>
@@ -1070,6 +1113,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/C and C++/C and C++-multithreading.html" >
                                     Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/C and C++/C and C++-desktop-apps.html" >
+                                    Desktop Apps
 								</a>
 							</li>
 						</ul>
@@ -1224,15 +1276,6 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-reverse-engineering.html" >
-                                    Reverse Engineering
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-generating-the-assembly-via-code.html" >
                                     Generating the Assembly via code
 								</a>
@@ -1253,6 +1296,30 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-virtual-instruction-sets.html" >
                                     Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Reverse Engineering
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Reverse Engineering/Reverse Engineering-about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Reverse Engineering/Reverse Engineering-inspect.html" >
+                                    Inspect
 								</a>
 							</li>
 						</ul>
@@ -1413,6 +1480,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Debuggers/Debuggers-windbg-cdb.html" >
+                                    WinDbg / CDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Debuggers/Debuggers-others.html" >
                                     Others
 								</a>
@@ -1475,6 +1551,15 @@ window.MathJax = {
 						<summary>
                             Serialization - Encoding
 						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Serialization - Encoding/Serialization - Encoding-representations.html" >
+                                    Representations
+								</a>
+							</li>
+						</ul>
 						<ul>
 							<li>
 								<a
@@ -1563,8 +1648,8 @@ window.MathJax = {
                             🕒 Created: 2025-03-12
 						</time>
 						<time
-							datetime="2026-03-30" >
-                            | Updated: 2026-03-30
+							datetime="2026-05-02" >
+                            | Updated: 2026-05-02
 						</time>
 					</p>
 				</header>
@@ -1583,47 +1668,38 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Endianness does NOT change:
+            It's about the 
+			<strong>
+                BYTE
+			</strong>
+            &nbsp;order, not the 
+			<strong>
+                BIT
+			</strong>
+            &nbsp;order inside the bytes.
 		</p>
 		<ul>
 			<li>
 				<p>
-                    Bit order inside a byte
-				</p>
-			</li>
-			<li>
-				<p>
-                    The numeric value
-				</p>
-			</li>
-			<li>
-				<p>
-                    Register behavior
+                    Inside a single byte, the bit positions are fixed:
 				</p>
 			</li>
 		</ul>
-	</li>
-	<li>
-		<p>
-            It only affects:
-		</p>
+<pre><code class="language-txt" data-lang="txt">bit index:&nbsp;&nbsp;7 6 5 4 3 2 1 0
+value:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;128 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1
+</code></pre>
 		<ul>
 			<li>
 				<p>
-                    Memory representation
-				</p>
-			</li>
-			<li>
-				<p>
-                    Serialization / binary I/O
+                    That mapping (MSB ↔ bit 7, LSB ↔ bit 0) is unchanged regardless of endianness.
 				</p>
 			</li>
 		</ul>
 	</li>
 </ul>
 <h3
-	id="little-endian" >
-    Little-endian
+	id="little-endian-reversed-byte-order-in-memory-quotelittle-byte-comes-firstquote" >
+    Little-endian (reversed byte order in memory / &quot;little byte comes first&quot;)
 </h3>
 <ul>
 	<li>
@@ -1665,9 +1741,83 @@ Memory:&nbsp;&nbsp;&nbsp;&nbsp;78&nbsp;&nbsp; 56&nbsp;&nbsp; 34&nbsp;&nbsp; 12&n
 		</ul>
 	</li>
 </ul>
+<h5
+	id="why" >
+    Why
+</h5>
+<ul>
+	<li>
+		<p>
+            Carry propagation naturally walks forward in memory.
+		</p>
+	</li>
+	<li>
+		<p>
+            A pointer to a larger integer can be reinterpreted as a smaller one without adjusting the address.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Example: reading a u8 from a u32* just reads the first byte (LSB).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Early CPUs like the Intel 8086 used little-endian.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Their internal design made it natural to fetch/store the low byte first.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Success of x86 cemented little-endian as the de facto standard.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Operations that grow precision (e.g. multi-precision arithmetic) can extend “forward” in memory.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Useful for things like bignum libraries.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The dominance of little-endian is mostly inertia:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    x86 (little-endian) became ubiquitous in desktops/servers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    ARM defaults to little-endian in almost all modern systems.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Toolchains, file formats, and OS ecosystems followed.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
 <h3
-	id="big-endian" >
-    Big-endian
+	id="big-endian-same-order-you-write-numbers-quotebig-byte-comes-firstquote" >
+    Big-endian (same order you write numbers / &quot;big byte comes first&quot;)
 </h3>
 <ul>
 	<li>
@@ -1688,7 +1838,7 @@ Memory:&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp; 34&nbsp;&nbsp; 56&nbsp;&nbsp; 78
 		<ul>
 			<li>
 				<p>
-                    some networking protocols
+                    Networking protocols (e.g. TCP/IP)
 				</p>
 			</li>
 			<li>
@@ -1699,6 +1849,97 @@ Memory:&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp; 34&nbsp;&nbsp; 56&nbsp;&nbsp; 78
 		</ul>
 	</li>
 </ul>
+<h5
+	id="why" >
+    Why
+</h5>
+<ul>
+	<li>
+		<p>
+            Big-endian isn’t worse—just optimized for different priorities:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Memory layout matches human-readable order (easier debugging).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Network protocols standardized on it → “network byte order”.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Some architectures (older PowerPC, SPARC) favored it.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="examples" >
+    Examples
+</h3>
+<h4
+	id="string8" >
+    String8
+</h4>
+<ul>
+	<li>
+		<p>
+            Endianness only matters once you break 16-bit units into bytes. For 8-bit strings, there’s no ambiguity.
+		</p>
+	</li>
+	<li>
+		<p>
+            No endianness concerns here.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">'o'&nbsp;&nbsp;= 01101111 = 0x6F
+'i'&nbsp;&nbsp;= 01101001 = 0x69
+null = 00000000 = 0x00
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>oi\0</code>
+            &nbsp;in 
+            <code>string8</code>
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">"oi" → 01101111 01101001 00000000
+</code></pre>
+<h4
+	id="string16" >
+    String16
+</h4>
+<pre><code class="language-txt" data-lang="txt">'o'&nbsp;&nbsp;= 0x006F -&gt; 0x6F00 (little-endian) / 0x006F (big-endian)
+'i'&nbsp;&nbsp;= 0x0069 -&gt; 0x6900 (little-endian) / 0x0069 (big-endian)
+null = 0x0000 -&gt; 0x0000
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>oi\0</code>
+            &nbsp;in little-endian
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">"oi" → 01101111 00000000 01101001 00000000 00000000 00000000
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>oi\0</code>
+            &nbsp;in big-endian
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">"oi" → 00000000 01101111 00000000 01101001 00000000 00000000
+</code></pre>
 
 				</article>
 			</main>
@@ -1714,7 +1955,7 @@ Memory:&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp; 34&nbsp;&nbsp; 56&nbsp;&nbsp; 78
 			</footer>
 		</main>
 		<script
-			src="/static/studies.13869.js" >
+			src="/static/studies.44355.js" >
 		</script>
 	</body>
 </html>

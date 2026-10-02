@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.13869.css" >
+			href="/static/studies.44355.css" >
 	</head>
 	<body>
 		<aside
@@ -93,17 +93,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Platforms/Linux/Linux-notes.html" >
-                                    Notes
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Platforms/Linux/Linux-executables.html" >
-                                    Executables
+									href="/studies/Platforms/Linux/Linux-application-packaging-application-distribution.html" >
+                                    Application Packaging / Application Distribution
 								</a>
 							</li>
 						</ul>
@@ -120,8 +111,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Platforms/Linux/Linux-window-systems.html" >
-                                    Window Systems
+									href="/studies/Platforms/Linux/Linux-display-stack-graphical-system-layer.html" >
+                                    Display Stack / Graphical System Layer
 								</a>
 							</li>
 						</ul>
@@ -159,6 +150,13 @@ window.MathJax = {
 													href="#arch" 
 													class="summary-t4" >
                                                     Arch
+												</a>
+											</li>
+											<li>
+												<a
+													href="#nixos" 
+													class="summary-t4" >
+                                                    NixOS
 												</a>
 											</li>
 										</ul>
@@ -376,66 +374,6 @@ window.MathJax = {
 					<details
 						class="summary-t1-other" >
 						<summary>
-                            Windows
-						</summary>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Platforms/Windows/Windows-windows.html" >
-                                    Windows
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Platforms/Windows/Windows-symlink.html" >
-                                    Symlink
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Platforms/Windows/Windows-path.html" >
-                                    PATH
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Platforms/Windows/Windows-stupid-things.html" >
-                                    Stupid Things
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Platforms/Windows/Windows-visual-customization.html" >
-                                    Visual Customization
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/Platforms/Windows/Windows-hyper-v-and-vm.html" >
-                                    Hyper-V and VM
-								</a>
-							</li>
-						</ul>
-					</details>
-					<details
-						class="summary-t1-other" >
-						<summary>
                             Android
 						</summary>
 						<ul>
@@ -451,8 +389,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Platforms/Android/Android-exporting-godot-to-android.html" >
-                                    Exporting Godot to Android
+									href="/studies/Platforms/Android/Android-godot-exporting-to-android.html" >
+                                    Godot: Exporting to Android
 								</a>
 							</li>
 						</ul>
@@ -523,8 +461,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-02-11" >
-                            | Updated: 2026-02-11
+							datetime="2026-06-29" >
+                            | Updated: 2026-06-29
 						</time>
 					</p>
 				</header>
@@ -1356,6 +1294,260 @@ window.MathJax = {
 					<li>
 						<p>
                             Talks about the need for AUR, which is overrated.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="nixos" >
+    NixOS
+</h4>
+<h5
+	id="what-is-declarative" >
+    What is declarative
+</h5>
+<ul>
+	<li>
+		<p>
+            If you publish only your 
+            <code>configuration.nix</code>
+            &nbsp;(or your flake), someone else gets your system, not your application state.
+		</p>
+	</li>
+	<li>
+		<p>
+            For example, suppose your 
+            <code>configuration.nix</code>
+            &nbsp;contains:
+		</p>
+<pre><code class="language-nix" data-lang="nix">environment.systemPackages = with pkgs; [
+&nbsp;&nbsp;&nbsp;&nbsp;neovim
+&nbsp;&nbsp;&nbsp;&nbsp;git
+&nbsp;&nbsp;&nbsp;&nbsp;blender
+&nbsp;&nbsp;&nbsp;&nbsp;godot
+&nbsp;&nbsp;&nbsp;&nbsp;firefox
+];
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Someone else runs:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>sudo nixos-rebuild switch</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            They get:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    NeoVim installed
+				</p>
+			</li>
+			<li>
+				<p>
+                    Blender installed
+				</p>
+			</li>
+			<li>
+				<p>
+                    Godot installed
+				</p>
+			</li>
+			<li>
+				<p>
+                    Firefox installed
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            But they do not get:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    your Firefox bookmarks
+				</p>
+			</li>
+			<li>
+				<p>
+                    your Blender preferences
+				</p>
+			</li>
+			<li>
+				<p>
+                    your Godot editor layout
+				</p>
+			</li>
+			<li>
+				<p>
+                    your Steam games
+				</p>
+			</li>
+			<li>
+				<p>
+                    your save files
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Those all live in the home directory.
+		</p>
+	</li>
+	<li>
+		<p>
+            So, by default, application configurations do not roll back, only the things managed by Nix roll back.
+		</p>
+	</li>
+</ul>
+<h5
+	id="file-system" >
+    File System
+</h5>
+<ul>
+	<li>
+		<p>
+            The filesystem itself is still ext4 or Btrfs, but the operating system manages it declaratively.
+		</p>
+	</li>
+</ul>
+<h5
+	id="configuration-file" >
+    Configuration file
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=2eNJy9DSGNw" 
+				class="external-link" 
+				target="_blank" >
+                NixOS Configuration
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=1ED9b7ERTzI" 
+				class="external-link" 
+				target="_blank" >
+                Ioga - NixOS Tips
+			</a>
+		</p>
+	</li>
+</ul>
+<h5
+	id="home-manager" >
+    Home Manager
+</h5>
+<ul>
+	<li>
+		<p>
+            Reproducibility.
+		</p>
+	</li>
+	<li>
+		<p>
+            It makes potentially harder to share config files with other people.
+		</p>
+	</li>
+	<li>
+		<p>
+            Home Manager is a Nix-based configuration manager for your user account. It lets you describe your personal environment in Nix instead of configuring it manually.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Example
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Instead of manually editing:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt">~/.bashrc
+~/.zshrc
+~/.gitconfig
+~/.config/Code/User/settings.json
+~/.config/alacritty/alacritty.toml
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    you write a single Nix configuration:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-txt" data-lang="txt">{
+&nbsp;&nbsp;&nbsp;&nbsp;home.username = "alice";
+&nbsp;&nbsp;&nbsp;&nbsp;home.homeDirectory = "/home/alice";
+
+&nbsp;&nbsp;&nbsp;&nbsp;programs.git = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enable = true;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userName = "Alice";
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userEmail = "alice@example.com";
+&nbsp;&nbsp;&nbsp;&nbsp;};
+
+&nbsp;&nbsp;&nbsp;&nbsp;programs.vscode = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enable = true;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSettings = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"editor.fontSize" = 16;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;};
+
+&nbsp;&nbsp;&nbsp;&nbsp;home.packages = with pkgs; [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ripgrep
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fd
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jq
+&nbsp;&nbsp;&nbsp;&nbsp;];
+}
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    And run: 
+                    <code>home-manager switch</code>
+                    , which applies the configuration by:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Installing the requested packages.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Generating configuration files.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Creating symlinks into the Nix store.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Removing configuration that is no longer declared.
 						</p>
 					</li>
 				</ul>
@@ -3262,7 +3454,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.13869.js" >
+			src="/static/studies.44355.js" >
 		</script>
 	</body>
 </html>

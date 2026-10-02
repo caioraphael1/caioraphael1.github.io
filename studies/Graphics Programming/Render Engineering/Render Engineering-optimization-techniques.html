@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.13869.css" >
+			href="/static/studies.44355.css" >
 	</head>
 	<body>
 		<aside
@@ -573,6 +573,20 @@ window.MathJax = {
                                             Image Formats
 										</a>
 										<ul>
+											<li>
+												<a
+													href="#texture-container-format" 
+													class="summary-t4" >
+                                                    Texture Container Format
+												</a>
+											</li>
+											<li>
+												<a
+													href="#gpu-texture-compression-format" 
+													class="summary-t4" >
+                                                    GPU texture compression format
+												</a>
+											</li>
 										</ul>
 									</li>
 									<li>
@@ -883,8 +897,8 @@ window.MathJax = {
                             🕒 Created: 2025-07-03
 						</time>
 						<time
-							datetime="2026-04-11" >
-                            | Updated: 2026-04-11
+							datetime="2026-08-13" >
+                            | Updated: 2026-08-13
 						</time>
 					</p>
 				</header>
@@ -1005,6 +1019,11 @@ window.MathJax = {
     Optimizations
 </h4>
 <ul>
+	<li>
+		<p>
+            Tele Neto
+		</p>
+	</li>
 	<li>
 		<p>
 			<input
@@ -2585,6 +2604,16 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 	id="image-formats" >
     Image Formats
 </h3>
+<pre><code class="language-txt" data-lang="txt">PNG/TGA
+&nbsp;&nbsp; ↓ offline compression
+BC7 texture
+&nbsp;&nbsp; ↓ packaged
+KTX2 file
+</code></pre>
+<h4
+	id="texture-container-format" >
+    Texture Container Format
+</h4>
 <h5
 	id="ktx2" >
     KTX2
@@ -2592,7 +2621,17 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 <ul>
 	<li>
 		<p>
-            Is a container file format for storing texture data optimized for GPU usage. It’s designed to work efficiently with modern graphics APIs like Vulkan, OpenGL, and DirectX.
+            Can store GPU-compressed formats such as BC7, BC3, ETC2, ASTC, etc.
+		</p>
+	</li>
+	<li>
+		<p>
+            Can also use Basis Universal / UASTC / ETC1S supercompression.
+		</p>
+	</li>
+	<li>
+		<p>
+            Designed for transferring/storing textures and letting the application choose an appropriate GPU format.
 		</p>
 	</li>
 	<li>
@@ -2615,6 +2654,144 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
                 KTX Viewer Online
 			</a>
             .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.khronos.org/ktx/" 
+				class="external-link" 
+				target="_blank" >
+                KTX
+			</a>
+		</p>
+	</li>
+</ul>
+<h4
+	id="gpu-texture-compression-format" >
+    GPU texture compression format
+</h4>
+<h5
+	id="bcn" >
+    BCn
+</h5>
+<ul>
+	<li>
+		<p>
+            BC1 — RGB / 1-bit alpha, ~4 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            BC2 — RGBA, ~8 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            BC3 — RGBA, ~8 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            BC4 — single-channel, ~4 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            BC5 — two-channel, ~8 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            BC6H — HDR RGB, ~8 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            BC7 — high-quality RGBA, ~8 bpp
+		</p>
+	</li>
+</ul>
+<h5
+	id="etc-eac" >
+    ETC/EAC
+</h5>
+<ul>
+	<li>
+		<p>
+            ETC1 — RGB, ~4 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            ETC2 RGB — ~4 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            ETC2 RGBA1 — ~4 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            ETC2 RGBA8 — ~8 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            EAC R11 — single-channel, ~4 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            EAC RG11 — two-channel, ~8 bpp
+		</p>
+	</li>
+</ul>
+<h5
+	id="astc" >
+    ASTC
+</h5>
+<ul>
+	<li>
+		<p>
+            ASTC 4×4 — 8 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            ASTC 5×5 — 5.12 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            ASTC 6×6 — 3.56 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            ASTC 8×8 — 2 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            ASTC 10×10 — 1.28 bpp
+		</p>
+	</li>
+	<li>
+		<p>
+            ASTC 12×12 — 0.89 bpp
+		</p>
+	</li>
+</ul>
+<h5
+	id="etc" >
+    Etc
+</h5>
+<ul>
+	<li>
+		<p>
+            Check #Vulkan#Resource#Images#Compression.
 		</p>
 	</li>
 </ul>
@@ -2880,7 +3057,7 @@ void CoreModel::OptimizeMesh(int MeshIndex, std::vector&lt;uint&gt;&Indices, std
 			</footer>
 		</main>
 		<script
-			src="/static/studies.13869.js" >
+			src="/static/studies.44355.js" >
 		</script>
 	</body>
 </html>

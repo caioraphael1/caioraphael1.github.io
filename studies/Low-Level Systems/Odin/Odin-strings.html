@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.13869.css" >
+			href="/static/studies.44355.css" >
 	</head>
 	<body>
 		<aside
@@ -139,6 +139,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Memory/Memory-endianness-byte-order.html" >
                                     Endianness (byte order)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Memory/Memory-stack-memory.html" >
+                                    Stack Memory
 								</a>
 							</li>
 						</ul>
@@ -576,6 +585,15 @@ window.MathJax = {
 											href="#manipulation" 
 											class="summary-t3" >
                                             Manipulation
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#indexing" 
+											class="summary-t3" >
+                                            Indexing
 										</a>
 										<ul>
 										</ul>
@@ -1070,6 +1088,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/C and C++/C and C++-references-c_plus__plus_98.html" >
+                                    References (C++98)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/C and C++/C and C++-memory.html" >
                                     Memory
 								</a>
@@ -1099,6 +1126,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/C and C++/C and C++-multithreading.html" >
                                     Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/C and C++/C and C++-desktop-apps.html" >
+                                    Desktop Apps
 								</a>
 							</li>
 						</ul>
@@ -1253,15 +1289,6 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-reverse-engineering.html" >
-                                    Reverse Engineering
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-generating-the-assembly-via-code.html" >
                                     Generating the Assembly via code
 								</a>
@@ -1282,6 +1309,30 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Assembly/Assembly - ASM-virtual-instruction-sets.html" >
                                     Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Reverse Engineering
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Reverse Engineering/Reverse Engineering-about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Reverse Engineering/Reverse Engineering-inspect.html" >
+                                    Inspect
 								</a>
 							</li>
 						</ul>
@@ -1442,6 +1493,15 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Debuggers/Debuggers-windbg-cdb.html" >
+                                    WinDbg / CDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
 									href="/studies/Low-Level Systems/Debuggers/Debuggers-others.html" >
                                     Others
 								</a>
@@ -1504,6 +1564,15 @@ window.MathJax = {
 						<summary>
                             Serialization - Encoding
 						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level Systems/Serialization - Encoding/Serialization - Encoding-representations.html" >
+                                    Representations
+								</a>
+							</li>
+						</ul>
 						<ul>
 							<li>
 								<a
@@ -1592,8 +1661,8 @@ window.MathJax = {
                             🕒 Created: 2025-03-28
 						</time>
 						<time
-							datetime="2026-04-01" >
-                            | Updated: 2026-04-01
+							datetime="2026-08-30" >
+                            | Updated: 2026-08-30
 						</time>
 					</p>
 				</header>
@@ -1770,6 +1839,275 @@ defer delete(my_string)
 <pre><code class="language-odin" data-lang="odin">my_string, err := strings.cut("hello", 3, 5)&nbsp;&nbsp;// (string, first_idx, last_idx)
 defer delete(my_string)
 </code></pre>
+	</li>
+</ul>
+<h3
+	id="indexing" >
+    Indexing
+</h3>
+<h5
+	id="example" >
+    Example
+</h5>
+<pre><code class="language-odin" data-lang="odin">s := "hello 😃 world こんにちは"
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Indexing:
+		</p>
+<pre><code class="language-odin" data-lang="odin">s[8]&nbsp;&nbsp;&nbsp;&nbsp;// this the 8th byte
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    The 8th byte is:
+				</p>
+<pre><code class="language-odin" data-lang="odin">1:&nbsp;&nbsp;68&nbsp;&nbsp;(h)
+2:&nbsp;&nbsp;65&nbsp;&nbsp;(e)
+3:&nbsp;&nbsp;6C&nbsp;&nbsp;(l)
+4:&nbsp;&nbsp;6C&nbsp;&nbsp;(l)
+5:&nbsp;&nbsp;6F&nbsp;&nbsp;(o)
+6:&nbsp;&nbsp;20&nbsp;&nbsp;(space)
+7:&nbsp;&nbsp;F0&nbsp;&nbsp;(😃)
+8:&nbsp;&nbsp;9F&nbsp;&nbsp;(😃)&nbsp;&nbsp;// &lt;-- This one: 9F (159).
+9:&nbsp;&nbsp;98&nbsp;&nbsp;(😃)
+10: 83&nbsp;&nbsp;(😃)
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Length:
+		</p>
+<pre><code class="language-odin" data-lang="odin">len(s)&nbsp;&nbsp;// this is the length in bytes (32 bytes in total)
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    Total of bytes: 
+					<strong>
+                        32
+					</strong>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>hello</code>
+                            : 5
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code> </code>
+                            &nbsp;(space): 1
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>😃</code>
+                            : 4
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code> </code>
+                            &nbsp;(space): 1
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>world</code>
+                            : 5
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code> </code>
+                            &nbsp;(space): 1
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>こんにちは</code>
+                            : 15 (5 × 3)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Total of codepoints: 
+					<strong>
+                        19
+					</strong>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>hello</code>
+                            : 5
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code> </code>
+                            &nbsp;(space): 1
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>😃</code>
+                            &nbsp;→ 1
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code> </code>
+                            &nbsp;(space): 1
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>world</code>
+                            &nbsp;→ 5
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code> </code>
+                            &nbsp;(space): 1
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>こんにちは</code>
+                            &nbsp;→ 5
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Overview:
+            <br>
+            | Character | UTF-8 bytes (hex) | Decimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | --------- | ----------------- | ------------------ |
+            <br>
+            | 
+            <code>h</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>68</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 104&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>e</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>65</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 101&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>l</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6C</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 108&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>l</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6C</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 108&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>o</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6F</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | space&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>20</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>😃</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>F0 9F 98 83</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 240, 159, 152, 131 |
+            <br>
+            | space&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>20</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>w</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>77</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 119&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>o</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6F</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>r</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>72</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 114&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>l</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6C</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 108&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>d</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>64</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | space&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>20</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>こ</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 81 93</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 129, 147&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>ん</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 82 93</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 130, 147&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>に</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 81 AB</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 129, 171&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>ち</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 81 A1</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 129, 161&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>は</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 81 AF</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 129, 175&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+		</p>
 	</li>
 </ul>
 <h3
@@ -3332,7 +3670,7 @@ AN_EVEN_LONGER_ENUM = 1,&nbsp;&nbsp;// A comment about AN_EVEN_LONGER_ENUM
 			</footer>
 		</main>
 		<script
-			src="/static/studies.13869.js" >
+			src="/static/studies.44355.js" >
 		</script>
 	</body>
 </html>

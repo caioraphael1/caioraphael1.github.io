@@ -1,0 +1,387 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.30720.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            Physics Engines
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/Physics_Engines/Physics_Engines__theory.html" >
+                                    Theory
+								</a>
+								<ul>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Physics_Engines/Physics_Engines__options.html" >
+                                    Options
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Physics Engines - JoltPhysics
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Physics_Engines/Physics_Engines_-_JoltPhysics/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Physics_Engines/Physics_Engines_-_JoltPhysics/explanations.html" >
+                                    Explanations
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Theory
+					</h1>
+					<p>
+						<time
+							datetime="2025-06-12" >
+                            🕒 Created: 2025-06-12
+						</time>
+						<time
+							datetime="2026-01-30" >
+                            | Updated: 2026-01-30
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Kvsvd67XUKw" 
+				class="external-link" 
+				target="_blank" >
+                Parallelizing the Physics Solver of Teardown
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        TLDR
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            He uses a graph-based technique to separate constraints that can be processed in parallel (the Box2D 3 technique).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Then, idle time between threads is optimized to gain performance: Spin Lockless &gt; Lockless &gt; Sync Primitives.
+						</p>
+					</li>
+					<li>
+						<p>
+                            He mentioned he would implement Work Stealing in the future, said it was a good idea.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Makes total sense, tbh, strange he hasn’t tested it yet, but he said he would.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    It uses the technique developed for Box2D 3.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            He strongly recommends the Box2D author’s blog and says the new Box2D is incredibly fast.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    The video is nice, but it only covers those two concepts. The presentation is a bit stiff.
+				</p>
+			</li>
+			<li>
+				<p>
+                    His profiler is homemade, but he recommended Tracy.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;It has to be a lockless profiler&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    His lifetime work has been on physics engines.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        About the Physics Engine
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Putting the solver on the GPU ends up forcing the entire game onto the GPU since physics interacts a lot with gameplay; not a good idea.&quot;
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Which solver?
+							</em>
+						</p>
+						<ul>
+							<li>
+								<p
+									class="line-emphasis" >
+                                    All solvers are relatively similar, as long as they follow 
+									<a
+										href="https://www.google.com/search?q=projected+gauss-seidel&client=firefox-b-d&sca_esv=da05301a59791ed0&sxsrf=AE3TifMDSbSmznY4XbVs36A6GKBlTTV84A%3A1753465365935&ei=FcKDaNLpOOzU1sQPoMrQmAo&ved=0ahUKEwiSyIzCx9iOAxVsqpUCHSAlFKMQ4dUDCBA&uact=5&oq=projected+gauss-seidel&gs_lp=Egxnd3Mtd2l6LXNlcnAiFnByb2plY3RlZCBnYXVzcy1zZWlkZWwyCBAAGIAEGMsBMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yCBAAGIAEGKIEMgUQABjvBTIIEAAYgAQYogQyBRAAGO8FSIguUIIDWOkscAh4AZABAJgBzQGgAa0QqgEGMC4xNC4xuAEDyAEA-AEBmAIWoAL4D8ICChAAGLADGNYEGEfCAgQQIxgnwgIFECEYoAHCAgUQIRifBcICCRAAGIAEGBMYDcICCBAAGBMYDRgemAMA4gMFEgExIECIBgGQBgiSBwY4LjEzLjGgB6JKsgcGMC4xMy4xuAfeD8IHBjEuNy4xNMgHPw&sclient=gws-wiz-serp" 
+										class="external-link" 
+										target="_blank" >
+                                        Projected Gauss-Seidel / Sequential Impulse
+									</a>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                How many iterations?
+							</em>
+						</p>
+						<ul>
+							<li>
+								<p
+									class="line-emphasis" >
+                                    I found 6 for Teardown. It’s based on experimentation. Many games use 4 or 8.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;It's a performance / quality tradeoff&quot;.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {34:30}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Comparison chart.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=MrIAw980iYg" 
+				class="external-link" 
+				target="_blank" >
+                Physics Engine for Cars
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The video isn’t focused on programming or performance, but on the theory of realistic car simulation; it’s about cars only.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The guy is a tire nerd; ultra hyper-focused on cars.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There’s quite a bit of theory behind it.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <img src="assets/image_20250725151546.png" width="275" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    He explains Gear Shifting, sound generation, etc, etc, lots of stuff.
+				</p>
+			</li>
+			<li>
+                <img src="assets/image_20250725152014.png" width="500" >
+
+			</li>
+			<li>
+				<p>
+                    {43:30}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The clip is wild, very cool.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.30720.js" >
+		</script>
+	</body>
+</html>

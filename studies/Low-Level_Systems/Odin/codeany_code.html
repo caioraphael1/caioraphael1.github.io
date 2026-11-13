@@ -1,0 +1,3119 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.28524.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Memory
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/alignment.html" >
+                                    Alignment
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/endianness_byte_order.html" >
+                                    Endianness (byte order)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/stack_memory.html" >
+                                    Stack Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/virtual_memory.html" >
+                                    Virtual Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/os_memory_on_windows.html" >
+                                    OS: Memory on Windows
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/allocators.html" >
+                                    Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/tools_memory_analysis.html" >
+                                    Tools: Memory Analysis
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/handles_instead_of_pointers.html" >
+                                    Handles instead of Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/ownership_strategies_destruction_strategies.html" >
+                                    Ownership Strategies / Destruction Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/strategies_for_handling_short_lived_memory.html" >
+                                    Strategies for handling short lived memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/garbage_collection.html" >
+                                    Garbage Collection
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/initialization.html" >
+                                    Initialization
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            CPU
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/physical_structure.html" >
+                                    Physical Structure
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/architectures_instructions_sets_architectures_isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/architectural_design_philosophies_isa_philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/registers.html" >
+                                    Registers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/cache.html" >
+                                    Cache
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/branchless.html" >
+                                    Branchless
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/soa_struct_of_arrays_ecs_entity_component_system.html" >
+                                    SOA (Struct Of Arrays) / ECS (Entity Component System)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Multithreading
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/core_concepts.html" >
+                                    Core Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/thread.html" >
+                                    Thread
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/strategies.html" >
+                                    Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/implementation_detail.html" >
+                                    Implementation Detail
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/synchronization_primitives.html" >
+                                    Synchronization Primitives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/double_buffering.html" >
+                                    Double-Buffering
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/networking_strategies.html" >
+                                    Networking Strategies
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Safety_Critical/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            Odin
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/overview.html" >
+                                    Overview
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/my_impressions.html" >
+                                    My Impressions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/installation.html" >
+                                    Installation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/compile_time_stuff.html" >
+                                    Compile-time Stuff
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/package_system.html" >
+                                    Package System
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/lsp_ols_odin_language_server.html" >
+                                    LSP (OLS - Odin Language Server)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/control_flow_if_when_switch_for_defer.html" >
+                                    Control Flow (if, when, switch, for, defer)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/procedures.html" >
+                                    Procedures
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/Low-Level_Systems/Odin/codeany_code.html" >
+                                    <code>any</code>
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#comparison_codeany_code_vs_codeunion_code" 
+											class="summary-t3" >
+                                            Comparison <code>any</code> vs <code>union</code>
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#structure" 
+											class="summary-t3" >
+                                            Structure
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#storing_data" 
+											class="summary-t3" >
+                                            Storing data
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#getting_the_underlying_value" 
+											class="summary-t3" >
+                                            Getting the underlying value
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#etc" 
+											class="summary-t3" >
+                                            Etc
+										</a>
+										<ul>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/matrix.html" >
+                                    Matrix
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/quaternion.html" >
+                                    Quaternion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/complex.html" >
+                                    Complex
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/rune.html" >
+                                    Rune
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/maps_hash_maps.html" >
+                                    Maps (Hash Maps)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/struct.html" >
+                                    Struct
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/enum.html" >
+                                    Enum
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/union.html" >
+                                    Union
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/bit_sets.html" >
+                                    Bit Sets
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/arrays.html" >
+                                    Arrays
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/interfaces_methods_vtables.html" >
+                                    Interfaces / Methods / VTables
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/context.html" >
+                                    Context
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/memory_address.html" >
+                                    Memory: Address
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/memory_allocators.html" >
+                                    Memory: Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/memory_operations.html" >
+                                    Memory: Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/entry_point.html" >
+                                    Entry Point
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/multi_threading.html" >
+                                    Multi-Threading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/ffi_foreign_function_interface_bindings.html" >
+                                    FFI (Foreign Function Interface) / Bindings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/web_build.html" >
+                                    Web Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/file_system_process_cli_shell.html" >
+                                    File System / Process / CLI / Shell
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/useful_packages.html" >
+                                    Useful Packages
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            C and C++
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/versions.html" >
+                                    Versions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/c_standard.html" >
+                                    C Standard
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/c_standard_library_libc.html" >
+                                    C Standard Library (libc)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/critiques.html" >
+                                    Critiques
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/lsp.html" >
+                                    LSP
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/explicitness.html" >
+                                    Explicitness
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/compiler_hints.html" >
+                                    Compiler Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/pre_processors.html" >
+                                    Pre-processors
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/libraries.html" >
+                                    Libraries
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/input_output.html" >
+                                    Input/Output
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/variable_declarations.html" >
+                                    Variable Declarations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/constants.html" >
+                                    Constants
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/statements_and_control_flow.html" >
+                                    Statements and Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/scopes.html" >
+                                    Scopes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/functions.html" >
+                                    Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/basic_types.html" >
+                                    Basic Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/arrays_from_c.html" >
+                                    Arrays from C
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/structs.html" >
+                                    Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/unions.html" >
+                                    Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/enums.html" >
+                                    Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/classes.html" >
+                                    Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/pointers.html" >
+                                    Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/references_c_plus__plus_98.html" >
+                                    References (C++98)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/undefined_behavior.html" >
+                                    Undefined Behavior
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/multithreading.html" >
+                                    Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/desktop_apps.html" >
+                                    Desktop Apps
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/game_dev.html" >
+                                    Game Dev
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Build Systems - Compilation - Linking
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/compilation_process.html" >
+                                    Compilation Process
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/linker.html" >
+                                    Linker
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/compilers.html" >
+                                    Compilers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/build_tools.html" >
+                                    Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/meta_build_tools.html" >
+                                    Meta Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/extra_annoying_things_on_windows.html" >
+                                    Extra: Annoying things on Windows
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Assembly - ASM
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/my_notes.html" >
+                                    My Notes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/abi_application_binary_interface.html" >
+                                    ABI (Application Binary Interface)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/sections.html" >
+                                    Sections
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/jump_patterns.html" >
+                                    Jump Patterns
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/calling_conventions.html" >
+                                    Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/representing_structs.html" >
+                                    Representing Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/generating_the_assembly_via_code.html" >
+                                    Generating the Assembly via code
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/virtual_instruction_sets.html" >
+                                    Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Reverse Engineering
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Reverse_Engineering/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Reverse_Engineering/inspect.html" >
+                                    Inspect
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Handmade Hero
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Handmade_Hero/handmade_hero.html" >
+                                    Handmade Hero
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Profilers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/tracy.html" >
+                                    Tracy
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/spall.html" >
+                                    Spall
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/nvidia_nsight_graphics_gpu_trace.html" >
+                                    Nvidia Nsight Graphics - GPU Trace
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/amd_gpu_profiler_amd_rgp.html" >
+                                    AMD GPU Profiler (AMD RGP)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/intel_gpa.html" >
+                                    Intel GPA
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/nsight_systems.html" >
+                                    <s>Nsight Systems</s>
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Debuggers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/debugging_tips.html" >
+                                    Debugging Tips
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/file_types.html" >
+                                    File Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/rad_debugger.html" >
+                                    RAD Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/gdb_gnu_debugger.html" >
+                                    GDB (GNU Debugger)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/lldb.html" >
+                                    LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/remedybg_debugger.html" >
+                                    RemedyBG Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/vscode.html" >
+                                    VSCode
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/visual_studio_debugger.html" >
+                                    Visual Studio Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/windbg_cdb.html" >
+                                    WinDbg / CDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/others.html" >
+                                    Others
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/web.html" >
+                                    Web
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Parsing
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/lexer.html" >
+                                    Lexer
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/parser.html" >
+                                    Parser
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/abstract_syntax_tree_ast.html" >
+                                    Abstract Syntax Tree (AST)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Serialization - Encoding
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Serialization_-_Encoding/representations.html" >
+                                    Representations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Serialization_-_Encoding/serialization.html" >
+                                    Serialization
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Serialization_-_Encoding/encoding.html" >
+                                    Encoding
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JAI
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/build.html" >
+                                    Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/types.html" >
+                                    Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/meta_programming.html" >
+                                    Meta programming
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/control_flow.html" >
+                                    Control flow
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        <code>any</code>
+					</h1>
+					<p>
+						<time
+							datetime="2025-03-28" >
+                            🕒 Created: 2025-03-28
+						</time>
+						<time
+							datetime="2026-10-19" >
+                            | Updated: 2026-10-19
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/builtin/#any" 
+				class="external-link" 
+				target="_blank" >
+                <code>any</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/base/runtime/#Raw_Any" 
+				class="external-link" 
+				target="_blank" >
+                <code>Raw_Any</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It is functionally equivalent to 
+            <code>struct {data: rawptr, id: typeid}</code>
+            &nbsp;with extra semantics on how assignment and type assertion works.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>any</code>
+            &nbsp;value is only valid as long as the underlying data is still valid. Passing a literal to an 
+            <code>any</code>
+            &nbsp;will allocate the literal in the current stack frame.
+		</p>
+	</li>
+</ul>
+<h3
+	id="comparison_codeany_code_vs_codeunion_code" >
+    Comparison 
+    <code>any</code>
+    &nbsp;vs 
+    <code>union</code>
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>any</code>
+            &nbsp;is a topologically-dual to a 
+            <code>union</code>
+            &nbsp;in terms of its usage.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Both support assignments of differing types (
+                    <code>any</code>
+                    &nbsp;being open to any type, 
+                    <code>union</code>
+                    &nbsp;being closed to a specific set of types).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Both support type assertions (
+                    <code>x.(T)</code>
+                    ).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Both support 
+                    <code>switch in</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The main internal difference is how the memory is stored.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A 
+                    <code>any</code>
+                    &nbsp;being open is a pointer+typeid, a 
+                    <code>union</code>
+                    &nbsp;is a blob+tag.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A 
+                    <code>union</code>
+                    &nbsp;does not need to store a 
+                    <code>typeid</code>
+                    &nbsp;because it is a closed ABI-consistent set of variant types.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="structure" >
+    Structure
+</h3>
+<pre><code class="language-odin" data-lang="odin">Raw_Any :: struct {
+&nbsp;&nbsp;&nbsp;&nbsp;data: rawptr, // pointer to the data
+&nbsp;&nbsp;&nbsp;&nbsp;id:&nbsp;&nbsp; typeid, // type of the data
+}
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">@(require_results)
+any_data :: #force_inline proc(v: any) -&gt; (data: rawptr, id: typeid) {
+    return v.data, v.id
+}
+</code></pre>
+<h3
+	id="storing_data" >
+    Storing data
+</h3>
+<ul>
+	<li>
+		<p>
+            It always stores a pointer to the data.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>any</code>
+            &nbsp;only works by having a pointer to something. This something can be stored in the heap or on the stack.
+		</p>
+	</li>
+	<li>
+		<p>
+            If the data is already stored somewhere the operation is more direct, otherwise a temp variable is created on the stack and a pointer to this temp variable is used instead.
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+			<em>
+                only
+			</em>
+            &nbsp;way to make 
+            <code>any</code>
+            &nbsp;hold a value that outlasts the stack, the value needs to be stored in the heap. This is needed as an 
+            <code>any</code>
+            &nbsp;only stores a pointer to something; this indirection makes things a quite more annoying.
+		</p>
+	</li>
+</ul>
+<h5
+	id="loose_examples" >
+    Loose examples
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                The value is already stored
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">x: int = 123
+a: any = x
+
+// equivalent to
+
+a: any = { data = &x, id = typeid_of(type_of(x)) }
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">x: ^int = new(123)
+a: any = x
+
+// equivalent to
+
+a: any = { data = &x, id = typeid_of(type_of(x)) }
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                The value is not yet stored
+			</strong>
+            :
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">a: any = 123
+
+// equivalent to
+
+_tmp: int = 123&nbsp;&nbsp;// variable created on the stack
+a: any = { data = &_tmp, id = typeid_of(type_of(_tmp)) }
+</code></pre>
+<pre><code class="language-odin" data-lang="odin">x: int = 123
+a: any = &x
+
+// equivalent to
+
+_tmp: ^int = &x // variable created on the stack
+a: any = { data = &_tmp, id = typeid_of(type_of(_tmp)) }
+</code></pre>
+<h5
+	id="storing_a_pointer_to_something_on_the_stack" >
+    Storing a pointer to something on the stack
+</h5>
+<ul>
+	<li>
+		<p>
+            It's possible to get a pointer to the value (the value is stored):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Assigning implicitly:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>x: int = 123; a: any = x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;is a value on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores&nbsp;&nbsp;
+                                    <code>a.data = &x</code>
+                                    , which is a pointer to the value on the 
+									<strong>
+                                        stack
+									</strong>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>x: ^int = &i; a: any = x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>i</code>
+                                    &nbsp;is a value on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;stores a pointer to something on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores&nbsp;&nbsp;
+                                    <code>a.data = &x</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , to a pointer to something on the stack.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>x := make([]int, 3); a: any = x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;is a array slice on the stack, that stores a pointer to something on the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &x</code>
+                                    , which is a pointer to the array slice on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , which then points to the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    This is a really weird one, but 
+                                    <code>x</code>
+                                    &nbsp;is indeed on the stack, as mentioned by 'Barinzaya' and 'rats'.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>x: ^int = new_clone(123); a: any = x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;is a pointer to the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &x</code>
+                                    , which is a pointer on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , to a pointer on the heap.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Assigning explicitly (storing directly into the 
+                    <code>.data</code>
+                    &nbsp;field):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>x: ^int = &i; a: any = { data = x, id = typeid_of(int) }</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>i</code>
+                                    &nbsp;is a value on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;stores a pointer to something on the stack.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Note how an indirection is removed, when comparing to 
+                                    <code>x: ^int = &i; a: any = x</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            It's not possible to get a pointer to the value (the value is not stored):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Assigning implicitly:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>a</code>
+                            &nbsp;will 
+							<em>
+                                always
+							</em>
+                            &nbsp;store 
+                            <code>a.data = &_tmp</code>
+                            , where 
+                            <code>_tmp</code>
+                            &nbsp;is on the stack; therefore, it always stores a pointer to the 
+							<strong>
+                                stack
+							</strong>
+                            , due to the indirection of&nbsp;&nbsp;
+                            <code>&_tmp</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>a: any = 123</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>123</code>
+                                    &nbsp;is a literal, not yet stored.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>_tmp: int = 123</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &_tmp</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>x: int = 123; a: any = &x</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>&x</code>
+                                    &nbsp;is a pointer to 
+                                    <code>x</code>
+                                    ; the value is stored, but the pointer is not yet stored.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>_tmp: ^int = &x</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &_tmp</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , to a pointer to something on the stack.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>a: any = new_clone(123)</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>new_clone(123)</code>
+                                    &nbsp;is a pointer to 
+                                    <code>123</code>
+                                    &nbsp;on the heap; the value is stored on the heap, but the pointer is not yet stored.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>_tmp: ^int = new_clone(123)</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &_tmp</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        stack
+									</strong>
+                                    , to a pointer to something on the heap.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Assigning explicitly (storing directly into the 
+                    <code>.data</code>
+                    &nbsp;field):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>a: any = { data = &i, id = typeid_of(int) }</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Is the same case as 
+                                    <code>x: ^int = &i; a: any = { data = x, id = typeid_of(int) }</code>
+                                    , but removing the need for 
+                                    <code>x</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="storing_a_pointer_to_something_on_the_heap" >
+    Storing a pointer to something on the heap
+</h5>
+<ul>
+	<li>
+		<p>
+            It's possible to get a pointer to the value (the value is stored):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Assigning implicitly:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>x := make([]int, 3); a: any = x[2]</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;is a array slice on the stack, that stores a pointer to something on the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores 
+                                    <code>a.data = &x[2]</code>
+                                    , which is a pointer to something on the 
+									<strong>
+                                        heap
+									</strong>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Even though 
+                                    <code>x</code>
+                                    &nbsp;is on the stack, 
+                                    <code>x[i]</code>
+                                    &nbsp;is a value on the heap, so 
+                                    <code>&x[i]</code>
+                                    &nbsp;is a pointer on the heap.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Assigning explicitly (storing directly into the 
+                    <code>.data</code>
+                    &nbsp;field):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>x: ^int = new_clone(123, context.temp_allocator); a: any = { data = x, id = typeid_of(int) }</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>x</code>
+                                    &nbsp;stores a pointer to something on the heap.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>a</code>
+                                    &nbsp;stores a pointer to something on the heap.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            This is 
+											<strong>
+                                                not
+											</strong>
+                                            &nbsp;the same as doing:
+										</p>
+<pre><code class="language-odin" data-lang="odin">x: ^int = new_clone(123)
+a: any = x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</code></pre>
+										<ul>
+											<li>
+												<p>
+                                                    <code>a</code>
+                                                    &nbsp;stores a pointer to 
+                                                    <code>x</code>
+                                                    &nbsp;on the stack, which stores a pointer to something on the heap.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Note how 
+                                    <code>id</code>
+                                    &nbsp;needs to be 
+                                    <code>int</code>
+                                    , while 
+                                    <code>x: ^int</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    When unwrapping the data, we'll get an 
+                                    <code>int</code>
+                                    , not the original 
+                                    <code>^int</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    The original 
+                                    <code>^int</code>
+                                    &nbsp;can actually be retrieved by doing 
+                                    <code>(cast(^int)a.data)</code>
+                                    , instead of 
+                                    <code>(cast(^int)a.data)^</code>
+                                    ; this has to be done manually.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            The second option is done automatically by 
+                                            <code>a.(int)</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Doing something like 
+                                            <code>a.(^int)</code>
+                                            &nbsp;in this case will just cause a failure, as 
+                                            <code>(cast(^^int)a.data)^</code>
+                                            &nbsp;is not valid; the data is not 
+                                            <code>^^int</code>
+                                            , but 
+                                            <code>^int</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    If the original 
+                                    <code>^int</code>
+                                    &nbsp;is not retrieved, then the pointer is lost and the memory cannot be freed; to avoid this, this technique should use of arena allocators, such as 
+                                    <code>context.temp_allocator</code>
+                                    .
+								</p>
+							</li>
+							<li>
+								<p>
+                                    (2025-11-08)
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            I tested this and it worked correctly:
+										</p>
+									</li>
+								</ul>
+<pre><code class="language-odin" data-lang="odin">batch := new_clone(Batch(T){
+&nbsp;&nbsp;&nbsp;&nbsp;index  = i32(i),
+&nbsp;&nbsp;&nbsp;&nbsp;offset = i32(offset),
+&nbsp;&nbsp;&nbsp;&nbsp;data   = data[offset:min(offset + max_batch_size, len(data))],
+}, context.temp_allocator)
+args[0] = { data = batch, id = typeid_of(Batch(T)) }
+</code></pre>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            It's not possible to get a pointer to the value (the value is not stored):
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <s>Assigning implicitly</s>:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            This makes a 
+                            <code>_tmp</code>
+                            &nbsp;be created, which will always be on the stack, so this is not possible if you want to store a pointer to something on the heap.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Assigning explicitly (storing directly into the 
+                    <code>.data</code>
+                    &nbsp;field):
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>a: any = { data = new_clone(123, context.temp_allocator), id = typeid_of(int) }</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Same case as 
+                                    <code>x: ^int = new_clone(123, context.temp_allocator); a: any = { data = x, id = typeid_of(int) }</code>
+                                    , but removing the need for 
+                                    <code>x</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="about_array_slices_with_codeany_code" >
+    About array/slices with 
+    <code>any</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A slice is a pointer and length, in 
+                    <code>x := make([]int)</code>
+                    &nbsp;
+                    <code>x</code>
+                    &nbsp;would still be on the stack.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Rats:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Variables are always on the stack.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You can't have a &quot;heap allocated variable&quot;, but you can have a variable holding a pointer into the heap.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    That's what 
+                    <code>x</code>
+                    &nbsp;is. The actual data 
+					<em>
+                        in
+					</em>
+                    &nbsp;the slice is behind the pointer, and can be anywhere (heap, stack, mapped file, static data, etc.)
+				</p>
+			</li>
+			<li>
+				<p>
+                    A slice is ultimately just a kind of pointer, it just points to an 
+					<em>
+                        array
+					</em>
+                    &nbsp;of a variable number of things rather than just one thing
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://pkg.odin-lang.org/base/runtime/#Raw_Slice" 
+						class="external-link" 
+						target="_blank" >
+                        <code>Raw_Slice</code>
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    is it possible to do something like 
+                    <code>x := make([]int); a: any = x.data</code>
+                    , so the 
+                    <code>a.data = &x.data</code>
+                    , which then is a pointer to the heap?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Kind of, but you wouldn't be able to keep the length
+				</p>
+			</li>
+			<li>
+				<p>
+                    That's basically what 
+                    <code>a: any = x[0]</code>
+                    &nbsp;would do -- it would store a pointer to the first element in the backing data. But it loses the length.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If you knew the length, you could &quot;rebuild&quot; the slice, but 
+                    <code>any</code>
+                    &nbsp;won't really help with that.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Caio:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    so then, there's no way for me to store a whole array inside a 
+                    <code>any</code>
+                    ?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You'd have to allocate 
+					<em>
+                        the slice itself
+					</em>
+                    &nbsp;too
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">x_data := make([]int, 4)
+x := new_clone(x_data)
+a: any = x^
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    But that means you need to handle 
+                    <code>delete</code>
+                    ing/
+                    <code>free</code>
+                    ing both levels of indirection. If you're getting to that point, maybe it's time to reconsider 
+					<em>
+                        why
+					</em>
+                    &nbsp;you need that.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="getting_the_underlying_value" >
+    Getting the underlying value
+</h3>
+<ul>
+	<li>
+		<p>
+            <code>(cast(^T)a.data)^</code>
+            &nbsp;is the same as 
+            <code>a.(T)</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Barinzaya:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Also asserting the 
+                    <code>id</code>
+                    , but otherwise yes, they are the same.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Not possible:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>(cast(^(a.id))a.data)^</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    or
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>a.(a.id)</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    As the 
+                    <code>.id</code>
+                    &nbsp;id runtime known, not comp-time known.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="using_code_code" >
+    Using 
+    <code>.()</code>
+</h5>
+<pre><code class="language-odin" data-lang="odin">My_Struct :: struct{
+    x: int,
+    y: intrinsics.Atomic_Memory_Order,
+}
+main :: proc() {
+    {
+        a: int = 123
+        b: any = a
+        c := b.(int)
+        fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+    }
+    {
+        a: [4]bool
+        b: any = a
+        c := b.([4]bool)
+        fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+    }
+    {
+        a := make([dynamic]My_Struct, context.temp_allocator)
+        append(&a, My_Struct{}, My_Struct{ 2, .Relaxed })
+        b: any = a
+        c := b.([dynamic]My_Struct)
+        fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+    }
+    {
+        a := make([dynamic]My_Struct, context.temp_allocator)
+        append(&a, My_Struct{}, My_Struct{ 2, .Relaxed })
+        b: any = a[:]
+        c := b.([]My_Struct)
+        fmt.printfln("a: %v, b: %v, c: %v", a, b, c)
+    }
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>a</code>
+            , 
+            <code>b</code>
+            &nbsp;and 
+            <code>c</code>
+            &nbsp;here are always printed the same, while 
+            <code>c</code>
+            &nbsp;has the type of 
+            <code>a</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="using_codeswitch_v_in_a_code" >
+    Using 
+    <code>switch v in a {}</code>
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>a</code>
+            &nbsp;is the 
+            <code>any</code>
+            &nbsp;variable.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>v</code>
+            &nbsp;is the unwrapped value.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-odin" data-lang="odin">a: any = 123
+switch v in a {
+case int:
+&nbsp;&nbsp;&nbsp;&nbsp;fmt.printfln("Is int. Value: %v", v)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// prints "Is int. Value: 123"
+case []byte:
+}
+</code></pre>
+<h5
+	id="using_the_codereflect_code_procedures" >
+    Using the 
+    <code>reflect</code>
+    &nbsp;procedures
+</h5>
+<ul>
+	<li>
+		<p>
+            They do the same operation as shown, but fancier.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_bool" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_bool</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_bytes" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_bytes</code>
+			</a>
+            .
+		</p>
+<pre><code class="language-odin" data-lang="odin">@(require_results)
+as_bytes :: proc(v: any) -&gt; []byte {
+    if v != nil {
+        sz := size_of_typeid(v.id)
+        return ([^]byte)(v.data)[:sz]
+    }
+    return nil
+}
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_f64" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_f64</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_i64" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_i64</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_u64" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_u64</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_int" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_int</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_uint" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_uint</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_pointer" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_pointer</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Attempts to convert an 
+                    <code>any</code>
+                    &nbsp;to a 
+                    <code>rawptr</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    This only works for 
+                    <code>^T</code>
+                    , 
+                    <code>[^]T</code>
+                    , 
+                    <code>cstring</code>
+                    , 
+                    <code>cstring16</code>
+                    &nbsp;based types.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">// Various considerations first.
+result = (^rawptr)(any_value.data)^
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_raw_data" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_raw_data</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the equivalent of doing 
+                    <code>raw_data(v)</code>
+                    &nbsp;where 
+                    <code>v</code>
+                    &nbsp;is a non-any value
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">// Various considerations first.
+result = any_value.data
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_string" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_string</code>
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_string16" 
+				class="external-link" 
+				target="_blank" >
+                <code>as_string16</code>
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="etc" >
+    Etc
+</h3>
+<h5
+	id="is" >
+    Is
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#is_nil" 
+				class="external-link" 
+				target="_blank" >
+                <code>is_nil</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns true if the 
+                    <code>any</code>
+                    &nbsp;value is either 
+                    <code>nil</code>
+                    &nbsp;or the data stored at the address is all zeroed
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="etc" >
+    Etc
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#as_string16" 
+				class="external-link" 
+				target="_blank" >
+                <code>deref</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Dereferences 
+                    <code>any</code>
+                    &nbsp;if it represents a pointer-based value (
+                    <code>^T -&gt; T</code>
+                    )
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#enum_name_from_value_any" 
+				class="external-link" 
+				target="_blank" >
+                <code>enum_name_from_value_any</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the name of enum field if a valid name using reflection, otherwise returns 
+                    <code>"", false</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#equal" 
+				class="external-link" 
+				target="_blank" >
+                <code>equal</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Checks to see if two 
+                    <code>any</code>
+                    &nbsp;values are semantically equivalent
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#get_union_variant" 
+				class="external-link" 
+				target="_blank" >
+                <code>get_union_variant</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns the underlying variant value of a union. Panics if a union was not passed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#get_union_variant_raw_tag" 
+				class="external-link" 
+				target="_blank" >
+                <code>get_union_variant_raw_tag</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    UNSAFE: Returns the underlying tag value of a union. Panics if a union was not passed.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/reflect/#index" 
+				class="external-link" 
+				target="_blank" >
+                <code>index</code>
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Gets the value by an index, if the type is indexable. Returns 
+                    <code>nil</code>
+                    &nbsp;if not possible
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="examples" >
+    Examples
+</h5>
+<ul>
+	<li>
+		<p>
+            See the example below about 
+            <code>typeid</code>
+            s.
+		</p>
+	</li>
+</ul>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.28524.js" >
+		</script>
+	</body>
+</html>

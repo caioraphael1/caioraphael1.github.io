@@ -1,0 +1,2324 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.28524.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Color Theory, Drawing
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Color_Theory_Drawing/notes.html" >
+                                    Notes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Color_Theory_Drawing/sources.html" >
+                                    Sources
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Color_Theory_Drawing/techniques_and_theory.html" >
+                                    Techniques and Theory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Color_Theory_Drawing/shading.html" >
+                                    Shading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Color_Theory_Drawing/color_psychology.html" >
+                                    Color Psychology
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Color_Theory_Drawing/styles.html" >
+                                    Styles
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            Pixel Art
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/sources.html" >
+                                    Sources
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/Art/Pixel_Art/fundamentals.html" >
+                                    Fundamentals
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#lines_curves_outlines" 
+											class="summary-t3" >
+                                            Lines, Curves, Outlines
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#anti_aliasing" 
+											class="summary-t3" >
+                                            Anti-Aliasing
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#size" 
+											class="summary-t3" >
+                                            Size
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#shading" 
+											class="summary-t3" >
+                                            Shading
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#texturing" 
+											class="summary-t3" >
+                                            Texturing
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#shadow_casting" 
+											class="summary-t3" >
+                                            Shadow Casting
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#palette" 
+											class="summary-t3" >
+                                            Palette
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#details" 
+											class="summary-t3" >
+                                            Details
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#dithering" 
+											class="summary-t3" >
+                                            Dithering
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/walkthroughs.html" >
+                                    Walkthroughs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/top_down.html" >
+                                    Top-down
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/isometric.html" >
+                                    Isometric
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/animation.html" >
+                                    Animation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/effects_particles.html" >
+                                    Effects, Particles
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/platformer.html" >
+                                    Platformer
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/tilemap.html" >
+                                    Tilemap
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/retro.html" >
+                                    Retro
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/characters.html" >
+                                    Characters
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/landscapes.html" >
+                                    Landscapes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/ui.html" >
+                                    UI
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Pixel_Art/etc.html" >
+                                    Etc
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Low-Poly, PSX
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/references.html" >
+                                    References
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/low_poly_psx.html" >
+                                    Low-Poly, PSX
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Animation
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/concepts_and_principles.html" >
+                                    Concepts and Principles
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/examples.html" >
+                                    Examples
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Texel Density
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/texel_density.html" >
+                                    Texel Density
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blender - Scripting
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/scripting.html" >
+                                    Scripting
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blender - Grease Pencil
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/grease_pencil.html" >
+                                    Grease Pencil
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blender - Modeling
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/geometry.html" >
+                                    Geometry
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/topology.html" >
+                                    Topology
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/retopology.html" >
+                                    Retopology
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/curves.html" >
+                                    Curves
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/low_poly.html" >
+                                    Low-Poly
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blender - Sculpting
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/sculpting.html" >
+                                    Sculpting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/brushes.html" >
+                                    Brushes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/topology.html" >
+                                    Topology
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blender - Basics
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/viewport_and_navigation.html" >
+                                    Viewport and Navigation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/import.html" >
+                                    Import
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/export.html" >
+                                    Export
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/interface_resources_file_system_etc.html" >
+                                    Interface, Resources, File System, etc
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/keymapping.html" >
+                                    Keymapping
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blender - Environment and Composition
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/illumination.html" >
+                                    Illumination
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/terrain.html" >
+                                    Terrain
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/sky.html" >
+                                    Sky
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/compositor_nodes.html" >
+                                    Compositor Nodes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/geometry_nodes.html" >
+                                    Geometry Nodes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/composing.html" >
+                                    Composing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/camera.html" >
+                                    Camera
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/photoscanning.html" >
+                                    Photoscanning
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/snow.html" >
+                                    Snow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/physics.html" >
+                                    Physics
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/rendering.html" >
+                                    Rendering
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/etc.html" >
+                                    Etc
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/drivers.html" >
+                                    Drivers
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blender - Texturing
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/uv_map.html" >
+                                    UV Map
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/materials.html" >
+                                    Materials
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/texturing.html" >
+                                    Texturing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/painting.html" >
+                                    Painting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/stylization.html" >
+                                    Stylization
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/sketching.html" >
+                                    Sketching
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/image_editing.html" >
+                                    Image Editing
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blender - Animation
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/animation.html" >
+                                    Animation
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blender - Rigging and Animation
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/rigging.html" >
+                                    Rigging
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blender/animation.html" >
+                                    Animation
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blockbench
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blockbench/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blockbench/explanations.html" >
+                                    Explanations
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Blockbench - Source Code
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blockbench/plugin_creative_mode.html" >
+                                    Plugin: Creative Mode
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blockbench/plugin_wasd_control.html" >
+                                    Plugin: WASD Control
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blockbench/future_implementations.html" >
+                                    Future implementations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Blockbench/source_code.html" >
+                                    Source Code
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Drawing Softwares
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/drawing_software.html" >
+                                    Drawing Software
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Aseprite
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Aseprite/aseprite.html" >
+                                    Aseprite
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Krita
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Voxel Editors
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/voxel_editors.html" >
+                                    Voxel Editors
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/converter_from_minecraft_to_3d_model.html" >
+                                    Converter from Minecraft to 3D Model
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            MagicaVoxel
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/features_and_review.html" >
+                                    Features and Review
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/explanation.html" >
+                                    Explanation
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Level Editors 2D
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Level_Editors_2D/data_driven_strategy_aaa_level_design_pipeline.html" >
+                                    Data-driven Strategy / AAA Level Design Pipeline
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Level_Editors_2D/ldtk_level_designer_tool_kit.html" >
+                                    LDtk (Level Designer tool kit)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Level_Editors_2D/tiled.html" >
+                                    ~Tiled
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Level_Editors_2D/sprite_fusion.html" >
+                                    Sprite Fusion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Level_Editors_2D/ogmo.html" >
+                                    <s>Ogmo</s>
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Level Editors 3D
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/brush_volume_editors_bsp_editor_i_think.html" >
+                                    Brush Volume Editors / .bsp Editor (I think)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/tiling_for_3d.html" >
+                                    Tiling for 3D
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/cad_software.html" >
+                                    CAD Software
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/others_for_3d.html" >
+                                    Others for 3D
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            LDtk
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/LDtk/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/LDtk/review.html" >
+                                    Review
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/LDtk/compiling_from_source.html" >
+                                    Compiling from Source
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/LDtk/tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            TrenchBroom
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/explanations.html" >
+                                    Explanations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/quake_specifics.html" >
+                                    Quake specifics
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/godot_plugin_funcgodot.html" >
+                                    Godot Plugin: FuncGodot
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/other_exporting_options.html" >
+                                    Other exporting options
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Art Discussions
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/creative_achievement_and_ownership.html" >
+                                    Creative Achievement and Ownership
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Assets - Sources and References
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Art/Assets_-_Sources_and_References/sources.html" >
+                                    Sources
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Fundamentals
+					</h1>
+					<p>
+						<time
+							datetime="2023-03-17" >
+                            🕒 Created: 2023-03-17
+						</time>
+						<time
+							datetime="2026-03-15" >
+                            | Updated: 2026-03-15
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://pixeljoint.com/forum/forum_posts.asp?TID=11299" 
+				class="external-link" 
+				target="_blank" >
+                cure - Pixel Art Fundamentals
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    AA.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Dithering.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Clusters.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Jaggies.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Banding.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Pillow Shading.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Sel-out (selective outline).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Palette.
+				</p>
+			</li>
+			<li>
+				<p>
+                    HSL (Hue, Saturation, and Luminescence)
+				</p>
+			</li>
+			<li>
+				<p>
+                    Color Ramps.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            A color ramp is a group of colors that can be used together, arranged according to luminosity. A palette can consist of a single ramp of many different ramps.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Hue Shifting.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=pXeTmgeNIrc" 
+				class="external-link" 
+				target="_blank" >
+                Mislav - Fundamentals
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Good overview of all fundamentals.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Good explanation around shading.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://makegames.tumblr.com/post/42648699708/pixel-art-tutorial" 
+				class="external-link" 
+				target="_blank" >
+                Derek - Pixel Art Fundamentals
+			</a>
+            </s>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Too basic and superficial when compared to other tutorials.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=lHGDz_sz-gk" 
+				class="external-link" 
+				target="_blank" >
+                Techniques to verify Pixel Art quality
+			</a>
+            .
+		</p>
+		<ol>
+			<li>
+				<p>
+                    Flip the sprite.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Check the silhouette.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Check the palette separately from the art.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Check the 'color value' (grayscale range).
+				</p>
+			</li>
+			<li>
+				<p>
+                    ~Take a break.
+				</p>
+			</li>
+		</ol>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=SZXg7rexa2k" 
+				class="external-link" 
+				target="_blank" >
+                Do's and Don'ts
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="lines_curves_outlines" >
+    Lines, Curves, Outlines
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://lospec.com/articles/pixel-art-outlines/" 
+				class="external-link" 
+				target="_blank" >
+                Skeddles - Outlines
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://lospec.com/articles/pixel-art-outlines-part-2-using-color/" 
+				class="external-link" 
+				target="_blank" >
+                Skeddles - Outlines with Color
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=ye21r27kN9I" 
+				class="external-link" 
+				target="_blank" >
+                Brandon James Greer - Creating lines and curves
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Basics - 1_1 (BuggedFrog).gif" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By BuggedFrog.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Outlines - 1_5 (Saint11).gif" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By BuggedFrog.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <video controls src="assets/basics-saint11.mp4" width="500">
+            </video>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Saint11.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Alignment saint11.png" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Saint11.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="anti_aliasing" >
+    Anti-Aliasing
+</h3>
+<ul>
+	<li>
+		<p>
+            <img src="assets/Basics - 1_3.png" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By ?
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="size" >
+    Size
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=WUlgvNe4BLU" 
+				class="external-link" 
+				target="_blank" >
+                Tips to start in Pixel Art
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Tips are aimed at low-res, retro designs.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=upEGBGCiWEw" 
+				class="external-link" 
+				target="_blank" >
+                Canvas Size
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=ad-3dn2qUUs" 
+				class="external-link" 
+				target="_blank" >
+                Pixel Art Size
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=PtYoLFKkgoQ" 
+				class="external-link" 
+				target="_blank" >
+                Learning to resize Pixel Art and using references
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=Gwrpw1YtuGo" 
+				class="external-link" 
+				target="_blank" >
+                Character Scale
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Resolução - 3 (Feichtmeir).png" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Feichtmeir.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Resolução - 1.jpeg" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By ?
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Resolução - 4 (Saint11).gif" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Saint11.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="shading" >
+    Shading
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=NHPdggJt8yc" 
+				class="external-link" 
+				target="_blank" >
+                Shading basics
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=u7v4uEDwW9o" 
+				class="external-link" 
+				target="_blank" >
+                Shading a sphere and an isometric cube
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Shading - 1_4 (Saint11).gif" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Saint11.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Shading - 1_7 (Saint11).gif" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Saint11.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Shading - 1_8 (Saint11).gif" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Saint11.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <video controls src="assets/Shading - 6_1 (Saint11).mp4" width="500">
+            </video>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Saint11.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/shading desixstudios.png" width="500" >
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By DesixStudios.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/cube.png" height="200" >
+            &nbsp;
+            <img src="assets/cylinder.png" height="200" >
+            &nbsp;
+            <img src="assets/sphere.png" height="200" >
+            &nbsp;
+            <img src="assets/cone.png" height="200" >
+            &nbsp;
+            <img src="assets/pyramid.png" height="200" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/shading - guide-to-shading-and-form-2429594974.png" width="500">
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/shading.jpg" width="500">
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-02-13_17-48-47.png" width="500" >
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Saint11.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-02-13_17-47-13.png" width="500" >
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Saint11.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Volume shadow:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The most common type of shadow, it’s a self-projected soft shadow. It’s the result of the light being blocked by the object’s own volume.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Terminator:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It’s the transition zone between the light area and the dark area of an object. It can be soft or sharp. In pixel art we favor sharp transitions to avoid banding (more about that in the future).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Projected shadow:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When one object projects a patch of shadow into another. This is usually a very sharp shadow.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Reflection highlight:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Also known as specular highlight, it’s the brightest spot in the object. Glossy and reflective objects have small and focused highlights. Rougher objects may not have a reflection highlight.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Highlight:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The basic lighter area of an object, imagine it as the reverse of the volume shadow.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Rim Light:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    When the light is coming from the back it looks almost like a bright outline. This is usually cast by a secondary, dimmer light.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Bounce Light:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    It’s a little hard to see sometimes but this is a slightly brighter spot in the volume shadow, caused by the light bouncing off the ground and back onto the object. By no means you need to memorize this, but if you are not sure on what to do on your painting, check this list. Another thing to keep in mind is that all of this will not even fit in most pixel art pieces, especially the lower resolution or the lower color count ones. As always, remember: good pixel art eliminates all unnecessary detail.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="texturing" >
+    Texturing
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=kyHGkI7zcKg" 
+				class="external-link" 
+				target="_blank" >
+                Texturing tips
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    {00:00-&gt;11:24} Great explanation of how to reproduce the textures.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Grass.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Foliage.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Stone.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Bark.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Planks.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Metals.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Water.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Snow.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Ice.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Clouds.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Lava Rocks.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Glass.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Material tips to convey roughness, smoothness, transparency, solid, liquid, viscosity, reflections.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Cloth.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Folds come in cylindrical shapes or cone shapes.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {11:24-&gt;20:36}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Coin.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Arrow.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Sword.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Pot.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Potion.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Shield.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Torch.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    {20:36-&gt;21:16}
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Tip for palette shifting when shading something.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/stone - 24-12-14_70.png" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By ?.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="shadow_casting" >
+    Shadow Casting
+</h3>
+<ul>
+	<li>
+		<p>
+            <img src="assets/shadow casting.jpg" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By ?.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="palette" >
+    Palette
+</h3>
+<ul>
+	<li>
+		<p>
+            <img src="assets/Palette - 3_1 (SadFaceRL).gif" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By SadFaceRL.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <img src="assets/Palette - 3_2 (Feichtmeir).png" width="500">
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    By Feichtmeir.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="palette_creation" >
+    Palette Creation
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=XyR7yG6cSFQ" 
+				class="external-link" 
+				target="_blank" >
+                How to do Palette Swap using Indexed Colors
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=PdXpUIATzO0" 
+				class="external-link" 
+				target="_blank" >
+                Create a 4-color palette
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=uUdMb8Bb2II" 
+				class="external-link" 
+				target="_blank" >
+                Pixel Overload - Creating a Palette
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="hue_shifting" >
+    Hue Shifting
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=hkrK65FPmDI" 
+				class="external-link" 
+				target="_blank" >
+                Choosing Color Palettes and HueShifting
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=PNtMAxYaGyg" 
+				class="external-link" 
+				target="_blank" >
+                Improving the Palette with HueShifting
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="palettes" >
+    Palettes
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://lospec.com/" 
+				class="external-link" 
+				target="_blank" >
+                Lospec
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://coolors.co/" 
+				class="external-link" 
+				target="_blank" >
+                Coolors
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Interesting palettes
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<a
+						href="https://lospec.com/palette-list/jungle-8" 
+						class="external-link" 
+						target="_blank" >
+                        Jungle-8
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://lospec.com/palette-list/jungle-punch-5-colors" 
+						class="external-link" 
+						target="_blank" >
+                        Jungle Punch 5 Colors
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://lospec.com/palette-list/junglecandy-8" 
+						class="external-link" 
+						target="_blank" >
+                        Jungle Candy 8
+					</a>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://lospec.com/palette-list/syz15" 
+						class="external-link" 
+						target="_blank" >
+                        syz15
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://lospec.com/palette-list/technogarten" 
+						class="external-link" 
+						target="_blank" >
+                        technogarten
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://lospec.com/palette-list/berry-nebula" 
+						class="external-link" 
+						target="_blank" >
+                        berry-nebula
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://lospec.com/palette-list/devil-food" 
+						class="external-link" 
+						target="_blank" >
+                        devil-food
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://lospec.com/palette-list/iridescent-crystal" 
+						class="external-link" 
+						target="_blank" >
+                        iridescent-crystal
+					</a>
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://lospec.com/palette-list/coldwood8" 
+						class="external-link" 
+						target="_blank" >
+                        coldwood8
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="details" >
+    Details
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=TyhrNo6yRFM" 
+				class="external-link" 
+				target="_blank" >
+                Removing Details
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="dithering" >
+    Dithering
+</h3>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.28524.js" >
+		</script>
+	</body>
+</html>

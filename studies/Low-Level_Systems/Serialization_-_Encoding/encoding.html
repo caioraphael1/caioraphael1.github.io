@@ -1,0 +1,2643 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.28524.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Memory
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/alignment.html" >
+                                    Alignment
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/endianness_byte_order.html" >
+                                    Endianness (byte order)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/stack_memory.html" >
+                                    Stack Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/virtual_memory.html" >
+                                    Virtual Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/os_memory_on_windows.html" >
+                                    OS: Memory on Windows
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/allocators.html" >
+                                    Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/tools_memory_analysis.html" >
+                                    Tools: Memory Analysis
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/handles_instead_of_pointers.html" >
+                                    Handles instead of Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/ownership_strategies_destruction_strategies.html" >
+                                    Ownership Strategies / Destruction Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/strategies_for_handling_short_lived_memory.html" >
+                                    Strategies for handling short lived memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/garbage_collection.html" >
+                                    Garbage Collection
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Memory/initialization.html" >
+                                    Initialization
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            CPU
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/physical_structure.html" >
+                                    Physical Structure
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/architectures_instructions_sets_architectures_isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/architectural_design_philosophies_isa_philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/registers.html" >
+                                    Registers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/cache.html" >
+                                    Cache
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/branchless.html" >
+                                    Branchless
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/soa_struct_of_arrays_ecs_entity_component_system.html" >
+                                    SOA (Struct Of Arrays) / ECS (Entity Component System)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/CPU/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Multithreading
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/core_concepts.html" >
+                                    Core Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/thread.html" >
+                                    Thread
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/strategies.html" >
+                                    Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/implementation_detail.html" >
+                                    Implementation Detail
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/synchronization_primitives.html" >
+                                    Synchronization Primitives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/double_buffering.html" >
+                                    Double-Buffering
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Multithreading/networking_strategies.html" >
+                                    Networking Strategies
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Safety_Critical/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Odin
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/overview.html" >
+                                    Overview
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/my_impressions.html" >
+                                    My Impressions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/installation.html" >
+                                    Installation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/compile_time_stuff.html" >
+                                    Compile-time Stuff
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/package_system.html" >
+                                    Package System
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/lsp_ols_odin_language_server.html" >
+                                    LSP (OLS - Odin Language Server)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/control_flow_if_when_switch_for_defer.html" >
+                                    Control Flow (if, when, switch, for, defer)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/procedures.html" >
+                                    Procedures
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/codeany_code.html" >
+                                    <code>any</code>
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/matrix.html" >
+                                    Matrix
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/quaternion.html" >
+                                    Quaternion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/complex.html" >
+                                    Complex
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/rune.html" >
+                                    Rune
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/maps_hash_maps.html" >
+                                    Maps (Hash Maps)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/struct.html" >
+                                    Struct
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/enum.html" >
+                                    Enum
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/union.html" >
+                                    Union
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/bit_sets.html" >
+                                    Bit Sets
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/arrays.html" >
+                                    Arrays
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/interfaces_methods_vtables.html" >
+                                    Interfaces / Methods / VTables
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/context.html" >
+                                    Context
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/memory_address.html" >
+                                    Memory: Address
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/memory_allocators.html" >
+                                    Memory: Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/memory_operations.html" >
+                                    Memory: Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/entry_point.html" >
+                                    Entry Point
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/multi_threading.html" >
+                                    Multi-Threading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/ffi_foreign_function_interface_bindings.html" >
+                                    FFI (Foreign Function Interface) / Bindings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/web_build.html" >
+                                    Web Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/file_system_process_cli_shell.html" >
+                                    File System / Process / CLI / Shell
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Odin/useful_packages.html" >
+                                    Useful Packages
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            C and C++
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/versions.html" >
+                                    Versions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/c_standard.html" >
+                                    C Standard
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/c_standard_library_libc.html" >
+                                    C Standard Library (libc)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/critiques.html" >
+                                    Critiques
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/lsp.html" >
+                                    LSP
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/explicitness.html" >
+                                    Explicitness
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/compiler_hints.html" >
+                                    Compiler Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/pre_processors.html" >
+                                    Pre-processors
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/libraries.html" >
+                                    Libraries
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/input_output.html" >
+                                    Input/Output
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/variable_declarations.html" >
+                                    Variable Declarations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/constants.html" >
+                                    Constants
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/statements_and_control_flow.html" >
+                                    Statements and Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/scopes.html" >
+                                    Scopes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/functions.html" >
+                                    Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/basic_types.html" >
+                                    Basic Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/arrays_from_c.html" >
+                                    Arrays from C
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/structs.html" >
+                                    Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/unions.html" >
+                                    Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/enums.html" >
+                                    Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/classes.html" >
+                                    Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/pointers.html" >
+                                    Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/references_c_plus__plus_98.html" >
+                                    References (C++98)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/undefined_behavior.html" >
+                                    Undefined Behavior
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/multithreading.html" >
+                                    Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/desktop_apps.html" >
+                                    Desktop Apps
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/C_and_C++/game_dev.html" >
+                                    Game Dev
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Build Systems - Compilation - Linking
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/compilation_process.html" >
+                                    Compilation Process
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/linker.html" >
+                                    Linker
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/compilers.html" >
+                                    Compilers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/build_tools.html" >
+                                    Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/meta_build_tools.html" >
+                                    Meta Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Build_Systems_-_Compilation_-_Linking/extra_annoying_things_on_windows.html" >
+                                    Extra: Annoying things on Windows
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Assembly - ASM
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/my_notes.html" >
+                                    My Notes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/abi_application_binary_interface.html" >
+                                    ABI (Application Binary Interface)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/sections.html" >
+                                    Sections
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/jump_patterns.html" >
+                                    Jump Patterns
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/calling_conventions.html" >
+                                    Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/representing_structs.html" >
+                                    Representing Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/generating_the_assembly_via_code.html" >
+                                    Generating the Assembly via code
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Assembly/virtual_instruction_sets.html" >
+                                    Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Reverse Engineering
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Reverse_Engineering/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Reverse_Engineering/inspect.html" >
+                                    Inspect
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Handmade Hero
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Handmade_Hero/handmade_hero.html" >
+                                    Handmade Hero
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Profilers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/tracy.html" >
+                                    Tracy
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/spall.html" >
+                                    Spall
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/nvidia_nsight_graphics_gpu_trace.html" >
+                                    Nvidia Nsight Graphics - GPU Trace
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/amd_gpu_profiler_amd_rgp.html" >
+                                    AMD GPU Profiler (AMD RGP)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/intel_gpa.html" >
+                                    Intel GPA
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Profilers/nsight_systems.html" >
+                                    <s>Nsight Systems</s>
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Debuggers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/debugging_tips.html" >
+                                    Debugging Tips
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/file_types.html" >
+                                    File Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/rad_debugger.html" >
+                                    RAD Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/gdb_gnu_debugger.html" >
+                                    GDB (GNU Debugger)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/lldb.html" >
+                                    LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/remedybg_debugger.html" >
+                                    RemedyBG Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/vscode.html" >
+                                    VSCode
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/visual_studio_debugger.html" >
+                                    Visual Studio Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/windbg_cdb.html" >
+                                    WinDbg / CDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/others.html" >
+                                    Others
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Debuggers/web.html" >
+                                    Web
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Parsing
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/lexer.html" >
+                                    Lexer
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/parser.html" >
+                                    Parser
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/abstract_syntax_tree_ast.html" >
+                                    Abstract Syntax Tree (AST)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            Serialization - Encoding
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Serialization_-_Encoding/representations.html" >
+                                    Representations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/Serialization_-_Encoding/serialization.html" >
+                                    Serialization
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/Low-Level_Systems/Serialization_-_Encoding/encoding.html" >
+                                    Encoding
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#text" 
+											class="summary-t3" >
+                                            Text
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#example" 
+													class="summary-t4" >
+                                                    Example
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#base64" 
+											class="summary-t3" >
+                                            Base64
+										</a>
+										<ul>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JAI
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/build.html" >
+                                    Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/types.html" >
+                                    Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/meta_programming.html" >
+                                    Meta programming
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Low-Level_Systems/control_flow.html" >
+                                    Control flow
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Encoding
+					</h1>
+					<p>
+						<time
+							datetime="2025-04-10" >
+                            🕒 Created: 2025-04-10
+						</time>
+						<time
+							datetime="2026-08-30" >
+                            | Updated: 2026-08-30
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<ul>
+	<li>
+		<p>
+            Maps characters (text) to byte sequences and vice versa. Used for text fields in serialization.
+		</p>
+	</li>
+</ul>
+<h5
+	id="naming_confusion" >
+    Naming Confusion
+</h5>
+<ul>
+	<li>
+		<p>
+            When someone says 
+			<strong>
+                &quot;custom package encoding&quot;
+			</strong>
+            , they usually mean:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    A 
+					<em>
+                        framing protocol
+					</em>
+                    &nbsp;(how message start/end is delimited).
+				</p>
+			</li>
+			<li>
+				<p>
+                    A 
+					<em>
+                        custom serialization/deserialization
+					</em>
+                    &nbsp;strategy.
+				</p>
+			</li>
+			<li>
+				<p>
+                    A binary or textual format for transmitting structures over the network.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Using &quot;encoding&quot; for package framing strategies is technically valid but potentially ambiguous.
+		</p>
+	</li>
+	<li>
+		<p>
+            In networking, it’s better to use more specific terms.
+		</p>
+	</li>
+	<li>
+		<p>
+            The word &quot;encoding&quot; itself isn’t wrong but should be interpreted in the technical context.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://pkg.odin-lang.org/core/encoding/cbor/#marshal_into_bytes" 
+				class="external-link" 
+				target="_blank" >
+                In Odin, JSON and CBOR are considered &quot;encoding&quot;
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="text" >
+    Text
+</h3>
+<p>
+    Each solves a different constraint:
+</p>
+<p>
+    ASCII → simplicity (pre-Unicode world)
+    <br>
+    UTF-8 → compatibility + compactness
+    <br>
+    UTF-16 → compromise for legacy 16-bit systems
+    <br>
+    UTF-32 → simplicity of indexing
+</p>
+<p>
+    if it weren't for grapheme, array of unicode would be a viable choice?
+    <br>
+    Yes—if grapheme clusters did not exist, then “array of Unicode code points” ([]u32) would be a much cleaner and more viable model. In fact, it would be close to an idealized design.
+    <br>
+    but: every thing is 4 bytes; which is very bad.
+</p>
+<h5
+	id="unicode" >
+    Unicode
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Unicode vs Encoding
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Unicode defines characters and assigns them numbers.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Encodings define how those numbers are stored as bytes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Computers store bytes, not code points.
+				</p>
+			</li>
+			<li>
+				<p>
+                    An encoding converts: Code Point &lt;-&gt; Bytes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The major Unicode encodings are:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            ASCII
+						</p>
+					</li>
+					<li>
+						<p>
+                            UTF-8
+						</p>
+					</li>
+					<li>
+						<p>
+                            UTF-16
+						</p>
+					</li>
+					<li>
+						<p>
+                            UTF-32
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            A code point is just an integer.
+		</p>
+	</li>
+	<li>
+		<p>
+            It uses values from 
+            <code>U+0000 (0) -&gt; U+10FFFF (1_114_111)</code>
+            , which fits in 21 bits.
+            <br>
+            | Character | Code Point | Decimal |
+            <br>
+            |-----------|------------|---------|
+            <br>
+            | 
+            <code>A</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+0041&nbsp;&nbsp;&nbsp;&nbsp; | 65&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>é</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+00E9&nbsp;&nbsp;&nbsp;&nbsp; | 233&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>中</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+4E2D&nbsp;&nbsp;&nbsp;&nbsp; | 20013&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>😀</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+1F600&nbsp;&nbsp;&nbsp;&nbsp;| 128512&nbsp;&nbsp;|
+		</p>
+	</li>
+</ul>
+<h5
+	id="ascii_american_standard_code_for_information_interchange" >
+    ASCII (American Standard Code for Information Interchange)
+</h5>
+<ul>
+	<li>
+		<p>
+            ASCII is simpler because it's both a character set and an encoding.
+		</p>
+	</li>
+	<li>
+		<p>
+            Uses exactly 1 byte (8 bits) per character.
+		</p>
+	</li>
+	<li>
+		<p>
+            Only defines 
+            <code>0x00 (0) -&gt; 0x7F (127)</code>
+            <br>
+            | Character | Code Point | Hex Byte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            |-----------|------------|-------------------|
+            <br>
+            | 
+            <code>A</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+0041&nbsp;&nbsp;&nbsp;&nbsp; | 41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>é</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+00E9&nbsp;&nbsp;&nbsp;&nbsp; | not representable |
+            <br>
+            | 
+            <code>中</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+4E2D&nbsp;&nbsp;&nbsp;&nbsp; | not representable |
+            <br>
+            | 
+            <code>😀</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+1F600&nbsp;&nbsp;&nbsp;&nbsp;| not representable |
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                The problem
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Too few representations.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="utf_8" >
+    UTF-8
+</h5>
+<ul>
+	<li>
+		<p>
+            Variable-width encoding.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    1 byte for ASCII
+				</p>
+			</li>
+			<li>
+				<p>
+                    2 bytes for some European characters
+				</p>
+			</li>
+			<li>
+				<p>
+                    3 bytes for most world scripts
+				</p>
+			</li>
+			<li>
+				<p>
+                    4 bytes for emoji and other supplementary characters
+                    <br>
+                    | Character | Code Point | UTF-8 Bytes |
+                    <br>
+                    |-----------|------------|-------------|
+                    <br>
+                    | 
+                    <code>A</code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+0041&nbsp;&nbsp;&nbsp;&nbsp; | 41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+                    <br>
+                    | 
+                    <code>é</code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+00E9&nbsp;&nbsp;&nbsp;&nbsp; | C3 A9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+                    <br>
+                    | 
+                    <code>中</code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+4E2D&nbsp;&nbsp;&nbsp;&nbsp; | E4 B8 AD&nbsp;&nbsp;&nbsp;&nbsp;|
+                    <br>
+                    | 
+                    <code>😀</code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+1F600&nbsp;&nbsp;&nbsp;&nbsp;| F0 9F 98 80 |
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                The problem
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For chars: UTF-8 only answers &quot;How do I store text as bytes?&quot;, but it does not answer &quot;What is a character?&quot;.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If your language says 
+                            <code>type char = u8</code>
+                            , then what is '😀'? It cannot fit.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    For strings: they are no longer indexable in O(1) by character
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="utf_16" >
+    UTF-16
+</h5>
+<ul>
+	<li>
+		<p>
+            Stores text in 16-bit units.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Size
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    BMP characters (Basic Multilingual Plane, U+0000 to U+FFFF) use 2 bytes
+				</p>
+			</li>
+			<li>
+				<p>
+                    Characters outside BMP (e.g., emojis, historical scripts) use 4 bytes (surrogate pairs)
+				</p>
+			</li>
+			<li>
+				<p>
+                    More efficient for languages with many BMP characters (e.g., many Asian languages)
+                    <br>
+                    | Character | Code Point | UTF-16 Bytes |
+                    <br>
+                    |-----------|------------|--------------|
+                    <br>
+                    | 
+                    <code>A</code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+0041&nbsp;&nbsp;&nbsp;&nbsp; | 0041&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+                    <br>
+                    | 
+                    <code>é</code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+00E9&nbsp;&nbsp;&nbsp;&nbsp; | 00E9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+                    <br>
+                    | 
+                    <code>中</code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+4E2D&nbsp;&nbsp;&nbsp;&nbsp; | 4E2D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+                    <br>
+                    | 
+                    <code>😀</code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+1F600&nbsp;&nbsp;&nbsp;&nbsp;| D83D DE00&nbsp;&nbsp;&nbsp;&nbsp;|
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The emoji requires two 16-bit units; Those paired values are called a surrogate pair.
+		</p>
+	</li>
+</ul>
+<h5
+	id="utf_32" >
+    UTF-32
+</h5>
+<ul>
+	<li>
+		<p>
+            Stores every code point as a 32-bit integer.
+		</p>
+	</li>
+	<li>
+		<p>
+            Very simple.
+		</p>
+	</li>
+	<li>
+		<p>
+            Very memory-heavy.
+            <br>
+            | Character | Code Point | UTF-32 Bytes |
+            <br>
+            |-----------|------------|--------------|
+            <br>
+            | 
+            <code>A</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+0041&nbsp;&nbsp;&nbsp;&nbsp; | 00000041&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>é</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| U+00E9&nbsp;&nbsp;&nbsp;&nbsp; | 000000E9&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>中</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+4E2D&nbsp;&nbsp;&nbsp;&nbsp; | 00004E2D&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>😀</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | U+1F600&nbsp;&nbsp;&nbsp;&nbsp;| 0001F600&nbsp;&nbsp;&nbsp;&nbsp; |
+		</p>
+	</li>
+</ul>
+<h4
+	id="example" >
+    Example
+</h4>
+<pre><code class="language-odin" data-lang="odin">s := "hello 😃 world こんにちは"
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Total of bytes: 
+			<strong>
+                32
+			</strong>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>hello</code>
+                    : 5
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code> </code>
+                    &nbsp;(space): 1
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>😃</code>
+                    : 4
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code> </code>
+                    &nbsp;(space): 1
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>world</code>
+                    : 5
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code> </code>
+                    &nbsp;(space): 1
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>こんにちは</code>
+                    : 15 (5 × 3)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Total of codepoints: 
+			<strong>
+                19
+			</strong>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>hello</code>
+                    : 5
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code> </code>
+                    &nbsp;(space): 1
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>😃</code>
+                    &nbsp;→ 1
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code> </code>
+                    &nbsp;(space): 1
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>world</code>
+                    &nbsp;→ 5
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code> </code>
+                    &nbsp;(space): 1
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>こんにちは</code>
+                    &nbsp;→ 5
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Overview:
+            <br>
+            | Character | UTF-8 bytes (hex) | Decimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | --------- | ----------------- | ------------------ |
+            <br>
+            | 
+            <code>h</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>68</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 104&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>e</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>65</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 101&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>l</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6C</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 108&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>l</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6C</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 108&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>o</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6F</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | space&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>20</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>😃</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>F0 9F 98 83</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 240, 159, 152, 131 |
+            <br>
+            | space&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>20</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>w</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>77</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 119&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>o</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6F</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>r</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>72</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 114&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>l</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>6C</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 108&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>d</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>64</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | space&nbsp;&nbsp;&nbsp;&nbsp; | 
+            <code>20</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+            <br>
+            | 
+            <code>こ</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 81 93</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 129, 147&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>ん</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 82 93</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 130, 147&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>に</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 81 AB</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 129, 171&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>ち</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 81 A1</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 129, 161&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+            <br>
+            | 
+            <code>は</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+            <code>E3 81 AF</code>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 227, 129, 175&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+		</p>
+	</li>
+</ul>
+<h3
+	id="base64" >
+    Base64
+</h3>
+<ul>
+	<li>
+		<p>
+            Is a way to represent arbitrary binary data using only printable ASCII characters.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is not encryption or compression—just an encoding so binary data can be stored safely in text formats.
+		</p>
+	</li>
+	<li>
+		<p>
+            It is called Base64 because the encoding uses a numeral system with 64 distinct symbols to represent data.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Each Base64 character encodes 6 bits.
+				</p>
+			</li>
+			<li>
+				<p>
+                    So you need exactly 64 symbols (
+                    <code>2^6 = 64</code>
+                    ) to represent every possible 6-bit value.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Base64 exists as many systems historically handled text only.
+		</p>
+	</li>
+	<li>
+		<p>
+            Raw binary can contain:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    null bytes (0x00)
+				</p>
+			</li>
+			<li>
+				<p>
+                    control characters
+				</p>
+			</li>
+			<li>
+				<p>
+                    non-printable bytes
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Converts binary → safe text using only:
+		</p>
+<pre><code class="language-txt" data-lang="txt">A–Z a–z 0–9 + /
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Padding uses 
+            <code>=</code>
+            &nbsp;but it is not part of the base.
+		</p>
+	</li>
+</ul>
+<h5
+	id="size" >
+    Size
+</h5>
+<ul>
+	<li>
+		<p>
+            Base64 increases size by about 33%.
+		</p>
+	</li>
+	<li>
+		<p>
+            4 output bytes per 3 input bytes.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">encoded_size ≈ ceil(input_size / 3) * 4
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<em>
+                &quot;Why on earth would you use an encoding that increases the size of the thing?&quot;
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Because Base64 solves transport and compatibility problems, not size efficiency. It is used when binary must safely travel through systems that are text-only or text-fragile.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Raw binary can break many pipelines due to:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            null bytes (0x00)
+						</p>
+					</li>
+					<li>
+						<p>
+                            control characters
+						</p>
+					</li>
+					<li>
+						<p>
+                            encoding assumptions (UTF-8/UTF-16)
+						</p>
+					</li>
+					<li>
+						<p>
+                            line-ending conversions
+						</p>
+					</li>
+					<li>
+						<p>
+                            legacy text parsers
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Historically (and still today), many formats and tools expect text, not arbitrary bytes.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Base64 guarantees the data contains only safe printable ASCII.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="core_idea" >
+    Core idea
+</h5>
+<ul>
+	<li>
+		<p>
+            Base64 works in 6-bit chunks.
+		</p>
+	</li>
+	<li>
+		<p>
+            Binary bytes are 8 bits each
+		</p>
+	</li>
+	<li>
+		<p>
+            Base64 symbols encode 6 bits each
+		</p>
+	</li>
+	<li>
+		<p>
+            So it repacks data
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">3 bytes (24 bits) → 4 Base64 characters
+</code></pre>
+<ul>
+	<li>
+		<p>
+            as
+		</p>
+	</li>
+</ul>
+<pre><code class="language-txt" data-lang="txt">3 × 8 = 24 bits
+4 × 6 = 24 bits
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Input:
+				</p>
+<pre><code class="language-txt" data-lang="txt">"Man"
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Write bytes:
+				</p>
+<pre><code class="language-txt" data-lang="txt">M = 01001101
+a = 01100001
+n = 01101110
+
+010011010110000101101110
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Split into 6-bit groups:
+				</p>
+<pre><code class="language-txt" data-lang="txt">010011 010110 000101 101110
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    In decimals:
+				</p>
+<pre><code class="language-txt" data-lang="txt">19 22 5 46
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Map to Base64 alphabet:
+				</p>
+<pre><code class="language-txt" data-lang="txt">0–25&nbsp;&nbsp;→ A–Z
+26–51 → a–z
+52–61 → 0–9
+62&nbsp;&nbsp;&nbsp;&nbsp;→ +
+63&nbsp;&nbsp;&nbsp;&nbsp;→ /
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Output:
+				</p>
+<pre><code class="language-txt" data-lang="txt">19 → T
+22 → W
+5&nbsp;&nbsp;→ F
+46 → u
+</code></pre>
+				<ul>
+					<li>
+						<p>
+                            Concatenated:
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-txt" data-lang="txt">TWFu
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="padding_rules" >
+    Padding rules
+</h5>
+<ul>
+	<li>
+		<p>
+            If input length is not divisible by 3, Base64 pads with 
+            <code>=</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Example
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Input:
+				</p>
+<pre><code class="language-txt" data-lang="txt">"Ma"
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Write binary:
+				</p>
+<pre><code class="language-txt" data-lang="txt">01001101 01100001
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Split into 6-bit groups:
+				</p>
+<pre><code class="language-txt" data-lang="txt">010011 010110 000100 000000
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    In decimals -&gt; Map to Base64 alphabet.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Output:
+				</p>
+<pre><code class="language-txt" data-lang="txt">TWE=
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.28524.js" >
+		</script>
+	</body>
+</html>

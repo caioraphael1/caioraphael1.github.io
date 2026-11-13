@@ -1,0 +1,532 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.28524.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Terminal
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Terminal/Terminal/my_windows_setup.html" >
+                                    My Windows setup
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Terminal/Terminal/terminal_emulators.html" >
+                                    Terminal Emulators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Terminal/Terminal/tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Terminal/Terminal/terminal_file_manager.html" >
+                                    Terminal File Manager
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            Shells
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Terminal/Shells/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/Terminal/Shells/no_shell.html" >
+                                    No Shell
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#win32_api" 
+											class="summary-t3" >
+                                            win32 API
+										</a>
+										<ul>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/Terminal/Shells/shells.html" >
+                                    Shells
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        No Shell
+					</h1>
+					<p>
+						<time
+							datetime="2025-02-17" >
+                            🕒 Created: 2025-02-17
+						</time>
+						<time
+							datetime="2026-01-23" >
+                            | Updated: 2026-01-23
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<h3
+	id="win32_api" >
+    win32 API
+</h3>
+<h5
+	id="create_processes" >
+    Create Processes
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>CreateProcessW</code>
+		</p>
+	</li>
+</ul>
+<h5
+	id="file_association" >
+    File Association
+</h5>
+<ul>
+	<li>
+		<p>
+            Use 
+            <code>ShellExecuteEx</code>
+            &nbsp;or 
+            <code>ShellExecuteW</code>
+            , to open files by association (e.g., 
+            <code>foo.pdf</code>
+            &nbsp;with Acrobat).
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>CreateProcess</code>
+            &nbsp;does not handle file associations.
+		</p>
+	</li>
+</ul>
+<h5
+	id="uac_elevation" >
+    UAC Elevation
+</h5>
+<ul>
+	<li>
+		<p>
+            <code>CreateProcessW</code>
+            &nbsp;runs with the caller’s token. It will not trigger UAC elevation.
+		</p>
+	</li>
+	<li>
+		<p>
+            To elevate use 
+            <code>ShellExecuteEx</code>
+            &nbsp;with 
+            <code>runas</code>
+            &nbsp;or use 
+            <code>CreateProcessWithTokenW</code>
+            &nbsp;/ 
+            <code>CreateProcessAsUser</code>
+            &nbsp;with the right token.
+		</p>
+	</li>
+</ul>
+<h5
+	id="quoteconveniencesquote_you_lose_by_not_using_a_shell" >
+    &quot;Conveniences&quot; you lose by not using a shell
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Built-ins
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Will not run 
+                    <code>dir</code>
+                    , 
+                    <code>cd</code>
+                    , or other 
+                    <code>cmd.exe</code>
+                    &nbsp;built-ins. Those are implemented inside the shell.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                .bat / .ps1 files
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>*.bat</code>
+                    , 
+                    <code>*.cmd</code>
+                    , 
+                    <code>.ps1</code>
+                    &nbsp;are not native executables.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>*.bat</code>
+                    &nbsp;must be run by cmd.exe 
+                    <code>cmd.exe /c yourscript.bat</code>
+                    &nbsp;(or use the shell).
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>*.ps1</code>
+                    &nbsp;must be run by PowerShell (or invoked via 
+                    <code>pwsh -File</code>
+                    ).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Pipes
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This refers to the usage of something like:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>&gt;</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    cmd.exe: Redirect stdout to a file (overwrite).
+								</p>
+							</li>
+							<li>
+								<p>
+                                    powershell: Redirect stdout to a file (overwrite).
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>|</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    cmd.exe: byte-stream pipe.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    powershell: object pipeline.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    You must create pipes yourself and wire 
+                    <code>STARTUPINFO.hStdInput</code>
+                    /
+                    <code>hStdOutput</code>
+                    &nbsp;and 
+                    <code>bInheritHandles</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    You control the environment block and current directory. If you want inherited handles or specific stdio redirection you must set those in 
+                    <code>STARTUPINFO</code>
+                    &nbsp;and use 
+                    <code>bInheritHandles</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Odin does this with the 
+                    <code>win32</code>
+                    &nbsp;api by:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-odin" data-lang="odin">&win32.STARTUPINFOW{
+&nbsp;&nbsp;&nbsp;&nbsp;cb = size_of(win32.STARTUPINFOW),
+&nbsp;&nbsp;&nbsp;&nbsp;hStdError  = stderr_handle,
+&nbsp;&nbsp;&nbsp;&nbsp;hStdOutput = stdout_handle,
+&nbsp;&nbsp;&nbsp;&nbsp;hStdInput  = stdin_handle,
+&nbsp;&nbsp;&nbsp;&nbsp;dwFlags = win32.STARTF_USESTDHANDLES,
+},
+</code></pre>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Conditionals
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This refers to the usage of something like:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>||</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    cmd.exe: run RHS if LHS fails.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    powershell: run RHS if LHS fails.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>&&</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    cmd.exe: run RHS if LHS success.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    powershell: run RHS if LHS success.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Parent or shell must implement conditional logic. Parent must check exit code and decide.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Sequence invoke
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    This refers to the usage of something like:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>&</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    cmd.exe: Command operator. Runs next command unconditionally.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>;</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    powershell: Command operator.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    If you want sequencing invoke multiple 
+                    <code>CreateProcessW</code>
+                    &nbsp;calls or implement sequencing logic in your program.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.28524.js" >
+		</script>
+	</body>
+</html>

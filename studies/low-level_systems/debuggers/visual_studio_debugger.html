@@ -1,0 +1,1702 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.33252.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Memory
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/alignment.html" >
+                                    Alignment
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/endianness_byte_order.html" >
+                                    Endianness (byte order)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/stack_memory.html" >
+                                    Stack Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/virtual_memory.html" >
+                                    Virtual Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/os_memory_on_windows.html" >
+                                    OS: Memory on Windows
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/allocators.html" >
+                                    Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/tools_memory_analysis.html" >
+                                    Tools: Memory Analysis
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/handles_instead_of_pointers.html" >
+                                    Handles instead of Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/ownership_strategies_destruction_strategies.html" >
+                                    Ownership Strategies / Destruction Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/strategies_for_handling_short_lived_memory.html" >
+                                    Strategies for handling short lived memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/garbage_collection.html" >
+                                    Garbage Collection
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/initialization.html" >
+                                    Initialization
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            CPU
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/physical_structure.html" >
+                                    Physical Structure
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectures_instructions_sets_architectures_isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectural_design_philosophies_isa_philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/registers.html" >
+                                    Registers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/cache.html" >
+                                    Cache
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/branchless.html" >
+                                    Branchless
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/soa_struct_of_arrays_ecs_entity_component_system.html" >
+                                    SOA (Struct Of Arrays) / ECS (Entity Component System)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Multithreading
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/core_concepts.html" >
+                                    Core Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/thread.html" >
+                                    Thread
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/strategies.html" >
+                                    Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/implementation_detail.html" >
+                                    Implementation Detail
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/synchronization_primitives.html" >
+                                    Synchronization Primitives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/double_buffering.html" >
+                                    Double-Buffering
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/networking_strategies.html" >
+                                    Networking Strategies
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/safety_critical/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Odin
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/overview.html" >
+                                    Overview
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/my_impressions.html" >
+                                    My Impressions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/installation.html" >
+                                    Installation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/compile_time_stuff.html" >
+                                    Compile-time Stuff
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/package_system.html" >
+                                    Package System
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/lsp_ols_odin_language_server.html" >
+                                    LSP (OLS - Odin Language Server)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/control_flow_if_when_switch_for_defer.html" >
+                                    Control Flow (if, when, switch, for, defer)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/procedures.html" >
+                                    Procedures
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/codeany_code.html" >
+                                    <code>any</code>
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/matrix.html" >
+                                    Matrix
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/quaternion.html" >
+                                    Quaternion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/complex.html" >
+                                    Complex
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/rune.html" >
+                                    Rune
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/maps_hash_maps.html" >
+                                    Maps (Hash Maps)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/struct.html" >
+                                    Struct
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/enum.html" >
+                                    Enum
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/union.html" >
+                                    Union
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/bit_sets.html" >
+                                    Bit Sets
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/arrays.html" >
+                                    Arrays
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/interfaces_methods_vtables.html" >
+                                    Interfaces / Methods / VTables
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/context.html" >
+                                    Context
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_address.html" >
+                                    Memory: Address
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_allocators.html" >
+                                    Memory: Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_operations.html" >
+                                    Memory: Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/entry_point.html" >
+                                    Entry Point
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/multi_threading.html" >
+                                    Multi-Threading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/ffi_foreign_function_interface_bindings.html" >
+                                    FFI (Foreign Function Interface) / Bindings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/web_build.html" >
+                                    Web Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/file_system_process_cli_shell.html" >
+                                    File System / Process / CLI / Shell
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/useful_packages.html" >
+                                    Useful Packages
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            C and C++
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/versions.html" >
+                                    Versions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard.html" >
+                                    C Standard
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard_library_libc.html" >
+                                    C Standard Library (libc)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/critiques.html" >
+                                    Critiques
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/lsp.html" >
+                                    LSP
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/explicitness.html" >
+                                    Explicitness
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/compiler_hints.html" >
+                                    Compiler Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/pre_processors.html" >
+                                    Pre-processors
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/libraries.html" >
+                                    Libraries
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/input_output.html" >
+                                    Input/Output
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/variable_declarations.html" >
+                                    Variable Declarations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/constants.html" >
+                                    Constants
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/statements_and_control_flow.html" >
+                                    Statements and Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/scopes.html" >
+                                    Scopes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/functions.html" >
+                                    Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/basic_types.html" >
+                                    Basic Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/arrays_from_c.html" >
+                                    Arrays from C
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/structs.html" >
+                                    Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/unions.html" >
+                                    Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/enums.html" >
+                                    Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/classes.html" >
+                                    Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/pointers.html" >
+                                    Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/references_c_plus__plus_98.html" >
+                                    References (C++98)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/undefined_behavior.html" >
+                                    Undefined Behavior
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/multithreading.html" >
+                                    Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/desktop_apps.html" >
+                                    Desktop Apps
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/game_dev.html" >
+                                    Game Dev
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Build Systems - Compilation - Linking
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilation_process.html" >
+                                    Compilation Process
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/linker.html" >
+                                    Linker
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilers.html" >
+                                    Compilers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/build_tools.html" >
+                                    Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/meta_build_tools.html" >
+                                    Meta Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/extra_annoying_things_on_windows.html" >
+                                    Extra: Annoying things on Windows
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Assembly - ASM
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/my_notes.html" >
+                                    My Notes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/abi_application_binary_interface.html" >
+                                    ABI (Application Binary Interface)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/sections.html" >
+                                    Sections
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/jump_patterns.html" >
+                                    Jump Patterns
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/calling_conventions.html" >
+                                    Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/representing_structs.html" >
+                                    Representing Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/generating_the_assembly_via_code.html" >
+                                    Generating the Assembly via code
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/virtual_instruction_sets.html" >
+                                    Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Reverse Engineering
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/inspect.html" >
+                                    Inspect
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Handmade Hero
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/handmade_hero/handmade_hero.html" >
+                                    Handmade Hero
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Profilers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/tracy.html" >
+                                    Tracy
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/spall.html" >
+                                    Spall
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nvidia_nsight_graphics_gpu_trace.html" >
+                                    Nvidia Nsight Graphics - GPU Trace
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/amd_gpu_profiler_amd_rgp.html" >
+                                    AMD GPU Profiler (AMD RGP)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/intel_gpa.html" >
+                                    Intel GPA
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nsight_systems.html" >
+                                    <s>Nsight Systems</s>
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            Debuggers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/debugging_tips.html" >
+                                    Debugging Tips
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/file_types.html" >
+                                    File Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/rad_debugger.html" >
+                                    RAD Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/gdb_gnu_debugger.html" >
+                                    GDB (GNU Debugger)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/lldb.html" >
+                                    LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/remedybg_debugger.html" >
+                                    RemedyBG Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/vscode.html" >
+                                    VSCode
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/low-level_systems/debuggers/visual_studio_debugger.html" >
+                                    Visual Studio Debugger
+								</a>
+								<ul>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/windbg_cdb.html" >
+                                    WinDbg / CDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/others.html" >
+                                    Others
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/web.html" >
+                                    Web
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Parsing
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__lexer.html" >
+                                    Lexer
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__parser.html" >
+                                    Parser
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__abstract_syntax_tree_ast.html" >
+                                    Abstract Syntax Tree (AST)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Serialization - Encoding
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/representations.html" >
+                                    Representations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/serialization.html" >
+                                    Serialization
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/encoding.html" >
+                                    Encoding
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JAI
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__build.html" >
+                                    Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__types.html" >
+                                    Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__meta_programming.html" >
+                                    Meta programming
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__control_flow.html" >
+                                    Control flow
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Visual Studio Debugger
+					</h1>
+					<p>
+						<time
+							datetime="2025-04-23" >
+                            🕒 Created: 2025-04-23
+						</time>
+						<time
+							datetime="2026-07-04" >
+                            | Updated: 2026-07-04
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<ul>
+	<li>
+		<p>
+            GUI-based.
+		</p>
+	</li>
+	<li>
+		<p>
+            C#, C++, VisualBasic, F#
+		</p>
+	</li>
+	<li>
+		<p>
+            Platforms
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Full support
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Linux/macOS:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Not supported (only via VS Code remote extensions)
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Pros
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Rich UI; deep integration with Windows APIs; time-travel debugging (Enterprise)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Cons
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows-only; resource-intensive
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.33252.js" >
+		</script>
+	</body>
+</html>

@@ -1,0 +1,4561 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.33252.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Memory
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/alignment.html" >
+                                    Alignment
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/endianness_byte_order.html" >
+                                    Endianness (byte order)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/stack_memory.html" >
+                                    Stack Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/virtual_memory.html" >
+                                    Virtual Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/os_memory_on_windows.html" >
+                                    OS: Memory on Windows
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/allocators.html" >
+                                    Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/tools_memory_analysis.html" >
+                                    Tools: Memory Analysis
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/handles_instead_of_pointers.html" >
+                                    Handles instead of Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/ownership_strategies_destruction_strategies.html" >
+                                    Ownership Strategies / Destruction Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/strategies_for_handling_short_lived_memory.html" >
+                                    Strategies for handling short lived memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/garbage_collection.html" >
+                                    Garbage Collection
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/initialization.html" >
+                                    Initialization
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            CPU
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/physical_structure.html" >
+                                    Physical Structure
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectures_instructions_sets_architectures_isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectural_design_philosophies_isa_philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/registers.html" >
+                                    Registers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/cache.html" >
+                                    Cache
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/branchless.html" >
+                                    Branchless
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/soa_struct_of_arrays_ecs_entity_component_system.html" >
+                                    SOA (Struct Of Arrays) / ECS (Entity Component System)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Multithreading
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/core_concepts.html" >
+                                    Core Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/thread.html" >
+                                    Thread
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/strategies.html" >
+                                    Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/implementation_detail.html" >
+                                    Implementation Detail
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/synchronization_primitives.html" >
+                                    Synchronization Primitives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/double_buffering.html" >
+                                    Double-Buffering
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/networking_strategies.html" >
+                                    Networking Strategies
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/safety_critical/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Odin
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/overview.html" >
+                                    Overview
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/my_impressions.html" >
+                                    My Impressions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/installation.html" >
+                                    Installation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/compile_time_stuff.html" >
+                                    Compile-time Stuff
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/package_system.html" >
+                                    Package System
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/lsp_ols_odin_language_server.html" >
+                                    LSP (OLS - Odin Language Server)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/control_flow_if_when_switch_for_defer.html" >
+                                    Control Flow (if, when, switch, for, defer)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/procedures.html" >
+                                    Procedures
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/codeany_code.html" >
+                                    <code>any</code>
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/matrix.html" >
+                                    Matrix
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/quaternion.html" >
+                                    Quaternion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/complex.html" >
+                                    Complex
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/rune.html" >
+                                    Rune
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/maps_hash_maps.html" >
+                                    Maps (Hash Maps)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/struct.html" >
+                                    Struct
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/enum.html" >
+                                    Enum
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/union.html" >
+                                    Union
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/bit_sets.html" >
+                                    Bit Sets
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/arrays.html" >
+                                    Arrays
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/interfaces_methods_vtables.html" >
+                                    Interfaces / Methods / VTables
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/context.html" >
+                                    Context
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_address.html" >
+                                    Memory: Address
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_allocators.html" >
+                                    Memory: Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_operations.html" >
+                                    Memory: Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/entry_point.html" >
+                                    Entry Point
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/multi_threading.html" >
+                                    Multi-Threading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/ffi_foreign_function_interface_bindings.html" >
+                                    FFI (Foreign Function Interface) / Bindings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/web_build.html" >
+                                    Web Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/file_system_process_cli_shell.html" >
+                                    File System / Process / CLI / Shell
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/useful_packages.html" >
+                                    Useful Packages
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            C and C++
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/versions.html" >
+                                    Versions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard.html" >
+                                    C Standard
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard_library_libc.html" >
+                                    C Standard Library (libc)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/critiques.html" >
+                                    Critiques
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/lsp.html" >
+                                    LSP
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/explicitness.html" >
+                                    Explicitness
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/compiler_hints.html" >
+                                    Compiler Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/pre_processors.html" >
+                                    Pre-processors
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/libraries.html" >
+                                    Libraries
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/input_output.html" >
+                                    Input/Output
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/variable_declarations.html" >
+                                    Variable Declarations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/constants.html" >
+                                    Constants
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/statements_and_control_flow.html" >
+                                    Statements and Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/scopes.html" >
+                                    Scopes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/functions.html" >
+                                    Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/basic_types.html" >
+                                    Basic Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/arrays_from_c.html" >
+                                    Arrays from C
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/structs.html" >
+                                    Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/unions.html" >
+                                    Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/enums.html" >
+                                    Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/classes.html" >
+                                    Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/pointers.html" >
+                                    Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/references_c_plus__plus_98.html" >
+                                    References (C++98)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/undefined_behavior.html" >
+                                    Undefined Behavior
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/multithreading.html" >
+                                    Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/desktop_apps.html" >
+                                    Desktop Apps
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/game_dev.html" >
+                                    Game Dev
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            Build Systems - Compilation - Linking
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilation_process.html" >
+                                    Compilation Process
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/linker.html" >
+                                    Linker
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilers.html" >
+                                    Compilers
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#gcc_gnu_c_compiler_greater_gnu_compiler_collection" 
+											class="summary-t3" >
+                                            GCC (GNU C Compiler -&gt; GNU Compiler Collection)
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#about" 
+													class="summary-t4" >
+                                                    About
+												</a>
+											</li>
+											<li>
+												<a
+													href="#installing" 
+													class="summary-t4" >
+                                                    Installing
+												</a>
+											</li>
+											<li>
+												<a
+													href="#commands" 
+													class="summary-t4" >
+                                                    Commands
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#clang_llvm_low_level_virtual_machine" 
+											class="summary-t3" >
+                                            Clang/LLVM (Low-Level Virtual Machine)
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#about" 
+													class="summary-t4" >
+                                                    About
+												</a>
+											</li>
+											<li>
+												<a
+													href="#installation" 
+													class="summary-t4" >
+                                                    Installation
+												</a>
+											</li>
+											<li>
+												<a
+													href="#commands" 
+													class="summary-t4" >
+                                                    Commands
+												</a>
+											</li>
+											<li>
+												<a
+													href="#opinions" 
+													class="summary-t4" >
+                                                    Opinions
+												</a>
+											</li>
+											<li>
+												<a
+													href="#making_a_language" 
+													class="summary-t4" >
+                                                    Making a language
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#tilde_backend_tb" 
+											class="summary-t3" >
+                                            Tilde Backend (TB)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#msvc_microsoft_visual_c_plus__plus_" 
+											class="summary-t3" >
+                                            <s>MSVC (Microsoft Visual C++)</s>
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#windows_sdk" 
+													class="summary-t4" >
+                                                    Windows SDK
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#qbe" 
+											class="summary-t3" >
+                                            QBE
+										</a>
+										<ul>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/build_tools.html" >
+                                    Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/meta_build_tools.html" >
+                                    Meta Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/extra_annoying_things_on_windows.html" >
+                                    Extra: Annoying things on Windows
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Assembly - ASM
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/my_notes.html" >
+                                    My Notes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/abi_application_binary_interface.html" >
+                                    ABI (Application Binary Interface)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/sections.html" >
+                                    Sections
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/jump_patterns.html" >
+                                    Jump Patterns
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/calling_conventions.html" >
+                                    Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/representing_structs.html" >
+                                    Representing Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/generating_the_assembly_via_code.html" >
+                                    Generating the Assembly via code
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/virtual_instruction_sets.html" >
+                                    Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Reverse Engineering
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/inspect.html" >
+                                    Inspect
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Handmade Hero
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/handmade_hero/handmade_hero.html" >
+                                    Handmade Hero
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Profilers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/tracy.html" >
+                                    Tracy
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/spall.html" >
+                                    Spall
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nvidia_nsight_graphics_gpu_trace.html" >
+                                    Nvidia Nsight Graphics - GPU Trace
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/amd_gpu_profiler_amd_rgp.html" >
+                                    AMD GPU Profiler (AMD RGP)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/intel_gpa.html" >
+                                    Intel GPA
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nsight_systems.html" >
+                                    <s>Nsight Systems</s>
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Debuggers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/debugging_tips.html" >
+                                    Debugging Tips
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/file_types.html" >
+                                    File Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/rad_debugger.html" >
+                                    RAD Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/gdb_gnu_debugger.html" >
+                                    GDB (GNU Debugger)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/lldb.html" >
+                                    LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/remedybg_debugger.html" >
+                                    RemedyBG Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/vscode.html" >
+                                    VSCode
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/visual_studio_debugger.html" >
+                                    Visual Studio Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/windbg_cdb.html" >
+                                    WinDbg / CDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/others.html" >
+                                    Others
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/web.html" >
+                                    Web
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Parsing
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__lexer.html" >
+                                    Lexer
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__parser.html" >
+                                    Parser
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__abstract_syntax_tree_ast.html" >
+                                    Abstract Syntax Tree (AST)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Serialization - Encoding
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/representations.html" >
+                                    Representations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/serialization.html" >
+                                    Serialization
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/encoding.html" >
+                                    Encoding
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JAI
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__build.html" >
+                                    Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__types.html" >
+                                    Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__meta_programming.html" >
+                                    Meta programming
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__control_flow.html" >
+                                    Control flow
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Compilers
+					</h1>
+					<p>
+						<time
+							datetime="2025-05-27" >
+                            🕒 Created: 2025-05-27
+						</time>
+						<time
+							datetime="2026-04-04" >
+                            | Updated: 2026-04-04
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<ul>
+	<li>
+		<p>
+            <img src="assets/2026-02-20_20-42-25.png" width="400" >
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="gcc_gnu_c_compiler_greater_gnu_compiler_collection" >
+    GCC (GNU C Compiler -&gt; GNU Compiler Collection)
+</h3>
+<h4
+	id="about" >
+    About
+</h4>
+<ul>
+	<li>
+		<p>
+            Originally, the name was &quot;GNU C Compiler&quot; because it only compiled the C language. Over time, it began to support other languages and was renamed &quot;GNU Compiler Collection&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            Part of the GNU project; widely used in Linux. Supports multiple languages.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Open-source GPL.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Platforms
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows (via MinGW), Linux, macOS, BSD
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Debugging
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    GDB.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Minimum requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            MinGW.
+						</p>
+					</li>
+					<li>
+						<p>
+                            ~MSYS2.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    You don't need MSYS2 to use GCC on Windows. MinGW already provides GCC ready to use.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    MSYS2 is an additional environment that facilitates installation and package management, but it is not mandatory.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Linux:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Just the package.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-sh" data-lang="sh">gcc -o main main.c
+
+gcc -o main main.c random.c -lm
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=NGPo7mz1oa4" 
+				class="external-link" 
+				target="_blank" >
+                GCC Explanation {1:20 -&gt; 5:33}
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h4
+	id="installing" >
+    Installing
+</h4>
+<ul>
+	<li>
+		<p>
+			<em>
+                Version
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    (2025-06-13) 14.2.0
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Choosing a Toolchain and Runtime
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        For Linux
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        For Windows
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I stay away from MSVC, as it's a Windows thing.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Via MSYS2 without MSVC
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://www.msys2.org/" 
+										class="external-link" 
+										target="_blank" >
+                                        MSYS2 Download
+									</a>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    All three use 
+                                    <code>MinGW (GNU) ABI</code>
+                                    , so no MSVC dependency.
+								</p>
+							</li>
+							<li>
+								<p>
+									<strong>
+                                        UCRT64
+									</strong>
+                                    : 
+                                    <code>pacman -S mingw-w64-ucrt-x86_64-gcc</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+											<em>
+                                                Compiler
+											</em>
+                                            : GCC
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                ABI
+											</em>
+                                            : MinGW (GNU)
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Runtime
+											</em>
+                                            : UCRT
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Environment
+											</em>
+                                            : UCRT64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Architecture
+											</em>
+                                            : x86_64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Installed at
+											</em>
+                                            : 
+                                            <code>C:/msys64/ucrt64/bin</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Modern setup; recommended GCC on Windows.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+									<strong>
+                                        MINGW64
+									</strong>
+                                    : 
+                                    <code>pacman -S mingw-w64-x86_64-gcc</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+											<em>
+                                                Compiler
+											</em>
+                                            : GCC
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                ABI
+											</em>
+                                            : MinGW (GNU)
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Runtime
+											</em>
+                                            : MSVCRT
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    It's a very old Microsoft runtime, outdated (missing newer C features, UTF-8 issues)
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Legacy, very compatible.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Environment
+											</em>
+                                            : MINGW64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Architecture
+											</em>
+                                            : x86_64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Installed at
+											</em>
+                                            : 
+                                            <code>C:/msys64/mingw64/bin</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <s>
+									<strong>
+                                        CLANG64
+									</strong>
+                                    </s>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            GCC is not typically used in CLANG64.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            The environment is designed around Clang/LLVM.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="commands" >
+    Commands
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>-o</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Sets the name of the output file.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>-std=c11</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specify Language Standard.
+				</p>
+			</li>
+			<li>
+				<p>
+                    C89, C99, C11, C17, etc.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>-ansi</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Forces compliance with C89/C90.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Compilation
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-c</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Compile without linking, creating the object file 
+                            <code>.o</code>
+                            &nbsp;/ 
+                            <code>.obj</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-v</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Verbose mode (shows compilation steps).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Linking
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-l&lt;name&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Link with a library.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>-lm</code>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Link with the Math Library 
+                                    <code>libm</code>
+                                    .
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Needed for functions like 
+                                            <code>sin()</code>
+                                            , 
+                                            <code>cos()</code>
+                                            , 
+                                            <code>sqrt()</code>
+                                            , 
+                                            <code>pow()</code>
+                                            , etc.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <code>-lpthread</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    For threads.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-L&lt;path&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Adds a library directory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>-L./lib</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-static</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Link statically (avoids dynamic dependencies).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-shared</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates a shared library (
+                            <code>.so</code>
+                            &nbsp;/ 
+                            <code>.dll</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fPIC</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates position-independent code (used in shared libs).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Pre-processor / Macro
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-I&lt;path&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Adds an include directory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>-I./include</code>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Looks for headers in 
+                                    <code>./include</code>
+                                    .
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-D&lt;macro&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Defines a macro (ex: 
+                            <code>-DDEBUG</code>
+                            &nbsp;is equivalent to 
+                            <code>define DEBUG</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-U&lt;macro&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Undefines a macro.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-E</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Only preprocesses (outputs 
+                            <code>include</code>
+                            &nbsp;and 
+                            <code>define</code>
+                            &nbsp;results).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-M</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates build dependencies (useful for Makefiles).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Debug
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-g</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Includes debug symbols (needed for 
+							<em>
+                                gdb
+							</em>
+                            &nbsp;and 
+							<em>
+                                valgrind
+							</em>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-ggdb</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Optimizes debug symbols for 
+							<em>
+                                GDB
+							</em>
+                            &nbsp;(more detailed than 
+                            <code>-g</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fsanitize=address</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Detects memory leaks, buffer overflows (AddressSanitizer).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fsanitize=undefined</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Detects undefined behavior (UB).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fstack-protector</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Protection against stack smashing.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-fno-stack-protector</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Disables stack overflow protection.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Warnings / Errors
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-Wall</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enable Compilation Warnings.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Wextra</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enables extra warnings beyond 
+                            <code>-Wall</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Wpedantic</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enforces strict C standard compliance (complains about GNU extensions).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Wno-warning_name</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Disables a specific warning (ex: 
+                            <code>-Wno-unused-variable</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Werror</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Treat Warning as Errors.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Optimizations
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-O0</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            No optimization (better for debugging).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-O1</code>
+                    , 
+                    <code>-O2</code>
+                    , 
+                    <code>-O3</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Levels of code optimization. Higher = faster, but harder to debug.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Os</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Optimization for size (reduces executable).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Ofast</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Aggressive optimization + relaxes IEEE standards (may affect precision).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="clang_llvm_low_level_virtual_machine" >
+    Clang/LLVM (Low-Level Virtual Machine)
+</h3>
+<h4
+	id="about" >
+    About
+</h4>
+<ul>
+	<li>
+		<p>
+			<em>
+                Clang/LLVM gives you
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    C/C++ frontend (clang, clang++)
+				</p>
+			</li>
+			<li>
+				<p>
+                    Optimizer (LLVM IR passes)
+				</p>
+			</li>
+			<li>
+				<p>
+                    Code generation (machine code)
+				</p>
+			</li>
+			<li>
+				<p>
+                    Optional linker (lld)
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            LLVM/Clang is not a complete toolchain by itself—it is mainly a compiler frontend + optimizer + code generator.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                What it doesn't give you
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Standard libraries
+				</p>
+				<ul>
+					<li>
+						<p>
+                            C standard library (libc)
+						</p>
+					</li>
+					<li>
+						<p>
+                            C++ standard library (libc++ or libstdc++)
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Platform runtime
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Startup code (mainCRTStartup, etc.)
+						</p>
+					</li>
+					<li>
+						<p>
+                            Exception handling
+						</p>
+					</li>
+					<li>
+						<p>
+                            Threading support
+						</p>
+					</li>
+					<li>
+						<p>
+                            These are platform-specific and not provided by LLVM itself.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    System headers
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>stdio.h</code>
+                            , 
+                            <code>windows.h</code>
+                            , etc.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Definitions for OS APIs
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    System libraries
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Windows APIs (kernel32.lib, etc.)
+						</p>
+					</li>
+					<li>
+						<p>
+                            Required for linking executables
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                To get what is missing
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For windows:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            MSVC toolchain
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Microsoft’s C runtime (MSVCRT / UCRT)
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Windows SDK headers/libs
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Linker and startup code
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            MinGW / MSYS2
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    GCC-compatible runtime
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Open-source Windows headers/libs
+								</p>
+							</li>
+							<li>
+								<p>
+                                    GNU-style environment
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                About LLVM with MSVC
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I don't like it, as it's a Windows thing.
+				</p>
+			</li>
+			<li>
+				<p>
+                    lld-link:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Is LLVM’s drop-in replacement for the MSVC linker (link.exe)
+						</p>
+					</li>
+					<li>
+						<p>
+                            So when you see 
+                            <code> lld-link: error ...</code>
+                            , it means Clang is operating in MSVC mode.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    For libs:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            It uses MSVC conventions, like:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    .lib libraries
+								</p>
+							</li>
+							<li>
+								<p>
+                                    no lib prefix
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            COFF format expectations
+                            <br>
+                            | Mode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Expected file |
+                            <br>
+                            | ----------- | ------------- |
+                            <br>
+                            | MSVC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+                            <code>raylib.lib</code>
+                            &nbsp; |
+                            <br>
+                            | GNU (MinGW) | 
+                            <code>libraylib.a</code>
+                            &nbsp;|
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            It is not a single package but a 
+			<strong>
+                collection of modular tools and libraries
+			</strong>
+            &nbsp;for compilation. It forms a complete compilation infrastructure, which can include multiple related components.
+		</p>
+	</li>
+	<li>
+		<p>
+            Depending on the distribution or installation method, not all components may be included.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Packages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    llvm
+				</p>
+			</li>
+			<li>
+				<p>
+                    clang
+				</p>
+			</li>
+			<li>
+				<p>
+                    clang-tools-extra
+				</p>
+			</li>
+			<li>
+				<p>
+                    flang
+				</p>
+			</li>
+			<li>
+				<p>
+                    mlir
+				</p>
+			</li>
+			<li>
+				<p>
+                    lld
+				</p>
+			</li>
+			<li>
+				<p>
+                    lldb
+				</p>
+			</li>
+			<li>
+				<p>
+                    polly
+				</p>
+			</li>
+			<li>
+				<p>
+                    libLTO
+				</p>
+			</li>
+			<li>
+				<p>
+                    compiler-rt
+				</p>
+			</li>
+			<li>
+				<p>
+                    libunwind
+				</p>
+			</li>
+			<li>
+				<p>
+                    libc++
+				</p>
+			</li>
+			<li>
+				<p>
+                    lib++abi
+				</p>
+			</li>
+			<li>
+				<p>
+                    openmp
+				</p>
+			</li>
+			<li>
+				<p>
+                    llvm-ar
+				</p>
+			</li>
+			<li>
+				<p>
+                    llvm-nm
+				</p>
+			</li>
+			<li>
+				<p>
+                    llvm-objdump
+				</p>
+			</li>
+			<li>
+				<p>
+                    llvm-cov
+				</p>
+			</li>
+			<li>
+				<p>
+                    llvm-profdata
+				</p>
+			</li>
+			<li>
+				<p>
+                    llvm-dwarfdump
+				</p>
+			</li>
+			<li>
+				<p>
+                    llvm-symbolizer
+				</p>
+			</li>
+			<li>
+				<p>
+                    wasm-ld
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            High compatibility with GCC.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Open-source Apache 2.0.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Platforms
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows, Linux, macOS, BSD
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Debugging
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    LLDB.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            More modern than GDB.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Minimum requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows / Linux / macOS:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            LLVM.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/llvm/llvm-project" 
+				class="external-link" 
+				target="_blank" >
+                LLVM
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/2026-02-20_20-43-31.png" width="500" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=3WojCM9r0Ls" 
+				class="external-link" 
+				target="_blank" >
+                LLVM explained
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Cool.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=3CI23HA7P9Y" 
+				class="external-link" 
+				target="_blank" >
+                LLVMIR explanation and demonstration
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;IR is much more verbose by default, to allow for some specific optimizations&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=oyltMd8adD0" 
+				class="external-link" 
+				target="_blank" >
+                How to compile C++ with clang in VSCode
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h4
+	id="installation" >
+    Installation
+</h4>
+<ul>
+	<li>
+		<p>
+			<em>
+                Version
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>llvm-config --version</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    (2025-06-13) 21.1.7
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Install LLVM or Clang?
+			</em>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    llvm
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Backend + toolchain infrastructure
+						</p>
+					</li>
+					<li>
+						<p>
+                            Only if you need LLVM tools directly
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    clang
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Actual compiler (frontend)
+						</p>
+					</li>
+					<li>
+						<p>
+                            If you want to compile code
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Choosing a Toolchain and Runtime
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        For Linux
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+							<a
+								href="https://github.com/llvm/llvm-project/releases/tag/llvmorg-18.1.8" 
+								class="external-link" 
+								target="_blank" >
+                                llvm-project/releases
+							</a>
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        For Windows
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            I stay away from MSVC, as it's a Windows thing.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Via MSYS2 without MSVC
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://www.msys2.org/" 
+										class="external-link" 
+										target="_blank" >
+                                        MSYS2 Download
+									</a>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    All three use 
+                                    <code>MinGW (GNU) ABI</code>
+                                    , so no MSVC dependency.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    A installation can be removed with 
+                                    <code>pacman -Rs &lt;name&gt;</code>
+								</p>
+							</li>
+							<li>
+								<p>
+									<strong>
+                                        UCRT64
+									</strong>
+                                    : 
+                                    <code>pacman -S mingw-w64-ucrt-x86_64-clang</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+											<em>
+                                                Compiler
+											</em>
+                                            : Clang (LLVM)
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                ABI
+											</em>
+                                            : MinGW (GNU)
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Runtime
+											</em>
+                                            : UCRT
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Environment
+											</em>
+                                            : UCRT64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Architecture
+											</em>
+                                            : x86_64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Installed at
+											</em>
+                                            : 
+                                            <code>C:/msys64/ucrt64/bin</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Size
+											</em>
+                                            : 1112MB
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Modern setup; recommended for non-MSVC Clang on Windows.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+									<strong>
+                                        CLANG64
+									</strong>
+                                    : 
+                                    <code>pacman -S mingw-w64-clang-x86_64-clang</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+											<em>
+                                                Compiler
+											</em>
+                                            : Clang (LLVM)
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                ABI
+											</em>
+                                            : MinGW (GNU)
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Runtime
+											</em>
+                                            : UCRT
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Environment
+											</em>
+                                            : CLANG64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Architecture
+											</em>
+                                            : x86_64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Installed at
+											</em>
+                                            : 
+                                            <code>C:/msys64/clang64/bin</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Size
+											</em>
+                                            : 900.7MB
+										</p>
+									</li>
+									<li>
+										<p>
+                                            (2026-04-03) It didn't install correctly the 
+                                            <code>clang.exe</code>
+                                            &nbsp;in Paola's PC.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+									<strong>
+                                        MINGW64
+									</strong>
+                                    : 
+                                    <code>pacman -S mingw-w64-x86_64-clang</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+											<em>
+                                                Compiler
+											</em>
+                                            : Clang (LLVM)
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                ABI
+											</em>
+                                            : MinGW (GNU)
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Runtime
+											</em>
+                                            : MSVCRT
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    It's a very old Microsoft runtime, outdated (missing newer C features, UTF-8 issues)
+												</p>
+											</li>
+											<li>
+												<p>
+                                                    Legacy, very compatible.
+												</p>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Environment
+											</em>
+                                            : MINGW64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Architecture
+											</em>
+                                            : x86_64
+										</p>
+									</li>
+									<li>
+										<p>
+											<em>
+                                                Installed at
+											</em>
+                                            : 
+                                            <code>C:/msys64/mingw64/bin</code>
+                                            .
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Via LLVM-MinGW
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+									<a
+										href="https://github.com/mstorsjo/llvm-mingw/releases" 
+										class="external-link" 
+										target="_blank" >
+                                        llvm-mingw/releases
+									</a>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            <code>llvm-mingw-20260324-ucrt-x86_64.zip</code>
+                                            .
+										</p>
+										<ul>
+											<li>
+												<p>
+													<em>
+                                                        Compiler
+													</em>
+                                                    : Clang (LLVM)
+												</p>
+											</li>
+											<li>
+												<p>
+													<em>
+                                                        ABI
+													</em>
+                                                    : MinGW (GNU)
+												</p>
+											</li>
+											<li>
+												<p>
+													<em>
+                                                        Runtime
+													</em>
+                                                    : UCRT runtime
+												</p>
+											</li>
+											<li>
+												<p>
+													<em>
+                                                        Environment
+													</em>
+                                                    : MINGW64
+												</p>
+											</li>
+											<li>
+												<p>
+													<em>
+                                                        Architecture
+													</em>
+                                                    : x86_64
+												</p>
+											</li>
+											<li>
+												<p>
+													<em>
+                                                        Installed at
+													</em>
+                                                    : manual install.
+												</p>
+											</li>
+											<li>
+												<p>
+													<em>
+                                                        Size
+													</em>
+                                                    : 704MB.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <s>
+							<strong>
+                                LLVM-Project
+							</strong>
+                            </s>
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Installs with MSVC.
+								</p>
+							</li>
+							<li>
+								<p>
+									<a
+										href="https://github.com/llvm/llvm-project/releases/tag/llvmorg-18.1.8" 
+										class="external-link" 
+										target="_blank" >
+                                        llvm-project/releases
+									</a>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Release: 
+                                    <code>LLVM-22.1.2-win64.exe</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Installs 
+                                            <code>x86_64-pc-windows-msvc</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+                                            (2026-04-04) Not added to PATH, even tho I marked the option to do it.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    <code>clang+llvm-22.1.2-x86_64-pc-windows-msvc.tar.xz</code>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Installs 
+                                            <code>x86_64-pc-windows-msvc</code>
+                                            .
+										</p>
+									</li>
+									<li>
+										<p>
+                                            A zip, not the installer, therefore not automatically added to the path.
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        For macOS
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            On macOS you don’t need an MSYS2-style environment. The system already has a Clang-based toolchain provided by Apple.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>xcode-select --install</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            This installs the Command Line Tools, which include:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    <code>clang</code>
+                                    &nbsp;/ 
+                                    <code>clang++</code>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>lldb</code>
+								</p>
+							</li>
+							<li>
+								<p>
+                                    <code>make</code>
+                                    , 
+                                    <code>git</code>
+                                    , etc.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    macOS SDK headers
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            The corresponding path of installation has to be added to the PATH.
+		</p>
+	</li>
+</ul>
+<h4
+	id="commands" >
+    Commands
+</h4>
+<ul>
+	<li>
+		<p>
+            The vast majority of all commands are 
+			<strong>
+                exactly the same
+			</strong>
+            &nbsp;as GCC.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Exclusive to Clang
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>-fcolor-diagnostics</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Displays colored errors/warnings (great for readability).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-Weverything</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enables all warnings (even the most pedantic).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>-MJ &lt;file.json&gt;</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Generates JSON output for analysis tools (ex: IDEs).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="opinions" >
+    Opinions
+</h4>
+<ul>
+	<li>
+		<p>
+            Ginger Bill:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    I wish I never used LLVM in the first place.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It has been the vast majority of the bugs in the Odin compiler.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's slow as fuck, even for development builds.
+				</p>
+			</li>
+			<li>
+				<p>
+                    And it gets worse with each release.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's alluring because it's free and is the basis of clang.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Jonathan Blow:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    JAI uses LLVM for release builds, but not for debug builds.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://www.youtube.com/watch?v=2EQKHnA4C7s" 
+						class="external-link" 
+						target="_blank" >
+                        JBlow - LLVM is cumbersome and slow
+					</a>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="making_a_language" >
+    Making a language
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html" 
+				class="external-link" 
+				target="_blank" >
+                Language Frontend with LLVM
+			</a>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;The parser we will build uses a combination of Recursive Descent Parsing and Operator-Precedence Parsing to parse the Kaleidoscope language (the latter for binary expressions and the former for everything else)&quot;.
+				</p>
+			</li>
+			<li>
+				<p>
+					<a
+						href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl02.html#full-code-listing" 
+						class="external-link" 
+						target="_blank" >
+                        AST Code
+					</a>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://llvm.org/docs/Lexicon.html" 
+				class="external-link" 
+				target="_blank" >
+                LLVM Lexicon
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=Lvc8qx8ukOI&list=PLGNbPb3dQJ_5Dv45KhMlt9HMSlnfMyb2V&index=2" 
+				class="external-link" 
+				target="_blank" >
+                Dmitry Soshnikov - LLVM Tutorial
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Most of the time he's making a very simple code, but making it sound so confusing due to excessive OOP and C++.
+				</p>
+			</li>
+			<li>
+				<p>
+                    He didn't finished the tutorials; there's only 5/20 lectures so far.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+			<a
+				href="https://www.youtube.com/watch?v=DWHDjVI5juo&list=PLZAHlA32J2opBRmIhBo6zAqvzYWAv66v_&index=3" 
+				class="external-link" 
+				target="_blank" >
+                Toby Ho - LLVM Tutorial
+			</a>
+            </s>.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    He follows the 
+					<a
+						href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html" 
+						class="external-link" 
+						target="_blank" >
+                        Language Frontend with LLVM
+					</a>
+                    &nbsp;line by line in C++, without much explanation.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="llvm_global_context" >
+    LLVM Global Context
+</h5>
+<ul>
+	<li>
+		<p>
+            It owns and manages the core &quot;global&quot; data of LLVM's core infrastructure, including the types and constant unique tables.
+		</p>
+	</li>
+</ul>
+<h3
+	id="tilde_backend_tb" >
+    Tilde Backend (TB)
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://yasserarg.com/tb" 
+				class="external-link" 
+				target="_blank" >
+                Tilde Backend
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/c3lang/tilde-backend" 
+				class="external-link" 
+				target="_blank" >
+                Tilde Backend
+			</a>
+		</p>
+	</li>
+</ul>
+<h3
+	id="msvc_microsoft_visual_c_plus__plus_" >
+    <s>MSVC (Microsoft Visual C++)</s>
+</h3>
+<ul>
+	<li>
+		<p>
+            It is the default compiler for Visual Studio.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>cl.exe</code>
+            &nbsp;(MSVC).
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                License
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Microsoft proprietary.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Platforms
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows / Linux.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Languages
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Limited support for C11/C17
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Requirements
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Windows:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Install Visual Studio (Community Edition is free).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Or maybe the Build Tools.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Honestly, you will have to download Visual Studio anyway.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Linux:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Limited support (using 
+                            <code>clang-cl</code>
+                            &nbsp;or WSL).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                My version
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    14.42.34433 (came with Visual Studio).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Had to add 
+                    <code>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64</code>
+                    &nbsp;to the global PATH environment variable.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="commands" >
+    Commands
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                GCC or Clang equivalents
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250618135556.png" width="475" >
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                MSVC-specific
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>/MD</code>
+                    &nbsp;vs 
+                    <code>/MT</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Chooses runtime: shared DLL (
+                            <code>/MD</code>
+                            ) or static (
+                            <code>/MT</code>
+                            ).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>/EHsc</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Enables C++ exceptions (default in C++ projects).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>/JMC</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Supports &quot;Just My Code&quot; in the debugger.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <code>/MP</code>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Parallel compilation (speeds up large builds).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-c" data-lang="c">// Equivalent to `gcc -o`
+cl hello.c /Fehello.exe
+
+// Compile with maximum warnings and debug
+cl /W4 /WX /Zi hello.c /Fehello_debug.exe
+
+// Compile with optimization (`/O2`) and C17 standard
+cl /O2 /std:c17 programa.c /Feprograma_otimizado.exe
+
+// Link with Windows libraries (e.g., `user32.lib`)
+cl winapp.c /link user32.lib /Fewinapp.exe
+
+// Compile multiple files
+cl /c arquivo1.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Generates arquivo1.obj
+cl /c arquivo2.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Generates arquivo2.obj
+cl arquivo1.obj arquivo2.obj /Feprograma.exe
+</code></pre>
+<h4
+	id="windows_sdk" >
+    Windows SDK
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://developer.microsoft.com/pt-br/windows/downloads/windows-sdk/" 
+				class="external-link" 
+				target="_blank" >
+                Windows SDK
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="what_it_includes" >
+    What it includes
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Headers and Libraries
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Header files (
+					<em>
+                        .h
+					</em>
+                    ) and linking libraries (
+					<em>
+                        .lib
+					</em>
+                    ) to access Windows APIs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Examples:
+				</p>
+				<ul>
+					<li>
+						<p>
+							<strong>
+                                Win32 API
+							</strong>
+                            : To create windows, manage files, etc.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                DirectX
+							</strong>
+                            : For graphics and game development.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                GDI/GDI+
+							</strong>
+                            : For 2D graphics.
+						</p>
+					</li>
+					<li>
+						<p>
+							<strong>
+                                COM (Component Object Model)
+							</strong>
+                            : For reusable components.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Compilers
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Includes 
+					<strong>
+                        MSVC (Microsoft Visual C++)
+					</strong>
+                    , used to compile native Windows code.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Debuggers and Tools
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Tools such as 
+					<strong>
+                        WinDbg
+					</strong>
+                    &nbsp;for advanced debugging.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Resource Viewers
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Tools to create and edit resource files (.rc), like icons, menus, and strings.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Windows App Certification Kit
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Used to validate apps against Microsoft Store guidelines.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Command-Line Tools
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Includes utilities like:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            <code>rc.exe</code>
+                            : Resource file compiler.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>mt.exe</code>
+                            : Manifest tool.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>signtool.exe</code>
+                            : Binary signing tool.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                ARM64 Support
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Headers and libraries to compile apps for ARM devices on Windows.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="qbe" >
+    QBE
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://c9x.me/compile/" 
+				class="external-link" 
+				target="_blank" >
+                QBE
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    &quot;QBE is a compiler backend that aims to provide 70% of the performance of industrial optimizing compilers in 10% of the code.&quot;
+				</p>
+			</li>
+			<li>
+				<p>
+                    &quot;The size limit constrains QBE to focus on the essential and prevents embarking on a never-ending path of diminishing returns.&quot;
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=JTjNoejn4iA" 
+				class="external-link" 
+				target="_blank" >
+                QBE Demo
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="opinions" >
+    Opinions
+</h5>
+<ul>
+	<li>
+		<p>
+            Ginger Bill:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    On Windows, and it's actually awful.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Worse than LLVM.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You have to generate a textual IR that you then pass to its library for it to be consumed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    And mainly because you cannot use it as a library whatsoever. It's designed not to be used as a library.
+				</p>
+			</li>
+			<li>
+				<p>
+                    QBE is a no-go.
+				</p>
+			</li>
+			<li>
+				<p>
+                    I've considered before, and no.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.33252.js" >
+		</script>
+	</body>
+</html>

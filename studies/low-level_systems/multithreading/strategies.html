@@ -1,0 +1,3476 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.33252.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Memory
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/alignment.html" >
+                                    Alignment
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/endianness_byte_order.html" >
+                                    Endianness (byte order)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/stack_memory.html" >
+                                    Stack Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/virtual_memory.html" >
+                                    Virtual Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/os_memory_on_windows.html" >
+                                    OS: Memory on Windows
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/allocators.html" >
+                                    Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/tools_memory_analysis.html" >
+                                    Tools: Memory Analysis
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/handles_instead_of_pointers.html" >
+                                    Handles instead of Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/ownership_strategies_destruction_strategies.html" >
+                                    Ownership Strategies / Destruction Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/strategies_for_handling_short_lived_memory.html" >
+                                    Strategies for handling short lived memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/garbage_collection.html" >
+                                    Garbage Collection
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/initialization.html" >
+                                    Initialization
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            CPU
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/physical_structure.html" >
+                                    Physical Structure
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectures_instructions_sets_architectures_isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectural_design_philosophies_isa_philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/registers.html" >
+                                    Registers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/cache.html" >
+                                    Cache
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/branchless.html" >
+                                    Branchless
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/soa_struct_of_arrays_ecs_entity_component_system.html" >
+                                    SOA (Struct Of Arrays) / ECS (Entity Component System)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            Multithreading
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/core_concepts.html" >
+                                    Core Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/thread.html" >
+                                    Thread
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/low-level_systems/multithreading/strategies.html" >
+                                    Strategies
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#dedicated_threads_static_partitioning_domain_specific_threads" 
+											class="summary-t3" >
+                                            Dedicated Threads / Static Partitioning / Domain-Specific Threads
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#job_system" 
+											class="summary-t3" >
+                                            Job System
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#thread_pools" 
+											class="summary-t3" >
+                                            Thread Pools
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#tbb_onetbb_threading_building_blocks" 
+											class="summary-t3" >
+                                            TBB / oneTBB (Threading Building Blocks)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#data_parallelism" 
+											class="summary-t3" >
+                                            Data Parallelism
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#actor_model" 
+											class="summary-t3" >
+                                            Actor Model
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#pipeline_parallelism" 
+											class="summary-t3" >
+                                            Pipeline Parallelism
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/implementation_detail.html" >
+                                    Implementation Detail
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/synchronization_primitives.html" >
+                                    Synchronization Primitives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/double_buffering.html" >
+                                    Double-Buffering
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/networking_strategies.html" >
+                                    Networking Strategies
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/safety_critical/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Odin
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/overview.html" >
+                                    Overview
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/my_impressions.html" >
+                                    My Impressions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/installation.html" >
+                                    Installation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/compile_time_stuff.html" >
+                                    Compile-time Stuff
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/package_system.html" >
+                                    Package System
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/lsp_ols_odin_language_server.html" >
+                                    LSP (OLS - Odin Language Server)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/control_flow_if_when_switch_for_defer.html" >
+                                    Control Flow (if, when, switch, for, defer)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/procedures.html" >
+                                    Procedures
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/codeany_code.html" >
+                                    <code>any</code>
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/matrix.html" >
+                                    Matrix
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/quaternion.html" >
+                                    Quaternion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/complex.html" >
+                                    Complex
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/rune.html" >
+                                    Rune
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/maps_hash_maps.html" >
+                                    Maps (Hash Maps)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/struct.html" >
+                                    Struct
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/enum.html" >
+                                    Enum
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/union.html" >
+                                    Union
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/bit_sets.html" >
+                                    Bit Sets
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/arrays.html" >
+                                    Arrays
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/interfaces_methods_vtables.html" >
+                                    Interfaces / Methods / VTables
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/context.html" >
+                                    Context
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_address.html" >
+                                    Memory: Address
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_allocators.html" >
+                                    Memory: Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_operations.html" >
+                                    Memory: Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/entry_point.html" >
+                                    Entry Point
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/multi_threading.html" >
+                                    Multi-Threading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/ffi_foreign_function_interface_bindings.html" >
+                                    FFI (Foreign Function Interface) / Bindings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/web_build.html" >
+                                    Web Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/file_system_process_cli_shell.html" >
+                                    File System / Process / CLI / Shell
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/useful_packages.html" >
+                                    Useful Packages
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            C and C++
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/versions.html" >
+                                    Versions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard.html" >
+                                    C Standard
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard_library_libc.html" >
+                                    C Standard Library (libc)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/critiques.html" >
+                                    Critiques
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/lsp.html" >
+                                    LSP
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/explicitness.html" >
+                                    Explicitness
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/compiler_hints.html" >
+                                    Compiler Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/pre_processors.html" >
+                                    Pre-processors
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/libraries.html" >
+                                    Libraries
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/input_output.html" >
+                                    Input/Output
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/variable_declarations.html" >
+                                    Variable Declarations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/constants.html" >
+                                    Constants
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/statements_and_control_flow.html" >
+                                    Statements and Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/scopes.html" >
+                                    Scopes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/functions.html" >
+                                    Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/basic_types.html" >
+                                    Basic Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/arrays_from_c.html" >
+                                    Arrays from C
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/structs.html" >
+                                    Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/unions.html" >
+                                    Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/enums.html" >
+                                    Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/classes.html" >
+                                    Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/pointers.html" >
+                                    Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/references_c_plus__plus_98.html" >
+                                    References (C++98)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/undefined_behavior.html" >
+                                    Undefined Behavior
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/multithreading.html" >
+                                    Multithreading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/desktop_apps.html" >
+                                    Desktop Apps
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/game_dev.html" >
+                                    Game Dev
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Build Systems - Compilation - Linking
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilation_process.html" >
+                                    Compilation Process
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/linker.html" >
+                                    Linker
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilers.html" >
+                                    Compilers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/build_tools.html" >
+                                    Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/meta_build_tools.html" >
+                                    Meta Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/extra_annoying_things_on_windows.html" >
+                                    Extra: Annoying things on Windows
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Assembly - ASM
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/my_notes.html" >
+                                    My Notes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/abi_application_binary_interface.html" >
+                                    ABI (Application Binary Interface)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/sections.html" >
+                                    Sections
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/jump_patterns.html" >
+                                    Jump Patterns
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/calling_conventions.html" >
+                                    Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/representing_structs.html" >
+                                    Representing Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/generating_the_assembly_via_code.html" >
+                                    Generating the Assembly via code
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/virtual_instruction_sets.html" >
+                                    Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Reverse Engineering
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/inspect.html" >
+                                    Inspect
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Handmade Hero
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/handmade_hero/handmade_hero.html" >
+                                    Handmade Hero
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Profilers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/tracy.html" >
+                                    Tracy
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/spall.html" >
+                                    Spall
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nvidia_nsight_graphics_gpu_trace.html" >
+                                    Nvidia Nsight Graphics - GPU Trace
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/amd_gpu_profiler_amd_rgp.html" >
+                                    AMD GPU Profiler (AMD RGP)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/intel_gpa.html" >
+                                    Intel GPA
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nsight_systems.html" >
+                                    <s>Nsight Systems</s>
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Debuggers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/debugging_tips.html" >
+                                    Debugging Tips
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/file_types.html" >
+                                    File Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/rad_debugger.html" >
+                                    RAD Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/gdb_gnu_debugger.html" >
+                                    GDB (GNU Debugger)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/lldb.html" >
+                                    LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/remedybg_debugger.html" >
+                                    RemedyBG Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/vscode.html" >
+                                    VSCode
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/visual_studio_debugger.html" >
+                                    Visual Studio Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/windbg_cdb.html" >
+                                    WinDbg / CDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/others.html" >
+                                    Others
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/web.html" >
+                                    Web
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Parsing
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__lexer.html" >
+                                    Lexer
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__parser.html" >
+                                    Parser
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__abstract_syntax_tree_ast.html" >
+                                    Abstract Syntax Tree (AST)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Serialization - Encoding
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/representations.html" >
+                                    Representations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/serialization.html" >
+                                    Serialization
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/encoding.html" >
+                                    Encoding
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JAI
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__build.html" >
+                                    Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__types.html" >
+                                    Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__meta_programming.html" >
+                                    Meta programming
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__control_flow.html" >
+                                    Control flow
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Strategies
+					</h1>
+					<p>
+						<time
+							datetime="2025-03-11" >
+                            🕒 Created: 2025-03-11
+						</time>
+						<time
+							datetime="2026-03-30" >
+                            | Updated: 2026-03-30
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<ul>
+	<li>
+		<p>
+            See 
+            <a href="/studies/Physics Engines/Physics Engines.html#teoria">
+            Physics Engines#Theory
+            </a>
+            &nbsp;for strategies.
+		</p>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Ex
+					</em>
+                    : Spin Lockless &gt; Lockless &gt; Sync Primitives.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="dedicated_threads_static_partitioning_domain_specific_threads" >
+    Dedicated Threads / Static Partitioning / Domain-Specific Threads
+</h3>
+<ul>
+	<li>
+		<p>
+            Assign specific long-running tasks to fixed threads.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Characteristics:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Specialized threads (e.g., physics thread only does physics).
+				</p>
+			</li>
+			<li>
+				<p>
+                    No dynamic task assignment.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Threads run continuously.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Used in:
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Older game engines, embedded systems, latency-critical apps.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Older Unreal Engine versions: separate threads for rendering, physics.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                When to Stick
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Game performance acceptable.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Stability/debug priority over throughput.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Workloads not easily parallelizable.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Dedicated thread may call job system for subtasks.
+		</p>
+	</li>
+</ul>
+<h5
+	id="pros" >
+    Pros
+</h5>
+<ul>
+	<li>
+		<p>
+            Simple to implement/debug.
+		</p>
+	</li>
+	<li>
+		<p>
+            Low latency.
+		</p>
+	</li>
+	<li>
+		<p>
+            Predictable (no unrelated contention).
+		</p>
+	</li>
+</ul>
+<h5
+	id="cons" >
+    Cons
+</h5>
+<ul>
+	<li>
+		<p>
+            Poor CPU utilization (idle threads waste cores).
+		</p>
+	</li>
+	<li>
+		<p>
+            Hard to scale.
+		</p>
+	</li>
+</ul>
+<h5
+	id="implementation" >
+    Implementation
+</h5>
+<ul>
+	<li>
+		<p>
+            No Scheduler: thread manages own work manually.
+		</p>
+	</li>
+	<li>
+		<p>
+            No task queue.
+		</p>
+	</li>
+</ul>
+<h5
+	id="transition_to_job_system" >
+    Transition to: Job System
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Technical Hurdles
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Task Granularity: Dedicated threads handle coarse work (e.g., &quot;whole physics step&quot;), while jobs need fine-grained tasks (e.g., &quot;collision check between A and B&quot;).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Synchronization: Dedicated threads often use locks; jobs rely on dependencies/atomics.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Latency Sensitivity: Jobs introduce scheduling overhead (bad for real-time threads like rendering).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Architectural Shifts
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    From &quot;Owned Data&quot; to &quot;Shared Data&quot;: Dedicated threads often own their data (e.g., physics thread owns physics state), while jobs assume data is transient/immutable.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Debugging Complexity: Race conditions in jobs are harder to trace than linear thread execution.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="job_system" >
+    Job System
+</h3>
+<h5
+	id="about" >
+    About
+</h5>
+<ul>
+	<li>
+		<p>
+			<em>
+                Unit of work
+			</em>
+            : task/function executed asynchronously.
+		</p>
+	</li>
+	<li>
+		<p>
+            Scheduled and managed by runtime/thread pool/scheduler.
+		</p>
+	</li>
+	<li>
+		<p>
+            Jobs require execution context and synchronization.
+		</p>
+	</li>
+	<li>
+		<p>
+            Like a thread pool but with:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Fine-grained tasks, dependencies, work stealing.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="workflow" >
+    Workflow
+</h5>
+<ul>
+	<li>
+		<p>
+            A 
+			<em>
+                job
+			</em>
+            &nbsp;(e.g., compute something, handle request) is created.
+		</p>
+	</li>
+	<li>
+		<p>
+            It's added to a 
+			<em>
+                job queue
+			</em>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            A 
+			<em>
+                scheduler
+			</em>
+            &nbsp;picks jobs from the queue.
+		</p>
+	</li>
+	<li>
+		<p>
+            A 
+			<em>
+                worker
+			</em>
+            &nbsp;(thread/fiber/goroutine) executes the job.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Synchronization primitives
+			</em>
+            &nbsp;are used inside jobs if they access shared state.
+		</p>
+	</li>
+</ul>
+<h5
+	id="job_or_task" >
+    Job or Task?
+</h5>
+<ul>
+	<li>
+		<p>
+            &quot;Job is a self contained task with parameters.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            They are closely related and often used interchangeably, but there are distinctions depending on context, level of abstraction, and language/runtime.
+		</p>
+	</li>
+	<li>
+		<p>
+            A task can be considered a specialized kind of job.
+		</p>
+	</li>
+	<li>
+		<p>
+            In many libraries and frameworks, the terms are synonymous in practice but may imply different underlying models (threaded vs. async).
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250419090857.png" width="325" >
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="job_queue" >
+    Job Queue
+</h5>
+<ul>
+	<li>
+		<p>
+            Is a 
+			<em>
+                data structure
+			</em>
+            &nbsp;that holds pending jobs (tasks) to be executed by workers (threads, fibers, goroutines, etc.).
+		</p>
+	</li>
+	<li>
+		<p>
+            It is typically implemented as a FIFO queue, but can vary depending on scheduling strategy.
+		</p>
+	</li>
+	<li>
+		<p>
+            A 
+			<em>
+                buffer
+			</em>
+            &nbsp;that stores jobs waiting to be run.
+		</p>
+	</li>
+	<li>
+		<p>
+            A job queue is often implemented using an array or linked list, with concurrency controls.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Tipos
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        FIFO Queue
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            First In First Out.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Basic job queue, executed in submission order
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Priority Queue
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Jobs with priority levels, higher priority first
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Ring Buffer
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Fixed-size circular buffer, often for performance
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Deque
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Double-ended queue
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="load_balancing_work_stealing" >
+    Load-balancing / Work-stealing
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://blog.molecular-matters.com/2012/04/05/building-a-load-balanced-task-scheduler-part-1-basics/" 
+				class="external-link" 
+				target="_blank" >
+                Building a load-balanced task scheduler – Part 1: Basics
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://blog.molecular-matters.com/2012/04/12/building-a-load-balanced-task-scheduler-part-2-task-model-relationships/" 
+				class="external-link" 
+				target="_blank" >
+                Part 2: Task model
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://blog.molecular-matters.com/2012/04/25/building-a-load-balanced-task-scheduler-part-3-parent-child-relationships/" 
+				class="external-link" 
+				target="_blank" >
+                Part 3: Parent-child relationships
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.rismosch.com/article?id=building-a-job-system" 
+				class="external-link" 
+				target="_blank" >
+                Building a Job System in Rust
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <img src="assets/image_20250523085246.png" width="400" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250523090659.png" width="225" >
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Useful to understand its Ring Buffer.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250523091514.png" width="425" >
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Nonetheless, I really want to do what 
+							<em>
+                                Naughty Dog
+							</em>
+                            &nbsp;did with their engine: Jobify the entire thing. EVERYTHING will run on this job system, with a few significant exceptions: Startup, shutdown, logging and IO. Everything that runs on the job system will push local jobs.&quot;
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="advantages" >
+    Advantages
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Fine-Grained Workload Distribution
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Jobs are small units of work, allowing better load balancing across threads.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Reduces idle time by keeping all threads busy with smaller tasks.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Scalability
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Jobs can be dynamically scheduled across available threads, scaling well with CPU core count.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Better suited for heterogeneous workloads than static thread partitioning.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Reduced Thread Overhead
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Avoids frequent thread creation/destruction by reusing a fixed pool of worker threads.
+				</p>
+			</li>
+			<li>
+				<p>
+                    More efficient than per-task threading (e.g., spawning a thread for each small task).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Dependency Management
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Jobs can express dependencies (e.g., &quot;Job B runs after Job A&quot;), enabling efficient task graphs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Better than manual synchronization in raw thread-based approaches.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Cache-Friendly
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Jobs can be designed to process localized data, improving cache coherence compared to thread-per-task models.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Flexibility
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Supports both parallel and serial execution patterns.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Easier to integrate with other systems (e.g., async I/O, game engines, rendering pipelines).
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="disadvantages" >
+    Disadvantages
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Scheduling Overhead
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Managing a job queue and dependencies introduces some runtime overhead.
+				</p>
+			</li>
+			<li>
+				<p>
+                    May not be worth it for extremely small tasks (nanosecond-scale work).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Complex Debugging
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Race conditions and deadlocks can be harder to debug than single-threaded or coarse-grained threading.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Job dependencies can create non-linear execution flows.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Potential for Starvation
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Poor job partitioning can lead to some threads being underutilized.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Long-running jobs may block others if not split properly.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Dependency Complexity
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    While dependencies are powerful, managing complex job graphs can become unwieldy.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Requires careful design to avoid bottlenecks.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Latency for Small Workloads
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If job submission and scheduling latency is high, it may not be ideal for ultra-low-latency tasks.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="explanations" >
+    Explanations
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.gdcvault.com/play/1022186/Parallelizing-the-Naughty-Dog-Engine" 
+				class="external-link" 
+				target="_blank" >
+                Multithreading with Fibers+Jobs in Naughty Dog engine
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Fibers were highly praised, it was very appreciated.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        About libs
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;There are so few functions that I wouldn't bother with a library&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        From what I understood of the strategy
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Everything is transformed into a job and scheduled to run asynchronously across multiple threads.
+						</p>
+					</li>
+					<li>
+						<p>
+                            This is handled automatically by the job system.
+						</p>
+					</li>
+					<li>
+						<p>
+                            All new jobs added to the queue are executed completely spread out, out of order, and with some jobs in between.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Setup
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            6 worker threads, one for each CPU core.
+						</p>
+					</li>
+					<li>
+						<p>
+                            160 fibers.
+						</p>
+					</li>
+					<li>
+						<p>
+                            800-1000 jobs per frame in The Last of Us Remastered, at 60Hz.
+						</p>
+					</li>
+					<li>
+						<p>
+                            3 global job queues.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/image_20250418185108.png" width="450" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Jobs
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Jobfy the entire engine, everything needs to be a job&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            EXCEPT I/O Threads:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    sockets, file I/O, system calls, etc.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;There are system threads&quot;.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    &quot;Always waiting (sleeping) and never do expensive processing of the data&quot;.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            <img src="assets/image_20250522164629.png" width="450" >
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Fibers
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;It's just a call stack&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Pros
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Easy to implement in an existing system.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+							<em>
+                                Cons
+							</em>
+                            :
+						</p>
+						<ul>
+							<li>
+								<p>
+									<strong>
+                                        &quot;System synchronization primitives can no longer be used&quot;
+									</strong>
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Mutex, semaphore, condition variables, etc.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Locked to a particular thread. Fibers migrate between threads.
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>
+                                    Synchronization has to be done at the hardware level.
+								</p>
+								<ul>
+									<li>
+										<p>
+                                            Atomic spin locks are used almost everywhere.
+										</p>
+									</li>
+									<li>
+										<p>
+                                            Special job mutex is used for locks held longer.
+										</p>
+										<ul>
+											<li>
+												<p>
+                                                    Puts the current job to sleep if needed instead of spin lock.
+												</p>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Fibers and their call stacks are viewable in the debugger, just like threads.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Can be named/renamed.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Indicates the current job.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Crash handling
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Fiber call stacks are saved in the core dumps just like threads.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            &quot;Fiber-safe Thread Local Storage (TLS)&quot;.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Clang had issues with this in 2015.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Use adaptive mutexes in the job system.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Spin and attempt to grab lock before making a system call.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Solves priority inversion deadlocks.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Can avoid most system calls due to initial spin.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        FrameParams
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Data for each displayed frame.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Contains per-frame state:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Frame number.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Delta time.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Skinning matrices.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Entry point for each stage to access required data.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It's a non-disputed resource.
+						</p>
+					</li>
+					<li>
+						<p>
+                            State variables are copied into this structure every frame:
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    Delta time.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Camera position.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    Skinning matrices.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    List of meshes to render.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Stores start/end timestamps for each stage: game render, GPU, and flip.
+						</p>
+					</li>
+					<li>
+						<p>
+                            <code>HasFrameCompleted(frameNumber)</code>
+						</p>
+					</li>
+					<li>
+						<p>
+                            We have 16 FrameParams to check, but it's not 16 FrameParams worth of memory, as they are now freed.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;The output of one frame is the input of the next&quot;.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=v2Q_zHG3vqg" 
+				class="external-link" 
+				target="_blank" >
+                Jobs in the Destiny engine
+			</a>
+            .
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Written in C++.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250418124555.png" width="325" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250418125339.png" width="325" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/image_20250418125515.png" width="325" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <img src="assets/screenshot_2025-05-22_132205.png" width="325" >
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Jobs
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            &quot;Jobs with ideal duration 500us - 2000us&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Priority-based FIFO
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    First In First Out.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    &quot;&quot;
+					<strong>
+                        FIBER
+					</strong>
+                    &quot;&quot;
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Set of jobs that always run serially and sequentially with an associated block of memory.
+						</p>
+					</li>
+					<li>
+						<p>
+                            &quot;We have 3-4 fibers&quot;.
+						</p>
+					</li>
+					<li>
+						<p>
+                            They are a convenience, as they are easier to understand than a mess of jobs.
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    &quot;Easier to describe&quot;.
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Resource
+					</strong>
+                    .
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Something that can be accessed.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Theoretical.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Havok World, player profile, AI data, etc.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Policies
+					</strong>
+				</p>
+				<ul>
+					<li>
+						<p>
+							<strong>
+                                &gt;&gt; Asserts &lt;&lt;
+							</strong>
+                            .
+						</p>
+						<ul>
+							<li>
+								<p>
+                                    This was the biggest tip given.
+								</p>
+							</li>
+							<li>
+								<p>
+                                    It's an insanely difficult job, and without asserts it would be impossible.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>
+                            Describe what you can do with a resource.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Handles.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            [ ]
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Resolving overlaps
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Add job dependencies.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Double buffer or cache data.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Queue messages to be acted upon later.
+						</p>
+					</li>
+					<li>
+						<p>
+                            Restructure your algorithm.
+						</p>
+					</li>
+					<li>
+						<p>
+                            {35:04 -&gt; 38:23}
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    &quot;I don't know if there were issues with the client-server architecture&quot;.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="job_system_in_unity" >
+    Job System in Unity
+</h5>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://docs.unity3d.com/6000.1/Documentation/Manual/job-system-job-dependencies.html" 
+				class="external-link" 
+				target="_blank" >
+                Explanation
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Unity.Jobs.IJob.html" 
+				class="external-link" 
+				target="_blank" >
+                Interfaces
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20250522112845.png" width="525" >
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="thread_pools" >
+    Thread Pools
+</h3>
+<ul>
+	<li>
+		<p>
+            A collection of pre-instantiated reusable threads.
+		</p>
+	</li>
+	<li>
+		<p>
+            A pool of generic threads that pull tasks from a shared queue.
+		</p>
+	</li>
+	<li>
+		<p>
+            Reduces overhead from frequent thread creation/destruction.
+		</p>
+	</li>
+	<li>
+		<p>
+            Thread pools are better than Dedicated Threads for:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Bursty workloads (e.g., loading screens, asset decompression).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Scaling across CPU cores.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="tldr" >
+    TLDR
+</h5>
+<ul>
+	<li>
+		<p>
+            It's a 
+			<strong>
+                middle ground
+			</strong>
+            &nbsp;between Dedicated Threads and a Job System.
+		</p>
+	</li>
+	<li>
+		<p>
+            I feel it's a &quot;soft&quot; version of a Job System.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Job systems are not strictly better than a Thread Pool—they’re more specialized.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Thread pools win for simplicity and low-latency tasks.
+				</p>
+			</li>
+			<li>
+				<p>
+                    For most games, a hybrid approach is optimal.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="how_it_works" >
+    How It Works
+</h5>
+<ul>
+	<li>
+		<p>
+            Tasks (arbitrary functions/lambdas) are pushed to a global queue.
+		</p>
+	</li>
+	<li>
+		<p>
+            Idle threads pick up tasks first-come-first-served.
+		</p>
+	</li>
+	<li>
+		<p>
+            No task dependencies (unlike job systems).
+		</p>
+	</li>
+</ul>
+<h5
+	id="comparisons" >
+    Comparisons
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Thread Pool
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For simple fire-and-forget tasks (e.g., logging, file I/O).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Job System
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For complex, data-parallel workloads (e.g., physics, particle systems).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Stick with Dedicated Threads
+			</strong>
+            &nbsp;if:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Your game runs smoothly (no CPU bottlenecks).
+				</p>
+			</li>
+			<li>
+				<p>
+                    You prioritize simplicity over peak performance.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Switch to Thread Pool
+			</strong>
+            &nbsp;if:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You have ad-hoc parallel tasks (e.g., asset loading).
+				</p>
+			</li>
+			<li>
+				<p>
+                    You want better CPU usage but 
+					<em>
+                        aren’t ready
+					</em>
+                    &nbsp;for jobs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You need quick parallelism without refactoring.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Tasks are independent and coarse-grained.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You’re doing I/O or async operations.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Adopt a Job System
+			</strong>
+            &nbsp;if:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Your game is CPU-bound and needs max core utilization (e.g., open-world, RTS).
+				</p>
+			</li>
+			<li>
+				<p>
+                    You need fine-grained parallelism (e.g., 10,000 physics objects).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Work has complex dependencies.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You’re willing to restructure code.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="tbb_onetbb_threading_building_blocks" >
+    TBB / oneTBB (Threading Building Blocks)
+</h3>
+<ul>
+	<li>
+		<p>
+            It's a C++ Template Library.
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=2HCQWh75ooA" 
+				class="external-link" 
+				target="_blank" >
+                Wiki
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://github.com/uxlfoundation/oneTBB" 
+				class="external-link" 
+				target="_blank" >
+                oneTBB
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onetbb.html" 
+				class="external-link" 
+				target="_blank" >
+                About
+			</a>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            Is a multithreading strategy (or more accurately, a parallel programming framework) rather than just an implementation detail of another strategy.
+		</p>
+	</li>
+	<li>
+		<p>
+            Key Points About TBB:
+		</p>
+		<ol>
+			<li>
+				<p>
+                    High-Level Parallelism Framework
+				</p>
+				<ul>
+					<li>
+						<p>
+                            TBB provides a task-based parallel programming model, allowing developers to express parallelism without directly managing threads.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It abstracts low-level threading details (like thread creation and synchronization) and instead focuses on tasks scheduled across a thread pool.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Not Just an Implementation Detail
+				</p>
+				<ul>
+					<li>
+						<p>
+                            While TBB does implement work-stealing schedulers and thread pools (which could be considered &quot;implementation details&quot;), it is primarily a strategy for parallelizing applications.
+						</p>
+					</li>
+					<li>
+						<p>
+                            It competes with other parallelism approaches like OpenMP, raw 
+                            <code>std::thread</code>
+                            , or GPU-based parallelism (CUDA, SYCL).
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    Key Features
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Task-based parallelism (instead of thread-based).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Work-stealing scheduler (for dynamic load balancing).
+						</p>
+					</li>
+					<li>
+						<p>
+                            High-level parallel algorithms (
+                            <code>parallelfor</code>
+                            , 
+                            <code>parallelreduce</code>
+                            , 
+                            <code>pipeline</code>
+                            , etc.).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Concurrent containers (e.g., 
+                            <code>concurrentqueue</code>
+                            , 
+                            <code>concurrenthashmap</code>
+                            ).
+						</p>
+					</li>
+					<li>
+						<p>
+                            Memory allocator optimizations 
+                            <code>tbb::allocator</code>
+                            &nbsp;for scalable memory allocation.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.youtube.com/watch?v=2HCQWh75ooA" 
+				class="external-link" 
+				target="_blank" >
+                Video demo
+			</a>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="data_parallelism" >
+    Data Parallelism
+</h3>
+<ul>
+	<li>
+		<p>
+            Same operation on different data chunks, e.g., OpenMP.
+		</p>
+	</li>
+	<li>
+		<p>
+            Data Parallelism is a strategy, but SIMD (Single Instruction Multiple Data) is an implementation detail (a CPU feature enabling it).
+		</p>
+	</li>
+</ul>
+<h3
+	id="actor_model" >
+    Actor Model
+</h3>
+<ul>
+	<li>
+		<p>
+            Independent actors messaging asynchronously.
+		</p>
+	</li>
+</ul>
+<h3
+	id="pipeline_parallelism" >
+    Pipeline Parallelism
+</h3>
+<ul>
+	<li>
+		<p>
+            Split work into stages, like CPU instruction pipelines.
+		</p>
+	</li>
+</ul>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.33252.js" >
+		</script>
+	</body>
+</html>

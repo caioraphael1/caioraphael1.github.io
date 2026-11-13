@@ -1,0 +1,1137 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.33252.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            WebDev Architectures, etc
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/webdev/webdev_architectures_etc/rendering_architectures.html" >
+                                    Rendering Architectures
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#server_side_rendering_ssr" 
+											class="summary-t3" >
+                                            Server-side Rendering (SSR)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#client_side_rendering_csr" 
+											class="summary-t3" >
+                                            Client-side Rendering (CSR)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#classic_mpa_multi_page_app" 
+											class="summary-t3" >
+                                            Classic MPA (Multi-Page App)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#classic_spa_single_page_app" 
+											class="summary-t3" >
+                                            Classic SPA (Single-page App)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#ssrd_spa_server_side_rendered_single_page_app_full_ssr" 
+											class="summary-t3" >
+                                            SSR'd SPA (Server-Side Rendered Single-Page App) / Full SSR
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#spa_influenced_isomorphic_single_page_app_influenced_isomorphic" 
+											class="summary-t3" >
+                                            SPA-Influenced Isomorphic (Single-Page App Influenced Isomorphic)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#mpa_influenced_split_execution_multi_page_app_influenced_split_execution_server_island_mpa" 
+											class="summary-t3" >
+                                            MPA-Influenced Split-Execution (Multi-Page App Influenced Split-Execution) / Server Island MPA
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/asynchronous_behavior.html" >
+                                    Asynchronous Behavior
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/ajax_request_asynchronous_javascript_and_xml.html" >
+                                    AJAX Request (Asynchronous JavaScript and XML)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/dom_document_object_model.html" >
+                                    DOM (Document Object Model)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/fingerprinting.html" >
+                                    Fingerprinting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/service_workers_sw.html" >
+                                    Service Workers (SW)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/progressive_web_app_pwa.html" >
+                                    Progressive Web App (PWA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/seo_search_engine_optimization.html" >
+                                    SEO (Search Engine Optimization)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/hosting.html" >
+                                    Hosting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/template_in_html_vs_markup_as_code.html" >
+                                    Template-in-HTML vs Markup-as-Code
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/integrations.html" >
+                                    Integrations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webdev_architectures_etc/code_highlighting.html" >
+                                    Code Highlighting
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            HTML
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/html/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/html/elements_tags.html" >
+                                    Elements / Tags
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/html/tricks.html" >
+                                    Tricks
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/html/random_idea.html" >
+                                    Random Idea
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            CSS
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/css/box_model.html" >
+                                    Box Model
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/css/selectors.html" >
+                                    Selectors
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/css/styling_and_attributes.html" >
+                                    Styling and Attributes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/css/scrollbars.html" >
+                                    Scrollbars
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/css/debugging.html" >
+                                    Debugging
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/css/libraries_frameworks.html" >
+                                    Libraries, Frameworks
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JavaScript
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/javascript/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/javascript/package_registry.html" >
+                                    Package Registry
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/javascript/syntax.html" >
+                                    Syntax
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            TypeScript
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/typescript__about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/typescript__build_systems.html" >
+                                    Build Systems
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/typescript__desktop_application_framework.html" >
+                                    Desktop Application Framework
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JS-TS - Frameworks and Libraries
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_frameworks_and_libraries/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_frameworks_and_libraries/imperative_dom_driven_ui.html" >
+                                    Imperative / DOM-driven UI
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_frameworks_and_libraries/jsx_code_first_ui.html" >
+                                    JSX / code-first UI
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_frameworks_and_libraries/template_based_ui.html" >
+                                    <s>Template-based UI</s>
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_frameworks_and_libraries/html_first_ui.html" >
+                                    <s>HTML-first UI</s>
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_frameworks_and_libraries/web_frameworks.html" >
+                                    Web-Frameworks
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_frameworks_and_libraries/databases.html" >
+                                    Databases
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JS-TS - Runtime Environments
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_runtime_environments__node_js.html" >
+                                    Node.js
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_runtime_environments__deno.html" >
+                                    Deno
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/js-ts_-_runtime_environments__bun.html" >
+                                    Bun
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            WebAssembly - WASM
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/webassembly_-_wasm/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            HTMX
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/htmx__about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/htmx__comparisons.html" >
+                                    Comparisons
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/htmx__attributes.html" >
+                                    Attributes
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Hugo
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/hugo/setup.html" >
+                                    Setup
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/hugo/config.html" >
+                                    Config
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/hugo/content.html" >
+                                    Content
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/hugo/quoteprogrammingquote.html" >
+                                    &quot;Programming&quot;
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/hugo/layouts_templating.html" >
+                                    Layouts / Templating
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/hugo/themes.html" >
+                                    Themes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/hugo/publish.html" >
+                                    Publish
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Static Site Generators
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/webdev/static_site_generators__options.html" >
+                                    Options
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Rendering Architectures
+					</h1>
+					<p>
+						<time
+							datetime="2025-06-23" >
+                            🕒 Created: 2025-06-23
+						</time>
+						<time
+							datetime="2026-02-06" >
+                            | Updated: 2026-02-06
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<ul>
+	<li>
+		<p>
+			<input
+				token.node_type="checkbox" 
+				disabled=""
+				checked="">
+            
+			<a
+				href="https://www.youtube.com/watch?v=Cifkb-ZVps4" 
+				class="external-link" 
+				target="_blank" >
+                All the ways HTML gets to your browser
+			</a>
+		</p>
+	</li>
+</ul>
+<h3
+	id="server_side_rendering_ssr" >
+    Server-side Rendering (SSR)
+</h3>
+<h5
+	id="advantages" >
+    Advantages
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Fast first paint:
+			</strong>
+            &nbsp;Browser receives ready HTML, so content appears immediately.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                SEO-friendly:
+			</strong>
+            &nbsp;Crawlers can index without running JS.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Better performance on low-end devices:
+			</strong>
+            &nbsp;Rendering work done server-side.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Predictable behavior:
+			</strong>
+            &nbsp;Consistent output independent of client environment.
+		</p>
+	</li>
+</ul>
+<h5
+	id="disadvantages" >
+    Disadvantages
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Higher server load:
+			</strong>
+            &nbsp;Each request triggers a render.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Slower navigation between pages:
+			</strong>
+            &nbsp;Full or partial reloads unless hybridized.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Complex state management:
+			</strong>
+            &nbsp;Keeping client and server states in sync requires hydration.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                More infrastructure complexity:
+			</strong>
+            &nbsp;Balancing caching, streaming, and SSR latency.
+		</p>
+	</li>
+</ul>
+<h3
+	id="client_side_rendering_csr" >
+    Client-side Rendering (CSR)
+</h3>
+<h5
+	id="advantages" >
+    Advantages
+</h5>
+<ul>
+	<li>
+		<p>
+            Less server load after initial page delivery.
+		</p>
+	</li>
+	<li>
+		<p>
+            Dynamic UI updates without reloads.
+		</p>
+	</li>
+	<li>
+		<p>
+            Smooth navigation once the app is loaded (SPA feel).
+		</p>
+	</li>
+</ul>
+<h5
+	id="disadvantages" >
+    Disadvantages
+</h5>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Slow initial load:
+			</strong>
+            &nbsp;The browser must download JS, parse it, and then render. Until that, the user sees nothing.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                SEO issues:
+			</strong>
+            &nbsp;Search engines struggle or delay indexing JS-rendered content.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Poor performance on weak devices:
+			</strong>
+            &nbsp;Rendering and hydration cost CPU and memory.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Accessibility and fallback failures:
+			</strong>
+            &nbsp;No JS = no content.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Complex caching and debugging:
+			</strong>
+            &nbsp;Harder to reason about compared to static or SSR models.
+		</p>
+	</li>
+</ul>
+<h3
+	id="classic_mpa_multi_page_app" >
+    Classic MPA (Multi-Page App)
+</h3>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20251013091732.png" width="691" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The page could be either static 
+            <code>index.html</code>
+            , or it could be generated with a function, based on parameters of the request.
+		</p>
+	</li>
+	<li>
+		<p>
+            The entire page at once.
+		</p>
+	</li>
+	<li>
+		<p>
+            When you click a link, you don't have any indication that something is going on, other than the loading bar at the top of the browser. You'll have to wait until the server gives back a response, for you to see something new.
+		</p>
+	</li>
+</ul>
+<h3
+	id="classic_spa_single_page_app" >
+    Classic SPA (Single-page App)
+</h3>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20251013091750.png" width="691" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            You don't get the full page after a request, but a skeleton HTML.
+		</p>
+	</li>
+	<li>
+		<p>
+            This HTML is going to have a 
+            <code>script</code>
+            &nbsp;tag in it.
+		</p>
+	</li>
+	<li>
+		<p>
+            The HTML is the same regardless of the page you are into.
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;It's not just one API call. The amount of API calls performed are insane, like dozens, hundreds.&quot;
+		</p>
+	</li>
+	<li>
+		<p>
+            You can see the API calls made in the Network tab.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251013090624.png" width="530" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            &quot;When you have the ability to do everything on the client, you start to&quot;.
+		</p>
+	</li>
+	<li>
+		<p>
+            When 
+            <code>navigate to /theprimeagen</code>
+            &nbsp;happens, the browser immediately generates a new page, like a spinning wheel.
+		</p>
+	</li>
+	<li>
+		<p>
+            This is cool, but surely has a lot of bloat until then. It's not for everything and it's not for everyone.
+		</p>
+	</li>
+</ul>
+<h3
+	id="ssrd_spa_server_side_rendered_single_page_app_full_ssr" >
+    SSR'd SPA (Server-Side Rendered Single-Page App) / Full SSR
+</h3>
+<ul>
+	<li>
+		<p>
+            A soft-evolution of SPA.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251013093455.png" width="829" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            It does a thing called 
+			<strong>
+                hydration
+			</strong>
+            : it re-run the same React code so that your React can link up to the right places in the HTML.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Possible problems
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    If you press a button before a button is hydrated, the button will do nothing.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            The framework 
+							<strong>
+                                Qwik
+							</strong>
+                            &nbsp;thinks hydration is the root of all evil and wants to eliminate it.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+                    You might have to send data twice. One for the HTML, and another for the React code. This is done so if a text had a button on it, you'll need the JS to do stuff. In some cases you just have text, and therefore this is unnecessary.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            There's a lot of benefits of the HTML having the content, but if it has a ton of content that doesn't change while you're at the page, you are just loading a bunch of things that don't belong to JS.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            This method gives you the best of MPA and SPA, but also you get the worst of both.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    There are problems with Next.js, etc.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Good, not great.
+		</p>
+	</li>
+</ul>
+<h3
+	id="spa_influenced_isomorphic_single_page_app_influenced_isomorphic" >
+    SPA-Influenced Isomorphic (Single-Page App Influenced Isomorphic)
+</h3>
+<ul>
+	<li>
+		<p>
+            An evolution of SSR'd SPA / Full SSR.
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251013094026.png" width="691" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <img src="assets/image_20251013100742.png" width="796" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            You have the benefit of having a SPA effect of clicking something and immediately seeing the result, due to client-side rendering, as well as having the benefit of 
+			<em>
+                not
+			</em>
+            &nbsp;having to send JSON of all different ways to render to the client.
+		</p>
+	</li>
+	<li>
+		<p>
+            Instead of sending the giant pile of JavaScript that has all possible state your UI can be in 
+			<em>
+                and
+			</em>
+            &nbsp;the JSON you actually need to do that render, you can just send the HTML.
+		</p>
+	</li>
+	<li>
+		<p>
+            This is what makes HTMX so magical. The server is not sending JSON down to the browser to transform into HTML, it just sends the right HTML. That's really cool.
+		</p>
+	</li>
+	<li>
+		<p>
+            You get the immediate navigation of the SPA. You get the HTML-first development of an MPA and you get a developer experience where you don't feel like you are fighting between these two different things.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Possible problems
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You no longer have the SPA design where every page resolves into the same HTML file. You now have to have backend code running React. You cannot use this model if you are not using React on the server that resolves the entire website and every url.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="mpa_influenced_split_execution_multi_page_app_influenced_split_execution_server_island_mpa" >
+    MPA-Influenced Split-Execution (Multi-Page App Influenced Split-Execution) / Server Island MPA
+</h3>
+<ul>
+	<li>
+		<p>
+            <img src="assets/image_20251013101925.png" width="691" >
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            I didn't quite understand it.
+		</p>
+	</li>
+	<li>
+		<p>
+            CDN, Vercel, etc.
+		</p>
+	</li>
+</ul>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.33252.js" >
+		</script>
+	</body>
+</html>

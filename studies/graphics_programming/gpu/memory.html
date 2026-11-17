@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -809,8 +809,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-11
 						</time>
 						<time
-							datetime="2026-01-22" >
-                            | Updated: 2026-01-22
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -961,7 +961,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Is accessible to all threads in the same block and lasts for the block’s lifetime.
+            Is accessible to all threads in the same block and lasts for the block's lifetime.
 		</p>
 	</li>
 </ul>
@@ -1048,7 +1048,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            It functions as a backup storage area when the amount of active data exceeds the capacity of a SM’s register file.
+            It functions as a backup storage area when the amount of active data exceeds the capacity of a SM's register file.
 		</p>
 	</li>
 	<li>
@@ -1137,7 +1137,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    “Local” in shader languages is a per-thread address space.
+                    &quot;Local&quot; in shader languages is a per-thread address space.
 				</p>
 			</li>
 			<li>
@@ -1168,7 +1168,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Is private to each thread, but it’s slower than register memory.
+            Is private to each thread, but it's slower than register memory.
 		</p>
 	</li>
 </ul>
@@ -1225,11 +1225,11 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            “Global memory” is a 
+            &quot;Global memory&quot; is a 
 			<em>
                 logical/architectural term
 			</em>
-            , “VRAM” is a 
+            , &quot;VRAM&quot; is a 
 			<em>
                 physical/hardware term
 			</em>
@@ -1247,7 +1247,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            On integrated GPUs or APUs (where GPU and CPU share DRAM), “global memory” is just 
+            On integrated GPUs or APUs (where GPU and CPU share DRAM), &quot;global memory&quot; is just 
 			<em>
                 system RAM
 			</em>
@@ -1256,7 +1256,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    In that case, there is no separate VRAM, but the hardware still calls it “global” because it’s visible to all threads.
+                    In that case, there is no separate VRAM, but the hardware still calls it &quot;global&quot; because it's visible to all threads.
 				</p>
 			</li>
 		</ul>
@@ -1333,7 +1333,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    CPU accesses are cached in the CPU’s cache hierarchy (good for reads, but may need explicit flush for writes).
+                    CPU accesses are cached in the CPU's cache hierarchy (good for reads, but may need explicit flush for writes).
 				</p>
 			</li>
 		</ul>
@@ -1364,11 +1364,11 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            To know whether that host-visible memory counts against VRAM or system RAM, check the memory heap associated with the memory type. If the memory type’s heapIndex points to a heap that has 
+            To know whether that host-visible memory counts against VRAM or system RAM, check the memory heap associated with the memory type. If the memory type's heapIndex points to a heap that has 
             <code>MEMORY_HEAP_DEVICE_LOCAL</code>
-            , that heap is the device-local heap (what you should treat as “VRAM” for accounting). If the heap does not have 
+            , that heap is the device-local heap (what you should treat as &quot;VRAM&quot; for accounting). If the heap does not have 
             <code>DEVICE_LOCAL</code>
-            , it’s system RAM (account against main memory).
+            , it's system RAM (account against main memory).
 		</p>
 	</li>
 	<li>
@@ -1395,7 +1395,7 @@ window.MathJax = {
 				<p>
                     Vulkan marks this memory type as 
                     <code>HOST_VISIBLE</code>
-                    &nbsp;because the driver can map it into the CPU’s virtual address space (
+                    &nbsp;because the driver can map it into the CPU's virtual address space (
                     <code>vkMapMemory</code>
                     ).
 				</p>
@@ -1503,7 +1503,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    GPU access time can vary due to shared bandwidth or caches, but it’s still significantly faster than PCIe-based access.
+                    GPU access time can vary due to shared bandwidth or caches, but it's still significantly faster than PCIe-based access.
 				</p>
 			</li>
 		</ul>
@@ -1517,7 +1517,7 @@ window.MathJax = {
 	<li>
 		<p>
 			<strong>
-                Discrete GPU with a PCIe BAR that exposes VRAM” (old/default BAR)
+                Discrete GPU with a PCIe BAR that exposes VRAM&quot; (old/default BAR)
 			</strong>
 		</p>
 		<ul>
@@ -1550,7 +1550,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    So you can map VRAM, but only a tiny slice, and it’s awkward and slow for real work.
+                    So you can map VRAM, but only a tiny slice, and it's awkward and slow for real work.
 				</p>
 			</li>
 			<li>
@@ -1563,7 +1563,7 @@ window.MathJax = {
 	<li>
 		<p>
 			<strong>
-                “Discrete GPU + Resizable BAR” (modern systems)
+                &quot;Discrete GPU + Resizable BAR&quot; (modern systems)
 			</strong>
 		</p>
 		<ul>
@@ -1765,12 +1765,12 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    Use your system’s latest motherboard firmware supporting Resizable BAR.
+                    Use your system's latest motherboard firmware supporting Resizable BAR.
 				</p>
 			</li>
 			<li>
 				<p>
-                    Enter the system’s BIOS/UEFI firmware configuration menu by pressing the DEL key during system start up. This key may vary between each system manufacturer, please check with your system manufacturer for specific instructions as necessary.
+                    Enter the system's BIOS/UEFI firmware configuration menu by pressing the DEL key during system start up. This key may vary between each system manufacturer, please check with your system manufacturer for specific instructions as necessary.
 				</p>
 			</li>
 			<li>
@@ -1822,7 +1822,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    Often backed by system RAM (on discrete GPUs, that’s typical for PCIe-mapped system memory).
+                    Often backed by system RAM (on discrete GPUs, that's typical for PCIe-mapped system memory).
 				</p>
 			</li>
 			<li>
@@ -1837,7 +1837,7 @@ window.MathJax = {
 			<strong>
                 Non-coherent host-visible memory
 			</strong>
-            &nbsp;means CPU and GPU caches aren’t kept in sync automatically.
+            &nbsp;means CPU and GPU caches aren't kept in sync automatically.
 		</p>
 		<ul>
 			<li>
@@ -1847,7 +1847,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    This often happens when host-visible memory is still on the GPU’s side of the PCIe mapping.
+                    This often happens when host-visible memory is still on the GPU's side of the PCIe mapping.
 				</p>
 			</li>
 		</ul>
@@ -1884,7 +1884,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

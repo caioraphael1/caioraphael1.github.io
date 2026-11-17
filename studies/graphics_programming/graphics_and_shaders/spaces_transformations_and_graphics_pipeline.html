@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -880,8 +880,8 @@ window.MathJax = {
                             🕒 Created: 2023-07-10
 						</time>
 						<time
-							datetime="2026-04-01" >
-                            | Updated: 2026-04-01
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -1070,7 +1070,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            A coordinate space where a single mesh or object’s vertices are defined relative to the object’s own origin.
+            A coordinate space where a single mesh or object's vertices are defined relative to the object's own origin.
 		</p>
 	</li>
 	<li>
@@ -1104,7 +1104,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Applies the object’s translation, rotation, scale (and optionally shear).
+            Applies the object's translation, rotation, scale (and optionally shear).
 		</p>
 	</li>
 </ul>
@@ -1149,7 +1149,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            The inverse of a camera’s world transform.
+            The inverse of a camera's world transform.
 		</p>
 	</li>
 </ul>
@@ -1165,7 +1165,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Vertices are expressed relative to the camera: positions are what the camera “sees.”
+            Vertices are expressed relative to the camera: positions are what the camera &quot;sees.&quot;
 		</p>
 	</li>
 	<li>
@@ -1204,7 +1204,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    The projection matrix doesn’t “ignore” vertices outside the frustum; it still transforms them.
+                    The projection matrix doesn't &quot;ignore&quot; vertices outside the frustum; it still transforms them.
 				</p>
 			</li>
 		</ul>
@@ -1441,12 +1441,12 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            With reverse z it’s possible to just flip the order of the near and far arguments when using the regular projection matrix.
+                            With reverse z it's possible to just flip the order of the near and far arguments when using the regular projection matrix.
 						</p>
 					</li>
 					<li>
 						<p>
-                            For whatever reason I prefer the above approach but please do what’s best for you and be aware of these other approaches out in the wild.
+                            For whatever reason I prefer the above approach but please do what's best for you and be aware of these other approaches out in the wild.
 						</p>
 					</li>
 				</ul>
@@ -1583,7 +1583,7 @@ camera_perspective_vulkan_infinite :: proc "contextless" (vertical_fov, aspect, 
 			</li>
 			<li>
 				<p>
-                    Ensure you’re using a floating point depth buffer (e.g. 
+                    Ensure you're using a floating point depth buffer (e.g. 
                     <code>GL_DEPTH_COMPONENT32F</code>
                     , 
                     <code>DXGI_FORMAT_D32_FLOAT_S8X24_UINT</code>
@@ -1898,7 +1898,7 @@ pub fn perspective_infinite_z_wgpu_dx(vertical_fov: f32, aspect_ratio: f32, z_ne
 			</li>
 			<li>
 				<p>
-                    Ensure you’re using a floating point depth buffer (e.g. 
+                    Ensure you're using a floating point depth buffer (e.g. 
                     <code>GL_DEPTH_COMPONENT32F</code>
                     , 
                     <code>DXGI_FORMAT_D32_FLOAT_S8X24_UINT</code>
@@ -2200,7 +2200,7 @@ const mat4 reverse_z_perspective_projection = reverse_z(normalize_unit_range(per
 					</li>
 					<li>
 						<p>
-                            Ensure you’re using a floating point depth buffer (e.g. 
+                            Ensure you're using a floating point depth buffer (e.g. 
                             <code>GL_DEPTH_COMPONENT32F</code>
                             , 
                             <code>DXGI_FORMAT_D32_FLOAT_S8X24_UINT</code>
@@ -2384,7 +2384,7 @@ pub fn orthographic_gl(left: f32, right: f32, bottom: f32, top: f32, near: f32, 
 			</li>
 			<li>
 				<p>
-                    I always knew there was more precision near 0, but I don’t think I’d fully appreciated by quite how much.
+                    I always knew there was more precision near 0, but I don't think I'd fully appreciated by quite how much.
 				</p>
 			</li>
 			<li>
@@ -2402,7 +2402,7 @@ pub fn orthographic_gl(left: f32, right: f32, bottom: f32, top: f32, near: f32, 
 						<ul>
 							<li>
 								<p>
-                                    If we choose a generous near clip plane of 1.0 and far clip plane of 100.0, and give an input value of say 5.0 to this equation we get an interesting result. The depth value is 0.808! That means even when we’re using regular z, and we have a value near the clip plane, we already have completely discarded an insane amount of precision because all those values near 0 already can’t be used. If we put in more representative numbers things get even worse. With a near clip plane of 0.01 and a far clip plane of 1000.0, using a view space depth value of 5.0 gives 0.998. That means we only have 33554 unique values left to represent normalized depth between 5.0 and 1000 which isn’t great.
+                                    If we choose a generous near clip plane of 1.0 and far clip plane of 100.0, and give an input value of say 5.0 to this equation we get an interesting result. The depth value is 0.808! That means even when we're using regular z, and we have a value near the clip plane, we already have completely discarded an insane amount of precision because all those values near 0 already can't be used. If we put in more representative numbers things get even worse. With a near clip plane of 0.01 and a far clip plane of 1000.0, using a view space depth value of 5.0 gives 0.998. That means we only have 33554 unique values left to represent normalized depth between 5.0 and 1000 which isn't great.
 								</p>
 							</li>
 						</ul>
@@ -2419,7 +2419,7 @@ pub fn orthographic_gl(left: f32, right: f32, bottom: f32, top: f32, near: f32, 
 							</li>
 							<li>
 								<p>
-                                    Reversing z has the effect of smoothing the precision throughout the range (we leverage the fact so much precision sits between 0.0 and 0.5 by ensuring more values end up there). Without reverse z, the precision is front-loaded to the near clip plane where we don’t need as much precision.
+                                    Reversing z has the effect of smoothing the precision throughout the range (we leverage the fact so much precision sits between 0.0 and 0.5 by ensuring more values end up there). Without reverse z, the precision is front-loaded to the near clip plane where we don't need as much precision.
 								</p>
 							</li>
 							<li>
@@ -2494,7 +2494,7 @@ pub fn orthographic_gl(left: f32, right: f32, bottom: f32, top: f32, near: f32, 
 			</li>
 			<li>
 				<p>
-                    Depth test stops discriminating depth beyond the near plane, so almost everything “at infinity” z-fights.
+                    Depth test stops discriminating depth beyond the near plane, so almost everything &quot;at infinity&quot; z-fights.
 				</p>
 			</li>
 			<li>
@@ -2552,7 +2552,7 @@ pub fn orthographic_gl(left: f32, right: f32, bottom: f32, top: f32, near: f32, 
 				<ul>
 					<li>
 						<p>
-                            In many cases, separating the view and projection matrices (following Upchurch and Desbrun’s recommendation) does make some improvement. While it doesn't lower the overall error rate, it does seem to turn swaps into indistinguishables, which is a step in the right direction.
+                            In many cases, separating the view and projection matrices (following Upchurch and Desbrun's recommendation) does make some improvement. While it doesn't lower the overall error rate, it does seem to turn swaps into indistinguishables, which is a step in the right direction.
 						</p>
 					</li>
 				</ul>
@@ -3460,7 +3460,7 @@ pub fn orthographic_gl(left: f32, right: f32, bottom: f32, top: f32, near: f32, 
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

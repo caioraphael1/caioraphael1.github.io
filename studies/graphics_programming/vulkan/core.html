@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -764,8 +764,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-08-26" >
-                            | Updated: 2026-08-26
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -986,7 +986,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            We don’t really need to check for the existence of this extension because it should be implied by the availability of the validation layers.
+            We don't really need to check for the existence of this extension because it should be implied by the availability of the validation layers.
 		</p>
 	</li>
 	<li>
@@ -1365,7 +1365,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Because handling resized windows takes special care that we’ll look into later, disable it for now with another window hint call:
+            Because handling resized windows takes special care that we'll look into later, disable it for now with another window hint call:
 		</p>
 	</li>
 </ul>
@@ -1375,7 +1375,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 <ul>
 	<li>
 		<p>
-            All that’s left now is creating the actual window. Add a 
+            All that's left now is creating the actual window. Add a 
             <code>GLFWwindow* window;</code>
             &nbsp;private class member to store a reference to it and initialize the window with:
 		</p>
@@ -1601,16 +1601,16 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 	</li>
 	<li>
 		<p>
-            The surface in our program will be backed by the window that we’ve already opened with GLFW.
+            The surface in our program will be backed by the window that we've already opened with GLFW.
 		</p>
 	</li>
 	<li>
 		<p>
             The 
             <code>KHR_surface</code>
-            &nbsp;extension is an instance level extension, and we’ve actually already enabled it, because it’s included in the list returned by 
+            &nbsp;extension is an instance level extension, and we've actually already enabled it, because it's included in the list returned by 
             <code>glfwGetRequiredInstanceExtensions</code>
-            . The list also includes some other WSI extensions that we’ll use in the next couple of chapters.
+            . The list also includes some other WSI extensions that we'll use in the next couple of chapters.
 		</p>
 	</li>
 	<li>
@@ -1643,7 +1643,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 		<p>
             Although the 
             <code>VkSurfaceKHR</code>
-            &nbsp;object and its usage is platform-agnostic, its creation isn’t because it depends on window system details. For example, it needs the 
+            &nbsp;object and its usage is platform-agnostic, its creation isn't because it depends on window system details. For example, it needs the 
             <code>HWND</code>
             &nbsp;and 
             <code>HMODULE</code>
@@ -1761,7 +1761,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 		<ul>
 			<li>
 				<p>
-                    It is possible for a device with Vulkan support to not offer any graphics functionality; however, all graphics cards with Vulkan support today will generally support all queue operations that we’re interested in.
+                    It is possible for a device with Vulkan support to not offer any graphics functionality; however, all graphics cards with Vulkan support today will generally support all queue operations that we're interested in.
 				</p>
 			</li>
 		</ul>
@@ -1791,7 +1791,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 	</li>
 	<li>
 		<p>
-            It’s actually possible that the queue families supporting 
+            It's actually possible that the queue families supporting 
 			<strong>
                 drawing
 			</strong>
@@ -1808,7 +1808,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 		<ul>
 			<li>
 				<p>
-                    It’s very likely that these end up being the same queue family after all, but throughout the program we will treat them as if they were separate queues for a uniform approach.
+                    It's very likely that these end up being the same queue family after all, but throughout the program we will treat them as if they were separate queues for a uniform approach.
 				</p>
 			</li>
 			<li>
@@ -1829,7 +1829,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 	</li>
 	<li>
 		<p>
-            We’ll look for a queue family that has the capability of presenting to our window surface. The function to check for that is 
+            We'll look for a queue family that has the capability of presenting to our window surface. The function to check for that is 
             <code>vkGetPhysicalDeviceSurfaceSupportKHR</code>
             , which takes the physical device, queue family index and surface as parameters.
 		</p>
@@ -1845,7 +1845,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 	</li>
 	<li>
 		<p>
-            Not all graphics cards are capable of presenting images directly to a screen for various reasons, for example, because they are designed for servers and don’t have any display outputs. Secondly, since image presentation is heavily tied into the window system and the surfaces associated with windows, it is not part of the Vulkan core. You have to enable the 
+            Not all graphics cards are capable of presenting images directly to a screen for various reasons, for example, because they are designed for servers and don't have any display outputs. Secondly, since image presentation is heavily tied into the window system and the surfaces associated with windows, it is not part of the Vulkan core. You have to enable the 
             <code>KHR_swapchain</code>
             &nbsp;device extension after querying for its support.
 		</p>
@@ -1878,7 +1878,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 	</li>
 	<li>
 		<p>
-            The “logical” GPU context that you actually execute things on.
+            The &quot;logical&quot; GPU context that you actually execute things on.
 		</p>
 	</li>
 	<li>
@@ -1915,7 +1915,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 		<ul>
 			<li>
 				<p>
-                    Execution “port” for commands.
+                    Execution &quot;port&quot; for commands.
 				</p>
 			</li>
 			<li>
@@ -1939,7 +1939,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 	</li>
 	<li>
 		<p>
-            The queues are automatically created along with the logical device, but we don’t have a handle to interface with them yet.
+            The queues are automatically created along with the logical device, but we don't have a handle to interface with them yet.
 		</p>
 	</li>
 	<li>
@@ -1951,7 +1951,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 		<p>
             We can use the 
             <code>vkGetDeviceQueue</code>
-            &nbsp;function to retrieve queue handles for each queue family. The parameters are the logical device, queue family, queue index and a pointer to the variable to store the queue handle in. Because we’re only creating a single queue from this family, we’ll simply use index 
+            &nbsp;function to retrieve queue handles for each queue family. The parameters are the logical device, queue family, queue index and a pointer to the variable to store the queue handle in. Because we're only creating a single queue from this family, we'll simply use index 
             <code>0</code>
             .
 		</p>
@@ -2013,7 +2013,7 @@ glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

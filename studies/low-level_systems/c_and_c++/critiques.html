@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -845,8 +845,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/explicitness.html" >
-                                    Explicitness
+									href="/studies/low-level_systems/c_and_c++/keywords_for_data.html" >
+                                    Keywords for Data
 								</a>
 							</li>
 						</ul>
@@ -854,8 +854,44 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/compiler_hints.html" >
-                                    Compiler Hints
+									href="/studies/low-level_systems/c_and_c++/keywords_for_control_flow.html" >
+                                    Keywords for Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_functions_methods.html" >
+                                    Keywords for Functions / Methods
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_class_extravaganza.html" >
+                                    Keywords for Class extravaganza
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/other_optimization_hints.html" >
+                                    Other Optimization Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/asserts.html" >
+                                    Asserts
 								</a>
 							</li>
 						</ul>
@@ -937,6 +973,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/functions.html" >
                                     Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/coroutines_c_plus__plus_20.html" >
+                                    Coroutines (C++20)
 								</a>
 							</li>
 						</ul>
@@ -1063,15 +1108,6 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/undefined_behavior.html" >
                                     Undefined Behavior
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/multithreading.html" >
-                                    Multithreading
 								</a>
 							</li>
 						</ul>
@@ -1607,8 +1643,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-09-29" >
-                            | Updated: 2026-09-29
+							datetime="2026-11-15" >
+                            | Updated: 2026-11-15
 						</time>
 					</p>
 				</header>
@@ -1844,6 +1880,131 @@ My_Int y = x; // this is allowed as `My_Int` is just an alias of `int`
 		</p>
 	</li>
 </ul>
+<h5
+	id="you_cant_search_any_symbol_on_the_ide_c_plus__plus_" >
+    You can't search any symbol on the IDE (C++)
+</h5>
+<ul>
+	<li>
+		<p>
+            Classes make this impossible:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    In C++
+				</p>
+<pre><code class="language-cpp" data-lang="cpp">class Scene
+{
+&nbsp;&nbsp;&nbsp;&nbsp;Car mCar;
+
+&nbsp;&nbsp;&nbsp;&nbsp;void Update()&nbsp;&nbsp;// &lt;- this is not searchable
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mCar-&gt;Update();&nbsp;&nbsp;// &lt;- this is not searchable
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // This my not be the only place the class Car is used, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // as so there could be instances with different names.
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    In C:
+				</p>
+<pre><code class="language-c" data-lang="c">struct Scene
+{
+&nbsp;&nbsp;&nbsp;&nbsp;Car car;
+}
+
+void sceneUpdate(Car* car) // &lt;- this is searchable
+{
+&nbsp;&nbsp;&nbsp;&nbsp;carUpdate(car);&nbsp;&nbsp;// &lt;- this is searchable
+}
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Namespaces don't help:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You still have the namespace lookup problem.
+				</p>
+			</li>
+			<li>
+				<p>
+                    In C++:
+				</p>
+<pre><code class="language-cpp" data-lang="cpp">void foo();
+
+namespace aaa {
+&nbsp;&nbsp;&nbsp;&nbsp;void foo();
+
+&nbsp;&nbsp;&nbsp;&nbsp;namespace bbb {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace ccc {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void foo();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void foo();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    In C:
+				</p>
+<pre><code class="language-cpp" data-lang="cpp">void foo();
+void aaa_foo();
+void aaa_bbb_foo();
+void aaa_bbb_ccc_foo();
+</code></pre>
+				<ul>
+					<li>
+						<p>
+                            Or just flat everything; which is usually what you do, as people don't usually nest functions in their head for no reason.
+						</p>
+					</li>
+				</ul>
+<pre><code class="language-cpp" data-lang="cpp">void aaa_foo();
+void bbb_foo();
+void ccc_foo();
+void ddd_foo();
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    When you see 
+                    <code>foo()</code>
+                    &nbsp;on the IDE, you can't be sure which of the many 
+                    <code>foo()</code>
+                    s you are talking to, because of the many ways you could have chosen to write the address:
+				</p>
+				<ul>
+					<li>
+						<p>
+                            'Unqualified lookup' it goes down the tree, so it completes depend on context.
+						</p>
+					</li>
+					<li>
+						<p>
+                            'Explicit qualified lookup' should be better, but it still depend on context, as it's no a complete namespace address.
+						</p>
+					</li>
+					<li>
+						<p>
+                            'Explicit qualified lookup, starting in the global namespace' complete address space, but the extra 
+                            <code>::</code>
+                            &nbsp;at the beginning drives people away from using it, while they also have a gigantic amount of nested namespaces.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
 
 				</article>
 			</main>
@@ -1859,7 +2020,7 @@ My_Int y = x; // this is allowed as `My_Int` is just an alias of `int`
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

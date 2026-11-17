@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -996,8 +996,8 @@ window.MathJax = {
                             🕒 Created: 2025-07-03
 						</time>
 						<time
-							datetime="2026-08-13" >
-                            | Updated: 2026-08-13
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -1088,7 +1088,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            The nice thing about this technique is that we can retrieve all sorts of effects. We have “free” ambient occlusion by default when doing this cone tracing, light bouncing, but we can retrieve reflections, refractions and shadows as well from this voxel structure with additional ray march steps. We can have a configurable amount of light bounces. Cone tracing code can be shared between the bouncing and querying shader and different types of rays as well. The entire thing remains fully on the GPU, the CPU is only responsible for command buffer generation.
+            The nice thing about this technique is that we can retrieve all sorts of effects. We have &quot;free&quot; ambient occlusion by default when doing this cone tracing, light bouncing, but we can retrieve reflections, refractions and shadows as well from this voxel structure with additional ray march steps. We can have a configurable amount of light bounces. Cone tracing code can be shared between the bouncing and querying shader and different types of rays as well. The entire thing remains fully on the GPU, the CPU is only responsible for command buffer generation.
 		</p>
 	</li>
 	<li>
@@ -1136,7 +1136,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    KCD2 (Kingdom Come: Deliverance II) only uses it because CryEngine supports it but doesn’t support ray tracing. And CryEngine is still stuck using voxel lighting because the Star Citizen devs poached CryTek’s best graphics engineers, and those engineers then proceeded to add ray tracing to Star Citizen’s fork of CryEngine.
+                    KCD2 (Kingdom Come: Deliverance II) only uses it because CryEngine supports it but doesn't support ray tracing. And CryEngine is still stuck using voxel lighting because the Star Citizen devs poached CryTek's best graphics engineers, and those engineers then proceeded to add ray tracing to Star Citizen's fork of CryEngine.
 				</p>
 			</li>
 			<li>
@@ -1185,7 +1185,7 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            The most involving part is definitely the first one, the voxelization step. It involves making use of advanced graphics API features like geometry shaders, abandoning the output merger and writing into resources “by hand”. We can also make use of new hardware features like conservative rasterization and rasterizer ordered views, but we will implement them in the shaders as well.
+                            The most involving part is definitely the first one, the voxelization step. It involves making use of advanced graphics API features like geometry shaders, abandoning the output merger and writing into resources &quot;by hand&quot;. We can also make use of new hardware features like conservative rasterization and rasterizer ordered views, but we will implement them in the shaders as well.
 						</p>
 					</li>
 					<li>
@@ -1207,7 +1207,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            The voxelizing vertex shader needs to transform vertices into world space and pass through the attributes to the geometry shader stage. Or just do a pass through and transform to world space in the GS, doesn’t matter.
+                            The voxelizing vertex shader needs to transform vertices into world space and pass through the attributes to the geometry shader stage. Or just do a pass through and transform to world space in the GS, doesn't matter.
 						</p>
 					</li>
 					<li>
@@ -1231,7 +1231,7 @@ maxi = facenormal[2] &gt; facenormal[maxi] ? 2 : maxi;
 				<ul>
 					<li>
 						<p>
-                            After we determined the dominant axis, we need to project to it orthogonally by swizzling the position’s xyz components, then setting the z component to 1 and scaling it to clip space.
+                            After we determined the dominant axis, we need to project to it orthogonally by swizzling the position's xyz components, then setting the z component to 1 and scaling it to clip space.
 						</p>
 					</li>
 				</ul>
@@ -1277,7 +1277,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 				<ul>
 					<li>
 						<p>
-                            It is important to pass the vertices’ world position to the pixel shader, because we will use that directly to index into our voxel grid data structure and write into it. We will also need texture coords and normals for correct diffuse color and lighting.
+                            It is important to pass the vertices' world position to the pixel shader, because we will use that directly to index into our voxel grid data structure and write into it. We will also need texture coords and normals for correct diffuse color and lighting.
 						</p>
 					</li>
 					<li>
@@ -1289,21 +1289,21 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 					</li>
 					<li>
 						<p>
-                            After the geometry shader, the rasterizer unit schedules some pixel shader invocations for our voxels, so in the pixel shader we determine the color of the voxel and write it into our data structure. We probably need to sample our base texture of the surface and evaluate direct lighting which affects the fragment (the voxel). While evaluating the lighting, use a forward rendering approach, so iterate through the nearby lights for the fragment and do the light calculations for the diffuse part of the light. Leave the specular out of it, because we don’t care about the view dependent part now, we want to be able to query lighting from any direction anyway later. I recommend using a simplified lighting model, but try to keep it somewhat consistent with your main lighting model which is probably a physically based model (at least it is for me and you should also have one) and account for the energy loss caused by leaving out the specularity.
+                            After the geometry shader, the rasterizer unit schedules some pixel shader invocations for our voxels, so in the pixel shader we determine the color of the voxel and write it into our data structure. We probably need to sample our base texture of the surface and evaluate direct lighting which affects the fragment (the voxel). While evaluating the lighting, use a forward rendering approach, so iterate through the nearby lights for the fragment and do the light calculations for the diffuse part of the light. Leave the specular out of it, because we don't care about the view dependent part now, we want to be able to query lighting from any direction anyway later. I recommend using a simplified lighting model, but try to keep it somewhat consistent with your main lighting model which is probably a physically based model (at least it is for me and you should also have one) and account for the energy loss caused by leaving out the specularity.
 						</p>
 					</li>
 					<li>
 						<p>
-                            When you calculated the color of the voxel, write it out by using the following trick: I didn’t bind a render target for the render pass, but I have set an Unordered Access View by calling OMSetRenderTargetsAndUnorderedAccessViews(). So the shader returns nothing, but we write into our voxel grid in the shader code. My voxel grid is a RWStructuredBuffer here to be able to support atomic operations easily, but later it will be converted to a 3D texture for easier filtering and better cache utilization. The Structured buffer is a linear array of VoxelType of size gridDimensions X
+                            When you calculated the color of the voxel, write it out by using the following trick: I didn't bind a render target for the render pass, but I have set an Unordered Access View by calling OMSetRenderTargetsAndUnorderedAccessViews(). So the shader returns nothing, but we write into our voxel grid in the shader code. My voxel grid is a RWStructuredBuffer here to be able to support atomic operations easily, but later it will be converted to a 3D texture for easier filtering and better cache utilization. The Structured buffer is a linear array of VoxelType of size gridDimensions X
 							<em>
                                 Y
 							</em>
-                            Z. VoxelType is a structure holding a 32 bit uint for the voxel color (packed HDR color with 0-255 RGB, an emissive multiplier in 7 bits and the last bit indicates if the voxel is empty or not). The structure also contains a normal vector packed into a uint. Our interpolated 3D world position comes in handy when determining the write position into the buffer, just truncate and flatten the interpolated world position which you received from the geometry shader. For writing the results, you must use atomic max operations on the voxel uints. You could be writing to a texture here without atomic operations, but using rasterizer ordered views, but they don’t support volume resources, so a multi pass approach would be necessary for the individual slices of the texture.
+                            Z. VoxelType is a structure holding a 32 bit uint for the voxel color (packed HDR color with 0-255 RGB, an emissive multiplier in 7 bits and the last bit indicates if the voxel is empty or not). The structure also contains a normal vector packed into a uint. Our interpolated 3D world position comes in handy when determining the write position into the buffer, just truncate and flatten the interpolated world position which you received from the geometry shader. For writing the results, you must use atomic max operations on the voxel uints. You could be writing to a texture here without atomic operations, but using rasterizer ordered views, but they don't support volume resources, so a multi pass approach would be necessary for the individual slices of the texture.
 						</p>
 					</li>
 					<li>
 						<p>
-                            An additional note: If you have generated shadow maps, you can use them in your lighting calculations here to get more proper illumination when cone tracing. If you don’t have shadow maps, you can even use the voxel grid to retrieve (soft) shadow information for the scene later.
+                            An additional note: If you have generated shadow maps, you can use them in your lighting calculations here to get more proper illumination when cone tracing. If you don't have shadow maps, you can even use the voxel grid to retrieve (soft) shadow information for the scene later.
 						</p>
 					</li>
 				</ul>
@@ -1326,12 +1326,12 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 				<ul>
 					<li>
 						<p>
-                            We have the voxel scene ready for our needs, so let’s query it for information. To gather the global illumination for the scene, we have to run the cone tracing in screen space for every pixel on the screen once. This can happen in the forward rendering object shaders or against the gbuffer in a deferred renderer, when rendering a full screen quad, or in a compute shader. In forward rendering, we may lose some performance because of the worse thread utilization if we have many small triangles. A Z-prepass is an absolute must have if we are doing this in forward rendering. We don’t want to shade a pixel multiple times because this is a heavy computation.
+                            We have the voxel scene ready for our needs, so let's query it for information. To gather the global illumination for the scene, we have to run the cone tracing in screen space for every pixel on the screen once. This can happen in the forward rendering object shaders or against the gbuffer in a deferred renderer, when rendering a full screen quad, or in a compute shader. In forward rendering, we may lose some performance because of the worse thread utilization if we have many small triangles. A Z-prepass is an absolute must have if we are doing this in forward rendering. We don't want to shade a pixel multiple times because this is a heavy computation.
 						</p>
 					</li>
 					<li>
 						<p>
-                            For diffuse light bounces, we need the pixel’s surface normal and world position at minimum. From the world position, calculate the voxel grid coordinate, then shoot rays in the direction of the normal and around the normal in a hemisphere. But the ray should not start at the surface voxel, but the next voxel along the ray, so we don’t accumulate the current surface’s lighting. Begin ray marching, and each step sample your voxel from increasing mip levels, accumulate color and alpha and when alpha reaches 1, exit and divide the distance travelled. Do this for each ray, and in the end divide the accumulated result with the number of rays as well. Now you have light bounce information and ambient occlusion information as well, just add it to your diffuse light buffer.
+                            For diffuse light bounces, we need the pixel's surface normal and world position at minimum. From the world position, calculate the voxel grid coordinate, then shoot rays in the direction of the normal and around the normal in a hemisphere. But the ray should not start at the surface voxel, but the next voxel along the ray, so we don't accumulate the current surface's lighting. Begin ray marching, and each step sample your voxel from increasing mip levels, accumulate color and alpha and when alpha reaches 1, exit and divide the distance travelled. Do this for each ray, and in the end divide the accumulated result with the number of rays as well. Now you have light bounce information and ambient occlusion information as well, just add it to your diffuse light buffer.
 						</p>
 					</li>
 					<li>
@@ -1340,7 +1340,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 							<em>
                                 reflect(surfaceNormal, randomPointOnSphere),
 							</em>
-                            &nbsp;you get a random point on a sphere with variance added by the normal vector. This helps with banding as discrete precomputed points get modulated by surface normal. We still have a sphere, but we want the upper half of it, so check if a point goes below the “horizon” and force it to go to the other direction if it does:
+                            &nbsp;you get a random point on a sphere with variance added by the normal vector. This helps with banding as discrete precomputed points get modulated by surface normal. We still have a sphere, but we want the upper half of it, so check if a point goes below the &quot;horizon&quot; and force it to go to the other direction if it does:
 						</p>
 					</li>
 				</ul>
@@ -1585,11 +1585,11 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 <ul>
 	<li>
 		<p>
-            “Where should I 
+            &quot;Where should I 
 			<em>
                 add
 			</em>
-            &nbsp;light because nearby surfaces reflect it?”
+            &nbsp;light because nearby surfaces reflect it?&quot;
 		</p>
 	</li>
 	<li>
@@ -1609,7 +1609,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 	</li>
 	<li>
 		<p>
-            Many SSIL techniques use analytic / horizon-based or hemisphere sampling approaches, and some SSIL variants use screen-space ray-marching (ray-marching against the depth buffer). SSIL only becomes hardware/world-space ray-tracing if you explicitly add a BVH-trace pass (i.e. a hybrid that is no longer “pure” screen-space).
+            Many SSIL techniques use analytic / horizon-based or hemisphere sampling approaches, and some SSIL variants use screen-space ray-marching (ray-marching against the depth buffer). SSIL only becomes hardware/world-space ray-tracing if you explicitly add a BVH-trace pass (i.e. a hybrid that is no longer &quot;pure&quot; screen-space).
 		</p>
 	</li>
 	<li>
@@ -1722,7 +1722,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 	</li>
 	<li>
 		<p>
-            It is an image-space approximation that often uses screen-space ray-marching or hemisphere sampling (i.e. “rays” marched through the depth buffer), which is different from hardware/true world-space ray tracing.
+            It is an image-space approximation that often uses screen-space ray-marching or hemisphere sampling (i.e. &quot;rays&quot; marched through the depth buffer), which is different from hardware/true world-space ray tracing.
 		</p>
 	</li>
 	<li>
@@ -1841,7 +1841,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 		<ul>
 			<li>
 				<p>
-                    I also experimented with a screen space global illumination (SSGI) that I wanted to base on the “multi scale screen space ambient occlusion” (MSAO) that I got from the 
+                    I also experimented with a screen space global illumination (SSGI) that I wanted to base on the &quot;multi scale screen space ambient occlusion&quot; (MSAO) that I got from the 
 					<a
 						href="https://github.com/microsoft/DirectX-Graphics-Samples/tree/master/MiniEngine" 
 						class="external-link" 
@@ -1858,7 +1858,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 			</li>
 			<li>
 				<p>
-                    This technique currently can only add lighting, not remove it, but it’s meant to be used together with MSAO which handles only ambient occlusion. However, I might revisit and improve this because in real scenes I didn’t find its quality good enough, especially on small scale as I had to use a lot of blur to hide the sub-sampling.
+                    This technique currently can only add lighting, not remove it, but it's meant to be used together with MSAO which handles only ambient occlusion. However, I might revisit and improve this because in real scenes I didn't find its quality good enough, especially on small scale as I had to use a lot of blur to hide the sub-sampling.
 				</p>
 			</li>
 		</ul>
@@ -1870,12 +1870,12 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 	</li>
 	<li>
 		<p>
-            That’s a pretty big limitation but it can work in some cases, such as top-down camera views. Those usually don’t have significant overlapping elements and objects take up less of the screen space so lighting changes usually aren’t as jarring.
+            That's a pretty big limitation but it can work in some cases, such as top-down camera views. Those usually don't have significant overlapping elements and objects take up less of the screen space so lighting changes usually aren't as jarring.
 		</p>
 	</li>
 	<li>
 		<p>
-            I wouldn’t use it as the sole source of GI for a first/third person project, but it can be used to augment baked lighting, as it will provide bounce light and occlusion for movable objects/lights that otherwise wouldn’t.
+            I wouldn't use it as the sole source of GI for a first/third person project, but it can be used to augment baked lighting, as it will provide bounce light and occlusion for movable objects/lights that otherwise wouldn't.
 		</p>
 	</li>
 	<li>
@@ -1889,7 +1889,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 		<ul>
 			<li>
 				<p>
-                    Path tracing can see the entire scene, SSGI only sees what’s on screen.
+                    Path tracing can see the entire scene, SSGI only sees what's on screen.
 				</p>
 			</li>
 			<li>
@@ -1942,7 +1942,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 	</li>
 	<li>
 		<p>
-            Still limited to screen-space data (can’t see off-screen geometry), but captures more accurate light transport within the visible region.
+            Still limited to screen-space data (can't see off-screen geometry), but captures more accurate light transport within the visible region.
 		</p>
 	</li>
 	<li>
@@ -1987,7 +1987,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 <ul>
 	<li>
 		<p>
-            NVIDIA’s RTXGI is implemented as volumes of probes (probe grids/DDGI-style) where probes are updated (ray-traced) and store irradiance/distance-to-geometry for shading.
+            NVIDIA's RTXGI is implemented as volumes of probes (probe grids/DDGI-style) where probes are updated (ray-traced) and store irradiance/distance-to-geometry for shading.
 		</p>
 	</li>
 	<li>
@@ -2069,7 +2069,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 					<em>
                         RTXGI is not the default/integrated GI in mainline Unreal Engine 5
 					</em>
-                    &nbsp;and NVIDIA’s official plugin work was effectively put on hold/limited after early UE5 versions.
+                    &nbsp;and NVIDIA's official plugin work was effectively put on hold/limited after early UE5 versions.
 				</p>
 			</li>
 			<li>
@@ -2091,7 +2091,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 				href="https://www.iryoku.com/downloads/Practical-Realtime-Strategies-for-Accurate-Indirect-Occlusion.pdf" 
 				class="external-link" 
 				target="_blank" >
-                “Practical Realtime Strategies for Accurate Indirect Occlusion&quot; - 2016
+                &quot;Practical Realtime Strategies for Accurate Indirect Occlusion&quot; - 2016
 			</a>
             .
 		</p>
@@ -2299,12 +2299,12 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 			</li>
 			<li>
 				<p>
-                     Darkening (occlusion) on some corners, just like SDFGI. I tried different techniques to see if any worked better. DDGI Octahedral VSM gets rid of them, but also leaks a lot more light, so I am unconvinced. Have other ideas to try, but I don’t have infinite time 🙁
+                     Darkening (occlusion) on some corners, just like SDFGI. I tried different techniques to see if any worked better. DDGI Octahedral VSM gets rid of them, but also leaks a lot more light, so I am unconvinced. Have other ideas to try, but I don't have infinite time 🙁
 				</p>
 			</li>
 			<li>
 				<p>
-                     SDFGI spherical harmonics turned out to be buggy and not energy conserving. This makes GI look more saturated and have more light than in HDDAGI (which some people may appreciate more), but It’s a bug 😢. Wondering how this can be compensated.
+                     SDFGI spherical harmonics turned out to be buggy and not energy conserving. This makes GI look more saturated and have more light than in HDDAGI (which some people may appreciate more), but It's a bug 😢. Wondering how this can be compensated.
 				</p>
 			</li>
 			<li>
@@ -2510,12 +2510,12 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 	</li>
 	<li>
 		<p>
-            It’s not screen-space (since it doesn’t rely only on what’s visible on screen).
+            It's not screen-space (since it doesn't rely only on what's visible on screen).
 		</p>
 	</li>
 	<li>
 		<p>
-            It’s also not a full path-traced solution; instead it’s a form of voxel-based GI accelerated by signed distance fields.
+            It's also not a full path-traced solution; instead it's a form of voxel-based GI accelerated by signed distance fields.
 		</p>
 	</li>
 	<li>
@@ -2607,7 +2607,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 			</li>
 			<li>
 				<p>
-                    SDFGI is something akin to a dynamic real-time lightmap (but it does not requiere unwrapping, nor does it use textures). It’s enabled and it automatically works by generating global illumination for static objects. It does not require raytracing, and it runs in most current (and some years old) dedicated GPUs, even medium-end budget CPUs from some years ago (SDFGI was developed and tested on a GeForce 1060, running at a stable 60 FPS).
+                    SDFGI is something akin to a dynamic real-time lightmap (but it does not requiere unwrapping, nor does it use textures). It's enabled and it automatically works by generating global illumination for static objects. It does not require raytracing, and it runs in most current (and some years old) dedicated GPUs, even medium-end budget CPUs from some years ago (SDFGI was developed and tested on a GeForce 1060, running at a stable 60 FPS).
 				</p>
 			</li>
 			<li>
@@ -2620,7 +2620,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 					<strong>
                         immediate update
 					</strong>
-                    . Dynamic objects are supported only for receiving light from the environment, but they don’t contribute to lighting. Some degree of support is planned for this eventually, but not immediately.
+                    . Dynamic objects are supported only for receiving light from the environment, but they don't contribute to lighting. Some degree of support is planned for this eventually, but not immediately.
 				</p>
 			</li>
 			<li>
@@ -2629,12 +2629,12 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 					<strong>
                         both sharp and rough
 					</strong>
-                    , so full PBR scenes should “just work”. In the image below you can see both of them in checkerboard roughness texture.
+                    , so full PBR scenes should &quot;just work&quot;. In the image below you can see both of them in checkerboard roughness texture.
 				</p>
 			</li>
 			<li>
 				<p>
-                    SDFGI is mostly leak free, unlike VCT techniques which are the most common in use today (like SVOGI/GIProbe/etc). As long as walls are thicker than a voxel for a given cascade, light won’t go through.
+                    SDFGI is mostly leak free, unlike VCT techniques which are the most common in use today (like SVOGI/GIProbe/etc). As long as walls are thicker than a voxel for a given cascade, light won't go through.
 				</p>
 				<ul>
 					<li>
@@ -3427,17 +3427,17 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 	</li>
 	<li>
 		<p>
-            It’s more accurate than SSAO and its derivatives, casts deeper, richer shadows that account for even the smallest details in a scene, and runs faster than other competing effects when they’re rendered at a similar quality.
+            It's more accurate than SSAO and its derivatives, casts deeper, richer shadows that account for even the smallest details in a scene, and runs faster than other competing effects when they're rendered at a similar quality.
 		</p>
 	</li>
 	<li>
 		<p>
-            Even still, HBAO+’s Ambient Occlusion shadowing is far from the level of fidelity offered by VXAO, which avoids the caveats of screen space techniques, enabling us to deliver the most accurate and realistic Ambient Occlusion shadowing seen to date.
+            Even still, HBAO+'s Ambient Occlusion shadowing is far from the level of fidelity offered by VXAO, which avoids the caveats of screen space techniques, enabling us to deliver the most accurate and realistic Ambient Occlusion shadowing seen to date.
 		</p>
 	</li>
 	<li>
 		<p>
-            With VXAO, occlusion and lighting information is gathered from a ‘world space’ voxel representation of the scene, which takes into account a large area around the viewer. Included in this voxelization are objects and details currently invisible to the viewer, and those behind the viewer, too. The result is scene-wide Ambient Occlusion shadowing, instead of ‘screen space’ shadowing based on what you can currently see. This allows AO shadows to be cast into a scene from objects near to the player but just outside of their view, and from occluded objects in the distance large enough to affect the appearance of the scene.
+            With VXAO, occlusion and lighting information is gathered from a ‘world space' voxel representation of the scene, which takes into account a large area around the viewer. Included in this voxelization are objects and details currently invisible to the viewer, and those behind the viewer, too. The result is scene-wide Ambient Occlusion shadowing, instead of ‘screen space' shadowing based on what you can currently see. This allows AO shadows to be cast into a scene from objects near to the player but just outside of their view, and from occluded objects in the distance large enough to affect the appearance of the scene.
 		</p>
 	</li>
 	<li>
@@ -3503,11 +3503,11 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 <ul>
 	<li>
 		<p>
-            “Where should I 
+            &quot;Where should I 
 			<em>
                 remove
 			</em>
-            &nbsp;light because it’s blocked?”
+            &nbsp;light because it's blocked?&quot;
 		</p>
 	</li>
 	<li>
@@ -3703,12 +3703,12 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 	</li>
 	<li>
 		<p>
-            LPV sits in the same family as Voxel-GI (both use a 3D grid) and is functionally closer to runtime probe/volume methods like DDGI than to precomputed PRT — but LPV’s propagation approach and data layout make its behavior and trade-offs distinct.
+            LPV sits in the same family as Voxel-GI (both use a 3D grid) and is functionally closer to runtime probe/volume methods like DDGI than to precomputed PRT — but LPV's propagation approach and data layout make its behavior and trade-offs distinct.
 		</p>
 		<ol>
 			<li>
 				<p>
-                    Inject light into a 3D regular grid (the “volume”) from direct light sources or from virtual point lights / reflective shadow maps. The injected values are usually stored as low-order spherical harmonics (SH) or simple directional bands per cell.
+                    Inject light into a 3D regular grid (the &quot;volume&quot;) from direct light sources or from virtual point lights / reflective shadow maps. The injected values are usually stored as low-order spherical harmonics (SH) or simple directional bands per cell.
 				</p>
 			</li>
 			<li>
@@ -3738,7 +3738,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 		<ul>
 			<li>
 				<p>
-                    LPV fell out of favor in many production engines because its core design produces persistent, hard-to-fix artifacts (notably light bleeding and poor directional fidelity) and because alternative runtime GI approaches (probe-based DDGI variants, voxel-cone tracing, and hardware-accelerated ray-traced GI) offer better trade-offs for modern, dynamic scenes and artist workflows. The choice is engineering- and platform-dependent; LPV still makes sense in limited cases (very low-cost, low-frequency indirect lighting), but it is no longer the common “go-to” for high-quality dynamic GI in AAA engines.
+                    LPV fell out of favor in many production engines because its core design produces persistent, hard-to-fix artifacts (notably light bleeding and poor directional fidelity) and because alternative runtime GI approaches (probe-based DDGI variants, voxel-cone tracing, and hardware-accelerated ray-traced GI) offer better trade-offs for modern, dynamic scenes and artist workflows. The choice is engineering- and platform-dependent; LPV still makes sense in limited cases (very low-cost, low-frequency indirect lighting), but it is no longer the common &quot;go-to&quot; for high-quality dynamic GI in AAA engines.
 				</p>
 			</li>
 		</ul>
@@ -3829,7 +3829,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 	</li>
 	<li>
 		<p>
-            It’s an approximation to many-bounce light transport.
+            It's an approximation to many-bounce light transport.
 		</p>
 	</li>
 	<li>
@@ -3947,7 +3947,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 	</li>
 	<li>
 		<p>
-            Monte Carlo method that explores light paths in a “mutation” process, emphasizing important contributions (e.g., caustics).
+            Monte Carlo method that explores light paths in a &quot;mutation&quot; process, emphasizing important contributions (e.g., caustics).
 		</p>
 	</li>
 	<li>
@@ -4348,7 +4348,7 @@ output[2].pos.xy += normalize(side1N - side2N)*texelSize;
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

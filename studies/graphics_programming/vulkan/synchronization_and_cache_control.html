@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -844,8 +844,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-08-26" >
-                            | Updated: 2026-08-26
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -992,7 +992,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    You’ll see that the program now exits without problems when closing the window.
+                    You'll see that the program now exits without problems when closing the window.
 				</p>
 			</li>
 		</ul>
@@ -1228,7 +1228,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            The specification states that commands start execution in-order, but complete out-of-order. Don’t get confused by this. The fact that commands start in-order is simply convenient language to make the spec language easier to write.
+            The specification states that commands start execution in-order, but complete out-of-order. Don't get confused by this. The fact that commands start in-order is simply convenient language to make the spec language easier to write.
 		</p>
 	</li>
 	<li>
@@ -1324,7 +1324,7 @@ window.MathJax = {
 		<p>
             Essentially, the work we are waiting for is 
 			<em>
-                all commands which have ever been submitted to the queue including any previous commands in the command buffer we’re recording.
+                all commands which have ever been submitted to the queue including any previous commands in the command buffer we're recording.
 			</em>
 		</p>
 	</li>
@@ -1534,7 +1534,7 @@ window.MathJax = {
                     <code>dstStageMask = BOTTOM_OF_PIPE</code>
                     &nbsp;and 
                     <code>dstAccessMask = 0</code>
-                    &nbsp;is perfectly fine. We don’t care about making this memory 
+                    &nbsp;is perfectly fine. We don't care about making this memory 
 					<strong>
                         visible
 					</strong>
@@ -1572,7 +1572,7 @@ window.MathJax = {
 								<p>
                                     After transitioning into this 
                                     <code>PRESENT</code>
-                                    &nbsp;layout, we’re not going to touch the image again until we reacquire the image, so 
+                                    &nbsp;layout, we're not going to touch the image again until we reacquire the image, so 
                                     <code>dstStageMask = BOTTOM_OF_PIPE</code>
                                     &nbsp;is appropriate.
 								</p>
@@ -1602,11 +1602,11 @@ window.MathJax = {
                     <code>dstAccessMask = 0</code>
                     &nbsp;on the final 
                     <code>TRANSFER_DST → PRESENT_SRC_KHR</code>
-                    &nbsp;barrier means “there is no 
+                    &nbsp;barrier means &quot;there is no 
 					<em>
                         GPU
 					</em>
-                    &nbsp;access after this barrier that we are ordering/expressing.” For swapchain-present that is intentional and common: presentation is outside the GPU pipeline, so the barrier only needs to make the 
+                    &nbsp;access after this barrier that we are ordering/expressing.&quot; For swapchain-present that is intentional and common: presentation is outside the GPU pipeline, so the barrier only needs to make the 
 					<em>
                         producer
 					</em>
@@ -2069,7 +2069,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            We can say “making memory available” is all about flushing caches.
+            We can say &quot;making memory available&quot; is all about flushing caches.
 		</p>
 	</li>
 	<li>
@@ -2210,7 +2210,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    Memory barriers are visibility operations. Without them, you wouldn’t have visibility of the memory.
+                    Memory barriers are visibility operations. Without them, you wouldn't have visibility of the memory.
 				</p>
 				<ul>
 					<li>
@@ -2241,7 +2241,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            We can say “making memory visible” is all about invalidating caches.
+            We can say &quot;making memory visible&quot; is all about invalidating caches.
 		</p>
 	</li>
 	<li>
@@ -2251,7 +2251,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    You can do things that might have caused visibility, but because the write was not available, they don’t actually make the write visible.
+                    You can do things that might have caused visibility, but because the write was not available, they don't actually make the write visible.
 				</p>
 			</li>
 		</ul>
@@ -2487,7 +2487,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Any type of access that is in a memory dependency’s 
+            Any type of access that is in a memory dependency's 
 			<em>
                 first access scope
 			</em>
@@ -2500,7 +2500,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Any type of access that is in a memory dependency’s 
+            Any type of access that is in a memory dependency's 
 			<em>
                 second access scope
 			</em>
@@ -2513,7 +2513,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Any type of operation that is not in a synchronization command’s access scopes will not be included in the resulting dependency.
+            Any type of operation that is not in a synchronization command's access scopes will not be included in the resulting dependency.
 		</p>
 	</li>
 </ul>
@@ -2524,7 +2524,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            The Stage Masks are a bit-mask, so it’s perfectly fine to wait for both X and Y work.
+            The Stage Masks are a bit-mask, so it's perfectly fine to wait for both X and Y work.
 		</p>
 	</li>
 	<li>
@@ -2645,7 +2645,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    These stages are essentially “helper” stages, which do no actual work, but serve some important purposes. Every command will first execute the 
+                    These stages are essentially &quot;helper&quot; stages, which do no actual work, but serve some important purposes. Every command will first execute the 
                     <code>TOP_OF_PIPE</code>
                     &nbsp;stage. This is basically the command processor on the GPU parsing the command. 
                     <code>BOTTOM_OF_PIPE</code>
@@ -2714,7 +2714,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            Is basically saying “wait for nothing”, or to be more precise, we’re waiting for the GPU to parse all commands.
+                            Is basically saying &quot;wait for nothing&quot;, or to be more precise, we're waiting for the GPU to parse all commands.
 						</p>
 						<ul>
 							<li>
@@ -2783,12 +2783,12 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            Basically translates to “block the last stage of execution in the pipeline”.
+                            Basically translates to &quot;block the last stage of execution in the pipeline&quot;.
 						</p>
 					</li>
 					<li>
 						<p>
-                            “No work after this barrier is going to wait for us”.
+                            &quot;No work after this barrier is going to wait for us&quot;.
 						</p>
 					</li>
 				</ul>
@@ -3059,7 +3059,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            This stage isn’t all that useful or meaningful except in some very obscure scenarios with frame buffer self-dependencies (aka, 
+                            This stage isn't all that useful or meaningful except in some very obscure scenarios with frame buffer self-dependencies (aka, 
                             <code>GL_ARB_texture_barrier</code>
                             ).
 						</p>
@@ -3080,7 +3080,7 @@ window.MathJax = {
                             <code>loadOp</code>
                             , but there might be shenanigans with memory barriers if you are 100% pedantic about any memory access happening in 
                             <code>LATE_FRAGMENT_TESTS</code>
-                            . If you’re blocking an early stage, it never hurts to block a later stage as well.
+                            . If you're blocking an early stage, it never hurts to block a later stage as well.
 						</p>
 					</li>
 				</ul>
@@ -3112,7 +3112,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            When you’re waiting for a depth map to have been rendered in an earlier render pass, you should use 
+                            When you're waiting for a depth map to have been rendered in an earlier render pass, you should use 
                             <code>srcStageMask = LATE_FRAGMENT_TESTS</code>
                             , as that will wait for the 
                             <code>storeOp</code>
@@ -3142,7 +3142,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            If you’re waiting for a render pass which uses color to be complete, use 
+                            If you're waiting for a render pass which uses color to be complete, use 
                             <code>srcStageMask = COLOR_ATTACHMENT_OUTPUT</code>
                             , and similar for 
                             <code>dstStageMask</code>
@@ -3601,7 +3601,7 @@ window.MathJax = {
 					<strong>
                         <code>srcAccessMask = 0</code>
 					</strong>
-                    &nbsp;means “there are no prior GPU memory accesses that this barrier needs to make available” (i.e. nothing to claim as the producer side).
+                    &nbsp;means &quot;there are no prior GPU memory accesses that this barrier needs to make available&quot; (i.e. nothing to claim as the producer side).
 				</p>
 			</li>
 		</ul>
@@ -3617,7 +3617,7 @@ window.MathJax = {
 					<em>
                         after
 					</em>
-                    &nbsp;the barrier (the consumer accesses) and that must see the producer’s writes.
+                    &nbsp;the barrier (the consumer accesses) and that must see the producer's writes.
 				</p>
 			</li>
 			<li>
@@ -3625,7 +3625,7 @@ window.MathJax = {
 					<strong>
                         <code>dstAccessMask = 0</code>
 					</strong>
-                    &nbsp;means “there are no subsequent GPU memory accesses that this barrier needs to order/make visible to” (i.e. no GPU consumer to describe with access bits).
+                    &nbsp;means &quot;there are no subsequent GPU memory accesses that this barrier needs to order/make visible to&quot; (i.e. no GPU consumer to describe with access bits).
 				</p>
 			</li>
 		</ul>
@@ -4800,7 +4800,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Nvidia: Don’t insert redundant barriers; this limits parallelism; avoid read-to-read barriers.
+            Nvidia: Don't insert redundant barriers; this limits parallelism; avoid read-to-read barriers.
 		</p>
 	</li>
 	<li>
@@ -5588,7 +5588,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            A global memory barrier deals with access to any resource, and it’s the simplest form of a memory barrier.
+            A global memory barrier deals with access to any resource, and it's the simplest form of a memory barrier.
 		</p>
 	</li>
 	<li>
@@ -5664,7 +5664,7 @@ window.MathJax = {
 					<strong>
                         Ex
 					</strong>
-                    : you don’t flush caches when you’re done reading data.
+                    : you don't flush caches when you're done reading data.
 				</p>
 			</li>
 		</ul>
@@ -5677,7 +5677,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            We’re just restricting memory availability and visibility to a specific buffer.
+            We're just restricting memory availability and visibility to a specific buffer.
 		</p>
 	</li>
 	<li>
@@ -5948,12 +5948,12 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            If we just allocated an image and want to start using it, what we want to do is to just perform a layout transition, but we don’t need to wait for anything in order to do this transition.
+            If we just allocated an image and want to start using it, what we want to do is to just perform a layout transition, but we don't need to wait for anything in order to do this transition.
 		</p>
 	</li>
 	<li>
 		<p>
-            It’s important to note that freshly allocated memory in Vulkan is always considered 
+            It's important to note that freshly allocated memory in Vulkan is always considered 
 			<strong>
                 available
 			</strong>
@@ -5979,7 +5979,7 @@ window.MathJax = {
 		<p>
             The idea of 
             <code>VkEvent</code>
-            &nbsp;is to get some unrelated commands in-between the “before” and “after” set of commands
+            &nbsp;is to get some unrelated commands in-between the &quot;before&quot; and &quot;after&quot; set of commands
 		</p>
 	</li>
 	<li>
@@ -6071,7 +6071,7 @@ window.MathJax = {
 			<li>
 				<p>
                     <code>4</code>
-                    &nbsp;here is not affected by any synchronization and it can fill in the parallelism “bubble” we get when draining the GPU of work from 
+                    &nbsp;here is not affected by any synchronization and it can fill in the parallelism &quot;bubble&quot; we get when draining the GPU of work from 
                     <code>1</code>
                     , 
                     <code>2</code>
@@ -6168,7 +6168,7 @@ window.MathJax = {
 					</strong>
                     &nbsp;
                     <code>vkQueueSubmit</code>
-                    &nbsp;was called, which means you need a pipeline barrier like this. This is not exactly a common use case, but it’s important to understand when these API constructs are useful.
+                    &nbsp;was called, which means you need a pipeline barrier like this. This is not exactly a common use case, but it's important to understand when these API constructs are useful.
 				</p>
 			</li>
 		</ul>
@@ -6242,7 +6242,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            We’re going to assume the buffer was created with 
+                            We're going to assume the buffer was created with 
                             <code>QUEUE_FAMILY_CONCURRENT</code>
                             .
 						</p>
@@ -6356,7 +6356,7 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            Let’s say we have semaphore S and queue operations A and B that we want to execute in order.
+                            Let's say we have semaphore S and queue operations A and B that we want to execute in order.
 						</p>
 					</li>
 					<li>
@@ -6523,7 +6523,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            This means there is no way to wait for the presentation signal directly. It also means we don’t know whether 
+                            This means there is no way to wait for the presentation signal directly. It also means we don't know whether 
                             <code>VkPresentInfoKHR::pWaitSemaphores</code>
                             &nbsp;are still in use by the presentation operation.
 						</p>
@@ -6539,7 +6539,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            In summary, it’s not obvious when it’s safe to reuse present wait semaphores.
+                            In summary, it's not obvious when it's safe to reuse present wait semaphores.
 						</p>
 					</li>
 					<li>
@@ -6756,7 +6756,7 @@ window.MathJax = {
 							<em>
                                 does
 							</em>
-                            &nbsp;block host execution. This means the host won’t do anything except wait until the execution has finished. For this case, we had to make sure the transfer was complete before we could save the screenshot to disk.
+                            &nbsp;block host execution. This means the host won't do anything except wait until the execution has finished. For this case, we had to make sure the transfer was complete before we could save the screenshot to disk.
 						</p>
 					</li>
 				</ul>
@@ -6851,7 +6851,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

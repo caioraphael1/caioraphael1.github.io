@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -842,8 +842,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/explicitness.html" >
-                                    Explicitness
+									href="/studies/low-level_systems/c_and_c++/keywords_for_data.html" >
+                                    Keywords for Data
 								</a>
 							</li>
 						</ul>
@@ -851,8 +851,44 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/compiler_hints.html" >
-                                    Compiler Hints
+									href="/studies/low-level_systems/c_and_c++/keywords_for_control_flow.html" >
+                                    Keywords for Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_functions_methods.html" >
+                                    Keywords for Functions / Methods
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_class_extravaganza.html" >
+                                    Keywords for Class extravaganza
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/other_optimization_hints.html" >
+                                    Other Optimization Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/asserts.html" >
+                                    Asserts
 								</a>
 							</li>
 						</ul>
@@ -934,6 +970,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/functions.html" >
                                     Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/coroutines_c_plus__plus_20.html" >
+                                    Coroutines (C++20)
 								</a>
 							</li>
 						</ul>
@@ -1060,15 +1105,6 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/undefined_behavior.html" >
                                     Undefined Behavior
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/multithreading.html" >
-                                    Multithreading
 								</a>
 							</li>
 						</ul>
@@ -1661,8 +1697,8 @@ window.MathJax = {
                             🕒 Created: 2025-11-04
 						</time>
 						<time
-							datetime="2026-04-01" >
-                            | Updated: 2026-04-01
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -1885,7 +1921,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            In the default configuration, Tracy is disabled. This way, you don’t have to worry that the production builds will collect profiling data. To enable profiling, you will probably want to create a separate build configuration, with the 
+            In the default configuration, Tracy is disabled. This way, you don't have to worry that the production builds will collect profiling data. To enable profiling, you will probably want to create a separate build configuration, with the 
             <code>TRACY_ENABLE</code>
             &nbsp;define.
 		</p>
@@ -1908,7 +1944,7 @@ window.MathJax = {
 				<p>
                     Be careful not to make the mistake of assigning numeric values to Tracy defines, which could lead you to be puzzled why constructs such as 
                     <code>TRACY_ENABLE=0</code>
-                    &nbsp;don’t work as you expect them to do.
+                    &nbsp;don't work as you expect them to do.
 				</p>
 			</li>
 		</ul>
@@ -1942,9 +1978,9 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            However, suppose you don’t want to perform a full capture of the application lifetime. In that case, you may define the 
+            However, suppose you don't want to perform a full capture of the application lifetime. In that case, you may define the 
             <code>TRACY_ON_DEMAND</code>
-            &nbsp;macro, which will enable profiling only when there’s an established connection with the server.
+            &nbsp;macro, which will enable profiling only when there's an established connection with the server.
 		</p>
 	</li>
 </ul>
@@ -1957,7 +1993,7 @@ window.MathJax = {
 		<p>
             In case you want to profile a short-lived program (for example, a compression utility that finishes its work in one second), set the 
             <code>TRACY_NO_EXIT</code>
-            &nbsp;environment variable to 1. With this option enabled, Tracy will not exit until an incoming connection is made, even if the application has already finished executing. If your platform doesn’t support an easy setup of environment variables, you may also add the 
+            &nbsp;environment variable to 1. With this option enabled, Tracy will not exit until an incoming connection is made, even if the application has already finished executing. If your platform doesn't support an easy setup of environment variables, you may also add the 
             <code>TRACY_NO_EXIT</code>
             &nbsp;define to your build configuration, which has the same effect.
 		</p>
@@ -2077,7 +2113,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    Tracy will try to capture thread names through operating system data if context switch capture is active. However, this is only a fallback mechanism, and it shouldn’t be relied upon.
+                    Tracy will try to capture thread names through operating system data if context switch capture is active. However, this is only a fallback mechanism, and it shouldn't be relied upon.
 				</p>
 			</li>
 			<li>
@@ -2171,7 +2207,7 @@ window.MathJax = {
 		<p>
             With the source code included in your project, add the 
             <code>public/TracyClient.cpp</code>
-            &nbsp;source file to the IDE project or makefile. You’re done.
+            &nbsp;source file to the IDE project or makefile. You're done.
 		</p>
 	</li>
 	<li>
@@ -2277,7 +2313,7 @@ FetchContent_MakeAvailable(tracy)
 		<p>
             If you are compiling Tracy as a static library to link with your application, you may encounter some unexpected problems if not using any symbols by the library. To avoid this, you can simply add the 
             <code>TracyNoop</code>
-            &nbsp;macro somewhere in your code, for example in the main function. The macro doesn’t do anything useful, but it inserts a reference that is satisfied by the static library, which results in the Tracy code being linked in and the profiler being able to work as intended.
+            &nbsp;macro somewhere in your code, for example in the main function. The macro doesn't do anything useful, but it inserts a reference that is satisfied by the static library, which results in the Tracy code being linked in and the profiler being able to work as intended.
 		</p>
 	</li>
 </ul>
@@ -2373,7 +2409,7 @@ msbuild Tracy.sln -t:Build -p:Configuration=Release
 			<li>
 				<p>
                     <code>-DTRACY_ENABLE</code>
-                    &nbsp;defines the preprocessor symbol so Tracy’s instrumentation is active.
+                    &nbsp;defines the preprocessor symbol so Tracy's instrumentation is active.
 				</p>
 			</li>
 			<li>
@@ -2515,7 +2551,7 @@ msbuild Tracy.sln -t:Build -p:Configuration=Release
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

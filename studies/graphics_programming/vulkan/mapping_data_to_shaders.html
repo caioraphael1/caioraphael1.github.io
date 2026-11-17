@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -866,8 +866,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-08-26" >
-                            | Updated: 2026-08-26
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -889,7 +889,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            That alignment is the “minimum dynamic-offset” (Vulkan) or the CBV/constant buffer granularity (D3D12).
+            That alignment is the &quot;minimum dynamic-offset&quot; (Vulkan) or the CBV/constant buffer granularity (D3D12).
 		</p>
 	</li>
 	<li>
@@ -1381,7 +1381,7 @@ window.MathJax = {
 		<p>
             C layout ≈ 
             <code>std430</code>
-            &nbsp;only if you manually match packing and alignment. Otherwise, it’s platform-dependent.
+            &nbsp;only if you manually match packing and alignment. Otherwise, it's platform-dependent.
 		</p>
 	</li>
 </ul>
@@ -1908,7 +1908,7 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            Exactly. For your “time” value, a Uniform Buffer is generally the more optimal choice in this scenario.
+                            Exactly. For your &quot;time&quot; value, a Uniform Buffer is generally the more optimal choice in this scenario.
 						</p>
 					</li>
 					<li>
@@ -1927,12 +1927,12 @@ window.MathJax = {
 							</li>
 							<li>
 								<p>
-                                    Since push constants are set per draw/dispatch scope, if you have many objects, you’d be redundantly re-sending the same value (time) multiple times in the same frame.
+                                    Since push constants are set per draw/dispatch scope, if you have many objects, you'd be redundantly re-sending the same value (time) multiple times in the same frame.
 								</p>
 							</li>
 							<li>
 								<p>
-                                    There’s no automatic “shared” state — every pipeline that uses it must get the value pushed explicitly.
+                                    There's no automatic &quot;shared&quot; state — every pipeline that uses it must get the value pushed explicitly.
 								</p>
 							</li>
 						</ul>
@@ -1951,7 +1951,7 @@ window.MathJax = {
 							</li>
 							<li>
 								<p>
-                                    Works well for “global” frame data (view/proj matrices, time, frame index, etc.).
+                                    Works well for &quot;global&quot; frame data (view/proj matrices, time, frame index, etc.).
 								</p>
 							</li>
 							<li>
@@ -2714,7 +2714,7 @@ vertex_input_create_info := vk.PipelineVertexInputStateCreateInfo {
                     <code>vertices</code>
                     . We can stick to 
                     <code>uint16_t</code>
-                    &nbsp;for now because we’re using less than 65535 unique vertices.
+                    &nbsp;for now because we're using less than 65535 unique vertices.
 				</p>
 			</li>
 			<li>
@@ -2766,7 +2766,7 @@ vertex_input_create_info := vk.PipelineVertexInputStateCreateInfo {
 					<strong>
                         single
 					</strong>
-                    &nbsp;index buffer. It’s unfortunately not possible to use different indices for each vertex attribute, so we do still have to completely duplicate vertex data even if just one attribute varies.
+                    &nbsp;index buffer. It's unfortunately not possible to use different indices for each vertex attribute, so we do still have to completely duplicate vertex data even if just one attribute varies.
 				</p>
 			</li>
 			<li>
@@ -2789,7 +2789,7 @@ vertex_input_create_info := vk.PipelineVertexInputStateCreateInfo {
 			</li>
 			<li>
 				<p>
-                    Just binding an index buffer doesn’t change anything yet, we also need to change the drawing command to tell Vulkan to use the index buffer.
+                    Just binding an index buffer doesn't change anything yet, we also need to change the drawing command to tell Vulkan to use the index buffer.
 				</p>
 			</li>
 			<li>
@@ -3023,7 +3023,7 @@ vkCmdDraw(); // values = [0, 1, 2, 2]
 	</li>
 	<li>
 		<p>
-            Many small state changes cause the driver to update internal tables, validate, or patch commands — that’s CPU work and cannot be avoided without batching.
+            Many small state changes cause the driver to update internal tables, validate, or patch commands — that's CPU work and cannot be avoided without batching.
 		</p>
 	</li>
 	<li>
@@ -3412,12 +3412,12 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 				<ul>
 					<li>
 						<p>
-                            Different invocations can’t use different indices.
+                            Different invocations can't use different indices.
 						</p>
 					</li>
 					<li>
 						<p>
-                            Can sample “dynamically uniform”, e.g. runtime-based index.
+                            Can sample &quot;dynamically uniform&quot;, e.g. runtime-based index.
 						</p>
 					</li>
 				</ul>
@@ -3434,7 +3434,7 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 				<ul>
 					<li>
 						<p>
-                            Due to the need to set up descriptor sets per draw call it’s hard to adapt any of the aforementioned schemes to GPU-based culling or command submission.
+                            Due to the need to set up descriptor sets per draw call it's hard to adapt any of the aforementioned schemes to GPU-based culling or command submission.
 						</p>
 					</li>
 				</ul>
@@ -3528,7 +3528,7 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 					</li>
 					<li>
 						<p>
-                            <s>Similar to D3D12’s descriptor model </s>.
+                            <s>Similar to D3D12's descriptor model </s>.
 						</p>
 					</li>
 				</ul>
@@ -3554,7 +3554,7 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 	</li>
 	<li>
 		<p>
-            Prefer a “bindless” design.
+            Prefer a &quot;bindless&quot; design.
 		</p>
 	</li>
 	<li>
@@ -3579,7 +3579,7 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 	</li>
 	<li>
 		<p>
-            Use multiple copies of the heap to handle descriptor changes gracefully, such as streaming textures and buffers. But don’t exceed the 1M and 2K limits. For more information, see the Not Recommended section later in this post.
+            Use multiple copies of the heap to handle descriptor changes gracefully, such as streaming textures and buffers. But don't exceed the 1M and 2K limits. For more information, see the Not Recommended section later in this post.
 		</p>
 	</li>
 	<li>
@@ -3672,14 +3672,14 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 		<p>
             A scheme that works well is to use free lists of descriptor set pools; whenever you need a descriptor set pool, you allocate one from the free list and use it for subsequent descriptor set allocations in the current frame on the current thread. Once you run out of descriptor sets in the current pool, you allocate a new pool. Any pools that were used in a given frame need to be kept around; once the frame has finished rendering, as determined by the associated fence objects, the descriptor set pools can reset via 
             <code>vkResetDescriptorPool</code>
-            &nbsp;and returned to free lists. While it’s possible to free individual descriptors from a pool via 
+            &nbsp;and returned to free lists. While it's possible to free individual descriptors from a pool via 
             <code>DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET</code>
             , this complicates the memory management on the driver side and is not recommended.
 		</p>
 	</li>
 	<li>
 		<p>
-            When a descriptor set pool is created, application specifies the maximum number of descriptor sets allocated from it, as well as the maximum number of descriptors of each type that can be allocated from it. In Vulkan 1.1, the application doesn’t have to handle accounting for these limits – it can just call vkAllocateDescriptorSets and handle the error from that call by switching to a new descriptor set pool. Unfortunately, in Vulkan 1.0 without any extensions, it’s an error to call vkAllocateDescriptorSets if the pool does not have available space, so application must track the number of sets and descriptors of each type to know beforehand when to switch to a different pool.
+            When a descriptor set pool is created, application specifies the maximum number of descriptor sets allocated from it, as well as the maximum number of descriptors of each type that can be allocated from it. In Vulkan 1.1, the application doesn't have to handle accounting for these limits – it can just call vkAllocateDescriptorSets and handle the error from that call by switching to a new descriptor set pool. Unfortunately, in Vulkan 1.0 without any extensions, it's an error to call vkAllocateDescriptorSets if the pool does not have available space, so application must track the number of sets and descriptors of each type to know beforehand when to switch to a different pool.
 		</p>
 	</li>
 	<li>
@@ -3688,7 +3688,7 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 			<em>
                 1024 for texture descriptors and 8
 			</em>
-            1024 for buffer descriptors. This approach can work but in practice it can result in very significant memory waste for shaders with different descriptor count – you can’t allocate more than 1024 descriptor sets out of a pool with the aforementioned configuration, so if most of your pipeline objects use 4 textures, you’ll be wasting 75% of texture descriptor memory.
+            1024 for buffer descriptors. This approach can work but in practice it can result in very significant memory waste for shaders with different descriptor count – you can't allocate more than 1024 descriptor sets out of a pool with the aforementioned configuration, so if most of your pipeline objects use 4 textures, you'll be wasting 75% of texture descriptor memory.
 		</p>
 	</li>
 	<li>
@@ -3713,7 +3713,7 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 			</li>
 			<li>
 				<p>
-                    Group shader pipeline objects into size classes, approximating common patterns of descriptor use, and pick descriptor set pools using the appropriate size class. This is an extension of the scheme described above to more than one size class. For example, it’s typical to have large numbers of shadow/depth prepass draw calls, and large numbers of regular draw calls in a scene – but these two groups have different numbers of required descriptors, with shadow draw calls typically requiring 0 to 1 textures per set and 0 to 1 buffers when dynamic buffer offsets are used. To optimize memory use, it’s more appropriate to allocate descriptor set pools separately for shadow/depth and other draw calls. Similarly to general-purpose allocators that can have size classes that are optimal for a given application, this can still be managed in a lower-level descriptor set management layer as long as it’s configured with application specific descriptor set usages beforehand.
+                    Group shader pipeline objects into size classes, approximating common patterns of descriptor use, and pick descriptor set pools using the appropriate size class. This is an extension of the scheme described above to more than one size class. For example, it's typical to have large numbers of shadow/depth prepass draw calls, and large numbers of regular draw calls in a scene – but these two groups have different numbers of required descriptors, with shadow draw calls typically requiring 0 to 1 textures per set and 0 to 1 buffers when dynamic buffer offsets are used. To optimize memory use, it's more appropriate to allocate descriptor set pools separately for shadow/depth and other draw calls. Similarly to general-purpose allocators that can have size classes that are optimal for a given application, this can still be managed in a lower-level descriptor set management layer as long as it's configured with application specific descriptor set usages beforehand.
 				</p>
 			</li>
 		</ol>
@@ -4227,7 +4227,7 @@ layout(set = 2, binding = 0) buffer storageBuffer {
 <ul>
 	<li>
 		<p>
-            Don’t allocate descriptor sets if nothing in the set changed. In the model with slots that are shared between different stages, this can mean that if no textures are set between two draw calls, you don’t need to allocate the descriptor set with texture descriptors.
+            Don't allocate descriptor sets if nothing in the set changed. In the model with slots that are shared between different stages, this can mean that if no textures are set between two draw calls, you don't need to allocate the descriptor set with texture descriptors.
 		</p>
 	</li>
 	<li>
@@ -4488,7 +4488,7 @@ layout(set = 0, binding = 0, std140) uniform SceneParams {
 		<ul>
 			<li>
 				<p>
-                    “Uniform buffer object” is more of an OpenGL-era name, but some Vulkan tutorials and developers still use it informally to mean the same thing — the buffer that holds uniform data.
+                    &quot;Uniform buffer object&quot; is more of an OpenGL-era name, but some Vulkan tutorials and developers still use it informally to mean the same thing — the buffer that holds uniform data.
 				</p>
 			</li>
 		</ul>
@@ -5743,7 +5743,7 @@ vec4 data = subpassLoad(inputAttachment);
 <ul>
 	<li>
 		<p>
-            Don’t update descriptor sets if nothing in the set changed. In the model with slots that are shared between different stages, this can mean that if no textures are set between two draw calls, you don’t need to update the descriptor set with texture descriptors.
+            Don't update descriptor sets if nothing in the set changed. In the model with slots that are shared between different stages, this can mean that if no textures are set between two draw calls, you don't need to update the descriptor set with texture descriptors.
 		</p>
 	</li>
 	<li>
@@ -7293,7 +7293,7 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 					</li>
 					<li>
 						<p>
-                            Some hardware doesn’t support vertex buffers as a first-class entity, and the driver has to emulate vertex buffer binding, which causes some CPU-side slowdowns when using 
+                            Some hardware doesn't support vertex buffers as a first-class entity, and the driver has to emulate vertex buffer binding, which causes some CPU-side slowdowns when using 
                             <code>vkCmdBindVertexBuffers</code>
                             .
 						</p>
@@ -7637,7 +7637,7 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 	</li>
 	<li>
 		<p>
-            The introduction of descriptor indexing revealed that the descriptor model is all just smoke and mirrors. A descriptor is just a blob of binary data that the GPU can interpret in some meaningful way. The API calls to manage descriptors really just boils down to “copy magic bits here.”
+            The introduction of descriptor indexing revealed that the descriptor model is all just smoke and mirrors. A descriptor is just a blob of binary data that the GPU can interpret in some meaningful way. The API calls to manage descriptors really just boils down to &quot;copy magic bits here.&quot;
 		</p>
 	</li>
 	<li>
@@ -7788,7 +7788,7 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 					</li>
 					<li>
 						<p>
-                            Different “feature levels” can help ease transition
+                            Different &quot;feature levels&quot; can help ease transition
 						</p>
 					</li>
 				</ul>
@@ -7814,7 +7814,7 @@ vec4 albedo = texture(sampler2D(materialTextures[md.albedoTexture], albedoSample
 			</li>
 			<li>
 				<p>
-                    “With great power comes great responsibility”
+                    &quot;With great power comes great responsibility&quot;
 				</p>
 				<ul>
 					<li>
@@ -8043,7 +8043,7 @@ texture(Tex[dynamically_uniform_expression], ...);
 				<ul>
 					<li>
 						<p>
-                            This means the application doesn’t have to unbind or re-record command buffers just to change descriptors—reducing CPU overhead in some streaming-resource scenarios.
+                            This means the application doesn't have to unbind or re-record command buffers just to change descriptors—reducing CPU overhead in some streaming-resource scenarios.
 						</p>
 					</li>
 				</ul>
@@ -8145,7 +8145,7 @@ texture(Tex[dynamically_uniform_expression], ...);
 							</li>
 							<li>
 								<p>
-                                    In compute pipelines, the invocation group is a single workgroup, so it’s very easy to know when it is safe to avoid nonuniformEXT.
+                                    In compute pipelines, the invocation group is a single workgroup, so it's very easy to know when it is safe to avoid nonuniformEXT.
 								</p>
 							</li>
 							<li>
@@ -8180,7 +8180,7 @@ texture(Tex[dynamically_uniform_expression], ...);
 						<ul>
 							<li>
 								<p>
-                                    It is very easy to think that dynamically uniform just means &quot;as long as the index is uniform in the subgroup, it’s fine!&quot;. This is certainly true for most (desktop) architectures, but not all.
+                                    It is very easy to think that dynamically uniform just means &quot;as long as the index is uniform in the subgroup, it's fine!&quot;. This is certainly true for most (desktop) architectures, but not all.
 								</p>
 							</li>
 							<li>
@@ -8406,12 +8406,12 @@ texture(Tex[dynamically_uniform_expression], ...);
 					</li>
 					<li>
 						<p>
-                            When enabled, you only need to write descriptors that the shader will index. “Holes” in the array are allowed, provided shader indices never touch them.
+                            When enabled, you only need to write descriptors that the shader will index. &quot;Holes&quot; in the array are allowed, provided shader indices never touch them.
 						</p>
 					</li>
 					<li>
 						<p>
-                            Use this when you want to leave “holes” in a large descriptor array (i.e. not update every element) without pre-filling unused slots with a fallback texture. When this flag is set, descriptors that are not dynamically used by the shader need not contain valid descriptors — but if the shader actually accesses an unwritten descriptor you still get undefined/invalid results. This is a convenience to avoid writing N fallback descriptors each time.
+                            Use this when you want to leave &quot;holes&quot; in a large descriptor array (i.e. not update every element) without pre-filling unused slots with a fallback texture. When this flag is set, descriptors that are not dynamically used by the shader need not contain valid descriptors — but if the shader actually accesses an unwritten descriptor you still get undefined/invalid results. This is a convenience to avoid writing N fallback descriptors each time.
 						</p>
 					</li>
 				</ul>
@@ -9106,12 +9106,12 @@ CHECK(vkAllocateDescriptorSets(get_device().get_handle(), &allocate_info, &descr
 	</li>
 	<li>
 		<p>
-            On the other hand, having to group descriptors linearly one after the other can easily lead to copy hell. Copying descriptors is still an abstracted operation that requires API calls to perform, and we cannot perform it on the GPU. The overhead of all these calls in the driver can be quite significant, especially in API layering. I’ve seen up to 10 million calls to “copy descriptor” per second which adds up.
+            On the other hand, having to group descriptors linearly one after the other can easily lead to copy hell. Copying descriptors is still an abstracted operation that requires API calls to perform, and we cannot perform it on the GPU. The overhead of all these calls in the driver can be quite significant, especially in API layering. I've seen up to 10 million calls to &quot;copy descriptor&quot; per second which adds up.
 		</p>
 	</li>
 	<li>
 		<p>
-            Managing descriptors really starts looking more and more like just any other memory management problem. Let’s try translating existing API concepts into what they really are under the hood.
+            Managing descriptors really starts looking more and more like just any other memory management problem. Let's try translating existing API concepts into what they really are under the hood.
 		</p>
 	</li>
 	<li>
@@ -9194,7 +9194,7 @@ CHECK(vkAllocateDescriptorSets(get_device().get_handle(), &allocate_info, &descr
 	</li>
 	<li>
 		<p>
-            For example, there’s now a bunch of properties to query:
+            For example, there's now a bunch of properties to query:
 		</p>
 <pre><code class="language-c" data-lang="c">typedef struct VkPhysicalDeviceDescriptorBufferPropertiesEXT {
 &nbsp;&nbsp;&nbsp;&nbsp;…
@@ -9467,7 +9467,7 @@ CHECK(vkAllocateDescriptorSets(get_device().get_handle(), &allocate_info, &descr
 	</li>
 	<li>
 		<p>
-            In the “classic” model, before you draw or dispatch, you must bind each resource to a specific descriptor binding or slot.
+            In the &quot;classic&quot; model, before you draw or dispatch, you must bind each resource to a specific descriptor binding or slot.
 		</p>
 	</li>
 	<li>
@@ -9565,7 +9565,7 @@ CHECK(vkAllocateDescriptorSets(get_device().get_handle(), &allocate_info, &descr
 				<p>
                     Uniform buffer objects (UBOs) are one of the most common approaches when it is necessary to set values within a shader at run-time and are used in many tutorials. UBOs are pushed to the shader just prior to its execution, this is after shader compilation which occurs during 
                     <code>vkCreateGraphicsPipelines</code>
-                    . As these values are set after the shader has been compiled, the driver’s shader compiler has limited scope to perform optimizations to the shader during its compilation. This is because optimizations such as loop unrolling or unused code removal require the compiler to have knowledge of the values controlling them which is not possible with UBOs. Push constants also suffer from the same problems as UBOs, as they are also provided after the shader has been compiled.
+                    . As these values are set after the shader has been compiled, the driver's shader compiler has limited scope to perform optimizations to the shader during its compilation. This is because optimizations such as loop unrolling or unused code removal require the compiler to have knowledge of the values controlling them which is not possible with UBOs. Push constants also suffer from the same problems as UBOs, as they are also provided after the shader has been compiled.
 				</p>
 			</li>
 			<li>
@@ -9573,7 +9573,7 @@ CHECK(vkAllocateDescriptorSets(get_device().get_handle(), &allocate_info, &descr
 					<em>
                         Specialization Constants
 					</em>
-                    &nbsp;are set before pipeline creation meaning these values are known during shader compilation, this allows the driver’s shader compiler to perform optimizations. In this optimisation process the compiler has the ability to remove unused code blocks and statically unroll which reduces the fragment cycles required by the shader which results in increased performance.
+                    &nbsp;are set before pipeline creation meaning these values are known during shader compilation, this allows the driver's shader compiler to perform optimizations. In this optimisation process the compiler has the ability to remove unused code blocks and statically unroll which reduces the fragment cycles required by the shader which results in increased performance.
 				</p>
 			</li>
 			<li>
@@ -9601,7 +9601,7 @@ CHECK(vkAllocateDescriptorSets(get_device().get_handle(), &allocate_info, &descr
 	<li>
 		<p>
 			<strong>
-                Don’t
+                Don't
 			</strong>
             :
 		</p>
@@ -9684,7 +9684,7 @@ vkCreateGraphicsPipelines(&pipelineInfo);
 				<ul>
 					<li>
 						<p>
-                            Support for a feature in Vulkan isn’t known until runtime. This usage of specialization constants is to prevent writing two separate shaders, but instead embedding a constant runtime decision.
+                            Support for a feature in Vulkan isn't known until runtime. This usage of specialization constants is to prevent writing two separate shaders, but instead embedding a constant runtime decision.
 						</p>
 					</li>
 				</ul>
@@ -9704,7 +9704,7 @@ vkCreateGraphicsPipelines(&pipelineInfo);
 					</li>
 					<li>
 						<p>
-                            The “backend” here refers to the implementation’s compiler that takes the resulting SPIR-V and lowers it down to some ISA to run on the device.
+                            The &quot;backend&quot; here refers to the implementation's compiler that takes the resulting SPIR-V and lowers it down to some ISA to run on the device.
 						</p>
 					</li>
 					<li>
@@ -9997,7 +9997,7 @@ vkCreateGraphicsPipelines(&pipelineInfo);
 	</li>
 	<li>
 		<p>
-            Adds the ability to have “pointers in the shader”.
+            Adds the ability to have &quot;pointers in the shader&quot;.
 		</p>
 	</li>
 	<li>
@@ -10346,7 +10346,7 @@ pointer.v = 42.0;
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

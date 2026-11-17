@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -773,8 +773,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-08-26" >
-                            | Updated: 2026-08-26
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -1350,7 +1350,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    Once a command buffer has been submitted, it’s still “alive”, and being consumed by the GPU, at this point it is NOT safe to reset the command buffer yet. You need to make sure that the GPU has finished executing all of the commands from that command buffer until you can reset and reuse it.
+                    Once a command buffer has been submitted, it's still &quot;alive&quot;, and being consumed by the GPU, at this point it is NOT safe to reset the command buffer yet. You need to make sure that the GPU has finished executing all of the commands from that command buffer until you can reset and reuse it.
 				</p>
 			</li>
 			<li>
@@ -1493,7 +1493,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    &quot;We won’t make use of the secondary command buffer functionality here, but you can imagine that it’s helpful to reuse common operations from primary command buffers.&quot;
+                    &quot;We won't make use of the secondary command buffer functionality here, but you can imagine that it's helpful to reuse common operations from primary command buffers.&quot;
 				</p>
 			</li>
 			<li>
@@ -1571,7 +1571,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            It’s not possible to append commands to a buffer at a later time.
+            It's not possible to append commands to a buffer at a later time.
 		</p>
 	</li>
 	<li>
@@ -1636,7 +1636,7 @@ window.MathJax = {
 							</li>
 							<li>
 								<p>
-                                    Specifies how we’re going to use the command buffer.
+                                    Specifies how we're going to use the command buffer.
 								</p>
 							</li>
 							<li>
@@ -1890,7 +1890,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Additionally, certain objects related to a command’s parameters (e.g. command pools and descriptor pools) 
+            Additionally, certain objects related to a command's parameters (e.g. command pools and descriptor pools) 
 			<strong>
                 may
 			</strong>
@@ -1925,12 +1925,12 @@ window.MathJax = {
 		<p>
             As 
             <code>VkQueueSubmit</code>
-            &nbsp;is a very expensive operation, this can bring a very nice speedup as the time spent executing that call is done in a second thread and the main logic of the engine doesn’t have to stop.
+            &nbsp;is a very expensive operation, this can bring a very nice speedup as the time spent executing that call is done in a second thread and the main logic of the engine doesn't have to stop.
 		</p>
 	</li>
 	<li>
 		<p>
-            Data upload is another section that is very often multithreaded. In here, you have a dedicated IO thread that will load assets to disk, and said IO thread will have its own queue and command allocators, hopefully a transfer queue. This way it is possible to upload assets at a speed completely separated from the main frame loop, so if it takes half a second to upload a set of big textures, you don’t have a hitch. To do that, you need to create a transfer or async-compute queue (if available), and dedicate that one to the loader thread. Once you have that, it’s similar to what was commented on the pipeline compiler thread, and you have an IO thread that communicates through a parallel queue with the main simulation loop to upload data in an asynchronous way. Once a transfer has been uploaded, and checked that it has finished with a Fence, then the IO thread can send the info to the main loop, and then the engine can connect the new textures or models into the renderer.
+            Data upload is another section that is very often multithreaded. In here, you have a dedicated IO thread that will load assets to disk, and said IO thread will have its own queue and command allocators, hopefully a transfer queue. This way it is possible to upload assets at a speed completely separated from the main frame loop, so if it takes half a second to upload a set of big textures, you don't have a hitch. To do that, you need to create a transfer or async-compute queue (if available), and dedicate that one to the loader thread. Once you have that, it's similar to what was commented on the pipeline compiler thread, and you have an IO thread that communicates through a parallel queue with the main simulation loop to upload data in an asynchronous way. Once a transfer has been uploaded, and checked that it has finished with a Fence, then the IO thread can send the info to the main loop, and then the engine can connect the new textures or models into the renderer.
 		</p>
 	</li>
 </ul>
@@ -1954,7 +1954,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    Vulkan command buffers have a system for primary and secondary command buffers. The primary buffers are the ones that open and close RenderPasses, and can get directly submitted to a queue. Secondary command buffers are used as “child” command buffers that execute as part of a primary one.
+                    Vulkan command buffers have a system for primary and secondary command buffers. The primary buffers are the ones that open and close RenderPasses, and can get directly submitted to a queue. Secondary command buffers are used as &quot;child&quot; command buffers that execute as part of a primary one.
 				</p>
 			</li>
 			<li>
@@ -2064,7 +2064,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

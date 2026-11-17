@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -839,8 +839,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-08-26" >
-                            | Updated: 2026-08-26
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -855,7 +855,7 @@ window.MathJax = {
             <code>VkCommandBuffer</code>
             &nbsp;from a 
             <code>VkCommandBufferPool</code>
-            &nbsp;or reuse an already allocated command buffer that has finished execution, and “start” the command buffer, which allows you to write commands into it.
+            &nbsp;or reuse an already allocated command buffer that has finished execution, and &quot;start&quot; the command buffer, which allows you to write commands into it.
 		</p>
 	</li>
 	<li>
@@ -876,7 +876,7 @@ window.MathJax = {
 		<p>
             If there is nothing more to render, you end the 
             <code>VkCommandBuffer</code>
-            . Finally, you submit the command buffer into the queue for rendering. This will begin execution of the commands in the command buffer on the gpu. If you want to display the result of the rendering, you “present” the image you have rendered to to the screen. Because the execution may not have finished yet, you use a semaphore to make the presentation of the image to the screen wait until rendering is finished.
+            . Finally, you submit the command buffer into the queue for rendering. This will begin execution of the commands in the command buffer on the gpu. If you want to display the result of the rendering, you &quot;present&quot; the image you have rendered to to the screen. Because the execution may not have finished yet, you use a semaphore to make the presentation of the image to the screen wait until rendering is finished.
 		</p>
 	</li>
 	<li>
@@ -981,7 +981,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Every time we want to draw a frame, we have to ask the Swapchain to provide us with an image to render to. When we’ve finished drawing a frame, the image is returned to the Swapchain for it to be presented to the screen at some point.
+            Every time we want to draw a frame, we have to ask the Swapchain to provide us with an image to render to. When we've finished drawing a frame, the image is returned to the Swapchain for it to be presented to the screen at some point.
 		</p>
 	</li>
 	<li>
@@ -1166,14 +1166,14 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            For the color space we’ll use SRGB if it is available, because it 
+                            For the color space we'll use SRGB if it is available, because it 
 							<a
 								href="http://stackoverflow.com/questions/12524623/" 
 								class="external-link" 
 								target="_blank" >
                                 results in more accurate perceived colors
 							</a>
-                            . It is also pretty much the standard color space for images, like the textures we’ll use later on.
+                            . It is also pretty much the standard color space for images, like the textures we'll use later on.
 						</p>
 					</li>
 					<li>
@@ -1220,7 +1220,7 @@ window.MathJax = {
 							<em>
                                 resolution
 							</em>
-                            &nbsp;of the Swapchain images. It’s almost always exactly equal to the resolution of the window that we’re drawing to 
+                            &nbsp;of the Swapchain images. It's almost always exactly equal to the resolution of the window that we're drawing to 
 							<em>
                                 in pixels
 							</em>
@@ -1256,7 +1256,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            We’ll pick the resolution that best matches the window within the 
+                            We'll pick the resolution that best matches the window within the 
                             <code>minImageExtent</code>
                             &nbsp;and 
                             <code>maxImageExtent</code>
@@ -1279,7 +1279,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            Unfortunately, if you are using a high DPI display (like Apple’s Retina display), screen coordinates don’t correspond to pixels. Instead, due to the higher pixel density, the resolution of the window in pixel will be larger than the resolution in screen coordinates. So if Vulkan doesn’t fix the swap extent for us, we can’t just use the original 
+                            Unfortunately, if you are using a high DPI display (like Apple's Retina display), screen coordinates don't correspond to pixels. Instead, due to the higher pixel density, the resolution of the window in pixel will be larger than the resolution in screen coordinates. So if Vulkan doesn't fix the swap extent for us, we can't just use the original 
                             <code>{WIDTH, HEIGHT}</code>
                             . Instead, we must use 
                             <code>glfwGetFramebufferSize</code>
@@ -1306,7 +1306,7 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            We need to specify how to handle Swapchain images that will be used across multiple queue families. That will be the case in our application if the graphics queue family is different from the presentation queue. We’ll be drawing on the images in the Swapchain from the graphics queue and then submitting them on the presentation queue. There are two ways to handle images that are accessed from multiple queues:
+                            We need to specify how to handle Swapchain images that will be used across multiple queue families. That will be the case in our application if the graphics queue family is different from the presentation queue. We'll be drawing on the images in the Swapchain from the graphics queue and then submitting them on the presentation queue. There are two ways to handle images that are accessed from multiple queues:
 						</p>
 						<ul>
 							<li>
@@ -1357,7 +1357,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            If the queue families differ, then we’ll be using the concurrent mode in this tutorial to avoid having to do the ownership chapters, because these involve some concepts that are better explained at a later time.
+                            If the queue families differ, then we'll be using the concurrent mode in this tutorial to avoid having to do the ownership chapters, because these involve some concepts that are better explained at a later time.
 						</p>
 					</li>
 					<li>
@@ -1469,7 +1469,7 @@ window.MathJax = {
 					</li>
 					<li>
 						<p>
-                            You’ll almost always want to simply ignore the alpha channel, hence 
+                            You'll almost always want to simply ignore the alpha channel, hence 
                             <code>OPAQUE</code>
                             .
 						</p>
@@ -1485,12 +1485,12 @@ window.MathJax = {
 						<p>
                             If set to 
                             <code>TRUE</code>
-                            , then that means that we don’t care about the color of pixels that are obscured, for example, because another window is in front of them.
+                            , then that means that we don't care about the color of pixels that are obscured, for example, because another window is in front of them.
 						</p>
 					</li>
 					<li>
 						<p>
-                            Unless you really need to be able to read these pixels back and get predictable results, you’ll get the best performance by enabling clipping.
+                            Unless you really need to be able to read these pixels back and get predictable results, you'll get the best performance by enabling clipping.
 						</p>
 					</li>
 				</ul>
@@ -1811,7 +1811,7 @@ window.MathJax = {
 		<p>
             Only the 
             <code>PRESENT_MODE_FIFO_KHR</code>
-            &nbsp;mode is guaranteed to be available, so we’ll again have to write a function that looks for the best mode that is available:
+            &nbsp;mode is guaranteed to be available, so we'll again have to write a function that looks for the best mode that is available:
 		</p>
 	</li>
 	<li>
@@ -1935,7 +1935,7 @@ window.MathJax = {
 							</li>
 							<li>
 								<p>
-                                    The WSI model exposes the surface’s supported formats to the application via 
+                                    The WSI model exposes the surface's supported formats to the application via 
 									<a
 										href="https://registry.khronos.org/vulkan/specs/latest/man/html/vkGetPhysicalDeviceSurfaceFormatsKHR.html" 
 										class="external-link" 
@@ -2370,7 +2370,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            You could also decide to do that if the Swapchain is suboptimal, but I’ve chosen to proceed anyway in that case because we’ve already acquired an image.
+            You could also decide to do that if the Swapchain is suboptimal, but I've chosen to proceed anyway in that case because we've already acquired an image.
 		</p>
 	</li>
 </ul>
@@ -2409,7 +2409,7 @@ currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
 			</li>
 			<li>
 				<p>
-                    That’s why we’ll add some 
+                    That's why we'll add some 
 					<em>
                         extra
 					</em>
@@ -2477,7 +2477,7 @@ glfw.SetFramebufferSizeCallback(vulkan_context.glfw_window, proc "c" (window: gl
 						<p>
                             &quot;We first call 
                             <code>vkDeviceWaitIdle</code>
-                            , because just like in the last chapter, we shouldn’t touch resources that may still be in use.&quot;
+                            , because just like in the last chapter, we shouldn't touch resources that may still be in use.&quot;
 						</p>
 						<ul>
 							<li>
@@ -2749,7 +2749,7 @@ glfw.SetFramebufferSizeCallback(vulkan_context.glfw_window, proc "c" (window: gl
 						<ul>
 							<li>
 								<p>
-                                    Typically, applications call these functions and assume it’s safe to delete swapchain semaphores and the swapchain itself.
+                                    Typically, applications call these functions and assume it's safe to delete swapchain semaphores and the swapchain itself.
 								</p>
 							</li>
 							<li>
@@ -2770,7 +2770,7 @@ glfw.SetFramebufferSizeCallback(vulkan_context.glfw_window, proc "c" (window: gl
 								<p>
                                     The 
                                     <code>vkDeviceWaitIdle</code>
-                                    &nbsp;can’t guarantee that it’s safe to delete swapchain resources.
+                                    &nbsp;can't guarantee that it's safe to delete swapchain resources.
 								</p>
 								<ul>
 									<li>
@@ -3019,7 +3019,7 @@ vkResetFences(device, 1, &inFlightFences[currentFrame]);
 <ul>
 	<li>
 		<p>
-            We choose the number 2 because we don’t want the CPU to get 
+            We choose the number 2 because we don't want the CPU to get 
 			<em>
                 too
 			</em>
@@ -3033,7 +3033,7 @@ vkResetFences(device, 1, &inFlightFences[currentFrame]);
 			</li>
 			<li>
 				<p>
-                    With three or more frames in flight, the CPU could get ahead of the GPU, adding frames of latency. Generally, extra latency isn’t desired.
+                    With three or more frames in flight, the CPU could get ahead of the GPU, adding frames of latency. Generally, extra latency isn't desired.
 				</p>
 			</li>
 		</ul>
@@ -3269,7 +3269,7 @@ vkResetFences(device, 1, &inFlightFences[currentFrame]);
 				<p>
                     The 
                     <code>TRUE</code>
-                    &nbsp;we pass here indicates that we want to wait for all fences, but in the case of a single one it doesn’t matter.
+                    &nbsp;we pass here indicates that we want to wait for all fences, but in the case of a single one it doesn't matter.
 				</p>
 			</li>
 			<li>
@@ -3339,7 +3339,7 @@ vkResetFences(device, 1, &inFlightFences[currentFrame]);
 				<ul>
 					<li>
 						<p>
-                            If the swapchain doesn’t have any image we can use, it will block the thread with a maximum for the timeout set.
+                            If the swapchain doesn't have any image we can use, it will block the thread with a maximum for the timeout set.
 						</p>
 					</li>
 					<li>
@@ -3931,7 +3931,7 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 					</li>
 					<li>
 						<p>
-                            It relaxes the strict matching rules so a rendering instance and the bound pipelines may disagree about an attachment being “unused” in one but not the other (and relaxes some format/NULL mixing rules described in the extension).
+                            It relaxes the strict matching rules so a rendering instance and the bound pipelines may disagree about an attachment being &quot;unused&quot; in one but not the other (and relaxes some format/NULL mixing rules described in the extension).
 						</p>
 					</li>
 					<li>
@@ -4133,7 +4133,7 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 					</li>
 					<li>
 						<p>
-                            We’re using 
+                            We're using 
                             <code>ATTACHMENT_LOAD_OP_CLEAR</code>
                             &nbsp;to clear the image to black before rendering.
 						</p>
@@ -4307,7 +4307,7 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 						<ul>
 							<li>
 								<p>
-                                    Viewports &amp; scissors let you specify a size smaller than the full image, as well as redefining the origin &amp; scale to use. Whereas the renderArea is specifying the actual image dimensions to use. This allows flexibility in how the backing VkImage is used in contrast to the viewport/scissor needs of the rendering itself. In most cases they are going to be “full” so its not like it comes into play always
+                                    Viewports &amp; scissors let you specify a size smaller than the full image, as well as redefining the origin &amp; scale to use. Whereas the renderArea is specifying the actual image dimensions to use. This allows flexibility in how the backing VkImage is used in contrast to the viewport/scissor needs of the rendering itself. In most cases they are going to be &quot;full&quot; so its not like it comes into play always
 								</p>
 							</li>
 							<li>
@@ -4680,7 +4680,7 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 				<ul>
 					<li>
 						<p>
-                            Even though we don’t have a vertex buffer, we technically still have 3 vertices to draw.
+                            Even though we don't have a vertex buffer, we technically still have 3 vertices to draw.
 						</p>
 					</li>
 				</ul>
@@ -4694,7 +4694,7 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 						<p>
                             Used for instanced rendering, use 
                             <code>1</code>
-                            &nbsp;if you’re not doing that.
+                            &nbsp;if you're not doing that.
 						</p>
 					</li>
 				</ul>
@@ -4764,7 +4764,7 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 					</li>
 					<li>
 						<p>
-                            We’re not using instancing, so just specify 
+                            We're not using instancing, so just specify 
                             <code>1</code>
                             &nbsp;instance.
 						</p>
@@ -5045,7 +5045,7 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 				<ul>
 					<li>
 						<p>
-                            Doing that makes it much easier to keep 1 big vertex buffer for all draw calls in the engine even if they use different vertex attribute formats. It also allows some advanced unpacking/compression techniques, and it’s the main use case for Mesh Shaders.
+                            Doing that makes it much easier to keep 1 big vertex buffer for all draw calls in the engine even if they use different vertex attribute formats. It also allows some advanced unpacking/compression techniques, and it's the main use case for Mesh Shaders.
 						</p>
 					</li>
 				</ul>
@@ -5076,7 +5076,7 @@ vkCmdDispatch(cmd, swapchain_width/16, swapchain_height/16, 1);
 					</li>
 					<li>
 						<p>
-                            You don’t manually index anything.
+                            You don't manually index anything.
 						</p>
 					</li>
 					<li>
@@ -5579,7 +5579,7 @@ else
 											</li>
 											<li>
 												<p>
-                                                    You’re trying to derive a global linear index across multiple draws, and that requires knowing how many instances came before the current draw.
+                                                    You're trying to derive a global linear index across multiple draws, and that requires knowing how many instances came before the current draw.
 												</p>
 											</li>
 										</ul>
@@ -5667,7 +5667,7 @@ else
 		<ul>
 			<li>
 				<p>
-                    Due to the fact that you want to have as much things on the GPU as possible, this pipeline maps very well if you combine it with “Bindless” techniques, where you stop needing to bind descriptor sets per material or changing vertex buffers. Having a bindless renderer also makes Raytracing much more performant and effective.
+                    Due to the fact that you want to have as much things on the GPU as possible, this pipeline maps very well if you combine it with &quot;Bindless&quot; techniques, where you stop needing to bind descriptor sets per material or changing vertex buffers. Having a bindless renderer also makes Raytracing much more performant and effective.
 				</p>
 			</li>
 			<li>
@@ -5687,7 +5687,7 @@ else
 			</li>
 			<li>
 				<p>
-                    Then, when accessing the textures in the shader, you access them by index which you grab from another buffer. If you don’t use the Descriptor Indexing extensions, you can still use texture arrays, but they will need a bounded size. Check your device limits to see how big can that be.
+                    Then, when accessing the textures in the shader, you access them by index which you grab from another buffer. If you don't use the Descriptor Indexing extensions, you can still use texture arrays, but they will need a bounded size. Check your device limits to see how big can that be.
 				</p>
 			</li>
 			<li>
@@ -5716,7 +5716,7 @@ else
 		<ul>
 			<li>
 				<p>
-                    Push Constants and Dynamic Descriptors can be used, but they have to be “global”. Using push constants for things like camera location is perfectly fine, but you cant use them for object ID as that’s a per-object call and you specifically want to draw as many objects as possible in 1 draw.
+                    Push Constants and Dynamic Descriptors can be used, but they have to be &quot;global&quot;. Using push constants for things like camera location is perfectly fine, but you cant use them for object ID as that's a per-object call and you specifically want to draw as many objects as possible in 1 draw.
 				</p>
 			</li>
 		</ul>
@@ -5811,7 +5811,7 @@ else
 	</li>
 	<li>
 		<p>
-            Provides more flexibility by allowing us to change the attachments we’re rendering to without creating new render pass objects.
+            Provides more flexibility by allowing us to change the attachments we're rendering to without creating new render pass objects.
 		</p>
 	</li>
 	<li>
@@ -5901,7 +5901,7 @@ else
 			</li>
 			<li>
 				<p>
-                    If you don’t specify anything else, that layout transition will wait for nothing before it performs the transition. Or rather, the driver will inject a dummy subpass dependency for you with srcStageMask = TOP_OF_PIPE. This is not what you want since it’s almost certainly going to be a race condition. You can set up a subpass dependency with the appropriate srcStageMask and srcAccessMask.
+                    If you don't specify anything else, that layout transition will wait for nothing before it performs the transition. Or rather, the driver will inject a dummy subpass dependency for you with srcStageMask = TOP_OF_PIPE. This is not what you want since it's almost certainly going to be a race condition. You can set up a subpass dependency with the appropriate srcStageMask and srcAccessMask.
 				</p>
 			</li>
 			<li>
@@ -5913,7 +5913,7 @@ else
 			</li>
 			<li>
 				<p>
-                    The whole premise here is that it’s theoretically better to do it this way because the driver has more information, but this is questionable, at least on current hardware and drivers.
+                    The whole premise here is that it's theoretically better to do it this way because the driver has more information, but this is questionable, at least on current hardware and drivers.
 				</p>
 			</li>
 			<li>
@@ -5950,7 +5950,7 @@ else
 			</li>
 			<li>
 				<p>
-                    However, while the usefulness of external subpass dependencies is questionable, they have some convenient use cases I’d like to go over:
+                    However, while the usefulness of external subpass dependencies is questionable, they have some convenient use cases I'd like to go over:
 				</p>
 				<ul>
 					<li>
@@ -5965,13 +5965,13 @@ else
 						<ul>
 							<li>
 								<p>
-                                    If you’re on mobile, you should be using transient images where possible. When using these attachments in a render pass, it makes sense to always have them as initialLayout = UNDEFINED. Since we know that these images can only ever be used in 
+                                    If you're on mobile, you should be using transient images where possible. When using these attachments in a render pass, it makes sense to always have them as initialLayout = UNDEFINED. Since we know that these images can only ever be used in 
                                     <code>COLOR_ATTACHMENT_OUTPUT</code>
                                     &nbsp;or 
                                     <code>EARLY</code>
                                     /
                                     <code>LATE_FRAGMENT_TEST</code>
-                                    &nbsp;stages depending on their image format, the external subpass dependency writes itself, and we can just use transient attachments without having to think too hard about how to synchronize them. This is what I do in my Granite engine, and it’s quite useful. Of course, we could just inject a pipeline barrier for this exact same purpose, but that’s more boilerplate.
+                                    &nbsp;stages depending on their image format, the external subpass dependency writes itself, and we can just use transient attachments without having to think too hard about how to synchronize them. This is what I do in my Granite engine, and it's quite useful. Of course, we could just inject a pipeline barrier for this exact same purpose, but that's more boilerplate.
 								</p>
 							</li>
 						</ul>
@@ -6002,7 +6002,7 @@ else
                                     <code>finalLayout</code>
                                     &nbsp;transition after the render pass, we are fine with 
                                     <code>BOTTOM_OF_PIPE</code>
-                                    &nbsp;being used. We’re going to use semaphores here anyways.
+                                    &nbsp;being used. We're going to use semaphores here anyways.
 								</p>
 							</li>
 							<li>
@@ -6242,7 +6242,7 @@ else
 			</li>
 			<li>
 				<p>
-                    We want to wait for writing colors to the image until it’s available, so we’re specifying the stage of the graphics pipeline that writes to the color attachment.
+                    We want to wait for writing colors to the image until it's available, so we're specifying the stage of the graphics pipeline that writes to the color attachment.
 				</p>
 			</li>
 			<li>
@@ -6283,7 +6283,7 @@ else
 					</li>
 					<li>
 						<p>
-                            In our case we’re using the 
+                            In our case we're using the 
                             <code>renderFinishedSemaphore</code>
                             &nbsp;for that purpose.
 						</p>
@@ -6415,7 +6415,7 @@ else
 					</li>
 					<li>
 						<p>
-                            It’s not necessary if you’re only using a single Swapchain, because you can use the return value of the present function.
+                            It's not necessary if you're only using a single Swapchain, because you can use the return value of the present function.
 						</p>
 					</li>
 				</ul>
@@ -6591,7 +6591,7 @@ else
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

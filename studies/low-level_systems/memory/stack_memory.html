@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -904,8 +904,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/explicitness.html" >
-                                    Explicitness
+									href="/studies/low-level_systems/c_and_c++/keywords_for_data.html" >
+                                    Keywords for Data
 								</a>
 							</li>
 						</ul>
@@ -913,8 +913,44 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/compiler_hints.html" >
-                                    Compiler Hints
+									href="/studies/low-level_systems/c_and_c++/keywords_for_control_flow.html" >
+                                    Keywords for Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_functions_methods.html" >
+                                    Keywords for Functions / Methods
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_class_extravaganza.html" >
+                                    Keywords for Class extravaganza
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/other_optimization_hints.html" >
+                                    Other Optimization Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/asserts.html" >
+                                    Asserts
 								</a>
 							</li>
 						</ul>
@@ -996,6 +1032,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/functions.html" >
                                     Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/coroutines_c_plus__plus_20.html" >
+                                    Coroutines (C++20)
 								</a>
 							</li>
 						</ul>
@@ -1122,15 +1167,6 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/undefined_behavior.html" >
                                     Undefined Behavior
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/multithreading.html" >
-                                    Multithreading
 								</a>
 							</li>
 						</ul>
@@ -1666,8 +1702,8 @@ window.MathJax = {
                             🕒 Created: 2025-03-12
 						</time>
 						<time
-							datetime="2026-05-02" >
-                            | Updated: 2026-05-02
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -1810,7 +1846,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            At the lowest level, there is no “array construct” at all. There are only:
+            At the lowest level, there is no &quot;array construct&quot; at all. There are only:
 		</p>
 		<ul>
 			<li>
@@ -1832,7 +1868,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            What “reserving space” really is:
+            What &quot;reserving space&quot; really is:
 		</p>
 		<ul>
 			<li>
@@ -1846,7 +1882,7 @@ window.MathJax = {
 		<p>
             The stack pointer (
             <code>rsp</code>
-            ) just moves down, and that region is now “owned”.
+            ) just moves down, and that region is now &quot;owned&quot;.
 		</p>
 	</li>
 	<li>
@@ -1904,7 +1940,7 @@ offset(data) = 4
 			</li>
 			<li>
 				<p>
-                    After lowering, the concept of “array” is gone.
+                    After lowering, the concept of &quot;array&quot; is gone.
 				</p>
 			</li>
 			<li>
@@ -1966,7 +2002,7 @@ mov [rsp], eax
 	</li>
 	<li>
 		<p>
-            The array itself still doesn’t exist as a concept—only the total size matters.
+            The array itself still doesn't exist as a concept—only the total size matters.
 		</p>
 	</li>
 </ul>
@@ -2046,7 +2082,7 @@ sb := make_string_buffer(8)
 			</li>
 			<li>
 				<p>
-                    This is why languages don’t expose raw “stack allocation returning pointers” freely.
+                    This is why languages don't expose raw &quot;stack allocation returning pointers&quot; freely.
 				</p>
 			</li>
 		</ul>
@@ -2120,7 +2156,7 @@ sb := make_string_buffer(8)
 <ul>
 	<li>
 		<p>
-            Is stored in the program’s read-only data section:
+            Is stored in the program's read-only data section:
 		</p>
 		<ul>
 			<li>
@@ -2177,7 +2213,7 @@ sb := make_string_buffer(8)
 						<ul>
 							<li>
 								<p>
-                                    There is no fixed or intrinsic “capacity” for .rodata.
+                                    There is no fixed or intrinsic &quot;capacity&quot; for .rodata.
 								</p>
 							</li>
 							<li>
@@ -2356,7 +2392,7 @@ char *b = "hello";
 <ul>
 	<li>
 		<p>
-            The stack does have a fixed (or bounded) size, unlike .rodata, and that’s why large allocations can fail.
+            The stack does have a fixed (or bounded) size, unlike .rodata, and that's why large allocations can fail.
 		</p>
 	</li>
 	<li>
@@ -2709,7 +2745,7 @@ typedef struct {
 							</li>
 							<li>
 								<p>
-                                    Once mapped, it’s just virtual memory.
+                                    Once mapped, it's just virtual memory.
 								</p>
 							</li>
 						</ul>
@@ -2887,7 +2923,7 @@ typedef struct {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

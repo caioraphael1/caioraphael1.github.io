@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -795,8 +795,8 @@ window.MathJax = {
                             🕒 Created: 2025-07-03
 						</time>
 						<time
-							datetime="2026-08-13" >
-                            | Updated: 2026-08-13
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -1004,7 +1004,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            In practice, we’d also do a conservative per-tile min/max depth test to cull away lights occupying empty space.
+            In practice, we'd also do a conservative per-tile min/max depth test to cull away lights occupying empty space.
 		</p>
 	</li>
 </ul>
@@ -1132,7 +1132,7 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            Describes the ambient contribution applied to all objects in the scene globally. Technically, this variable should be a global variable (not specific to a single object), but since there is only a single material at a time in the pixel shader, it’s fine to put it here.
+                            Describes the ambient contribution applied to all objects in the scene globally. Technically, this variable should be a global variable (not specific to a single object), but since there is only a single material at a time in the pixel shader, it's fine to put it here.
 						</p>
 					</li>
 				</ul>
@@ -1180,7 +1180,7 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            If a model has a bump map, the material’s 
+                            If a model has a bump map, the material's 
                             <code>HasBumpTexture</code>
                             &nbsp;property is set to 
                             <code>true</code>
@@ -1203,7 +1203,7 @@ window.MathJax = {
 						<p>
                             Scales the specular power value read from a specular power texture. Since textures usually store values as unsigned normalized values, when sampling from the texture the value is read as a floating-point value in the range of 
                             <code>[0..1]</code>
-                            . A specular power of 1.0 doesn’t make much sense, so the specular power value read from the texture will be scaled by 
+                            . A specular power of 1.0 doesn't make much sense, so the specular power value read from the texture will be scaled by 
                             <code>SpecularScale</code>
                             &nbsp;before being used for the final lighting computation.
 						</p>
@@ -1217,7 +1217,7 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            Can be used to discard pixels whose opacity is below a certain value using the “discard” command in the pixel shader. This is useful for “cut-out” materials where the object does not need alpha blending but should have holes (for example, a chain-link fence).
+                            Can be used to discard pixels whose opacity is below a certain value using the &quot;discard&quot; command in the pixel shader. This is useful for &quot;cut-out&quot; materials where the object does not need alpha blending but should have holes (for example, a chain-link fence).
 						</p>
 					</li>
 				</ul>
@@ -1334,7 +1334,7 @@ struct Light
 				<ul>
 					<li>
 						<p>
-                            For point lights, the range is the radius of the sphere that represents the light; for spotlights, it’s the length of the cone that represents the light. Directional lights don’t use range because they are considered infinitely far away, pointing in the same direction everywhere.
+                            For point lights, the range is the radius of the sphere that represents the light; for spotlights, it's the length of the cone that represents the light. Directional lights don't use range because they are considered infinitely far away, pointing in the same direction everywhere.
 						</p>
 					</li>
 				</ul>
@@ -1791,7 +1791,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 				<p>
                     The 
                     <code>[earlydepthstencil]</code>
-                    &nbsp;attribute before the function indicates that the GPU should take advantage of early depth and stencil culling. This causes the depth/stencil tests to be performed before the pixel shader is executed. This attribute cannot be used on shaders that modify the pixel’s depth value by outputting a value using the 
+                    &nbsp;attribute before the function indicates that the GPU should take advantage of early depth and stencil culling. This causes the depth/stencil tests to be performed before the pixel shader is executed. This attribute cannot be used on shaders that modify the pixel's depth value by outputting a value using the 
                     <code>SV_Depth</code>
                     &nbsp;semantic. Since this pixel shader only outputs a color value using the 
                     <code>SV_TARGET</code>
@@ -1805,7 +1805,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 			</li>
 			<li>
 				<p>
-                    This is a nice side effect of working in view space: the camera’s eye position 
+                    This is a nice side effect of working in view space: the camera's eye position 
 					<strong>
                         does not
 					</strong>
@@ -1851,7 +1851,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 					</li>
 					<li>
 						<p>
-                            If the material also has a diffuse texture associated with it, then the color from the diffuse texture will be blended with the material’s diffuse color. If the material’s diffuse color is black (0, 0, 0, 0), then the material’s diffuse color will simply be replaced by the color in the diffuse texture.
+                            If the material also has a diffuse texture associated with it, then the color from the diffuse texture will be blended with the material's diffuse color. If the material's diffuse color is black (0, 0, 0, 0), then the material's diffuse color will simply be replaced by the color in the diffuse texture.
 						</p>
 					</li>
 				</ul>
@@ -1866,7 +1866,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 				<ul>
 					<li>
 						<p>
-                            By default, the fragment’s transparency value is determined by the alpha component of the diffuse color. If the material has an opacity texture associated with it, the red component of the opacity texture is used as the alpha value, overriding the alpha value in the diffuse texture. In most cases, opacity textures store only a single channel in the first component of the color returned from the 
+                            By default, the fragment's transparency value is determined by the alpha component of the diffuse color. If the material has an opacity texture associated with it, the red component of the opacity texture is used as the alpha value, overriding the alpha value in the diffuse texture. In most cases, opacity textures store only a single channel in the first component of the color returned from the 
 							<strong>
                                 Sample
 							</strong>
@@ -1960,7 +1960,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 			</li>
 			<li>
 				<p>
-                    The main optimizations I’ve used for some years now is the “2.5D culling” and the “flat bit arrays” methods, which I really liked.
+                    The main optimizations I've used for some years now is the &quot;2.5D culling&quot; and the &quot;flat bit arrays&quot; methods, which I really liked.
 				</p>
 			</li>
 			<li>
@@ -1978,12 +1978,12 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 				<ul>
 					<li>
 						<p>
-                            The main twist to the forward rendering is the inclusion of a secondary “visibility buffer”, to aid with effects that would better fit into a deferred renderer.
+                            The main twist to the forward rendering is the inclusion of a secondary &quot;visibility buffer&quot;, to aid with effects that would better fit into a deferred renderer.
 						</p>
 					</li>
 					<li>
 						<p>
-                            I always wanted to support all the post processing that deferred rendering supports, but normally forward rendering doesn’t write any G-Buffer textures to allow this. Some years ago I used a thin G-buffer for this written by the depth prepass.
+                            I always wanted to support all the post processing that deferred rendering supports, but normally forward rendering doesn't write any G-Buffer textures to allow this. Some years ago I used a thin G-buffer for this written by the depth prepass.
 						</p>
 					</li>
 					<li>
@@ -2003,7 +2003,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 					</li>
 					<li>
 						<p>
-                            The nice thing about it that we can get this on the async compute queue too, and that’s exactly what happens.
+                            The nice thing about it that we can get this on the async compute queue too, and that's exactly what happens.
 						</p>
 					</li>
 					<li>
@@ -2013,7 +2013,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 						<ul>
 							<li>
 								<p>
-                                    depth buffer: it is always created from the visibility buffer. The normal depth buffer is always kept in depth write state, it’s never used as a sampled texture. This way the depth test efficiency remains the highest for the color and transparent passes later.
+                                    depth buffer: it is always created from the visibility buffer. The normal depth buffer is always kept in depth write state, it's never used as a sampled texture. This way the depth test efficiency remains the highest for the color and transparent passes later.
 								</p>
 							</li>
 							<li>
@@ -2040,7 +2040,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 					</li>
 					<li>
 						<p>
-                            What does this texture actually store? It’s a single channel 32-bit UINT texture, and normally that wouldn’t be enough to store both primitive and instance ID. But there is a workaround, in which I store 25 bits of meshlet ID and 7 bits of primitive ID. A regular mesh wouldn’t fit into it, since it limits to 128 triangles, but with a lookup table it’s possible to manage.
+                            What does this texture actually store? It's a single channel 32-bit UINT texture, and normally that wouldn't be enough to store both primitive and instance ID. But there is a workaround, in which I store 25 bits of meshlet ID and 7 bits of primitive ID. A regular mesh wouldn't fit into it, since it limits to 128 triangles, but with a lookup table it's possible to manage.
 						</p>
 					</li>
 				</ul>
@@ -2113,7 +2113,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 			</li>
 			<li>
 				<p>
-                    For example, we’d like to be able to construct a scene with, say, maximum 4 lights affecting any part of the scene. In this case, we would like shading cost to be proportional to this, and stable, given different view points.
+                    For example, we'd like to be able to construct a scene with, say, maximum 4 lights affecting any part of the scene. In this case, we would like shading cost to be proportional to this, and stable, given different view points.
 				</p>
 			</li>
 			<li>
@@ -2136,7 +2136,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 					</li>
 					<li>
 						<p>
-                            I didn’t have to go look for a problematic area, in fact, it was right there in front of my face. This shows how common these scenes actually are in real games, and certainly so in the games that we make.
+                            I didn't have to go look for a problematic area, in fact, it was right there in front of my face. This shows how common these scenes actually are in real games, and certainly so in the games that we make.
 						</p>
 					</li>
 					<li>
@@ -2504,7 +2504,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 <ul>
 	<li>
 		<p>
-            Clustered shading expands on the idea of tiled rendering but adds a segmentation on the 3rd axis. The “clustering” is done in view space, by splitting the frustum into a 3D grid.
+            Clustered shading expands on the idea of tiled rendering but adds a segmentation on the 3rd axis. The &quot;clustering&quot; is done in view space, by splitting the frustum into a 3D grid.
 		</p>
 	</li>
 	<li>
@@ -2562,7 +2562,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 		<ul>
 			<li>
 				<p>
-                    Clustered Shading is really decoupled from the choice between deferred or forward rendering. It works with both, so you’re not locked into one or the other. This way you can make an informed choice between the two approaches based on other factors, such as whether you need custom materials and lighting models, or need deferred effects such as screen-space decals, or simply based on performance.
+                    Clustered Shading is really decoupled from the choice between deferred or forward rendering. It works with both, so you're not locked into one or the other. This way you can make an informed choice between the two approaches based on other factors, such as whether you need custom materials and lighting models, or need deferred effects such as screen-space decals, or simply based on performance.
 				</p>
 			</li>
 		</ul>
@@ -2661,7 +2661,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 <ul>
 	<li>
 		<p>
-            Steps two and six won’t be covered since they are mostly dependent on the shading model you’re using.
+            Steps two and six won't be covered since they are mostly dependent on the shading model you're using.
 		</p>
 	</li>
 	<li>
@@ -2671,7 +2671,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 				href="https://www.3dgep.com/volume-tiled-forward-shading/" 
 				class="external-link" 
 				target="_blank" >
-                Van Oosten’s implementation
+                Van Oosten's implementation
 			</a>
             .
 		</p>
@@ -2692,7 +2692,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 		<ul>
 			<li>
 				<p>
-                    We’ll be focusing on building cluster grids that group samples based on their view space position. We’ll begin by tiling the view frustum exactly the same way you would in tiled shading and then subdividing it along the depth axis multiple times.
+                    We'll be focusing on building cluster grids that group samples based on their view space position. We'll begin by tiling the view frustum exactly the same way you would in tiled shading and then subdividing it along the depth axis multiple times.
 				</p>
 			</li>
 			<li>
@@ -2793,7 +2793,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 					</li>
 					<li>
 						<p>
-                            Our biggest problem was that our depth ratio is massive, with near plane as close as 0.1m and far plane way out on the other side of the map, at 50,000m. This resulted in poor utilization of our limited depth slices, currently 16 of them. The step from one slice to the next is very large. Fortunately, in our game we don’t have any actual light sources beyond a distance of 500m. So we simply decided to keep our current distant light system for distances beyond 500m and limit the far range for clustering to that.
+                            Our biggest problem was that our depth ratio is massive, with near plane as close as 0.1m and far plane way out on the other side of the map, at 50,000m. This resulted in poor utilization of our limited depth slices, currently 16 of them. The step from one slice to the next is very large. Fortunately, in our game we don't have any actual light sources beyond a distance of 500m. So we simply decided to keep our current distant light system for distances beyond 500m and limit the far range for clustering to that.
 						</p>
 					</li>
 					<li>
@@ -2804,7 +2804,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 					</li>
 					<li>
 						<p>
-                            This improved the situation notably, but was still not ideal. We still burnt half of our slices on the first 7 meters from the camera. Given how our typical scenes look like, that’s likely going to be mostly empty space in most situations. So to improve the situation, we made the first slice special and made that go from near plane to an arbitrary visually tweaked distance, currently 5m. This gave us much better utilization.
+                            This improved the situation notably, but was still not ideal. We still burnt half of our slices on the first 7 meters from the camera. Given how our typical scenes look like, that's likely going to be mostly empty space in most situations. So to improve the situation, we made the first slice special and made that go from near plane to an arbitrary visually tweaked distance, currently 5m. This gave us much better utilization.
 						</p>
 					</li>
 				</ul>
@@ -2972,7 +2972,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 	</li>
 	<li>
 		<p>
-            An easy solution is to use Axis Aligned Bounding Boxes (AABB) that enclose each cluster. AABBs built from the max and min points of the clusters will be ever so slightly larger than the actual clusters. We’re okay with this since it ensures that there are no gaps in between volumes due to precision issues. Also, AABB’s can be stored using only only two vec3’s, a max and min point.
+            An easy solution is to use Axis Aligned Bounding Boxes (AABB) that enclose each cluster. AABBs built from the max and min points of the clusters will be ever so slightly larger than the actual clusters. We're okay with this since it ensures that there are no gaps in between volumes due to precision issues. Also, AABB's can be stored using only only two vec3's, a max and min point.
 		</p>
 	</li>
 	<li>
@@ -2993,19 +2993,19 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 	</li>
 	<li>
 		<p>
-            First, imagine we’re looking at the view frustum from a front camera perspective, like we did in the Tiled Shading animations of part one. Each tile will have a min and max point, which in our coordinate system will be the upper right and bottom left vertices of a tile respectively. After obtaining these two points in screen space we set their Z position equal to the near plane, which in NDC and in my specific setup is equal to -1.
+            First, imagine we're looking at the view frustum from a front camera perspective, like we did in the Tiled Shading animations of part one. Each tile will have a min and max point, which in our coordinate system will be the upper right and bottom left vertices of a tile respectively. After obtaining these two points in screen space we set their Z position equal to the near plane, which in NDC and in my specific setup is equal to -1.
 		</p>
 		<ul>
 			<li>
 				<p>
-                    I know, I know. I should be using reverse Z, not the default OpenGL layout, I’ll fix that eventually.
+                    I know, I know. I should be using reverse Z, not the default OpenGL layout, I'll fix that eventually.
 				</p>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<p>
-            Then, we transform these min and max points to view space. Next, we obtain the Z value of the “near” and “far” plane of our target mini-frustum / cluster. And, armed with the knowledge that all rays meet at the origin in view space, a pair of min and max values in screen space and both bounding planes of the cluster, we can obtain the four points intersecting those planes that will represent the four corners of the AABB encompassing said cluster. Lastly, we find the min and max of those points and save their values to the cluster array. And voilà, the grid is complete!
+            Then, we transform these min and max points to view space. Next, we obtain the Z value of the &quot;near&quot; and &quot;far&quot; plane of our target mini-frustum / cluster. And, armed with the knowledge that all rays meet at the origin in view space, a pair of min and max values in screen space and both bounding planes of the cluster, we can obtain the four points intersecting those planes that will represent the four corners of the AABB encompassing said cluster. Lastly, we find the min and max of those points and save their values to the cluster array. And voilà, the grid is complete!
 		</p>
 	</li>
 	<li>
@@ -3044,7 +3044,7 @@ float4 PS_main( VertexShaderOutput IN ) : SV_TARGET
 			</li>
 			<li>
 				<p>
-                    My initial profiling in RenderDoc seems to indicate that the GPU can run this shader really quickly, so I think it wouldn’t be a huge deal either if this was done every frame.
+                    My initial profiling in RenderDoc seems to indicate that the GPU can run this shader really quickly, so I think it wouldn't be a huge deal either if this was done every frame.
 				</p>
 			</li>
 		</ul>
@@ -3206,7 +3206,7 @@ zParams[3] = MAX_DEPTH_SLICES;
 <ul>
 	<li>
 		<p>
-            They’re implemented solely on the GPU using shader storage buffer objects, so keep in mind that reads and writes have incoherent memory access and 
+            They're implemented solely on the GPU using shader storage buffer objects, so keep in mind that reads and writes have incoherent memory access and 
 			<strong>
                 will
 			</strong>
@@ -3302,12 +3302,12 @@ zParams[3] = MAX_DEPTH_SLICES;
 	</li>
 	<li>
 		<p>
-            Unlike what’s shown in the diagram, the global light index list does not necessarily store the indices for each cluster sequentially, in fact, it might store them in a completely random order.
+            Unlike what's shown in the diagram, the global light index list does not necessarily store the indices for each cluster sequentially, in fact, it might store them in a completely random order.
 		</p>
 	</li>
 	<li>
 		<p>
-            If you’re wondering why we need such a convoluted data structure, the quick answer is that it plays nicely with the GPU and works well in parallel. Also, it allows both compute shaders and pixel shaders to read the same data structure and execute the same code. Lastly, it is pretty memory efficient since clusters tend to share the same lights and by storing indices to the global light list instead of the lights themselves we save up memory.
+            If you're wondering why we need such a convoluted data structure, the quick answer is that it plays nicely with the GPU and works well in parallel. Also, it allows both compute shaders and pixel shaders to read the same data structure and execute the same code. Lastly, it is pretty memory efficient since clusters tend to share the same lights and by storing indices to the global light list instead of the lights themselves we save up memory.
 		</p>
 	</li>
 	<li>
@@ -3328,7 +3328,7 @@ zParams[3] = MAX_DEPTH_SLICES;
 			</li>
 			<li>
 				<p>
-                    Thread groups sizes are actually relevant in this compute shader since I’m using shared GPU memory to reduce the number of reads and writes by only loading each light once per thread group, instead of once per cluster.
+                    Thread groups sizes are actually relevant in this compute shader since I'm using shared GPU memory to reduce the number of reads and writes by only loading each light once per thread group, instead of once per cluster.
 				</p>
 			</li>
 			<li>
@@ -3338,7 +3338,7 @@ zParams[3] = MAX_DEPTH_SLICES;
 				<ul>
 					<li>
 						<p>
-                            For example, how many threads there are in a thread group, what it’s linear cluster index is and in how many passes it shall traverse the global light list.
+                            For example, how many threads there are in a thread group, what it's linear cluster index is and in how many passes it shall traverse the global light list.
 						</p>
 					</li>
 				</ul>
@@ -3409,7 +3409,7 @@ zParams[3] = MAX_DEPTH_SLICES;
 	</li>
 	<li>
 		<p>
-            With this, we’ve completed step five and therefore have all the building blocks in place for a working clustered shading implementation.
+            With this, we've completed step five and therefore have all the building blocks in place for a working clustered shading implementation.
 		</p>
 	</li>
 	<li>
@@ -3431,7 +3431,7 @@ zParams[3] = MAX_DEPTH_SLICES;
 						href="https://www.3dgep.com/volume-tiled-forward-shading/" 
 						class="external-link" 
 						target="_blank" >
-                        Jeremiah Van Oosten’s thesis
+                        Jeremiah Van Oosten's thesis
 					</a>
                     &nbsp;writes about optimizing Clustered Renderers and has links to his testing framework where you can compare different efficient rendering algorithms.
 				</p>
@@ -3443,7 +3443,7 @@ zParams[3] = MAX_DEPTH_SLICES;
 				<ul>
 					<li>
 						<p>
-                            Right now, it seems that implementing the BVH will be my first task — and specially after how important being familiar with BVH’s will become after Turing.
+                            Right now, it seems that implementing the BVH will be my first task — and specially after how important being familiar with BVH's will become after Turing.
 						</p>
 					</li>
 				</ul>
@@ -3510,7 +3510,7 @@ zParams[3] = MAX_DEPTH_SLICES;
 				<ul>
 					<li>
 						<p>
-                            So the difference between tiled and clustered is that we pick a light list on a per-pixel basis instead of per-tile, depending on which cluster we fall within. Obviously though, in a lot of cases nearby pixels will choose the same light list, in particular neighbors within the same tile on a similar depth. If we visualize what light lists were chosen, we can see that there are a bunch of different paths taken beyond just the tile boundaries. A number of depth discontinuities from the foliage in front of the player gets clearly visible. This may seem like a big problem, but here we are only talking about fetching different data. This is not a problem for a GPU, it’s something they do all the time for regular texture fetches, and this is even much lower frequency than that.
+                            So the difference between tiled and clustered is that we pick a light list on a per-pixel basis instead of per-tile, depending on which cluster we fall within. Obviously though, in a lot of cases nearby pixels will choose the same light list, in particular neighbors within the same tile on a similar depth. If we visualize what light lists were chosen, we can see that there are a bunch of different paths taken beyond just the tile boundaries. A number of depth discontinuities from the foliage in front of the player gets clearly visible. This may seem like a big problem, but here we are only talking about fetching different data. This is not a problem for a GPU, it's something they do all the time for regular texture fetches, and this is even much lower frequency than that.
 						</p>
 					</li>
 				</ul>
@@ -3558,12 +3558,12 @@ zParams[3] = MAX_DEPTH_SLICES;
 			</li>
 			<li>
 				<p>
-                    Even though it isn’t terribly optimal, you can simply perform culling checks for all clusters in the cluster grid every frame.
+                    Even though it isn't terribly optimal, you can simply perform culling checks for all clusters in the cluster grid every frame.
 				</p>
 			</li>
 			<li>
 				<p>
-                    Thankfully, determining active clusters doesn’t take much work to implement and can speed up the light culling pass considerably.
+                    Thankfully, determining active clusters doesn't take much work to implement and can speed up the light culling pass considerably.
 				</p>
 			</li>
 			<li>
@@ -3613,7 +3613,7 @@ zParams[3] = MAX_DEPTH_SLICES;
 	</li>
 	<li>
 		<p>
-            Then, during light culling we will check light “collisions” against the compacted list instead, saving us from having to check every light for every cluster.
+            Then, during light culling we will check light &quot;collisions&quot; against the compacted list instead, saving us from having to check every light for every cluster.
 		</p>
 	</li>
 	<li>
@@ -3832,12 +3832,12 @@ void buildCompactClusterList(){
 	</li>
 	<li>
 		<p>
-            The main idea is that we perform something very similar to a “light volume collision detection” against the active clusters in the scene and append any lights within a cluster to a local list of lights.
+            The main idea is that we perform something very similar to a &quot;light volume collision detection&quot; against the active clusters in the scene and append any lights within a cluster to a local list of lights.
 		</p>
 	</li>
 	<li>
 		<p>
-            Performing this “light volume collision detection” requires that I define clearly what I mean by 
+            Performing this &quot;light volume collision detection&quot; requires that I define clearly what I mean by 
 			<em>
                 light volume
 			</em>
@@ -3846,7 +3846,7 @@ void buildCompactClusterList(){
 	</li>
 	<li>
 		<p>
-            In a nutshell, lights become dimmer with distance. After a certain point they are so dim we can assume they aren’t contributing to shading anymore so, we mark those points as our boundary. The volume contained within the boundary is our light volume and if that volume intersects with the AABB of a cluster, we assume that light is contained within the cluster.
+            In a nutshell, lights become dimmer with distance. After a certain point they are so dim we can assume they aren't contributing to shading anymore so, we mark those points as our boundary. The volume contained within the boundary is our light volume and if that volume intersects with the AABB of a cluster, we assume that light is contained within the cluster.
 		</p>
 	</li>
 </ul>
@@ -3952,7 +3952,7 @@ bool testSphereAABB(uint light, uint tile){
 	</li>
 	<li>
 		<p>
-            For each cluster, we traverse this BVH using depth-first traversal. At each level, the bounding box of the cluster (either explicitly computed from the cluster’s contents or implicitly derived from the cluster’s key) is tested against the bounding volumes of the child nodes. For the leaf nodes, the sphere bounding the light source is used; other nodes store an AABB enclosing the node. The branching factor of 32 allows efficient SIMD-traversal on the GPU and keeps the search tree relatively shallow (up to 5 levels), which is used to avoid expensive recursion (the branching factor should be adjusted depending on the GPU used, the factor of 32 is convenient on current NVIDIA GPUs).
+            For each cluster, we traverse this BVH using depth-first traversal. At each level, the bounding box of the cluster (either explicitly computed from the cluster's contents or implicitly derived from the cluster's key) is tested against the bounding volumes of the child nodes. For the leaf nodes, the sphere bounding the light source is used; other nodes store an AABB enclosing the node. The branching factor of 32 allows efficient SIMD-traversal on the GPU and keeps the search tree relatively shallow (up to 5 levels), which is used to avoid expensive recursion (the branching factor should be adjusted depending on the GPU used, the factor of 32 is convenient on current NVIDIA GPUs).
 		</p>
 	</li>
 	<li>
@@ -3978,7 +3978,7 @@ bool testSphereAABB(uint light, uint tile){
 			</li>
 			<li>
 				<p>
-                    In addition, this gives us scene independence. This means that we don’t need to know what the scene looks like to fill in the clusters, and this also allows us to evaluate light at any given point in space, even if it’s floating in thin air. This could be relevant for instance for ray-marching effects.
+                    In addition, this gives us scene independence. This means that we don't need to know what the scene looks like to fill in the clusters, and this also allows us to evaluate light at any given point in space, even if it's floating in thin air. This could be relevant for instance for ray-marching effects.
 				</p>
 			</li>
 			<li>
@@ -4402,7 +4402,7 @@ void main() {
 				<ul>
 					<li>
 						<p>
-                            The algorithm is different from the GPU implementation. Instead of iterating over every light for each froxel, the engine will “rasterize” each light as froxels. For instance, given a point light’s center and radius, it is trivial to compute the list of froxels it intersects with.
+                            The algorithm is different from the GPU implementation. Instead of iterating over every light for each froxel, the engine will &quot;rasterize&quot; each light as froxels. For instance, given a point light's center and radius, it is trivial to compute the list of froxels it intersects with.
 						</p>
 					</li>
 					<li>
@@ -4444,7 +4444,7 @@ void main() {
 					</li>
 					<li>
 						<p>
-                            Our light sources are typically artist placed, scaled for human environments in an outdoor world, so generally speaking from meters to tens of meters. So a light source generally intersects many clusters. The typical sphere-frustum tests that you can find online are not suitable for this sort of culling. They are made for view-frustum culling and based on the assumption that the frustum typically is much larger than the sphere, which is the opposite of what we have here. Typically they simply test sphere vs plane for each six planes of the frustum. This is conservative, but lets through spheres that aren’t completely behind any of the planes, such as in the frustum corners. The result you get is that green rectangle, or essentially a ”cube” of clusters around the light. But that’s also the first thing we compute. We simply compute the screen-space and depth extents of the light analytically first, so this test doesn’t actually help anything at all after that.
+                            Our light sources are typically artist placed, scaled for human environments in an outdoor world, so generally speaking from meters to tens of meters. So a light source generally intersects many clusters. The typical sphere-frustum tests that you can find online are not suitable for this sort of culling. They are made for view-frustum culling and based on the assumption that the frustum typically is much larger than the sphere, which is the opposite of what we have here. Typically they simply test sphere vs plane for each six planes of the frustum. This is conservative, but lets through spheres that aren't completely behind any of the planes, such as in the frustum corners. The result you get is that green rectangle, or essentially a &quot;cube&quot; of clusters around the light. But that's also the first thing we compute. We simply compute the screen-space and depth extents of the light analytically first, so this test doesn't actually help anything at all after that.
 						</p>
 					</li>
 					<li>
@@ -4460,7 +4460,7 @@ void main() {
 					</li>
 					<li>
 						<p>
-                            One way to go about frustum culling is testing all planes, all edges and all vertices. This would work, but be too costly to outweigh the gains from fewer false positives. A fast, conservative but relatively tight solution is what we are looking for. There are many approaches that seem fitting, but there are also many complications, which has ultimately thrown many of our attempts into the garbage bin. One relatively straightforward approach is to cull against the cluster’s AABB. This is fast and gives fairly decent results, but it’s possible to do better.
+                            One way to go about frustum culling is testing all planes, all edges and all vertices. This would work, but be too costly to outweigh the gains from fewer false positives. A fast, conservative but relatively tight solution is what we are looking for. There are many approaches that seem fitting, but there are also many complications, which has ultimately thrown many of our attempts into the garbage bin. One relatively straightforward approach is to cull against the cluster's AABB. This is fast and gives fairly decent results, but it's possible to do better.
 						</p>
 					</li>
 					<li>
@@ -4473,7 +4473,7 @@ void main() {
 					</li>
 					<li>
 						<p>
-                            Starting with the ”cube” of clusters around the light, in our outer loop we iterate over the slices in z direction. We intersect the sphere with the slice where it is the widest. This results in a circle of a smaller radius than the original sphere, we thus continue in the y direction using a sphere of this smaller radius and the circle’s midpoint. In the center slice we simply proceed with the original sphere. We repeat this procedure in y and have an even smaller sphere. Then in the inner loop we do plane vs. sphere tests in x direction to get a strip of clusters to add the light to.
+                            Starting with the &quot;cube&quot; of clusters around the light, in our outer loop we iterate over the slices in z direction. We intersect the sphere with the slice where it is the widest. This results in a circle of a smaller radius than the original sphere, we thus continue in the y direction using a sphere of this smaller radius and the circle's midpoint. In the center slice we simply proceed with the original sphere. We repeat this procedure in y and have an even smaller sphere. Then in the inner loop we do plane vs. sphere tests in x direction to get a strip of clusters to add the light to.
 						</p>
 					</li>
 					<li>
@@ -4483,7 +4483,7 @@ void main() {
 					</li>
 					<li>
 						<p>
-                            The resulting culling is somewhat tighter than a plain AABB test, and costs about the same. Where AABB culls around 15-25%, this technique culls around 20-30% from the “cube” of clusters.
+                            The resulting culling is somewhat tighter than a plain AABB test, and costs about the same. Where AABB culls around 15-25%, this technique culls around 20-30% from the &quot;cube&quot; of clusters.
 						</p>
 					</li>
 					<li>
@@ -4504,12 +4504,12 @@ void main() {
 				<ul>
 					<li>
 						<p>
-                            For spotlights we begin by finding the ”cube” of clusters around the light’s sphere, just like for pointlights, except this cube typically is much larger than necessary for a spotlight. However, this analytical test is cheap and goes a long way to limit the search space for following passes. Next we find a tighter ”cube” simply by scanning in all six directions, narrowing it down by doing plane-cone tests. There is likely a neat analytical solution here, but this seemed non- trivial. Given that the plane scanning works fine and is cheap we haven’t really explored that path.
+                            For spotlights we begin by finding the &quot;cube&quot; of clusters around the light's sphere, just like for pointlights, except this cube typically is much larger than necessary for a spotlight. However, this analytical test is cheap and goes a long way to limit the search space for following passes. Next we find a tighter &quot;cube&quot; simply by scanning in all six directions, narrowing it down by doing plane-cone tests. There is likely a neat analytical solution here, but this seemed non- trivial. Given that the plane scanning works fine and is cheap we haven't really explored that path.
 						</p>
 					</li>
 					<li>
 						<p>
-                            Note that our cones are sphere-capped rather than flat-capped. That’s because the light attenuation is based on distance (as it should), rather than depth. Sphere-capped cones also generally behave much better for wide angles and doesn’t become extremely large as flat-capped cones can get.
+                            Note that our cones are sphere-capped rather than flat-capped. That's because the light attenuation is based on distance (as it should), rather than depth. Sphere-capped cones also generally behave much better for wide angles and doesn't become extremely large as flat-capped cones can get.
 						</p>
 					</li>
 					<li>
@@ -4521,7 +4521,7 @@ void main() {
 					</li>
 					<li>
 						<p>
-                            Finally, for the remaining ”cube” of clusters we cull each cluster with a sphere-capped cone vs. bounding sphere test. For this to work well we have to have relatively cubical shaped clusters, otherwise the bounding sphere becomes way oversized. Overall this technique results in a moderately tight culling that is good enough for us so far, although there is room for some minor improvement.
+                            Finally, for the remaining &quot;cube&quot; of clusters we cull each cluster with a sphere-capped cone vs. bounding sphere test. For this to work well we have to have relatively cubical shaped clusters, otherwise the bounding sphere becomes way oversized. Overall this technique results in a moderately tight culling that is good enough for us so far, although there is room for some minor improvement.
 						</p>
 					</li>
 				</ul>
@@ -4573,9 +4573,9 @@ void main() {
 <ul>
 	<li>
 		<p>
-            To the cluster key (between 10 and 16 bits wide) we attach an additional 10 bits of meta-data, which identifies the sample’s original position relative to its tile. We then perform a tile-local sort of the cluster keys and the associated meta-data. The sort only considers the up-to 16 bits of the cluster key; the meta-data is used as a link back to the original sample after sorting. In each tile, we count the number of unique cluster keys. Using a prefix operation over the counts from each tile, we find the total number of unique cluster keys and assign each cluster a unique ID in the range 
+            To the cluster key (between 10 and 16 bits wide) we attach an additional 10 bits of meta-data, which identifies the sample's original position relative to its tile. We then perform a tile-local sort of the cluster keys and the associated meta-data. The sort only considers the up-to 16 bits of the cluster key; the meta-data is used as a link back to the original sample after sorting. In each tile, we count the number of unique cluster keys. Using a prefix operation over the counts from each tile, we find the total number of unique cluster keys and assign each cluster a unique ID in the range 
             <code>[0...numClusters)</code>
-            . We write the unique ID back to each pixel that is a member of the cluster. The unique ID also serves as an offset in memory to where the cluster’s data is stored.
+            . We write the unique ID back to each pixel that is a member of the cluster. The unique ID also serves as an offset in memory to where the cluster's data is stored.
 		</p>
 	</li>
 	<li>
@@ -4628,7 +4628,7 @@ void main() {
 		<ul>
 			<li>
 				<p>
-                    I saw this in some paper and left it loose; maybe I’ll revisit it later.
+                    I saw this in some paper and left it loose; maybe I'll revisit it later.
 				</p>
 			</li>
 			<li>
@@ -4708,7 +4708,7 @@ void main() {
 			</li>
 			<li>
 				<p>
-                    As we saw before, the shadow map samples can be very tightly grouped, requiring a high shadow map resolution And note how this happens when most of the shadow map would be unused! This is pretty much how it has to be, as the high density comes from looking at something very near the camera, and then we’re guaranteed to not see so very much of the scene. This is highly wasteful and a fantastic opportunity, for...
+                    As we saw before, the shadow map samples can be very tightly grouped, requiring a high shadow map resolution And note how this happens when most of the shadow map would be unused! This is pretty much how it has to be, as the high density comes from looking at something very near the camera, and then we're guaranteed to not see so very much of the scene. This is highly wasteful and a fantastic opportunity, for...
 				</p>
 			</li>
 			<li>
@@ -4910,7 +4910,7 @@ void main() {
 					</li>
 					<li>
 						<p>
-                            Note that the shadow casters are outside of the view volume, and so have no clusters associated, but cast their shadow through the view volume. So we’re interested in finding out what shadows affect the visible samples, and thus determine if the shadow caster needs to be drawn.
+                            Note that the shadow casters are outside of the view volume, and so have no clusters associated, but cast their shadow through the view volume. So we're interested in finding out what shadows affect the visible samples, and thus determine if the shadow caster needs to be drawn.
 						</p>
 					</li>
 					<li>
@@ -4932,7 +4932,7 @@ void main() {
 					</li>
 					<li>
 						<p>
-                            Doing the same thing for the clusters, gives us another interval. If the projection of a shadow caster overlaps that of some clusters, i.e. shadow receiver, …it needs to be rendered into this shadow map, else, it doesn’t. Note that the clusters don’t need to form a range for this to work, any overlap will do.
+                            Doing the same thing for the clusters, gives us another interval. If the projection of a shadow caster overlaps that of some clusters, i.e. shadow receiver, …it needs to be rendered into this shadow map, else, it doesn't. Note that the clusters don't need to form a range for this to work, any overlap will do.
 						</p>
 					</li>
 					<li>
@@ -4977,7 +4977,7 @@ void main() {
 			</li>
 			<li>
 				<p>
-                    With the switch to clustered shading the cost of adding a new light to the scene is small. Artists can now be moderate ”wasteful” without causing much problems performance-wise. This is not true for rasterizing shadow buffers. They remain expensive, and relatively speaking going to be more expensive going forward since it’s often a ROP-bound process, and ROPs aren’t getting scaled up nearly as much as ALU. So we still need to be a bit conservative about how many shadow casting lights we add to the scene.
+                    With the switch to clustered shading the cost of adding a new light to the scene is small. Artists can now be moderate &quot;wasteful&quot; without causing much problems performance-wise. This is not true for rasterizing shadow buffers. They remain expensive, and relatively speaking going to be more expensive going forward since it's often a ROP-bound process, and ROPs aren't getting scaled up nearly as much as ALU. So we still need to be a bit conservative about how many shadow casting lights we add to the scene.
 				</p>
 			</li>
 			<li>
@@ -6130,7 +6130,7 @@ void main() {
 	</li>
 	<li>
 		<p>
-            The first step, rendering the model to populate the G-Buffers, does not differ from traditional deferred shading or from tiled deferred shading. The second step computes for each pixel which cluster it belongs to according to its position (possibly normal). In the third step, we reduce this into a list of unique clusters. The fourth step, assigning lights to clusters, consists of efficiently finding which lights influence which of the unique clusters and produce a list of lights for each cluster. Finally, for each sample, these light lists are accessed to compute the sample’s shading.
+            The first step, rendering the model to populate the G-Buffers, does not differ from traditional deferred shading or from tiled deferred shading. The second step computes for each pixel which cluster it belongs to according to its position (possibly normal). In the third step, we reduce this into a list of unique clusters. The fourth step, assigning lights to clusters, consists of efficiently finding which lights influence which of the unique clusters and produce a list of lights for each cluster. Finally, for each sample, these light lists are accessed to compute the sample's shading.
 		</p>
 	</li>
 	<li>
@@ -6201,7 +6201,7 @@ void main() {
 <ul>
 	<li>
 		<p>
-            Uncharted: Drake’s fortune.
+            Uncharted: Drake's fortune.
 		</p>
 	</li>
 	<li>
@@ -6605,7 +6605,7 @@ void main() {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

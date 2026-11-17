@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -843,8 +843,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/explicitness.html" >
-                                    Explicitness
+									href="/studies/low-level_systems/c_and_c++/keywords_for_data.html" >
+                                    Keywords for Data
 								</a>
 							</li>
 						</ul>
@@ -852,8 +852,44 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/compiler_hints.html" >
-                                    Compiler Hints
+									href="/studies/low-level_systems/c_and_c++/keywords_for_control_flow.html" >
+                                    Keywords for Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_functions_methods.html" >
+                                    Keywords for Functions / Methods
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_class_extravaganza.html" >
+                                    Keywords for Class extravaganza
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/other_optimization_hints.html" >
+                                    Other Optimization Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/asserts.html" >
+                                    Asserts
 								</a>
 							</li>
 						</ul>
@@ -946,6 +982,13 @@ window.MathJax = {
 										<ul>
 											<li>
 												<a
+													href="#accessing" 
+													class="summary-t4" >
+                                                    Accessing
+												</a>
+											</li>
+											<li>
+												<a
 													href="#anonymous_namespace_c_plus__plus_" 
 													class="summary-t4" >
                                                     Anonymous Namespace (C++)
@@ -960,9 +1003,16 @@ window.MathJax = {
 											</li>
 											<li>
 												<a
-													href="#the_std_namespace" 
+													href="#declaration" 
 													class="summary-t4" >
-                                                    The std namespace
+                                                    Declaration
+												</a>
+											</li>
+											<li>
+												<a
+													href="#the_codestd_code_namespace" 
+													class="summary-t4" >
+                                                    The <code>std</code> namespace
 												</a>
 											</li>
 										</ul>
@@ -985,6 +1035,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/functions.html" >
                                     Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/coroutines_c_plus__plus_20.html" >
+                                    Coroutines (C++20)
 								</a>
 							</li>
 						</ul>
@@ -1111,15 +1170,6 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/undefined_behavior.html" >
                                     Undefined Behavior
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/multithreading.html" >
-                                    Multithreading
 								</a>
 							</li>
 						</ul>
@@ -1655,8 +1705,8 @@ window.MathJax = {
                             🕒 Created: 2023-10-11
 						</time>
 						<time
-							datetime="2026-09-29" >
-                            | Updated: 2026-09-29
+							datetime="2026-11-15" >
+                            | Updated: 2026-11-15
 						</time>
 					</p>
 				</header>
@@ -1710,6 +1760,188 @@ y: 50
 	id="namespaces_c_plus__plus_" >
     Namespaces (C++)
 </h3>
+<h4
+	id="accessing" >
+    Accessing
+</h4>
+<pre><code class="language-cpp" data-lang="cpp">void global_function();
+
+namespace parent_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;void parent_function();
+
+&nbsp;&nbsp;&nbsp;&nbsp;namespace my_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace internal {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void helper();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void some_other_function();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void function();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+namespace parent_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;// Definition outside the namespace block
+&nbsp;&nbsp;&nbsp;&nbsp;void my_namespace::function() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// In the same namespace
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;some_other_function();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Valid, via "unqualified lookup".
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my_namespace::some_other_function();&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Valid, via "explicit qualified lookup".
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::parent_namespace::my_namespace::some_other_function(); 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Valid, via "explicit qualified lookup, starting in the global namespace".
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// In an internal namespace
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;internal::helper();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Valid, via "explicit qualified lookup"
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// In an external namespace
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent_function(); 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Valid, via "unqualified lookup".
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent_namespace::parent_function();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Valid, via "explicit qualified lookup"
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// In the global space
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global_function();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Valid, via "unqualified lookup".
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::global_function();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Valid, via "explicit qualified lookup, starting in the global namespace".
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Unqualified lookup
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For when not using any 
+                    <code>::</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ex:
+				</p>
+<pre><code class="language-cpp" data-lang="cpp">namespace parent_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;namespace my_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void some_other_function();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void function();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+namespace parent_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;void my_namespace::function() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;some_other_function();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// resolves to `::parent_namespace::my_namespace::some_other_function`
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    Relative to the current scope.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It goes from the current namespace, up to the global namespace, until it finds the symbol.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Explicit qualified lookup
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For when using 
+                    <code>::</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ex:
+				</p>
+<pre><code class="language-cpp" data-lang="cpp">namespace parent_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;namespace my_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void some_other_function();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void function();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+namespace parent_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;void my_namespace::function() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my_namespace::some_other_function();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// resolves to `::parent_namespace::my_namespace::some_other_function`
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+			</li>
+			<li>
+				<p>
+                    It explicitly looks for the namespace you asked for, ignoring all the namespace tree.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This one is weird.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<strong>
+                Explicit qualified lookup, starting in the global namespace
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    For when using 
+                    <code>::</code>
+                    &nbsp;at the beginning.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Starts in the global namespace.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Ex:
+				</p>
+<pre><code class="language-cpp" data-lang="cpp">namespace parent_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;namespace my_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void some_other_function();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void function();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+namespace parent_namespace {
+&nbsp;&nbsp;&nbsp;&nbsp;void my_namespace::function() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::parent_namespace::my_namespace::some_other_function
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// already resolved.
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+			</li>
+		</ul>
+	</li>
+</ul>
 <h4
 	id="anonymous_namespace_c_plus__plus_" >
     Anonymous Namespace (C++)
@@ -1770,8 +2002,25 @@ int main () {
 	</li>
 </ul>
 <h4
-	id="the_std_namespace" >
-    The std namespace
+	id="declaration" >
+    Declaration
+</h4>
+<ul>
+	<li>
+		<p>
+            Declaration cannot use the 
+            <code>void vec::init();</code>
+            &nbsp;syntax, it MUST use 
+            <code>namespace vec { init(); }</code>
+            .
+		</p>
+	</li>
+</ul>
+<h4
+	id="the_codestd_code_namespace" >
+    The 
+    <code>std</code>
+    &nbsp;namespace
 </h4>
 <ul>
 	<li>
@@ -1849,7 +2098,7 @@ int main () {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -834,8 +834,8 @@ window.MathJax = {
                             🕒 Created: 2025-07-03
 						</time>
 						<time
-							datetime="2026-08-13" >
-                            | Updated: 2026-08-13
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -959,7 +959,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    We settled on Mesh Signed Distance Fields for our Software Ray Tracing geometry representation. These give reliable occlusion, all areas have coverage, and we still get fast software ray tracing through sphere tracing, which skips through empty space. The intersection with the distance field surface only gives us the hit position and normal, we can’t find the material attributes or the lighting.
+                    We settled on Mesh Signed Distance Fields for our Software Ray Tracing geometry representation. These give reliable occlusion, all areas have coverage, and we still get fast software ray tracing through sphere tracing, which skips through empty space. The intersection with the distance field surface only gives us the hit position and normal, we can't find the material attributes or the lighting.
 				</p>
 			</li>
 			<li>
@@ -2159,7 +2159,7 @@ window.MathJax = {
 						<ul>
 							<li>
 								<p>
-                                    “This is how light at this spot responds to any lighting, given the static scene geometry.”
+                                    &quot;This is how light at this spot responds to any lighting, given the static scene geometry.&quot;
 								</p>
 							</li>
 						</ul>
@@ -2171,7 +2171,7 @@ window.MathJax = {
 						<ul>
 							<li>
 								<p>
-                                    “This is the actual indirect lighting at this spot right now, given whatever is in the scene.”
+                                    &quot;This is the actual indirect lighting at this spot right now, given whatever is in the scene.&quot;
 								</p>
 							</li>
 						</ul>
@@ -2478,7 +2478,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Used to capture lighting information at “infinity”, where parallax can be ignored. Distant probes typically contain the sky, distant landscape features or buildings, etc.
+            Used to capture lighting information at &quot;infinity&quot;, where parallax can be ignored. Distant probes typically contain the sky, distant landscape features or buildings, etc.
 		</p>
 	</li>
 	<li>
@@ -2584,7 +2584,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    Images, in particular cubemaps, are a great way to encode such an “environment light”.
+                    Images, in particular cubemaps, are a great way to encode such an &quot;environment light&quot;.
 				</p>
 			</li>
 		</ul>
@@ -3114,7 +3114,7 @@ outColor = vec4(color, baseColor.a);
 		<ul>
 			<li>
 				<p>
-                    I’m disappointed whenever I see a modern game not supporting proper mirror reflections or if it has screen space reflection (SSR) on flat water. That’s why in Wicked Engine I’d like to show that planar reflection is still relevant and it should be one of the first choices of a game when a reflection needs to be rendered. The planar reflection is the perfect solution for a mirror because that’s what it was made for, and it’s good enough to use even on a large water surface with waves, like an ocean or a lake. Even though the waves are not totally accurate to be represented, it’s still a lot better than noisy SSR that cuts of abruptly.
+                    I'm disappointed whenever I see a modern game not supporting proper mirror reflections or if it has screen space reflection (SSR) on flat water. That's why in Wicked Engine I'd like to show that planar reflection is still relevant and it should be one of the first choices of a game when a reflection needs to be rendered. The planar reflection is the perfect solution for a mirror because that's what it was made for, and it's good enough to use even on a large water surface with waves, like an ocean or a lake. Even though the waves are not totally accurate to be represented, it's still a lot better than noisy SSR that cuts of abruptly.
 				</p>
 			</li>
 			<li>
@@ -3125,7 +3125,7 @@ outColor = vec4(color, baseColor.a);
 			</li>
 			<li>
 				<p>
-                    In Wicked Engine, the planar reflections are using a second full depth prepass + color pass with all the forward rendering pipeline capabilities. Although most of the secondary effects are turned off for them, simply by not running those passes for planar reflections. Also they don’t generate visibility buffer, only depth buffer in the prepass. Planar reflections rendering is also scheduled in the frame asynchronously to the main camera’s compute effects, so there is also room to utilize the modern graphics API to render them. Compared to the main camera, planar reflections are rendered in quarter of the main camera resolution in both axes so they become less dependent on the pixel shader performance, but more geometry heavy, which helps a bit with async compute passes at the same time. To combat the low resolution look, I choose to render them at 4x MSAA right now for some additional anti-aliasing. Quarter resolution means that the resolution is 1/16 compared to the main camera, and adding 4x MSAA on top doesn’t bring back the full detail, but I found it quite nice, for now, although it can be tweaked easily if needed.
+                    In Wicked Engine, the planar reflections are using a second full depth prepass + color pass with all the forward rendering pipeline capabilities. Although most of the secondary effects are turned off for them, simply by not running those passes for planar reflections. Also they don't generate visibility buffer, only depth buffer in the prepass. Planar reflections rendering is also scheduled in the frame asynchronously to the main camera's compute effects, so there is also room to utilize the modern graphics API to render them. Compared to the main camera, planar reflections are rendered in quarter of the main camera resolution in both axes so they become less dependent on the pixel shader performance, but more geometry heavy, which helps a bit with async compute passes at the same time. To combat the low resolution look, I choose to render them at 4x MSAA right now for some additional anti-aliasing. Quarter resolution means that the resolution is 1/16 compared to the main camera, and adding 4x MSAA on top doesn't bring back the full detail, but I found it quite nice, for now, although it can be tweaked easily if needed.
 				</p>
 			</li>
 		</ul>
@@ -3146,7 +3146,7 @@ outColor = vec4(color, baseColor.a);
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

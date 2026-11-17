@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -762,8 +762,8 @@ window.MathJax = {
                             🕒 Created: 2023-07-10
 						</time>
 						<time
-							datetime="2026-04-01" >
-                            | Updated: 2026-04-01
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -934,7 +934,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            This changes how blending calculations behave because the transparency is “baked into” the color channels.
+            This changes how blending calculations behave because the transparency is &quot;baked into&quot; the color channels.
 		</p>
 	</li>
 	<li>
@@ -1007,12 +1007,12 @@ dstColor = ONE_MINUS_SRC_ALPHA
 <ul>
 	<li>
 		<p>
-            A float has 24 bits of mantissa (≈7 decimal digits). Precision matters because large coordinate values consume more of the float’s exponent, leaving fewer bits for fractional accuracy. Floats have finer resolution near zero and coarser resolution far away. One analysis shows that if 1 unit = 1 mm, at 1 km (1,000,000 mm) float precision is ±0.125 mm, and at 64 km it’s ±4 mm. Thus large world coordinates effectively “quantize” small movements.
+            A float has 24 bits of mantissa (≈7 decimal digits). Precision matters because large coordinate values consume more of the float's exponent, leaving fewer bits for fractional accuracy. Floats have finer resolution near zero and coarser resolution far away. One analysis shows that if 1 unit = 1 mm, at 1 km (1,000,000 mm) float precision is ±0.125 mm, and at 64 km it's ±4 mm. Thus large world coordinates effectively &quot;quantize&quot; small movements.
 		</p>
 	</li>
 	<li>
 		<p>
-            Because float positions quantize as you move objects far from the origin, subtle interpolation or coverage tests can be off by a pixel. In tile or 2D sprite rendering, this shows up as white lines or flicker between sprites. In 3D this is known as “z-fighting”; in 2D it’s the same principle in XY.
+            Because float positions quantize as you move objects far from the origin, subtle interpolation or coverage tests can be off by a pixel. In tile or 2D sprite rendering, this shows up as white lines or flicker between sprites. In 3D this is known as &quot;z-fighting&quot;; in 2D it's the same principle in XY.
 		</p>
 	</li>
 </ul>
@@ -1027,7 +1027,7 @@ dstColor = ONE_MINUS_SRC_ALPHA
 			<em>
                 relative
 			</em>
-            &nbsp;to a nearby origin so you’re not adding enormous offsets and losing precision.
+            &nbsp;to a nearby origin so you're not adding enormous offsets and losing precision.
 		</p>
 		<ul>
 			<li>
@@ -1048,12 +1048,12 @@ dstColor = ONE_MINUS_SRC_ALPHA
 	</li>
 	<li>
 		<p>
-            Share geometry edges: When building tile meshes, reuse the same vertex for adjacent tiles so FP rounding can’t create tiny gaps
+            Share geometry edges: When building tile meshes, reuse the same vertex for adjacent tiles so FP rounding can't create tiny gaps
 		</p>
 	</li>
 	<li>
 		<p>
-            Chunking: If your dataset spans a huge area, the solution is to split it into chunks, with the data in each chunk referenced relative to the origin of the chunk. Any rendering will either only use a small number of chunks surrounding the point of interest, or (for a large-scale view) won’t require millimeter precision (your monitor simply doesn’t have enough pixels for that).
+            Chunking: If your dataset spans a huge area, the solution is to split it into chunks, with the data in each chunk referenced relative to the origin of the chunk. Any rendering will either only use a small number of chunks surrounding the point of interest, or (for a large-scale view) won't require millimeter precision (your monitor simply doesn't have enough pixels for that).
 		</p>
 	</li>
 	<li>
@@ -1077,7 +1077,7 @@ dstColor = ONE_MINUS_SRC_ALPHA
 	</li>
 	<li>
 		<p>
-            Double precision on CPU: Keep objects’ true positions in double precision on the CPU and feed offset-from-camera positions as floats to the GPU
+            Double precision on CPU: Keep objects' true positions in double precision on the CPU and feed offset-from-camera positions as floats to the GPU
 		</p>
 	</li>
 </ol>
@@ -1131,7 +1131,7 @@ dstColor = ONE_MINUS_SRC_ALPHA
             <code>dvec</code>
             ) exists on desktop GL/GLSL (with 
             <code>GLARBgpushaderfp64</code>
-            ) but is almost never available or practical on mobile. In fact, mobile GPUs generally do not support 64-bit floats in shaders. The Android Vulkan guide explicitly states that 64-bit floats are “not commonly supported” on Android devices and not recommended
+            ) but is almost never available or practical on mobile. In fact, mobile GPUs generally do not support 64-bit floats in shaders. The Android Vulkan guide explicitly states that 64-bit floats are &quot;not commonly supported&quot; on Android devices and not recommended
 		</p>
 	</li>
 	<li>
@@ -1360,7 +1360,7 @@ dstColor = ONE_MINUS_SRC_ALPHA
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

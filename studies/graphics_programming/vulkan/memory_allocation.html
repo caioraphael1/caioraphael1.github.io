@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -801,8 +801,8 @@ window.MathJax = {
                             🕒 Created: 2025-08-01
 						</time>
 						<time
-							datetime="2026-08-26" >
-                            | Updated: 2026-08-26
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -950,14 +950,14 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            When memory is over-committed on Windows, the OS memory manager may move allocations from video memory to system memory, the OS also may temporarily suspend a process from the GPU runlist in order to page out its allocations to make room for a different process’ allocations. There is no OS memory manager on Linux that mitigates over-commitment by automatically performing paging operations on memory objects.
+            When memory is over-committed on Windows, the OS memory manager may move allocations from video memory to system memory, the OS also may temporarily suspend a process from the GPU runlist in order to page out its allocations to make room for a different process' allocations. There is no OS memory manager on Linux that mitigates over-commitment by automatically performing paging operations on memory objects.
 		</p>
 	</li>
 	<li>
 		<p>
             Use 
             <code>EXT_pageable_device_local_memory</code>
-            &nbsp;to avoid demotion of critical resources by assigning memory priority. It’s also a good idea to set low priority to non-critical resources such as vertex and index buffers; the app can verify the performance impact by placing the resources in system memory. 
+            &nbsp;to avoid demotion of critical resources by assigning memory priority. It's also a good idea to set low priority to non-critical resources such as vertex and index buffers; the app can verify the performance impact by placing the resources in system memory. 
 		</p>
 	</li>
 	<li>
@@ -1002,21 +1002,21 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Don’t assume fixed heap configuration, always query and use the memory properties using 
+            Don't assume fixed heap configuration, always query and use the memory properties using 
             <code>vkGetPhysicalDeviceMemoryProperties()</code>
             .
 		</p>
 	</li>
 	<li>
 		<p>
-            Don’t assume memory requirements of an image/buffer, use 
+            Don't assume memory requirements of an image/buffer, use 
             <code>vkGet*MemoryRequirements()</code>
             . 
 		</p>
 	</li>
 	<li>
 		<p>
-            Don’t put every resource into a Dedicated Allocation.
+            Don't put every resource into a Dedicated Allocation.
 		</p>
 	</li>
 	<li>
@@ -1063,7 +1063,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Memory is a precious resource, and it can involve several indirect costs by the operating systems. For example some operating systems have a linear cost over the number of allocations for each submission to a Vulkan Queue. Another scenario is that the operating system also handles the paging state of allocations depending on other proceses, we therefore encourage not using too many allocations and organizing them “wisely”.
+            Memory is a precious resource, and it can involve several indirect costs by the operating systems. For example some operating systems have a linear cost over the number of allocations for each submission to a Vulkan Queue. Another scenario is that the operating system also handles the paging state of allocations depending on other proceses, we therefore encourage not using too many allocations and organizing them &quot;wisely&quot;.
 		</p>
 	</li>
 	<li>
@@ -1139,7 +1139,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            The advantage is that your data is more cache friendly in that case, because it’s closer together. It is even possible to reuse the same chunk of memory for multiple resources if they are not used during the same render operations, provided that their data is refreshed, of course.
+            The advantage is that your data is more cache friendly in that case, because it's closer together. It is even possible to reuse the same chunk of memory for multiple resources if they are not used during the same render operations, provided that their data is refreshed, of course.
 		</p>
 	</li>
 	<li>
@@ -1164,7 +1164,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            Dynamic offsets are very fast for NVIDIA hardware. Re-using the same DescriptorSet with just different offsets is rather CPU-cache friendly as well compared to using and managing many DescriptorSets. NVIDIA’s OpenGL driver actually also optimizes uniform buffer binds where just the range changes for a binding unit.
+            Dynamic offsets are very fast for NVIDIA hardware. Re-using the same DescriptorSet with just different offsets is rather CPU-cache friendly as well compared to using and managing many DescriptorSets. NVIDIA's OpenGL driver actually also optimizes uniform buffer binds where just the range changes for a binding unit.
 		</p>
 	</li>
 </ul>
@@ -1175,7 +1175,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            In a real world application, you’re not supposed to actually call 
+            In a real world application, you're not supposed to actually call 
             <code>vkAllocateMemory</code>
             &nbsp;for every individual buffer.
 		</p>
@@ -1193,7 +1193,7 @@ window.MathJax = {
 		<p>
             The right way to allocate memory for a large number of objects at the same time is to create a custom allocator that splits up a single allocation among many different objects by using the 
             <code>offset</code>
-            &nbsp;parameters that we’ve seen in many functions.
+            &nbsp;parameters that we've seen in many functions.
 		</p>
 	</li>
 	<li>
@@ -1289,7 +1289,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    You don’t own the memory that backs vulkan objects. For command buffers and descriptors there are pools so the driver can do a good job with the backing memory scheme.
+                    You don't own the memory that backs vulkan objects. For command buffers and descriptors there are pools so the driver can do a good job with the backing memory scheme.
 				</p>
 			</li>
 			<li>
@@ -1340,7 +1340,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    Using Vulkan is a lot like networking with a remote server, lots of driver internals have implementation requirements that make arenas not the “obvious choice” (otherwise we’d see more of them)
+                    Using Vulkan is a lot like networking with a remote server, lots of driver internals have implementation requirements that make arenas not the &quot;obvious choice&quot; (otherwise we'd see more of them)
 				</p>
 			</li>
 		</ul>
@@ -1391,7 +1391,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    I want to reiterate that drivers deal with much more than host memory allocations, but device memory, external memory (to the process), OS api’s, display hardware, shader compilers. Some objects don’t actually DO anything on deletion (sampler come to mind because the handle stores the entire state for some implementations, when the private data ext isnt active)
+                    I want to reiterate that drivers deal with much more than host memory allocations, but device memory, external memory (to the process), OS api's, display hardware, shader compilers. Some objects don't actually DO anything on deletion (sampler come to mind because the handle stores the entire state for some implementations, when the private data ext isnt active)
 				</p>
 			</li>
 			<li>
@@ -1401,7 +1401,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    I mention that some objects are “free” to leak cause they didn’t allocate anything internally because that is an implementation detail that isnt possible on all hardware, so the API cant guarantee “free” sampler cleanup without screwing over some hardware. And it just ties their hands when it is no longer possible to put all the state into the handle any more in the future with extensions to the API
+                    I mention that some objects are &quot;free&quot; to leak cause they didn't allocate anything internally because that is an implementation detail that isnt possible on all hardware, so the API cant guarantee &quot;free&quot; sampler cleanup without screwing over some hardware. And it just ties their hands when it is no longer possible to put all the state into the handle any more in the future with extensions to the API
 				</p>
 			</li>
 		</ul>
@@ -1464,7 +1464,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    Suggestions for the API can be made in the vulkan-pain-points channel (although itd be good to link to this convo) and an issue can be made in the Vulkan-Docs github repo as thats the home of the specification. That said, this ask is not easily actionable so hard to quantify what “success” means.
+                    Suggestions for the API can be made in the vulkan-pain-points channel (although itd be good to link to this convo) and an issue can be made in the Vulkan-Docs github repo as thats the home of the specification. That said, this ask is not easily actionable so hard to quantify what &quot;success&quot; means.
 				</p>
 			</li>
 			<li>
@@ -1509,12 +1509,12 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            You cannot safely get the behavior you want — i.e. allocate many Vulkan resources and then legally free one big memory region while leaving the Vulkan object handles alive and never calling their destruction; on a conformant Vulkan implementation. Freeing VkDeviceMemory that backs resources while those resources are still live or still in use is undefined behavior / validation errors unless you guarantee the resources are never used again and the driver allows that. The Vulkan spec requires you to manage object lifetimes; drivers may have internal bookkeeping tied to those object handles that won’t be cleaned just by freeing the raw memory.
+            You cannot safely get the behavior you want — i.e. allocate many Vulkan resources and then legally free one big memory region while leaving the Vulkan object handles alive and never calling their destruction; on a conformant Vulkan implementation. Freeing VkDeviceMemory that backs resources while those resources are still live or still in use is undefined behavior / validation errors unless you guarantee the resources are never used again and the driver allows that. The Vulkan spec requires you to manage object lifetimes; drivers may have internal bookkeeping tied to those object handles that won't be cleaned just by freeing the raw memory.
 		</p>
 	</li>
 	<li>
 		<p>
-            That said, you can achieve the practical “free everything by freeing a small number of objects/regions” without peppering vkDestroy* calls everywhere by changing how you structure resources. options that actually give you region-like semantics:
+            That said, you can achieve the practical &quot;free everything by freeing a small number of objects/regions&quot; without peppering vkDestroy* calls everywhere by changing how you structure resources. options that actually give you region-like semantics:
 		</p>
 	</li>
 	<li>
@@ -1549,7 +1549,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    When you’re done, you only need to vkDestroyBuffer / vkFreeMemory for a few big buffers, not for every tiny allocation.
+                    When you're done, you only need to vkDestroyBuffer / vkFreeMemory for a few big buffers, not for every tiny allocation.
 				</p>
 			</li>
 			<li>
@@ -1769,7 +1769,7 @@ window.MathJax = {
             <code>VkAllocationCallbacks</code>
             &nbsp;to 
             <code>vkCreateBuffer</code>
-            &nbsp;lets you intercept and control the host memory the driver uses to represent the buffer object — but it does not tell you how many bytes of GPU heap were (or will be) consumed by the buffer’s storage. For the latter you must intercept device allocations (see below).
+            &nbsp;lets you intercept and control the host memory the driver uses to represent the buffer object — but it does not tell you how many bytes of GPU heap were (or will be) consumed by the buffer's storage. For the latter you must intercept device allocations (see below).
 		</p>
 	</li>
 	<li>
@@ -1916,7 +1916,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 												<p>
                                                     Effect: device payload is created — the 
                                                     <code>VkDeviceMemory</code>
-                                                    &nbsp;object represents committed device memory (counts against the heap’s budget).
+                                                    &nbsp;object represents committed device memory (counts against the heap's budget).
 												</p>
 											</li>
 											<li>
@@ -1961,7 +1961,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 										<ul>
 											<li>
 												<p>
-                                                    The allocation is created in a heap that the driver marks both device-local and host-visible. Physically this can mean: shared system RAM (integrated GPU) or a special heap the driver exposes that is accessible by both CPU and GPU. The VkDeviceMemory is committed and counts against that heap’s budget.
+                                                    The allocation is created in a heap that the driver marks both device-local and host-visible. Physically this can mean: shared system RAM (integrated GPU) or a special heap the driver exposes that is accessible by both CPU and GPU. The VkDeviceMemory is committed and counts against that heap's budget.
 												</p>
 											</li>
 											<li>
@@ -2217,7 +2217,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 			</li>
 			<li>
 				<p>
-                    Allocations scoped to any other object may only be allocated in that object’s 
+                    Allocations scoped to any other object may only be allocated in that object's 
                     <code>vkCreate*</code>
                     &nbsp;command.
 				</p>
@@ -2301,7 +2301,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 			</li>
 			<li>
 				<p>
-                    Allocations scoped to any other object may be freed in that object’s 
+                    Allocations scoped to any other object may be freed in that object's 
                     <code>vkDestroy*</code>
                     &nbsp;command.
 				</p>
@@ -2514,7 +2514,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 		<ul>
 			<li>
 				<p>
-                    Is common and acceptable for many apps — but you must meet Vulkan’s callback semantics (alignment, reallocation behavior, thread-safety) and consider performance.
+                    Is common and acceptable for many apps — but you must meet Vulkan's callback semantics (alignment, reallocation behavior, thread-safety) and consider performance.
 				</p>
 			</li>
 			<li>
@@ -2780,7 +2780,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 		<ul>
 			<li>
 				<p>
-                    Objects that are allocated from pools do not specify their own allocator. When an implementation requires host memory for such an object, that memory is sourced from the object’s parent pool’s allocator.
+                    Objects that are allocated from pools do not specify their own allocator. When an implementation requires host memory for such an object, that memory is sourced from the object's parent pool's allocator.
 				</p>
 			</li>
 		</ul>
@@ -2846,7 +2846,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 			</li>
 			<li>
 				<p>
-                    Each heap describes a memory resource of a particular size, and each memory type describes a set of memory properties (e.g. host cached vs. uncached) that can be used with a given memory heap. Allocations using a particular memory type will consume resources from the heap indicated by that memory type’s heap index. More than one memory type may share each heap, and the heaps and memory types provide a mechanism to advertise an accurate size of the physical memory resources while allowing the memory to be used with a variety of different properties.
+                    Each heap describes a memory resource of a particular size, and each memory type describes a set of memory properties (e.g. host cached vs. uncached) that can be used with a given memory heap. Allocations using a particular memory type will consume resources from the heap indicated by that memory type's heap index. More than one memory type may share each heap, and the heaps and memory types provide a mechanism to advertise an accurate size of the physical memory resources while allowing the memory to be used with a variety of different properties.
 				</p>
 			</li>
 			<li>
@@ -3071,7 +3071,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 							</li>
 							<li>
 								<p>
-                                    Right now we’ll only concern ourselves with the type of memory and not the heap it comes from, but you can imagine that this can affect performance.
+                                    Right now we'll only concern ourselves with the type of memory and not the heap it comes from, but you can imagine that this can affect performance.
 								</p>
 							</li>
 						</ul>
@@ -3190,7 +3190,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 							</li>
 							<li>
 								<p>
-                                    However, we’re not just interested in a memory type that is suitable for the vertex buffer.
+                                    However, we're not just interested in a memory type that is suitable for the vertex buffer.
 								</p>
 							</li>
 							<li>
@@ -3369,7 +3369,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 			</li>
 			<li>
 				<p>
-                    Before freeing a memory object, an application must ensure the memory object is no longer in use by the device — for example by command buffers in the pending state. Memory can be freed whilst still bound to resources, but those resources must not be used afterwards. Freeing a memory object releases the reference it held, if any, to its payload. If there are still any bound images or buffers, the memory object’s payload may not be immediately released by the implementation, but must be released by the time all bound images and buffers have been destroyed. Once all references to a payload are released, it is returned to the heap from which it was allocated.
+                    Before freeing a memory object, an application must ensure the memory object is no longer in use by the device — for example by command buffers in the pending state. Memory can be freed whilst still bound to resources, but those resources must not be used afterwards. Freeing a memory object releases the reference it held, if any, to its payload. If there are still any bound images or buffers, the memory object's payload may not be immediately released by the implementation, but must be released by the time all bound images and buffers have been destroyed. Once all references to a payload are released, it is returned to the heap from which it was allocated.
 				</p>
 			</li>
 			<li>
@@ -3434,7 +3434,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 	</li>
 	<li>
 		<p>
-            In a logical device representing more than one physical device, buffer and image resources exist on all physical devices but can be bound to memory differently on each. Each such replicated resource is an instance of the resource. For sparse resources, each instance can be bound to memory arbitrarily differently. For non-sparse resources, each instance can either be bound to the local or a peer instance of the memory, or for images can be bound to rectangular regions from the local and/or peer instances. When a resource is used in a descriptor set, each physical device interprets the descriptor according to its own instance’s binding to memory.
+            In a logical device representing more than one physical device, buffer and image resources exist on all physical devices but can be bound to memory differently on each. Each such replicated resource is an instance of the resource. For sparse resources, each instance can be bound to memory arbitrarily differently. For non-sparse resources, each instance can either be bound to the local or a peer instance of the memory, or for images can be bound to rectangular regions from the local and/or peer instances. When a resource is used in a descriptor set, each physical device interprets the descriptor according to its own instance's binding to memory.
 		</p>
 	</li>
 	<li>
@@ -3691,7 +3691,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 			</li>
 			<li>
 				<p>
-                    Flushing memory ranges or using a coherent memory heap means that the driver will be aware of our writings to the buffer, but it doesn’t mean that they are actually visible on the GPU yet. The transfer of data to the GPU is an operation that happens in the background, and the specification simply 
+                    Flushing memory ranges or using a coherent memory heap means that the driver will be aware of our writings to the buffer, but it doesn't mean that they are actually visible on the GPU yet. The transfer of data to the GPU is an operation that happens in the background, and the specification simply 
 					<a
 						href="https://www.khronos.org/registry/vulkan/specs/1.3-extensions/html/chap7.html#synchronization-submission-host-writes" 
 						class="external-link" 
@@ -4046,7 +4046,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 										<p>
                                             Submit any transfer commands like 
                                             <code>vkCmdCopyBuffer</code>
-                                            &nbsp;(which we’ll be using in this chapter) to the transfer queue instead of the graphics queue
+                                            &nbsp;(which we'll be using in this chapter) to the transfer queue instead of the graphics queue
 										</p>
 									</li>
 								</ul>
@@ -4183,7 +4183,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 		<p>
             If the memory object is allocated from a heap with the 
             <code>MEMORY_PROPERTY_LAZILY_ALLOCATED</code>
-            &nbsp;bit set, that object’s backing memory may be provided by the implementation lazily. The actual committed size of the memory may initially be as small as zero (or as large as the requested size), and monotonically increases as additional memory is needed.
+            &nbsp;bit set, that object's backing memory may be provided by the implementation lazily. The actual committed size of the memory may initially be as small as zero (or as large as the requested size), and monotonically increases as additional memory is needed.
 		</p>
 	</li>
 	<li>
@@ -4314,7 +4314,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
             <code>VkBuffer</code>
             ) must be bound to 
             <code>VkDeviceMemory</code>
-            &nbsp;you allocate (so you can know their size). Many other objects (pipelines, command buffers, descriptor sets, semaphores, imageviews, pipeline layouts, etc.) often cause hidden driver allocations that may live in host memory, device memory, or both — and those allocations’ size and placement vary by driver and GPU.
+            &nbsp;you allocate (so you can know their size). Many other objects (pipelines, command buffers, descriptor sets, semaphores, imageviews, pipeline layouts, etc.) often cause hidden driver allocations that may live in host memory, device memory, or both — and those allocations' size and placement vary by driver and GPU.
 		</p>
 	</li>
 </ul>
@@ -4739,7 +4739,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 	</li>
 	<li>
 		<p>
-            It’s important to keep usage below the budget to avoid stutters caused by demotion of video memory allocations.
+            It's important to keep usage below the budget to avoid stutters caused by demotion of video memory allocations.
 		</p>
 	</li>
 	<li>
@@ -4848,7 +4848,7 @@ mem_allocation_info := vk.MemoryAllocateInfo{
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

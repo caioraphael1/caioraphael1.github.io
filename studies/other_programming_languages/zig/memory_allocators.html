@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -1100,8 +1100,8 @@ window.MathJax = {
                             🕒 Created: 2025-01-09
 						</time>
 						<time
-							datetime="2026-04-01" >
-                            | Updated: 2026-04-01
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -1446,12 +1446,12 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    It wasn’t discussed which allocator to use in each case; it was only about strategies.
+                    It wasn't discussed which allocator to use in each case; it was only about strategies.
 				</p>
 			</li>
 			<li>
 				<p>
-                    It’s strange how this area still feels so &quot;new&quot;.
+                    It's strange how this area still feels so &quot;new&quot;.
 				</p>
 			</li>
 		</ul>
@@ -1513,7 +1513,7 @@ window.MathJax = {
 				<ul>
 					<li>
 						<p>
-                            It doesn’t think in terms of bytes, but pages (4KB).
+                            It doesn't think in terms of bytes, but pages (4KB).
 						</p>
 					</li>
 				</ul>
@@ -1591,7 +1591,7 @@ fn main() !void {
 	</li>
 	<li>
 		<p>
-            Uses a fixed buffer to get its memory, doesn’t ask memory from the kernel.
+            Uses a fixed buffer to get its memory, doesn't ask memory from the kernel.
 		</p>
 	</li>
 	<li>
@@ -1641,17 +1641,17 @@ fn main() !void {
 				<ul>
 					<li>
 						<p>
-                            &quot;There is no data structure, it only stores the last memory index. Therefore, you can’t deallocate memory in the middle of this region.&quot;
+                            &quot;There is no data structure, it only stores the last memory index. Therefore, you can't deallocate memory in the middle of this region.&quot;
 						</p>
 					</li>
 					<li>
 						<p>
-                            &quot;Maybe it’s possible to deallocate the last allocation.&quot;
+                            &quot;Maybe it's possible to deallocate the last allocation.&quot;
 						</p>
 					</li>
 					<li>
 						<p>
-                            &quot;It’s possible to clear the whole buffer.&quot;
+                            &quot;It's possible to clear the whole buffer.&quot;
 						</p>
 					</li>
 					<li>
@@ -1664,7 +1664,7 @@ fn main() !void {
 						<ul>
 							<li>
 								<p>
-                                    Freeing the non-last allocation is safe to call, but won’t do anything.
+                                    Freeing the non-last allocation is safe to call, but won't do anything.
 								</p>
 							</li>
 						</ul>
@@ -1693,12 +1693,12 @@ fn main() !void {
 			</li>
 			<li>
 				<p>
-                    &quot;If you don’t care about expandable memory, you should use FixedBufferAllocator, as it’s simply faster.&quot;
+                    &quot;If you don't care about expandable memory, you should use FixedBufferAllocator, as it's simply faster.&quot;
 				</p>
 			</li>
 			<li>
 				<p>
-                    &quot;Probably the fastest you’ll ever get.&quot;
+                    &quot;Probably the fastest you'll ever get.&quot;
 				</p>
 			</li>
 		</ul>
@@ -1746,7 +1746,7 @@ fn main() !void {
 	</li>
 	<li>
 		<p>
-            It’s the place where you store all data that share the same lifetime.
+            It's the place where you store all data that share the same lifetime.
 		</p>
 	</li>
 	<li>
@@ -1822,12 +1822,12 @@ fn main() !void {
 				<ul>
 					<li>
 						<p>
-                            &quot;This ends up being useful for cases like Linked Lists, for example, since it allows freeing the entire list’s memory at once without traversing it.&quot;
+                            &quot;This ends up being useful for cases like Linked Lists, for example, since it allows freeing the entire list's memory at once without traversing it.&quot;
 						</p>
 					</li>
 					<li>
 						<p>
-                            Disclaimer: &quot;Don’t use Linked Lists, use arrays. Arrays are much faster nowadays.&quot;
+                            Disclaimer: &quot;Don't use Linked Lists, use arrays. Arrays are much faster nowadays.&quot;
 						</p>
 					</li>
 				</ul>
@@ -1990,13 +1990,13 @@ pub fn main() !void {
 &nbsp;&nbsp;&nbsp;&nbsp;// Creates the DebugAllocator TYPE with configuration (.{})
 &nbsp;&nbsp;&nbsp;&nbsp;// Using this type, an instance is obtained by {};
 &nbsp;&nbsp;&nbsp;&nbsp;// debugAllocator is now an instance of the object `DebugAllocator(...)`.
-&nbsp;&nbsp;&nbsp;&nbsp;// It’s important that `debugAllocator` is a VAR. If you use CONST, everything crashes at .allocator() below.
+&nbsp;&nbsp;&nbsp;&nbsp;// It's important that `debugAllocator` is a VAR. If you use CONST, everything crashes at .allocator() below.
 const allocator = debugAllocator.allocator();
 &nbsp;&nbsp;&nbsp;&nbsp;// The internal function is used to obtain the allocator.
 &nbsp;&nbsp;&nbsp;&nbsp;// allocator is of type `Allocator`.
 defer {
 &nbsp;&nbsp;&nbsp;&nbsp;_ = debugAllocator.deinit();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Not sure exactly why, but it’s important to call .deinit() on the debugAllocator.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Not sure exactly why, but it's important to call .deinit() on the debugAllocator.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Interestingly, the page_allocator does not require this.
 }
 </code></pre>
@@ -2017,11 +2017,11 @@ defer {
 					<li>
 						<p>
                             <code>.{}</code>
-                            &nbsp;is a struct initializer with an implicit type. What’s the type and where are the fields? The type is 
+                            &nbsp;is a struct initializer with an implicit type. What's the type and where are the fields? The type is 
                             <code>std.heap.general_purpose_allocator.Config</code>
-                            , though it isn’t directly exposed like this, which is one reason we aren’t explicit. No fields are set because the 
+                            , though it isn't directly exposed like this, which is one reason we aren't explicit. No fields are set because the 
                             <code>Config</code>
-                            &nbsp;struct defines defaults, which we’ll be using.
+                            &nbsp;struct defines defaults, which we'll be using.
 						</p>
 					</li>
 					<li>
@@ -2090,9 +2090,9 @@ defer {
 			</li>
 			<li>
 				<p>
-                    Currently, it’s implemented using the 
+                    Currently, it's implemented using the 
                     <code>GeneralPurposeAllocator</code>
-                    &nbsp;with added integration in Zig’s test runner, but that’s an implementation detail.
+                    &nbsp;with added integration in Zig's test runner, but that's an implementation detail.
 				</p>
 			</li>
 			<li>
@@ -2250,7 +2250,7 @@ defer {
 							</li>
 							<li>
 								<p>
-                                    &quot;There’s no way to defragment your memory, as there are pointers going everywhere and you can’t really track them down&quot;.
+                                    &quot;There's no way to defragment your memory, as there are pointers going everywhere and you can't really track them down&quot;.
 								</p>
 							</li>
 						</ul>
@@ -2327,7 +2327,7 @@ defer {
 						<ul>
 							<li>
 								<p>
-                                    &quot;You’ll probably have cache misses if you’re allocating sporadically&quot;.
+                                    &quot;You'll probably have cache misses if you're allocating sporadically&quot;.
 								</p>
 							</li>
 							<li>
@@ -2409,7 +2409,7 @@ pub fn main() !void {
 <ul>
 	<li>
 		<p>
-            In the case of a double free, we’ll get a hard crash.
+            In the case of a double free, we'll get a hard crash.
 		</p>
 	</li>
 </ul>
@@ -2463,7 +2463,7 @@ pub fn main() !void {
 	</li>
 	<li>
 		<p>
-            Memory leaks can be insidious. It isn’t just that the root cause can be difficult to identify. Really small leaks or leaks in infrequently executed code can be even harder to detect.
+            Memory leaks can be insidious. It isn't just that the root cause can be difficult to identify. Really small leaks or leaks in infrequently executed code can be even harder to detect.
 		</p>
 	</li>
 </ul>
@@ -2482,7 +2482,7 @@ pub fn main() !void {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

@@ -59,7 +59,7 @@ window.MathJax = {
 		</script>
 		<link
 			rel="stylesheet" 
-			href="/static/studies.33252.css" >
+			href="/static/studies.32256.css" >
 	</head>
 	<body>
 		<aside
@@ -951,8 +951,8 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/explicitness.html" >
-                                    Explicitness
+									href="/studies/low-level_systems/c_and_c++/keywords_for_data.html" >
+                                    Keywords for Data
 								</a>
 							</li>
 						</ul>
@@ -960,8 +960,44 @@ window.MathJax = {
 							<li>
 								<a
 									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/compiler_hints.html" >
-                                    Compiler Hints
+									href="/studies/low-level_systems/c_and_c++/keywords_for_control_flow.html" >
+                                    Keywords for Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_functions_methods.html" >
+                                    Keywords for Functions / Methods
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_for_class_extravaganza.html" >
+                                    Keywords for Class extravaganza
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/other_optimization_hints.html" >
+                                    Other Optimization Hints
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/asserts.html" >
+                                    Asserts
 								</a>
 							</li>
 						</ul>
@@ -1043,6 +1079,15 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/functions.html" >
                                     Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/coroutines_c_plus__plus_20.html" >
+                                    Coroutines (C++20)
 								</a>
 							</li>
 						</ul>
@@ -1169,15 +1214,6 @@ window.MathJax = {
 									class="summary-t2-other" 
 									href="/studies/low-level_systems/c_and_c++/undefined_behavior.html" >
                                     Undefined Behavior
-								</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a
-									class="summary-t2-other" 
-									href="/studies/low-level_systems/c_and_c++/multithreading.html" >
-                                    Multithreading
 								</a>
 							</li>
 						</ul>
@@ -1713,8 +1749,8 @@ window.MathJax = {
                             🕒 Created: 2025-03-11
 						</time>
 						<time
-							datetime="2026-03-30" >
-                            | Updated: 2026-03-30
+							datetime="2026-11-14" >
+                            | Updated: 2026-11-14
 						</time>
 					</p>
 				</header>
@@ -2068,7 +2104,7 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            More than just “old or new” can be observed in practice. Memory effects include seeing the old value, the new value, a 
+            More than just &quot;old or new&quot; can be observed in practice. Memory effects include seeing the old value, the new value, a 
 			<em>
                 torn
 			</em>
@@ -2087,7 +2123,7 @@ window.MathJax = {
 			</li>
 			<li>
 				<p>
-                    Caveat: “typically” is not the same as “guaranteed by the language.” If your language/compiler does not declare the access atomic (e.g., plain 
+                    Caveat: &quot;typically&quot; is not the same as &quot;guaranteed by the language.&quot; If your language/compiler does not declare the access atomic (e.g., plain 
                     <code>int</code>
                     &nbsp;in C/C++ pre-C11), the compiler may optimize assuming no concurrent writer, which can produce surprising behavior even if hardware atomicity holds. Use language atomics to get defined semantics.
 				</p>
@@ -2101,7 +2137,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    If the write spans multiple machine words (for example writing a 64-bit value on a 32-bit CPU, or a struct covering multiple words) or is misaligned, hardware can perform the write as multiple smaller writes. A concurrent reader may see a value composed of some bytes from the old value and some bytes from the new value — a torn value (part old, part new). That is not just “old or new.”
+                    If the write spans multiple machine words (for example writing a 64-bit value on a 32-bit CPU, or a struct covering multiple words) or is misaligned, hardware can perform the write as multiple smaller writes. A concurrent reader may see a value composed of some bytes from the old value and some bytes from the new value — a torn value (part old, part new). That is not just &quot;old or new.&quot;
 				</p>
 			</li>
 			<li>
@@ -2118,7 +2154,7 @@ window.MathJax = {
 		<ul>
 			<li>
 				<p>
-                    Writing a value usually goes into the CPU core’s store buffer first; the write becomes globally visible when it propagates to other cores’ caches (through the coherence protocol). During that window another core may not yet see the new value and will read the old one. So a reader can see the old value for some time even after the write completed on the writer core.
+                    Writing a value usually goes into the CPU core's store buffer first; the write becomes globally visible when it propagates to other cores' caches (through the coherence protocol). During that window another core may not yet see the new value and will read the old one. So a reader can see the old value for some time even after the write completed on the writer core.
 				</p>
 			</li>
 			<li>
@@ -2147,12 +2183,12 @@ window.MathJax = {
 	</li>
 	<li>
 		<p>
-            language-level oddities (Java “out-of-thin-air”, C/C++ undefined)
+            language-level oddities (Java &quot;out-of-thin-air&quot;, C/C++ undefined)
 		</p>
 		<ul>
 			<li>
 				<p>
-                    In Java, unsynchronized data races allow a wide set of behaviors — theoretically even values that seem “out of thin air” in some relaxed executions (practical occurrences are rare and subtle). 
+                    In Java, unsynchronized data races allow a wide set of behaviors — theoretically even values that seem &quot;out of thin air&quot; in some relaxed executions (practical occurrences are rare and subtle). 
                     <code>volatile</code>
                     &nbsp;or 
                     <code>Atomic*</code>
@@ -2174,7 +2210,7 @@ window.MathJax = {
 <ul>
 	<li>
 		<p>
-            Occurs when two or more threads are blocked forever, waiting on each other’s resources.
+            Occurs when two or more threads are blocked forever, waiting on each other's resources.
 		</p>
 	</li>
 </ul>
@@ -2413,7 +2449,7 @@ window.MathJax = {
 			</footer>
 		</main>
 		<script
-			src="/static/studies.33252.js" >
+			src="/static/studies.32256.js" >
 		</script>
 	</body>
 </html>

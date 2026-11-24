@@ -1,0 +1,4167 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.23328.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Memory
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/alignment.html" >
+                                    Alignment
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/endianness_byte_order.html" >
+                                    Endianness (byte order)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/stack_memory.html" >
+                                    Stack Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/virtual_memory.html" >
+                                    Virtual Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/os_memory_on_windows.html" >
+                                    OS: Memory on Windows
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/allocators.html" >
+                                    Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/tools_memory_analysis.html" >
+                                    Tools: Memory Analysis
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/handles_instead_of_pointers.html" >
+                                    Handles instead of Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/ownership_strategies_destruction_strategies.html" >
+                                    Ownership Strategies / Destruction Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/strategies_for_handling_short_lived_memory.html" >
+                                    Strategies for handling short lived memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/garbage_collection.html" >
+                                    Garbage Collection
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/initialization.html" >
+                                    Initialization
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            CPU
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/physical_structure.html" >
+                                    Physical Structure
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectures_instructions_sets_architectures_isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectural_design_philosophies_isa_philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/registers.html" >
+                                    Registers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/cache.html" >
+                                    Cache
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/branchless.html" >
+                                    Branchless
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/soa_struct_of_arrays_ecs_entity_component_system.html" >
+                                    SOA (Struct Of Arrays) / ECS (Entity Component System)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Multithreading
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/core_concepts.html" >
+                                    Core Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/thread.html" >
+                                    Thread
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/strategies.html" >
+                                    Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/implementation_detail.html" >
+                                    Implementation Detail
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/synchronization_primitives.html" >
+                                    Synchronization Primitives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/double_buffering.html" >
+                                    Double-Buffering
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/networking_strategies.html" >
+                                    Networking Strategies
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/safety_critical/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            C and C++
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/versions.html" >
+                                    Versions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard.html" >
+                                    C Standard
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard_library_libc.html" >
+                                    C Standard Library (libc)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/critiques_c_and_c_plus__plus_.html" >
+                                    Critiques: C and C++
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/code_editor.html" >
+                                    Code Editor
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/pre_processors.html" >
+                                    Pre-Processors
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/value_variable_declarations.html" >
+                                    Value: Variable Declarations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/value_constants.html" >
+                                    Value: Constants
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/value_enums.html" >
+                                    Value: Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/value_keywords.html" >
+                                    Value: Keywords
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/control_flow.html" >
+                                    Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/control_flow_keywords.html" >
+                                    Control Flow: Keywords
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/scopes_and_namespaces.html" >
+                                    Scopes and Namespaces
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/functions.html" >
+                                    Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/functions_named_arguments.html" >
+                                    Functions: Named Arguments
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/functions_keywords.html" >
+                                    Functions: Keywords
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/types_primitives.html" >
+                                    Types: Primitives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/types_info_and_conversion.html" >
+                                    Types: Info and Conversion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_static_allocated.html" >
+                                    Containers: Static Allocated
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_static_allocated_arrays_from_c_codet_code_and_codet_x_code.html" >
+                                    Containers: Static Allocated - Arrays from C (<code>T*</code> and <code>T x[]</code>)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/low-level_systems/c_and_c++/containers_dynamic_allocated.html" >
+                                    Containers: Dynamic Allocated
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#codestdstring_code_codeltstringgreater_code_c_plus__plus_98" 
+											class="summary-t3" >
+                                            <code>std::string</code> (<code>&lt;string&gt;</code>) (C++98)
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#null_termination" 
+													class="summary-t4" >
+                                                    Null termination
+												</a>
+											</li>
+											<li>
+												<a
+													href="#implementation_and_encoding" 
+													class="summary-t4" >
+                                                    Implementation and Encoding
+												</a>
+											</li>
+											<li>
+												<a
+													href="#initialization" 
+													class="summary-t4" >
+                                                    Initialization
+												</a>
+											</li>
+											<li>
+												<a
+													href="#accessing_elements" 
+													class="summary-t4" >
+                                                    Accessing elements
+												</a>
+											</li>
+											<li>
+												<a
+													href="#write" 
+													class="summary-t4" >
+                                                    Write
+												</a>
+											</li>
+											<li>
+												<a
+													href="#info" 
+													class="summary-t4" >
+                                                    Info
+												</a>
+											</li>
+											<li>
+												<a
+													href="#info_comparison" 
+													class="summary-t4" >
+                                                    Info: Comparison
+												</a>
+											</li>
+											<li>
+												<a
+													href="#operations_search" 
+													class="summary-t4" >
+                                                    Operations: Search
+												</a>
+											</li>
+											<li>
+												<a
+													href="#operations" 
+													class="summary-t4" >
+                                                    Operations
+												</a>
+											</li>
+											<li>
+												<a
+													href="#operations_convert_string_to_value" 
+													class="summary-t4" >
+                                                    Operations: Convert string to value
+												</a>
+											</li>
+											<li>
+												<a
+													href="#operations_convert_value_to_string" 
+													class="summary-t4" >
+                                                    Operations: Convert value to string
+												</a>
+											</li>
+											<li>
+												<a
+													href="#operations_iteration" 
+													class="summary-t4" >
+                                                    Operations: Iteration
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdvector_code_codeltvectorgreater_code_c_plus__plus_98" 
+											class="summary-t3" >
+                                            <code>std::vector</code> (<code>&lt;vector&gt;</code>) (C++98)
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#implementation" 
+													class="summary-t4" >
+                                                    Implementation
+												</a>
+											</li>
+											<li>
+												<a
+													href="#initialization" 
+													class="summary-t4" >
+                                                    Initialization
+												</a>
+											</li>
+											<li>
+												<a
+													href="#destruction" 
+													class="summary-t4" >
+                                                    Destruction
+												</a>
+											</li>
+											<li>
+												<a
+													href="#accessing_elements" 
+													class="summary-t4" >
+                                                    Accessing elements
+												</a>
+											</li>
+											<li>
+												<a
+													href="#write_elements" 
+													class="summary-t4" >
+                                                    Write elements
+												</a>
+											</li>
+											<li>
+												<a
+													href="#info" 
+													class="summary-t4" >
+                                                    Info
+												</a>
+											</li>
+											<li>
+												<a
+													href="#operations" 
+													class="summary-t4" >
+                                                    Operations
+												</a>
+											</li>
+											<li>
+												<a
+													href="#operations_allocation" 
+													class="summary-t4" >
+                                                    Operations: Allocation
+												</a>
+											</li>
+											<li>
+												<a
+													href="#operations_iteration" 
+													class="summary-t4" >
+                                                    Operations: Iteration
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdset_code_codeltsetgreater_code_c_plus__plus_98" 
+											class="summary-t3" >
+                                            <code>std::set</code> (<code>&lt;set&gt;</code>) (C++98)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdunordered_set_code_codeltunordered_setgreater_code_c_plus__plus_11" 
+											class="summary-t3" >
+                                            <code>std::unordered_set</code> (<code>&lt;unordered_set&gt;</code>) (C++11)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdmap_code_codeltmapgreater_code_c_plus__plus_98" 
+											class="summary-t3" >
+                                            <code>std::map</code> (<code>&lt;map&gt;</code>) (C++98)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdunordered_map_code_codeltunordered_mapgreater_code_c_plus__plus_11" 
+											class="summary-t3" >
+                                            <code>std::unordered_map</code> (<code>&lt;unordered_map&gt;</code>) (C++11)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdlist_code_c_plus__plus_98" 
+											class="summary-t3" >
+                                            <code>std::list</code> (C++98)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdstack_code_codeltstackgreater_code_c_plus__plus_98" 
+											class="summary-t3" >
+                                            <code>std::stack</code> (<code>&lt;stack&gt;</code>) (C++98)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestdqueue_code_codeltqueuegreater_code_c_plus__plus_98" 
+											class="summary-t3" >
+                                            <code>std::queue</code> (<code>&lt;queue&gt;</code>) (C++98)
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#codestddeque_code_codeltdequegreater_code_c_plus__plus_98" 
+											class="summary-t3" >
+                                            <code>std::deque</code> (<code>&lt;deque&gt;</code>) (C++98)
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_structs.html" >
+                                    Containers: Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_unions.html" >
+                                    Containers: Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_classes.html" >
+                                    Containers: Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_class_extra_keywords.html" >
+                                    Containers: Class - Extra Keywords
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_pointers.html" >
+                                    Memory: Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_references_c_plus__plus_98.html" >
+                                    Memory: References (C++98)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_operations.html" >
+                                    Memory: Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_allocation.html" >
+                                    Memory: Allocation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_undefined_behavior.html" >
+                                    Memory: Undefined Behavior
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/error_handling_asserts_and_code_termination.html" >
+                                    Error Handling: Asserts and code termination
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/error_handling_exceptions.html" >
+                                    Error Handling: Exceptions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/io_streams.html" >
+                                    IO Streams
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_other_optimizations.html" >
+                                    Keywords: Other Optimizations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/libraries.html" >
+                                    Libraries
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/libraries_desktop_apps.html" >
+                                    Libraries: Desktop Apps
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/syntax_variations.html" >
+                                    Syntax Variations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/game_dev.html" >
+                                    Game Dev
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Odin
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/overview.html" >
+                                    Overview
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/my_impressions.html" >
+                                    My Impressions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/installation.html" >
+                                    Installation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/compile_time_stuff.html" >
+                                    Compile-time Stuff
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/package_system.html" >
+                                    Package System
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/lsp_ols_odin_language_server.html" >
+                                    LSP (OLS - Odin Language Server)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/control_flow_if_when_switch_for_defer.html" >
+                                    Control Flow (if, when, switch, for, defer)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/procedures.html" >
+                                    Procedures
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/codeany_code.html" >
+                                    <code>any</code>
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/matrix.html" >
+                                    Matrix
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/quaternion.html" >
+                                    Quaternion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/complex.html" >
+                                    Complex
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/rune.html" >
+                                    Rune
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/maps_hash_maps.html" >
+                                    Maps (Hash Maps)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/struct.html" >
+                                    Struct
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/enum.html" >
+                                    Enum
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/union.html" >
+                                    Union
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/bit_sets.html" >
+                                    Bit Sets
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/arrays.html" >
+                                    Arrays
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/interfaces_methods_vtables.html" >
+                                    Interfaces / Methods / VTables
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/context.html" >
+                                    Context
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_address.html" >
+                                    Memory: Address
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_allocators.html" >
+                                    Memory: Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_operations.html" >
+                                    Memory: Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/entry_point.html" >
+                                    Entry Point
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/multi_threading.html" >
+                                    Multi-Threading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/ffi_foreign_function_interface_bindings.html" >
+                                    FFI (Foreign Function Interface) / Bindings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/web_build.html" >
+                                    Web Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/file_system_process_cli_shell.html" >
+                                    File System / Process / CLI / Shell
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/useful_packages.html" >
+                                    Useful Packages
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Build Systems - Compilation - Linking
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilation_process.html" >
+                                    Compilation Process
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/linker.html" >
+                                    Linker
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilers.html" >
+                                    Compilers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/build_tools.html" >
+                                    Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/meta_build_tools.html" >
+                                    Meta Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/extra_annoying_things_on_windows.html" >
+                                    Extra: Annoying things on Windows
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Assembly - ASM
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/my_notes.html" >
+                                    My Notes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/abi_application_binary_interface.html" >
+                                    ABI (Application Binary Interface)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/sections.html" >
+                                    Sections
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/jump_patterns.html" >
+                                    Jump Patterns
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/calling_conventions.html" >
+                                    Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/representing_structs.html" >
+                                    Representing Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/generating_the_assembly_via_code.html" >
+                                    Generating the Assembly via code
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/virtual_instruction_sets.html" >
+                                    Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Reverse Engineering
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/inspect.html" >
+                                    Inspect
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Handmade Hero
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/handmade_hero/handmade_hero.html" >
+                                    Handmade Hero
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Profilers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/tracy.html" >
+                                    Tracy
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/spall.html" >
+                                    Spall
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nvidia_nsight_graphics_gpu_trace.html" >
+                                    Nvidia Nsight Graphics - GPU Trace
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/amd_gpu_profiler_amd_rgp.html" >
+                                    AMD GPU Profiler (AMD RGP)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/intel_gpa.html" >
+                                    Intel GPA
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nsight_systems.html" >
+                                    <s>Nsight Systems</s>
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Debuggers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/debugging_tips.html" >
+                                    Debugging Tips
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/file_types.html" >
+                                    File Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/rad_debugger.html" >
+                                    RAD Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/gdb_gnu_debugger.html" >
+                                    GDB (GNU Debugger)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/lldb.html" >
+                                    LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/remedybg_debugger.html" >
+                                    RemedyBG Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/vscode.html" >
+                                    VSCode
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/visual_studio_debugger.html" >
+                                    Visual Studio Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/windbg_cdb.html" >
+                                    WinDbg / CDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/others.html" >
+                                    Others
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/web.html" >
+                                    Web
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Parsing
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__lexer.html" >
+                                    Lexer
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__parser.html" >
+                                    Parser
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__abstract_syntax_tree_ast.html" >
+                                    Abstract Syntax Tree (AST)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Serialization - Encoding
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/representations.html" >
+                                    Representations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/serialization.html" >
+                                    Serialization
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/encoding.html" >
+                                    Encoding
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JAI
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__build.html" >
+                                    Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__types.html" >
+                                    Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__meta_programming.html" >
+                                    Meta programming
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__control_flow.html" >
+                                    Control flow
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Containers: Dynamic Allocated
+					</h1>
+					<p>
+						<time
+							datetime="2023-10-11" >
+                            🕒 Created: 2023-10-11
+						</time>
+						<time
+							datetime="2026-11-24" >
+                            | Updated: 2026-11-24
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<h3
+	id="codestdstring_code_codeltstringgreater_code_c_plus__plus_98" >
+    <code>std::string</code>
+    &nbsp;(
+    <code>&lt;string&gt;</code>
+    ) (C++98)
+</h3>
+<ul>
+	<li>
+		<p>
+            Inside 
+            <code>#include &lt;string&gt;</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The 
+            <code>string</code>
+            &nbsp;class is a compound type. Compound types are used in the same way as fundamental types: the same syntax is used to declare variables and to initialize them.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main ()
+{
+&nbsp;&nbsp;std::string my_string;
+&nbsp;&nbsp;my_string = "This is a string";
+&nbsp;&nbsp;std::cout &lt;&lt; my_string;
+&nbsp;&nbsp;return 0;
+}
+</code></pre>
+<h4
+	id="null_termination" >
+    Null termination
+</h4>
+<ul>
+	<li>
+		<p>
+            A 
+            <code>std::string</code>
+            &nbsp;
+			<em>
+                always
+			</em>
+            &nbsp;stores a null terminator at 
+            <code>data()[size()]</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            The null terminator is maintained automatically.
+		</p>
+	</li>
+	<li>
+		<p>
+            That terminator is not included in 
+            <code>size()</code>
+            .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::string s = "Hello";
+
+s.size();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 5
+s.capacity();&nbsp;&nbsp; // At least 5 (probably 8, or other power of 2).
+s.data()[5];&nbsp;&nbsp;&nbsp;&nbsp;// '\0'
+</code></pre>
+<h4
+	id="implementation_and_encoding" >
+    Implementation and Encoding
+</h4>
+<ul>
+	<li>
+		<p>
+            The actual type comes from 
+            <code>std::basic_string&lt;T&gt;</code>
+            .
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>std::string</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>std::basic_string&lt;char&gt;</code>
+				</p>
+			</li>
+			<li>
+				<p>
+                    Conceptually:
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">class string {
+private:
+&nbsp;&nbsp;&nbsp;&nbsp;char* data;
+&nbsp;&nbsp;&nbsp;&nbsp;size_t size;
+&nbsp;&nbsp;&nbsp;&nbsp;size_t capacity;
+};
+</code></pre>
+	</li>
+	<li>
+		<p>
+            <code>std::wstring</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>std::basic_string&lt;wchar_t&gt;</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>std::u8string</code>
+            &nbsp;(C++20)
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>std::basic_string&lt;char8_t&gt;</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>std::u16string</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>std::basic_string&lt;char16_t&gt;</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>std::u32string</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>std::basic_string&lt;char32_t&gt;</code>
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="initialization" >
+    Initialization
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>string</code>
+            s can be initialized with any valid string literal, just like numerical type variables can be initialized to any valid numerical literal.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::string a;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Empty
+std::string a = "Hello";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // From null-terminated C string
+std::string a("Hello");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// "Hello"
+std::string a("Hello", 3);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // "Hel"
+std::string a(5, 'A');&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // "AAAAA"
+std::string a(b, 1, 3);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// "ell"
+std::string a(b.begin(), b.end());
+</code></pre>
+<ul>
+	<li>
+		<p>
+            Copy:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Creates an independent string containing the same characters. It may allocate.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::string a = "Hello";
+std::string b = a;
+</code></pre>
+	</li>
+	<li>
+		<p>
+            Move:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Moving transfers the string's resources when possible. It generally avoids copying the character buffer.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::string a = "Hello";
+std::string b = std::move(a);
+</code></pre>
+		<ul>
+			<li>
+				<p>
+                    After moving, a remains valid but its contents are unspecified.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h5
+	id="allocation" >
+    Allocation
+</h5>
+<ul>
+	<li>
+		<p>
+            A string can allocate dynamically.
+		</p>
+	</li>
+	<li>
+		<p>
+            Most modern implementations use Small String Optimization (SSO), meaning that short strings are stored directly inside the 
+            <code>std::string</code>
+            &nbsp;object, without a separate heap allocation.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::string a = "Hello";&nbsp;&nbsp;// Usually no heap allocation
+std::string b(1000, 'A'); // Usually heap allocation
+</code></pre>
+<ul>
+	<li>
+		<p>
+            The exact SSO capacity is implementation-dependent. The C++ standard does not guarantee a particular threshold or even require SSO.
+		</p>
+	</li>
+	<li>
+		<p>
+            So you can never know ;)
+		</p>
+	</li>
+</ul>
+<h5
+	id="allocation_error_handling" >
+    Allocation error handling
+</h5>
+<ul>
+	<li>
+		<p>
+            Allocation failure can throw 
+            <code>std::bad_alloc</code>
+            .
+		</p>
+	</li>
+</ul>
+<h5
+	id="controlling_dynamic_allocations" >
+    Controlling dynamic allocations
+</h5>
+<ul>
+	<li>
+		<p>
+            You can also use 
+            <code>std::pmr::string</code>
+            &nbsp;(C++17) to control its memory resource.
+		</p>
+	</li>
+</ul>
+<h4
+	id="accessing_elements" >
+    Accessing elements
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>s[i]</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>char&</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Access element.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Out-of-bounds is undefined behavior (UB).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.at(i)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>char&</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Access element
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Out-of-bounds throws 
+                            <code>std::out_of_range</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>std::get&lt;N&gt;(s);</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>char&</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>N</code>
+                    &nbsp;is a comptime index.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Out-of-bounds gives a compilation error.
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.front()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>char&</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    First element.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If the string is empty is undefined behavior (UB).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.back()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>char&</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Last element.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If the string is empty is undefined behavior (UB).
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.data()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>char*</code>
+                    ; being a pointer to the first element (raw C array).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Pointer to underlying storage.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.c_str()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>const char*</code>
+                    ; being a pointer to the first element (raw C array).
+				</p>
+			</li>
+			<li>
+				<p>
+                    Pointer to underlying storage.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Useful for when interfacing with C:
+				</p>
+<pre><code class="language-c" data-lang="c">printf("%s\n", s.c_str());
+</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.pop_back()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Doesn't allocate.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <s>
+            <code>s.pop_front()</code>
+            </s>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Doesn't exit.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Use 
+                    <code>s.erase(0, 1)</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="write" >
+    Write
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>s.append("something")</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>std::string&</code>
+                    &nbsp;as a reference of 
+                    <code>s</code>
+                    , just to allow chaining.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Add a string or many character at the end.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">s.append(" World"); // Hello World
+s.append(3, '!');&nbsp;&nbsp; // Hello World!!!
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Allocation
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Grows dynamically if needed.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can throw 
+                            <code>std::bad_alloc</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.push_back('A')</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>std::string&</code>
+                    &nbsp;as a reference of 
+                    <code>s</code>
+                    , just to allow chaining.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Add exactly one character at the end.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Allocation
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Grows dynamically if needed.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can throw 
+                            <code>std::bad_alloc</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>operator+</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Add something at the end.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::string a = "Hello";
+std::string b = " World";
+
+std::string c = a + b;
+
+c += "something";
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<em>
+                        Allocation
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Grows dynamically if needed.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can throw 
+                            <code>std::bad_alloc</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.insert(pos, "something")</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Insert characters at a specified position; does not replace.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Returns 
+                    <code>std::string&</code>
+                    &nbsp;as a reference of 
+                    <code>s</code>
+                    , just to allow chaining.
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can also return an iterator.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Allocation
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Grows dynamically if needed.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Out-of-bounds throws 
+                            <code>std::out_of_range</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s = "something";</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Replaces all the old content by the new one.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's syntax sugar for 
+                    <code>s.assign(...)</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Allocation
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If the new content is smaller than the old one, the string doesn't shrink. It just keeps its capacity.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the new content is bigger than the old one, the string allocates.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can throw 
+                            <code>std::bad_alloc</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s = 'A';</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Replaces all the old content by the new one.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Allocation
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If the new content is smaller than the old one, the string doesn't shrink. It just keeps its capacity.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the new content is bigger than the old one, the string allocates.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can throw 
+                            <code>std::bad_alloc</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.assign(...);</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Replaces all the old content by the new one.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Returns 
+                    <code>std::string&</code>
+                    &nbsp;as a reference of 
+                    <code>s</code>
+                    , just to allow chaining.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Allocation
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            If the new content is smaller than the old one, the string doesn't shrink. It just keeps its capacity.
+						</p>
+					</li>
+					<li>
+						<p>
+                            If the new content is bigger than the old one, the string allocates.
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Can throw 
+                            <code>std::bad_alloc</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">s.assign("hello");&nbsp;&nbsp;&nbsp;&nbsp; // From null-terminated C string
+s.assign("hello", 3);&nbsp;&nbsp;// First 3 characters: "hel"
+s.assign(5, 'x');&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// "xxxxx"
+s.assign(other);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Copy another string
+s.assign(other, 2, 3); // Substring: 3 chars starting at index 2
+s.assign(first, last); // Iterator range
+</code></pre>
+	</li>
+	<li>
+		<p>
+            <code>s.replace(pos, ...)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Replaces a specific portion of the string by something else. The old content outside the replacement range is preserved.
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Allocation
+					</em>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Allocates if 
+                            <code>pos &gt; capacity()</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Out-of-bounds throws 
+                            <code>std::out_of_range</code>
+                            .
+						</p>
+					</li>
+					<li>
+						<p>
+                            Can throw 
+                            <code>std::bad_alloc</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::string s = "hello world";
+
+s.replace(6, 5, "there");
+// "hello there"
+</code></pre>
+	</li>
+	<li>
+		<p>
+            <code>s.erase(pos, count)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove something at pos.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Doesn't allocate.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Out-of-bounds throws 
+                            <code>std::out_of_range</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="info" >
+    Info
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>s.size()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Number of elements
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.length()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Number of elements; exactly the same as 
+                    <code>s.size()</code>
+                    , it's just an alias, basically.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.empty()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Whether size is zero
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.max_size()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Maximum possible size.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.capacity()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Number of elements it can hold without reallocating
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="info_comparison" >
+    Info: Comparison
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>s.compare()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Compare strings
+				</p>
+			</li>
+			<li>
+				<p>
+                    Doesn't allocate.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            Operator overloading, etc.
+		</p>
+	</li>
+</ul>
+<h4
+	id="operations_search" >
+    Operations: Search
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>find()</code>
+            &nbsp;/ 
+            <code>rfind()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Search.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Doesn't allocate.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>find_first_of()</code>
+            &nbsp;/ 
+            <code>find_first_not_of()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Search for characters.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Doesn't allocate.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>find_last_of()</code>
+            &nbsp;/ 
+            <code>find_last_not_of()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Search for characters, backwards.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Doesn't allocate.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="operations" >
+    Operations
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>s.substr(from, to)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns a 
+                    <code>std::string</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+					<em>
+                        Allocates
+					</em>
+                    &nbsp;a new owning string.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Out-of-bounds throws 
+                            <code>std::out_of_range</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.copy(dst, count, pos)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Does not append a null terminator. You must do that yourself if needed.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">char buffer[6];
+size_t copied = s.copy(buffer, 5, 0);
+buffer[copied] = '\0';
+</code></pre>
+		<ul>
+			<li>
+				<p>
+					<strong>
+                        Error handling
+					</strong>
+                    :
+				</p>
+				<ul>
+					<li>
+						<p>
+                            Out-of-bounds throws 
+                            <code>std::out_of_range</code>
+                            .
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.reserve(size_type new_capacity = 0)</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>s.shrink_to_fit()</code>
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>s.resize(N);</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Creates 
+                    <code>N</code>
+                    &nbsp;characters initialized to 
+                    <code>'\0'</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="operations_convert_string_to_value" >
+    Operations: Convert string to value
+</h4>
+<pre><code class="language-cpp" data-lang="cpp">int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stoi&nbsp;&nbsp;(const std::string& str, size_t* pos = nullptr, int base = 10);
+long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stol&nbsp;&nbsp;(const std::string& str, size_t* pos = nullptr, int base = 10);
+long long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stoll (const std::string& str, size_t* pos = nullptr, int base = 10);
+unsigned long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stoul (const std::string& str, size_t* pos = nullptr, int base = 10);
+unsigned long long stoull(const std::string& str, size_t* pos = nullptr, int base = 10);
+float&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stof&nbsp;&nbsp;(const std::string& str, size_t* pos = nullptr);
+double&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stod&nbsp;&nbsp;(const std::string& str, size_t* pos = nullptr);
+long double&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stold (const std::string& str, size_t* pos = nullptr);
+
+std::to_chars(...);
+</code></pre>
+<ul>
+	<li>
+		<p>
+			<strong>
+                Error handling
+			</strong>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>std::invalid_argument</code>
+                    : no conversion could be performed.
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>std::out_of_range</code>
+                    : converted value is outside the destination type's range.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="operations_convert_value_to_string" >
+    Operations: Convert value to string
+</h4>
+<pre><code class="language-cpp" data-lang="cpp">std::string to_string(int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value);
+std::string to_string(long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value);
+std::string to_string(long long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value);
+std::string to_string(unsigned&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value);
+std::string to_string(unsigned long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value);
+std::string to_string(unsigned long long value);
+std::string to_string(float&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value);
+std::string to_string(double&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value);
+std::string to_string(long double&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value);
+
+std::from_chars(...);
+</code></pre>
+<h4
+	id="operations_iteration" >
+    Operations: Iteration
+</h4>
+<pre><code class="language-cpp" data-lang="cpp">for (char& c : s)
+&nbsp;&nbsp;&nbsp;&nbsp;c = 'X';
+
+for (const char& c : s)
+&nbsp;&nbsp;&nbsp;&nbsp;printf("%c", c);
+</code></pre>
+<ul>
+	<li>
+		<p>
+            <code>s.begin()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>iterator</code>
+                    &nbsp;or 
+                    <code>const_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Iterator to first element.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.end()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>iterator</code>
+                    &nbsp;or 
+                    <code>const_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Iterator past last element.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.cbegin()</code>
+            &nbsp;/ 
+            <code>s.cend()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>const_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Const iterators.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.rbegin()</code>
+            &nbsp;/ 
+            <code>s.rend()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>reverse_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Reverse iterators.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>s.crbegin()</code>
+            &nbsp;/ 
+            <code>s.crend()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>const_reverse_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Const reverse iterators.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="codestdvector_code_codeltvectorgreater_code_c_plus__plus_98" >
+    <code>std::vector</code>
+    &nbsp;(
+    <code>&lt;vector&gt;</code>
+    ) (C++98)
+</h3>
+<ul>
+	<li>
+		<p>
+            Heap allocated, dynamic growth.
+		</p>
+	</li>
+	<li>
+		<p>
+            Contiguous memory
+		</p>
+	</li>
+</ul>
+<h4
+	id="implementation" >
+    Implementation
+</h4>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://github.com/llvm/llvm-project/blob/main/libcxx/include/__vector/vector.h" 
+				class="external-link" 
+				target="_blank" >
+                LLVM libcxx - 
+                <code>&lt;vector&gt;</code>
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+            Conceptually:
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">template&lt;typename T, typename Allocator = std::allocator&lt;T&gt;&gt;
+class vector {
+public:
+&nbsp;&nbsp;&nbsp;&nbsp;// Access: `v[i]`
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T& operator[](std::size_t pos)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noexcept;
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr const T& operator[](std::size_t pos) const noexcept;
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Access: `v.at(i)`
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T& at(std::size_t pos);
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr const T& at(std::size_t pos) const;
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Access: `v.front(i)`
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T& front()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noexcept;
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr const T& front() const noexcept;
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Access: `v.back(i)`
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T& back()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noexcept;
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr const T& back() const noexcept;
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Access: `v.data(i)`
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T* data()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noexcept;
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr const T* data() const noexcept;
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Iterator: `v.begin()`
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T* begin()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noexcept;
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr const T* begin() const noexcept;
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Iterator: `v.end()`
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T* end()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noexcept;
+&nbsp;&nbsp;&nbsp;&nbsp;constexpr const T* end() const noexcept;
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Info
+&nbsp;&nbsp;&nbsp;&nbsp;std::size_t size()&nbsp;&nbsp;&nbsp;&nbsp; const noexcept;
+&nbsp;&nbsp;&nbsp;&nbsp;std::size_t capacity() const noexcept;
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empty()&nbsp;&nbsp;&nbsp;&nbsp;const noexcept;
+&nbsp;&nbsp;&nbsp;&nbsp;std::size_t max_size() const noexcept;
+
+&nbsp;&nbsp;&nbsp;&nbsp;void reserve(std::size_t new_capacity);
+&nbsp;&nbsp;&nbsp;&nbsp;void shrink_to_fit();
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Add
+&nbsp;&nbsp;&nbsp;&nbsp;void push_back(const T& value);
+&nbsp;&nbsp;&nbsp;&nbsp;void push_back(T&& value);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Add
+&nbsp;&nbsp;&nbsp;&nbsp;iterator insert(const_iterator pos, const T& value);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Add
+&nbsp;&nbsp;&nbsp;&nbsp;template&lt;typename... Args&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;T& emplace_back(Args&&... args);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Remove
+&nbsp;&nbsp;&nbsp;&nbsp;void pop_back();
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Remove
+&nbsp;&nbsp;&nbsp;&nbsp;iterator erase(const_iterator pos);
+
+&nbsp;&nbsp;&nbsp;&nbsp;void clear();
+&nbsp;&nbsp;&nbsp;&nbsp;void resize(std::size_t count);
+&nbsp;&nbsp;&nbsp;&nbsp;void resize(std::size_t count, const T& value);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Operations
+&nbsp;&nbsp;&nbsp;&nbsp;void swap(vector& other) noexcept;
+
+private:
+&nbsp;&nbsp;&nbsp;&nbsp;// Conceptual representation, NOT actual standard members:
+&nbsp;&nbsp;&nbsp;&nbsp;T* data;
+&nbsp;&nbsp;&nbsp;&nbsp;std::size_t size;
+&nbsp;&nbsp;&nbsp;&nbsp;std::size_t capacity;
+};
+</code></pre>
+<h4
+	id="initialization" >
+    Initialization
+</h4>
+<pre><code class="language-cpp" data-lang="cpp">std::vector&lt;int&gt; v = {10, 20, 30};
+</code></pre>
+<pre><code class="language-cpp" data-lang="cpp">v = {}; // Assigns an empty vector; may retain capacity
+</code></pre>
+<h5
+	id="implicit_memory_allocation" >
+    Implicit Memory Allocation
+</h5>
+<pre><code class="language-cpp" data-lang="cpp">std::vector&lt;int&gt; v; // No allocation yet
+
+v.push_back(1); // Heap allocation (if capacity is insufficient)
+v.push_back(2); // Heap allocation (if capacity is insufficient)
+v.reserve(100); // Heap allocation
+
+int x = v[0];
+</code></pre>
+<h5
+	id="choosing_the_allocation_origin" >
+    Choosing the allocation origin
+</h5>
+<ul>
+	<li>
+		<p>
+            Example: The vector allocates from arena, not directly from the heap.
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Use 
+                    <code>std::pmr::vector&lt;T&gt;</code>
+                    &nbsp;with a 
+                    <code>std::pmr::memory_resource</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    For a buffer you own, use 
+                    <code>std::pmr::monotonic_buffer_resource</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    <code>null_memory_resource()</code>
+                    &nbsp;makes allocation fail with std::bad_alloc if the buffer runs out.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;memory_resource&gt;
+#include &lt;vector&gt;
+
+alignas(std::max_align_t) char buffer[1024 * 1024];
+
+std::pmr::monotonic_buffer_resource arena(
+&nbsp;&nbsp;&nbsp;&nbsp;buffer, sizeof(buffer),
+&nbsp;&nbsp;&nbsp;&nbsp;std::pmr::null_memory_resource() // Never fall back to heap
+);
+
+std::pmr::vector&lt;int&gt; values(&arena);
+
+values.push_back(42);
+values.reserve(1000);
+</code></pre>
+	</li>
+</ul>
+<h4
+	id="destruction" >
+    Destruction
+</h4>
+<ul>
+	<li>
+		<p>
+            Automatic destruction:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Standard containers follow RAII. Their destructors run automatically when they leave scope.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">{
+&nbsp;&nbsp;&nbsp;&nbsp;std::vector&lt;MyType&gt; v;
+&nbsp;&nbsp;&nbsp;&nbsp;v.emplace_back();
+} // v's destructor runs here
+</code></pre>
+	</li>
+	<li>
+		<p>
+            <s>Manual destruction</s>:
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Call it destructor.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Not recommended, as the RAII &quot;smartness&quot; can cause UB afterwards: &quot;Its destructor will run again when it leaves scope, causing undefined behavior&quot;.
+				</p>
+			</li>
+		</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::vector&lt;int&gt; v = {1, 2, 3};
+v.~vector&lt;int&gt;();
+</code></pre>
+	</li>
+</ul>
+<h4
+	id="accessing_elements" >
+    Accessing elements
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>v[i]</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Access element, unchecked
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.at(i)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Access element, bounds-checked
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.front()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    First element
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.back()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Last element
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.data()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Pointer to underlying storage
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="write_elements" >
+    Write elements
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>v.push_back(value)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Add element at the end
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.emplace_back(args...)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Add elements at the end
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.insert(idx, value)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Add element at idx.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.emplace(idx, args...)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Add elements at idx.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.assign(n, value)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Replaces elements with 
+                    <code>n</code>
+                    &nbsp;copies of 
+                    <code>value</code>
+                    .
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.pop_back()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove element at the end.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.erase(idx)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove element at idx.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.erase(first, last)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove range.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.clear()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Remove all elements.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="info" >
+    Info
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>v.size()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Number of elements
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.capacity()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Number of elements it can hold without reallocating
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.empty()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Whether size is zero
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.max_size()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Maximum possible size
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="operations" >
+    Operations
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>v.swap(other)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Swap contents.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="operations_allocation" >
+    Operations: Allocation
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>v.resize(n)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Change size
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.resize(n, value)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Change size, using value for new elements
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.reserve(n)</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Reserve capacity
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.shrink_to_fit()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Request capacity reduction
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4
+	id="operations_iteration" >
+    Operations: Iteration
+</h4>
+<ul>
+	<li>
+		<p>
+            <code>v.begin()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>iterator</code>
+                    &nbsp;or 
+                    <code>const_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Iterator to first element.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.end()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>iterator</code>
+                    &nbsp;or 
+                    <code>const_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Iterator past last element.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.cbegin()</code>
+            &nbsp;/ 
+            <code>v.cend()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>const_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Const iterators.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.rbegin()</code>
+            &nbsp;/ 
+            <code>v.rend()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>reverse_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Reverse iterators.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>v.crbegin()</code>
+            &nbsp;/ 
+            <code>v.crend()</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Returns 
+                    <code>const_reverse_iterator</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    Const reverse iterators.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h3
+	id="codestdset_code_codeltsetgreater_code_c_plus__plus_98" >
+    <code>std::set</code>
+    &nbsp;(
+    <code>&lt;set&gt;</code>
+    ) (C++98)
+</h3>
+<ul>
+	<li>
+		<p>
+            Stores unique elements.
+		</p>
+	</li>
+	<li>
+		<p>
+            Typically implemented as a Red-Black Tree (a self-balancing binary search tree).
+		</p>
+	</li>
+</ul>
+<h3
+	id="codestdunordered_set_code_codeltunordered_setgreater_code_c_plus__plus_11" >
+    <code>std::unordered_set</code>
+    &nbsp;(
+    <code>&lt;unordered_set&gt;</code>
+    ) (C++11)
+</h3>
+<ul>
+	<li>
+		<p>
+            Stores unique elements using hashing, without maintaining an order.
+		</p>
+	</li>
+</ul>
+<h3
+	id="codestdmap_code_codeltmapgreater_code_c_plus__plus_98" >
+    <code>std::map</code>
+    &nbsp;(
+    <code>&lt;map&gt;</code>
+    ) (C++98)
+</h3>
+<ul>
+	<li>
+		<p>
+            Sorted key-value storage, typically implemented using a Red-Black Tree.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::map&lt;int, int&gt; map; // Usually no allocation yet
+map[42] = 100;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Allocates a tree node
+</code></pre>
+<h3
+	id="codestdunordered_map_code_codeltunordered_mapgreater_code_c_plus__plus_11" >
+    <code>std::unordered_map</code>
+    &nbsp;(
+    <code>&lt;unordered_map&gt;</code>
+    ) (C++11)
+</h3>
+<ul>
+	<li>
+		<p>
+            Hash table, with no guaranteed iteration order.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::unordered_map&lt;int, int&gt; map; // Usually no allocation yet
+map[42] = 100;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Allocates bucket/node storage as needed
+</code></pre>
+<h3
+	id="codestdlist_code_c_plus__plus_98" >
+    <code>std::list</code>
+    &nbsp;(C++98)
+</h3>
+<ul>
+	<li>
+		<p>
+            Linked list.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">std::list&lt;int&gt; list; // Usually no allocation yet
+list.push_back(42);&nbsp;&nbsp;// Allocates a node
+</code></pre>
+<h3
+	id="codestdstack_code_codeltstackgreater_code_c_plus__plus_98" >
+    <code>std::stack</code>
+    &nbsp;(
+    <code>&lt;stack&gt;</code>
+    ) (C++98)
+</h3>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="codestdqueue_code_codeltqueuegreater_code_c_plus__plus_98" >
+    <code>std::queue</code>
+    &nbsp;(
+    <code>&lt;queue&gt;</code>
+    ) (C++98)
+</h3>
+<ul>
+	<li>
+		<p>
+            .
+		</p>
+	</li>
+</ul>
+<h3
+	id="codestddeque_code_codeltdequegreater_code_c_plus__plus_98" >
+    <code>std::deque</code>
+    &nbsp;(
+    <code>&lt;deque&gt;</code>
+    ) (C++98)
+</h3>
+<ul>
+	<li>
+		<p>
+            Double-ended queue.
+		</p>
+	</li>
+	<li>
+		<p>
+            Not contiguous.
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">#include &lt;deque&gt;
+
+std::deque&lt;int&gt; d;
+
+d.push_front(1);
+d.push_back(2);
+</code></pre>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.23328.js" >
+		</script>
+	</body>
+</html>

@@ -1,0 +1,2598 @@
+<!doctype html>
+<html
+	lang="en" >
+	<head>
+		<title>
+            Caio Raphael
+		</title>
+		<meta
+			charset="utf-8" >
+		<meta
+			name="viewport" 
+			content="width=device-width, initial-scale=1" >
+		<meta
+			name="description" 
+			content="Game Developer, Engine Developer, Multithreading, Low-Level Network, Low-Level Systems, Bachelor in Physics - USP" >
+		<meta
+			name="author" 
+			content="Caio Raphael" >
+		<meta
+			name="theme-color" 
+			content="#101010" 
+			media="(prefers-color-scheme: dark)" >
+		<link
+			rel="icon" 
+			href="/assets/icon.ico" >
+		<link
+			rel="icon" 
+			href="/assets/icon-16x16.png" 
+			sizes="16x16" 
+			type="image/png" >
+		<link
+			rel="icon" 
+			href="/assets/icon-32x32.png" 
+			sizes="32x32" 
+			type="image/png" >
+		<script>
+window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                }
+                };
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" >
+		</script>
+		<script
+			type="module" >
+
+                    import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
+                    import hljs_odin  from 'https://unpkg.com/highlightjs-odinlang@1.4.0/dist/odin.es.min.js';
+                    import hljs_glsl  from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/glsl.min.js';
+                    import hljs_swift from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/swift.min.js';
+                    hljs.registerLanguage('odin', hljs_odin);
+                    hljs.registerLanguage('glsl', hljs_glsl);
+                    hljs.registerLanguage('gdscript', hljs_swift);
+                    hljs.highlightAll();
+                
+		</script>
+		<link
+			rel="stylesheet" 
+			href="/static/studies.23328.css" >
+	</head>
+	<body>
+		<aside
+			id="left-sidebar-wrapper" >
+			<div
+				id="left-sidebar" >
+				<header>
+					<a
+						href="/" 
+						class="site-logo" >
+                        Caio Raphael
+					</a>
+					<p
+						class="breadcrums-division" >
+                        /
+					</p>
+					<a
+						href="/studies/_index.html" 
+						class="breadcrumbs-studies" >
+                        Studies
+					</a>
+				</header>
+				<nav>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Memory
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/casting.html" >
+                                    Casting
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/containers.html" >
+                                    Containers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/alignment.html" >
+                                    Alignment
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/endianness_byte_order.html" >
+                                    Endianness (byte order)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/stack_memory.html" >
+                                    Stack Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/virtual_memory.html" >
+                                    Virtual Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/os_memory_on_windows.html" >
+                                    OS: Memory on Windows
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/allocators.html" >
+                                    Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/tools_memory_analysis.html" >
+                                    Tools: Memory Analysis
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/handles_instead_of_pointers.html" >
+                                    Handles instead of Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/ownership_strategies_destruction_strategies.html" >
+                                    Ownership Strategies / Destruction Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/strategies_for_handling_short_lived_memory.html" >
+                                    Strategies for handling short lived memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/garbage_collection.html" >
+                                    Garbage Collection
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/memory/initialization.html" >
+                                    Initialization
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            CPU
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/concepts.html" >
+                                    Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/physical_structure.html" >
+                                    Physical Structure
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectures_instructions_sets_architectures_isa.html" >
+                                    Architectures / Instructions Sets Architectures (ISA)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/architectural_design_philosophies_isa_philosophies.html" >
+                                    Architectural Design Philosophies (ISA Philosophies)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/microarchitecture.html" >
+                                    Microarchitecture
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/registers.html" >
+                                    Registers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/cache.html" >
+                                    Cache
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/branchless.html" >
+                                    Branchless
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/soa_struct_of_arrays_ecs_entity_component_system.html" >
+                                    SOA (Struct Of Arrays) / ECS (Entity Component System)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/cpu/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Multithreading
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/core_concepts.html" >
+                                    Core Concepts
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/thread.html" >
+                                    Thread
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/strategies.html" >
+                                    Strategies
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/implementation_detail.html" >
+                                    Implementation Detail
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/synchronization_primitives.html" >
+                                    Synchronization Primitives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/double_buffering.html" >
+                                    Double-Buffering
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/multithreading/networking_strategies.html" >
+                                    Networking Strategies
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Safety Critical
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/safety_critical/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						open=""
+						class="summary-t1-current" >
+						<summary>
+                            C and C++
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/versions.html" >
+                                    Versions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard.html" >
+                                    C Standard
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/c_standard_library_libc.html" >
+                                    C Standard Library (libc)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/critiques_c_and_c_plus__plus_.html" >
+                                    Critiques: C and C++
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/code_editor.html" >
+                                    Code Editor
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/pre_processors.html" >
+                                    Pre-Processors
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/value_variable_declarations.html" >
+                                    Value: Variable Declarations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/value_constants.html" >
+                                    Value: Constants
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/value_enums.html" >
+                                    Value: Enums
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/value_keywords.html" >
+                                    Value: Keywords
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/operators.html" >
+                                    Operators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/control_flow.html" >
+                                    Control Flow
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/control_flow_keywords.html" >
+                                    Control Flow: Keywords
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/scopes_and_namespaces.html" >
+                                    Scopes and Namespaces
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/functions.html" >
+                                    Functions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-current" 
+									href="/studies/low-level_systems/c_and_c++/functions_named_arguments.html" >
+                                    Functions: Named Arguments
+								</a>
+								<ul>
+									<li>
+										<a
+											href="#original_problem" 
+											class="summary-t3" >
+                                            ~Original problem
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#using_comments" 
+											class="summary-t3" >
+                                            ~Using comments
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#replacing_function_arguments_for_a_struct" 
+											class="summary-t3" >
+                                            ~Replacing function arguments for a struct
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#trying_to_enforce_complete_initialization_via_coderequiredinit_code_template" 
+													class="summary-t4" >
+                                                    ~Trying to enforce complete initialization via <code>RequiredInit</code> template
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#wrapping_the_type_with_a_struct" 
+											class="summary-t3" >
+                                            <s>Wrapping the type with a struct</s>
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#using_codenamedtype_code_lib" 
+											class="summary-t3" >
+                                            <s>Using <code>NamedType</code> lib</s>
+										</a>
+										<ul>
+											<li>
+												<a
+													href="#trying_to_keep_the_underlying_type_visible" 
+													class="summary-t4" >
+                                                    <s>Trying to keep the underlying type visible</s>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#using_a_separate_function_that_accept_codeoperator_code_constructors" 
+											class="summary-t3" >
+                                            Using a separate function that accept <code>operator=</code> constructors
+										</a>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#using_a_separate_function_that_accept_codeoperator_code_constructors_automatically_created" 
+											class="summary-t3" >
+                                            Using a separate function that accept <code>operator=</code> constructors, automatically created
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/functions_keywords.html" >
+                                    Functions: Keywords
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/types_primitives.html" >
+                                    Types: Primitives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/types_info_and_conversion.html" >
+                                    Types: Info and Conversion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_static_allocated.html" >
+                                    Containers: Static Allocated
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_static_allocated_arrays_from_c_codet_code_and_codet_x_code.html" >
+                                    Containers: Static Allocated - Arrays from C (<code>T*</code> and <code>T x[]</code>)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_dynamic_allocated.html" >
+                                    Containers: Dynamic Allocated
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_structs.html" >
+                                    Containers: Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_unions.html" >
+                                    Containers: Unions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_classes.html" >
+                                    Containers: Classes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/containers_class_extra_keywords.html" >
+                                    Containers: Class - Extra Keywords
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_pointers.html" >
+                                    Memory: Pointers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_references_c_plus__plus_98.html" >
+                                    Memory: References (C++98)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_operations.html" >
+                                    Memory: Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_allocation.html" >
+                                    Memory: Allocation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/memory_undefined_behavior.html" >
+                                    Memory: Undefined Behavior
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/error_handling_asserts_and_code_termination.html" >
+                                    Error Handling: Asserts and code termination
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/error_handling_exceptions.html" >
+                                    Error Handling: Exceptions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/io_streams.html" >
+                                    IO Streams
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/keywords_other_optimizations.html" >
+                                    Keywords: Other Optimizations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/libraries.html" >
+                                    Libraries
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/libraries_desktop_apps.html" >
+                                    Libraries: Desktop Apps
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/syntax_variations.html" >
+                                    Syntax Variations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/c_and_c++/game_dev.html" >
+                                    Game Dev
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Odin
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/overview.html" >
+                                    Overview
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/my_impressions.html" >
+                                    My Impressions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/installation.html" >
+                                    Installation
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/building.html" >
+                                    Building
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/compile_time_stuff.html" >
+                                    Compile-time Stuff
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/package_system.html" >
+                                    Package System
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/lsp_ols_odin_language_server.html" >
+                                    LSP (OLS - Odin Language Server)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/control_flow_if_when_switch_for_defer.html" >
+                                    Control Flow (if, when, switch, for, defer)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/procedures.html" >
+                                    Procedures
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/typing.html" >
+                                    Typing
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/codeany_code.html" >
+                                    <code>any</code>
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/primitive_types.html" >
+                                    Primitive Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/matrix.html" >
+                                    Matrix
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/quaternion.html" >
+                                    Quaternion
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/complex.html" >
+                                    Complex
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/strings.html" >
+                                    Strings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/rune.html" >
+                                    Rune
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/maps_hash_maps.html" >
+                                    Maps (Hash Maps)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/struct.html" >
+                                    Struct
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/enum.html" >
+                                    Enum
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/union.html" >
+                                    Union
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/bit_sets.html" >
+                                    Bit Sets
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/arrays.html" >
+                                    Arrays
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/interfaces_methods_vtables.html" >
+                                    Interfaces / Methods / VTables
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/error_handling.html" >
+                                    Error Handling
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/context.html" >
+                                    Context
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory.html" >
+                                    Memory
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_address.html" >
+                                    Memory: Address
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_allocators.html" >
+                                    Memory: Allocators
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/memory_operations.html" >
+                                    Memory: Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/entry_point.html" >
+                                    Entry Point
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/multi_threading.html" >
+                                    Multi-Threading
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/simd.html" >
+                                    SIMD
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/ffi_foreign_function_interface_bindings.html" >
+                                    FFI (Foreign Function Interface) / Bindings
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/web_build.html" >
+                                    Web Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/file_system_process_cli_shell.html" >
+                                    File System / Process / CLI / Shell
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/odin/useful_packages.html" >
+                                    Useful Packages
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Build Systems - Compilation - Linking
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilation_process.html" >
+                                    Compilation Process
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/linker.html" >
+                                    Linker
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/compilers.html" >
+                                    Compilers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/build_tools.html" >
+                                    Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/meta_build_tools.html" >
+                                    Meta Build Tools
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/build_systems_-_compilation_-_linking/extra_annoying_things_on_windows.html" >
+                                    Extra: Annoying things on Windows
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Assembly - ASM
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/my_notes.html" >
+                                    My Notes
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/abi_application_binary_interface.html" >
+                                    ABI (Application Binary Interface)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/sections.html" >
+                                    Sections
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/directives.html" >
+                                    Directives
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/operations.html" >
+                                    Operations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/jump_patterns.html" >
+                                    Jump Patterns
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/calling_conventions.html" >
+                                    Calling Conventions
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/representing_structs.html" >
+                                    Representing Structs
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/generating_the_assembly_via_code.html" >
+                                    Generating the Assembly via code
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/assemblers.html" >
+                                    Assemblers
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/assembly/virtual_instruction_sets.html" >
+                                    Virtual instruction sets
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Reverse Engineering
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/reverse_engineering/inspect.html" >
+                                    Inspect
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Handmade Hero
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/handmade_hero/handmade_hero.html" >
+                                    Handmade Hero
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Profilers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/tracy.html" >
+                                    Tracy
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/spall.html" >
+                                    Spall
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nvidia_nsight_graphics_gpu_trace.html" >
+                                    Nvidia Nsight Graphics - GPU Trace
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/amd_gpu_profiler_amd_rgp.html" >
+                                    AMD GPU Profiler (AMD RGP)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/intel_gpa.html" >
+                                    Intel GPA
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/profilers/nsight_systems.html" >
+                                    <s>Nsight Systems</s>
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Debuggers
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/debugging_tips.html" >
+                                    Debugging Tips
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/file_types.html" >
+                                    File Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/rad_debugger.html" >
+                                    RAD Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/gdb_gnu_debugger.html" >
+                                    GDB (GNU Debugger)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/lldb.html" >
+                                    LLDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/remedybg_debugger.html" >
+                                    RemedyBG Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/vscode.html" >
+                                    VSCode
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/visual_studio_debugger.html" >
+                                    Visual Studio Debugger
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/windbg_cdb.html" >
+                                    WinDbg / CDB
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/others.html" >
+                                    Others
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/debuggers/web.html" >
+                                    Web
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Parsing
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__lexer.html" >
+                                    Lexer
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__parser.html" >
+                                    Parser
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__abstract_syntax_tree_ast.html" >
+                                    Abstract Syntax Tree (AST)
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/parsing__tools.html" >
+                                    Tools
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            Serialization - Encoding
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/representations.html" >
+                                    Representations
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/serialization.html" >
+                                    Serialization
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/serialization_-_encoding/encoding.html" >
+                                    Encoding
+								</a>
+							</li>
+						</ul>
+					</details>
+					<details
+						class="summary-t1-other" >
+						<summary>
+                            JAI
+						</summary>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__about.html" >
+                                    About
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__build.html" >
+                                    Build
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__types.html" >
+                                    Types
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__meta_programming.html" >
+                                    Meta programming
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a
+									class="summary-t2-other" 
+									href="/studies/low-level_systems/jai__control_flow.html" >
+                                    Control flow
+								</a>
+							</li>
+						</ul>
+					</details>
+				</nav>
+			</div>
+		</aside>
+		<main
+			id="central-wrapper" >
+			<main
+				id="note-wrapper" >
+				<header
+					id="note-header" >
+					<h1>
+                        Functions: Named Arguments
+					</h1>
+					<p>
+						<time
+							datetime="2023-10-11" >
+                            🕒 Created: 2023-10-11
+						</time>
+						<time
+							datetime="2026-11-24" >
+                            | Updated: 2026-11-24
+						</time>
+					</p>
+				</header>
+				<article
+					id="note-content" >
+<ul>
+	<li>
+		<p>
+            There's no named arguments for functions in any versions.
+		</p>
+	</li>
+	<li>
+		<p>
+            C++20 introduces some workarounds, but they are not great when comparing to what it should be, as done in any decent languages.
+		</p>
+	</li>
+	<li>
+		<p>
+            Some of the solutions here work for C as well.
+		</p>
+	</li>
+</ul>
+<h3
+	id="original_problem" >
+    ~Original problem
+</h3>
+<ul>
+	<li>
+		<p>
+			<em>
+                Problems
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No named arguments. You have no idea what is happening here.
+				</p>
+			</li>
+			<li>
+				<p>
+                    No type distinctions, as it's easy to swap 2 parameters with the same type by mistake.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// .h
+void SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;Object& obj,
+&nbsp;&nbsp;&nbsp;&nbsp;RandomDataArray& randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;const Camera& someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;ConfigureData configData,
+&nbsp;&nbsp;&nbsp;&nbsp;float dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeInfoXL someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;Shader shader,
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTexDepthInput,
+&nbsp;&nbsp;&nbsp;&nbsp;SubTexture* pSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;SubTexture* pSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTextureOutput);
+
+// .cpp
+SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;obj,
+&nbsp;&nbsp;&nbsp;&nbsp;randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;data,
+&nbsp;&nbsp;&nbsp;&nbsp;dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;*pSomeShader,
+&nbsp;&nbsp;&nbsp;&nbsp;pSomeTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;pTexDepth,
+&nbsp;&nbsp;&nbsp;&nbsp;pSomeSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;pSomeSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;pSomeSurface);
+</code></pre>
+<h3
+	id="using_comments" >
+    ~Using comments
+</h3>
+<ul>
+	<li>
+		<p>
+			<em>
+                Problems
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No strict types. You can invert the arguments with the same type, and that's an error you can only catch by eye.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Comments get outdated extremely easy.
+				</p>
+			</li>
+			<li>
+				<p>
+                    This also leaves a huge space and bad indentation in the code. It's very ugly to look at.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;/* obj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = */&nbsp;&nbsp;obj,
+&nbsp;&nbsp;&nbsp;&nbsp;/* randomData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;/* someCamera&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;/* configData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;data,
+&nbsp;&nbsp;&nbsp;&nbsp;/* dynamicIntensity&nbsp;&nbsp;= */&nbsp;&nbsp;dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;/* someInfo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;/* shader&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;*pSomeShader,
+&nbsp;&nbsp;&nbsp;&nbsp;/* pTexInput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = */&nbsp;&nbsp;pSomeTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;/* pTexDepthInput&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;pTexDepth,
+&nbsp;&nbsp;&nbsp;&nbsp;/* pSubTexA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;pSomeSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;/* pSubTexB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;pSomeSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;/* pTextureOutput&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;pSomeSurface);
+</code></pre>
+<h3
+	id="replacing_function_arguments_for_a_struct" >
+    ~Replacing function arguments for a struct
+</h3>
+<ul>
+	<li>
+		<p>
+            Named parameters.
+		</p>
+	</li>
+	<li>
+		<p>
+            Type safe.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Problems
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No parameters inside the struct are required.
+				</p>
+			</li>
+			<li>
+				<p>
+                    If you forget to initialize a parameter, you can at max get a runtime assert.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You require a separate data struct just to use this, which makes the declaration and function internals more confusing that it needed to be.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The cost to get named arguments can be too much.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// .h
+struct SomeFuncResources {
+&nbsp;&nbsp;&nbsp;&nbsp;float dynamicIntensity&nbsp;&nbsp;= 0.0f;
+&nbsp;&nbsp;&nbsp;&nbsp;SomeInfoXL someInfo&nbsp;&nbsp;&nbsp;&nbsp; {};
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTexInput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nullptr;
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTexDepthInput = nullptr;
+&nbsp;&nbsp;&nbsp;&nbsp;SubTexture* pSubTexA&nbsp;&nbsp;&nbsp;&nbsp;= nullptr;
+&nbsp;&nbsp;&nbsp;&nbsp;SubTexture* pSubTexB&nbsp;&nbsp;&nbsp;&nbsp;= nullptr;
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTextureOutput = nullptr;
+};
+void SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;Object& obj,
+&nbsp;&nbsp;&nbsp;&nbsp;RandomDataArray& randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;const Camera& someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;ConfigureData configData,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFuncResources res,
+&nbsp;&nbsp;&nbsp;&nbsp;Shader& shader); 
+
+// .cpp
+SomeFuncResources res{};
+res.someInfo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= someInfo;
+// res.dynamicIntensity = dynamicIntensity;&nbsp;&nbsp;// &lt;- forgetting something doesn't cause a crash.
+res.pTexInput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = pSomeTexInput;
+res.pTexDepthInput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pTexDepth;
+res.pSubTexA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pSomeSubTexA;
+res.pSubTexB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pSomeSubTexB;
+res.pTextureOutput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pSomeSurface;
+SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;obj,
+&nbsp;&nbsp;&nbsp;&nbsp;randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;data,
+&nbsp;&nbsp;&nbsp;&nbsp;res,
+&nbsp;&nbsp;&nbsp;&nbsp;*pSomeShader);
+</code></pre>
+<h4
+	id="trying_to_enforce_complete_initialization_via_coderequiredinit_code_template" >
+    ~Trying to enforce complete initialization via 
+    <code>RequiredInit</code>
+    &nbsp;template
+</h4>
+<ul>
+	<li>
+		<p>
+            Using a wrapper around any value or pointer T that tracks initialization.
+		</p>
+	</li>
+	<li>
+		<p>
+            Forgetting something will cause a RUNTIME CRASH while inside the 
+            <code>SomeFunc</code>
+            &nbsp;function, as soon as the argument is read from.
+		</p>
+	</li>
+	<li>
+		<p>
+            <code>#ifdef ASSERTS_ENABLED</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    <code>ASSERT</code>
+                    &nbsp;triggers at runtime if the value is read before being assigned.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Adds a 1-byte 
+                    <code>mIsSet</code>
+                    &nbsp;flag (plus alignment padding, typically doubling the field's stack footprint).
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+            <code>#else</code>
+		</p>
+		<ul>
+			<li>
+				<p>
+                    No 
+                    <code>ASSERT</code>
+                    &nbsp;is triggered.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The variable 
+                    <code>mIsSet</code>
+                    &nbsp;is not defined, so no increase in memory footprint.
+				</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+			<em>
+                Problems
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The assert is extremely late, only called when something reads from the argument not manually initialized.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You are still having to deal with structs.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You are changing the actual types the function was originally asking for. There's a extra level of indirection via the 
+                    <code>RequiredInit</code>
+                    &nbsp;template.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Minor: There's a memory cost in debug builds.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// lib
+template &lt;typename T&gt;
+class RequiredInit
+{
+public:
+&nbsp;&nbsp;&nbsp;&nbsp;RequiredInit() = default;
+
+&nbsp;&nbsp;&nbsp;&nbsp;void operator=(T val)
+&nbsp;&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mVal = val;
+#ifdef ASSERTS_ENABLED 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mIsSet = true;
+#endif
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;operator T() const 
+&nbsp;&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASSERT_MSG(mIsSet, "Field was never initialized!"); 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mVal;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;T operator-&gt;() const
+&nbsp;&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASSERT_MSG(mIsSet, "Field was never initialized!"); 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mVal;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+private:
+&nbsp;&nbsp;&nbsp;&nbsp;T mVal{};
+#ifdef ASSERTS_ENABLED 
+&nbsp;&nbsp;&nbsp;&nbsp;bool mIsSet = false;
+#endif
+};
+
+struct SomeFuncResources {
+&nbsp;&nbsp;&nbsp;&nbsp;// Config
+&nbsp;&nbsp;&nbsp;&nbsp;RequiredInit&lt;float&gt; dynamicIntensity;
+&nbsp;&nbsp;&nbsp;&nbsp;RequiredInit&lt;SomeInfoXL&gt; someInfo;
+&nbsp;&nbsp;&nbsp;&nbsp;// Input
+&nbsp;&nbsp;&nbsp;&nbsp;RequiredInit&lt;Texture*&gt; pTexInput;
+&nbsp;&nbsp;&nbsp;&nbsp;RequiredInit&lt;Texture*&gt; pTexDepthInput;
+&nbsp;&nbsp;&nbsp;&nbsp;// Scratch
+&nbsp;&nbsp;&nbsp;&nbsp;RequiredInit&lt;SubTexture*&gt; pSubTexA;
+&nbsp;&nbsp;&nbsp;&nbsp;RequiredInit&lt;SubTexture*&gt; pSubTexB;
+&nbsp;&nbsp;&nbsp;&nbsp;// Output
+&nbsp;&nbsp;&nbsp;&nbsp;RequiredInit&lt;Texture*&gt; pTextureOutput;
+};
+
+// .cpp
+SomeFuncResources res{};
+res.someInfo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= someInfo;
+// res.dynamicIntensity = dynamicIntensity;&nbsp;&nbsp;// &lt;- forgetting something will cause a RUNTIME CRASH while inside the `SomeFunc` function, as soon as the argument is read from.
+res.pTexInput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = pSomeTexInput;
+res.pTexDepthInput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pTexDepth;
+res.pSubTexA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pSomeSubTexA;
+res.pSubTexB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pSomeSubTexB;
+res.pTextureOutput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pSomeSurface;
+SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;obj,
+&nbsp;&nbsp;&nbsp;&nbsp;randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;data,
+&nbsp;&nbsp;&nbsp;&nbsp;NAMED_ARG(float, dynamicIntensity) = 4.0f,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;res,
+&nbsp;&nbsp;&nbsp;&nbsp;*pSomeShader);
+</code></pre>
+<h3
+	id="wrapping_the_type_with_a_struct" >
+    <s>Wrapping the type with a struct</s>
+</h3>
+<ul>
+	<li>
+		<p>
+            Named parameters.
+		</p>
+	</li>
+	<li>
+		<p>
+            All parameters are required.
+		</p>
+	</li>
+	<li>
+		<p>
+            Type safe.
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Problems
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    The 
+                    <code>NameOfTheArg { theValue }</code>
+                    &nbsp;can be &quot;ok&quot; at the call site, but is very very confusing in the function declaration and internal implementation, as you have no idea what the underlying type actually is. It's not friendly at all.
+				</p>
+			</li>
+			<li>
+				<p>
+                    The types have to be declared inside a namespace, otherwise you get conflicts between parameters with the same name between functions.
+				</p>
+			</li>
+			<li>
+				<p>
+                    It's very easy to argue that the extra boiler plate does more harm than good.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// lib
+#define PARAM_STRUCT(Name, Type) \
+&nbsp;&nbsp;&nbsp;&nbsp;struct Name \
+&nbsp;&nbsp;&nbsp;&nbsp;{ \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type value; \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;operator Type() const { return value; } \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type operator-&gt;() const { return value; } \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decltype(auto) operator*() const { return *value; } \
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;
+// .h
+namespace SomeFunc_Args
+{
+&nbsp;&nbsp;&nbsp;&nbsp;PARAM_STRUCT(pTexInput,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Texture*)
+&nbsp;&nbsp;&nbsp;&nbsp;PARAM_STRUCT(pTexDepthInput, Texture*)
+&nbsp;&nbsp;&nbsp;&nbsp;PARAM_STRUCT(pSubTexA,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SubTexture*)
+&nbsp;&nbsp;&nbsp;&nbsp;PARAM_STRUCT(pSubTexB,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SubTexture*)
+&nbsp;&nbsp;&nbsp;&nbsp;PARAM_STRUCT(pTextureOutput, Texture*)
+}
+void SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;const Camera& someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeInfoXL someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;float dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;ConfigureData configData,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Args::pTexInput pTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Args::pTexDepthInput pTexDepthInput,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Args::pSubTexA pSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Args::pSubTexB pSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Args::pTextureOutput pTextureOutput); 
+
+// .cpp
+SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;/* obj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = */&nbsp;&nbsp;obj,
+&nbsp;&nbsp;&nbsp;&nbsp;/* randomData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;/* someCamera&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;/* configData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;data,
+&nbsp;&nbsp;&nbsp;&nbsp;/* dynamicIntensity&nbsp;&nbsp;= */&nbsp;&nbsp;dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;/* someInfo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;/* shader&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= */&nbsp;&nbsp;*pSomeShader,
+&nbsp;&nbsp;&nbsp;&nbsp;pTexInput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { pSomeTexInput },
+&nbsp;&nbsp;&nbsp;&nbsp;pTexDepthInput&nbsp;&nbsp;{ pTexDepth },
+&nbsp;&nbsp;&nbsp;&nbsp;pSubTexA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ pSomeSubTexA },
+&nbsp;&nbsp;&nbsp;&nbsp;pSubTexB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ pSomeSubTexB },
+&nbsp;&nbsp;&nbsp;&nbsp;pTextureOutput&nbsp;&nbsp;{ pSomeSurface) };
+</code></pre>
+<h3
+	id="using_codenamedtype_code_lib" >
+    <s>Using 
+    <code>NamedType</code>
+    &nbsp;lib</s>
+</h3>
+<ul>
+	<li>
+		<p>
+			<a
+				href="https://www.fluentcpp.com/2016/12/05/named-constructors/" 
+				class="external-link" 
+				target="_blank" >
+                FluentC++ - Strong Types: Named Constructors
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.fluentcpp.com/2016/12/08/strong-types-for-strong-interfaces/" 
+				class="external-link" 
+				target="_blank" >
+                FluentC++ - Strong Types: Strong Types for Strong Interfaces
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.fluentcpp.com/2017/03/06/passing-strong-types-reference-revisited/" 
+				class="external-link" 
+				target="_blank" >
+                FluentC++ - Passing strong types by reference
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.fluentcpp.com/2017/05/05/news-strong-types-are-free/" 
+				class="external-link" 
+				target="_blank" >
+                FluentC++ - Strong types are free in release builds
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<a
+				href="https://www.fluentcpp.com/2018/12/14/named-arguments-cpp/" 
+				class="external-link" 
+				target="_blank" >
+                FluentC++ - Named arguments
+			</a>
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Problems
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    Same underlying problems as 'Wrapping the type with a struct': you are changing the underlying type and making things much more confusing.
+				</p>
+			</li>
+			<li>
+				<p>
+                    You have to put the new types inside a namespace, so it doesn't create conflicts.
+				</p>
+			</li>
+			<li>
+				<p>
+                    Changing the underlying types also makes the internals of the function much more fragile; syntax like 
+                    <code>myReference.SomeFunction</code>
+                    &nbsp;can be troublesome, as there's no way to overload the dot operator in C++17.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// lib
+// It's approximately this:
+template &lt;typename T, typename Parameter&gt;
+class NamedType
+{
+public:
+&nbsp;&nbsp;&nbsp;&nbsp;explicit NamedType(T const& value) : value_(value) {}
+&nbsp;&nbsp;&nbsp;&nbsp;template&lt;typename T_ = T&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;explicit NamedType(T&& value,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;typename std::enable_if&lt;!std::is_reference&lt;T_&gt;{},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::nullptr_t&gt;::type = nullptr)
+&nbsp;&nbsp;&nbsp;&nbsp;: value_(std::move(value)) {}
+
+&nbsp;&nbsp;&nbsp;&nbsp;struct argument
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;template&lt;typename UnderlyingType&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NamedType operator=(UnderlyingType&& value) const
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return NamedType(std::forward&lt;UnderlyingType&gt;(value));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argument() = default;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argument(argument const&) = delete;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argument(argument&&) = delete;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argument& operator=(argument const&) = delete;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argument& operator=(argument&&) = delete;
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;T& get() { return value_; }
+&nbsp;&nbsp;&nbsp;&nbsp;T const& get() const {return value_; }
+private:
+&nbsp;&nbsp;&nbsp;&nbsp;T value_;
+};
+
+// .h
+namespace SomeFunc_Args
+{
+&nbsp;&nbsp;&nbsp;&nbsp;using DynamicIntensity = NamedType&lt;float, struct DynamicIntensity&gt;;
+}
+void SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;// ...
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Args::DynamicIntensity dynamicIntensity
+&nbsp;&nbsp;&nbsp;&nbsp;// ...);
+
+// .cpp
+SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;// ...
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Args::DynamicIntensity(4.0f),
+&nbsp;&nbsp;&nbsp;&nbsp;// ...);
+</code></pre>
+<ul>
+	<li>
+		<p>
+            You can also use the 
+            <code>::argument</code>
+            &nbsp;part of it to have a better syntax via constructing the underlying type via 
+            <code>operator=</code>
+            .
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// .h
+namespace SomeFunc_Args
+{
+&nbsp;&nbsp;&nbsp;&nbsp;using DynamicIntensity = NamedType&lt;float, struct DynamicIntensity&gt;;
+&nbsp;&nbsp;&nbsp;&nbsp;static const DynamicIntensity::argument dynamicIntensity;
+}
+void SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;// ...
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Args::DynamicIntensity dynamicIntensity
+&nbsp;&nbsp;&nbsp;&nbsp;// ...);
+
+// .cpp
+SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;// ...
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Args::dynamicIntensity = 4.0f,
+&nbsp;&nbsp;&nbsp;&nbsp;// ...);
+</code></pre>
+<h4
+	id="trying_to_keep_the_underlying_type_visible" >
+    <s>Trying to keep the underlying type visible</s>
+</h4>
+<pre><code class="language-cpp" data-lang="cpp">// lib
+
+// ... all the rest
+
+#define NAMED(type, paramName) \
+&nbsp;&nbsp;&nbsp;&nbsp;NamedType&lt;type, struct paramName&gt; paramName
+#define NAMED_ARG(type, paramName) \
+&nbsp;&nbsp;&nbsp;&nbsp;(NamedType&lt;type, struct paramName&gt;::NameTypedAssignmentConstructor{})
+
+// .h
+void SomeFunc(NAMED(float, dynamicIntensity));
+
+// .cpp, at the call site
+SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;NAMED_ARG(float, dynamicIntensity) = 4.0f);
+
+// .cpp
+void SomeFunc(NAMED(float, dynamicIntensity))
+{
+&nbsp;&nbsp;&nbsp;&nbsp;float fadeIntensity = 1.0f;
+&nbsp;&nbsp;&nbsp;&nbsp;// ...
+&nbsp;&nbsp;&nbsp;&nbsp;fadeIntensity *= dynamicIntensity;
+&nbsp;&nbsp;&nbsp;&nbsp;// ...
+}
+</code></pre>
+<h3
+	id="using_a_separate_function_that_accept_codeoperator_code_constructors" >
+    Using a separate function that accept 
+    <code>operator=</code>
+    &nbsp;constructors
+</h3>
+<ul>
+	<li>
+		<p>
+            Named parameters.
+		</p>
+	</li>
+	<li>
+		<p>
+            All parameters are required.
+		</p>
+	</li>
+	<li>
+		<p>
+            Type safe.
+		</p>
+	</li>
+	<li>
+		<p>
+            The syntax can be weird, but even though you are using a lot, the function implementation is completely untouched.
+		</p>
+	</li>
+	<li>
+		<p>
+            The new function created is overloaded with the existing implementation, so it should be plug-and-play.
+		</p>
+	</li>
+	<li>
+		<p>
+            Check the lib at: [link].
+		</p>
+	</li>
+	<li>
+		<p>
+			<em>
+                Problems
+			</em>
+            :
+		</p>
+		<ul>
+			<li>
+				<p>
+                    You are duplicating the names for 
+                    <code>FUNCTION_NAMED_ARGS</code>
+                    .
+				</p>
+			</li>
+			<li>
+				<p>
+                    The names inside 
+                    <code>FUNCTION_NAMED_ARGS</code>
+                    &nbsp;can technically be anything.
+				</p>
+			</li>
+			<li>
+				<p>
+                    There's error handling in case of number of arguments mismatch, but still, it's the programmer's job to keep these names and order in sync with the function declaration.
+				</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// .h
+void SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;Object& obj,
+&nbsp;&nbsp;&nbsp;&nbsp;RandomDataArray& randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;const Camera& someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;ConfigureData configData,
+&nbsp;&nbsp;&nbsp;&nbsp;float dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeInfoXL someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;Shader shader,
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTexDepthInput,
+&nbsp;&nbsp;&nbsp;&nbsp;SubTexture* pSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;SubTexture* pSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTextureOutput);
+
+FUNCTION_NAMED_ARGS(SomeFunc,
+&nbsp;&nbsp;&nbsp;&nbsp;obj,
+&nbsp;&nbsp;&nbsp;&nbsp;randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;configData,
+&nbsp;&nbsp;&nbsp;&nbsp;dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;shader,
+&nbsp;&nbsp;&nbsp;&nbsp;pTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;pTexDepthInput,
+&nbsp;&nbsp;&nbsp;&nbsp;pSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;pSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;pTextureOutput);
+
+// .cpp
+SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::obj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= obj,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::randomData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::someCamera&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::configData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = data,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::dynamicIntensity = dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::someInfo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::shader&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = *pSomeShader,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pTexInput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pSomeTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pTexDepthInput&nbsp;&nbsp; = pTexDepth,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pSubTexA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = pSomeSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pSubTexB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = pSomeSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pTextureOutput&nbsp;&nbsp; = pSomeSurface);
+</code></pre>
+<h3
+	id="using_a_separate_function_that_accept_codeoperator_code_constructors_automatically_created" >
+    Using a separate function that accept 
+    <code>operator=</code>
+    &nbsp;constructors, automatically created
+</h3>
+<ul>
+	<li>
+		<p>
+            Named parameters.
+		</p>
+	</li>
+	<li>
+		<p>
+            All parameters are required.
+		</p>
+	</li>
+	<li>
+		<p>
+            Type safe.
+		</p>
+	</li>
+	<li>
+		<p>
+            The syntax can be weird, but even though you are using a lot, the function implementation is completely untouched.
+		</p>
+	</li>
+	<li>
+		<p>
+            The new function created is overloaded with the existing implementation, so it should be plug-and-play.
+		</p>
+	</li>
+	<li>
+		<p>
+            Check the lib at: [link].
+		</p>
+	</li>
+</ul>
+<pre><code class="language-cpp" data-lang="cpp">// .h
+FUNCTION_NAMED_ARGS_FUNC(void, SomeFunc,
+&nbsp;&nbsp;&nbsp;&nbsp;(Object&)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj,
+&nbsp;&nbsp;&nbsp;&nbsp;(RandomDataArray&) randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;(const Camera&)&nbsp;&nbsp;&nbsp;&nbsp;someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;(ConfigureData)&nbsp;&nbsp;&nbsp;&nbsp;configData,
+&nbsp;&nbsp;&nbsp;&nbsp;(float)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;(SomeInfoXL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;(Shader&)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shader,
+&nbsp;&nbsp;&nbsp;&nbsp;(Texture*)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;(Texture*)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pTexDepthInput,
+&nbsp;&nbsp;&nbsp;&nbsp;(SubTexture*)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;(SubTexture*)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;(Texture*)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pTextureOutput);
+
+// .cpp, function implementation (same as the original)
+void SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;Object& obj,
+&nbsp;&nbsp;&nbsp;&nbsp;RandomDataArray& randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;const Camera& someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;ConfigureData configData,
+&nbsp;&nbsp;&nbsp;&nbsp;float dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeInfoXL someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;Shader shader,
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTexDepthInput,
+&nbsp;&nbsp;&nbsp;&nbsp;SubTexture* pSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;SubTexture* pSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;Texture* pTextureOutput)
+{
+}
+
+// .cpp
+SomeFunc(
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::obj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= obj,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::randomData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = randomData,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::someCamera&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = someCamera,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::configData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = data,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::dynamicIntensity = dynamicIntensity,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::someInfo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = someInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::shader&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = *pSomeShader,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pTexInput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= pSomeTexInput,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pTexDepthInput&nbsp;&nbsp; = pTexDepth,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pSubTexA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = pSomeSubTexA,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pSubTexB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = pSomeSubTexB,
+&nbsp;&nbsp;&nbsp;&nbsp;SomeFunc_Arg::pTextureOutput&nbsp;&nbsp; = pSomeSurface);
+</code></pre>
+
+				</article>
+			</main>
+			<footer
+				id="central-footer" >
+                🧑‍💻 built and copyrighted by
+				<a
+					href="https://github.com/caioraphael1" 
+					target="_blank" >
+                    Caio Raphael
+				</a>
+                📅 2025-2026 🚀
+			</footer>
+		</main>
+		<script
+			src="/static/studies.23328.js" >
+		</script>
+	</body>
+</html>
